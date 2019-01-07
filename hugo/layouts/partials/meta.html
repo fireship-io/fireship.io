@@ -1,0 +1,24 @@
+{{ $img := print .Permalink "img/featured.png" }}
+
+{{ if not (fileExists (print .RelPermalink "img/featured.png")) }}
+    {{ $img = "/img/covers/default-cover.png" }}
+{{ end }} 
+
+
+{{ if .Params.featured_img }}
+  {{ $img = print .Permalink .Params.featured_img }}
+{{ end }}
+
+<link rel="canonical" href="{{ .Permalink }}" />
+
+<meta property="og:title" content="{{ .Title }}" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="{{ .Permalink }}" />
+<meta property="og:image" content="{{ $img }}" />
+<meta property="og:description" content="{{ .Description }}" />
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@angularfirebase">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ .Description }}">
+<meta name="twitter:image" content="{{ $img }}">

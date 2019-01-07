@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<article itemscope itemtype="http://schema.org/Author" class="content-pad">
+
+    <div class="author-headline row">
+        <div class="author-avatar col-xs-12 col-sm-3"><img src="{{ .Params.featured_img }}" alt="{{ .Title }} avatar image"></div>
+        <div class="author-bio col-xs-12 col-sm-9">
+            <h1 itemprop="name" id="{{ .Title }}" class="post-title border-bottom">
+                {{ .Title }} Contributor Bio
+            </h1>
+
+            {{ partial "contributor-links.html" . }}
+
+            <div class="text-left">
+                    {{ .Content }}
+            </div>
+       
+        </div>
+
+
+    </div>
+
+</article>
+
+{{ end }}

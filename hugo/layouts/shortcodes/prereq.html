@@ -1,0 +1,4 @@
+{{ $snip := .Get 0 }}
+{{ $page := .Site.GetPage (print "/snippets/" $snip)}}
+
+<strong><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></strong> ✔️ <span class="text-thin">{{ $page.Description }}</span>

@@ -1,0 +1,146 @@
+{{ define "main"}}
+
+<div class="row" style="margin-top: 3em;">
+  <div class="col-xs-12 col-md-6 flex-center">
+    <video-player
+      src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    ></video-player>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h1>Build and ship 🔥 your app ⚡ faster</h1>
+    <p class="text-lg">
+      Fireship.io is an ecosystem of detailed and practical resources for
+      developers who want to
+      <strong class="text-contrast">build and ship high-quaility apps</strong>.
+    </p>
+
+    <a class="btn btn-orange" href="/lessons">Explore</a>
+    <google-login>
+      <button slot="signin" class="btn" href="/lessons">
+        {{ partial "svg/google.svg" }} Login Now
+      </button>
+    </google-login>
+  </div>
+</div>
+
+<hr />
+
+
+<div href="/courses" class="row row-home">
+  <div class="col-xs-12 col-sm-4 flex-center">
+    <a href="/courses"
+      ><img src="img/gif/internet.gif" alt="learn how to use the internet gif"
+    /></a>
+  </div>
+
+  <div class="col-xs-12 col-sm-8">
+    <h2>
+      <i>{{ partial "svg/backpack.svg" }}</i> Full Courses
+    </h2>
+    <p>
+      Courses are
+      <strong>linear multi-step projects with several hours of video</strong>.
+      They teach you how to build advanced real-world app features from start to
+      finish. <a class="btn btn-sm" href="/courses">go</a>
+    </p>
+  </div>
+</div>
+
+<div class="row home-features">
+
+  <div class="flex-center col-xs-12 col-md-4">
+    <a class="card card-outline" href="{{ .Site.Data.links.slack }}">
+      <div class="card-content">
+        <h2>💬 Slack Chat</h2>
+        <p>
+          Join our Slack channel with over 3K users for project support, news,
+          and <strong>just having fun</strong>.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="flex-center col-xs-12 col-md-4">
+    <a class="card card-outline" href="{{ .Site.Data.links.github }}">
+      <div class="card-content">
+        <h2>👨‍💻 Code</h2>
+        <p>
+          Almost every lesson is <strong>supported by a Github rep</strong>. Even this very
+          website is open source.
+        </p>
+      </div>
+    </a>
+  </div>
+
+  <div class="flex-center col-xs-12 col-md-4">
+        <a class="card card-outline" href="{{ .Site.Data.links.github }}">
+          <div class="card-content">
+                <h2>🍰 Cake</h2>
+                <p>
+                  There will be cake! Access additional <strong>free stuff</strong> like books, stickers,
+                  cheat sheets, swag, and more.
+                </p>
+          </div>
+        </a>
+      </div>
+
+
+</div>
+
+<div class="row row-home">
+  <div class="col-xs-12 col-sm-8">
+    <h2>
+      <i>{{ partial "svg/video.svg" }}</i> Weekly Video Episodes
+    </h2>
+    <p>
+      Lessons are <strong>non-linear ~10min episodes</strong> covering a variety
+      of topics that include a video, writeup, and github repo. <a class="btn btn-sm" href="/lessons">Watch</a>
+    </p>
+  </div>
+
+  <div class="col-xs-12 col-sm-4 flex-center">
+    <a href="/lessons"
+      ><img
+        src="img/gif/yt.jpg"
+        alt="old film gif for video episodes on Fireship.io"
+    /></a>
+  </div>
+</div>
+
+
+<h2>Watch Recent Lessons</h2>
+
+<div class="row">
+  {{ range (first 6 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) . }}
+
+  <div class="col-sm-12 col-md-6 col-lg-4">{{ partial "lesson-card" . }}</div>
+
+  {{ end }}
+
+  <algolia-button class="col-xs-12">
+    <button class="btn btn-green">Search All Lessons</button>
+  </algolia-button>
+</div>
+
+<div class="row row-home">
+    <div class="col-xs-12 col-sm-4 flex-center">
+      <a href="/about"
+        ><img
+          src="/img/jeffdelaney-gde.png"
+          alt="Jeff Delaney Google Developer Expert"
+      /></a>
+    </div>
+    <div class="col-xs-12 col-sm-8">
+      <h2>
+        <i>{{ partial "svg/microphone.svg" }}</i> Your Host
+      </h2>
+      <p>
+        Hi, I'm <strong>Jeff Delaney</strong> and I created this project to help people build and ship high-quality
+        apps. My mission is simple 👉 produce practical
+        content that <strong>increases developer happiness and productivity</strong> 🚀. 
+      </p>
+    </div>
+  </div>
+  
+
+{{ end }}

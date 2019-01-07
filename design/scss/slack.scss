@@ -1,0 +1,31 @@
+.slack-thread {
+    margin: 1em 0;
+    box-shadow: var(--card-shadow);
+    background: var(--nav-bg);
+    padding: 1em;
+}
+
+.toggle-replies {
+    font-weight: bold;
+    color: var(--blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.slack-content {
+    padding: 1em;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.slack-reply {
+    margin: 1em 0 1em 1em;
+    .slack-content {
+        font-size: 1em;
+        font-weight: 400;
+    }
+}
+
+.slack-link {
+    font-size: 0.85em;
+}

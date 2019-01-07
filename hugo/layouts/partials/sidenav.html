@@ -1,0 +1,50 @@
+
+
+<a href="/" class="item logo">
+    {{ partial "svg/logo-white.svg" . }}
+    <div class="version">v{{ .Site.Data.defaults.version }}</div>
+</a>
+
+<nav class="sidenav hide-sm">
+    <algolia-button>
+        <span class="item">
+            {{ partial "svg/search.svg" . }}
+            <span class="item-label tag tag-contrast tag-sm">search</span>
+        </span>
+    </algolia-button> 
+
+    <a class="item" href="/lessons">
+        {{ partial "svg/video.svg" . }}
+        <span class="item-label tag tag-contrast tag-sm">video lessons</span>
+    </a>
+
+    <a class="item" href="/courses">
+        {{ partial "svg/backpack.svg" . }}
+        <span class="item-label tag tag-contrast tag-sm">courses</span>
+    </a>
+
+
+    <a class="item" href="/snippets">
+        {{ partial "svg/commit.svg" . }}
+        <span class="item-label tag tag-contrast tag-sm">quick snippets</span>
+    </a>
+    
+    <a class="item" href="/tags">
+        {{ partial "svg/tags.svg" . }}
+        <span class="item-label tag tag-contrast tag-sm">tags</span>
+    </a>
+            
+    <google-login class="hide-sm">
+        <div class="item" slot="signin">
+            <span><img src="/img/google-login.svg"></span>
+            <span class="item-label tag tag-contrast tag-sm">Google signin</span>
+        </div>
+
+        <a class="item" slot="profile" href="/dashboard">
+            {{ partial "svg/astronaut.svg" . }}
+            <span class="item-label tag tag-contrast tag-sm">dashboard</span>
+        </a>
+    </google-login>
+</nav>
+
+

@@ -1,0 +1,73 @@
+@import './mixins.scss';
+
+.algolia-search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--overlay-bg);
+    z-index: 99;
+    transform: scale(0);
+    transition: transform 200ms ease-out;
+
+    &.algolia-show {
+        transform: scale(1);
+        transition: transform 200ms ease-in;
+    }
+}
+
+.algolia-close {
+    float: right;
+    margin-top: 10px;
+}
+
+.algolia-hits {
+    width: auto;
+    height: 100%;
+    padding:  var(--nav-width);
+    padding-top: 5em;
+    overflow-y: scroll;
+    @include scrollbar;
+    em {
+        color: var(--green);
+    }
+    h4, p {
+        margin: 0.25em;
+    }
+
+    p {
+        color: var(--text-color);
+        font-size: 0.85em;
+    }
+}
+
+.algolia-hit {
+    border-bottom: var(--h-border);
+    display: block;
+    margin-top: 0.5em;
+
+    .hit-type {
+        color: var(--text-color);
+        font-size: 0.9em;
+        font-weight: 400;
+    }
+}
+
+.algolia-input {
+    background: var(--overlay-bg);
+    color: var(--h-color);
+    outline: none;
+    border: none;
+    font-size: 5vw;
+    display: block;
+    border-bottom: 5px solid;
+    font-family: var(--body-font);
+    width: 100%;
+    background: transparent;
+
+    &::placeholder {
+        opacity: 0.7;
+      }
+}
+

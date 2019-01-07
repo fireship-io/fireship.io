@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+    {{ $icon := print "svg/" (lower .Title) ".svg"  }}
+
+    <div class="row">
+    <header class="col-xs-12">
+        <h1 class="tag tag-contrast tag-{{ anchorize .Title }} shadow">
+        {{ title .Title }}
+        </h1>
+
+        {{ with .Params.description }}
+            <div class="box">
+                <div class="box-icon">{{ partial $icon }}</div>
+                <div class="box-content">{{ . }}</div>
+            </div>
+        {{ end }}
+    </header>
+
+    {{ range.Pages }}
+
+    <div class="col-sm-12 col-md-6 col-lg-4">{{ partial "lesson-card" . }}</div>
+
+    {{ end }}
+    </div>
+
+{{ end }}

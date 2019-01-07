@@ -1,0 +1,7 @@
+{{ $href := .Get "href" }}
+
+<a class="card lesson-card" href="{{ $href }}">
+    <div class="card-content">
+        {{ $.Inner }}
+    </div>
+</a>

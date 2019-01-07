@@ -1,0 +1,23 @@
+@mixin scrollbar() {
+    /* width */
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: var(--background); 
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray3); 
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--gray4); 
+  }
+}
+

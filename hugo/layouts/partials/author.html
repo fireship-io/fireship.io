@@ -1,0 +1,10 @@
+{{ $author := .Site.GetPage (print "/contributors/"  (anchorize .Params.Author)) }}
+
+<div class="author-snip">
+
+        <div class="author-avatar"><img src="{{ $author.Params.featured_img }}" alt="{{ $author.Title }} avatar"></div>
+        <div class="author-details">
+            {{ partial "author-link.html" . }}
+        </div>
+
+    </div>

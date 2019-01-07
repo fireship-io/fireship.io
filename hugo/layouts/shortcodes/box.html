@@ -1,0 +1,10 @@
+{{ $icon := (print "svg/" (.Get "icon") ".svg") }}
+{{ $class := .Get "class" }}
+
+<div class="box {{ $class }}">
+    <div class="box-icon">{{ partial $icon }}</div>
+    <div class="box-content">
+        {{ $.Inner }}
+    </div>
+      
+</div>

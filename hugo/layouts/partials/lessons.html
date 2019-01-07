@@ -1,0 +1,8 @@
+
+<div class="row">
+    {{ range .Pages "Section" "post" }}
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            {{ partial "lesson-card" . }}
+        </div>
+    {{ end }}
+</div>

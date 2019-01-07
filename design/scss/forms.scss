@@ -1,0 +1,46 @@
+fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+label {
+    font-weight: bold;
+    font-style: italic;
+    margin: 0.5em 0;
+    display: inline-block;
+}
+
+.textarea, .input {
+    width: 100%;
+    padding: 0.25em 0.5em;
+    box-sizing: border-box;
+    border: 2px solid var(--text-color);
+    background: var(--form-bg);
+    font-size: 1.125em;
+    font-weight: bold;
+    color: var(--h-color);
+    outline: none;
+    display: block;
+    font-family: var(--font-body);
+
+    &:focus {
+        border: 2px solid var(--h-color);
+    }
+
+    &.ng-dirty.ng-invalid {
+        border: 2px solid var(--red);
+    }
+
+    &.ng-valid.ng-dirty {
+        border: 2px solid var(--green);
+    }
+
+
+}
+
+.textarea {
+    min-height: 150px;
+    font-size: 0.95em;
+    font-weight: 400;
+}

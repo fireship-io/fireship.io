@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    <!-- GTAG -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-59099331-16"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-59099331-16');
+    </script>
+
+    <!-- JS & CSS -->
+    <link rel="prefetch" as="script" href="/components/{{ .Site.Data.components.bundle }}">
+    <link rel="stylesheet" href="https://use.typekit.net/rcr1opg.css">
+    <script src="/design/{{ .Site.Data.webpack_assets.app.js }}"></script>
+    <link rel="stylesheet" type="text/css" href="/design/{{ .Site.Data.webpack_assets.app.css }}">
+    <script defer src="/components/{{ .Site.Data.components.bundle }}"></script>
+
+    <!-- META TAGS -->
+    <title>{{ .Title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+
+    {{ block "meta" . }}
+      {{ partial "meta.html" . }}
+    {{ end }}
+
+    <!-- PWA -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <meta name="theme-color" content="#454e56">
+
+    <link rel="manifest" href="/manifest.json">
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js');
+          });
+        }
+    </script>
+
+    {{ block "scripts" . }}
+
+    {{ end }}
+  </head>
+
+  <body class="dark-theme">
+    {{ block "topnav" . }}
+      {{ partial "topnav.html" . }}
+    {{ end }}
+
+    {{ block "sidenav" . }}
+      {{ partial "sidenav.html" . }}
+    {{ end }}
+
+    
+    <main role="main">
+      {{ block "main" . }}{{ end }}
+      {{ block "feed" . }}{{ end }}
+
+      {{ block "footer" . }}
+       {{ partial "footer.html" . }}
+      {{ end }}
+    </main>
+
+    <route-loader>
+        <div class="spinner">
+            <div class="double-bounce1"></div>
+            <div class="double-bounce2"></div>
+          </div>
+    </route-loader>
+
+    <algolia-search></algolia-search>
+
+    <app-notification></app-notification>
+
+  </body>
+</html>

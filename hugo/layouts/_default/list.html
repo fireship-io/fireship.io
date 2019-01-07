@@ -1,0 +1,25 @@
+{{ define "main" }}
+    <header>
+        <h1 class="border-bottom">{{ .Title }}</h1>
+    </header>
+
+    <article>
+        {{ .Content }}
+    </article>
+{{ end }}
+
+{{ define "feed" }}
+
+    <div class="row" id="grid">
+      {{ range .Pages }}
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+            {{ partial "lesson-card" . }}
+        </div>
+
+      {{ end }}
+    </div>
+
+{{ end }}
+
+

@@ -1,0 +1,151 @@
+
+// Text and Colors
+
+.white {
+    color: white;
+}
+
+.text-contrast {
+    color: var(--h-color);
+}
+
+.text-sm {
+    font-size: 0.75em;
+}
+.text-lg {
+    font-size: 1.5em;
+}
+
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+}
+
+.sub-heading {
+    display: block;
+    font-size: 0.4em;
+    color: var(--text-color);
+    font-weight: 400;
+}
+
+.downcase {
+    text-transform: lowercase;
+}
+
+.emoji {
+    font-style: normal;
+}
+
+.emoji-btn {
+    margin: 0 0.33em;
+    font-size: 1.25em;
+}
+
+.red {
+    color: var(--red);
+}
+
+.red-bg {
+    background: var(--red);
+}
+
+.spacer {
+    margin: 1em 0;
+}
+
+
+
+.text-thin {
+    font-weight: 300;
+}
+
+.swap-text { 
+    opacity: 1;
+    transition: opacity 300ms ease;
+}
+text-cycle {
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+// Utils
+
+.row-home {
+    margin: 7vw 3em;
+    h2 {
+      font-size: 1.6em;
+    }
+    p {
+      font-size: 1.4em;
+      font-weight: 300;
+    }
+  }
+
+.hide-sm {
+    @media screen and (max-width: 768px) {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.hide-lg {
+    @media (min-width: 768px) {
+        visibility: hidden;
+        display: none;
+    }
+}
+
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-pad {
+    padding: 0 !important;
+}
+
+.truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.border-bottom {
+    border-bottom: var(--h-border);
+}
+
+.shadow {
+    box-shadow: var(--card-shadow);
+}
+
+// Cover Images
+
+.aspect-16x9 {
+    padding-top: 56.25%;
+    background: var(--nav-bg);
+}
+
+.cover-title {
+    position: absolute;
+    top: 0;
+    margin-left: 1em;
+    margin-right: 2em;
+    overflow: hidden;
+}
+
+.cover-orange {
+    background: url('/img/covers/orange-l.svg');
+}
+
+// Social Media
+
+.twitter-bg { background: #1da1f2; }
+.twitter { color: #1da1f2; }
+.github { color: #333; }
+.github-bg { background: #333; }
+.youtube { color: #ff0a00; }
+.slack { color: #ce1f5b; }

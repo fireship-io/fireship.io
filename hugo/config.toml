@@ -1,0 +1,25 @@
+baseURL = "https://fireship.io/"
+languageCode = "en-us"
+title = "Fireship.io"
+publishDir = "../public"
+pygmentsStyle = "atom"
+pygmentsUseClasses = true
+enableRobotsTXT = true
+
+[outputs]
+home = ["HTML", "RSS", "Algolia"]
+
+[outputFormats.Algolia]
+baseName = "algolia"
+isPlainText = true
+mediaType = "application/json"
+notAlternative = true
+
+[params]
+mainSections = ["lessons", "snippets"]
+
+[params.algolia]
+vars = ["title", "description", "summary", "date", "publishdate", "lastmod", "permalink"]
+params = ["tags"]
+
+

@@ -1,0 +1,85 @@
+.tag {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.2em 0.5em 0.3em;
+    border-radius: 2px;
+    background: var(--tag-bg);
+    color: var(--text-color);
+    font-weight: 600;
+    margin: 0.25em 0.1em;
+}
+
+
+h1.tag {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+
+.tag-sm {
+    font-size: 0.7em;
+    display: inline-block;
+    letter-spacing: 0.15ch;
+    font-weight: 400;
+}
+
+
+.tag-lg {
+    font-size: 1.2em;
+    border-radius: 4px;
+}
+
+.tag-bg {
+    background: var(--background);
+}
+
+.tag-pro {
+    background: var(--green);
+    color: white;
+}
+
+.tag-contrast {
+    background: var(--text-color);
+    color: var(--background);
+}
+
+.tag-javascript {
+    background: #f0db4f;;
+    color: black;
+}
+
+.tag-typescript {
+    background: #2775c3;;
+    color: white;
+}
+
+.tag-angular {
+    background: #dc0530;
+    color: #fff;
+}
+
+.tag-firebase {
+    background: #ffcb2b;
+    color: #12181a;
+}
+
+.tag-vue {
+    background: #41b883;
+    color: #35495e;
+}
+
+.tag-rxjs {
+    background: var(--pink);
+    color: var(--gray5);
+}
+
+.tag-node {
+    background: #90c53f;
+    color: #46483d;
+}
+
+.tag-cloud-functions {
+    background: var(--blue);
+    color: white;
+}
+

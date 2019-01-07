@@ -1,0 +1,19 @@
+{{ if not .Params.disable_chapters }}
+
+{{ $chapters := .Parent.Pages.ByWeight }}
+
+
+<h2>Chapters</h2>
+
+<nav>
+    {{ range $chapters }}
+
+            {{ partial "chapter-card.html" . }}
+
+    {{ end }}
+</nav>
+
+{{ end }}
+
+
+    

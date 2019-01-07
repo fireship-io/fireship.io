@@ -1,0 +1,15 @@
+{{ with .Params.versions }}
+    <div class="box health-check">
+        <div class="box-icon box-red">{{ partial "svg/health.svg" }}</div>
+        <div class="box-content">
+            <h3>Health Check</h3>
+            
+            <p>
+                {{ range $package, $version := .}}
+                    {{ $package }}@<strong>{{ $version }}</strong><br>
+                {{ end }}
+            </p>
+
+        </div>
+    </div>
+{{ end }}

@@ -1,0 +1,11 @@
+<span (click)="changeTheme()">
+        <span *ngIf="theme == 'light-theme'">
+                <slot name="light"></slot>
+        </span>
+        <span *ngIf="theme == 'dark-theme'">
+            <slot name="dark"></slot>
+        </span>
+        <span *ngIf="theme == 'colorful-theme'">
+            <slot name="colorful"></slot>
+        </span>
+</span>

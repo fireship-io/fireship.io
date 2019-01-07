@@ -1,0 +1,5 @@
+<span (click)="toggle()" *ngIf="!show"><slot name="button"></slot></span>
+<span (click)="toggle(false)" *ngIf="show"><slot name="close"></slot></span>
+<span *ngIf="show">
+    <slot name="content"></slot>
+</span>

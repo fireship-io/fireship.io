@@ -1,0 +1,78 @@
+<nav class="topnav">
+
+  <google-login class="hide-lg">
+      <div class="item" slot="signin">
+          <span><img src="/img/google-login.svg"></span>
+      </div>
+
+      <a class="item" slot="profile" href="/dashboard">
+          {{ partial "svg/astronaut.svg" . }}
+      </a>
+  </google-login>
+
+  <algolia-button class="hide-lg">
+      <span class="item">
+          {{ partial "svg/search.svg" . }}
+      </span>
+  </algolia-button> 
+
+
+
+  <div class="item">
+    <theme-btn>
+      <span slot="dark">{{ partial "svg/sun.svg" }}</span>
+      <span slot="light">{{ partial "svg/rainbow.svg" }}</span>
+      <span slot="colorful">{{ partial "svg/moon.svg" }}</span>
+    </theme-btn>
+  </div>
+
+
+
+  <menu-toggler selector="#mega">
+
+    <div slot="button" class="item mega-dropdown">
+      {{ partial "svg/ellipsis.svg" }}
+    </div>
+
+    <div slot="close" class="item mega-dropdown close">
+      {{ partial "svg/close.svg" }}
+    </div>
+  </menu-toggler>
+
+  <div id="mega" class="mega-menu">
+      <div class="mega-main">
+        <div class="row around-xs">
+          <div class="col-xs-12 col-md-4">
+            <h3>Content</h3>
+            <ul>
+              <li><a href="/lessons">Video Lessons</a></li>
+              <li><a href="/courses">Full Courses</a></li>
+              <li><a href="/snippets">Quick Snippets</a></li>
+              <li><a href="/tags">#tags</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-12 col-md-4">
+            <h3>People</h3>
+            <ul>
+              <li><a href="/mission">Manifesto</a></li>
+              <li><a href="/contributors">Contributors</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="{{ .Site.Data.links.slack }}">Slack Chat</a></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-12 col-md-4">
+            <h3>Tags</h3>
+            <ul>
+              <li><a href="/tags/angular">#angular</a></li>
+              <li><a href="/tags/firebase">#firebase</a></li>
+              <li><a href="/tags/node">#node</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row mega-footer between-xs">
+          <span>Fireship.io</span> <a href="/terms">terms</a> <a href="/privacy-policy">privacy</a> <a href="/style-guide">style guide</a>
+      </div>
+</nav>

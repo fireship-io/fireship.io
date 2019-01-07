@@ -1,0 +1,31 @@
+{
+  "name": "functions",
+  "scripts": {
+    "lint": "tslint --project tsconfig.json",
+    "build": "tsc",
+    "serve": "npm run build && firebase serve --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "@google-cloud/pubsub": "^0.22.2",
+    "@sendgrid/mail": "^6.3.1",
+    "@slack/client": "^4.8.0",
+    "@types/google-cloud__pubsub": "^0.18.1",
+    "firebase-admin": "~6.0.0",
+    "firebase-functions": "^2.1.0",
+    "lodash": "^4.17.11"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.1.4",
+    "tslint": "~5.8.0",
+    "typescript": "~2.8.3"
+  },
+  "private": true,
+  "engines": {
+    "node": "8"
+  }
+}

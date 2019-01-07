@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "fireship-dev-17429",
+    "prod": "fireship-app"
+  }
+}

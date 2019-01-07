@@ -1,0 +1,18 @@
+<div class="card card-lesson">
+  {{/*  {{ partial "lesson-image.html" . }}  */}}
+  <div class="card-content">
+    <a href="{{ .RelPermalink }}">
+      <h3>{{ .Title }}</h3>
+    </a>
+    
+    <p>{{ .Params.description }}</p>
+
+
+    {{ partial "tags.html" .  }}
+
+  </div>
+  {{ if .Params.youtube }}
+    <div class="lesson-type"><a href="{{ .RelPermalink }}"><i class="red">{{ partial "svg/youtube.svg" }}</i></a></div>
+  {{ end }}
+
+</div>

@@ -1,0 +1,12 @@
+{{ define "main" }}
+<section id="main" class="content-pad">
+  <h1 id="title" class="snippet-title">{{ .Title }}</h1>
+  {{ partial "author-link.html" . }}
+  <div>
+    <article id="content">
+        {{ .Content }}
+        {{ partial "qna.html" . }}
+    </article>
+  </div>
+</section>
+{{ end }}

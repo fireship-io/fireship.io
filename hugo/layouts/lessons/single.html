@@ -1,0 +1,39 @@
+{{ define "scripts"}}{{ end }}
+
+{{ define "main" }}
+
+<article itemscope itemtype="http://schema.org/Article">
+  <meta itemprop="datePublished" content="{{ .PublishDate }}" />
+  <meta itemprop="dateModified" content="{{ .Lastmod }}" />
+  <meta itemprop="image" content="img/featured.png" />
+  <meta itemprop="publisher" content="fireship.io" />
+
+
+  <h1 itemprop="name headline" id="{{ anchorize .Title }}" class="post-title border-bottom">
+      {{ .Title }}
+  </h1>
+  
+
+
+  <div class="content-main">
+
+    <section class="content-article" itemprop="articleBody">
+      {{ partial "lesson-headline" . }}
+      {{ .Content }}
+
+       <!-- <div class="the-end">🍰 The End 🍺</div> -->
+
+    </section>
+
+    {{ if not .Params.disable_toc }}
+      <aside class="toc">{{ .TableOfContents }}</aside>
+    {{ end }}
+  </div>
+
+</article>
+
+
+
+  {{ partial "qna.html" . }}
+
+{{ end }}

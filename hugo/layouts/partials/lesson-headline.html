@@ -1,0 +1,56 @@
+<header>
+    {{ with .Params.youtube }}
+    <div class="post-video" >
+        <div class="vid" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+            <iframe
+            width="800"
+            height="450"
+            src="https://www.youtube.com/embed/{{ . }}"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            ></iframe>
+
+            <meta itemprop="embedUrl" content="https://www.youtube.com/embed/{{ . }}" />
+            <meta itemprop="thumbnailUrl" content="{{ $.Params.featured_image }}" />
+            <meta itemprop="description" content="{{ $.Page.Params.description }}" />
+            <meta itemprop="uploadDate" content="{{ $.Page.Params.publishdate }}" />
+            <meta itemprop="publisher" content="Fireship" />
+        </div>
+    </div>
+    {{ end }}
+
+    <div class="post-info">
+        <div class="post-description">
+            <p itemprop="description">
+                {{ .Params.description }}
+            </p>
+
+            {{ partial "author.html" . }}
+            <div class="text-sm">
+                <time itemprop="dateCreated">{{  .Lastmod.Format "Mon Jan 2, 2006"  }}</time> 
+                <span class="text-thin" itemprop="wordCount">{{ .WordCount }} words.</span>
+            </div>
+
+
+        </div>
+
+        <div class="post-detail">
+        <div class="post-buttons">
+            {{ with .Params.github }}
+            <button class="btn btn-contrast">
+            {{ partial "svg/code-merge.svg" . }} Code
+            {{ end }}
+            </button>
+            <a class="btn btn-purple" href="{{ .Site.Data.links.slack }}">
+            {{ partial "svg/slack.svg" . }} Slack
+            </a>
+        </div>
+
+        <div class="post-tags">{{ partial "tags.html" . }}</div>
+        </div>
+    </div>
+
+    {{ partial "health-check.html" . }}
+
+</header>

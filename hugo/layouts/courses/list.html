@@ -1,0 +1,29 @@
+{{ define "main" }}
+<article itemscope itemtype="http://schema.org/Article">
+    <header>
+        <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
+            {{ .Title }}
+        </h1>
+
+        
+        {{ with .Params.video }}
+            <video controls src="{{ . }}"></video>
+        {{ end }}
+
+    </header>
+
+    <div class="content-main">
+        <section class="content-article no-toc" itemprop="articleBody">{{ .Content }}</section>
+    </div>
+{{ end }}
+
+{{ define "feed" }}
+
+      {{ range .Pages }}
+
+        {{ partial "chapter-card" . }}
+
+      {{ end }}
+
+{{ end }}
+

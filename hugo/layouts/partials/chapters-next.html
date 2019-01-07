@@ -1,0 +1,35 @@
+{{ if not .Params.disable_chapters }}
+
+<div class="chapter-nav" >
+
+    <div class="chapter-prev">
+        {{ if .NextInSection  }}
+            {{ with .NextInSection }}
+                <a class="btn" href="{{ .RelPermalink }}">
+                    <i class="emoji-btn">👈</i><span class="truncate"> {{ .Title }}</span>
+                </a>
+            {{ end }}
+
+        {{ else if (eq .Params.weight 1) }}
+            <a class="btn" href="{{ .Parent.RelPermalink }}">Intro <i class="emoji-btn">🏁</i></a>
+        {{ end }}
+    </div>
+
+    <div class="chapter-next">
+
+        {{ if .PrevInSection  }}
+            {{ with .PrevInSection }}
+                <a class="btn" href="{{ .RelPermalink }}">
+                    <span class="truncate">{{ .Title }} </span> <i class="emoji-btn">👉</i>
+                </a>
+            {{ end}}
+
+        {{ else }}
+            <button class="btn" disabled>The End <i class="emoji-btn">🍰</i></button>
+        {{ end }}
+
+    </div>
+</div>   
+
+{{ end }}
+
