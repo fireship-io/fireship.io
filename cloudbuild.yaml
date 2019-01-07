@@ -7,8 +7,8 @@ steps:
   - --ciphertext-file=.env.enc
   - --plaintext-file=.env
   - --location=global
-  - --keyring=cloud-builder
-  - --key=firebase-token
+  - --keyring=fireship-cd
+  - --key=fireship-io-tokens
 - name: 'gcr.io/$PROJECT_ID/fireship'
   args: ['npm', 'install']
 - name: 'gcr.io/$PROJECT_ID/fireship'
