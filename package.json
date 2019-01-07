@@ -12,7 +12,7 @@
     "build:components": "cd components && npm run build",
     "build": "rm -rf public && npm run build:design && npm run build:components && npm run build:hugo",
     "algolia": "atomic-algolia",
-    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
+    "deploy": "firebase use prod && firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
   },
   "keywords": [],
   "author": "",
