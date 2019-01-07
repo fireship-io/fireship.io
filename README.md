@@ -13,6 +13,7 @@ The monorepo is organized into four sub-projects.
 
 ## Running the Site
 
+
 First, install [Hugo](https://gohugo.io/getting-started/installing/).
 
 ```shell
@@ -27,7 +28,7 @@ Visit `localhost:1313` and you should be live. You do not need the web component
 
 ```shell
 cd components && npm install
-npm run build:components
+npm run build
 ```
 
 ## Contributing
@@ -67,7 +68,7 @@ First time? Add your bio and a social links to `content/contributors`.
 
 ## Theme Development
 
-The theme is located in `themes/main/`
+The CSS and JS required in critical path is located in `design`.
 
 ## Web Component Development
 
