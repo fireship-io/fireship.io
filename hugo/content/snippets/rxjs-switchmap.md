@@ -37,4 +37,4 @@ boats$.subscribe(console.log);
 // Logs response from the API
 {{< /highlight >}}
 
-Notice how we only need to subscribe to the `boats$` Observable. It will automatically subscribe to the `$user`, then use the emitted userID to cretate the final observable of boats. 
+Notice how we only need to subscribe to the `boats$` Observable. It will automatically subscribe to the `$user`, then use the emitted userID to create the final observable of boats. 
