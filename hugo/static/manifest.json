@@ -1,7 +1,7 @@
 {
     "name": "Fireship.io",
     "short_name": "Fireship.io",
-    "description": "Training and Consulting for App Developers",
+    "description": "Awesome Content for App Developers",
     "start_url": ".",
     "display": "standalone",
     "orientation" : "portrait",
