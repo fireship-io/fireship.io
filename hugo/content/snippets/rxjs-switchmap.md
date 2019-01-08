@@ -20,13 +20,13 @@ Example: You have an Observable of a userID, then use it to *switch* to an HTTP 
 
 {{< file "js" "foo.js" >}}
 {{< highlight javascript >}}
-import { of } form 'rxjs'; // creates an Observable with a raw value
-import { switchMap } form 'rxjs/operators';
+import { of } from 'rxjs'; // creates an Observable with a raw value
+import { switchMap } from 'rxjs/operators';
 
 
 const user$ = of({ userID: 'jeffd23' });
 
-const boats$ = $user.pipe(
+const boats$ = user$.pipe(
     switchMap(user => {
         // return an Observable or Promise here
         return fetch(`http://.../boats/${user.userID}`)
