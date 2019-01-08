@@ -228,7 +228,7 @@
     background: var(--nav-bg);
     max-height: 80vh;
     margin-top: 1em;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: sticky;
     top: 20px;
     box-shadow: var(--toc-shadow);
@@ -314,7 +314,7 @@ video, video-player, .video-overlay {
   .content-main {
     position: static;
     width: 100%;
-    
+
   }
   .toc {
     margin-left: 0;
