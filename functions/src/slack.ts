@@ -1,5 +1,5 @@
 import * as functions from 'firebase-functions';
-import { db, functionsURL } from './config';
+import { db } from './config';
 import { omitBy, isUndefined, get } from 'lodash';
 
 // TS import broken?
@@ -138,8 +138,11 @@ async function handleBotEvent(event) {
     if (prev.thread_ts && prev.thread_ts !== prev.ts) {
       // Delete reply
       const ref = db.collection('slack').doc(prev.thread_ts);
-      const data = { replies: { [prev.ts]: { visible: false } } };
-      await ref.set(data, { merge: true });
+      const parent = await ref.get();
+      if (parent.exists) {
+        const data = { replies: { [prev.ts]: { visible: false } } };
+        await ref.set(data, { merge: true });
+      }
     } else {
       const ref = db.collection('slack').doc(event.deleted_ts);
       await ref.set({ visible: false }, { merge: true });

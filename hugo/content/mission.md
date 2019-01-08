@@ -34,7 +34,7 @@ There is a complex ecosystem of competing interests in the OSS industry, many of
 
 > It does not matter how slowly you go as long as you do not stop. - Confucius
 
-It is difficult to finish a product, but *done is better than perfect*. You can expect many setbacks during the development of an app, and progress is made by consistently improving your work in small steps. When you ship your MVP - even if it sucks - you will start to get valuable feedback that will drive all future decisions. I cannot understate the importance of this - listen to your your customers. 
+It is difficult to finish a product, but *done is better than perfect*. You can expect many setbacks during the development of an app, and progress is made by consistently improving your work in small steps. When you ship your MVP - even if it sucks - you will start to get valuable feedback that will drive all future decisions. I cannot understate the importance of this - listen to your customers. 
 
 ### 5. Code Less, Think More
 
