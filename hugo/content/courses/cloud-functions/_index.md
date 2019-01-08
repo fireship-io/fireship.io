@@ -17,7 +17,7 @@ This course takes a hands-on approach to Firebase Cloud Functions where we build
 
 - Serverless Computing Basics
 - HTTP and ExpressJS
-- Event-driven Background FunctionsF
+- Event-driven Background Functions
 - Firestore Functions
 - Storage Buckets and the Functions Filesystem
 - Working with Google APIs
