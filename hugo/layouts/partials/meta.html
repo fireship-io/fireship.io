@@ -9,16 +9,16 @@
   {{ $img = print .Permalink .Params.featured_img }}
 {{ end }}
 
-<link rel="canonical" href="{{ .Permalink }}" />
+    <link rel="canonical" href="{{ .Permalink | absURL }}" />
 
-<meta property="og:title" content="{{ .Title }}" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="{{ .Permalink }}" />
-<meta property="og:image" content="{{ $img }}" />
-<meta property="og:description" content="{{ .Description }}" />
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Permalink | absURL }}" />
+    <meta property="og:image" content="{{ $img | absURL }}" />
+    <meta property="og:description" content="{{ .Description }}" />
 
-<meta name="twitter:card" content="summary" />
-<meta name="twitter:site" content="@angularfirebase">
-<meta name="twitter:title" content="{{ .Title }}">
-<meta name="twitter:description" content="{{ .Description }}">
-<meta name="twitter:image" content="{{ $img }}">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@angularfirebase">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ .Description }}">
+    <meta name="twitter:image" content="{{ $img | absURL }}">
