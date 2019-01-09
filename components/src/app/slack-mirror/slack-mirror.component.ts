@@ -1,4 +1,5 @@
-import { Component, ChangeDetectorRef, AfterViewInit, Input, OnDestroy } from '@angular/core';
+import { Component, ChangeDetectorRef, AfterViewInit, OnDestroy, Input } from '@angular/core';
+
 import * as firebase from 'firebase/app';
 import { collectionData } from 'rxfire/firestore';
 import { tap } from 'rxjs/operators';
