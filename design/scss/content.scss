@@ -326,8 +326,7 @@ video, video-player, .video-overlay {
 
 .chapter-nav {
   display: flex;
-  position: sticky;
-  top: 85vh;
+  padding: 1.5em 0;
 
   a {
     max-width: 75%;

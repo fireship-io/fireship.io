@@ -27,18 +27,22 @@
 
     </header>
 
-    {{ partial "chapters-next.html" . }}
+    <div class="content-wrapper">
+        {{ partial "chapters-next.html" . }}
 
-  <div class="content-main">
+        <div class="content-main">
 
     
 
 
 
-    <section class="content-article no-toc" itemprop="articleBody">{{ .Content }}</section>
-  </div>
+        <section class="content-article no-toc" itemprop="articleBody">{{ .Content }}</section>
+        </div>
 
-  {{ partial "chapters.html" . }}
+        {{ partial "chapters.html" . }}
+
+        {{ partial "chapters-next.html" . }}
+    </div>
 </article>
 
     {{ partial "qna.html" . }}
