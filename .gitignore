@@ -1,28 +1,56 @@
-themes/main/node_modules
-public/
-wc/node_modules
-components/dist
-components/node_modules
-functions/node_modules
-.firebase/
-.vscode/
-.idea/
-/node_modules
+# dependencies
+**/node_modules
 
+# e2e
+**/e2e/*.js
+**/e2e/*.map
+
+# compiled output
+**/dist
+**/tmp
+**/out-tsc
+.firebase
+public
+
+# cloud functions
+/functions/lib
+/functions/etc
 functions/.env
-functions/lib
-functions/.runtimeconfig.json
+/functions/.runtimeconfig.json
+/functions/firebase-debug.log
 
-NOTES.md
-secrets.json
-.env
-
+# hugo
 hugo/data/components.json
 hugo/data/webpack_assets.json
 hugo/static/components
 hugo/static/design
 
-resources/
+# IDEs and editors
+.idea
+.project
+.classpath
+.c9
+.settings
+.vscode
+*.launch
+*.sublime-workspace
 
+# misc
+.env
+.sass-cache
+NOTES.md
 ROADMAP.md
-archive/
+secrets.json
+connect.lock
+resources
+archive
+coverage
+typings
+libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+
+# system files
+.DS_Store
+Thumbs.db
