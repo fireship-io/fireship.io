@@ -100,7 +100,7 @@ For advanced options and pro tips check out the [@angular/fire install guide](/s
 
 ## Step 3: Build an Auth Service
 
-Organizing our user authentication as an injectable service provides code resue and state management for all components. For instance, any component that needs to know if the user is logged in can simply subscribe to our `user$` Observable. 
+Organizing our user authentication as an injectable service provides code reuse and state management for all components. For instance, any component that needs to know if the user is logged in can simply subscribe to our `user$` Observable. 
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
@@ -135,7 +135,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 import { Observable, of } from 'rxjs';
-import { switchMap} from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -167,7 +167,7 @@ export class AuthService {
 
     constructor(...) { 
       // Get the auth state, then fetch the Firestore user document or return null
-      this.user = this.afAuth.authState.pipe(
+      this.user$ = this.afAuth.authState.pipe(
         switchMap(user => {
             // Logged in
           if (user) {
@@ -207,7 +207,7 @@ export class AuthService {
 
     const { uid, email, displayName, photoURL } = user;
 
-    return userRef.set(data, { merge: true })
+    return userRef.set(user, { merge: true })
 
   }
 
@@ -248,7 +248,7 @@ In the component HTML, we define two templates based on the `user$` Observable. 
 
 {{< file "html" "user-profile/user-profile.component.html" >}}
 {{< highlight html >}}
-<div *ngIf="auth.user | async; then authenticated else guest">
+<div *ngIf="auth.user$ | async; then authenticated else guest">
         <!-- template will replace this div -->
 </div>
 
@@ -266,7 +266,7 @@ In the component HTML, we define two templates based on the `user$` Observable. 
 
 <!-- User logged in -->
 <ng-template #authenticated>
-    <div *ngIf="auth.user | async as user">
+    <div *ngIf="auth.user$ | async as user">
         <h3>Howdy, {{ user.displayName }}</h3>
         <img  [src]="user.photoURL">
         <p>UID: {{ user.uid }}</p>
@@ -278,9 +278,9 @@ In the component HTML, we define two templates based on the `user$` Observable. 
 
 ## Step 5: Protect Routes with Angular Guards
 
-A useful UX feature is to protect routes based on the user's auth state. Now that we have an Observable `$user` from the previous step, we can implement `canActivate` guard. 
+A useful UX feature is to protect routes based on the user's auth state. Now that we have an Observable `user$` from the previous step, we can implement `canActivate` guard. 
 
-When the user navigates, alls routes using this guard will subscribe to the `$user`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
+When the user navigates, alls routes using this guard will subscribe to the `user$`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
@@ -306,7 +306,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
 
-      return this.auth.user.pipe(
+      return this.auth.user$.pipe(
            take(1),
            map(user => !!user), // <-- map to boolean
            tap(loggedIn => {
@@ -320,7 +320,7 @@ export class AuthGuard implements CanActivate {
 }
 {{< /highlight >}}
 
-You can then apply this guard to indlvidial routes like so: 
+You can then apply this guard to individual routes like so: 
 
 {{< file "ngts" "app/routing.module.ts" >}}
 {{< highlight typescript >}}
