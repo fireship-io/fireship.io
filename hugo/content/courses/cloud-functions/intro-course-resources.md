@@ -13,12 +13,12 @@ If you get stuck or have questions, feel free to reach out for 1-on-1 support:
 - Chat Support on Slack
 
 
-I recommend following along and writing your own code from scratch, bu the source code is available on Github as a reference:
+I recommend following along and writing your own code from scratch, but the source code is available on Github as a reference:
 
 - [Project Source Code](https://github.com/codediodeio/cloud-functions-master-course)
 
 
-We are only scratching the surface,check out these learning resources: 
+We are only scratching the surface, check out these learning resources: 
 
 - AngularFirebase Cloud Functions Lessons 
 - Official Firebase Functions Docs and Video Series
