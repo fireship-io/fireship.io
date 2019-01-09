@@ -26,7 +26,6 @@
         {{ end }}
 
     </header>
-
     {{ partial "chapters-next.html" . }}
 
   <div class="content-main">
@@ -38,7 +37,8 @@
     <section class="content-article no-toc" itemprop="articleBody">{{ .Content }}</section>
   </div>
 
-  {{ partial "chapters.html" . }}
+  {{ $chapters := .Parent.Pages.ByWeight }} 
+  {{ partial "chapters.html" (dict "chapters" $chapters "active" .RelPermalink) }}
 </article>
 
     {{ partial "qna.html" . }}

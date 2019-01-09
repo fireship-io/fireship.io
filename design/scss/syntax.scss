@@ -22,7 +22,7 @@
 }
 
 .highlight {
-  overflow-x: scroll;
+  overflow-x: auto;
   box-shadow: var(--card-shadow);
 
   @include scrollbar;

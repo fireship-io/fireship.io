@@ -1,19 +1,40 @@
-{{ if not .Params.disable_chapters }}
-
-{{ $chapters := .Parent.Pages.ByWeight }}
-
-
 <h2>Chapters</h2>
 
+{{ $active := .active }}
+
 <nav>
-    {{ range $chapters }}
+  {{ range .chapters }}
 
-            {{ partial "chapter-card.html" . }}
-
+    {{ with .Params.chapter_start }}
+        <h3>{{ . }}</h3>
     {{ end }}
+
+    <a href="{{ .RelPermalink }}">
+        <div class="box box-sm {{ if eq $active .RelPermalink }}box-green{{ end }}">
+        <i class="box-icon">
+            {{ if .Params.icon }}
+
+            {{ partial  (print "svg/" .Params.icon ".svg") }}
+
+            {{ else if .Params.emoji }}
+
+            <i class="emoji">{{ .Params.emoji }}</i>
+
+            {{ else }}
+
+            {{ partial "svg/video.svg" }}
+
+            {{ end }}
+        </i>
+
+        <div class="box-content">
+            <p>
+            <strong>{{ .Params.weight }} {{ .Title }}</strong> |
+            {{ .Description }}
+            </p>
+        </div>
+      </div>
+    </a>
+
+  {{ end }}
 </nav>
-
-{{ end }}
-
-
-    

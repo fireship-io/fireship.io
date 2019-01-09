@@ -30,7 +30,8 @@ export class LazyComponent {
       });
       observer.observe(this.el.nativeElement);
     } else {
-      this.show = true;
+      this.appendComponent();
+      this.toggleShow(true);
     }
   }
 
