@@ -1,17 +1,19 @@
 {{ define "main" }}
 
-    {{ $icon := print "svg/" (lower .Title) ".svg"  }}
-
     <div class="row">
     <header class="col-xs-12">
         <h1 class="tag tag-contrast tag-{{ anchorize .Title }} shadow">
-        {{ title .Title }}
+            {{ title .Title }}
         </h1>
 
-        {{ with .Params.description }}
-            <div class="box">
-                <div class="box-icon">{{ partial $icon }}</div>
-                <div class="box-content">{{ . }}</div>
+        {{ if .Params }}
+            <div class="card card-outline no-animate">
+                <div class="card-content">
+                    {{ .Params.description }}
+
+                        <a href="{{ .Params.link }}" class="btn btn-sm">{{ .Title }}</a>
+                </div>
+      
             </div>
         {{ end }}
     </header>

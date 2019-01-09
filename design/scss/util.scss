@@ -108,6 +108,11 @@ text-cycle {
     padding: 0 !important;
 }
 
+.no-animate {
+    transform: none !important;
+    transition: none !important;
+}
+
 .truncate {
     white-space: nowrap;
     overflow: hidden;
