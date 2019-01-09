@@ -9,16 +9,21 @@
   {{ $img = print .Permalink .Params.featured_img }}
 {{ end }}
 
+{{ $description := .Description | default .Summary }}
+
+
     <link rel="canonical" href="{{ .Permalink | absURL }}" />
+
+    <meta name="description" content="{{ $description }}">
 
     <meta property="og:title" content="{{ .Title }}" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="{{ .Permalink | absURL }}" />
     <meta property="og:image" content="{{ $img | absURL }}" />
-    <meta property="og:description" content="{{ .Description }}" />
+    <meta property="og:description" content="{{ $description }}" />
 
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@angularfirebase">
     <meta name="twitter:title" content="{{ .Title }}">
-    <meta name="twitter:description" content="{{ .Description }}">
+    <meta name="twitter:description" content="{{ $description }}">
     <meta name="twitter:image" content="{{ $img | absURL }}">
