@@ -1,6 +1,7 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js');
 
 if (workbox) {
+  workbox.setConfig({ debug: false });
   workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
 
   workbox.routing.setDefaultHandler(workbox.strategies.networkFirst({
