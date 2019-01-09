@@ -22,8 +22,8 @@ In no event shall fireship.io liable for any damages (including, without limitat
 
 ### Intellectual Property Rights
 
-Fireship.io.com is committed to protecting intellectual property rights. fireship.io.com strictly follows DMCA guidelines for unauthorized use of copyrighted material. Any inquires regarding the reproduction of content on this site must be directed to the party holding the proprietary rights to the specified content.You shall not distribute, publish, transmit, modify, display or create derivative works from material obtained with this service.
-To file a notice of copyright infringement with fireship.io.com, you will need to provide a written communication that follows the guidelines set in Section 512(c)(3) of the Digital Millennium Copyright Act (the “DMCA”).
+Fireship.io is committed to protecting intellectual property rights. fireship.io strictly follows DMCA guidelines for unauthorized use of copyrighted material. Any inquires regarding the reproduction of content on this site must be directed to the party holding the proprietary rights to the specified content.You shall not distribute, publish, transmit, modify, display or create derivative works from material obtained with this service.
+To file a notice of copyright infringement with fireship.io, you will need to provide a written communication that follows the guidelines set in Section 512(c)(3) of the Digital Millennium Copyright Act (the “DMCA”).
 
 ### Governing Law
 
