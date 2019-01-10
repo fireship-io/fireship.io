@@ -28,11 +28,11 @@ Do not be limited by any single paradigm or narrow set of ideas. The best-practi
 
 > I have great expectations for the future, because the past was highly overrated - Sylvester Stallone
 
-There is a complex ecosystem of competing interests in the OSS industry, many of which are built on hype. It is never easy navigate, but always ask yourself *is this the best tool for the job*?. Just because *Tool X* has a fancy interface and is used by *Hipster App Inc* does not mean you should use it. We have a tendency to over-engineer everything - fight this urge.
+There is a complex ecosystem of competing interests in the OSS industry, many of which are built on hype. It is never easy navigate, but always ask yourself *is this the best tool for the job*? Just because *Tool X* has a fancy interface and is used by *Hipster App Inc* does not mean you should use it. We have a tendency to over-engineer everything - fight this urge.
 
 ### 4. Ship It
 
-> It does not matter how slowly you go as long as you do not stop. - Confucius
+> It does not matter how slowly you go as long as you do not stop - Confucius
 
 It is difficult to finish a product, but *done is better than perfect*. You can expect many setbacks during the development of an app, and progress is made by consistently improving your work in small steps. When you ship your MVP - even if it sucks - you will start to get valuable feedback that will drive all future decisions. I cannot understate the importance of this - listen to your customers. 
 

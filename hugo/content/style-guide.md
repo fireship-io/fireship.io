@@ -87,7 +87,7 @@ Code snippets use Hugo shortcodes. Optionally, you can give the code block a ico
 
 {{< /highlight >}}
 
-Note: Angular specific icons are prefixed the `ng`. 
+Note: Angular specific icons are prefixed with `ng`. 
 
 ## Add Contributor Bio
 
