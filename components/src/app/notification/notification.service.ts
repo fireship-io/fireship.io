@@ -1,6 +1,5 @@
 import { Injectable, ApplicationRef } from '@angular/core';
-import { interval, timer } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 const defaults = { title: 'Hey!', text: '', icon: '🔔', className: '', dismissed: false };
 
