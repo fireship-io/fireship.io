@@ -9,7 +9,6 @@ const defaults = { title: 'Hey!', text: '', icon: '🔔', className: '', dismiss
 export class NotificationService {
 
   current;
-  missingSeconds;
 
   constructor(private app: ApplicationRef) { }
 
