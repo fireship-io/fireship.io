@@ -11,7 +11,8 @@ tags:
     - firestore
     - auth
 
-youtube: e8GA1UOj8mE
+youtube: qP5zw7fjQgo
+github: https://github.com/fireship-io/55-firebase-auth-angular
 # code: 
 # disable_toc: true
 # disable_qna: true
@@ -21,9 +22,9 @@ youtube: e8GA1UOj8mE
 
 versions:
     "@angular/core": 7.2
-    "@angular/fire": 5.2
-    "rxjs": 6.2
-    "firebase": 5.5
+    "@angular/fire": 5.1
+    "rxjs": 6.3
+    "firebase": 5.7
 ---
 
 A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I genernally focus on user auth first because so many other features depend the user's auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user's profile and/or query all users.
@@ -205,9 +206,14 @@ export class AuthService {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);
 
-    const { uid, email, displayName, photoURL } = user;
+    const data = { 
+      user: user.uid, 
+      email: user.email, 
+      displayName: user.displayName, 
+      photoURL: user.photoURL
+    } 
 
-    return userRef.set(user, { merge: true })
+    return userRef.set(data, { merge: true })
 
   }
 
@@ -218,6 +224,14 @@ export class AuthService {
 
 }
 {{< /highlight >}}
+
+{{% box icon="trophy" class="box-blue" %}}
+#### Tip: Destructuring the Function
+
+You may prefer to modify the **updateUserData** function with [destructuring assignment](/snippets/javascript-destructuring/#function-arguments)
+{{% /box %}}
+
+
 
 ## Step 4: Create a User Profile Component
 
@@ -274,6 +288,8 @@ In the component HTML, we define two templates based on the `user$` Observable. 
     </div>
 </ng-template>
 {{< /highlight >}}
+
+{{< figure src="img/login-google-popup.png" alt="Google signin popup via firebase" >}}
 
 
 ## Step 5: Protect Routes with Angular Guards
@@ -339,7 +355,7 @@ PRO Tip - You may find it useful to simplify this guard code by defining a metho
 
 ## Step 6: Backend Security Rules
 
-It is essential that only the *owner* of a user document can modify its data. We cannot just rely our frontend code to provide this security, so let's setup Firestore rules. I prefer to create a reusable function to determine document ownership because you are likely to need this logic in multiple rules.
+It is essential that only the *owner* of a user document can modify its data. We cannot just rely our frontend code to provide this security, so let's setup [Firestore rules](/snippets/firestore-rules-recipes/). I prefer to create a reusable function to determine document ownership because you are likely to need this logic in multiple rules.
 
 
 {{< file "firebase" "firestore rules" >}}
@@ -358,6 +374,10 @@ service cloud.firestore {
   }
 }
 {{< /highlight >}}
+
+It is generally easier to define your rules directly in the Firestore dashboard to where you can take advantage of the integrated testing and versioning. 
+
+{{< figure src="img/firestore-rules-auth.png" alt="Google signin popup via firebase" >}}
 
 ## The End
 

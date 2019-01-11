@@ -1,5 +1,5 @@
 ---
 title: Firestore
-description: Firestore is NoSQL cloud database where data is stored in documents that contain fields mapping to values.
+description: Firestore is a NoSQL document-oriented database that can sync data in realtime to mobile or web clients.
 link: https://firebase.google.com/docs/firestore/
 ---

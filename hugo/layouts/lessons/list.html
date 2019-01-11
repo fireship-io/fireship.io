@@ -1,0 +1,33 @@
+{{ define "main" }}
+    <header>
+        <h1 class="border-bottom">Watch the Latest Lessons</h1>
+    </header>
+{{ end }}
+
+{{ define "feed" }}
+
+    <div class="row">
+      {{ range .Pages }}
+
+        <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="card card-lesson">
+                        {{ partial "lesson-image.html" . }}
+                <div class="card-content">
+
+                    <a href="{{ .RelPermalink }}">
+                        <h3>{{ .Title }}</h3>
+                    </a>
+                    
+                    <p>{{ .Params.description }}</p>
+                
+                    {{ partial "tags.html" .  }}
+                
+                </div>
+            </div>
+                      
+        </div>
+
+      {{ end }}
+    </div>
+
+{{ end }}

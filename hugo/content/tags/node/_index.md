@@ -1,5 +1,5 @@
 ---
 title: Node
-description: Node.js is a JavaScript runtime environment that achieves low latency and high throughput. 
-link: https://nodejs.org/en/
+description: Node.js is a runtime and execution environment for building JavaScript apps on the server. 
+link: https://nodejs.org
 ---

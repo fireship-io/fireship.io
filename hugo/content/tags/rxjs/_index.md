@@ -1,5 +1,5 @@
 ---
 title: RxJS
-description: RxJS is javascript library that helps you work better with asynchronous and callback-based code.
+description: RxJS is a JavaScript library that provides observables and reactive programming utilities, primarily for controlling asynchronous streams of data. 
 link: https://rxjs-dev.firebaseapp.com/
 ---

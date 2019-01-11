@@ -38,10 +38,10 @@
         <div class="post-detail">
         <div class="post-buttons">
             {{ with .Params.github }}
-            <button class="btn btn-contrast">
-            {{ partial "svg/code-merge.svg" . }} Code
+                <a class="btn btn-contrast" href="{{ . }}">
+                    {{ partial "svg/code-merge.svg" }} Code
+                </a>
             {{ end }}
-            </button>
             <a class="btn btn-purple" href="{{ .Site.Data.links.slack }}">
             {{ partial "svg/slack.svg" . }} Slack
             </a>

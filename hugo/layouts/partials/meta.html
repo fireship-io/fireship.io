@@ -1,7 +1,7 @@
 {{ $img := print .Permalink "img/featured.png" }}
 
 {{ if not (fileExists (print .RelPermalink "img/featured.png")) }}
-    {{ $img = "/img/covers/default.png" }}
+    {{ $img = .Site.Data.defaults.featured_img }}
 {{ end }} 
 
 
