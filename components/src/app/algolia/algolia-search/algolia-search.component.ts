@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, ElementRef, AfterViewInit, Input } from '@angular/core';
+import { Component, ChangeDetectorRef, ElementRef, AfterViewInit, Input, HostListener, ViewChild } from '@angular/core';
 import * as algolia from 'algoliasearch/lite';
 
 const APP_ID = '05VYZFXKNM';
@@ -33,12 +33,30 @@ export class AlgoliaSearchComponent implements AfterViewInit  {
   @Input() show = () => this.toggle(true);
   @Input() hide = () => this.toggle(false);
 
+  @ViewChild('searchInput') searchInput:ElementRef;
+
+  @HostListener('document:keydown', ['$event'])
+  keyDownHandler(e: KeyboardEvent) {
+
+    if (e.ctrlKey && e.shiftKey && e.keyCode === 80) {
+      // Ctrl + Shift + P shortcut to open the search box
+      e.preventDefault();
+      this.toggle(true);
+    }
+    else if (e.keyCode === 27) {
+      // ESC to close the search box
+      this.toggle(false);
+    }
+  }
+
   ngAfterViewInit() {
 
   }
 
   toggle(val) {
     this.visible = val;
+    // Focus the input element
+    this.searchInput.nativeElement.focus();
     this.cd.detectChanges();
   }
 
