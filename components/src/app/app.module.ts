@@ -1,5 +1,6 @@
 import { BrowserModule,  } from '@angular/platform-browser';
 import { NgModule, Injector, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { LOCAL_STORAGE_PROVIDERS } from './local-storage.service';
 import { createCustomElement } from '@angular/elements';
 
 import { GoogleLoginComponent } from './users/google-login/google-login.component';
@@ -34,7 +35,8 @@ const comps = [
   ],
   declarations: comps,
   entryComponents: comps,
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [LOCAL_STORAGE_PROVIDERS]
 })
 export class AppModule {
   constructor(private injector: Injector) {}

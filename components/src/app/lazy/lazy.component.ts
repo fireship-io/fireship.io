@@ -3,7 +3,8 @@ import {
   ViewEncapsulation,
   ChangeDetectorRef,
   ElementRef,
-  Input
+  Input,
+  AfterViewInit
 } from '@angular/core';
 import { SetState } from '../state.decorator';
 
@@ -11,12 +12,14 @@ import { SetState } from '../state.decorator';
   templateUrl: './lazy.component.html',
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class LazyComponent {
+export class LazyComponent implements AfterViewInit {
   show: boolean;
 
   @Input() selector: string; // some-component,alt:foo,src:bar
 
-  constructor(private cd: ChangeDetectorRef, private el: ElementRef) {
+  constructor(private cd: ChangeDetectorRef, private el: ElementRef) {}
+
+  ngAfterViewInit() {
     if ((window as any).IntersectionObserver) {
       this.show = false;
       const observer = new IntersectionObserver(entries => {
@@ -30,7 +33,8 @@ export class LazyComponent {
       });
       observer.observe(this.el.nativeElement);
     } else {
-      this.show = true;
+      this.appendComponent();
+      this.toggleShow(true);
     }
   }
 

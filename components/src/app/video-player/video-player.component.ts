@@ -4,7 +4,9 @@ import {
   Input,
   ViewChild,
   ViewEncapsulation,
-  ElementRef
+  ElementRef,
+  AfterViewInit,
+  OnDestroy
 } from '@angular/core';
 import { AuthService } from '../users/auth.service';
 
@@ -17,7 +19,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./video-player.component.scss'],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class VideoPlayerComponent {
+export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   @Input() src;
   @Input() youtube;
   @Input() poster;
@@ -29,6 +31,16 @@ export class VideoPlayerComponent {
 
   userSub;
 
+  private readonly params = new URLSearchParams({
+    origin: 'https://plyr.io',
+    iv_load_policy: '3',
+    modestbranding: '1',
+    playsinline: '1',
+    showinfo: '0',
+    rel: '0',
+    enablejsapi: '1'
+  });
+
   constructor(
     private cd: ChangeDetectorRef,
     public auth: AuthService,
@@ -37,7 +49,7 @@ export class VideoPlayerComponent {
   ) {}
 
   get trusted() {
-      return this.san.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtube}?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1`);
+      return this.san.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtube}?${this.params}`);
   }
 
   get canWatch() {

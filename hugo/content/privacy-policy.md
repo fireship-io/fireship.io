@@ -11,7 +11,7 @@ Fireship.io ("Fireship" "we" or "us") is committed to protecting your privacy. T
 If you do not consent to the collection and use of information from or about you in accordance with this Privacy Policy, then you are not permitted to use Fireship or any services provided on https://fireship.io.
 
 <h3>Applicable Law</h3>
-Fireshipis headquartered in the United States of America in the state of Nevada. By viewing any content or otherwise using the services offered by Fireship, you consent to the transfer of information to the United States of America to the extent applicable, and the collection, storage, and processing of information under Nevada, USA law.
+Fireship is headquartered in the United States of America in the state of Nevada. By viewing any content or otherwise using the services offered by Fireship, you consent to the transfer of information to the United States of America to the extent applicable, and the collection, storage, and processing of information under Nevada, USA law.
 
 <h3>Information We Collect</h3>
 Information you Submit: We store information you provide on this site via forms, surveys, or any other interactive content. This information commonly includes, but is not limited to, name, mailing address, email address, and uploaded files.

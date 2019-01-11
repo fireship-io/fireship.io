@@ -99,7 +99,7 @@ Thank you for contributing 🙏. Make sure you add details to the contributors s
 title: Michael Jordan
 draft: false
 
-avatar: /img/contributors/your-avatar.png
+featured_img: /img/contributors/your-avatar.png
 
 youtube: 
 linkedin: 

@@ -1,20 +1,9 @@
 
-{{ $featured := .Resources.GetMatch "img/featured.png" }} 
-{{ $meta := .Params.featured_img  }} 
+{{ $webp :=  print .RelPermalink "/img/featured.webp" }}
+{{ $fallback := print .RelPermalink "/img/featured.jpg" | default .Site.Data.defaults.featured_img }}
 
-{{ if $featured }} 
-    {{ $image := $featured.Resize "500x" }} 
-    <a href="{{ .RelPermalink }}"> <img src="{{ $image.RelPermalink }}" alt="featured image"></a>
-{{ else if $meta }}
-    <a href="{{ .RelPermalink }}"> <img src="{{ $meta }}" alt="featured image"></a>
-{{ else }}
-    <a href="{{ .RelPermalink }}" class="aspect-16x9">
-    </a>
-{{ end }}
-    {{/*  <a href="{{ .RelPermalink }}"> <img src="/img/covers/default.svg" alt="featured image"></a>
-{{ end }}  */}}
-
-
-
+<a href="{{ .RelPermalink }}">
+    <img src="{{ $webp }}" onerror="this.onerror=null; this.src='{{ $fallback  }}'">
+</a>
 
 

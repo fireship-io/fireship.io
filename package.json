@@ -4,12 +4,13 @@
   "description": "Awesome content for developers",
   "main": "index.js",
   "scripts": {
+    "test": "cypress open",
     "dev:design": "webpack --watch",
     "dev:hugo": "cd hugo && hugo server --disableFastRender",
     "dev": "concurrently \"npm run dev:hugo\" \"npm run dev:design\"",
     "build:design": "webpack",
     "build:hugo": "cd hugo && hugo",
-    "build:components": "cd components && npm run build",
+    "build:components": "cd components && npm run lint && npm run build",
     "build": "rm -rf public && npm run build:design && npm run build:components && npm run build:hugo",
     "algolia": "atomic-algolia",
     "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
@@ -26,6 +27,7 @@
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.1.0",
     "css-loader": "^1.0.1",
+    "cypress": "^3.1.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase-admin": "^6.1.0",
     "fs-extra": "^7.0.0",
