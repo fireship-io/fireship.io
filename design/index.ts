@@ -1,6 +1,6 @@
 import './styles.scss';
 import hotroute from 'hotroute';
-declare var gtag;
+declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: any): void;
 
 (() => {
   document.addEventListener('DOMContentLoaded', e => {
@@ -79,6 +79,7 @@ declare var gtag;
     window.addEventListener('router:end', e => {
       doOnRouteChange();
       const page_path = new URL(window.history.state['url']).pathname;
+
       gtag('config', 'UA-59099331-16', { page_path });
     });
   });
