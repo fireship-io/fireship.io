@@ -14,7 +14,7 @@ emoji: 📡
 {{< highlight typescript >}}
 // Custom Middleware
 const auth = (request, response, next) => {
-  if (!request.header.authorization) {
+  if (!request.headers.authorization) {
     response.status(400).send('unauthorized');
   }
   next();
