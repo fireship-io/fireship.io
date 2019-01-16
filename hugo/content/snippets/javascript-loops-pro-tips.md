@@ -74,7 +74,10 @@ Loops are not just for arrays. You can also loop over Strings, Maps, Sets, or an
 const equine = { horse: '🐴', zebra: '🦓', unicorn: '🦄'}
 
 for (const key in equine) {
-    console.log(equine[key]);
+    // Filters out properties inherited from prototype, see https://palantir.github.io/tslint/rules/forin/
+    if (equine.hasOwnProperty(key)) {
+        console.log(equine[key]);
+    }
 }
 
 // Unwrap the the Values
