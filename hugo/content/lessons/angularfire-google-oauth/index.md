@@ -12,7 +12,8 @@ tags:
     - auth
 
 youtube: qP5zw7fjQgo
-github: https://github.com/fireship-io/55-firebase-auth-angular
+github: https://github.com/fireship-io/55-angularfire-google-auth
+episode: 55
 # code: 
 # disable_toc: true
 # disable_qna: true

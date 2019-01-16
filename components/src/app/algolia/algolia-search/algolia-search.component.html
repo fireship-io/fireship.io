@@ -1,7 +1,7 @@
 <div class="algolia-search" [class.algolia-show]="visible">
 
   <div class="algolia-hits">
-      <input (keydown.esc)="hide()"
+      <input
         placeholder="explore..." class="algolia-input" type="text" #searchInput (keyup)="handleSearch(searchInput.value)">
         
         <span (click)="hide()" class="algolia-close btn btn-sm btn-red">close</span>

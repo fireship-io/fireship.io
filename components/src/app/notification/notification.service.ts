@@ -1,4 +1,6 @@
 import { Injectable, ApplicationRef } from '@angular/core';
+import { timer } from 'rxjs';
+
 const defaults = { title: 'Hey!', text: '', icon: '🔔', className: '', dismissed: false };
 
 @Injectable({
@@ -13,6 +15,9 @@ export class NotificationService {
   setNotification(data) {
     this.current = { ...defaults, ...data };
     this.app.tick();
+
+    // 10 sec wait before dismiss
+    timer(10000).subscribe(() => this.dismiss());
   }
 
   dismiss() {

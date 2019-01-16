@@ -12,14 +12,14 @@ tags:
 ---
 
 
-[Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) assignment is technique available in modern JavaScript and TypeScript that allows you to extract the values from an Object or Array, then assign them as variables. It can significantly improve the readability of your code in the right situation. Let's take a look at a few scenarios where destructuring will make our code look much cleaner. 
+[Destructuring](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment) assignment is technique available in modern JavaScript and TypeScript that allows you to extract the values from an Object or Array, then assign them as variables. It can significantly improve the readability of your code in the right situation, so let's take a look at scenarios where destructuring can save us a few lines of code. 
 
 ## Objects
 
-Let's imagine we have big giant JSON response from an API, but only need a handful of its properties. Notice how we repeatedly call `res.<somthing>` - this can get ugly. 
+Let's imagine we have a big giant JSON response from an API, but only need a handful of its properties. Notice how we repeatedly call `res.<somthing>` - this can get ugly. 
 
 
-{{< file "js" "foo.js" >}}
+{{< file "js" "object.js" >}}
 {{< highlight javascript >}}
 const res = fetchBlogPost();
 
@@ -40,11 +40,24 @@ async () => {
 }
 {{< /highlight >}}
 
+And it comes in handy when using *console.log* because you can clearly name what you are logging. 
+
+{{< highlight javascript >}}
+// 😒 Meh Code
+console.log(widget, component)
+
+// 🤯 Destructured Code
+console.log({ widget, component })
+{{< /highlight >}}
+
+{{< figure src="/img/snippets/destructuring-log1.png" alt="console log with destructuring" >}}
+
+
 ## Function Arguments
 
 Function arguments can also be destructured, which is especially useful when you have a large number of optional named arguments. 
 
-{{< file "js" "foo.js" >}}
+{{< file "js" "function.js" >}}
 {{< highlight javascript >}}
 // 😒 Meh Code
 function bmi(person) {
@@ -68,7 +81,7 @@ bmi(person);
 Array destructuring is especially useful when you have an array where each position represents something meaningful. This data structure is similar to a [tuple](https://www.w3schools.com/python/python_tuples.asp) as in other languages like Python. 
 
 
-{{< file "js" "foo.js" >}}
+{{< file "js" "array.js" >}}
 {{< highlight javascript >}}
 const arr = ['jeff', 'delaney', 'js'];
 
@@ -83,15 +96,62 @@ const [first, middle, lang] = arr;
 
 It is most powerful when you have a 2D array, or array-of-arrays. You can destructure the array positions while looping over the elements to write clean and readable code.
 
-{{< file "js" "foo.js" >}}
+{{< file "js" "loop.js" >}}
 {{< highlight javascript >}}
 const peeps = [
     ['guido', 'van rossum', 'python'],
     ['brendan', 'eich', 'rust'],
 ];
 
-// 🤯 Destructured Code
 for (const [first, middle, lang] of peeps) {
     console.log('hello ' + first);
 }
 {{< /highlight >}}
+
+More common than a 2D array is an array of objects. You can also loop over the key-value pairs in the object and destructure them along the way. 
+
+{{< highlight javascript >}}
+const animals = [
+    { type: 'dog', name: '🐺 fido' },
+    { type: 'cat', name: '🐱 snowball' }
+];
+
+
+for (const { name, type } of animals) {
+    console.log(name, type);
+}
+{{< /highlight >}}
+
+
+You can even destrucutre nested properties on complex objects. In this case, each object has a `friends` Array and nested `profile` object. How do we assign values on the nested properties to variable names? 
+
+{{< highlight javascript >}}
+const animals = [
+    { 
+        type: '🐺 dog', 
+        name: 'fido', 
+        friends: ['rex', 'todd', 'bob'], 
+        profile: { 
+            color: 'brown',
+            weight: 23 
+        } 
+    },
+    { 
+        type: '🐱 cat', 
+        name: 'snowball', 
+        friends: [ 'fido' ], 
+        profile: { 
+            color: 'white',
+            weight: 7
+        } 
+    }
+];
+
+
+for (const { name, type, friends: [best], profile: { color } } of animals) {
+    const bio = `${name} is a ${color} ${type} and his best friend is ${best}`
+    console.log(bio);
+}
+{{< /highlight >}}
+
+{{< figure src="/img/snippets/destructuring-console-log.png" alt="complex loop destructuring assignment" >}}
