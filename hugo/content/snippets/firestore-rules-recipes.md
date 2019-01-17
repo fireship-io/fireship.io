@@ -113,10 +113,6 @@ Let's imagine you create collection names dynamically and want them to be unlock
 
 ### A few examples you might find usefull
 
-There are several use cases where you want to write functions for.
-
-Here are some examples:
-
 {{< file "firebase" "firestore rules" >}}
 {{< highlight js >}}
     function isSignedIn() {
@@ -129,11 +125,11 @@ Here are some examples:
       return exists(/databases/$(database)/documents/users/$(request.auth.uid));
     }
 
-    // [READ] Data that exists on the Firestore document (get/list)
+    // [READ] Data that exists on the Firestore document
     function existingData() {
       return resource.data;
     }
-    // [WRITE] Data that is sent to a Firestore document (post/put/patch)
+    // [WRITE] Data that is sent to a Firestore document
     function incomingData() {
       return request.resource.data;
     }
@@ -150,7 +146,7 @@ Here are some examples:
     service cloud.firestore {
       match /databases/{database}/documents {
         match /orders/{orderId} {
-          allow create: if isSignedIn() && emailVerified() isUser(incomingData().userId);
+          allow create: if isSignedIn() && emailVerified() && isUser(incomingData().userId);
           allow read, list, update, delete: if isSignedIn() && isUser(existingData().userId);
         }
 
