@@ -111,7 +111,7 @@ Let's imagine you create collection names dynamically and want them to be unlock
 
 ## Common Functions
 
-### A few examples you might find usefull
+### A few examples you might find useful
 
 {{< file "firebase" "firestore rules" >}}
 {{< highlight js >}}
