@@ -33,6 +33,7 @@ You have three main options when looping or iterating over values in JS.
 - `for` - fastest, but ugly on the eyes
 - `for-of` - slowest, but most sugary
 - `forEach` - fast and designed for functional code
+- `for` (but backwards) - absolute fastest - but terrible to look at and work with
 
 Here is a rough performance breakdown of the code when looping over 1 million items. This was run on an average desktop PC in Node 10. Notice how the `for-of` loop is 6x slower than a regular for loop - that syntatic sugar has a price. 
 
@@ -50,6 +51,7 @@ for (const v of arr) {}  // 11.7ms
 
 arr.forEach(v => v) // 2.1ms
 
+for (let i = mil; i > 0; i--) {} // ???
 
 console.timeEnd('⏲️');
 {{< /highlight >}}
