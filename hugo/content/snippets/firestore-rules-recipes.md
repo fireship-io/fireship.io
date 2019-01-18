@@ -108,3 +108,49 @@ Let's imagine you create collection names dynamically and want them to be unlock
       allow read: if collectionName != 'special-collection';
     }
 {{< /highlight >}}
+
+## Common Functions
+
+### A few examples you might find useful
+
+{{< file "firebase" "firestore rules" >}}
+{{< highlight js >}}
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    function emailVerified() {
+      return request.auth.token.email_verified;
+    }
+    function userExists() {
+      return exists(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    // [READ] Data that exists on the Firestore document
+    function existingData() {
+      return resource.data;
+    }
+    // [WRITE] Data that is sent to a Firestore document
+    function incomingData() {
+      return request.resource.data;
+    }
+
+    function isUser(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function userEmail(userId) {
+      return get(/databases/$(database)/documents/users/$(userId)).data.email;
+    }
+
+    // example application for functions
+    service cloud.firestore {
+      match /databases/{database}/documents {
+        match /orders/{orderId} {
+          allow create: if isSignedIn() && emailVerified() && isUser(incomingData().userId);
+          allow read, list, update, delete: if isSignedIn() && isUser(existingData().userId);
+        }
+
+      }
+    }
+
+{{< /highlight >}}
