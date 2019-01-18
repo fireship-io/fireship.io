@@ -52,6 +52,42 @@ git push origin my-fix
 
 Lastly, open a pull request on Github. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline. 
 
+### Keeping Your Fork in Sync
+
+As features are added and fixes are made to the original repo (usually referred to as the 'upstream') your fork will become out of date. You can keep your fork up to date by doing the following:
+
+#### One-Time Setup
+
+Run from your terminal
+
+```
+npm run link-upstream
+```
+
+This should add the official repo as a remote called: 'upstream'. You can see all remotes by entering:
+
+```
+git remote -v
+```
+
+In a typical setup, you should see your fork on Github listed as origin, and the `fireship-io` original as upstream:
+
+```
+origin          https://github.com/ZackDeRose/fireship.io (fetch)
+origin          https://github.com/ZackDeRose/fireship.io (push)
+upstream        https://github.com/fireship-io/fireship.io (fetch)
+upstream        https://github.com/fireship-io/fireship.io (push)
+```
+
+#### Keeping In Sync With the Original
+
+Whenever you believe your fork may be out of sync, just run from your terminal
+
+```
+npm run sync
+```
+
+This will update your local master branch to match the original repo's master branch! It will then push those changes to your fork on GitHub, essentially keeping all 3 in sync!
 
 ### Contribute a Post
 
