@@ -10,7 +10,7 @@ tags:
     - devops
     - docker
 
-youtube: 
+youtube: Zd014DjonqE
 github: https://github.com/fireship-io/147-cloud-build-firebase
 # disable_toc: true
 # disable_qna: true
@@ -24,9 +24,9 @@ versions:
 
 Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunites for both large teams and independent entrepreneurs.
 
-In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply commiting your code to the master branch on Github:
+In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply commiting your code to Github:
 
-- Run unit 
+- Run unit tests
 - Build the production code
 - Deploy to Firebase Hosting
 
@@ -58,7 +58,7 @@ firebase init
 {{< /highlight >}}
 
 
-Now all of these frameworks ship with some automated specs and build commands. This is what we want to automate with Cloud Build.
+All of these frameworks ship with basic automated specs and build commands. This is what we want to automate with Cloud Build.
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
@@ -95,7 +95,7 @@ Now it's time for the fun part, writing out the build steps in the   *cloudbuild
 
 ### Upload the Firebase Builder
 
-Firebase is not available in of the default NPM image on GCP, but it is avaiable as a [community builder](https://github.com/GoogleCloudPlatform/cloud-builders-community). You can add it to your GCP project with the following steps:
+Firebase is not available in of the default NPM image on GCP, but we can use a [community builder](https://github.com/GoogleCloudPlatform/cloud-builders-community). You can add it to your GCP project with the following steps:
 
 {{< file "terminal" "command line" >}}
 {{< highlight bash >}}
@@ -110,7 +110,7 @@ cd ..
 rm -rf cloud-builders-community
 {{< /highlight >}}
 
-Now we should see the container in the registry. 
+Now we should see the image in the container registry. 
 
 {{< figure src="img/container-firebase.png" alt="firebase container in the register GCP" >}}
 
@@ -247,7 +247,7 @@ gcloud kms encrypt \
 
 ### Decrypt Env Secrets
 
-The first step is important. It unwraps our environment variables and makes them available in the build container, allowing them to work with NPM scripts. Without this step, the server would not have authorization to interact with our 3rd party APIs. Make sure firebase-tools is installed in your dev dependencies `npm i -D firebase-tools`. 
+The first step is important. It unwraps our environment variables and makes them available in the build container, allowing them to work with NPM scripts. Without this step, the server would not have authorization to interact with our 3rd party APIs. Also, make sure firebase-tools is installed in your dev dependencies `npm i -D firebase-tools`. 
 
 {{< file "yaml" "cloudbuild.yaml" >}}
 {{< highlight yaml >}}
@@ -281,7 +281,7 @@ gcloud builds submit . --config=cloudbuild.yaml
 
 ### Conditionally Filter Steps in Cloud Build
 
-It most cases, you only want to deploy your code when changes are merged into the master branch. However, you may still want to run the other CI steps to ensure all tests pass when a pull request is submitted. In this case, you can add conditional bash statement that looks at the `$BRANCH_NAME` env variable. 
+It most cases, you only want to deploy your code when changes are merged into the master branch. However, you may still want to run the other CI steps to ensure all tests pass when a pull request is submitted. If you followed the advanced settings above, you can add a conditional bash statement that looks at the `$BRANCH_NAME` env variable. 
 
 {{< file "npm" "package.json" >}}
 {{< highlight json >}}
@@ -309,9 +309,9 @@ ADD your-weird-dependencies-here
 
 {{< /highlight >}}
 
-You can then deploy this image to the GCP container registry and use it build steps. 
+You can then deploy this image to the GCP container registry and use it in your build steps. 
 
 ## The End
 
-There are many great CI/CD providers out there like Travis, CircleCI, etc, but Cloud Build is especially nice for Firebase apps because it's a GCP service with generous pricing. It comes with 120 free build minutes per day (that's a lot) then pay-as-you-go if you manage to exceed that cap. By comparison, standalone services usually have a small free tier, then jump to $50+ per month. While it can be tedious and frustrating to configure initially, a solid CI/CD pipeline can be a huge timesaver. 
+There are many great CI/CD providers out there like Travis, CircleCI, etc, but Cloud Build is especially nice for Firebase apps because it's a GCP service with generous pricing. It comes with 120 free build minutes per day (that's a lot) then becomes pay-as-you-go if you manage to exceed that cap. By comparison, standalone services usually have a small free tier, then jump to $50+ per month. While it can be tedious and frustrating to configure initially, a solid CI/CD pipeline can be a huge productivity-booster in the long run. 
 
