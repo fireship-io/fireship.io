@@ -1,6 +1,6 @@
 import { Injectable, ApplicationRef } from '@angular/core';
 import { interval, timer, Subscription } from 'rxjs';
-import { takeUntil, switchMap } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 
 const defaults = { title: 'Hey!', text: '', icon: '🔔', className: '', dismissed: false, countdown: 10};
