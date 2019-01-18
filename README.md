@@ -38,7 +38,7 @@ Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for 
 
 First, fork this repo on Github.
 
-```
+```shell
 git clone <your-forked-repo>
 npm install
 npm run dev
@@ -60,13 +60,13 @@ As features are added and fixes are made to the original repo (usually referred 
 
 Run from your terminal
 
-```
+```shell
 npm run link-upstream
 ```
 
 This should add the official repo as a remote called: 'upstream'. You can see all remotes by entering:
 
-```
+```shell
 git remote -v
 ```
 
@@ -83,17 +83,27 @@ upstream        https://github.com/fireship-io/fireship.io (push)
 
 Whenever you believe your fork may be out of sync, just run from your terminal
 
-```
+```shell
 npm run sync
 ```
 
 This will update your local master branch to match the original repo's master branch! It will then push those changes to your fork on GitHub, essentially keeping all 3 in sync!
 
+### Reset project
+
+If you want to re-install this project and continue contributing, just run the next command in the terminal
+
+```shell
+npm run reset
+```
+
+This will remove `package-lock.json` and `node_modules`, then runs `npm install` followed by `npm run dev`.
+
 ### Contribute a Post
 
 Read the [style guide](https://fireship.io/style-guide/) for some tips before contributing. 
 
-```
+```shell
 cd hugo
 hugo new -k bundle lessons/angularfire-google-oauth
 hugo new snippets/my-cool-snippet.md
