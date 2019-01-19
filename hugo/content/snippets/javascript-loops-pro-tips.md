@@ -51,7 +51,7 @@ for (const v of arr) {}  // 11.7ms
 
 arr.forEach(v => v) // 2.1ms
 
-for (let i = mil; i > 0; i--) {} // ???
+for (let i = mil; i > 0; i--) {} // 1.5ms
 
 console.timeEnd('⏲️');
 {{< /highlight >}}
@@ -64,7 +64,7 @@ The traditional `for` loop is the fastest, so you should always use that right? 
 
 ## For-Of Tricks
 
-The for-of loop has several other tricks up
+The for-of loop has several other tricks up its sleeve. 
 
 ### Loop over Objects
 
