@@ -4,7 +4,7 @@ lastmod: 2019-01-15T12:28:17-07:00
 publishdate: 2019-01-15T12:28:17-07:00
 author: Jeff Delaney
 draft: false
-description: A guide to Dart and Flutter for JavaScript Developers
+description: A guide to Dart and Flutter for JavaScript Developers who have experience with React Native and Ionic
 tags: 
     - dart
     - flutter
@@ -32,20 +32,52 @@ JavaScript and C# have had two babies
 Throughout this lesson, you will see the 👉 emoji. Dart will always be on the left, and JS on the right. These are not always perfect 1-to-1 comparisons, but you get the idea. 
 {{% /box %}}
 
+## The Tradeoffs
+
+Flutter is awesome 🤟 because ...
+
+- has amazing docs
+- performs faster because it has no JavaScript bridge
+- can integrates native code
+- hot reloads
+- small code footprint and no import/export/bundling headaches
+- poised for future development with [Fuchsia](https://en.wikipedia.org/wiki/Google_Fuchsia)
+- writing code in dart is like being on autopilot
+
+Flutter is meh 😒 because...
+
+- you have to learn dart
+- cannot be debugged in the browser 
+- has a small ecosystem of developers and plugins relative to JS
+
 ## Basics
 
 ### Variables
 
-- final 👉 const
--  
+- `SomeType foo;` 👉 `let foo`
+- `final` 👉 `const`
+- `const` 👉 `Object.freeze(obj)`
 
 ```ts
-let foo = 'bar';
-const lucky = 23;
+// Reassignable varaibles
+let name: string;
+name = 'jeff';
+
+// Single assignment variables
+const lucky: number = 23;
+
+const whoKnows: any = getSomethingDynamic();
 ```
 
 ```dart
+String name;
+name = 'jeff';
+
+
 final int luckNumber = 23;
+
+dynamic whoKnows = getSomethingDynamic();
+var whoKnows = getSomethingDynamic();
 ```
 
 ### Functions
@@ -97,6 +129,10 @@ Even though streams are available in Dart, I often find myself using [RxDart](ht
 Flutter is inspired by JavaScript frameworks like React/Angular/Vue that enable components to reactively update the UI when data changes. In fact, Flutter provides a `setState` method that works exactly like it does in [ReactJS](https://reactjs.org/docs/react-component.html#setstate).
 
 Overall, it is not very opinionated about how architect the app. You can use composition to build a bunch of tiny widgets and piece them together, or create big widgets to be inherited. 
+
+### Pubspec.yaml 👉 Package.json
+
+Dependencies are registered in a. yaml
 
 ### Widget 👉 Component
 
