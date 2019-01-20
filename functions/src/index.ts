@@ -7,4 +7,4 @@ export { newUserSetup } from './user';
 
 //// QnA /////
 
-export { questionBotHandler, recordMessage } from './slack';
+export { questionBotHandler, recordMessage, slashAskHandler } from './slack';

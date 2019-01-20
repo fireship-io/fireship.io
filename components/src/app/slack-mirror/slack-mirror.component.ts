@@ -61,7 +61,8 @@ export class SlackMirrorComponent implements AfterViewInit, OnDestroy {
   }
 
   get qLink() {
-    return `@question ${this.fullUrl} [Insert Your Question]`;
+    // return `@question ${this.fullUrl} [Insert Your Question]`;
+    return `@Question ${this.fullUrl} your question...?`;
   }
 
   asHtml(val: string) {

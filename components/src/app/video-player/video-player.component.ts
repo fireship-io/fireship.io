@@ -17,7 +17,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   @Input() src;
