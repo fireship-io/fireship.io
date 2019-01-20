@@ -2,10 +2,10 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox
 
 if (workbox) {
   workbox.setConfig({ debug: false });
-  workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
+  // workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
 
   workbox.routing.setDefaultHandler(workbox.strategies.networkFirst({
-    cacheName: 'fallback',
+    // cacheName: 'fallback',
   }));
   
   workbox.routing.registerRoute(
@@ -14,7 +14,7 @@ if (workbox) {
   );
 
   workbox.routing.registerRoute(
-      new RegExp(/.*\.(?:png|jpg|jpeg|svg|gif)/g),
+      new RegExp(/.*\.(?:png|jpg|jpeg|svg|gif|webp)/g),
       workbox.strategies.cacheFirst()
   );
 } else {

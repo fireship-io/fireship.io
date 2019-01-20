@@ -1,12 +1,16 @@
 import * as functions from 'firebase-functions';
 import { db } from './config';
 import { omitBy, isUndefined, get } from 'lodash';
+import * as getUrls from 'get-urls';
 
 // TS import broken?
 const { PubSub } = require('@google-cloud/pubsub');
 const ps = new PubSub();
 
 const PS_TOPIC = 'slack-question';
+const BOT_ID = '<@UF68X24P9>';
+const BOT_RESPONSE =
+  'Got it 👍 Feel free to start a thread on your original question if you want to add more details';
 
 import { WebClient } from '@slack/client';
 const bot = new WebClient(functions.config().slack.oauth);
@@ -19,39 +23,50 @@ const bot = new WebClient(functions.config().slack.oauth);
 //// On reply edits, the ts_thread exists on the previous_message
 //// FML
 
-const BOT_RESPONSE =
-  'Got it, expect an answer soon. Feel free to add additional details to this thread.';
+export const slashAskHandler = functions.https.onRequest(async (req, res) => {
+  console.log(req.body);
+  const { channel_id, text } = req.body;
+
+  const thread: any = await bot.chat.postMessage({
+    as_user: true,
+    channel: channel_id,
+    text
+  });
+
+  const data = { ...req.body, ts: thread.ts };
+
+  await pub(data);
+
+  res.send({
+    // response_type: 'in_channel',
+    text: BOT_RESPONSE
+  });
+});
 
 // Gatekeeper for writing messages to Firestore, must respond in 3000ms
 export const questionBotHandler = functions.https.onRequest(
   async (req, res) => {
     const body = req.body;
 
-    // Slash Command
-    if (body.command === '/ask') {
-      await pub(body);
-      res
-        .status(200)
-        .json({ text: BOT_RESPONSE, attachments: { text: BOT_RESPONSE } });
-      return;
-    }
-
     // Bot Question
     const { type, subtype } = body.event;
     const { thread_ts, text } = body.event.message || body.event;
+
+    console.log(body);
 
     // Attempt to filter invalid questions
     const okType = type === 'message';
     const okUrl =
       thread_ts ||
-      (text && text.includes('fireship.io')) ||
+      (text && text.includes(BOT_ID)) ||
       subtype === 'message_deleted';
 
     // If OK, publish data
     if (okType && okUrl) {
       await pub(body);
-      res.sendStatus(200);
     }
+
+    res.sendStatus(200);
   }
 );
 
@@ -63,24 +78,43 @@ export const recordMessage = functions.pubsub
     console.log(message.json);
     const { event, command } = message.json;
 
-    if (event) {
-      console.log(event);
-      return await handleBotEvent(event);
+    if (command) {
+      return await handleSlashCommand(message.json);
     }
 
-    if (command) {
-      return handleSlackCommand(message.json);
+    if (event) {
+      return await handleBotEvent(event);
     }
   });
 
 /// HELPERS ///
 
-async function handleSlackCommand(body) {
-  const { channel, user_id, text } = body;
-  const { display_name, real_name, is_bot, image_32 } = await getProfile(
-    user_id
+async function handleSlashCommand(data) {
+  const { channel_id, user_id, ts, user_name } = data;
+  let text = data.text;
+
+  const { display_name, real_name, image_32 } = await getProfile(user_id);
+  const slackURL = toSlackURL(channel_id, ts);
+  const ref = db.collection('slack').doc(ts);
+  const permalink = extractPermalink(text);
+  text = await fillMentions(text);
+
+  const msg = omitBy(
+    {
+      text,
+      display_name,
+      real_name,
+      image_32,
+      slackURL,
+      user_name,
+      ts,
+      permalink,
+      visible: true
+    },
+    isUndefined
   );
-  // TODO no ts on slack cmd messages :(
+
+  return ref.set(msg, { merge: true });
 }
 
 async function handleBotEvent(event) {
@@ -88,16 +122,17 @@ async function handleBotEvent(event) {
 
   const msgSource = event.message || event;
 
-  const { ts, thread_ts, user, text, hidden } = msgSource;
+  const { ts, thread_ts, user, hidden } = msgSource;
+  let text = msgSource.text;
 
   const { display_name, real_name, image_32 } = await getProfile(user);
-
 
   // Computed properties
   const slackURL = toSlackURL(channel, ts);
   const deleted = subtype === 'message_deleted' || hidden;
   const visible = true;
-  const is_bot = BOT_RESPONSE === text;
+  const is_bot = false; // TODO refactor
+  text = await fillMentions(text);
 
   const msg = omitBy(
     {
@@ -155,7 +190,11 @@ async function handleBotEvent(event) {
     await ref.set(data, { merge: true });
 
     if (!subtype) {
-      await botResponse(channel, ts);
+      await bot.chat.postEphemeral({
+        text: BOT_RESPONSE,
+        channel: channel,
+        user: user
+      });
     }
   }
 }
@@ -175,17 +214,29 @@ async function pub(body) {
     .publish(dataBuffer);
 }
 
-async function botResponse(channel, thread_ts) {
-  const text = BOT_RESPONSE;
-  bot.chat.postMessage({ channel, text, thread_ts });
+async function fillMentions(text: string) {
+  if (!text) return '';
+  const re = /<@(.*?)>/g;
+  const mentions = text.match(re) || [];
+
+  console.log(mentions);
+
+  let modified = text;
+
+  for (const m of mentions) {
+    const user_id = m.substr(2, 9);
+    const { display_name, real_name } = await getProfile(user_id);
+    modified = modified.replace(m, `@${display_name || real_name}`);
+  }
+
+  return modified;
 }
 
 function extractPermalink(text) {
-  const url = text
-    .split('<')
-    .join('')
-    .split('>')[1]
-    .trim();
+  text = text.replace(/>/g, '').replace(/</g, '');
+  const urls: Set<string> = getUrls(text);
+  const url = Array.from(urls)[0] || '';
+
   return url.endsWith('/') ? url : url + '/';
 }
 
