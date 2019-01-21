@@ -1,7 +1,7 @@
 ---
 title: Flutter for JavaScript Developers
-lastmod: 2019-01-15T12:28:17-07:00
-publishdate: 2019-01-15T12:28:17-07:00
+lastmod: 2019-01-20T12:28:17-07:00
+publishdate: 2019-01-20T12:28:17-07:00
 author: Jeff Delaney
 draft: false
 description: A guide to Dart and Flutter for JavaScript Developers who have experience with React Native and Ionic
@@ -11,7 +11,7 @@ tags:
     - javascript
     - typescript
 
-youtube: 
+youtube: 7sJZi0grFR4
 github: https://gist.github.com/codediodeio/8d59623a3ccac79e9168122b21c4a766
 # disable_toc: true
 # disable_qna: true
