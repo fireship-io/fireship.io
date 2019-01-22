@@ -46,7 +46,7 @@ You should now have a directory for your project that can be opened with your [p
 
 ## Step 3: Branch
 
-A git repo is just a big tree 🌳. You might have hundreds of people working on the same project and branches are a way to make that collaboration possible with complete chaos. You make your changes on your branch so they can be isolated from the work everybody else is doing.
+A git repo is just a big tree 🌳. You might have hundreds of people working on the same project and branches ensure that collaboration can happen without complete chaos. Changes on your branch are isolated from the work everybody else is doing.
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}

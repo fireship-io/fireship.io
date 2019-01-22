@@ -31,11 +31,11 @@ The following lesson will show you how to implement [Google SignIn](https://pub.
 {{< figure src="img/flutterfire-oauth-demo.gif" alt="demo of Google auth on Flutter with Firestore" >}}
 
 
-## 0. Prerequisites
+## Step 0: Prerequisites
 
 1. {{< prereq "install-flutterfire" >}}
 
-## 1. Building out the UI
+## Step 1: Build Out the UI
 
 First, let's start with a basic UI. Notice we have placeholders for `LoginButton()` and `UserProfile()` - these will be created later in the lesson. 
 
@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
 {{< /highlight >}}
 
 
-## 2. Isolating the Authentication Logic
+## Step 2: Isolate the Authentication Logic
 
 Flutter is not opinionated about how you architect your app when it comes to shared global state. The most popular approaches include redux and inherited widgets, but they require a bit of work upfront tend to be burdensome when prototyping the UX. A simple approach to state management is to simply provide a global variable class instance that contains Streams and/or Rx Observables. This keeps auth logic out of widgets, while allowing any widget to listen/react to changes in the auth state. 
 
@@ -211,7 +211,7 @@ In order to get the `profile` data from the database, we need to first retrieve 
 
 {{< /highlight >}}
 
-## 3. StatefulWidget User Profile
+## Step 3: StatefulWidget User Profile
 
 Now that our auth logic is in place, we have two options for rendering UI elements based on our Observable state - [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html) and [StreamBuilder](https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html). 
 
@@ -253,7 +253,7 @@ class UserProfileState extends State<UserProfile> {
 
 {{< /highlight >}}
 
-## 4. StreamBuilder Login Button 
+## Step 4: StreamBuilder Login Button 
 
 The `StatefulWidget` is fine, but it contains a decent amount of boilerplate and in most cases I find `StreamBuilder` to be more flexible and concise. It is just a widget that depends on the value of a stream, so when the value of the stream changes you can conditionally render different widgets.
 
