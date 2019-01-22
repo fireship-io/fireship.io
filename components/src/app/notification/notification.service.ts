@@ -19,6 +19,7 @@ export class NotificationService {
 
   setNotification(data) {
     this.current = { ...defaults, ...data };
+    this.startCountdown();
     this.app.tick();
   }
 

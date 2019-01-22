@@ -1,12 +1,13 @@
 
 <div class="slack-cmd">
     <p>Have Questions? Let's chat about this post</p>
-    <p><strong>Step 1:</strong><a class="btn btn-purple btn-sm" href="https://goo.gl/8BKA1e">Signup for Slack</a></p>
-    <p><strong>Step 2:</strong> Copy the link below and paste it into the <code>#questions</code> channel in Slack 👇</p>
-    <p><code>{{ qLink }}</code></p>
-    <button (click)="copyCmd" class="btn btn-blue btn-sm" (click)="copyCmd()">
+    <p><a class="btn btn-purple btn-sm" href="https://goo.gl/8BKA1e">Signup for Slack</a> Copy the link below and paste it into the <strong>#questions</strong> channel in Slack 👇</p>
+    <p><code>{{ qLink }}</code><button (click)="copyCmd" class="btn btn-blue btn-sm" (click)="copyCmd()">
         Copy and Ask
     </button>
+</p>
+
+
 
 </div>
 
@@ -23,7 +24,7 @@
 
   <div class="slack-replies" *ngIf="thread.replies && activeThread === thread.slackID">
       <div *ngFor="let reply of thread.replies | keyvalue" class="slack-reply">
-          <div *ngIf="reply.value?.visible && !reply.value?.fromBot; else hiddenMsg">
+          <div *ngIf="reply.value?.visible && reply.value?.text?.length; else hiddenMsg">
               <user-profile [photoURL]="reply.value?.image_32" [displayName]="reply.value?.display_name"></user-profile>
 
               <div class="slack-content"  [innerHTML]="asHtml(reply.value?.text)"></div>
