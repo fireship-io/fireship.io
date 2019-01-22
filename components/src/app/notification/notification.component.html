@@ -4,9 +4,10 @@
   <div class="box notification" [ngClass]="n.className" [class.hide]="n.dismissed" >
     <div class="box-icon">{{ n.icon }}</div>
     <div class="box-content">
-        <button class="btn btn-sm notification-close" (click)="ns.dismiss()">dismiss</button>
+        <button class="btn btn-sm notification-close" (click)="ns.dismiss()">dismiss ({{ n.countdown }} sec)</button>
         <h3 *ngIf="n.title"> {{ n.title }}</h3>
         <p>{{ n.text }}</p>
+        <p></p>
     </div>
   </div>
 
