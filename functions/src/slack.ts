@@ -3,9 +3,7 @@ import { db } from './config';
 import { omitBy, isUndefined, get } from 'lodash';
 import * as getUrls from 'get-urls';
 
-// TS import broken?
-const { PubSub } = require('@google-cloud/pubsub');
-const ps = new PubSub();
+import * as PubSub from '@google-cloud/pubsub';
 
 const PS_TOPIC = 'slack-question';
 const BOT_ID = '<@UF68X24P9>';
@@ -208,7 +206,7 @@ async function getProfile(user) {
 async function pub(body) {
   const data = JSON.stringify(body);
   const dataBuffer = Buffer.from(data);
-  await ps
+  await PubSub()
     .topic(PS_TOPIC)
     .publisher()
     .publish(dataBuffer);
