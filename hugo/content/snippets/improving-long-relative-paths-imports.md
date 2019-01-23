@@ -1,20 +1,23 @@
 ---
 title: Improving long relative paths import
+publishdate: 2019-01-20T09:35:09-07:00
+lastmod: 2019-01-20T09:35:09-07:00
 draft: false
 author: Jorge Dacosta
 type: lessons
-description: Learn how to improve long relative paths when you're creating a slightly larger Angular application.
+youtube: 1FOfL6bDSF4
+description: Learn how to improve long relative import paths in a large Angular application.
 tags:
     - typescript
     - sass
     - angular
 ---
 
-The purpose of this snippet is to show how to improve [imports of TypeScript modules](https://www.typescriptlang.org/docs/handbook/module-resolution.html) and **Sass** classes while we work on slightly bigger **Angular** apps.
+The purpose of this snippet is to show how to improve [imports of TypeScript modules](https://www.typescriptlang.org/docs/handbook/module-resolution.html) and **Sass** classes while we work on slightly larger **Angular** apps.
 
 # The nested paths headache
 
-Working in larger or enterprise applications can be a big problem when you need to import a feature module or a style sheet file. See the imports below 😬:
+Imports for feature modules and SCSS style sheets can be a pain point when working in large enterprise Angular applications . See the imports below 😬:
 
 {{< file "ngts" "post-details.component.ts" >}}
 {{< highlight typescript >}}
