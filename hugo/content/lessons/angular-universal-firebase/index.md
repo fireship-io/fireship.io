@@ -164,7 +164,7 @@ Then declare them on Node `global` at the top of the server file.
 // ...
 {{< /highlight >}}
 
-Rebuild your app and restart the server. The dev HTML returned from Express should now include custom meta tags.
+Rebuild your app and restart the server. The HTML returned from Express should now include custom meta tags.
 
 {{< figure src="img/working-universal-app.png" alt="working universal app" >}}
 
@@ -174,7 +174,7 @@ Rebuild your app and restart the server. The dev HTML returned from Express shou
 
 Deploying to [AppEngine](https://cloud.google.com/appengine/docs/standard/nodejs/) will containerize your code allow it to scale infinitely in the cloud. It starts on a free tier and can scale up automatically based on traffic or resource demands.
 
-Crate an *app.yaml* file in the root the project. The standard environment for Node8 and Node10 is free to deploy with a small instance and can scale as large as you need.
+Crate an *app.yaml* file in the root the project. The standard environment for Node8 and Node10 is free to deploy with a small instance and can automatically scale the moon 🌙 as needed. 
 
 {{< file "yaml" "app.yaml" >}}
 {{< highlight yaml >}}
