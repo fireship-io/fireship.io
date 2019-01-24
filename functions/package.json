@@ -7,7 +7,8 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "test": "npx jest"
   },
   "main": "lib/index.js",
   "dependencies": {
@@ -21,9 +22,13 @@
     "lodash": "^4.17.11"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.13",
     "@types/node-fetch": "^2.1.4",
+    "firebase-functions-test": "^0.1.6",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
     "tslint": "~5.8.0",
-    "typescript": "~2.8.3"
+    "typescript": "^2.8.4"
   },
   "private": true,
   "engines": {
