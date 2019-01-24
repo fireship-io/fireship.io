@@ -19,7 +19,7 @@ tags:
 
 Let's say we have an auth service using Firebase. We can take the `first()` emitted value from the stream, then convert it using `toPromise()`; 
 
-{{< file "ngts" "app/auth.guard.ts" >}}
+{{< file "ngts" "app/auth.service.ts" >}}
 {{< highlight typescript >}}
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
