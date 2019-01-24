@@ -52,7 +52,7 @@ I highly recommend using [NVM](/snippets/install-nodejs/) with Node `v8.14.0` in
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
-ng add @nguniversal/express-engine --myapp
+ng add @nguniversal/express-engine --clientProject myapp
 {{< /highlight >}}
 
 This will add several new files to your project. The Angular Universal app is used to render your angular code on a server:
@@ -61,7 +61,7 @@ This will add several new files to your project. The Angular Universal app is us
 - src/app/app.server.module.ts
 - src/tsconfig.server.json
 
-ExpressJS is the server that will handle requests/responses and is defined by these files:
+Then ExpressJS is the actual server that will handle requests/responses and is defined by these files:
 
 - webpack.server.config.js
 - server.ts
