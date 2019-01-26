@@ -41,7 +41,7 @@ Notice how we only need to subscribe to the `boats$` Observable. It will automat
 
 
 {{% box icon="abacus" %}}
-Example 2: You have 2 Observables, named as `ob1$` and `ob2$`. `ob1$` will emit numbers and `ob2$` will emit string. You want to get string from `ob2$` when `ob1$` emitted even numbers
+Example 2: You have 2 Observables named `nums$` and `string$`. You want to get the value of the `string$` Observable when `nums$` emits even numbers. 
 {{% /box %}}
 
 
@@ -51,25 +51,27 @@ Example 2: You have 2 Observables, named as `ob1$` and `ob2$`. `ob1$` will emit 
 import { of, from } from 'rxjs';
 import { switchMap, filter } from 'rxjs/operators';
 
-const ob1$ = from([1, 2, 3, 4, 5])
-const ob2$ = from(['one', 'two', 'three'])
+const nums$ = from([1, 2, 3, 4, 5])
+const string$ = of('It's an even number')
 
-// when having multiples that depending on each other
-// we often ended up nesting subscription
-ob1$.subscribe(firstValue => {
+// when values depend on each other we often ended up nesting subscriptions
+nums$.subscribe(firstValue => {
   if(firstValue % 2 === 0) {
-    ob2$.subscribe(secondValue => console.log(secondValue))
+    strings$.subscribe(secondValue => console.log(secondValue))
   }
 })
 
 
-// with switchMap, can be refactor as below
-// switchMap will abandon the following values emitted from ob1$, and only take values from ob2$
-ob1$.pipe(
+// let's refactor with switchMap
+// switchMap will abandon the following values emitted from nums$, and only take values from string$
+
+nums$.pipe(
   filter(value => value % 2 === 0),
-  switchMap(value => ob2$)
+  switchMap(value => string$)
 ).subscribe(value => console.log(value))
+// It's an even number
+// It's an even number
 {{< /highlight >}}
 
-Nesting subscriptions are not a good practice, most of the time it can be refactor with operators
+Nested subscriptions are not ideal and can always be refactored with operators.
 
