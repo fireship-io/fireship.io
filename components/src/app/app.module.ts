@@ -14,6 +14,7 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { SlackMirrorComponent } from './slack-mirror/slack-mirror.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { NotificationComponent } from './notification/notification.component';
+import { PaymentFormComponent } from './access/payment-form/payment-form.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -26,7 +27,8 @@ const comps = [
   VideoPlayerComponent,
   SlackMirrorComponent,
   TogglerComponent,
-  NotificationComponent
+  NotificationComponent,
+  PaymentFormComponent
 ];
 
 @NgModule({
@@ -53,7 +55,8 @@ export class AppModule {
       [VideoPlayerComponent, 'video-player'],
       [SlackMirrorComponent, 'slack-mirror'],
       [TogglerComponent, 'menu-toggler'],
-      [NotificationComponent, 'app-notification']
+      [NotificationComponent, 'app-notification'],
+      [PaymentFormComponent, 'payment-form']
     ];
 
     for (const [component, name] of elements) {

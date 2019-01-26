@@ -11,7 +11,8 @@ export const environment = {
     projectId: 'fireship-dev-17429',
     storageBucket: 'fireship-dev-17429.appspot.com',
     messagingSenderId: '307044372590'
-  }
+  },
+  stripe: 'pk_test_m3a5moXVKgThpdfwzKILvnbG'
 };
 
 /*
