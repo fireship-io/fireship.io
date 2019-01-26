@@ -46,7 +46,7 @@ Example 2: You have 2 Observables, named as `ob1$` and `ob2$`. `ob1$` will emit 
 
 
 {{< file "js" "bar.js" >}}
-{{< highlight typescript >}}
+{{< highlight javascript >}}
 
 import { of, from } from 'rxjs';
 import { switchMap, filter } from 'rxjs/operators';
