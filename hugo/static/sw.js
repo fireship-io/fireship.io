@@ -4,9 +4,9 @@ if (workbox) {
   workbox.setConfig({ debug: false });
   // workbox.core.setLogLevel(workbox.core.LOG_LEVELS.warn);
 
-  workbox.routing.setDefaultHandler(workbox.strategies.networkFirst({
-    // cacheName: 'fallback',
-  }));
+  // workbox.routing.setDefaultHandler(workbox.strategies.networkFirst({
+  //   // cacheName: 'fallback',
+  // }));
   
   workbox.routing.registerRoute(
     new RegExp(/.*\.(?:js|css)/g),

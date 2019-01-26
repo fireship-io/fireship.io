@@ -13,6 +13,7 @@
 public
 
 # cloud functions
+/functions/service-account.json
 /functions/lib
 /functions/etc
 functions/.env

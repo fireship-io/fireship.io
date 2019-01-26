@@ -1,10 +1,9 @@
-import * as admin from 'firebase-admin';
-admin.initializeApp();
-
 ///// USER /////
 
-export { newUserSetup } from './user';
+export { newUserSetup } from './user/user';
 
-//// QnA /////
+///// QnA /////
 
-export { questionBotHandler, recordMessage, slashAskHandler } from './slack';
+export { questionBotHandler, recordMessage, slashAskHandler } from './slack/slack';
+
+///// PAYMENTS /////

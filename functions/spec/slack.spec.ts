@@ -2,6 +2,6 @@
 import * as funTest from 'firebase-functions-test';
 funTest();
 
-test('city database has Vienna', () => {
+test('true to be true', () => {
     expect(true).toBe(true);
 });
