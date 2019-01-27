@@ -17,7 +17,7 @@ tags:
 ### 1. Grab your Firebase Web Config
 
 
-From your Firebase project click on *settings >> Add Firebase to your web app*. You only need to copy the `config` object from this page. 
+From your Firebase project click the gear icon next to "Project Overview" to bring you to your project settings.  On the *general* tab, in the *Your apps" section, click the *</>* button. This opens a popup called *Add Firebase to your web app*.  You only need to copy the `config` object from this page. 
 
 {{< figure src="/img/snippets/firebase-web-config.png" alt="firebase web config location" >}}
 
