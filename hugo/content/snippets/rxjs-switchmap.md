@@ -51,15 +51,15 @@ Example 2: You have 2 Observables named `nums$` and `string$`. You want to get t
 import { of, from } from 'rxjs';
 import { switchMap, filter } from 'rxjs/operators';
 
-const nums$ = from([1, 2, 3, 4, 5])
-const string$ = of('It's an even number')
+const nums$ = from([1, 2, 3, 4, 5]);
+const string$ = of('It\'s an even number');
 
 // when values depend on each other we often ended up nesting subscriptions
 nums$.subscribe(firstValue => {
   if(firstValue % 2 === 0) {
     strings$.subscribe(secondValue => console.log(secondValue))
   }
-})
+});
 
 
 // let's refactor with switchMap
@@ -68,7 +68,7 @@ nums$.subscribe(firstValue => {
 nums$.pipe(
   filter(value => value % 2 === 0),
   switchMap(value => string$)
-).subscribe(value => console.log(value))
+).subscribe(value => console.log(value));
 // It's an even number
 // It's an even number
 {{< /highlight >}}
