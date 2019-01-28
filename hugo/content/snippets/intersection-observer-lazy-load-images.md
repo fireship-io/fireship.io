@@ -20,16 +20,16 @@ youtube: aUjBvuUdkhg
 #     - "rxjs": 6.3
 ---
 
-[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is browser API that that allows you to detect when an element is visible in the window or in a scrollable element. [Browser support](https://caniuse.com/#feat=intersectionobserver) is pretty decent with Safari being the main holdout at the time of this article, so use a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) to support apple users. 
+[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) is a browser API that allows you to detect when an element is visible in the window or within a scrollable element. [Browser support](https://caniuse.com/#feat=intersectionobserver) is pretty decent with Safari being the main holdout at the time of this article, but there is a [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill) to support Apple users. 
 
-Packages using IntersectionObserver:  
+**Packages using IntersectionObserver:** 
 
 - [QuickLink](https://github.com/GoogleChromeLabs/quicklink) - Adds a preload tag to visible links on the page. 
 - [Vanilla Lazy Load](https://www.npmjs.com/package/vanilla-lazyload) - Lazy loaded images. 
 - Fireship.io - We use it to lazily load the comments at the bottom of the page. 
 
 {{% box icon="hazard" class="box-red" %}}
-Do not try to perform any long-running or cpu intensive task in the observer's event handler. It runs on the main thread and may block other important tasks in the event loop. 
+Do not try to perform long-running or cpu intensive task in the observer's event handler. It runs on the main thread and may block other important tasks in the event loop. 
 {{% /box %}}
 
 ## Lazy Loaded Images 
