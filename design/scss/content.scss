@@ -214,6 +214,11 @@
   h3 {
     color: var(--text-color);
   }
+
+  ol, ul {
+    // font-size:em;
+    font-weight: 500;
+  }
 }
 // Table of Contents
 
