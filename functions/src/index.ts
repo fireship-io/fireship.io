@@ -7,3 +7,5 @@ export { newUserSetup } from './user/user';
 export { questionBotHandler, recordMessage, slashAskHandler } from './slack/slack';
 
 ///// PAYMENTS /////
+
+export { stripeSetSource, stripeCreateCharge } from './stripe/stripe';

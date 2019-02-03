@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import { sgMail, msg } from './email';
-import { db } from './config';
+import { db } from '../config';
 
 export const newUserSetup = functions.auth.user().onCreate(async (user, context) => {
 

@@ -2,10 +2,10 @@ import { Component, OnInit, ChangeDetectorRef, AfterViewInit, HostListener, View
 import { environment } from '../../../environments/environment';
 
 import { httpsCallable  } from 'rxfire/functions';
-import * as functions from 'firebase/functions';
+import * as firebase from 'firebase/app';
+import { SetState } from 'src/app/state.decorator';
 
 declare var Stripe;
-
 
 @Component({
   templateUrl: './payment-form.component.html'
@@ -16,12 +16,23 @@ export class PaymentFormComponent implements AfterViewInit {
   elements: any;
   card: any;
   prButton: any;
+  amount = 2500;
+
+  serverError;
+  formState;
+  loadingState;
+
+  // error;
+  // complete = false;
 
   @ViewChild('cardElement') cardElement: ElementRef;
-  @ViewChild('cardErrors') cardErrors: ElementRef;
   @ViewChild('prElement') prElement: ElementRef;
 
   constructor(private cd: ChangeDetectorRef) { }
+
+  get usd() {
+    return (this.amount / 100).toFixed(2);
+  }
 
   ngAfterViewInit() {
     this.setup();
@@ -29,59 +40,107 @@ export class PaymentFormComponent implements AfterViewInit {
 
   setup() {
     this.stripe = Stripe(environment.stripe);
-    this.elements = this.stripe.elements();
-
-    const paymentRequest = this.stripe.paymentRequest({
-      country: 'US',
-      currency: 'usd',
-      total: {
-        label: 'Demo total',
-        amount: 1000,
-      },
-      requestPayerName: true,
-      requestPayerEmail: true,
-    });
-
-    this.prButton = this.elements.create('paymentRequestButton', {
-      paymentRequest: paymentRequest,
-    });
-
-    paymentRequest.canMakePayment().then(function(result) {
-      if (result) {
-        this.prButton.mount(this.prElement.nativeElement);
-      } else {
-        // document.getElementById('payment-request-button').style.display = 'none';
+    this.elements = this.stripe.elements(
+      {
+        fonts: [{
+          cssSrc: 'https://use.typekit.net/rcr1opg.css'
+        }]
       }
-    });
+    );
 
+    // const paymentRequest = this.stripe.paymentRequest({
+    //   country: 'US',
+    //   currency: 'usd',
+    //   total: {
+    //     label: 'Demo total',
+    //     amount: 1000,
+    //   },
+    //   requestPayerName: true,
+    //   requestPayerEmail: true,
+    // });
+
+    // this.prButton = this.elements.create('paymentRequestButton', {
+    //   paymentRequest: paymentRequest,
+    // });
+
+    // paymentRequest.canMakePayment().then(function(result) {
+    //   if (result) {
+    //     this.prButton.mount(this.prElement.nativeElement);
+    //   } else {
+    //     // document.getElementById('payment-request-button').style.display = 'none';
+    //   }
+    // });
+
+    const style = {
+      base: {
+        iconColor: '#9aa6b3',
+        color: '#fff',
+        fontWeight: 700,
+        fontFamily: 'ratio, sans-serif',
+        fontSize: '21px',
+        fontSmoothing: 'antialiased',
+        ':-webkit-autofill': {
+          color: '#9aa6b3',
+          fontWeight: 500
+        },
+        '::placeholder': {
+          color: '#9aa6b3',
+        },
+      },
+      invalid: {
+        iconColor: '#ff3860',
+        color: '#ff3860',
+      },
+    };
 
     // Create an instance of the card Element.
-    this.card = this.elements.create('card');
+    this.card = this.elements.create('card', { style, iconStyle: 'solid' });
+
+
 
     this.card.mount(this.cardElement.nativeElement);
 
-
-    this.card.addEventListener('change', (event) => {
-      const displayError = this.cardErrors.nativeElement;
-      if (event.error) {
-        displayError.textContent = event.error.message;
-      } else {
-        displayError.textContent = '';
-      }
-    });
-
+    this.listenToFormState();
     this.cd.detectChanges();
+  }
+
+  listenToFormState() {
+    this.card.addEventListener('change', (event) => {
+      this.setState('formState', event);
+    });
   }
 
   async handleForm(e) {
     e.preventDefault();
-    const { token, error } = await this.stripe.createSource(this.card);
-    console.log(token, error);
-    // const fun = httpsCallable(functions, 'setSource');
-    // fun({ token })
-    const res = await functions().httpsCallable('stripeSetSource')({ token });
+    this.setState('loadingState', 'creating source...');
+    const { source, error } = await this.stripe.createSource(this.card);
 
-    console.log('success');
+    if (error) {
+      this.setState('loadingState', null);
+      this.setState('serverError', error);
+    }
+
+
+    this.setState('loadingState', 'attaching source...');
+
+    try {
+      const res = await httpsCallable(firebase.functions(), 'stripeSetSource')({ source }).toPromise();
+      console.log(res);
+
+      console.log('success');
+    } catch (err) {
+      console.log(err);
+      this.setState('serverError', err.message);
+    }
+
+
+    // const res = await fetch('http://localhost:5000/fireship-app/us-central1/stripeTester', {
+    //   method: 'POST',
+    //   body: JSON.stringify(source)
+    // });
+
+
+    this.setState('loadingState', null);
   }
 
   @HostListener('document:DOMContentLoaded')
@@ -91,8 +150,10 @@ export class PaymentFormComponent implements AfterViewInit {
     }
   }
 
-
-
+  @SetState()
+  setState(k, v) {
+    this[k] = v;
+  }
 
 
 }

@@ -1,3 +1,4 @@
+const cors = require('cors')({ origin: true });
 import * as admin from 'firebase-admin';
 admin.initializeApp();
 
