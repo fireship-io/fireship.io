@@ -99,6 +99,7 @@
     a {
       text-decoration: underline;
     }
+    p { line-height: 1.5; }
   }
 }
 
@@ -218,6 +219,33 @@
   ol, ul {
     // font-size:em;
     font-weight: 500;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  em { 
+    font-weight: bold;
+  }
+
+  strong {
+    font-weight: 700;
+    font-size: .9em;
+    // text-transform: uppercase;
+    color: var(--h-color);
+  }
+
+  p a {
+    // border-bottom: 3px solid #b4e7f8;
+    color: var(--h-color);
+    font-weight: 600;
+    box-shadow: inset 0 -3px 0 #b4e7f8;
+    transition: background .15s cubic-bezier(0.33, 0.66, 0.66, 1);
+    &:hover {
+      background-color: rgba(0, 255, 242, 0.3);
+    }
+
   }
 }
 // Table of Contents

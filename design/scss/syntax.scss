@@ -41,7 +41,8 @@ li code {
   color: #ff8276;
   padding: 0 0.3em;
   border-radius: 3px;
-  font-size: 0.95em;
+  font-size: 0.85em;
+  font-weight: bold;
 }
 
 .highlight,
@@ -257,6 +258,9 @@ pre.highlight {
     .o {
       color: #c2c6da;
     }
+    .nl {
+      color: #e66900;
+    }
     .c1 {
       color: #c9cbd6
     }
@@ -299,10 +303,7 @@ pre.highlight {
     .n {
       color: #5c669b;
     }
-    .mf {
-      color: #525564;
-    }
-    .mi {
+    .m, .mf, .mi {
       color: #525564;
     }
   }
