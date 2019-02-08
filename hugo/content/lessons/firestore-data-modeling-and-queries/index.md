@@ -129,3 +129,11 @@ Example: A user has many tasks
 ### Query
 
 ## Has-Many
+
+
+
+
+- Has one, belongs to
+- Has many
+- Many to many, via embedded array/map
+- Many to many, via connecting col
