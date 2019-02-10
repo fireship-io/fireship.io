@@ -3,9 +3,11 @@ import { Injectable, ApplicationRef } from '@angular/core';
 import * as firebase from 'firebase/app';
 import { auth } from 'firebase/app';
 import { user } from 'rxfire/auth';
-import { tap } from 'rxjs/operators';
+import { tap, switchMap } from 'rxjs/operators';
 import { NotificationService } from '../notification/notification.service';
 import { onLogout, onLogin } from '../notification/notifications';
+import { docData } from 'rxfire/firestore';
+import { of } from 'rxjs';
 
 
 @Injectable({
@@ -16,6 +18,8 @@ export class AuthService {
   authClient = firebase.auth();
 
   user$;
+  userDoc$;
+
   user;
 
   constructor(private app: ApplicationRef, private ns: NotificationService) {
@@ -27,6 +31,16 @@ export class AuthService {
     }));
 
     this.user$.subscribe();
+
+    this.userDoc$ = this.getUserDoc$();
+   }
+
+   getUserDoc$() {
+    return user(this.authClient).pipe(
+      switchMap(u => {
+        return u ? docData(firebase.firestore().doc(`users/${(u as any).uid}`)) : of(null);
+      })
+    );
    }
 
   signOut() {

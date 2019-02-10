@@ -8,4 +8,10 @@ export { questionBotHandler, recordMessage, slashAskHandler } from './slack/slac
 
 ///// PAYMENTS /////
 
-export { stripeSetSource, stripeCreateCharge } from './stripe/stripe';
+export { 
+    stripeSetSource, 
+    stripeCreateCharge, 
+    stripeCreateSubscription, 
+    stripeGetCharges,
+    stripeGetCustomer 
+} from './stripe/stripe';

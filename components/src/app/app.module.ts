@@ -15,6 +15,11 @@ import { SlackMirrorComponent } from './slack-mirror/slack-mirror.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { NotificationComponent } from './notification/notification.component';
 import { PaymentFormComponent } from './access/payment-form/payment-form.component';
+import { ProductSelectComponent } from './access/product-select/product-select.component';
+import { UserChargesComponent } from './access/user-charges/user-charges.component';
+import { UsdPipe } from './access/usd.pipe';
+import { UserDetailsComponent } from './access/user-details/user-details.component';
+import { UserSourcesComponent } from './access//user-sources/user-sources.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -28,14 +33,21 @@ const comps = [
   SlackMirrorComponent,
   TogglerComponent,
   NotificationComponent,
-  PaymentFormComponent
+  PaymentFormComponent,
+  ProductSelectComponent,
+  UserChargesComponent,
+  UserDetailsComponent,
+  UserSourcesComponent
 ];
 
 @NgModule({
   imports: [
     BrowserModule
   ],
-  declarations: comps,
+  declarations: [
+    ...comps,
+    UsdPipe
+  ],
   entryComponents: comps,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [LOCAL_STORAGE_PROVIDERS]
@@ -56,7 +68,11 @@ export class AppModule {
       [SlackMirrorComponent, 'slack-mirror'],
       [TogglerComponent, 'menu-toggler'],
       [NotificationComponent, 'app-notification'],
-      [PaymentFormComponent, 'payment-form']
+      [PaymentFormComponent, 'payment-form'],
+      [ProductSelectComponent, 'product-select'],
+      [UserChargesComponent, 'user-charges'],
+      [UserDetailsComponent, 'user-details'],
+      [UserSourcesComponent, 'user-sources']
     ];
 
     for (const [component, name] of elements) {

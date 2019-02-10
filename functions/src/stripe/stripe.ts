@@ -1,13 +1,20 @@
 import * as functions from 'firebase-functions';
-import { attachSource, getUID, getVal, catchErrors } from './helpers';
+import { 
+    attachSource,
+    getUID, 
+    getVal, 
+    catchErrors,
+    getOrCreateCustomer,
+    getUserCharges, 
+    createSubscription
+} from './helpers';
 
 
 
 export const stripeSetSource = functions.https.onCall( async (data, context) => {
-    console.log(data)
-    console.log(context)
     const uid = getUID(context);
     const source = getVal(data, 'source');
+
 
     return await catchErrors(attachSource(uid, source.id));
 });
@@ -17,6 +24,25 @@ export const stripeCreateCharge = functions.https.onCall( async (data, context) 
     // const source = getVal(data, 'source');
     // return await attachSource(uid, source.id);
 });
+
+export const stripeCreateSubscription = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    const source = getVal(data, 'source');
+    const planId = getVal(data, 'planId');
+    // const discount = data
+    return await createSubscription(uid, source.id, planId);
+});
+
+export const stripeGetCharges = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    return getUserCharges(uid);
+});
+
+export const stripeGetCustomer = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    return getOrCreateCustomer(uid);
+});
+  
   
   
 

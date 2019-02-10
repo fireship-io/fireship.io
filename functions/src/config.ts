@@ -12,3 +12,4 @@ db.settings(settings);
 
 // ENV
 export const stripeTestKey = functions.config().stripe.testkey;
+export const stripeSigningSecret = functions.config().stripe.signing_secret;

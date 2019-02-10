@@ -1,9 +1,11 @@
-import { Component, OnInit, ChangeDetectorRef, AfterViewInit, HostListener, ViewChild, ElementRef } from '@angular/core';
+import { Component, ChangeDetectorRef, AfterViewInit, HostListener, ViewChild, ElementRef, Input } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
-import { httpsCallable  } from 'rxfire/functions';
-import * as firebase from 'firebase/app';
+
 import { SetState } from 'src/app/state.decorator';
+import { PaymentService } from '../payment.service';
+import { tap } from 'rxjs/operators';
+import { stripeStyle } from '../stripe-defaults';
 
 declare var Stripe;
 
@@ -12,12 +14,18 @@ declare var Stripe;
 })
 export class PaymentFormComponent implements AfterViewInit {
 
+  @Input() action = 'subscribe';
+
+  // Global product selection
+  product;
+
+  // Stripe Elements
   stripe: any;
   elements: any;
   card: any;
   prButton: any;
-  amount = 2500;
 
+  // UI State
   serverError;
   formState;
   loadingState;
@@ -28,11 +36,16 @@ export class PaymentFormComponent implements AfterViewInit {
   @ViewChild('cardElement') cardElement: ElementRef;
   @ViewChild('prElement') prElement: ElementRef;
 
-  constructor(private cd: ChangeDetectorRef) { }
-
-  get usd() {
-    return (this.amount / 100).toFixed(2);
+  constructor(private cd: ChangeDetectorRef, public pmt: PaymentService) {
+    this.pmt.product.pipe(
+      tap(v => this.setState('product', v))
+    )
+    .subscribe();
   }
+
+  // get usd() {
+  //   return this.product ? (this.product.price / 100).toFixed(2) : 0;
+  // }
 
   ngAfterViewInit() {
     this.setup();
@@ -71,30 +84,9 @@ export class PaymentFormComponent implements AfterViewInit {
     //   }
     // });
 
-    const style = {
-      base: {
-        iconColor: '#9aa6b3',
-        color: '#fff',
-        fontWeight: 700,
-        fontFamily: 'ratio, sans-serif',
-        fontSize: '21px',
-        fontSmoothing: 'antialiased',
-        ':-webkit-autofill': {
-          color: '#9aa6b3',
-          fontWeight: 500
-        },
-        '::placeholder': {
-          color: '#9aa6b3',
-        },
-      },
-      invalid: {
-        iconColor: '#ff3860',
-        color: '#ff3860',
-      },
-    };
 
     // Create an instance of the card Element.
-    this.card = this.elements.create('card', { style, iconStyle: 'solid' });
+    this.card = this.elements.create('card', { style: stripeStyle, iconStyle: 'solid' });
 
 
 
@@ -123,14 +115,12 @@ export class PaymentFormComponent implements AfterViewInit {
 
     this.setState('loadingState', 'attaching source...');
 
-    try {
-      const res = await httpsCallable(firebase.functions(), 'stripeSetSource')({ source }).toPromise();
-      console.log(res);
+    const { res, serverError } = await this.sourceHandler(source);
 
-      console.log('success');
-    } catch (err) {
-      console.log(err);
-      this.setState('serverError', err.message);
+    console.log(res);
+
+    if (serverError) {
+      this.setState('serverError', serverError.message);
     }
 
 
@@ -141,6 +131,17 @@ export class PaymentFormComponent implements AfterViewInit {
 
 
     this.setState('loadingState', null);
+  }
+
+  async sourceHandler(source) {
+    switch (this.action) {
+      case 'subscribe':
+        return this.pmt.createSubscription(source, this.product.planId);
+
+      case 'source':
+        return this.pmt.setSource(source);
+        break;
+    }
   }
 
   @HostListener('document:DOMContentLoaded')

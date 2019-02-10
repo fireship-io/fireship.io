@@ -1,3 +1,5 @@
+<div [hidden]="!product && action !== 'source'" class="well">
+
 <form action="/charge" method="post" id="payment-form" (submit)="handleForm($event)" class="form-stripe">
   <div class="form-row">
     <label for="card-element">
@@ -18,8 +20,33 @@
     {{ loadingState }}
   </div>
 
+
+
   <ng-template #pmtBtn>
-    <button class="btn btn-green btn-stripe" [disabled]="formState?.error || !formState?.complete">Pay {{ usd }}</button>
+
+    <div class="pricing-product">
+      <div *ngIf="action === 'source'">
+          <p>You are adding a new payment source to your account. You will not be charged until you have a payable invoice.</p>
+
+          <button class="btn btn-blue btn-stripe" [disabled]="formState?.error || !formState?.complete">
+
+            Add Source
+            
+          </button>
+      </div>
+  
+      <div *ngIf="action !== 'source' && product">
+          <p>You are purchasing <strong>{{ product?.description }}</strong></p>
+
+          <button class="btn btn-green btn-stripe" [disabled]="formState?.error || !formState?.complete">
+
+              Pay {{ product?.price | usd }}
+            
+          </button>
+      </div>
+  
+    </div>
+
   </ng-template>
 
 </form>
@@ -28,3 +55,4 @@
   <!-- A Stripe Element will be inserted here. -->
 </div>
 
+</div>
