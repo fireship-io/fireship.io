@@ -11,7 +11,7 @@ tags:
     - firebase
     - flutter
 
-youtube: Az1K-guJO3I
+youtube: MYHVyl-juUk
 github: https://github.com/fireship-io/167-flutter-geolocation-firestore
 # disable_toc: true
 # disable_qna: true
