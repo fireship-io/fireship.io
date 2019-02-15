@@ -32,7 +32,7 @@ update_notes: Google Maps for Flutter is currently in developer preview. This in
 Looking to build a realtime geolocation app like Lyft, Postmates, or Waze? It is easier than you might think when you combine the power of Flutter, Google Maps, and Firebase. The following lesson will show you how use [Google Maps in Flutter](https://pub.dartlang.org/packages/google_maps_flutter), then listen to a realtime feed of geolocation data in Firestore queried by its distance from a centerpoint - made possible by the [GeoFlutterFire](https://pub.dartlang.org/packages/geoflutterfire) package. 
 
 {{% box icon="unicorn" class="box-green" %}}
-Special thanks to [Darshawn Gowda](/contributors/darshan-gowda/) for creating the GeoFlutterFire library and providing the example code for this lesson. 
+Special thanks to [Darshan Gowda](/contributors/darshan-gowda/) for creating the GeoFlutterFire library and providing the example code for this lesson. 
 {{% /box %}}
 
 
