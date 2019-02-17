@@ -1,13 +1,8 @@
-// @keyframes flyOut {
-//     from {
-//         transform: scale(0);
-//     }
-//     to {
-//         transform: scale(1);
-//     }
-// }
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(180deg);}
+}
 
-// .animate-svg-rocket {
-//     animation: flyOut 1500ms ease-out;
-//     transform-origin: center bottom;
-// }
+.spin {
+    animation: spin 500ms alternate ease-in-out infinite;
+}

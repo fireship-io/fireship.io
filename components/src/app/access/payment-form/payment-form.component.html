@@ -17,7 +17,7 @@
   </div>
 
   <div *ngIf="loadingState; else pmtBtn">
-    {{ loadingState }}
+    <loading-spinner></loading-spinner> {{ loadingState }}
   </div>
 
 
@@ -26,17 +26,15 @@
 
     <div class="pricing-product">
       <div *ngIf="action === 'source'">
-          <p>You are adding a new payment source to your account. You will not be charged until you have a payable invoice.</p>
+          <p>You are replacing the default payment source on your account. You will not be charged until you have a payable invoice.</p>
 
           <button class="btn btn-blue btn-stripe" [disabled]="formState?.error || !formState?.complete">
-
             Add Source
-            
           </button>
       </div>
   
       <div *ngIf="action !== 'source' && product">
-          <p>You are purchasing <strong>{{ product?.description }}</strong></p>
+          <p>You are purchasing <strong class="green">{{ product?.description }}</strong> <a target="_blank" href="https://fireship.io/terms#subscriptions">terms</a></p>
 
           <button class="btn btn-green btn-stripe" [disabled]="formState?.error || !formState?.complete">
 

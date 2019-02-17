@@ -25,10 +25,18 @@ export class PaymentService {
     return this.callFunction('stripeGetCharges', {});
   }
 
+  async userInvoices() {
+    return this.callFunction('stripeGetInvoices', {});
+  }
+
   //// Payment Capture Events ////
 
   async getCustomer() {
     return this.callFunction('stripeGetCustomer', { });
+  }
+
+  async getSubscriptions() {
+    return this.callFunction('stripeGetSubscriptions', { });
   }
 
   async setSource(source) {
@@ -42,6 +50,11 @@ export class PaymentService {
   async createPurchase(source, productId, discountId?) {
     return this.callFunction('stripeCreatePurchase', { source, productId, discountId });
   }
+
+  async cancelSubscription(source, planId, discountId?) {
+    return this.callFunction('stripeCancelSubscription', { source, planId });
+  }
+
 
 
 

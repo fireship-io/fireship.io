@@ -6,6 +6,7 @@ import { SetState } from 'src/app/state.decorator';
 import { PaymentService } from '../payment.service';
 import { tap } from 'rxjs/operators';
 import { stripeStyle } from '../stripe-defaults';
+import { NotificationService } from 'src/app/notification/notification.service';
 
 declare var Stripe;
 
@@ -29,23 +30,18 @@ export class PaymentFormComponent implements AfterViewInit {
   serverError;
   formState;
   loadingState;
+  success;
 
-  // error;
-  // complete = false;
 
   @ViewChild('cardElement') cardElement: ElementRef;
   @ViewChild('prElement') prElement: ElementRef;
 
-  constructor(private cd: ChangeDetectorRef, public pmt: PaymentService) {
+  constructor(private cd: ChangeDetectorRef, public pmt: PaymentService, public ns: NotificationService) {
     this.pmt.product.pipe(
       tap(v => this.setState('product', v))
     )
     .subscribe();
   }
-
-  // get usd() {
-  //   return this.product ? (this.product.price / 100).toFixed(2) : 0;
-  // }
 
   ngAfterViewInit() {
     this.setup();
@@ -61,35 +57,8 @@ export class PaymentFormComponent implements AfterViewInit {
       }
     );
 
-    // const paymentRequest = this.stripe.paymentRequest({
-    //   country: 'US',
-    //   currency: 'usd',
-    //   total: {
-    //     label: 'Demo total',
-    //     amount: 1000,
-    //   },
-    //   requestPayerName: true,
-    //   requestPayerEmail: true,
-    // });
-
-    // this.prButton = this.elements.create('paymentRequestButton', {
-    //   paymentRequest: paymentRequest,
-    // });
-
-    // paymentRequest.canMakePayment().then(function(result) {
-    //   if (result) {
-    //     this.prButton.mount(this.prElement.nativeElement);
-    //   } else {
-    //     // document.getElementById('payment-request-button').style.display = 'none';
-    //   }
-    // });
-
-
     // Create an instance of the card Element.
     this.card = this.elements.create('card', { style: stripeStyle, iconStyle: 'solid' });
-
-
-
     this.card.mount(this.cardElement.nativeElement);
 
     this.listenToFormState();
@@ -104,7 +73,7 @@ export class PaymentFormComponent implements AfterViewInit {
 
   async handleForm(e) {
     e.preventDefault();
-    this.setState('loadingState', 'creating source...');
+    this.setState('loadingState', 'validating card...');
     const { source, error } = await this.stripe.createSource(this.card);
 
     if (error) {
@@ -113,7 +82,7 @@ export class PaymentFormComponent implements AfterViewInit {
     }
 
 
-    this.setState('loadingState', 'attaching source...');
+    this.setState('loadingState', 'processing...');
 
     const { res, serverError } = await this.sourceHandler(source);
 
@@ -121,16 +90,9 @@ export class PaymentFormComponent implements AfterViewInit {
 
     if (serverError) {
       this.setState('serverError', serverError.message);
+    } else {
+      this.onSuccess();
     }
-
-
-    // const res = await fetch('http://localhost:5000/fireship-app/us-central1/stripeTester', {
-    //   method: 'POST',
-    //   body: JSON.stringify(source)
-    // });
-
-
-    this.setState('loadingState', null);
   }
 
   async sourceHandler(source) {
@@ -142,6 +104,14 @@ export class PaymentFormComponent implements AfterViewInit {
         return this.pmt.setSource(source);
         break;
     }
+  }
+
+  onSuccess() {
+    this.card.clear();
+    this.pmt.product.next(null);
+    this.ns.setNotification({ title: 'Success!', text: 'Thank you :)' });
+    this.setState('loadingState', null);
+    this.setState('success', true);
   }
 
   @HostListener('document:DOMContentLoaded')

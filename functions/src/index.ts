@@ -12,6 +12,9 @@ export {
     stripeSetSource, 
     stripeCreateCharge, 
     stripeCreateSubscription, 
+    stripeCancelSubscription,
+    stripeGetSubscriptions,
     stripeGetCharges,
+    stripeGetInvoices,
     stripeGetCustomer 
 } from './stripe/stripe';

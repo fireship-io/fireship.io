@@ -3,9 +3,9 @@ import { AuthService } from 'src/app/users/auth.service';
 import { tap } from 'rxjs/operators';
 
 @Component({
-  templateUrl: './user-details.component.html'
+  templateUrl: './user-plan.component.html'
 })
-export class UserDetailsComponent implements OnDestroy {
+export class UserPlanComponent implements OnDestroy {
   docSub;
   userDoc;
 

@@ -1,0 +1,36 @@
+<div *ngIf="subs">
+
+  <div *ngFor="let sub of subs" class="well">
+
+    <h4>PRO Membership</h4>
+
+    <ul>
+      <li>Subscription ID {{ sub.id }}</li>
+      <li>Status: {{ sub.status }}</li>
+      <li *ngIf="sub.status !== 'canceled'">Next payment due {{ sub.current_period_end * 1000 | date }} for ${{ sub.plan.amount | usd }}</li>
+    </ul>
+
+    <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red" (click)="cancel(sub.id)">
+      Cancel
+    </button>
+
+    <div *ngIf="canceling">
+        <loading-spinner></loading-spinner> <span *ngIf="canceling">Canceling PRO membership 😭</span>
+    </div>
+ 
+
+
+    <p class="red">{{ serverError }}</p>
+
+  </div>
+
+  <div *ngIf="!subs.length">No active subscriptions found</div>
+
+  <pre>{{ subs | json }}</pre>
+
+    
+</div>
+
+<div *ngIf="loading">
+    <span *ngIf="canceling">Loading subscription details</span>
+</div>

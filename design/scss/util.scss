@@ -51,6 +51,11 @@
     background: var(--red);
 }
 
+.orange {
+    color: var(--orange);
+}
+
+
 .spacer {
     margin: 1em 0;
 }
@@ -134,17 +139,6 @@ text-cycle {
     background: var(--nav-bg);
 }
 
-.cover-title {
-    position: absolute;
-    top: 0;
-    margin-left: 1em;
-    margin-right: 2em;
-    overflow: hidden;
-}
-
-.cover-orange {
-    background: url('/img/covers/orange-l.svg');
-}
 
 // Social Media
 

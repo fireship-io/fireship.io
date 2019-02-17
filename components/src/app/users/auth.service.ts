@@ -20,6 +20,8 @@ export class AuthService {
   user$;
   userDoc$;
 
+  userProducts$;
+
   user;
 
   constructor(private app: ApplicationRef, private ns: NotificationService) {
@@ -32,13 +34,14 @@ export class AuthService {
 
     this.user$.subscribe();
 
-    this.userDoc$ = this.getUserDoc$();
+    this.userDoc$ = this.getUserDoc$('users');
+    this.userProducts$ = this.getUserDoc$('products');
    }
 
-   getUserDoc$() {
+   getUserDoc$(col) {
     return user(this.authClient).pipe(
       switchMap(u => {
-        return u ? docData(firebase.firestore().doc(`users/${(u as any).uid}`)) : of(null);
+        return u ? docData(firebase.firestore().doc(`${col}/${(u as any).uid}`)) : of(null);
       })
     );
    }

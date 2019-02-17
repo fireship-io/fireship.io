@@ -6,7 +6,11 @@ import {
     catchErrors,
     getOrCreateCustomer,
     getUserCharges, 
-    createSubscription
+    createSubscription,
+    getUserInvoices,
+    cancelSubscription,
+    getSubscription,
+    getSubscriptions
 } from './helpers';
 
 
@@ -29,14 +33,32 @@ export const stripeCreateSubscription = functions.https.onCall( async (data, con
     const uid = getUID(context);
     const source = getVal(data, 'source');
     const planId = getVal(data, 'planId');
-    // const discount = data
     return await createSubscription(uid, source.id, planId);
 });
+
+export const stripeCancelSubscription = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    const planId = getVal(data, 'planId');
+    return await cancelSubscription(uid, planId);
+});
+
 
 export const stripeGetCharges = functions.https.onCall( async (data, context) => {
     const uid = getUID(context);
     return getUserCharges(uid);
 });
+
+export const stripeGetInvoices = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    return getUserInvoices(uid);
+});
+
+export const stripeGetSubscriptions = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    return getSubscriptions(uid);
+});
+
+
 
 export const stripeGetCustomer = functions.https.onCall( async (data, context) => {
     const uid = getUID(context);

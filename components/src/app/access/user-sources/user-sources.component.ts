@@ -1,18 +1,18 @@
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { SetState } from 'src/app/state.decorator';
 import { PaymentService } from '../payment.service';
 
 @Component({
   templateUrl: './user-sources.component.html',
 })
-export class UserSourcesComponent  {
+export class UserSourcesComponent implements AfterViewInit  {
 
   loading = true;
   customer;
 
   showForm = false;
 
-  constructor(private cd: ChangeDetectorRef, private pmt: PaymentService) { }
+  constructor(private cd: ChangeDetectorRef, private pmt: PaymentService) {}
 
   ngAfterViewInit() {
     this.getCustomer();
@@ -30,8 +30,6 @@ export class UserSourcesComponent  {
   newSource() {
     this.setState('showForm', true);
   }
-
-
 
   @SetState()
   setState(k, v) {

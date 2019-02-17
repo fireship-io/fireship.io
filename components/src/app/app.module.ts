@@ -18,8 +18,10 @@ import { PaymentFormComponent } from './access/payment-form/payment-form.compone
 import { ProductSelectComponent } from './access/product-select/product-select.component';
 import { UserChargesComponent } from './access/user-charges/user-charges.component';
 import { UsdPipe } from './access/usd.pipe';
-import { UserDetailsComponent } from './access/user-details/user-details.component';
+import { UserPlanComponent } from './access/user-plan/user-plan.component';
 import { UserSourcesComponent } from './access//user-sources/user-sources.component';
+import { SubscriptionManageComponent } from './access/subscription-manage/subscription-manage.component';
+import { LoaderComponent } from './loader/loader.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -36,8 +38,10 @@ const comps = [
   PaymentFormComponent,
   ProductSelectComponent,
   UserChargesComponent,
-  UserDetailsComponent,
-  UserSourcesComponent
+  UserPlanComponent,
+  UserSourcesComponent,
+  SubscriptionManageComponent,
+  LoaderComponent
 ];
 
 @NgModule({
@@ -46,7 +50,9 @@ const comps = [
   ],
   declarations: [
     ...comps,
-    UsdPipe
+    UsdPipe,
+    SubscriptionManageComponent,
+    LoaderComponent
   ],
   entryComponents: comps,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -71,8 +77,10 @@ export class AppModule {
       [PaymentFormComponent, 'payment-form'],
       [ProductSelectComponent, 'product-select'],
       [UserChargesComponent, 'user-charges'],
-      [UserDetailsComponent, 'user-details'],
-      [UserSourcesComponent, 'user-sources']
+      [UserPlanComponent, 'user-plan'],
+      [UserSourcesComponent, 'user-sources'],
+      [SubscriptionManageComponent, 'subscription-manage'],
+      [LoaderComponent, 'loading-spinner']
     ];
 
     for (const [component, name] of elements) {
