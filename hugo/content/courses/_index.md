@@ -12,3 +12,13 @@ description: Full-length courses featuring multiple hours of video content
 Master the fundamentals of serverless with Firebase Cloud Functions where we build seven different microservices from scratch
 
 {{% /card %}}
+
+{{% card href="/courses/stripe-payments" %}}
+
+<div class="text-center"><img src="/img/brands/firebase-functions.svg"></div>
+
+### Stripe Payments for Node & Firebase
+
+Master the fundamentals of serverless with Firebase Cloud Functions where we build seven different microservices from scratch
+
+{{% /card %}}

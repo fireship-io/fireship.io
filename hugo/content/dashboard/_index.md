@@ -3,33 +3,26 @@ title: Dashboard
 date: 2018-11-15T08:36:36-07:00
 draft: false
 description: Manage your Fireship Account
+hide_feed: true
 ---
 
-<google-login show-signout="true">
-    <button slot="signin" class="btn">
-        {{< partial "svg/google.svg" >}} Login Now
-    </button>
-    <button class="btn btn-orange" slot="signout">Signout</button>
-</google-login>
+<a href="/pro">PRO</a>
 
+<!-- {{< partial "pricing" >}} -->
 
-<user-plan></user-plan>
-
-{{< partial "pricing" >}}
+{{< partial "dashboard" >}}
 
 <hr>
 <div class="payment-card">
     <payment-form></payment-form>
 </div>
 
-<subscription-manage></subscription-manage>
 
-<user-charges></user-charges>
+<allow-if level="user">
+    <span>Stuff for users</span>
+</allow-if>
 
-<hr> 
-<user-details></user-details>
-
-<hr> 
-<user-sources></user-sources>
-
-<loading-spinner></loading-spinner>
+<allow-if level="pro">
+    <span>Stuff for pro members</span>
+    <button slot="paywall">Upgrade<button/>
+</allow-if>

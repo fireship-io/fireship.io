@@ -1,7 +1,8 @@
 import * as functions from 'firebase-functions';
-import { db, stripeTestKey, stripeSigningSecret } from './../config';
+import { db, stripeTestKey, lifetimeSKU } from './../config';
 import { pick } from 'lodash';
 import * as Stripe from 'stripe'; 
+import { privateDecrypt } from 'crypto';
 
 export const stripe = new Stripe(stripeTestKey);
 
@@ -24,7 +25,7 @@ export const getUID = (context: any) => {
 }
 
 // Validates data payload on callable functions
-export const getVal = (data: any, key:string) => {
+export const assert = (data: any, key:string) => {
     if (!data[key]) {
         throw new functions.https.HttpsError('invalid-argument', `function called without ${key} data`);
     } else {
@@ -109,7 +110,7 @@ const getUser = async(uid: string) => {
 
 export const getCustomer = async(uid: string) => {
     const user       = await getUser(uid);
-    return getVal(user, 'stripeCustomerId');
+    return assert(user, 'stripeCustomerId');
 }
 
 
@@ -125,18 +126,64 @@ const updateUser = async(uid: string, data: Object) => {
 }
 
 export const getUserCharges = async(uid: string, limit?: number) => {
-    const user       = await getUser(uid);
-    const customerId = getVal(user, 'stripeCustomerId');
+    const customer = await getCustomer(uid);
 
     return await stripe.charges.list({ 
         limit, 
-        customer: customerId 
+        customer 
     });
+}
+
+export const createCharge = async(uid: string, source: string, amount: number) => {
+    const customer = await getCustomer(uid);
+
+    const card = await attachSource(uid, source);
+    
+    return stripe.charges.create({
+        amount,
+        customer,
+        source,
+        currency: 'usd',
+    })
+}
+
+export const createOrder = async(uid: string, source: string, sku: string, coupon?: string) => {
+    const customer = await getCustomer(uid);
+
+    const card = await attachSource(uid, source);
+        
+    const data: any = {
+        currency: 'usd',
+        customer,
+        items: [
+            { type: 'sku', parent: sku }
+        ]
+    }
+
+    // stripe throws err if empty coupon
+    if (coupon) data['coupon'] = coupon;
+    
+    const order = await stripe.orders.create(data);
+    
+    const paidOrder = await stripe.orders.pay(order.id, { customer });
+
+    const isLifetime = paidOrder.items.filter(item => item.parent === lifetimeSKU);
+
+
+    const docData = {
+        products: { [sku]: true },
+        ...(isLifetime ? subscriptionStatus({ id: 'lifetime', status: 'lifetime' }) : null) 
+    }
+
+    
+
+    await db.doc(`users/${uid}`).set(docData, { merge: true });
+
+    return paidOrder;
 }
 
 export const getUserInvoices = async(uid: string, limit?: number) => {
     const customer = await getCustomer(uid);
-
     return await stripe.invoices.list({ 
         limit, 
         customer
@@ -153,23 +200,15 @@ export const getSubscriptions = async(uid: string) => {
     return stripe.subscriptions.list({ customer });
 }
 
-export const createSubscription = async(userId:string, sourceId:string, planId: string) => {
+export const createSubscription = async(uid:string, sourceId:string, planId: string, couponId?: string) => {
 
  
-    const user       = await getUser(userId);
-    const customer   = user.stripeCustomerId;
-
-    const card       = await attachSource(userId, sourceId)
-
-    // validate plan does not already exist
-    // const activeSubscription = await getSubscription(customer, planId);
-    // console.log(222, activeSubscription)
-    // if (activeSubscription) {
-    //     throw new functions.https.HttpsError('permission-denied', 'this account already has an active subscription');
-    // };
+    const customer = await getCustomer(uid);
+    const card       = await attachSource(uid, sourceId);
 
     const subscription = await stripe.subscriptions.create({
         customer: customer,
+        coupon: couponId,
         items: [
             {
               plan: planId,
@@ -178,15 +217,9 @@ export const createSubscription = async(userId:string, sourceId:string, planId: 
     });
 
     // Add the plan to existing subscriptions
-    const data = {
-        pro_status: 'active',
-        is_pro: true,
-        subscriptions: {
-            [subscription.id]: subscription.status
-        }
-    };
+    const docData = subscriptionStatus(subscription);
 
-    await db.doc(`users/${userId}`).set(data, { merge: true });
+    await db.doc(`users/${uid}`).set(docData, { merge: true });
 
     return subscription;
 }
@@ -194,31 +227,27 @@ export const createSubscription = async(userId:string, sourceId:string, planId: 
 export async function cancelSubscription(uid: string, subId: string): Promise<any> {
     const user = await getUser(uid);
     const customer   = user.stripeCustomerId;
-
-    
     const subscription  = await stripe.subscriptions.del(subId);
 
-    const data = {
-        pro_status: 'retired',
-        is_pro: false,
-        subscriptions: {
-            [subId]: subscription.status
-        }
-    };
+    const docData = subscriptionStatus(subscription);
 
-
-    await db.doc(`users/${uid}`).set(data, { merge: true });
+    await db.doc(`users/${uid}`).set(docData, { merge: true });
 
     return subscription;
 }
 
-
-export function verifyWebhook(req) {
-    return (req.headers['stripe-signature'] === stripeSigningSecret);
+export function getCoupon(couponId) {
+    return stripe.coupons.retrieve(couponId);
 }
 
 
-// export const filterSubscriptionData = (sub: Stripe.subscriptions.ISubscription) => {
-//     const base = pick(sub, ['id', 'status', 'days_until_due', 'created'])
-//     return { ...base, }
-// }
+
+export const subscriptionStatus = (subscription) => {
+    return {
+        pro_status: subscription.status,
+        is_pro: subscription.status === 'active',
+        subscriptions: {
+            [subscription.id]: subscription.status
+        }
+    }
+}

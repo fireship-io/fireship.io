@@ -2,25 +2,25 @@ import * as functions from 'firebase-functions';
 import { 
     attachSource,
     getUID, 
-    getVal, 
+    assert, 
     catchErrors,
     getOrCreateCustomer,
     getUserCharges, 
     createSubscription,
     getUserInvoices,
     cancelSubscription,
-    getSubscription,
-    getSubscriptions
+    getSubscriptions,
+    getCoupon,
+    createOrder
 } from './helpers';
 
 
 
 export const stripeSetSource = functions.https.onCall( async (data, context) => {
     const uid = getUID(context);
-    const source = getVal(data, 'source');
+    const source = assert(data, 'source');
 
-
-    return await catchErrors(attachSource(uid, source.id));
+    return catchErrors(attachSource(uid, source.id));
 });
 
 export const stripeCreateCharge = functions.https.onCall( async (data, context) => {
@@ -29,17 +29,25 @@ export const stripeCreateCharge = functions.https.onCall( async (data, context) 
     // return await attachSource(uid, source.id);
 });
 
+export const stripeCreateOrder = functions.https.onCall( async (data, context) => {
+    const uid = getUID(context);
+    const source = assert(data, 'source');
+    const sku = assert(data, 'sku');
+    return createOrder(uid, source.id, sku, data.couponId);
+});
+
+
 export const stripeCreateSubscription = functions.https.onCall( async (data, context) => {
     const uid = getUID(context);
-    const source = getVal(data, 'source');
-    const planId = getVal(data, 'planId');
-    return await createSubscription(uid, source.id, planId);
+    const source = assert(data, 'source');
+    const planId = assert(data, 'planId');
+    return createSubscription(uid, source.id, planId, data.couponId);
 });
 
 export const stripeCancelSubscription = functions.https.onCall( async (data, context) => {
     const uid = getUID(context);
-    const planId = getVal(data, 'planId');
-    return await cancelSubscription(uid, planId);
+    const planId = assert(data, 'planId');
+    return cancelSubscription(uid, planId);
 });
 
 
@@ -64,20 +72,9 @@ export const stripeGetCustomer = functions.https.onCall( async (data, context) =
     const uid = getUID(context);
     return getOrCreateCustomer(uid);
 });
-  
-  
-  
 
-export const stripeTester = functions.https.onRequest( async (req, res) => {
-    console.log(0, req.body.id);
-    console.log(1, req.body);
-    const data = JSON.parse(req.body);
-    // const uid = getUID(context);
-    const id = getVal(data, 'id');
-    console.log(2, id)
-    const foo = await attachSource('J0i4om7xSgULlXYVoQqP121Fnhv2', id);
-    console.log(3, foo)
-    res.send(foo);
-
+export const stripeGetCoupon= functions.https.onCall( async (data, context) => {
+    const couponId = assert(data, 'couponId');
+    return getCoupon(couponId);
 });
   

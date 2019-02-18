@@ -466,3 +466,11 @@ video, video-player, .video-overlay {
   }
 }
 
+.dashboard-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 200px;
+  margin-bottom: 1em;
+}
