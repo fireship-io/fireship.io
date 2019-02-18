@@ -7,7 +7,7 @@ import { tap, switchMap } from 'rxjs/operators';
 import { NotificationService } from '../notification/notification.service';
 import { onLogout, onLogin } from '../notification/notifications';
 import { docData } from 'rxfire/firestore';
-import { of } from 'rxjs';
+import { of, Observable } from 'rxjs';
 
 
 @Injectable({
@@ -17,10 +17,10 @@ export class AuthService {
 
   authClient = firebase.auth();
 
-  user$;
-  userDoc$;
+  user$: Observable<any>;
+  userDoc$: Observable<any>;
 
-  userProducts$;
+  userProducts$: Observable<any>;
 
   user;
 

@@ -32,17 +32,31 @@
             Add Source
           </button>
       </div>
+
+
   
       <div *ngIf="action !== 'source' && product">
+
+          <div class="coupon-form">
+              <p *ngIf="couponResult" class="green">{{ couponResult?.name }}</p>
+              <p *ngIf="couponError" class="red">Unable to apply coupon</p>
+              <input placeholder="discount code" class="input" maxlength="20" style="display: inline; margin-right: 10px;" type="text" #coupon>
+              <button type="button" 
+              [disabled]="couponLoading" class="btn btn-contrast btn-sm" 
+              (click)="applyCoupon($event, coupon.value)">Apply Coupon</button>
+              <loading-spinner *ngIf="couponLoading"></loading-spinner>
+          </div>
+
           <p>You are purchasing <strong class="green">{{ product?.description }}</strong> <a target="_blank" href="https://fireship.io/terms#subscriptions">terms</a></p>
 
           <button class="btn btn-green btn-stripe" [disabled]="formState?.error || !formState?.complete">
 
-              Pay {{ product?.price | usd }}
+              Pay ${{ total | usd }}
             
           </button>
       </div>
-  
+
+
     </div>
 
   </ng-template>

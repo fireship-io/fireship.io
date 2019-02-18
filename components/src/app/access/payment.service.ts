@@ -4,6 +4,8 @@ import { plans } from './stripe-defaults';
 import { AuthService } from '../users/auth.service';
 import { httpsCallable  } from 'rxfire/functions';
 import * as firebase from 'firebase/app';
+import { take, map } from 'rxjs/operators';
+import get from 'lodash.get';
 
 
 @Injectable({
@@ -21,12 +23,26 @@ export class PaymentService {
   }
 
 
-  async userCharges() {
-    return this.callFunction('stripeGetCharges', {});
+  allowAuthenticated() {
+      return this.auth.user$.pipe(map(v => !!v ));
+  }
+
+  allowPro(productId?) {
+    return this.auth.userDoc$.pipe(
+      map(u => {
+        const isPro = get(u, 'is_pro');
+        const hasProduct = get(u, `products.${productId}`);
+        return !!(isPro || hasProduct);
+      })
+    );
+  }
+
+  async getCoupon(couponId) {
+    return this.callFunction('stripeGetCoupon', { couponId });
   }
 
   async userInvoices() {
-    return this.callFunction('stripeGetInvoices', {});
+    return this.callFunction('stripeGetInvoices', { });
   }
 
   //// Payment Capture Events ////
@@ -43,12 +59,12 @@ export class PaymentService {
     return this.callFunction('stripeSetSource', { source });
   }
 
-  async createSubscription(source, planId, discountId?) {
-    return this.callFunction('stripeCreateSubscription', { source, planId, discountId });
+  async createSubscription(source, planId, couponId?) {
+    return this.callFunction('stripeCreateSubscription', { source, planId, couponId });
   }
 
-  async createPurchase(source, productId, discountId?) {
-    return this.callFunction('stripeCreatePurchase', { source, productId, discountId });
+  async createOrder(source, sku, couponId?) {
+    return this.callFunction('stripeCreateOrder', { source, sku, couponId });
   }
 
   async cancelSubscription(source, planId, discountId?) {

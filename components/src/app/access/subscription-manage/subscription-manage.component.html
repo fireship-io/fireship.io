@@ -1,3 +1,11 @@
+
+<div *ngIf="userDoc?.pro_status" class="well">
+    <hr>
+  <h4>Fireship.io PRO Lifetime 🚀</h4>
+  <p>You are untouchable! You have full access to all content on Fireship.io forever at no additional cost</p>
+</div>
+
+
 <div *ngIf="subs">
 
   <div *ngFor="let sub of subs" class="well">
@@ -10,27 +18,23 @@
       <li *ngIf="sub.status !== 'canceled'">Next payment due {{ sub.current_period_end * 1000 | date }} for ${{ sub.plan.amount | usd }}</li>
     </ul>
 
-    <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red" (click)="cancel(sub.id)">
+    <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red btn-sm" (click)="cancel(sub.id)">
       Cancel
     </button>
 
     <div *ngIf="canceling">
         <loading-spinner></loading-spinner> <span *ngIf="canceling">Canceling PRO membership 😭</span>
     </div>
- 
-
 
     <p class="red">{{ serverError }}</p>
 
   </div>
 
-  <div *ngIf="!subs.length">No active subscriptions found</div>
-
-  <pre>{{ subs | json }}</pre>
-
+  <div *ngIf="!subs.length">No paid recurring subscriptions found</div>
     
 </div>
 
+
 <div *ngIf="loading">
-    <span *ngIf="canceling">Loading subscription details</span>
+    <loading-spinner></loading-spinner> Loading membership details...
 </div>

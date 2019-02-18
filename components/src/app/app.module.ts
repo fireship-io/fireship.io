@@ -21,7 +21,8 @@ import { UsdPipe } from './access/usd.pipe';
 import { UserPlanComponent } from './access/user-plan/user-plan.component';
 import { UserSourcesComponent } from './access//user-sources/user-sources.component';
 import { SubscriptionManageComponent } from './access/subscription-manage/subscription-manage.component';
-import { LoaderComponent } from './loader/loader.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { AllowIfComponent } from './access/allow-if/allow-if.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -41,7 +42,8 @@ const comps = [
   UserPlanComponent,
   UserSourcesComponent,
   SubscriptionManageComponent,
-  LoaderComponent
+  SpinnerComponent,
+  AllowIfComponent
 ];
 
 @NgModule({
@@ -50,9 +52,7 @@ const comps = [
   ],
   declarations: [
     ...comps,
-    UsdPipe,
-    SubscriptionManageComponent,
-    LoaderComponent
+    UsdPipe
   ],
   entryComponents: comps,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -80,7 +80,8 @@ export class AppModule {
       [UserPlanComponent, 'user-plan'],
       [UserSourcesComponent, 'user-sources'],
       [SubscriptionManageComponent, 'subscription-manage'],
-      [LoaderComponent, 'loading-spinner']
+      [SpinnerComponent, 'loading-spinner'],
+      [AllowIfComponent, 'allow-if']
     ];
 
     for (const [component, name] of elements) {
