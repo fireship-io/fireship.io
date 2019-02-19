@@ -1,7 +1,7 @@
 ---
 title: Github Action deploying Angular App to Firebase Hosting
-publishdate: 2019-02-19T09:35:09-07:00
-lastmod: 2019-02-19T09:35:09-07:00
+publishdate: 2019-02-19T23:12:09-07:00
+lastmod: 2019-02-20T00:04:09-07:00
 draft: false
 author: Marc Stammerjohann
 description: A step-by-step guide to create a Github Action to deploy your Angular App to Firebase Hosting.
