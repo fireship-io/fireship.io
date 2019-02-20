@@ -241,7 +241,7 @@ The HTML provides a progress bar and several buttons that allow the user to paus
 {{< /highlight >}}
 
 
-The component is responsible for managing the state of the upload. In this demo, the upload starts transferring data when initialized with `ngOnInit`. It takes the file as an input property, then uses it's name as a reference in the storage bucket. Keep in mind, storage path names must be unique (just like any filesystem), so we also add a timestamp to the name ensure uniqueness on each upload. 
+The component is responsible for managing the state of the upload. In this demo, the upload starts transferring data when initialized with `ngOnInit`. It takes the file as an input property, then uses it's name as a reference in the storage bucket. Keep in mind, storage path names must be unique (just like any filesystem), so we also add a timestamp to the name to ensure uniqueness on each upload. 
 
 The `snapshotChanges` Observable emits data every few hundred milliseconds with information about the upload's progress. You can use it for progress indicators or alternatively use `percentageChanges` to listen the current progress ranging from 0 to 100. 
 
