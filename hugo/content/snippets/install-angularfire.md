@@ -65,7 +65,7 @@ const config = {
   imports: [
     BrowserModule,
     // 3. Initialize
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(config),
     AngularFirestoreModule, // firestore
     AngularFireAuthModule, // auth
     AngularFireStorageModule // storage
