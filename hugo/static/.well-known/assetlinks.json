@@ -1,0 +1,10 @@
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "io.fireship.app",
+      "sha256_cert_fingerprints": [
+        "B6:74:89:B5:05:05:1F:77:A9:8D:BD:77:66:B9:13:44:FF:9A:D1:59:82:FA:8E:80:91:CB:86:24:D6:08:68:4F"
+      ]
+    }
+}]
