@@ -1,5 +1,5 @@
 ---
-title: PWA to Play Store
+title: Trusted Web Activity - PWA to Play Store Guide
 lastmod: 2019-02-20T10:27:58-07:00
 publishdate: 2019-02-20T10:27:58-07:00
 author: Jeff Delaney
@@ -25,11 +25,11 @@ versions:
 
 Web developers already have a variety of interesting options for using JavaScript to write native mobile apps with tools like React Native, Cordova/Ionic, NativeScript, just to name a few. I've spent many hours brainstorming with clients on this topic and recently summed up my thoughts about [Hybrid App](https://itnext.io/should-you-use-ionic-4-fa04daebaffd) development, but there's a brand new strategy to add to the list... [Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa) (TWA). The following guide will show you how to covert any progressive web app to an Android App on the Google Play Store. 
 
-
+{{< figure src="img/googleplay-badge.png" >}}
 
 {{% box icon="fire" class="" %}}
 Special thanks to Sven Budak for writing [This TWA stuff rocks! Finally I got my PWA on Google Play Store ](https://medium.com/@svenbudak/this-twa-stuff-rocks-finally-i-got-my-pwa-on-google-play-store-b92fe8dae31f?sk=7bc452d3081de636db736199370a364b). 
-{{% /box %}}https://youtu.be/7JDFjeMvxos
+{{% /box %}}
 
 ## Wait, what is a Trusted Web Activity? 
 
