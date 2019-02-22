@@ -50,7 +50,7 @@ export class ThemeBtnComponent implements AfterViewInit {
 
   getIt(): Theme {
     const theme = this.localStorage.getItem(this.themeKey);
-    if (theme in Object.keys(this.themeMap)) {
+    if (theme in this.themeMap) {
       return theme as Theme;
     } else {
       return 'dark-theme';
