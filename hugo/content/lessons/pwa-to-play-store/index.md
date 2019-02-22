@@ -11,7 +11,7 @@ tags:
     - android
     - javascript
 
-youtube: 
+youtube: 7JDFjeMvxos
 github: https://github.com/fireship-io/169-pwa-trusted-web-activity
 # disable_toc: true
 # disable_qna: true
@@ -29,7 +29,7 @@ Web developers already have a variety of interesting options for using JavaScrip
 
 {{% box icon="fire" class="" %}}
 Special thanks to Sven Budak for writing [This TWA stuff rocks! Finally I got my PWA on Google Play Store ](https://medium.com/@svenbudak/this-twa-stuff-rocks-finally-i-got-my-pwa-on-google-play-store-b92fe8dae31f?sk=7bc452d3081de636db736199370a364b). 
-{{% /box %}}
+{{% /box %}}https://youtu.be/7JDFjeMvxos
 
 ## Wait, what is a Trusted Web Activity? 
 
@@ -41,7 +41,7 @@ Special thanks to Sven Budak for writing [This TWA stuff rocks! Finally I got my
 
 - OAuth requests not blocked (this is awesome).
 - Always up-to-date content, no need to cut a new release when content changes.
-- Share cookies, local storage, and other saved settings with the preferred browser. 
+- Share cookies, local storage, saved settings and all PWA features with the preferred browser. 
 
 But there are also some drawbacks that come to mind...
 
