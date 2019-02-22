@@ -23,7 +23,7 @@ versions:
    chrome: 72
 ---
 
-Web developers already have many complex options for converting a JavaScript app to native with tools like React Native, Cordova/Ionic, NativeScript, etc. I've spent many hours thinking about this topic and recently summed up my thoughts about [Hybrid App](https://itnext.io/should-you-use-ionic-4-fa04daebaffd) development, but there's a brand new strategy to add to the list... [Trusted Web Activity](https://developers.google.com/web/updates/2019/02/using-twa) (TWA). The following guide will show you how to covert any progressive web app to an Android App on the Google Play Store. 
+Web developers already have a variety of interesting options for using JavaScript to write native mobile apps with tools like React Native, Cordova/Ionic, NativeScript, just to name a few. I've spent many hours brainstorming with clients on this topic and recently summed up my thoughts about [Hybrid App](https://itnext.io/should-you-use-ionic-4-fa04daebaffd) development, but there's a brand new strategy to add to the list... [Trusted Web Activities](https://developers.google.com/web/updates/2019/02/using-twa) (TWA). The following guide will show you how to covert any progressive web app to an Android App on the Google Play Store. 
 
 
 
@@ -35,7 +35,7 @@ Special thanks to Sven Budak for writing [This TWA stuff rocks! Finally I got my
 
 **TL;DR** A Trusted Web Activity allows Chrome (v72 or later) to run a website in fullscreen mode *without a browser toolbar* within an APK (Android Package).  
 
-**How?** The underlying technology is based on the [Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs) protocol, which is already used to embed web content within native apps. For example, you might click a link in the Twitter app, but never actually leave the app to view the content. A TWA allows a developer to verify ownership of first-party web content by uploading a special file to the hosting server. It can then be easily packaged for Android making it indistinguishable from a true native app and discoverable on the Play Store.  
+**How?** The underlying technology is based on the [Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs) protocol, which is already used to embed web content within native apps. For example, you might click a link in the Twitter app, but never actually leave the app to view the content. A TWA allows a developer to verify ownership of first-party web content by uploading a special file called a trusted asset link to the hosting server. It can then be easily packaged for Android making it indistinguishable from a true native app and discoverable on the Play Store.  
 
 **Why?** While this approach is very new on the scene, it offers a promising alternative to webview-based hybrid apps (Ionic/Cordova). Many hybrid apps are just PWAs wrapped up as a native package, but the webview environment is sandboxed, so TWAs offer the following benefits:
 
@@ -183,24 +183,24 @@ On the Google Play Store, upload your APK at *App Releases → Internal Test Tra
 
 {{< figure src="img/google-play-store-listing.png" alt="Update the store listing on google play" >}}
 
-You are must fill out ALL required information for the store listing, content rating, and pricing details. You should see four green checkmarks on the sidebar ✔️ when this process is complete. Your app will initially be in *pending publication* status - just wait a few hours for it to be approved. 
+You are must fill out ALL required information for the store listing, content rating, and pricing details. You should see four green checkmarks on the sidebar ✔️ when this process is complete. After you create the release, your app will be in *pending publication* status - just wait a few hours for it to be approved. 
 
 And finally you can install your app from the Play Store by using the opt-in URL under the *Manage testers* , then finish up the day a well-deserved refreshment 🍺.
 
 
 ## The End
 
-That was a lot of small steps 😅 but this process will become more streamlined in the future. Let's recap
+That was a lot of small steps 😅 but this process will become more streamlined in the future. Let's recap the entire checklist
 
 1. Build a good PWA
 1. Install Android Studio
 1. Sign up for Google Play, pay $25
-1. Create an Internal Track Release
+1. Clone the Android TWA starter app
+1. Update app/build.gradle
 1. Create a keystore
 1. Create a digital asset link file and deploy it
-1. Clone the Android demo
-1. Update app/build.gradle
 1. Generate a signed APK
+1. Create an Internal Track Release
 1. Upload the signed APK to Google play
 1. Finish the Google Play Store Listing
 1. Release and wait
