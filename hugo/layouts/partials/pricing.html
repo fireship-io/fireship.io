@@ -58,5 +58,29 @@
             <product-select product-id="proLifetime" text="Choose Plan"></product-select>
     
         </div>
+
+            
         
 </div>
+
+<div class="flex-center" id="paymentWrapper">
+
+        <allow-if level="user">
+                <div class="payment-card">
+                    <payment-form></payment-form>
+                </div>
+            
+            
+                <span slot="falsey">
+                    <google-login show-signout="false">
+                        <button slot="signin" class="btn btn-lg">
+                            {{ partial "svg/google.svg" }} Login to Upgrade
+                        </button>
+                    </google-login>
+                </span>
+            </allow-if>
+
+        </div>
+
+<hr>
+

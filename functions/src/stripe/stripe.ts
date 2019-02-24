@@ -33,7 +33,7 @@ export const stripeCreateOrder = functions.https.onCall( async (data, context) =
     const uid = getUID(context);
     const source = assert(data, 'source');
     const sku = assert(data, 'sku');
-    return createOrder(uid, source.id, sku, data.couponId);
+    return catchErrors(createOrder(uid, source.id, sku, data.couponId));
 });
 
 

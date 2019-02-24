@@ -245,7 +245,7 @@ export function getCoupon(couponId) {
 export const subscriptionStatus = (subscription) => {
     return {
         pro_status: subscription.status,
-        is_pro: subscription.status === 'active',
+        is_pro: ['active', 'lifetime'].includes(subscription.status),
         subscriptions: {
             [subscription.id]: subscription.status
         }

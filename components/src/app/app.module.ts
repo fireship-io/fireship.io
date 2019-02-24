@@ -18,7 +18,7 @@ import { PaymentFormComponent } from './access/payment-form/payment-form.compone
 import { ProductSelectComponent } from './access/product-select/product-select.component';
 import { UserChargesComponent } from './access/user-charges/user-charges.component';
 import { UsdPipe } from './access/usd.pipe';
-import { UserPlanComponent } from './access/user-plan/user-plan.component';
+import { UserDataComponent } from './user-data/user-data.component';
 import { UserSourcesComponent } from './access//user-sources/user-sources.component';
 import { SubscriptionManageComponent } from './access/subscription-manage/subscription-manage.component';
 import { SpinnerComponent } from './spinner/spinner.component';
@@ -39,7 +39,7 @@ const comps = [
   PaymentFormComponent,
   ProductSelectComponent,
   UserChargesComponent,
-  UserPlanComponent,
+  UserDataComponent,
   UserSourcesComponent,
   SubscriptionManageComponent,
   SpinnerComponent,
@@ -77,7 +77,7 @@ export class AppModule {
       [PaymentFormComponent, 'payment-form'],
       [ProductSelectComponent, 'product-select'],
       [UserChargesComponent, 'user-charges'],
-      [UserPlanComponent, 'user-plan'],
+      [UserDataComponent, 'user-data'],
       [UserSourcesComponent, 'user-sources'],
       [SubscriptionManageComponent, 'subscription-manage'],
       [SpinnerComponent, 'loading-spinner'],

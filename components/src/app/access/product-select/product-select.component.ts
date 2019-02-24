@@ -14,7 +14,10 @@ export class ProductSelectComponent {
 
   constructor(public pmt: PaymentService) {
     this.pmt.product.pipe(
-      tap(v => this.activeProduct = v)
+      tap(v => {
+        this.activeProduct = v;
+        document.getElementById('paymentWrapper').scrollIntoView({ behavior: 'smooth'});
+      })
     )
     .subscribe();
   }

@@ -8,6 +8,7 @@ import { NotificationService } from '../notification/notification.service';
 import { onLogout, onLogin } from '../notification/notifications';
 import { docData } from 'rxfire/firestore';
 import { of, Observable } from 'rxjs';
+import { RouteLoaderComponent } from '../route-loader/route-loader.component';
 
 
 @Injectable({
@@ -23,8 +24,10 @@ export class AuthService {
   userProducts$: Observable<any>;
 
   user;
+  userDoc;
 
   constructor(private app: ApplicationRef, private ns: NotificationService) {
+    // Why service subsciptions? Maintain state between route changes with change detection.
     this.user$ = user(this.authClient)
 
     .pipe(tap(u => {
@@ -32,10 +35,15 @@ export class AuthService {
       this.app.tick();
     }));
 
-    this.user$.subscribe();
 
-    this.userDoc$ = this.getUserDoc$('users');
-    this.userProducts$ = this.getUserDoc$('products');
+    this.userDoc$ = this.getUserDoc$('users').pipe(tap(u => {
+      this.userDoc = u;
+      this.app.tick();
+    }));
+
+
+    this.user$.subscribe();
+    this.userDoc$.subscribe();
    }
 
    getUserDoc$(col) {
@@ -48,7 +56,7 @@ export class AuthService {
 
   signOut() {
     this.authClient.signOut();
-    this.ns.setNotification(onLogout);
+    location.replace('https://fireship.io');
   }
 
   async login() {

@@ -2,9 +2,10 @@ export const stripeStyle = {
   base: {
     iconColor: '#9aa6b3',
     color: '#6ca0fc',
-    fontWeight: 700,
+    fontWeight: 500,
     fontFamily: 'ratio, sans-serif',
-    fontSize: '21px',
+    fontSize: '1.1em',
+    lineHeight: '22px',
     fontSmoothing: 'antialiased',
     ':-webkit-autofill': {
       color: '#9aa6b3',

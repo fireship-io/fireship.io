@@ -131,15 +131,18 @@
 
 .notification {
   position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+  // width: 100%;
+  left: 4em;
+  right: 1em;
+  bottom: 2em;  
   z-index: 9999;
   margin: 0;
+  opacity: 0.95;
 
   &.hide {
     transform: translateX(100%);
-    transition: transform 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
   }
 }
 

@@ -1,15 +1,3 @@
 <div *ngIf="allowed"><slot></slot></div>
 
-<div *ngIf="!allowed">
-  <div *ngIf="level === 'pro'">
-      <slot name="paywall">
-        <button class="btn">Upgrade to PRO</button>
-      </slot>
-  </div>
-
-  <div *ngIf="level === 'user'">
-    <slot name="userwall">
-        <button class="btn">Login to View</button>
-    </slot>
-  </div>
-</div>
+<div *ngIf="!allowed"><slot name="falsey"></slot></div>

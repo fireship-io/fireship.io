@@ -6,23 +6,6 @@ description: Manage your Fireship Account
 hide_feed: true
 ---
 
-<a href="/pro">PRO</a>
-
-<!-- {{< partial "pricing" >}} -->
+Your current membership status is <user-data field="is_pro"></user-data>
 
 {{< partial "dashboard" >}}
-
-<hr>
-<div class="payment-card">
-    <payment-form></payment-form>
-</div>
-
-
-<allow-if level="user">
-    <span>Stuff for users</span>
-</allow-if>
-
-<allow-if level="pro">
-    <span>Stuff for pro members</span>
-    <button slot="paywall">Upgrade<button/>
-</allow-if>

@@ -1,4 +1,8 @@
-<div [hidden]="!product && action !== 'source'" class="well">
+<div [hidden]="!product && action !== 'source'" class="payment-wrapper" id="paymentWrapper">
+
+  <div class="payment-header" *ngIf="product">
+      <p>You are purchasing <strong class="green">{{ product?.description }}</strong></p>
+  </div>
 
 <form action="/charge" method="post" id="payment-form" (submit)="handleForm($event)" class="form-stripe">
   <div class="form-row">
@@ -16,7 +20,7 @@
     </div>
   </div>
 
-  <div *ngIf="loadingState; else pmtBtn">
+  <div *ngIf="loadingState; else pmtBtn" class="payment-loading">
     <loading-spinner></loading-spinner> {{ loadingState }}
   </div>
 
@@ -40,18 +44,16 @@
           <div class="coupon-form">
               <p *ngIf="couponResult" class="green">{{ couponResult?.name }}</p>
               <p *ngIf="couponError" class="red">Unable to apply coupon</p>
-              <input placeholder="discount code" class="input" maxlength="20" style="display: inline; margin-right: 10px;" type="text" #coupon>
+              <input placeholder="coupon code" class="input" maxlength="20" style="display: inline; margin-right: 10px; max-width: 256px;" type="text" #coupon>
               <button type="button" 
               [disabled]="couponLoading" class="btn btn-contrast btn-sm" 
-              (click)="applyCoupon($event, coupon.value)">Apply Coupon</button>
+              (click)="applyCoupon($event, coupon.value)">Apply</button>
               <loading-spinner *ngIf="couponLoading"></loading-spinner>
           </div>
 
-          <p>You are purchasing <strong class="green">{{ product?.description }}</strong> <a target="_blank" href="https://fireship.io/terms#subscriptions">terms</a></p>
+          <button class="btn btn-lg btn-blue btn-stripe" [disabled]="formState?.error || !formState?.complete">
 
-          <button class="btn btn-green btn-stripe" [disabled]="formState?.error || !formState?.complete">
-
-              Pay ${{ total | usd }}
+              Pay ${{ total | usd }} <i *ngIf="formState?.complete"> 👉</i> 
             
           </button>
       </div>
@@ -67,4 +69,24 @@
   <!-- A Stripe Element will be inserted here. -->
 </div>
 
+
+  <div class="payment-terms">
+      <button type="button" class="btn btn-contrast btn-sm" onclick="window.open('https://fireship.io/terms#memberships','_blank')">terms</button>
+      <img class="stripe-badge" src="/img/brands/stripe.svg">
+  </div>
+
+
 </div>
+
+<allow-if level="pro">
+  <div class="well">
+      Hey, thank you for being a PRO Member! You have full access to premium content on Fireship 😄 
+      <hr>
+      <a class="btn btn-sm btn-green" href="/dashboard">Dashboard</a>
+  </div>
+
+  <span slot="paywall"></span>
+</allow-if>
+  
+
+  

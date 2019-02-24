@@ -94,8 +94,6 @@ export class PaymentFormComponent implements AfterViewInit {
 
     const { res, serverError } = await this.sourceHandler(source);
 
-    console.log(res);
-
     if (serverError) {
       this.setState('serverError', serverError.message);
       this.setState('loadingState', null);
@@ -106,7 +104,6 @@ export class PaymentFormComponent implements AfterViewInit {
 
   async sourceHandler(source) {
     const couponId = this.couponResult && this.couponResult.id;
-    console.log(23, couponId);
 
     switch (this.action) {
       case 'purchase':
@@ -122,7 +119,6 @@ export class PaymentFormComponent implements AfterViewInit {
 
       case 'source':
         return this.pmt.setSource(source);
-        break;
     }
   }
 
@@ -137,15 +133,13 @@ export class PaymentFormComponent implements AfterViewInit {
   get total() {
     let total = this.product.price;
     const coupon = this.couponResult;
-    console.log(coupon);
+
     if (coupon && coupon.percent_off) {
        total = total - (total * (coupon.percent_off / 100));
     }
     if (coupon && coupon.amount_off) {
       total = total - coupon.amount_off;
     }
-
-    console.log(total);
 
     return total;
   }
