@@ -10,7 +10,7 @@ tags:
     - dart
     - animation
 
-youtube: 
+youtube: MhQI-ysRyrk
 github: https://github.com/fireship-io/170-flutter-animated-radial-menu
 # disable_toc: true
 # disable_qna: true
@@ -23,7 +23,7 @@ versions:
    vector_math: ^2.0.8
 ---
 
-Building a flashy animated radial menu in Flutter can be done with ease thanks to the [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) widget and [staggered animations](https://flutter.dev/docs/development/ui/animations/staggered-animations). The following lesson will teach you how to use compose flutter animations into a cool rotating circular menu as shown below. 
+Building a flashy animated radial menu in Flutter can be done with ease thanks to the [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) widget and [staggered animations](https://flutter.dev/docs/development/ui/animations/staggered-animations). The following lesson will teach you how to use compose flutter animations into a cool rotating circular at can easily maintain 60FPS on modern smartphones. 
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2F170-RadialMenu%2Fflutter-spinner-demo.mp4?alt=media&token=71b0c4d8-c286-451b-8b8a-04a539b2116d"></video>
 
@@ -92,13 +92,19 @@ class RadialAnimation extends StatelessWidget {
 }
 {{< /highlight >}}
 
+### Profiling Animation Performance
+
+I highly recommend running your app on a real device to make use Flutter's [Performance Profiling](https://flutter.dev/docs/testing/ui-performance) tools. As you long as you maintain 60 frames-per-second FPS your app should be perceived as "butter smooth" 🥞. As you can see from the profile below the animation has plenty of room to spare on a Pixel 2. Smaller blue bars means faster rendering for each frame (they will become red when perf starts to degrade). 
+
+{{< figure src="img/flutter-perf.png" alt="flutter animation performance at 60FPS" >}}
+
 ## Step 2 - Animate the Open and Close Buttons
 
 The first animation will toggle the visibility of the open/close button in the middle of the menu. 
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2F170-RadialMenu%2F18-openclose-demo.mp4?alt=media&token=0a0fee29-b8a3-404f-b444-e9784e313f73"></video>
 
-### Add add Animation Controller
+### Define the Animation Controller
 
 The controller lives in the StatefulWidget and defines the total durtation of the animation. 
 
@@ -115,13 +121,13 @@ class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateM
 }
 {{< /highlight >}}
 
-### Scale Buttons In-and-Out
+### Open/Close Button Scale Animation
 
 All of the buttons in the radial menu will be stacked on top of each other, then animated around the center when the menu is opened. 
 
 - The *Tween* defines the values that will change over the course of the animation. For example, we start at a size of 150%, then scale down to 0%. 
 - The *CurvedAnimation* defines the [Bezier curve](https://www.jasondavies.com/animated-bezier/) - or timing function - of the animation over its lifecycle. Flutter has a bunch of built-in curves that that will make your animations more exciting, so experiment with these. 
-- *Transform.scale()* wrapped the floating action buttons and will dynamically apply scale changes when the animation is running. 
+- *Transform.scale()* wrapps the floating action buttons and will dynamically apply scale changes when the animation is running. 
 
 
 
@@ -193,7 +199,7 @@ The next section is the most challenging because we need to determine the correc
 
 ### Translate to Points around the Circle
 
-In the code below we use some basic trig to determine the x,y cordinate with a fixed angle (in radians) and a distance (the current value of the translation animation). Extracting this logic to a `_buildButton` helper function allows us to quickly add new buttons to the menu with their own custom colors and icons.
+In the code below we use some basic trig to determine the x,y position of a button based on a fixed angle (in radians) and a distance (the current value of the translation animation). Extracting this logic to a `_buildButton` helper function allows us to quickly add new buttons to the menu with their own custom colors and icons.
 
 Also, this animation is rendered with a Matrix4 [Transformation Matrix](https://en.wikipedia.org/wiki/Transformation_matrix). You can do some amazing things with 3D perspective animations by chaning together different transformations, for example `Matrix4.identity()..translate()..scale()..skew()`; 
 
