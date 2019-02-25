@@ -4,7 +4,7 @@ lastmod: 2019-02-24T09:14:20-07:00
 publishdate: 2019-02-24T09:14:20-07:00
 author: Jeff Delaney
 draft: false
-description: Compose staggered transform animations in Flutter by building an radial menu from scratch.  
+description: Compose staggered transform animations in Flutter by building a radial menu from scratch.  
 tags: 
     - flutter
     - dart
@@ -23,7 +23,7 @@ versions:
    vector_math: ^2.0.8
 ---
 
-Building a flashy animated radial menu in Flutter can be done with ease thanks to the [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) widget and [staggered animations](https://flutter.dev/docs/development/ui/animations/staggered-animations). The following lesson will teach you how to use compose flutter animations into a cool rotating circular at can easily maintain 60FPS on modern smartphones. 
+Building a flashy animated radial menu in Flutter can be done with ease thanks to the [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) widget and [staggered animations](https://flutter.dev/docs/development/ui/animations/staggered-animations). The following lesson will teach you how to compose flutter animations into a cool rotating circular widget, which can easily maintain 60FPS on modern smartphones. 
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2F170-RadialMenu%2Fflutter-spinner-demo.mp4?alt=media&token=71b0c4d8-c286-451b-8b8a-04a539b2116d"></video>
 
@@ -94,7 +94,7 @@ class RadialAnimation extends StatelessWidget {
 
 ### Profiling Animation Performance
 
-I highly recommend running your app on a real device to make use Flutter's [Performance Profiling](https://flutter.dev/docs/testing/ui-performance) tools. As you long as you maintain 60 frames-per-second FPS your app should be perceived as "butter smooth" 🥞. As you can see from the profile below the animation has plenty of room to spare on a Pixel 2. Smaller blue bars means faster rendering for each frame (they will become red when perf starts to degrade). 
+I highly recommend running your app on a real device to make use of Flutter's [Performance Profiling](https://flutter.dev/docs/testing/ui-performance) tools. As long as you maintain 60 frames-per-second (FPS), your app should be perceived as "butter smooth" 🥞. As you can see from the profile below the animation has plenty of room to spare on a Pixel 2. Smaller blue bars means faster rendering for each frame (they will become red when perf starts to degrade). 
 
 {{< figure src="img/flutter-perf.png" alt="flutter animation performance at 60FPS" >}}
 
@@ -201,7 +201,7 @@ The next section is the most challenging because we need to determine the correc
 
 In the code below we use some basic trig to determine the x,y position of a button based on a fixed angle (in radians) and a distance (the current value of the translation animation). Extracting this logic to a `_buildButton` helper function allows us to quickly add new buttons to the menu with their own custom colors and icons.
 
-Also, this animation is rendered with a Matrix4 [Transformation Matrix](https://en.wikipedia.org/wiki/Transformation_matrix). You can do some amazing things with 3D perspective animations by chaning together different transformations, for example `Matrix4.identity()..translate()..scale()..skew()`; 
+Also, this animation is rendered with a Matrix4 [Transformation Matrix](https://en.wikipedia.org/wiki/Transformation_matrix). You can do some amazing things with 3D perspective animations by chaining together different transformations, for example `Matrix4.identity()..translate()..scale()..skew()`; 
 
 
 {{< highlight dart >}}
