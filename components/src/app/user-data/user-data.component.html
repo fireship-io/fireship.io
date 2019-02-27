@@ -6,6 +6,7 @@
 
         <span *ngIf="field == 'display-name'">{{ u.displayName }}</span>
         <span *ngIf="field == 'pro_status'">{{ u.pro_status }}</span>
+        <span *ngIf="field == 'email'">{{ u.email }}</span>
         <span *ngIf="field == 'photo-url'"><img [src]="u.photoURL || '/img/avatar.png'"></span>
         <span *ngIf="field == 'is_pro'" class="tag tag-sm" [class.tag-pro]="u?.is_pro">
             {{ u?.is_pro ? 'pro' : 'basic' }}

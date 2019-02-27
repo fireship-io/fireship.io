@@ -14,10 +14,14 @@
 
         {{ with .Params.video }}
 
+        <allow-if level="pro">
+
 
             <video-player src="{{ . }}" require-login="true">
 
             </video-player>
+
+        </allow-if>
 
             <hr class="spacer">
 

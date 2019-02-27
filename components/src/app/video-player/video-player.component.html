@@ -15,7 +15,7 @@
 
     </video>
       
-    <div *ngIf="youtube && canWatch" #player class="plyr__video-embed" id="player">
+    <div *ngIf="canWatch" #player class="plyr__video-embed" id="player">
         <iframe [src]="trusted" allowfullscreen allowtransparency allow="autoplay"></iframe>
     </div>
 

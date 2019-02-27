@@ -5,7 +5,4 @@ draft: false
 description: Manage your Fireship Account
 hide_feed: true
 ---
-
-Your current membership status is <user-data field="is_pro"></user-data>
-
 {{< partial "dashboard" >}}

@@ -3,7 +3,6 @@ import {
   ChangeDetectorRef,
   Input,
   ViewChild,
-  ViewEncapsulation,
   ElementRef,
   AfterViewInit,
   OnDestroy
@@ -17,11 +16,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.scss'],
-  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   @Input() src;
-  @Input() youtube;
+  // @Input() youtube;
   @Input() poster;
   @Input() requireLogin;
   @Input() config = '{ "enabled": true }';
@@ -48,9 +46,9 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
     private san: DomSanitizer
   ) {}
 
-  get trusted() {
-      return this.san.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtube}?${this.params}`);
-  }
+  // get trusted() {
+  //     return this.san.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtube}?${this.params}`);
+  // }
 
   get canWatch() {
       return !!(!this.requireLogin || (this.requireLogin && this.auth.user));

@@ -1,8 +1,6 @@
 import * as functions from 'firebase-functions';
 import { db, stripeTestKey, lifetimeSKU } from './../config';
-import { pick } from 'lodash';
 import * as Stripe from 'stripe'; 
-import { privateDecrypt } from 'crypto';
 
 export const stripe = new Stripe(stripeTestKey);
 
