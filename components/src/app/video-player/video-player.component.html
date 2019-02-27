@@ -3,21 +3,19 @@
 
 
 <div class="video-player">
-    <div *ngIf="!auth.user && requireLogin">
+    <!-- <div *ngIf="!auth.user && requireLogin">
       <div (click)="auth.login()">
         <div class="video-overlay">
             <button class="video-login btn btn-green btn-lg">📼 Signin to Watch</button>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <video *ngIf="src && canWatch" id="player" #player playsinline [src]="src">
-
-    </video>
+    <video *ngIf="src" id="player" #player playsinline [src]="src"></video>
       
-    <div *ngIf="canWatch" #player class="plyr__video-embed" id="player">
+    <!-- <div #player class="plyr__video-embed" id="player">
         <iframe [src]="trusted" allowfullscreen allowtransparency allow="autoplay"></iframe>
-    </div>
+    </div> -->
 
 </div>
 

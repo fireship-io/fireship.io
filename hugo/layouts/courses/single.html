@@ -1,4 +1,5 @@
 {{ define "main" }}
+{{ $free := .Params.free }}
 
 <article itemscope itemtype="http://schema.org/Article" >
     <header>
@@ -13,17 +14,42 @@
 
 
         {{ with .Params.video }}
+        
 
-        <allow-if level="pro">
+        {{ if $free }}
+            <allow-if level="user">
+
+                <video-player src="{{ . }}" require-login="true"></video-player>
+                
+                <span slot="falsey">{{ partial "video-login.html" }}</span>
+
+            </allow-if>
+        {{ else }}
+            <allow-if level="pro">
 
 
-            <video-player src="{{ . }}" require-login="true">
+                <video-player src="{{ . }}" require-login="true"></video-player>
 
-            </video-player>
+                <allow-if slot="falsey" level="user">
 
-        </allow-if>
+                    <div class="box box-orange">
+                        <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
+                        <div class="box-content">
+                            This lesson is only available for PRO members. Sign-in and choose a plan below.
+                        </div>
+                    </div>
 
-            <hr class="spacer">
+                    {{ partial "pricing" }}
+
+                    <span slot="falsey">
+                            {{ partial "video-login.html" }}
+                    </span>
+
+                </allow-if>
+            </allow-if>
+
+        {{ end }}
+
 
         {{ end }}
 

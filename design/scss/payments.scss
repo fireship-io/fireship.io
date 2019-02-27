@@ -1,11 +1,11 @@
 .payment-wrapper {
     background: var(--gray6);
-    max-width: 768px;
-    min-width: 350px;
+    width: 100%;
     margin: 1em auto;
     background: linear-gradient(180deg, var(--background) 0, var(--nav-bg) 100%);
     padding: 1em;
-    // box-shadow: var(--nav-shadow);
+    max-width: 768px;
+    min-width: 350px;
 }
 
 .payment-header {

@@ -10,8 +10,8 @@
     {{ end }}
 
     <a href="{{ .RelPermalink }}">
-        <div class="box box-sm {{ if eq $active .RelPermalink }}box-green{{ end }}">
-        <i class="box-icon">
+        <div class="box box-sm ">
+        <i class="box-icon {{ if eq $active .RelPermalink }}box-green{{ end }}" >
             {{ if .Params.icon }}
 
             {{ partial  (print "svg/" .Params.icon ".svg") }}
@@ -27,12 +27,19 @@
             {{ end }}
         </i>
 
-        <div class="box-content">
-            <p>
+        <div class="box-content" style="width: 100%;">
+            <div style="width: 100%;">
             <strong>{{ .Params.weight }} {{ .Title }}</strong> |
             {{ .Description }}
-            </p>
+            {{ with .Params.free }}
+            <span class="tag tag-pro tag-sm" style="float: right;">free</span> 
+        {{ end }}
+            </div>
+
+
         </div>
+
+      
       </div>
     </a>
 
