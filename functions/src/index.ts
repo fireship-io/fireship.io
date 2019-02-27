@@ -9,16 +9,26 @@ export { questionBotHandler, recordMessage, slashAskHandler } from './slack/slac
 ///// PAYMENTS /////
 
 export { 
-    stripeSetSource, 
-    stripeCreateCharge, 
-    stripeCreateSubscription, 
-    stripeCreateOrder,
-    stripeCancelSubscription,
-    stripeGetSubscriptions,
+    stripeSetSource
+} from './stripe/sources';
+
+export { 
     stripeGetCharges,
     stripeGetInvoices,
     stripeGetCustomer ,
+} from './stripe/customers';
+
+export { 
+    stripeCreateOrder,
+} from './stripe/orders';
+
+export { 
+    stripeCreateSubscription, 
+    stripeCancelSubscription,
+    stripeGetSubscriptions,
     stripeGetCoupon,
-} from './stripe/stripe';
+} from './stripe/subscriptions';
 
 export { stripeWebhookHandler } from './stripe/webhooks';
+
+

@@ -9,7 +9,7 @@ export const newUserSetup = functions.auth.user().onCreate(async (user, context)
     await ref.set({
         uid, displayName, photoURL, email,
         joined: Date.now()
-    })
+    }, { merge: true })
 
     const body = 'Welcome to Fireship.io!';
     const subject = 'Welcome aboard!';

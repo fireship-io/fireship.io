@@ -1,10 +1,11 @@
-import { stripe, getSubscription, subscriptionStatus } from './helpers';
-import { db, stripeSigningSecret } from '../config';
 import * as functions from 'firebase-functions';
+import { db, stripe, stripeSigningSecret } from '../config';
+import { getSubscription, subscriptionStatus } from './subscriptions';
+
 
 export const webhookHandler = async (hook, data) => {
-  const customerId = data.customer; //'cus_EXe93qRYYHs65J';
-  const subId = data.subscription; //'sub_EY71QNDY8bN3f2'
+  const customerId = data.customer;
+  const subId = data.subscription; 
   const customer = await stripe.customers.retrieve(customerId);
   const uid = customer.metadata.firebaseUID;
 

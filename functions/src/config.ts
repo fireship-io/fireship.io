@@ -8,9 +8,15 @@ const settings = { timestampsInSnapshots: true };
 db.settings(settings);
 
 
+// Stripe
+
 
 
 // ENV
 export const stripeTestKey = functions.config().stripe.testkey;
 export const stripeSigningSecret = functions.config().stripe.signing_secret_test;
-export const lifetimeSKU = functions.config().stripe.lifetimesku
+export const lifetimeSKU = functions.config().stripe.lifetimesku;
+
+// Stripe
+import * as Stripe from 'stripe'; 
+export const stripe = new Stripe(stripeTestKey);
