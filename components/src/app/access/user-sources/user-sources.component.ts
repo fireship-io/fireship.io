@@ -22,8 +22,6 @@ export class UserSourcesComponent implements AfterViewInit  {
     this.setState('loading', true);
     const { res, serverError } = await this.pmt.getCustomer();
     this.setState('customer', res);
-
-    console.log(res, serverError);
     this.setState('loading', false);
   }
 

@@ -1,10 +1,14 @@
 <div [hidden]="!product && action !== 'source'" class="payment-wrapper" id="paymentWrapper">
 
   <div class="payment-header" *ngIf="product">
+      <allow-if level="pro">
+          <p class="red">Warning! You are already a PRO member - no need to subscribe to another plan unless you have a good reason :)</p>
+      </allow-if>
       <p>You are purchasing <strong class="green">{{ product?.description }}</strong></p>
   </div>
 
 <form action="/charge" method="post" id="payment-form" (submit)="handleForm($event)" class="form-stripe">
+  
   <div class="form-row">
     <label for="card-element">
       Credit or debit card
@@ -16,7 +20,7 @@
     <!-- Used to display Element errors. -->
     <div id="card-errors" class="errors-stripe red"  role="alert">
       {{ formState?.error?.message }}
-      {{ serverError | json }}
+      {{ serverError }}
     </div>
   </div>
 

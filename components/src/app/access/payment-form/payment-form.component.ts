@@ -131,23 +131,14 @@ export class PaymentFormComponent implements AfterViewInit {
   }
 
   get total() {
-    let total = this.product.price;
-    const coupon = this.couponResult;
-
-    if (coupon && coupon.percent_off) {
-       total = total - (total * (coupon.percent_off / 100));
-    }
-    if (coupon && coupon.amount_off) {
-      total = total - coupon.amount_off;
-    }
-
-    return total;
+    return this.pmt.calcTotal(this.product.price, this.couponResult);
   }
 
   async applyCoupon(e, val) {
     e.preventDefault();
     this.couponResult = null;
     this.couponError = null;
+    this.serverError = null;
     this.couponLoading = true;
     this.cd.detectChanges();
 
@@ -174,55 +165,4 @@ export class PaymentFormComponent implements AfterViewInit {
     this[k] = v;
   }
 
-
 }
-
-
-
-
-
-// @SetState()
-// setPr() {
-//   if (this.pr) {
-//     this.pr.update({ total: { amount: this.total } });
-//   } else {
-//     this.pr = this.stripe.paymentRequest({
-//       country: 'US',
-//       currency: 'usd',
-//       total: {
-//         label: 'Fireship.io Access',
-//         amount: this.total,
-//       },
-//       requestPayerName: true,
-//       requestPayerEmail: true,
-//     });
-
-//     this.prButton = this.elements.create('paymentRequestButton', {
-//       paymentRequest: this.pr
-//     });
-
-//     // this.pr.canMakePayment().then(console.log);
-
-//     this.pr.canMakePayment().then(result => {
-//       if (result) {
-//         this.prButton.mount('#payment-request-button');
-//       } else {
-//         document.getElementById('payment-request-button').style.display = 'none';
-//       }
-//     });
-
-//     this.pr.on('source', async(e) => {
-//       console.log(e);
-//       this.setState('loadingState', 'processing...');
-
-//       const { res, serverError } = await this.sourceHandler(e.source.id);
-
-//       if (serverError) {
-//         this.setState('serverError', serverError.message);
-//       } else {
-//         this.onSuccess();
-//       }
-//     });
-//   }
-
-// }

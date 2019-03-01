@@ -4,8 +4,8 @@ export const stripeStyle = {
     color: '#6ca0fc',
     fontWeight: 500,
     fontFamily: 'ratio, sans-serif',
-    fontSize: '1.1em',
-    lineHeight: '22px',
+    fontSize: '18px',
+    // lineHeight: '22px',
     fontSmoothing: 'antialiased',
     ':-webkit-autofill': {
       color: '#9aa6b3',

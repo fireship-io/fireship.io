@@ -5,6 +5,7 @@ draft: false
 description: Helpful links for the the Cloud Functions Master Course
 weight: 1
 emoji: 👶
+free: true
 chapter_start: Intro 
 ---
 

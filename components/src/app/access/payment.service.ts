@@ -22,6 +22,17 @@ export class PaymentService {
     this.app.tick();
   }
 
+  calcTotal(total, coupon?) {
+    if (coupon && coupon.percent_off) {
+       total = total - (total * (coupon.percent_off / 100));
+    }
+    if (coupon && coupon.amount_off) {
+      total = total - coupon.amount_off;
+    }
+
+    return total;
+  }
+
 
   allowAuthenticated() {
       return this.auth.user$.pipe(map(v => !!v ));

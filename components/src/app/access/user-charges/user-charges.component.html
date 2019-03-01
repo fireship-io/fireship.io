@@ -1,19 +1,4 @@
 <div *ngIf="charges">
-<!--
-  <div *ngFor="let charge of charges" class="well payments-charge">
-    <strong>{{ charge.created * 1000 | date }}</strong> 
-    Paid <span class="red">-{{ charge.amount | usd }}</span> 
-    <span class="green" *ngIf="charge.amount_refunded">(Refunded {{ charge.amount_refunded  | usd }})</span>
-    <p>
-      ID: {{ charge.id }} | 
-      {{ charge?.source?.card?.brand }} ending in {{ charge?.source?.card?.last4 }} 
-      <a class="btn btn-sm btn-contrast" [href]="charge?.receipt_url">Reciept</a>
-    </p>
-  </div>
-
-  <div *ngIf="!charges.length">
-    No charges found for this user account. 
-  </div> --> 
  
   <div *ngFor="let invoice of charges" class="well payments-charge">
 

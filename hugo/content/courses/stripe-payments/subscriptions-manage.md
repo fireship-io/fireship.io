@@ -76,7 +76,6 @@ export async function cancelSubscription(uid: string, subId: string): Promise<an
 
 export const stripeCreateSubscription = functions.https.onCall( async (data, context) => {
     const uid = assertUID(context);
-    console.log(1, data)
     const source = assert(data, 'source');
     const plan = assert(data, 'plan');
     return catchErrors( createSubscription(uid, source, plan, data.coupon) );

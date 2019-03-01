@@ -11,7 +11,9 @@ tags:
     - node
 ---
 
-<video-player src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/courses%2Fcloud-functions-master-course%2Fintro.mp4?alt=media&token=9761ab04-68a7-487d-9a00-1b624e3b9390"></video=player>
+<!-- <video-player src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/courses%2Fcloud-functions-master-course%2Fintro.mp4?alt=media&token=9761ab04-68a7-487d-9a00-1b624e3b9390"></video=player> -->
+
+{{< vimeo 320683784 >}}
 
 This course takes a hands-on approach to Firebase Cloud Functions where we build seven different microservices, each demonstrating a fundamental concept of the platform. Here's a quick summary of the topics you will learn.
 

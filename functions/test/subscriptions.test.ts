@@ -17,7 +17,6 @@ test('createSubscription creates a subscription', async () => {
 
   const mockSource = await getMockSource();
 
-  console.log(2, user.uid)
   const sub = await createSubscription(user.uid, mockSource.id, plan);
 
   expect(sub.id).toContain('sub_')

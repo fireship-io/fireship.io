@@ -24,7 +24,6 @@ export const getOrCreateCustomer = async(uid: string) => {
     const user = await getUser(uid);
 
     if (!user) {
-        console.log(6, uid)
         await updateUser(uid, { uid });
         return createCustomer({ uid, email: null });
     }
@@ -62,7 +61,6 @@ export const getCustomerId = async(uid: string) => {
  * Updates the user document non-destructively
  */
 export const updateUser = async(uid: string, data: Object) => {
-    console.log('f', uid)
     return await db.collection('users').doc(uid).set(data, { merge: true })
 }
 

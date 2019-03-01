@@ -22,7 +22,6 @@ export class SubscriptionManageComponent implements OnDestroy {
         tap(async v => {
           this.userDoc = v;
           const { res, serverError } = await this.pmt.getSubscriptions();
-          console.log(res);
           this.subs = res.data;
           this.serverError = serverError;
           this.loading = false;
@@ -35,6 +34,11 @@ export class SubscriptionManageComponent implements OnDestroy {
   ngOnDestroy() {
     this.docSub.unsubscribe();
   }
+
+  total(total, coupon) {
+    return this.pmt.calcTotal(total, coupon);
+  }
+
 
   async cancel(subId) {
     this.setState('canceling', true);
