@@ -66,7 +66,7 @@ export const plans = {
   proQuarterly: {
     id: 'proQuarterly',
     productId: 'plan_EbowEefcrMY0eg',
-    planId: 'plan_EUeUoZFmOd3huy',
+    planId: 'plan_EbowEefcrMY0eg',
     price: 5000,
     description: 'Fireship.io PRO Quarterly Membership 🚀',
     type: 'subscribe'
