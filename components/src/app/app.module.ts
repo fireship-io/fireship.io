@@ -14,6 +14,15 @@ import { VideoPlayerComponent } from './video-player/video-player.component';
 import { SlackMirrorComponent } from './slack-mirror/slack-mirror.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { NotificationComponent } from './notification/notification.component';
+import { PaymentFormComponent } from './access/payment-form/payment-form.component';
+import { ProductSelectComponent } from './access/product-select/product-select.component';
+import { UserChargesComponent } from './access/user-charges/user-charges.component';
+import { UsdPipe } from './access/usd.pipe';
+import { UserDataComponent } from './user-data/user-data.component';
+import { UserSourcesComponent } from './access//user-sources/user-sources.component';
+import { SubscriptionManageComponent } from './access/subscription-manage/subscription-manage.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { AllowIfComponent } from './access/allow-if/allow-if.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -26,14 +35,25 @@ const comps = [
   VideoPlayerComponent,
   SlackMirrorComponent,
   TogglerComponent,
-  NotificationComponent
+  NotificationComponent,
+  PaymentFormComponent,
+  ProductSelectComponent,
+  UserChargesComponent,
+  UserDataComponent,
+  UserSourcesComponent,
+  SubscriptionManageComponent,
+  SpinnerComponent,
+  AllowIfComponent
 ];
 
 @NgModule({
   imports: [
     BrowserModule
   ],
-  declarations: comps,
+  declarations: [
+    ...comps,
+    UsdPipe
+  ],
   entryComponents: comps,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [LOCAL_STORAGE_PROVIDERS]
@@ -53,7 +73,15 @@ export class AppModule {
       [VideoPlayerComponent, 'video-player'],
       [SlackMirrorComponent, 'slack-mirror'],
       [TogglerComponent, 'menu-toggler'],
-      [NotificationComponent, 'app-notification']
+      [NotificationComponent, 'app-notification'],
+      [PaymentFormComponent, 'payment-form'],
+      [ProductSelectComponent, 'product-select'],
+      [UserChargesComponent, 'user-charges'],
+      [UserDataComponent, 'user-data'],
+      [UserSourcesComponent, 'user-sources'],
+      [SubscriptionManageComponent, 'subscription-manage'],
+      [SpinnerComponent, 'loading-spinner'],
+      [AllowIfComponent, 'allow-if']
     ];
 
     for (const [component, name] of elements) {

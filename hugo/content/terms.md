@@ -1,6 +1,6 @@
 ---
 title: Terms
-lastmod: 2018-11-15T08:36:36-07:00
+lastmod: 2019-02-15T08:36:36-07:00
 draft: false
 ---
 
@@ -11,6 +11,14 @@ By accessing this web site, you are agreeing to be bound by these web site Terms
 The site design, logo, video content subject to copyright © 2019-present | Fireship.io.
 
 User contributions licensed under cc by-sa 3.0 with attribution required. 
+
+### Memberships
+
+Billing: Subscription fees for the PRO Membership are recurring payments (except where identified as otherwise, such as the Lifetime Membership and Single Course Purchases). The term may be monthly, quarterly, or annual, as described in the course the of transaction. Your subscription begins upon payment of a first installment of subscription fees. The subscription renews at the specified interval as applicable upon the payment of automatically recurring subscription fees. Monthly or annual fees are charged on the same day of the month that the subscription began. (For example, if a monthly subscription began on the 29th, 30th, or 31st day of a month, then membership will renew on the last day of any month that doesn’t have that many days.)
+
+Cancellations and Refunds: You can cancel your PRO Membership at any time. If you purchase a subscription that automatically renews, you may cancel the subscription any time before the end of the current billing period and the cancellation will take effect immediately. 
+
+Lapsed Payment: If payment for a subscription fails, the user account will be downgraded and granted a 7-day grace period to update the payment source. If a successful payment is not made within 7 days the membership will be fully canceled and renewal will be subject to current prices. 
 
 ### Disclaimer
 

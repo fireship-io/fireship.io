@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import { sgMail, msg } from './email';
-import { db } from './config';
+import { db } from '../config';
 
 export const newUserSetup = functions.auth.user().onCreate(async (user, context) => {
 
@@ -9,7 +9,7 @@ export const newUserSetup = functions.auth.user().onCreate(async (user, context)
     await ref.set({
         uid, displayName, photoURL, email,
         joined: Date.now()
-    })
+    }, { merge: true })
 
     const body = 'Welcome to Fireship.io!';
     const subject = 'Welcome aboard!';

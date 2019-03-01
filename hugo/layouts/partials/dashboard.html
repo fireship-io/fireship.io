@@ -1,0 +1,34 @@
+
+<div class="row">
+  <div class="col-xs-12">
+    Logged in as <strong><user-data field="email"></user-data></strong>. Your current membership status is <user-data field="is_pro"></user-data>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-4">
+    <div class="well dashboard-box">
+      <p>
+        <a class="btn btn-green" href="/dashboard/subscription">Manage Subscription</a>
+      </p>
+      <user-plan></user-plan>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-md-4">
+    <div class="well dashboard-box">
+      <a class="btn btn-blue" href="/dashboard/invoices">Invoice History</a>
+    </div>
+  </div>
+
+  <div class="col-xs-12 col-md-4">
+    <div class="well dashboard-box">
+      <google-login show-signout="true">
+        <button slot="signin" class="btn">
+          {{ partial "svg/google.svg" }} Login Now
+        </button>
+        <button class="btn btn-orange" slot="signout">Signout</button>
+      </google-login>
+    </div>
+  </div>
+</div>

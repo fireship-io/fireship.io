@@ -1,10 +1,11 @@
 ---
 title: Firebase Cloud Functions Setup
-lastmod: 2018-11-15T08:36:36-07:00
+lastmod: 2019-02-27T09:32:30-07:00
 draft: false
 description: How to setup a Firebase Cloud Functions environment with TypeScript
 video: https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/courses%2Fcloud-functions-master-course%2F1-install.mp4?alt=media&token=c0bca07e-4936-48cb-a8c7-58a0131c8075
-
+vimeo: 320683916
+free: true
 weight: 3
 emoji: 👶
 ---

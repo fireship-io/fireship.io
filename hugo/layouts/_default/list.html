@@ -10,6 +10,8 @@
 
 {{ define "feed" }}
 
+    {{ if not .Params.hide_feed }}
+
     <div class="row" id="grid">
       {{ range .Pages }}
 
@@ -19,6 +21,8 @@
 
       {{ end }}
     </div>
+
+    {{ end }}
 
 {{ end }}
 

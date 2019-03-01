@@ -15,17 +15,21 @@ label {
     width: 100%;
     padding: 0.25em 0.5em;
     box-sizing: border-box;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--gray3);
     background: var(--form-bg);
-    font-size: 1.125em;
-    font-weight: bold;
+    font-size: 0.9em;
+    font-weight: 500;
     color: var(--h-color);
     outline: none;
     display: block;
     font-family: var(--font-body);
 
+    &::placeholder {
+        color: var(--text-color);
+    }
+
     &:focus {
-        border: 2px solid var(--h-color);
+        border: 2px solid var(--text-color);
     }
 
     &.ng-dirty.ng-invalid {
@@ -35,7 +39,6 @@ label {
     &.ng-valid.ng-dirty {
         border: 2px solid var(--green);
     }
-
 
 }
 

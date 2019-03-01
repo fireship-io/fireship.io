@@ -1,0 +1,141 @@
+.payment-wrapper {
+    background: var(--gray6);
+    width: 100%;
+    margin: 1em auto;
+    background: linear-gradient(180deg, var(--background) 0, var(--nav-bg) 100%);
+    padding: 1em;
+    max-width: 768px;
+    min-width: 350px;
+}
+
+.payment-header {
+    border-bottom: var(--h-border);
+    border-color: var(--gray3);
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.btn-stripe {
+    margin: 1em 0;
+}
+
+.payment-terms {
+    // img { width: 100px; }
+    border-top: var(--h-border);
+    border-color: var(--gray3);
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-stripe {
+    // margin-bottom: 25px;
+}
+
+.payment-loading {
+    margin: 1em 0;
+}
+
+.card-stripe {
+    margin: 25px 0;
+    border: 3px solid var(--gray3);
+    padding: 1em;
+}
+
+.errors-stripe {
+    margin: 0 0 10px;
+}
+
+.btn-stripe {
+    
+}
+
+.pricing {
+
+    text-align: center;
+    // border: 1px solid var(--green);
+    // border: var(--h-border);
+    padding: 1em;
+
+    .pricing-item {
+        background: fixed;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        background: var(--background);
+        // border-right: var(--h-border);
+        margin-top: 2em;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 8px;
+            top: 0;
+            left: 0;
+            background: #88d99e;
+        }
+        &:last-child {
+            border-right: none;
+            &::before {
+                background:  #ff9982;
+            }
+        }
+
+        .pricing-icon {
+            margin-top: 1em;
+            font-size: 3em;
+            transition: all 300ms ease-in-out;
+        }
+
+        &:hover {
+            .pricing-icon, {
+                color: var(--green);
+                // font-size: 3.2em;
+                transition: all 300ms ease-in-out;
+            }
+        }
+
+    }
+
+    .pricing-price {
+        .price {
+            font-size: 2.5em;
+            color: var(--green);
+            font-weight: bold;
+        }
+        .interval {
+            font-size: 1em;
+        }
+
+    }
+
+    ul {
+        border-top: var(--h-border);
+        // border-bottom: var(--h-border);
+        list-style: none;
+        text-align: left;
+        li {
+            padding: .25em 0;
+            &::before {
+                content: '✓';
+            }
+        }
+
+        margin: 1em 0;
+        padding: .5em 0;
+        margin-bottom: auto;
+    }
+
+    .pricing-button {
+        display: block;
+        width: 100%;
+        &.selected {
+            background: var(--gray3);
+        }
+    }
+}
+
+.payments-charge {
+    margin-bottom: 1em;
+}

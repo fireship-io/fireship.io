@@ -3,7 +3,6 @@ import {
   ChangeDetectorRef,
   Input,
   ViewChild,
-  ViewEncapsulation,
   ElementRef,
   AfterViewInit,
   OnDestroy
@@ -17,19 +16,18 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.scss'],
-  // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   @Input() src;
-  @Input() youtube;
-  @Input() poster;
+  // @Input() youtube;
+  // @Input() poster;
   @Input() requireLogin;
   @Input() config = '{ "enabled": true }';
 
   @ViewChild('player') playerRef: ElementRef;
   player;
 
-  userSub;
+  // userSub;
 
   private readonly params = new URLSearchParams({
     origin: 'https://plyr.io',
@@ -48,30 +46,33 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
     private san: DomSanitizer
   ) {}
 
-  get trusted() {
-      return this.san.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtube}?${this.params}`);
-  }
+  // get trusted() {
+  //     return this.san.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${this.youtube}?${this.params}`);
+  // }
 
-  get canWatch() {
-      return !!(!this.requireLogin || (this.requireLogin && this.auth.user));
-  }
+  // get canWatch() {
+  //     return !!(!this.requireLogin || (this.requireLogin && this.auth.user));
+  // }
 
   ngAfterViewInit() {
 
-    if (this.requireLogin) {
-      this.userSub = this.auth.user$
-        .pipe(
-          tap(user => {
-            if (user) {
-                this.setupPlayer();
-                this.cd.detectChanges();
-            }
-          })
-        )
-        .subscribe();
-    } else {
-        this.setupPlayer();
-    }
+    this.setupPlayer();
+    this.cd.detectChanges();
+
+    // if (this.requireLogin) {
+    //   this.userSub = this.auth.user$
+    //     .pipe(
+    //       tap(user => {
+    //         if (user) {
+    //             this.setupPlayer();
+    //             this.cd.detectChanges();
+    //         }
+    //       })
+    //     )
+    //     .subscribe();
+    // } else {
+    //     this.setupPlayer();
+    // }
   }
 
 
@@ -90,9 +91,9 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.userSub) {
-      this.userSub.unsubscribe();
-    }
+    // if (this.userSub) {
+    //   this.userSub.unsubscribe();
+    // }
     if (this.player) {
       this.player.destroy();
     }

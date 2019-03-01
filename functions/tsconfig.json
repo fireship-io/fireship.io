@@ -5,7 +5,10 @@
     "noImplicitReturns": true,
     "outDir": "lib",
     "sourceMap": true,
-    "target": "es6"
+    "target": "es6",
+    "typeRoots": [
+      "./functions/node_modules/@types"
+    ]
   },
   "compileOnSave": true,
   "include": [

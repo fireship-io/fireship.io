@@ -1,10 +1,34 @@
-import * as admin from 'firebase-admin';
-admin.initializeApp();
-
 ///// USER /////
 
-export { newUserSetup } from './user';
+export { newUserSetup } from './user/user';
 
-//// QnA /////
+///// QnA /////
 
-export { questionBotHandler, recordMessage, slashAskHandler } from './slack';
+export { questionBotHandler, recordMessage, slashAskHandler } from './slack/slack';
+
+///// PAYMENTS /////
+
+export { 
+    stripeSetSource
+} from './stripe/sources';
+
+export { 
+    stripeGetCharges,
+    stripeGetInvoices,
+    stripeGetCustomer ,
+} from './stripe/customers';
+
+export { 
+    stripeCreateOrder,
+} from './stripe/orders';
+
+export { 
+    stripeCreateSubscription, 
+    stripeCancelSubscription,
+    stripeGetSubscriptions,
+    stripeGetCoupon,
+} from './stripe/subscriptions';
+
+export { stripeWebhookHandler } from './stripe/webhooks';
+
+

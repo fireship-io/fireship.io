@@ -1,0 +1,19 @@
+<div *ngIf="customer">
+
+  <ng-container *ngFor="let source of customer.sources.data">
+    <div class="well" *ngIf="source?.id === customer?.default_source">
+     {{ source?.card?.brand }} ************{{ source?.card?.last4 }} 
+     expires {{ source?.card?.exp_month }}/{{ source?.card?.exp_year }}
+     Status: {{ source?.status }}
+    </div>
+  </ng-container>
+
+  <div *ngIf="!customer?.sources?.total_count">
+    No payment sources found on this account
+  </div>
+
+  <button (click)="newSource()" class="btn btn-blue">Add/Replace Payment Source</button>
+
+  <payment-form *ngIf="showForm" action="source"></payment-form>
+      
+</div>

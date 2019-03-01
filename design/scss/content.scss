@@ -39,6 +39,12 @@
   }
 }
 
+.card-course {
+  max-width: 720px;
+  text-align: center;
+  margin: 1em auto;
+}
+
 .card-lesson {
   max-width: 500px;
 }
@@ -106,11 +112,15 @@
 .box-sm {
   font-size: 0.9em;
   min-height: 0;
+  
+  margin: 0;
   p {
-    margin: 0.1em;
+    // margin: 0.1em;
   }
   .box-content {
+
     padding: 0.3em;
+    padding: 0.75em 0.3em;
   }
 
 }
@@ -129,17 +139,24 @@
   @include color-box('blue');
 }
 
+.box-blue-bookmark {
+  border-bottom: 3px var(--blue) dashed;
+}
+
 .notification {
   position: fixed;
-  width: 100%;
-  left: 0;
-  bottom: 0;
+  // width: 100%;
+  left: 4em;
+  right: 1em;
+  bottom: 2em;  
   z-index: 9999;
   margin: 0;
+  opacity: 0.95;
 
   &.hide {
     transform: translateX(100%);
-    transition: transform 300ms ease-out;
+    transition: all 300ms ease-out;
+    opacity: 0;
   }
 }
 
@@ -197,6 +214,10 @@
   flex-direction: row;
   max-width: 100%;
   min-width: 0;
+}
+
+.course-article {
+
 }
 
 
@@ -449,6 +470,11 @@ video, video-player, .video-overlay {
   border-radius: 50%;
 }
 
+.chapters-list {
+  max-width: 998px;
+  margin: 0 auto;
+}
+
 
 .the-end {
   text-align: center;
@@ -466,3 +492,11 @@ video, video-player, .video-overlay {
   }
 }
 
+.dashboard-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 200px;
+  margin-bottom: 1em;
+}

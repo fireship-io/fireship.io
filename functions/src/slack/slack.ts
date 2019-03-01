@@ -1,5 +1,5 @@
 import * as functions from 'firebase-functions';
-import { db } from './config';
+import { db } from './../config';
 import { omitBy, isUndefined, get } from 'lodash';
 import * as getUrls from 'get-urls';
 

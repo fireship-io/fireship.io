@@ -7,7 +7,8 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "test": "npx jest"
   },
   "main": "lib/index.js",
   "dependencies": {
@@ -15,15 +16,22 @@
     "@sendgrid/mail": "^6.3.1",
     "@slack/client": "^4.8.0",
     "@types/google-cloud__pubsub": "^0.18.1",
+    "cors": "^2.8.5",
     "firebase-admin": "~6.0.0",
     "firebase-functions": "^2.1.0",
     "get-urls": "^8.0.0",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "stripe": "^6.22.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.13",
     "@types/node-fetch": "^2.1.4",
+    "@types/stripe": "^6.19.4",
+    "firebase-functions-test": "^0.1.6",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
     "tslint": "~5.8.0",
-    "typescript": "~2.8.3"
+    "typescript": "^2.8.4"
   },
   "private": true,
   "engines": {

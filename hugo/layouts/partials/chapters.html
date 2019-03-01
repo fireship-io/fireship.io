@@ -1,8 +1,9 @@
-<h2>Chapters</h2>
+
 
 {{ $active := .active }}
 
-<nav>
+<nav class="chapters-list">
+        <h2>Chapters</h2>
   {{ range .chapters }}
 
     {{ with .Params.chapter_start }}
@@ -10,29 +11,40 @@
     {{ end }}
 
     <a href="{{ .RelPermalink }}">
-        <div class="box box-sm {{ if eq $active .RelPermalink }}box-green{{ end }}">
-        <i class="box-icon">
+        <div class="box box-sm {{ if eq $active .RelPermalink }}box-blue-bookmark{{ end }}">
+        <i class="box-icon" >
             {{ if .Params.icon }}
 
             {{ partial  (print "svg/" .Params.icon ".svg") }}
 
             {{ else if .Params.emoji }}
+            <div>
+                <i class="emoji">{{ .Params.emoji }}</i>
+            </div>
 
-            <i class="emoji">{{ .Params.emoji }}</i>
 
             {{ else }}
 
             {{ partial "svg/video.svg" }}
 
             {{ end }}
+
+
+
         </i>
 
         <div class="box-content">
-            <p>
+            <div>
             <strong>{{ .Params.weight }} {{ .Title }}</strong> |
             {{ .Description }}
-            </p>
+
+            </div>
+            {{ with .Params.free }}
+                <span class="tag tag-pro tag-sm">free</span> 
+            {{ end }}
         </div>
+
+      
       </div>
     </a>
 

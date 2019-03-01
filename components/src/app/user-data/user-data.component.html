@@ -1,0 +1,15 @@
+<!-- <div *ngIf="auth.userDoc as u" class="pro-label tag" [class.tag-pro]="u?.is_pro">
+    {{ u?.pro_status || 'guest' }}
+</div> -->
+
+<ng-container *ngIf="auth.userDoc as u">
+
+        <span *ngIf="field == 'display-name'">{{ u.displayName }}</span>
+        <span *ngIf="field == 'pro_status'">{{ u.pro_status }}</span>
+        <span *ngIf="field == 'email'">{{ u.email }}</span>
+        <span *ngIf="field == 'photo-url'"><img [src]="u.photoURL || '/img/avatar.png'" onerror="this.onerror=null;this.src='/img/avatar.png';"></span>
+        <span *ngIf="field == 'is_pro'" class="tag tag-sm" [class.tag-pro]="u?.is_pro">
+            {{ u?.is_pro ? 'pro' : 'basic' }}
+        </span>
+
+</ng-container>

@@ -1,12 +1,23 @@
 <nav class="topnav">
-
+  <allow-if level="pro">
+    <span slot="falsey">
+      
+        <div class="item item-pro">
+            
+          <a href="/pro">
+            PRO
+        </a>
+      </div>
+    </span>
+  </allow-if>
+  
   <google-login class="hide-lg">
       <div class="item" slot="signin">
           <span><img src="/img/google-login.svg" alt="google login"></span>
       </div>
 
       <a class="item" slot="profile" href="/dashboard">
-          {{ partial "svg/astronaut.svg" . }}
+        <span class="item-avatar"><user-data field="photo-url"></user-data></span>
       </a>
   </google-login>
 

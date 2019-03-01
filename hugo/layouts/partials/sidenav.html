@@ -41,7 +41,8 @@
         </div>
 
         <a class="item" slot="profile" href="/dashboard">
-            {{ partial "svg/astronaut.svg" . }}
+            <span class="item-avatar"><user-data field="photo-url"></user-data></span>
+            <user-data field="is_pro"></user-data>
             <span class="item-label tag tag-contrast tag-sm">dashboard</span>
         </a>
     </google-login>

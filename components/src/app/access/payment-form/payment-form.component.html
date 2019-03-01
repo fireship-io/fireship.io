@@ -1,0 +1,96 @@
+<div [hidden]="!product && action !== 'source'" class="payment-wrapper" id="paymentWrapper">
+
+  <div class="payment-header" *ngIf="product">
+      <allow-if level="pro">
+          <p class="red">Warning! You are already a PRO member - no need to subscribe to another plan unless you have a good reason :)</p>
+      </allow-if>
+      <p>You are purchasing <strong class="green">{{ product?.description }}</strong></p>
+  </div>
+
+<form action="/charge" method="post" id="payment-form" (submit)="handleForm($event)" class="form-stripe">
+  
+  <div class="form-row">
+    <label for="card-element">
+      Credit or debit card
+    </label>
+    <div id="card-element" class="card-stripe" #cardElement>
+      <!-- A Stripe Element will be inserted here. -->
+    </div>
+
+    <!-- Used to display Element errors. -->
+    <div id="card-errors" class="errors-stripe red"  role="alert">
+      {{ formState?.error?.message }}
+      {{ serverError }}
+    </div>
+  </div>
+
+  <div *ngIf="loadingState; else pmtBtn" class="payment-loading">
+    <loading-spinner></loading-spinner> {{ loadingState }}
+  </div>
+
+
+
+  <ng-template #pmtBtn>
+
+    <div class="pricing-product">
+      <div *ngIf="action === 'source'">
+          <p>You are replacing the default payment source on your account. You will not be charged until you have a payable invoice.</p>
+
+          <button class="btn btn-blue btn-stripe" [disabled]="formState?.error || !formState?.complete">
+            Add Source
+          </button>
+      </div>
+
+
+  
+      <div *ngIf="action !== 'source' && product">
+
+          <div class="coupon-form">
+              <p *ngIf="couponResult" class="green">{{ couponResult?.name }}</p>
+              <p *ngIf="couponError" class="red">Unable to apply coupon</p>
+              <input placeholder="coupon code" class="input" maxlength="20" style="display: inline; margin-right: 10px; max-width: 256px;" type="text" #coupon>
+              <button type="button" 
+              [disabled]="couponLoading" class="btn btn-contrast btn-sm" 
+              (click)="applyCoupon($event, coupon.value)">Apply</button>
+              <loading-spinner *ngIf="couponLoading"></loading-spinner>
+          </div>
+
+          <button class="btn btn-lg btn-blue btn-stripe" [disabled]="formState?.error || !formState?.complete">
+
+              Pay ${{ total | usd }} <i *ngIf="formState?.complete"> 👉</i> 
+            
+          </button>
+      </div>
+
+
+    </div>
+
+  </ng-template>
+
+</form>
+
+<div id="payment-request-button" #prElement>
+  <!-- A Stripe Element will be inserted here. -->
+</div>
+
+
+  <div class="payment-terms">
+      <button type="button" class="btn btn-contrast btn-sm" onclick="window.open('https://fireship.io/terms#memberships','_blank')">terms</button>
+      <img class="stripe-badge" src="/img/brands/stripe.svg">
+  </div>
+
+
+</div>
+
+<allow-if level="pro">
+  <div class="well">
+      Hey, thank you for being a PRO Member! You have full access to premium content on Fireship 😄 
+      <hr>
+      <a class="btn btn-sm btn-green" href="/dashboard">Dashboard</a>
+  </div>
+
+  <span slot="paywall"></span>
+</allow-if>
+  
+
+  

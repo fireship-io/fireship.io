@@ -1,0 +1,29 @@
+<div *ngIf="charges">
+ 
+  <div *ngFor="let invoice of charges" class="well payments-charge">
+
+    <h5>Invoice {{ invoice.id }} {{ invoice.date * 1000 | date }}</h5>
+
+    <p *ngIf="invoice.paid">
+      <span class="green">Paid ${{ invoice.amount_paid | usd }}</span>
+    </p>
+
+    <p *ngIf="!invoice.paid">
+      <span class="red">${{ invoice.amount_due | usd }}</span> due {{ invoice.due_date * 1000 | date }} 
+    </p>
+    <p>
+      <a class="btn btn-sm btn-contrast" [href]="invoice?.hosted_invoice_url">Full Invoice</a>
+    </p>
+  </div>
+
+  <div *ngIf="!charges.length">
+    No invoices found for this user account. 
+  </div>
+</div>
+
+<div *ngIf="loading">
+    <loading-spinner></loading-spinner> Fetching Invoices...
+</div>
+
+
+<!-- <button (click)="getCharges()" class="btn btn-blue" [disabled]="loading">{{ loading ? 'loading...' : 'Get Invoice History' }}</button> -->

@@ -5,13 +5,15 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyAesSTpq6RdhSGqqh3BNcJErodzk1ePzps',
-    authDomain: 'fireship-dev-17429.firebaseapp.com',
-    databaseURL: 'https://fireship-dev-17429.firebaseio.com',
-    projectId: 'fireship-dev-17429',
-    storageBucket: 'fireship-dev-17429.appspot.com',
-    messagingSenderId: '307044372590'
-  }
+    apiKey: 'AIzaSyBns4UUCKIfb_3xOesTSezA9GbEyuIU7XA',
+    authDomain: 'fireship-app.firebaseapp.com',
+    databaseURL: 'https://fireship-app.firebaseio.com',
+    projectId: 'fireship-app',
+    storageBucket: 'fireship-app.appspot.com',
+    messagingSenderId: '176605045081'
+  },
+  // stripe: 'pk_test_m3a5moXVKgThpdfwzKILvnbG'
+  stripe: 'pk_live_qSaGVmF1x4X3vIWZmpbgceNU'
 };
 
 /*
