@@ -81,6 +81,7 @@ export class PaymentFormComponent implements AfterViewInit {
 
   async handleForm(e) {
     e.preventDefault();
+    this.setState('serverError', null);
     this.setState('loadingState', 'validating card...');
     const { source, error } = await this.stripe.createSource(this.card);
 

@@ -21,7 +21,7 @@ export class UserChargesComponent implements AfterViewInit {
   async getCharges() {
 
     const { res, serverError } = await this.pmt.userInvoices();
-    this.setState('charges', res.data);
+    this.setState('charges', res && res.data);
     this.setState('loading', false);
   }
 

@@ -7,14 +7,9 @@ export const db = admin.firestore();
 const settings = { timestampsInSnapshots: true };
 db.settings(settings);
 
-
-// Stripe
-
-
-
 // ENV
 export const stripeTestKey = functions.config().stripe.testkey;
-export const stripeSigningSecret = functions.config().stripe.signing_secret_test;
+export const stripeSigningSecret = functions.config().stripe.signing_secret;
 export const stripeSecret = functions.config().stripe.secret;
 export const lifetimeSKU = functions.config().stripe.lifetimesku;
 

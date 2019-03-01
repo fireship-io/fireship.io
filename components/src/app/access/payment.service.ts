@@ -91,6 +91,7 @@ export class PaymentService {
     try {
       res = await httpsCallable(firebase.functions(), name)(data).toPromise();
     } catch (err) {
+      console.log(err);
       serverError = err;
     }
 
