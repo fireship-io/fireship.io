@@ -2,19 +2,19 @@ import * as functions from 'firebase-functions';
 import { assert, getUID, catchErrors } from './helpers';
 import { db, stripe, lifetimeSKU } from '../config';
 import { attachSource } from './sources';
-import { getCustomerId } from './customers';
 import { subscriptionStatus } from './subscriptions';
 
 
 
 export const createOrder = async(uid: string, source: string, sku: string, coupon?: string) => {
-    const customer = await getCustomerId(uid);
+    // const customer = await getCustomerId(uid);
 
-    const card = await attachSource(uid, source);
+    const customer = await attachSource(uid, source);
+    const customerId = customer.id;
         
     const data: any = {
         currency: 'usd',
-        customer,
+        customer: customerId,
         items: [
             { type: 'sku', parent: sku }
         ]
@@ -25,7 +25,7 @@ export const createOrder = async(uid: string, source: string, sku: string, coupo
     
     const order = await stripe.orders.create(data);
     
-    const paidOrder = await stripe.orders.pay(order.id, { customer });
+    const paidOrder = await stripe.orders.pay(order.id, { customer: customerId });
 
     const isLifetime = paidOrder.items.filter(item => item.parent === lifetimeSKU);
 

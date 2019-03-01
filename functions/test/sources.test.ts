@@ -12,7 +12,8 @@ beforeAll( async () => {
 
 test('attachSource attaches a payment source the customer', async () => {
   const mockSource = await getMockSource();
-  const customer:any = await attachSource(user.uid, mockSource.id);
+  const customer = await attachSource(user.uid, mockSource.id);
+  console.log(customer)
   expect(customer.id).toContain('cus_')
-  expect(customer['sources'].data.length).toBeGreaterThan(0);
+  expect(customer.sources.data.length).toBeGreaterThan(0);
 });

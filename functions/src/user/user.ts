@@ -1,6 +1,7 @@
 import * as functions from 'firebase-functions';
 import { sgMail, msg } from './email';
 import { db } from '../config';
+import { createCustomer } from '../stripe/customers';
 
 export const newUserSetup = functions.auth.user().onCreate(async (user, context) => {
 
@@ -16,5 +17,7 @@ export const newUserSetup = functions.auth.user().onCreate(async (user, context)
 
     const emailMsg = msg([email], { body, subject });
 
-    return await sgMail.send(emailMsg);
+    await sgMail.send(emailMsg);
+
+    return createCustomer(user)
 })

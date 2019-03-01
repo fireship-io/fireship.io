@@ -10,7 +10,8 @@ export const createCustomer = async(firebaseUser: any) => {
     const customer = await stripe.customers.create({
         email,
         metadata: { firebaseUID: uid }
-    })
+    }, 
+    { idempotency_key: uid })
 
     await updateUser(uid, { stripeCustomerId: customer.id })
 

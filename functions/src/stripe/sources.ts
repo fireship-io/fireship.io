@@ -11,14 +11,14 @@ export const attachSource = async(uid: string, sourceId: string) => {
     const customer = await getOrCreateCustomer(uid);
 
     const existingSource = customer.sources.data.filter(source => source.id === sourceId).pop(); 
-
     if (existingSource) {
-        return existingSource;
+        return customer;
+        // return existingSource;
     } 
     else {
         await stripe.customers.createSource(customer.id, { source: sourceId });
         // update default
-        return await stripe.customers.update(customer.id, { default_source: sourceId });
+        return stripe.customers.update(customer.id, { default_source: sourceId });
     }
 }
 

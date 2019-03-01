@@ -16,11 +16,12 @@ export const getSubscriptions = async(uid: string) => {
 
 export const createSubscription = async(uid:string, sourceId:string, planId: string, couponId?: string) => {
  
-    const customer = await getCustomerId(uid);
-    const card  = await attachSource(uid, sourceId);
+    const customer = await attachSource(uid, sourceId);
+    // const customer = await getCustomerId(uid);
+    const customerId = customer.id;
 
     const subscription = await stripe.subscriptions.create({
-        customer: customer,
+        customer: customerId,
         coupon: couponId,
         items: [
             {
