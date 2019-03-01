@@ -112,11 +112,15 @@
 .box-sm {
   font-size: 0.9em;
   min-height: 0;
+  
+  margin: 0;
   p {
-    margin: 0.1em;
+    // margin: 0.1em;
   }
   .box-content {
+
     padding: 0.3em;
+    padding: 0.75em 0.3em;
   }
 
 }
@@ -133,6 +137,10 @@
 }
 .box-blue {
   @include color-box('blue');
+}
+
+.box-blue-bookmark {
+  border-bottom: 3px var(--blue) dashed;
 }
 
 .notification {
@@ -206,6 +214,10 @@
   flex-direction: row;
   max-width: 100%;
   min-width: 0;
+}
+
+.course-article {
+
 }
 
 
@@ -456,6 +468,11 @@ video, video-player, .video-overlay {
   }
   padding: 0.5em;
   border-radius: 50%;
+}
+
+.chapters-list {
+  max-width: 998px;
+  margin: 0 auto;
 }
 
 

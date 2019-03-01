@@ -21,7 +21,7 @@ export const stripeStyle = {
   }
 };
 
-export const plans = {
+export const testPlans = {
   proMonthly: {
     id: 'proMonthly',
     productId: 'prod_EUeTur6JQYXZTe',
@@ -35,6 +35,39 @@ export const plans = {
     productId: 'prod_EUeTur6JQYXZTe',
     planId: 'plan_EUeUoZFmOd3huy',
     price: 3000,
+    description: 'Fireship.io PRO Quarterly 🚀',
+    type: 'subscribe'
+  },
+  proLifetime: {
+    id: 'proLifetime',
+    sku: 'sku_EYK0SsvBzq7pcM',
+    price: 30000,
+    description: 'Fireship.io Lifetime 🦄',
+    type: 'order'
+  },
+  stripeCourse: {
+    id: 'stripeCourse',
+    sku: 'sku_EYK0SsvBzq7pcM',
+    price: 1000,
+    description: 'Get access to the stripe payments course',
+    type: 'order'
+  }
+};
+
+export const plans = {
+  proMonthly: {
+    id: 'proMonthly',
+    productId: 'prod_EUeTur6JQYXZTe',
+    planId: 'plan_EUeUPIEBLwSEPI',
+    price: 2500,
+    description: 'Fireship.io PRO Monthly 🔥',
+    type: 'subscribe'
+  },
+  proQuarterly: {
+    id: 'proQuarterly',
+    productId: 'prod_EUeTur6JQYXZTe',
+    planId: 'plan_EUeUoZFmOd3huy',
+    price: 5000,
     description: 'Fireship.io PRO Quarterly 🚀',
     type: 'subscribe'
   },

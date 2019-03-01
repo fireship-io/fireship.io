@@ -11,15 +11,14 @@
         {{ end }}
         </h1>
 
-
-
-        {{ with .Params.video }}
-        
+        {{ with .Params.vimeo }}
 
         {{ if $free }}
             <allow-if level="user">
 
-                <video-player src="{{ . }}" require-login="true"></video-player>
+                    <div class="vid">
+                            <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
                 
                 <span slot="falsey">{{ partial "video-login.html" }}</span>
 
@@ -28,7 +27,11 @@
             <allow-if level="pro">
 
 
-                <video-player src="{{ . }}" require-login="true"></video-player>
+                {{/*  <video-player src="{{ . }}" require-login="true"></video-player>  */}}
+
+                <div class="vid">
+                        <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
 
                 <allow-if slot="falsey" level="user">
 
@@ -51,6 +54,17 @@
         {{ end }}
 
 
+
+   
+        
+        {{ end }}
+
+
+        {{ with .Params.video }}
+        
+
+
+
         {{ end }}
 
     </header>
@@ -60,9 +74,16 @@
 
     
 
+    {{ if $free }}
+        <section class="content-article no-toc course-article" itemprop="articleBody">{{ .Content }}</section>
+
+    {{ else }}
+        <allow-if level="pro">
+            <section class="content-article no-toc course-article" itemprop="articleBody">{{ .Content }}</section>
+        </allow-if>
+    {{ end }}
 
 
-    <section class="content-article no-toc" itemprop="articleBody">{{ .Content }}</section>
   </div>
 
   {{ $chapters := .Parent.Pages.ByWeight }} 

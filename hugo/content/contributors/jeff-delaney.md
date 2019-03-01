@@ -1,6 +1,6 @@
 ---
 title: Jeff Delaney
-date: 2018-11-15T08:36:36-07:00
+date: 2019-02-27T09:32:30-07:00
 draft: false
 featured_img: /img/contributors/jeff-delaney.png
 

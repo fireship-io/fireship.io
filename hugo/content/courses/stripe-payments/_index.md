@@ -11,11 +11,27 @@ tags:
     - payments
 ---
 
-<video-player src=""></video=player>
-
-Stripe Payments on Firebase Cloud Functions - Coming soon...
+{{< vimeo 320651376 >}}
 
 
-NOTES
+The **Stripe Payments Master Course** will provide a solid foundation for building complex payment systems with the world's leading payment API.
 
-- Add runtimeconfig.json for env vars
+## Features
+
+- Connect Firebase Users to Stripe
+- Attach Payment Sources to Customers
+- Create Single Charges
+- Manage Recurring Subscriptions
+- Apply Coupons
+- Unit Tests with Jest
+- And more...
+
+## This Project is for Developers who...
+
+- want to generate revenue by implementing a custom payment flow.
+- want to learn how implement a modern cloud microservice architecture.
+- enjoy fast-paced to-the-point video tutorials.
+- want direct access to the content creator (let's chat on Slack).
+- have some experience with NodeJS, TypeScript, and Angular.
+
+
