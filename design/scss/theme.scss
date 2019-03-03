@@ -95,10 +95,11 @@ $colors: (
     var(--orange-light),
     var(--orange-dark) 85%
   );
-  --orange-pink-dark: linear-gradient(
+
+  --green-grad: linear-gradient(
     to bottom right,
-    var(--orange-light),
-    var(--orange-dark) 50%
+    var(--green-light),
+    var(--green-dark) 85%
   );
 
   @include default-theme;

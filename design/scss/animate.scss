@@ -6,3 +6,24 @@
 .spin {
     animation: spin 500ms alternate ease-in-out infinite;
 }
+
+.pulse:hover, 
+.pulse:focus {
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0);
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 var(--green); }
+}
+
+// .pulse:hover, 
+// .pulse:focus {
+//   animation: pulse 1s;
+//   box-shadow: 0 0 0 1em rgba(#fff,0);
+// }
+
+// @keyframes pulse {
+//   0% { box-shadow: 0 0 0 0 var(--green); }
+// }
+

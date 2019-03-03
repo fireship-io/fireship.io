@@ -17,7 +17,7 @@ export const newUserSetup = functions.auth.user().onCreate(async (user, context)
 
     const emailMsg = msg([email], { body, subject });
 
-    await sgMail.send(emailMsg);
+    await createCustomer(user) 
 
-    return createCustomer(user)
+    return sgMail.send(emailMsg);
 })
