@@ -10,7 +10,6 @@ import { UserProfileComponent } from './users/user-profile/user-profile.componen
 import { LazyComponent } from './lazy/lazy.component';
 import { AlgoliaSearchComponent } from './algolia/algolia-search/algolia-search.component';
 import { AlgoliaButtonComponent } from './algolia/algolia-button/algolia-button.component';
-import { VideoPlayerComponent } from './video-player/video-player.component';
 import { SlackMirrorComponent } from './slack-mirror/slack-mirror.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { NotificationComponent } from './notification/notification.component';
@@ -32,7 +31,6 @@ const comps = [
   LazyComponent,
   AlgoliaSearchComponent,
   AlgoliaButtonComponent,
-  VideoPlayerComponent,
   SlackMirrorComponent,
   TogglerComponent,
   NotificationComponent,
@@ -70,7 +68,6 @@ export class AppModule {
       [UserProfileComponent, 'user-profile'],
       [AlgoliaSearchComponent, 'algolia-search'],
       [AlgoliaButtonComponent, 'algolia-button'],
-      [VideoPlayerComponent, 'video-player'],
       [SlackMirrorComponent, 'slack-mirror'],
       [TogglerComponent, 'menu-toggler'],
       [NotificationComponent, 'app-notification'],
