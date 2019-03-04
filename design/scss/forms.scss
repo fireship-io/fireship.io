@@ -13,11 +13,12 @@ label {
 
 .textarea, .input {
     width: 100%;
-    padding: 0.25em 0.5em;
+    padding: 0.5em;
     box-sizing: border-box;
-    border: 2px solid var(--gray3);
-    background: var(--form-bg);
-    font-size: 0.9em;
+    border: none;
+    border-bottom: 2px solid var(--gray3);
+    background: var(--nav-bg);
+    font-size: 1em;
     font-weight: 500;
     color: var(--h-color);
     outline: none;
@@ -29,15 +30,15 @@ label {
     }
 
     &:focus {
-        border: 2px solid var(--text-color);
+        border-bottom: 3px solid var(--text-color);
     }
 
     &.ng-dirty.ng-invalid {
-        border: 2px solid var(--red);
+        border-bottom: 3px solid var(--red);
     }
 
     &.ng-valid.ng-dirty {
-        border: 2px solid var(--green);
+        border-bottom: 3px solid var(--green);
     }
 
 }

@@ -22,6 +22,8 @@ import { UserSourcesComponent } from './access//user-sources/user-sources.compon
 import { SubscriptionManageComponent } from './access/subscription-manage/subscription-manage.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { AllowIfComponent } from './access/allow-if/allow-if.component';
+import { EmailLoginComponent } from './users/email-login/email-login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const comps = [
   GoogleLoginComponent,
@@ -41,12 +43,14 @@ const comps = [
   UserSourcesComponent,
   SubscriptionManageComponent,
   SpinnerComponent,
-  AllowIfComponent
+  AllowIfComponent,
+  EmailLoginComponent
 ];
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   declarations: [
     ...comps,
@@ -78,7 +82,8 @@ export class AppModule {
       [UserSourcesComponent, 'user-sources'],
       [SubscriptionManageComponent, 'subscription-manage'],
       [SpinnerComponent, 'loading-spinner'],
-      [AllowIfComponent, 'allow-if']
+      [AllowIfComponent, 'allow-if'],
+      [EmailLoginComponent, 'email-login']
     ];
 
     for (const [component, name] of elements) {

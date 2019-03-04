@@ -7,7 +7,7 @@
       <p>You are purchasing <strong class="green">{{ product?.description }}</strong></p>
   </div>
 
-<form action="/charge" method="post" id="payment-form" (submit)="handleForm($event)" class="form-stripe">
+<form [formGroup]="fg" id="payment-form" (ngSubmit)="handleForm($event)" class="form-stripe">
   
   <div class="form-row">
     <label for="card-element">

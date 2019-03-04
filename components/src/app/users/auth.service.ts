@@ -5,10 +5,9 @@ import { auth } from 'firebase/app';
 import { user } from 'rxfire/auth';
 import { tap, switchMap } from 'rxjs/operators';
 import { NotificationService } from '../notification/notification.service';
-import { onLogout, onLogin } from '../notification/notifications';
+import { onLogout, onLogin, onError } from '../notification/notifications';
 import { docData } from 'rxfire/firestore';
 import { of, Observable } from 'rxjs';
-import { RouteLoaderComponent } from '../route-loader/route-loader.component';
 
 
 @Injectable({
@@ -57,14 +56,44 @@ export class AuthService {
   signOut() {
     this.authClient.signOut();
     location.replace('https://fireship.io');
+    this.ns.setNotification(onLogout);
   }
 
-  async login() {
-    await this.authClient.signInWithPopup(new auth.GoogleAuthProvider());
-    this.ns.setNotification(onLogin);
+  async googleLogin() {
+    const credential = this.authClient.signInWithPopup(new auth.GoogleAuthProvider());
+    return this.loginHandler(credential);
   }
 
   get userId() {
     return this.user ? this.user.uid : null;
+  }
+
+
+  async emailSignup(email: string, password: string) {
+    const credential = this.authClient.createUserWithEmailAndPassword(email, password);
+    return this.loginHandler(credential);
+  }
+
+  async emailLogin(email: string, password: string) {
+    const credential = this.authClient.signInWithEmailAndPassword(email, password);
+    return this.loginHandler(credential);
+  }
+
+  async resetPassword(email: string) {
+    return this.authClient.sendPasswordResetEmail(email);
+  }
+
+  async loginHandler(promise) {
+    let res, serverError;
+    try {
+      res = await promise;
+      this.ns.setNotification(onLogin);
+    } catch (err) {
+      serverError = err.message;
+      console.error(err);
+      // this.ns.setNotification({ ...onError, message: serverError });
+    }
+
+    return { res, serverError };
   }
 }
