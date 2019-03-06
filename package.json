@@ -30,7 +30,6 @@
     "clean-webpack-plugin": "^1.0.0",
     "concurrently": "^4.1.0",
     "css-loader": "^1.0.1",
-    "cypress": "^3.1.4",
     "extract-text-webpack-plugin": "^3.0.2",
     "firebase-admin": "^6.1.0",
     "fs-extra": "^7.0.0",
