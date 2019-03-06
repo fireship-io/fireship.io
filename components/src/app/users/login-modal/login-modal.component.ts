@@ -1,5 +1,4 @@
 import { Component, Input, ChangeDetectorRef, OnDestroy } from '@angular/core';
-import { auth } from 'firebase';
 import { AuthService } from '../auth.service';
 
 @Component({
