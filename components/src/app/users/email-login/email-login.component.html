@@ -13,14 +13,12 @@
 
 <ng-template #formTemplate>
   <div *ngIf="isSignup">
-    <h3>Create Account</h3>
+    <h3>Create Account with Email</h3>
     <p>
       Returning user?
       <button (click)="toggleForm('login')" class="btn btn-sm">Login</button>
     </p>
   </div>
-
-  <hr />
 
   <div *ngIf="isLogin || isReset">
     <h3>Login</h3>
@@ -29,6 +27,7 @@
       <button (click)="toggleForm('signup')" class="btn btn-sm">Sign Up</button>
     </p>
   </div>
+  <hr>
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
     <label for="email">Email</label>
     <input type="email" class="input" formControlName="email" />
@@ -60,7 +59,7 @@
       </div>
     </div>
 
-    <hr class="spacer" />
+    <hr />
 
     <p class="red">{{ serverError }}</p>
 

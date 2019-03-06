@@ -9,7 +9,7 @@ import { RouteLoaderComponent } from './route-loader/route-loader.component';
 import { UserProfileComponent } from './users/user-profile/user-profile.component';
 import { LazyComponent } from './lazy/lazy.component';
 import { AlgoliaSearchComponent } from './algolia/algolia-search/algolia-search.component';
-import { AlgoliaButtonComponent } from './algolia/algolia-button/algolia-button.component';
+import { ModalButtonComponent } from './modal-button/modal-button.component';
 import { SlackMirrorComponent } from './slack-mirror/slack-mirror.component';
 import { TogglerComponent } from './toggler/toggler.component';
 import { NotificationComponent } from './notification/notification.component';
@@ -24,6 +24,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { AllowIfComponent } from './access/allow-if/allow-if.component';
 import { EmailLoginComponent } from './users/email-login/email-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginModalComponent } from './users/login-modal/login-modal.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -32,7 +33,8 @@ const comps = [
   UserProfileComponent,
   LazyComponent,
   AlgoliaSearchComponent,
-  AlgoliaButtonComponent,
+  ModalButtonComponent,
+  LoginModalComponent,
   SlackMirrorComponent,
   TogglerComponent,
   NotificationComponent,
@@ -71,7 +73,8 @@ export class AppModule {
       [RouteLoaderComponent, 'route-loader'],
       [UserProfileComponent, 'user-profile'],
       [AlgoliaSearchComponent, 'algolia-search'],
-      [AlgoliaButtonComponent, 'algolia-button'],
+      [ModalButtonComponent, 'modal-button'],
+      [LoginModalComponent, 'login-modal'],
       [SlackMirrorComponent, 'slack-mirror'],
       [TogglerComponent, 'menu-toggler'],
       [NotificationComponent, 'app-notification'],
