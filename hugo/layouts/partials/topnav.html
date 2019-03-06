@@ -5,27 +5,31 @@
         <div class="item item-pro">
             
           <a href="/pro">
-            PRO {{/*  {{ partial "svg/rocket.svg"}}  */}}
+            PRO
           </a>
       </div>
     </span>
   </allow-if>
   
-  <google-login class="hide-lg">
-      <div class="item" slot="signin">
-          <span><img src="/img/google-login.svg" alt="google login"></span>
-      </div>
 
-      <a class="item" slot="profile" href="/dashboard">
-        <span class="item-avatar"><user-data field="photo-url"></user-data></span>
+
+  <allow-if level="user" class="hide-lg">
+
+      <a class="item" href="/dashboard">
+          <span class="item-avatar"><user-data field="photo-url"></user-data></span>
+
       </a>
-  </google-login>
+      
+      <modal-button slot="falsey" selector="login-modal" class="item">
+              <span><img src="/img/google-login.svg" alt="google login"></span>
+      </modal-button>
+  </allow-if>
 
-  <algolia-button class="hide-lg">
+  <modal-button selector="algolia-search" class="hide-lg">
       <span class="item">
           {{ partial "svg/search.svg" . }}
       </span>
-  </algolia-button> 
+  </modal-button> 
 
 
 
@@ -69,6 +73,7 @@
               <li><a href="/mission">Manifesto</a></li>
               <li><a href="/contributors">Contributors</a></li>
               <li><a href="/about">About</a></li>
+              <li><a href="/login">Login</a></li>
               <li><a href="{{ .Site.Data.links.slack }}">Slack Chat</a></li>
             </ul>
           </div>
@@ -77,8 +82,9 @@
             <h3>Tags</h3>
             <ul>
               <li><a href="/tags/angular">#angular</a></li>
+              <li><a href="/tags/flutter">#flutter</a></li>
               <li><a href="/tags/firebase">#firebase</a></li>
-              <li><a href="/tags/node">#node</a></li>
+              <li><a href="/tags/stripe">#stripe</a></li>
             </ul>
           </div>
         </div>

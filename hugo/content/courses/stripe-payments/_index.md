@@ -26,6 +26,10 @@ The **Stripe Payments Master Course** will provide a solid foundation for buildi
 - Unit Tests with Jest
 - And more...
 
+
+{{< figure src="/courses/stripe-payments/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}}
+
+
 ## This Project is for Developers who...
 
 - want to generate revenue by implementing a custom payment flow.
@@ -33,5 +37,4 @@ The **Stripe Payments Master Course** will provide a solid foundation for buildi
 - enjoy fast-paced to-the-point video tutorials.
 - want direct access to the content creator (let's chat on Slack).
 - have some experience with NodeJS, TypeScript, and Angular.
-
 

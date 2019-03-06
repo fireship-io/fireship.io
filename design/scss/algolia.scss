@@ -1,6 +1,6 @@
 @import './mixins.scss';
 
-.algolia-search {
+.modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -10,8 +10,10 @@
     z-index: 99;
     transform: scale(0);
     transition: transform 200ms ease-out;
+    overflow-y: scroll;
+    @include scrollbar;
 
-    &.algolia-show {
+    &.modal-show {
         transform: scale(1);
         transition: transform 200ms ease-in;
     }

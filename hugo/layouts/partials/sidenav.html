@@ -6,12 +6,12 @@
 </a>
 
 <nav class="sidenav hide-sm">
-    <algolia-button>
+    <modal-button selector="algolia-search">
         <span class="item">
             {{ partial "svg/search.svg" . }}
             <span class="item-label tag tag-contrast tag-sm">search</span>
         </span>
-    </algolia-button> 
+    </modal-button> 
 
     <a class="item" href="/lessons">
         {{ partial "svg/video.svg" . }}
@@ -33,19 +33,28 @@
         {{ partial "svg/tags.svg" . }}
         <span class="item-label tag tag-contrast tag-sm">tags</span>
     </a>
-            
-    <google-login class="hide-sm">
-        <div class="item" slot="signin">
-            <span><img src="/img/google-login.svg" alt="google login"></span>
-            <span class="item-label tag tag-contrast tag-sm">Google signin</span>
-        </div>
 
-        <a class="item" slot="profile" href="/dashboard">
+    <allow-if level="user" class="hide-sm">
+
+        <a class="item" href="/dashboard">
             <span class="item-avatar"><user-data field="photo-url"></user-data></span>
             <user-data field="is_pro"></user-data>
             <span class="item-label tag tag-contrast tag-sm">dashboard</span>
         </a>
-    </google-login>
+        
+        <div class="item" slot="falsey">
+                <modal-button selector="login-modal">
+                        <div class="flex-center"><img src="/img/google-login.svg" alt="google login"></div>
+                        <span class="tag tag-sm">login</span>
+                </modal-button>
+                
+                <span class="item-label tag tag-contrast tag-sm">login</span>
+            </div>
+
+    </allow-if>
+
+
+
 </nav>
 
 

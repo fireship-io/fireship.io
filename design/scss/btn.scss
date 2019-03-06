@@ -2,8 +2,6 @@
     background: var(--#{$bg});
     color: $color;
     &:hover {
-        // background: var(--#{$bg}-dark);
-        // border-bottom: 2px solid var(--#{$bg}-light);
         box-shadow: var(--card-shadow);
         transform: translateY(-2px);
         transition: transform 200ms ease;
@@ -51,10 +49,13 @@
     display: block;
     margin: 2em 0;
     width: 100%;
+    img, svg {
+        top: 5px;
+        position: relative;
+    }
 }
 
 .btn-sm {
-    // font-size: .875em;
     padding: 0.5em 1em;
 }
 .btn-lg {
