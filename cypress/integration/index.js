@@ -11,7 +11,7 @@ describe('fireship.io', () => {
   });
 
   it('has a working Algolia search', () => {
-      cy.get('.sidenav').find('algolia-button').first().click();
+      cy.get('.sidenav').find('modal-button').first().click();
       const search = cy.get('.algolia-search');
       search.should('be.visible');
 

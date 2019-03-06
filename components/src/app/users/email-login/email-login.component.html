@@ -1,0 +1,91 @@
+<div *ngIf="auth.user as user; else formTemplate">
+  <p *ngIf="showSignout">
+    You are logged in as <strong><user-data field="email"></user-data></strong>
+  </p>
+  <button
+    *ngIf="showSignout"
+    class="btn btn-sm btn-orange"
+    (click)="auth.signOut()"
+  >
+    Signout
+  </button>
+</div>
+
+<ng-template #formTemplate>
+  <div *ngIf="isSignup">
+    <h3>Create Account with Email</h3>
+    <p>
+      Returning user?
+      <button (click)="toggleForm('login')" class="btn btn-sm">Login</button>
+    </p>
+  </div>
+
+  <div *ngIf="isLogin || isReset">
+    <h3>Login</h3>
+    <p>
+      No Account?
+      <button (click)="toggleForm('signup')" class="btn btn-sm">Sign Up</button>
+    </p>
+  </div>
+  <hr>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-form">
+    <label for="email">Email</label>
+    <input type="email" class="input" formControlName="email" />
+
+    <div *ngIf="!isReset">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="input"
+        formControlName="password"
+        required
+      />
+
+      <div *ngIf="password.invalid && password.dirty">
+        Password must be between 6 and 24 chars and have at least one number
+      </div>
+
+      <div *ngIf="isSignup">
+        <label for="passwordConfirm">Confirm Password</label>
+        <input
+          type="password"
+          class="input"
+          formControlName="passwordConfirm"
+        />
+
+        <p class="orange" *ngIf="!passwordMatch && passwordConfirm.dirty">
+          mismatch
+        </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <p class="red">{{ serverError }}</p>
+
+    <button  *ngIf="!isReset"
+      class="btn btn-lg btn-blue"
+      type="submit"
+      [disabled]="!form.valid || !passwordMatch || isLoading"
+    >
+      {{ type }} <span *ngIf="form.valid && passwordMatch">👍</span>
+    </button>
+
+    <span *ngIf="isLoading"
+      ><loading-spinner></loading-spinner> loading...</span
+    >
+
+    <p
+      *ngIf="isLogin"
+      class="btn btn-sm"
+      (click)="toggleForm('reset password')"
+    >
+      Forgot password?
+    </p>
+    <p *ngIf="isReset && !isLoading" class="btn btn-sm" (click)="resetPassword()">
+      Send Reset Email
+    </p>
+  </form>
+
+  <p class="text-sm">By signing up you agree to our <a href="/terms">Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>. We'll send you account-related emails on rare occasions.</p>
+</ng-template>

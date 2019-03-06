@@ -500,3 +500,21 @@ video, video-player, .video-overlay {
   min-height: 200px;
   margin-bottom: 1em;
 }
+
+.login-wrapper {
+  max-width: 512px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  padding: 1em;
+  box-shadow: var(--toc-shadow);
+  margin-bottom: 4em;
+  &.in-modal {
+    margin-top: 4em;
+  }
+
+}
+

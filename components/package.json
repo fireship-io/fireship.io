@@ -26,7 +26,6 @@
     "document-register-element": "^1.7.3",
     "firebase": "^5.7.0",
     "lodash.get": "^4.4.2",
-    "plyr": "^3.4.7",
     "rxfire": "^3.2.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

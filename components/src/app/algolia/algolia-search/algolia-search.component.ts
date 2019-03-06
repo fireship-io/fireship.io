@@ -1,4 +1,4 @@
-import { Component, ChangeDetectorRef, ElementRef, AfterViewInit, Input, HostListener, ViewChild } from '@angular/core';
+import { Component, ChangeDetectorRef, ElementRef, Input, HostListener, ViewChild } from '@angular/core';
 import * as algolia from 'algoliasearch/lite';
 
 const APP_ID = '05VYZFXKNM';
@@ -8,7 +8,7 @@ const client = algolia(APP_ID, API_KEY);
 @Component({
   templateUrl: './algolia-search.component.html'
 })
-export class AlgoliaSearchComponent implements AfterViewInit  {
+export class AlgoliaSearchComponent {
 
   constructor(private cd: ChangeDetectorRef, private el: ElementRef) { }
 
@@ -45,10 +45,6 @@ export class AlgoliaSearchComponent implements AfterViewInit  {
       // ESC to close the search box
       this.toggle(false);
     }
-  }
-
-  ngAfterViewInit() {
-
   }
 
   toggle(val) {

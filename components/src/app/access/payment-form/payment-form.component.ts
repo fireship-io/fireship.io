@@ -7,6 +7,7 @@ import { PaymentService } from '../payment.service';
 import { tap } from 'rxjs/operators';
 import { stripeStyle } from '../stripe-defaults';
 import { NotificationService } from 'src/app/notification/notification.service';
+import { FormGroup } from '@angular/forms';
 
 declare var Stripe;
 
@@ -42,6 +43,9 @@ export class PaymentFormComponent implements AfterViewInit {
   @ViewChild('cardElement') cardElement: ElementRef;
   @ViewChild('prElement') prElement: ElementRef;
 
+  // FormGroup Require or angular with throw errors
+  fg;
+
   constructor(private cd: ChangeDetectorRef, public pmt: PaymentService, public ns: NotificationService) {
     this.pmt.product.pipe(
       tap(v => {
@@ -49,6 +53,7 @@ export class PaymentFormComponent implements AfterViewInit {
       })
     )
     .subscribe();
+    this.fg = new FormGroup({});
   }
 
   ngAfterViewInit() {
