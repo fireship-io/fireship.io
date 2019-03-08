@@ -56,7 +56,7 @@ Your main workflow should look like this.
 
 ### Step 5. ng build
 
-Drag the blue connector again down to create the **Build** action. Use **Github Action for npm** again with the label **Build** and add to **args** `["run", "build:prod"]`. This executes `npm run build:prod`, hence you need to add this script to your package.json: `"build:prod": "ng build --prod"`.
+Drag the blue connector again down to create the **Build** action. Use **Github Action for npm** again with the label **Build** and add to **args** `run build:prod`. This executes `npm run build:prod`, hence you need to add this script to your package.json: `"build:prod": "ng build --prod"`.
 
 {{< figure src="/img/snippets/main-workflow-with-build-action.png" alt="main workflow with install and build action" >}}
 
