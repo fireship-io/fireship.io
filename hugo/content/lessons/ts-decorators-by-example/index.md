@@ -4,7 +4,7 @@ lastmod: 2019-02-03T09:39:23-07:00
 publishdate: 2019-02-03T09:39:23-07:00
 author: Jeff Delaney
 draft: false
-description: Learn how to use TypeScript decorators to create elegant abscractions with JavaScript code. 
+description: Learn how to use TypeScript decorators to create elegant abstractions with JavaScript code. 
 tags: 
     - typescript
     - react
