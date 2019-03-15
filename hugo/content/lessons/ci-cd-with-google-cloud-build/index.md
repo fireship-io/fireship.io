@@ -106,7 +106,7 @@ gcloud builds submit --config cloudbuild.yaml .
 
 # wait for it to finish, then cleanup...
 
-cd ..
+cd ../..
 rm -rf cloud-builders-community
 {{< /highlight >}}
 
