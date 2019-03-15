@@ -227,3 +227,15 @@ blockquote {
 google-login {
   visibility: hidden;
 }
+
+figure {
+  background: var(--code-bg);
+  box-shadow: var(--nav-shadow);
+  text-align: center;
+  margin: 0;
+}
+
+figcaption {
+  font-size: 0.9em;
+  padding: 0.5em;
+}
