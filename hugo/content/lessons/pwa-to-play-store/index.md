@@ -185,7 +185,7 @@ On the Google Play Store, upload your APK at *App Releases → Internal Test Tra
 
 You are must fill out ALL required information for the store listing, content rating, and pricing details. You should see four green checkmarks on the sidebar ✔️ when this process is complete. After you create the release, your app will be in *pending publication* status - just wait a few hours for it to be approved. 
 
-And finally you can install your app from the Play Store by using the opt-in URL under the *Manage testers* , then finish up the day a well-deserved refreshment 🍺.
+And finally, you can install your app from the Play Store by using the opt-in URL under the *Manage testers* , then finish up the day a well-deserved refreshment 🍺.
 
 
 ## The End

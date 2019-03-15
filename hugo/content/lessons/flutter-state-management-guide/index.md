@@ -21,13 +21,13 @@ versions:
    rxdart: 0.20
 ---
 
-State management is a one of those hot-button topics that brings out strong opinions in developers, and in extreme cases results in Twitter fights. In my experience, people tend to over-engineer features that would otherwise be straight-forward because they assume a full-blown state management libary is necessary. In some cases they just add complexity, but in others they can be extremly valuable. My recommendation is to analyze these strategies closely and choose an approach that feels right for your app's requirements and your team's style. 
+State management is a hot-button topic that brings out strong opinions in developers, and in extreme cases results in Twitter fights. In my experience, people tend to over-engineer features that would otherwise be straight-forward because they assume a full-blown state management library is necessary. In some cases, they just add complexity, but in others, they can be extremly valuable. My recommendation is to analyze these strategies closely and choose an approach that feels right for your app's requirements and your team's style. 
 
 The following lesson is designed to teach you the fundamental tools in [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt) for managing local and shared app state. 
 
 ## What is State? 
 
-**What is State?** State is just *data that changes* over the lifecycle of the app. When stateful data changes, the UI reacts by painting our widgets to reflect the new state. Your UI is just a visual representation of a given state. It's like calling a function with state as the input and UI as the return value `function(state) => UI`, and Flutter calls this function when you rebuild your widgets. 
+**What is State?** State is just *data that changes* over the lifecycle of the app. When stateful data changes, the UI reacts by painting our widgets to reflect the new state. Your UI is just a visual representation of a given state. It's like calling a function with the state as the input and UI as the return value `function(state) => UI`, and Flutter calls this function when you rebuild your widgets. 
 
 {{< figure src="img/state-management-demo.png" caption="In the counter app above, the number in the middle is the state. Tapping the button at the bottom is like calling a function with the next state, resulting in a different number in the UI. ">}}
 
@@ -113,7 +113,7 @@ class MyHomePage2 extends StatelessWidget {
 
 ## Global or Shared App State
 
-It's common to have widgets dispersed throughout the widget tree that depend on the same data. If the source of this data is at the top of the widget tree, you can pass it down, but that becomes very cumbersome when multiple levels are involved. If the data is at the bottom of the widget tree, you're SOL - unless of course you implement one of the solutons described next. 
+It's common to have widgets dispersed throughout the widget tree that depend on the same data. If the source of this data is at the top of the widget tree, you can pass it down, but that becomes very cumbersome when multiple levels are involved. If the data is at the bottom of the widget tree, you're SOL - unless of course you implement one of the solutions described next. 
 
 
 ### InheritedWidget
