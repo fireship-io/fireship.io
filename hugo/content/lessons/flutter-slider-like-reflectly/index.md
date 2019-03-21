@@ -4,14 +4,14 @@ lastmod: 2019-03-20T10:18:59-07:00
 publishdate: 2019-03-20T10:18:59-07:00
 author: Jeff Delaney
 draft: false
-description: Learn how to build an animated slider that persists data to Firestore - inspired by the Reflectly app. 
+description: Build an animated and filterable slideshow with FlutterFire - inspired by the Reflectly app. 
 tags: 
     - flutter
     - firestore
     - firebase
     - animation
 
-youtube: 
+youtube: 8PfiY0U_PBI
 github: https://github.com/codediodeio/flutter-firestore-animated-slideshow
 # disable_toc: true
 # disable_qna: true
