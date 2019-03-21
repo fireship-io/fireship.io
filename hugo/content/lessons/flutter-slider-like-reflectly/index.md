@@ -1,5 +1,5 @@
 ---
-title: Flutter Slider Like Reflectly
+title: Flutter Firestore Animated SlideShow
 lastmod: 2019-03-20T10:18:59-07:00
 publishdate: 2019-03-20T10:18:59-07:00
 author: Jeff Delaney
