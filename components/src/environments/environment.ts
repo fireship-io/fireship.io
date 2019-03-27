@@ -10,7 +10,8 @@ export const environment = {
     databaseURL: 'https://fireship-app.firebaseio.com',
     projectId: 'fireship-app',
     storageBucket: 'fireship-app.appspot.com',
-    messagingSenderId: '176605045081'
+    messagingSenderId: '176605045081',
+    appId: '1:176605045081:web:d87a63bd943e3032'
   },
   // stripe: 'pk_test_m3a5moXVKgThpdfwzKILvnbG'
   stripe: 'pk_live_qSaGVmF1x4X3vIWZmpbgceNU'

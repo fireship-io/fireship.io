@@ -8,7 +8,7 @@ description: A step-by-step guide to create a Github Action to deploy your Angul
 tags:
     - firebase
     - github
-    - ci/cd
+    - devops
 ---
 
 This snippet helps you to setup [Github Actions](https://github.com/features/actions) in your **Angular** project to build and deploy your app to **Firebase** on `git push`.
