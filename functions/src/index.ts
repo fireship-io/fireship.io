@@ -1,6 +1,6 @@
 ///// USER /////
 
-export { newUserSetup } from './user/user';
+export { newUserSetup, proSignup } from './user/user';
 
 ///// QnA /////
 
