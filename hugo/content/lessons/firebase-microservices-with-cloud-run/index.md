@@ -4,15 +4,15 @@ lastmod: 2019-04-09T10:25:02-07:00
 publishdate: 2019-04-09T10:25:02-07:00
 author: Jeff Delaney
 draft: false
-description: How to use 
+description: How to use Cloud Run on GCP to covert a Docker container into a serverless microservice.
 tags: 
     - cloud-run
     - gcp
     - firebase
     - vue
 
-youtube: 
-github: 
+youtube: 3OP-q55hOUI
+github: https://github.com/fireship-io/179-cloud-run-ssr
 # disable_toc: true
 # disable_qna: true
 
@@ -23,14 +23,10 @@ github:
 #    rxdart: 0.20
 ---
 
-Yesterday Google Cloud released a game-changing new product called [Cloud Run](https://cloud.google.com/run/), which allows you to run and scale a Docker container in a serverless execution environment. 
-
-## What is Cloud Run?
-
-Cloud Run is a tool that deploys and runs stateless backend code with any programming language and/or dependencies. You package your service as a Docker image, which is then used by [Knative](https://cloud.google.com/knative/) to provide a fully-managed auto-scaling endpoint.
+Yesterday Google Cloud released a game-changing new product called [Cloud Run](https://cloud.google.com/run/) that allows you to run and scale stateless Docker containers in a serverless execution environment powered by [Knative](https://cloud.google.com/knative/).
 
 **Benefits**
-
+ 
 - Run backend microservices with any programming language and/or dependencies.
 - Serverless pricing, only pay for what you use. 
 - Scale automatically.
@@ -38,17 +34,24 @@ Cloud Run is a tool that deploys and runs stateless backend code with any progra
 
 **Some of the things you might do with it...**
 
-- Deploy server-rendered SSR frontend apps to Firebase, like Angular Universal, Nuxt, or Next. 
-- Host WordPress, Drupal, Joomla, etc to Firebase Hosting.
-- Deploy a restful API with Ruby-on-Rails, Rust, Java, Go - you name it. 
+- Deploy server-rendered SSR frontend apps to Firebase Hosting, like Angular Universal, Nuxt, or Next. 
+- Host WordPress, Drupal, Joomla, etc on Firebase Hosting.
 - Create a RESTful or GraphQL API. 
+- Perform background tasks in any programming language.
+- And really anything else you can imagine
 
 
-### Stateless Server
 
-The server you deploy ti Cloud Run must be *stateless*, which is a requirement for any code running in a serverless environment. This means you should not save anything other than temporary files on the filesystem and you cannot use a database in the container, ie PostgreSQL, MySQL, etc. 
+{{% box icon="scroll" class="box-blue" %}}
+#### What is a Stateless Container?
+
+The server you deploy ti Cloud Run must be *stateless*, which is a requirement for any code running in a serverless environment. This means you should not save anything other than temporary files on the filesystem and you cannot use a database in the container, ie PostgreSQL, MySQL, etc. All persistent data should be handed off to a different service like Cloud Storage or Firestore. 
+{{% /box %}}
+
 
 ## Step 0: Prerequisites
+
+The following steps demonstrate how to deploy a serverside-rendered SSR JavaScript app (Nuxt/Vue) with Cloud Run. 
 
 1. Install [Docker](https://docs.docker.com/v17.12/install/)
 1. Install [Google Clould SDK](https://cloud.google.com/sdk/)
@@ -69,7 +72,7 @@ npm run dev
 
 ## Step 2: Dockerize It
 
-We can containerize the app and tell it to server on the `PORT` environment variable.
+We need to containerize the app and tell it to serve on the `PORT` environment variable.
 
 ### Create a Dockerfile
 
@@ -109,13 +112,14 @@ We can send the container directly to Google Cloud Build, but I generally prefer
 sudo docker build ./
 {{< /highlight >}}
 
-It will take a few minutes to build the image, then give you an `image_id`  that looks like 2cabacd123. Go ahead and run it locally to make sure it runs properly.
+It will take a few minutes to build the image, then give you an `image_id`  that looks like 2cabacd123. Go ahead and run it locally to make sure it works properly.
 
 {{< highlight terminal >}}
 sudo docker run -p 8080:8080 <your-image-id>
 {{< /highlight >}}
 
 
+Next, upload the image to Google Cloud's [Container Registry](https://cloud.google.com/container-registry/). 
 
 
 {{< highlight terminal >}}
@@ -129,11 +133,11 @@ sudo docker push gcr.io/fireship-lessons/nuxt-server
 
 Create your service on Cloud Run and make sure to tick `YES` to allow unauthenticated requests. 
 
-{{< figure src="img/cloud-run-nuxt.png" caption="You should now see your image in the Container Registry on GCP" >}}
+{{< figure src="img/cloud-run-nuxt.png" caption="Create a service for Nuxt on the Cloud Run dashboard" >}}
 
-And that's basically it, you now have a server-rendered JavaScript app microservice hosted in serverless environment.
+And that's basically it, you now have a server-rendered JavaScript app microservice hosted in a serverless environment.
 
-{{< figure src="img/cloud-run-deployed.png" caption="Navigate to the URL to view the deployed nuxt app." >}}
+{{< figure src="img/cloud-run-deployed.png" caption="Navigate to the URL to view the deployed Nuxt app." >}}
 
 ## Step 4: Connect it to Firebase Hosting
 
@@ -174,7 +178,7 @@ rm public
 
 ### Deploy Hosting
 
-Deploy your app to Firebase and you should now see nuxt running with SSR on Firebase Hosting. 
+Deploy your app to Firebase and you should now see Nuxt running with SSR on Firebase Hosting. 
 
 {{< highlight terminal >}}
 firebase deploy --only hosting
