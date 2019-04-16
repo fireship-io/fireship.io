@@ -9,7 +9,7 @@ tags:
     - nosql
 ---
 
-{{< vimeo 320651376 >}}
+{{< vimeo 330781388 >}}
 
 
 The **Firestore Data Modeling Course**  provides a foundation for modeling relationships in NoSQL, querying data, and optimizing for performance, cost, and complexity. 
