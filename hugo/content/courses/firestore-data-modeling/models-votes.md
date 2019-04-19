@@ -2,7 +2,7 @@
 title: Votes 
 lastmod: 2019-04-16T09:12:30-08:00
 draft: false
-description: How to model reddit-style votes in Firestore
+description: Model reddit-style votes in Firestore
 weight: 16
 emoji: 🎁
 vimeo: 330798458

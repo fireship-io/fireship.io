@@ -2,7 +2,7 @@
 title: Resources
 lastmod: 2019-04-16T09:12:30-08:00
 draft: false
-description: Helpful Resources supporing the Cloud Firestore Course
+description: Helpful Resources supporting the Cloud Firestore Course
 weight: 1
 emoji: 👶
 vimeo: 330782565

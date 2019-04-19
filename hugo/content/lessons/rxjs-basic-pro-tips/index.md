@@ -11,7 +11,7 @@ tags:
 
 youtube: ewcoEYS85Co
 github: https://github.com/fireship-io/175-code-this-not-that-rxjs
-# disable_toc: true
+disable_toc: true
 # disable_qna: true
 
 # courses

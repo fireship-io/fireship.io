@@ -14,7 +14,7 @@ export class LoginModalComponent implements OnDestroy {
 
   constructor(private cd: ChangeDetectorRef, private auth: AuthService) {
     this.sub = this.auth.user$.subscribe(u => u ? this.hide() : null);
-    this.trace = firebase.performance().newTrace('loginModal');
+    this.trace = firebase.performance().trace('loginModal');
   }
 
   visible = false;

@@ -20,7 +20,7 @@
     "@angular/forms": "^7.1.3",
     "@angular/platform-browser": "~7.1.3",
     "@angular/platform-browser-dynamic": "~7.1.3",
-    "@firebase/performance": "https://fireperffw.firebaseapp.com/firebase-performance-0.1.0.tgz",
+    "@firebase/performance": "https://fireperffw.firebaseapp.com/v002/firebase-performance-0.0.2.tgz",
     "@webcomponents/custom-elements": "^1.2.1",
     "algoliasearch": "^3.32.0",
     "core-js": "^2.5.4",
