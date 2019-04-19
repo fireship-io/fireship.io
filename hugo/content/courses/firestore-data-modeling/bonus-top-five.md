@@ -10,4 +10,6 @@ chapter_start: Bonus Round
 free: true
 ---
 
+<div class="vid" style="min-width: 80vw; margin-bottom: 50px;">
 {{< youtube 35RlydUf6xo >}}
+</vid>
