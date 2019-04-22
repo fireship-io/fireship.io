@@ -45,7 +45,7 @@ Yesterday Google Cloud released a game-changing new product called [Cloud Run](h
 {{% box icon="scroll" class="box-blue" %}}
 #### What is a Stateless Container?
 
-The server you deploy ti Cloud Run must be *stateless*, which is a requirement for any code running in a serverless environment. This means you should not save anything other than temporary files on the filesystem and you cannot use a database in the container, ie PostgreSQL, MySQL, etc. All persistent data should be handed off to a different service like Cloud Storage or Firestore. 
+The server you deploy to Cloud Run must be *stateless*, which is a requirement for any code running in a serverless environment. This means you should not save anything other than temporary files on the filesystem and you cannot use a database in the container, ie PostgreSQL, MySQL, etc. All persistent data should be handed off to a different service like Cloud Storage or Firestore. 
 {{% /box %}}
 
 
