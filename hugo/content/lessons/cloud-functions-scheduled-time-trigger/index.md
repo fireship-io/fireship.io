@@ -8,10 +8,9 @@ description: Trigger Cloud Functions based on cron time intervals and create a t
 tags: 
     - cloud-functions
     - pubsub
-    - twilio
     - firebase
 
-youtube: m1ne8ikfofw
+youtube: h79xrJZAQ6I
 github: https://github.com/fireship-io/181-cloud-functions-task-queue
 # disable_toc: true
 # disable_qna: true
@@ -32,11 +31,11 @@ Scheduling a function on a static time interval is straight forward, but what if
 - allow users to customize times for transactional email delivery
 - schedule push notifications or similar alerts dynamically
 - enqueue background jobs to run at specific times
-- build robocallers with Twilio 🤣 - please don't
+- build robocallers 🤣 - please don't
 
 ## Basic Scheduled Function
 
-Let's start by scheduling a basic function. This function will simply write to the Firestore database every five minutes. 
+Let's start by looking at an example of a basic cron-scheduled Cloud Function. 
 
 Make sure you have the latest version of [firebase-tools](https://firebase.google.com/docs/cli/) (or at least version 6.7) installed on your system, then initialize a new project. 
 
@@ -69,6 +68,9 @@ export const everyFiveMinuteJob = functions.pubsub
 ## Dynamic Task Queue
 
 Our task queue or job queue is simply a Firestore collection that will be queried by a Pub/Sub Cloud Function every 60 seconds. If the current time is greater than the *performAt* time of a task, then we execute it. 
+
+{{< figure src="img/task-queue-firebase.png" caption="The task queue query expired tasks on each tick, then execute the business logic associated with the task worker field" >}}
+
 
 ### Step 1: Data Model for Background Jobs
 
@@ -170,49 +172,10 @@ const workers: Workers = {
 }
 {{< /highlight >}}
 
-### Step 4 (Optional): Twilio Robocaller 🤖
 
-If you've been following along with the video you might want to build a robocaller for yourself using [Twilio's Voice API](https://www.twilio.com/docs/voice/quickstart/node#install-nodejs-and-the-twilio-nodejs-module). First, sign up for a free Twilio account and make a note of your automatically assigned phone number and API keys. Set them in your Cloud Functions environment and install the Twilio Node Client using the commands below: 
+Run `firebase deploy --only functions`. 
 
-{{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
-firebase functions:config:set twilio.sid="your SID" twilio.auth_token="your auth token"
-
-cd functions
-npm install twilio
-{{< /highlight >}}
-
-Now define the business logic for the robocaller - the Twilio Node Client does all the heavy lifting, we just need to pass in the phone numbers and optional script URL. 
-
-{{< file "typescript" "functions/src/index.ts" >}}
-{{< highlight typescript >}}
-const { sid, auth_token } = functions.config().twilio;
-import * as twilio from 'twilio';
-
-const robocaller = twilio(sid, auth_token);
-
-// ...
-
-const workers: Workers = {
-    helloWorld: () => db.collection('logs').add({ hello: 'world' }),
-
-    makeCall: async ({ phoneNumber }) => {
-        const call = await robocaller.calls.create({
-            to: phoneNumber,
-            from: '+1........',
-            url: 'https://lessonapp.page.link/nM9x',
-            method: 'GET'
-          });
-      
-          console.log(call.toJSON());
-      
-          return call.sid;
-    }
-}
-{{< /highlight >}}
-
-
-Run `firebase deploy --only functions`. After the function is deployed we just need to create a task document and Firestore that points the *makeCall* worker and the robocaller will do its magic at the specified time. 
+After the function is deployed we just need to create a task document in Firestore that points the `helloWorld` worker. Within 1 minute you should see the task document update to *complete* 
 
 
 
