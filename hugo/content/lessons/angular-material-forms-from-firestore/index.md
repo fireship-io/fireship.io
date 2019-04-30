@@ -36,23 +36,23 @@ We will start this lesson from where we left off on [Angular Navigation Firestor
 
 Clone
 
-```sh
+{{< highlight sh >}}
 git clone https://github.com/AJONPLLC/lesson11-angular-navigation-firestore.git lesson12-angular-material-forms-firestore
-```
+{{< /highlight >}}
 
 Remove Origin, just always easier up front if you want to add this to your own repo (or again you can fork and just clone.)
 
-```sh
+{{< highlight sh >}}
 git remote rm origin
-```
+{{< /highlight >}}
 
 ## Install Dependencies
 
 Make sure you are in the correct directory `cd lesson12-angular-material-forms-firestore`.
 
-```sh
+{{< highlight sh >}}
 npm install
-```
+{{< /highlight >}}
 
 # Book Edit Module
 
@@ -60,9 +60,9 @@ npm install
 
 Using the Angular CLI create the module with routing and corresponding component.
 
-```sh
+{{< highlight sh >}}
 ng g m modules/books/book-edit --routing && ng g c modules/books/book-edit
-```
+{{< /highlight >}}
 
 # Router updates
 
@@ -70,37 +70,37 @@ ng g m modules/books/book-edit --routing && ng g c modules/books/book-edit
 
 Add new lazy loaded path so that our main books-routing knows where to send requests for edit.
 
-```ts
+{{< highlight typescript >}}
 ...
-  {
-    path: ':bookId/edit',
-    loadChildren: './book-edit/book-edit.module#BookEditModule'
-  }
-  ...
-```
+{
+path: ':bookId/edit',
+loadChildren: './book-edit/book-edit.module#BookEditModule'
+}
+...
+{{< /highlight >}}
 
 ## book-edit-routing.module.ts
 
 Now that we are in the book-edit module make sure it has a path to the book-edit Component.
 
-```ts
+{{< highlight typescript >}}
 ...
 const routes: Routes = [
-  {
-    path: '',
-    component: BookEditComponent
-  }
+{
+path: '',
+component: BookEditComponent
+}
 ];
 ...
-```
+{{< /highlight >}}
 
 ## Serve the edit path
 
 Startup the server
 
-```sh
+{{< highlight sh >}}
 ng serve
-```
+{{< /highlight >}}
 
 Now that our router is all setup we should start to see the book-edit.component.html. Because we don't have a way to navigate to this path yet just type it in the url bar manually `localhost:4200/books/FirstBook/edit`.
 
@@ -114,87 +114,87 @@ To give our form some structure we can now add Flex Layout and Material Card cen
 
 book-edit.component.html
 
-```html
+{{< highlight html >}}
+
 <div fxLayout="column" fxLayoutAlign="space-around center">
   <mat-card style="width: 75%; margin-bottom: 100px;">
     <mat-card-content> </mat-card-content>
     <mat-card-actions> <button mat-button>Ok</button> </mat-card-actions>
   </mat-card>
 </div>
-```
+{{< /highlight >}}
 
 Because these are new Elements we need to import them into our Book Edit module.
 book-edit.module.ts
 
-```ts
+{{< highlight typescript >}}
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material';
 
 ...
 
 @NgModule({
-  declarations: [BookEditComponent],
-  imports: [
-    CommonModule,
-    BookEditRoutingModule,
-    FlexLayoutModule,
-    MatCardModule,
-  ]
+declarations: [BookEditComponent],
+imports: [
+CommonModule,
+BookEditRoutingModule,
+FlexLayoutModule,
+MatCardModule,
+]
 })
 ...
-```
+{{< /highlight >}}
 
 ## Getting Firestore Data for Book Edit
 
 Because we are now navigating to an area that uses Angular router and part of the path contains a specified paramter id `:bookId/edit` we can get this `bookId` from the currently Activated Route. In order to do this we need to use dependency injection and provide this in our constructor. To then fetch that data from our `FirestoreService` we can then inject this service as well.
 
-```ts
-  subs: Subscription[] = [];
-  book$: Observable<Book>;
-  constructor(private router: ActivatedRoute, private fs: FirestoreService) {}
+{{< highlight typescript >}}
+subs: Subscription[] = [];
+book\$: Observable<Book>;
+constructor(private router: ActivatedRoute, private fs: FirestoreService) {}
 
-  ngOnInit() {
-    // Get bookId for book document selection from Firestore
-    this.subs.push(
-      this.router.paramMap.subscribe(params => {
-        const bookId = params.get('bookId');
-        this.book$ = this.fs.getBook(bookId);
-      })
-    );
-```
+ngOnInit() {
+// Get bookId for book document selection from Firestore
+this.subs.push(
+this.router.paramMap.subscribe(params => {
+const bookId = params.get('bookId');
+this.book\$ = this.fs.getBook(bookId);
+})
+);
+{{< /highlight >}}
 
 By calling the firestore `getBook` function and passing in the current parameter `bookId` we now have an Observable reference to the Firestore data.
 
 firestore.service.ts
 
-```ts
+{{< highlight typescript >}}
 getBook(bookId: string): Observable<Book> {
-  // Start Using AngularFirebase Service!!
-  return this.afb.doc$<Book>(`books/${bookId}`);
+// Start Using AngularFirebase Service!!
+return this.afb.doc\$<Book>(`books/${bookId}`);
 }
-```
+{{< /highlight >}}
 
 > This is a cool wrapper that Jeff over at [fireship.io](https://angularfirebase.com/lessons/firestore-advanced-usage-angularfire/) created.
 > Feel free to copy this service and use it as a nice wrapper for all of your projects, I won't include the two calls as we move forward
 > angularfirebase.service.ts
 
-```ts
-  doc$<T>(ref: DocPredicate<T>): Observable<T> {
-    return this.doc(ref)
-      .snapshotChanges()
-      .pipe(
-        map(
-          (
-            doc: Action<
-              DocumentSnapshotDoesNotExist | DocumentSnapshotExists<T>
-            >
-          ) => {
-            return doc.payload.data() as T;
-          }
-        )
-      );
-  }
-```
+{{< highlight typescript >}}
+doc\$<T>(ref: DocPredicate<T>): Observable<T> {
+return this.doc(ref)
+.snapshotChanges()
+.pipe(
+map(
+(
+doc: Action<
+DocumentSnapshotDoesNotExist | DocumentSnapshotExists<T> >
+) => {
+return doc.payload.data() as T;
+}
+)
+);
+}
+{{< /highlight >}}
 
 Example of Book Data in Firestore Console:
 
@@ -202,28 +202,28 @@ Example of Book Data in Firestore Console:
 
 In the snippet above we are also pushing our RxJs Subscription into an array so that we can then loop through any subscriptions during the destroy method and unsubscribe. This is a pattern I often use when I cannot use `pipe(take(1))` or `| async`.
 
-```ts
-  ngOnDestroy() {
-    this.subs.forEach(sub => {
-      sub.unsubscribe();
-    });
-  }
-```
+{{< highlight typescript >}}
+ngOnDestroy() {
+this.subs.forEach(sub => {
+sub.unsubscribe();
+});
+}
+{{< /highlight >}}
 
 ## Using Firestore Data Inside of Template
 
 We can not use our new `book$` Observable in our template to show any of the current data. We can update our card to show only when the book data is available, otherwise show a Material Spinner. You can read more on how the [NgIf](https://angular.io/api/common/NgIf) directive works in the Angular docs if you are unfamiliar.
 
-```html
+{{< highlight html >}}
 <mat-card
-  *ngIf="(book$ | async); let book; else: spin"
-  style="width: 75%; margin-bottom: 100px;"
->
-  <mat-card-title>{{book.title}}</mat-card-title>
-  ...
-  <ng-template #spin><mat-spinner></mat-spinner></ng-template
-></mat-card>
-```
+\*ngIf="(book\$ | async); let book; else: spin"
+style="width: 75%; margin-bottom: 100px;"
+
+> <mat-card-title>{{book.title}}</mat-card-title>
+> ...
+> <ng-template #spin><mat-spinner></mat-spinner></ng-template
+> </mat-card>
+> {{< /highlight >}}
 
 Current title:
 ![Title View](https://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/v1548960658/ajonp-ajonp-com/11-lesson-angular-navigation-firestore/oclrlecxgwgbhbooidhg.jpg)
@@ -238,17 +238,17 @@ For this we will need to include `FormsModule`, `ReactiveFormsModule`, `MatFormF
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    CommonModule,
-    BookEditRoutingModule,
-    FlexLayoutModule,
-    MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-```
+{{< highlight typescript >}}
+imports: [
+CommonModule,
+BookEditRoutingModule,
+FlexLayoutModule,
+MatCardModule,
+FormsModule,
+ReactiveFormsModule,
+MatFormFieldModule,
+MatInputModule,
+{{< /highlight >}}
 
 ### Title Input
 
@@ -258,12 +258,13 @@ The entire Material Card should now look like below, the new div surrounding the
 
 book-edit.component.html
 
-```html
+{{< highlight html >}}
 <mat-card
-  *ngIf="(book$ | async); let book; else: spin"
-  style="width: 75%; margin-bottom: 100px;"
->
-  <mat-card-content>
+\*ngIf="(book\$ | async); let book; else: spin"
+style="width: 75%; margin-bottom: 100px;"
+
+>   <mat-card-content>
+
     <div fxLayout="column" fxLayoutAlign="space-around stretch">
       <section>
         <mat-form-field style="width: 100%">
@@ -271,10 +272,11 @@ book-edit.component.html
         </mat-form-field>
       </section>
     </div>
+
   </mat-card-content>
   <mat-card-actions> <button mat-button>Ok</button> </mat-card-actions>
 </mat-card>
-```
+{{< /highlight >}}
 
 Above we have our first two components
 
@@ -286,7 +288,8 @@ Above we have our first two components
 
 For an extra you can checkout the textarea example too.
 
-```html
+{{< highlight html >}}
+
 <section>
   <mat-form-field style="width: 100%">
     <textarea
@@ -297,7 +300,7 @@ For an extra you can checkout the textarea example too.
     ></textarea>
   </mat-form-field>
 </section>
-```
+{{< /highlight >}}
 
 ### Slide Toggle
 
@@ -307,11 +310,11 @@ For an extra you can checkout the textarea example too.
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatSlideToggleModule,
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatSlideToggleModule,
+{{< /highlight >}}
 
 For our requirement we are going to use this to determine whether a book is Fiction or non-fiction.
 
@@ -319,16 +322,17 @@ We will set the default `fictionSelected = true;` so that Fiction is set first.
 
 book-edit.component.ts
 
-```ts
+{{< highlight typescript >}}
 export class BookEditComponent implements OnInit, OnDestroy {
-  subs: Subscription[] = [];
-  book$: Observable<Book>;
-  fictionSelected = true;
-```
+subs: Subscription[] = [];
+book\$: Observable<Book>;
+fictionSelected = true;
+{{< /highlight >}}
 
 book-edit.component.html
 
-```html
+{{< highlight html >}}
+
 <section>
   <mat-slide-toggle
     [checked]="fictionSelected"
@@ -338,18 +342,18 @@ book-edit.component.html
     <p *ngIf="ficToggle.checked; else nonFic">Fiction</p>
   </mat-slide-toggle>
 </section>
-```
+{{< /highlight >}}
 
 You can see that our input directive `checked` (denoted by `[]`), will now take the value of `fictionSelected` and every time the toggle is changed we will use the output directive `change` (denoted by `()`) to trigger function `fictionChange` passing in the current components instance of the event `$event`. You can read more about [DOM event payloads](https://angular.io/guide/user-input#get-user-input-from-the-event-object).
 
 book-edit.component.ts
 
-```ts
-  fictionChange(e) {
-    this.fictionSelected = e.checked;
-    this.genreControl.reset();
-  }
-```
+{{< highlight typescript >}}
+fictionChange(e) {
+this.fictionSelected = e.checked;
+this.genreControl.reset();
+}
+{{< /highlight >}}
 
 ### Autocomplete
 
@@ -362,11 +366,11 @@ book-edit.component.ts
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatAutocompleteModule,
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatAutocompleteModule,
+{{< /highlight >}}
 
 These two lists will be contained in a new collection at the base of our Firestore Database called `config`. Within our `config` collection we will create a document called `book`, which will hold many of our different configurations. For these two specifically they will be arrays that are on the `book` object.
 
@@ -375,64 +379,65 @@ These two lists will be contained in a new collection at the base of our Firesto
 First we will create our Observable to the Config Book object.
 book-edit.component.ts
 
-```ts
-  bookConfig$: Observable<ConfigBook>;
+{{< highlight typescript >}}
+bookConfig$: Observable<ConfigBook>;
   ...
     // Set Book Config
     this.bookConfig$ = this.fs.getConfigBook();
-```
+{{< /highlight >}}
 
 Create the `ConfigBook` Interface for our type.
 
-```sh
+{{< highlight sh >}}
 ng g i core/models/config-book
-```
+{{< /highlight >}}
 
 config-book.ts
 
-```ts
+{{< highlight typescript >}}
 export interface ConfigBook {
-  ageCategory?: Array<string>;
-  fiction?: Array<string>;
-  nonFiction?: Array<string>;
+ageCategory?: Array<string>;
+fiction?: Array<string>;
+nonFiction?: Array<string>;
 }
-```
+{{< /highlight >}}
 
 Then we can will grab the first set of values emitted from Firestore and send those out as a [BehaviorSubject](http://reactivex.io/rxjs/manual/overview.html#behaviorsubject) with type `ConfigBook`. Our toggle has set `this.fictionSelected` so we can determine what list should be emitted in `this.genereList$`.
 
 book-edit.component.ts
 
-```ts
+{{< highlight typescript >}}
 export class BookEditComponent implements OnInit, OnDestroy {
-  ...
-  genreControl = new FormControl();
-  ...
-    // Set default Genere
-    this.bookConfig$.pipe(take(1)).subscribe(bookConfig => {
+...
+genreControl = new FormControl();
+...
+// Set default Genere
+this.bookConfig$.pipe(take(1)).subscribe(bookConfig => {
       this.subs.push(
         this.genreControl.valueChanges.pipe(startWith('')).subscribe(value => {
           const filterValue = value ? value.toLowerCase() : '';
           if (this.fictionSelected) {
             this.genreList$.next(
-              bookConfig.fiction.filter(option =>
-                option.toLowerCase().includes(filterValue)
-              )
-            );
-          } else {
-            this.genreList$.next(
-              bookConfig.nonFiction.filter(option =>
-                option.toLowerCase().includes(filterValue)
-              )
-            );
-          }
-        })
-      );
-    });
-```
+bookConfig.fiction.filter(option =>
+option.toLowerCase().includes(filterValue)
+)
+);
+} else {
+this.genreList\$.next(
+bookConfig.nonFiction.filter(option =>
+option.toLowerCase().includes(filterValue)
+)
+);
+}
+})
+);
+});
+{{< /highlight >}}
 
 You will also notice above the we have subscribed to any of the `valueChanges` that are happening on our new `genreControl`. Below you will see that `formControl` input directive is passed our class parameter `genreControl` which is an instance of `FormControl`. We will dive into all of the `@angular/forms` in more detail in the next lesson. For our sake here just know that this allows us to check all of the changing values as you type. When we start to type it uses the arrays that we have passed in from Firestore and filters them based on the string we are inputing using either `bookConfig.fiction.filter` or `bookConfig.nonFiction.filter`.
 
-```html
+{{< highlight html >}}
+
 <section>
   <mat-form-field style="width: 100%">
     <input
@@ -451,7 +456,7 @@ You will also notice above the we have subscribed to any of the `valueChanges` t
     </mat-option>
   </mat-autocomplete>
 </section>
-```
+{{< /highlight >}}
 
 Above we are listening to the updates from `genreList$` BehaviorSubject to create our `<mat-option>` list of values. Our input has an input directive `[matAutocomplete]="auto"` to attach this `<mat-autocomplete>` by assigning the instance variable `#auto` to the input using `matAutocomplete`.
 
@@ -465,17 +470,18 @@ Above we are listening to the updates from `genreList$` BehaviorSubject to creat
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatCheckboxModule,
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatCheckboxModule,
+{{< /highlight >}}
 
 ![Firestore Config](https://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/v1548966831/ajonp-ajonp-com/11-lesson-angular-navigation-firestore/caewhsmpkrkxdo1dcj2d.jpg)
 
 For us this contains some more of the configuration items from our book, because we already have an Observable created in `bookConfig$` we can just tell Angular to listen for this and assign it to our local template variable `bookConfig`. We then are just assigning these to the directive [NgModel](https://angular.io/api/forms/NgModel). This is a two way binding, for our example doesn't mean much, but again we will drive these things home further in the next lesson.
 
-```ts
+{{< highlight typescript >}}
+
 <section *ngIf="(bookConfig$ | async); let bookConfig">
   <h3>Options</h3>
   <div fxLayout="column">
@@ -490,7 +496,7 @@ For us this contains some more of the configuration items from our book, because
     </mat-checkbox>
   </div>
 </section>
-```
+{{< /highlight >}}
 
 ### Datepicker
 
@@ -502,18 +508,19 @@ For us this contains some more of the configuration items from our book, because
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatDatepickerModule,
-       MatNativeDateModule
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatDatepickerModule,
+MatNativeDateModule
+{{< /highlight >}}
 
 This is just creating the pre canned datepicker. We don't have any data that will will bring in currently to update this field. We will cover this in the next lesson.
 
 book-edit.component.html
 
-```html
+{{< highlight html >}}
+
 <section>
   <mat-form-field>
     <input matInput [matDatepicker]="picker" placeholder="Publish Date" />
@@ -521,7 +528,7 @@ book-edit.component.html
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 </section>
-```
+{{< /highlight >}}
 
 ### Select
 
@@ -531,11 +538,11 @@ book-edit.component.html
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatSelectModule,
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatSelectModule,
+{{< /highlight >}}
 
 > It would probably be better to unwrap our `bookConfig$` once in our template, but I wanted to keep each of these as seperate units.
 
@@ -545,7 +552,8 @@ For our book component we are once again going to get all of the age categories 
 
 book-edit.component.html
 
-```html
+{{< highlight html >}}
+
 <section>
   <mat-form-field style="width: 100%">
     <mat-select placeholder="Age Category">
@@ -558,7 +566,7 @@ book-edit.component.html
     </mat-select>
   </mat-form-field>
 </section>
-```
+{{< /highlight >}}
 
 ### Slider
 
@@ -568,23 +576,24 @@ book-edit.component.html
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatSliderModule,
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatSliderModule,
+{{< /highlight >}}
 
 We once again will not be doing anything with this value, but I did want to show you how to default the value on creation. Later we will tie this directly to the Firestore value for our book.
 
 book-edit.component.ts
 
-```ts
+{{< highlight typescript >}}
 bookRating = 3;
-```
+{{< /highlight >}}
 
 book-edit.component.html
 
-```html
+{{< highlight html >}}
+
 <section>
   <h3>Rating</h3>
   <mat-slider
@@ -595,7 +604,7 @@ book-edit.component.html
     [(ngModel)]="bookRating"
   ></mat-slider>
 </section>
-```
+{{< /highlight >}}
 
 ### Radio button
 
@@ -605,17 +614,18 @@ book-edit.component.html
 
 book-edit.module.ts
 
-```ts
-  imports: [
-    ...
-       MatRadioModule,
-```
+{{< highlight typescript >}}
+imports: [
+...
+MatRadioModule,
+{{< /highlight >}}
 
 For us this will again in the future refer directly to a status on our Book, we could create these from a Firestore config, but I don't see us changing these options very often. If you want you could do the same loop as we did with the select option and add the config. In the next lesson we will add that config and show how to do a validation of sorts.
 
 book-edit-component.html
 
-```html
+{{< highlight html >}}
+
 <section>
   <h3>Status</h3>
   <mat-radio-group [(ngModel)]="bookStatus" fxLayout="column">
@@ -623,7 +633,7 @@ book-edit-component.html
     <mat-radio-button value="Published">Published</mat-radio-button>
   </mat-radio-group>
 </section>
-```
+{{< /highlight >}}
 
 # Wrap Up
 
