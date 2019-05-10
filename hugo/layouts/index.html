@@ -5,24 +5,32 @@
     <div class="vid">
       <iframe src="https://player.vimeo.com/video/321262943" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> 
   </div>
-  <div class="col-xs-12 col-md-6">
+  <div class="col-xs-12 col-md-6" style="justify-content: space-between; display: flex; flex-direction: column;">
     <h1>Build and ship 🔥 your app ⚡ faster</h1>
     <p class="text-lg">
       Fireship.io is an ecosystem of detailed and practical resources for
       developers who want to
-      <strong class="text-contrast">build and ship high-quality apps</strong>.
+      <strong class="text-contrast">build and ship high-quality apps</strong>.      
+      
     </p>
 
-    <a class="btn btn-orange" href="/lessons">Explore</a>
-    <google-login>
-      <button slot="signin" class="btn">
-        {{ partial "svg/google.svg" }} Login Now
-      </button>
-    </google-login>
+    <p>
+      <a class="btn btn-orange" href="/lessons">Explore</a>
+      <google-login>
+        <button slot="signin" class="btn">
+          {{ partial "svg/google.svg" }} Login Now
+        </button>
+      </google-login>
+    </p>
+
+
+    <hr>
+    {{ partial "app-links" }}
   </div>
 </div>
 
 <hr />
+
 
 
 <div href="/courses" class="row row-home">
@@ -43,7 +51,7 @@
       finish. <a class="btn btn-sm" href="/courses">Courses</a>
     </p>
   </div>
-</div>
+</div> 
 
 <div class="row home-features">
 
