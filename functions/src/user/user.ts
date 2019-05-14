@@ -5,6 +5,10 @@ import { createCustomer } from '../stripe/customers';
 
 export const newUserSetup = functions.auth.user().onCreate(async (user, context) => {
 
+    if (!user.email) {
+        return null;
+    }
+
     const ref = db.collection('users').doc(user.uid);
     const { uid, displayName, photoURL, email } = user;
     await ref.set({

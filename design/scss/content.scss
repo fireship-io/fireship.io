@@ -226,6 +226,7 @@
   margin: 1em 2.5em;
   &.no-toc {
     width: auto;
+    min-width: 75vw;
   }
 
   h2 {
