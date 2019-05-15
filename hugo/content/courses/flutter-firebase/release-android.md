@@ -1,16 +1,11 @@
 ---
 title: Google Play
-description: Androud release walkthrough
-weight: 31
+description: Android release walkthrough
+weight: 33
 lastmod: 2019-05-13T10:23:30-09:00
 draft: false
 emoji: 🎉
-vimeo: 
+vimeo: 336426123
 
 chapter_start: Release
 ---
-
-
-## Video Production on Progress
-
-Check back on May 15th for updates. 
