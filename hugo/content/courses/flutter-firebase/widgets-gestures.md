@@ -1,6 +1,6 @@
 ---
 title: Gestures
-description: Detect user interaction with your app
+description: Detect user interaction within your app
 weight: 12
 lastmod: 2019-05-13T10:23:30-09:00
 draft: false

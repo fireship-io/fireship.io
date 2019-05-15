@@ -1,15 +1,9 @@
 ---
 title: Project Organization
 description: How to structure a complex Flutter app
-weight: 21
+weight: 22
 lastmod: 2019-05-13T10:23:30-09:00
 draft: false
-emoji: 🚧
-vimeo: 
-chapter_start: Let's Build an App
+emoji: 🍱
+vimeo: 336344350
 ---
-
-
-## Video Production on Progress
-
-Check back on May 15th for updates. 
