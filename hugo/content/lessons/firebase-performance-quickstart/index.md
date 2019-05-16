@@ -45,7 +45,7 @@ Grab your Firebase config from the console, then initialize AngularFire & Fireba
 
 {{< figure src="img/config-fireperf.png" caption="Make sure you have the new Firebase config object with an appId property" >}}
 
-{{< file "ngts" "foo.component.ts" >}}
+{{< file "ngts" "app.module.ts" >}}
 {{< highlight typescript >}}
 const firebaseConfig = {
     // ...firebase config
