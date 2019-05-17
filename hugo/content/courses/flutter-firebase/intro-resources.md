@@ -24,5 +24,5 @@ free: true
 
 ## Additional Resources
 
-- [Get it on The App Store](https://itunes.apple.com/us/app/fireship/id1462592372?mt=8)
+- [Get it on the App Store](https://itunes.apple.com/us/app/fireship/id1462592372?mt=8)
 - [Get it on Google Play](https://play.google.com/store/apps/details?id=io.fireship.quizapp)
