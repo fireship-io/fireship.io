@@ -34,7 +34,7 @@ This course is intermediate level and designed to help you become productive at 
 
 ### Test Drive
 
-You can download the app we're building on the App Store, so give it a test drive before enroll. 
+You can download the app we're building on Google Play or the App Store, so give it a test drive before you enroll. 
 
 {{< partial "app-links" >}}
 
