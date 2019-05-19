@@ -398,6 +398,14 @@ video, video-player, .video-overlay {
   }
 }
 
+.chapter-item {
+  &:hover {
+    transform: scale(1.02);
+    background: var(--tag-bg);
+  }
+  transition: all 0.3s ease;
+}
+
 .home-features {
   .card {
       min-height: 240px;

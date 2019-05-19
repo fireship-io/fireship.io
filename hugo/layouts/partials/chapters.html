@@ -11,7 +11,7 @@
     {{ end }}
 
     <a href="{{ .RelPermalink }}">
-        <div class="box box-sm {{ if eq $active .RelPermalink }}box-blue-bookmark{{ end }}">
+        <div class="box box-sm chapter-item {{ if eq $active .RelPermalink }}box-blue-bookmark{{ end }}">
         <i class="box-icon" >
             {{ if .Params.icon }}
 
@@ -34,14 +34,16 @@
         </i>
 
         <div class="box-content">
-            <div>
-            <strong>{{ .Params.weight }} {{ .Title }}</strong> |
-            {{ .Description }}
+            <strong>{{ .Params.weight }} {{ .Title }}
+                {{ with .Params.free }}
+                <span class="tag tag-sm tag-pro">free</span> 
+                {{ end }}
 
-            </div>
-            {{ with .Params.free }}
-                <span class="tag tag-pro tag-sm">free</span> 
-            {{ end }}
+            </strong> 
+
+            <span class="subtext">{{ .Description }}</span>
+      
+
         </div>
 
       
