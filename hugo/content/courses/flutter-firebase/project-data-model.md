@@ -11,7 +11,7 @@ In order to build an app identical to the live demo, you need to populate Firest
 
 ## Populate your Database with Quiz Data
 
-I recommend cloning the [Quiz Questions Repo](https://github.com/fireship-io/fireship-quizapp-questions). It is a node script that allows you to populate all the quiz data in your own database with a single command.
+I recommend cloning the [Quiz Questions Repo](https://github.com/fireship-io/fireship-quizapp-data). It is a node script that allows you to populate all the quiz data in your own database with a single command.
 
 ## Database Model
 
