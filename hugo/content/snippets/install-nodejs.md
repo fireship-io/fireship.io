@@ -14,7 +14,7 @@ It is likely that you already have [NodeJS](https://nodejs.org/en/) installed on
 
 ## Node Version Manager NVM
 
-[Node Version Manager](https://github.com/creationix/nvm) NVM makes is easy to switch between Node versions in your local environment. I highly recommend using it over the native install on your system. 
+[Node Version Manager](https://github.com/creationix/nvm) NVM makes it easy to switch between Node versions in your local environment. I highly recommend using it over the native install on your system. 
 
 ### Mac and Linux
 
