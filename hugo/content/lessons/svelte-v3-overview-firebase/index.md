@@ -83,7 +83,7 @@ The `authState` function is provided by RxFire and contains an Observable of the
 
 Keep in mind, we will be creating the `Todos` and `Profile` components in the upcoming steps. 
 
-{{< file "svelte" "Login.svelte" >}}
+{{< file "svelte" "App.svelte" >}}
 {{< highlight html >}}
 <script>
     import Profile from './Profile.svelte';
@@ -120,7 +120,7 @@ Keep in mind, we will be creating the `Todos` and `Profile` components in the up
 
 When a user is logged-in, we can pass the props down to a child (dumb) component used for data presentation only. The `export` keyword makes it possible to pass a value from the parent the the child. 
 
-{{< file "svelte" "App.svelte" >}}
+{{< file "svelte" "Profile.svelte" >}}
 {{< highlight html >}}
 <script>
     export let displayName;
