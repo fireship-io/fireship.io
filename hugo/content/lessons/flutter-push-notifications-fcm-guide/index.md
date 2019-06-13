@@ -1,17 +1,17 @@
 ---
-title: FCM Push Notification Guide for Flutter
+title: FCM Push Notifications for Flutter
 lastmod: 2019-06-11T06:37:28-07:00
 publishdate: 2019-06-11T06:37:28-07:00
 author: Jeff Delaney
 draft: false
-description: Send push notifications in Flutter using Firebase Cloud Messaging (FCM) to specific users and topics. 
+description: Send push notifications in Flutter using Firebase Cloud Messaging (FCM) to specific devices, topics, and user segments. 
 tags: 
     - flutter
     - firebase
     - push-notifications
     - cloud-functions
 
-youtube: 
+youtube: 2TSm2YGBT1s
 github: https://github.com/fireship-io/192-flutter-fcm-push-notifications
 # disable_toc: true
 # disable_qna: true
@@ -28,7 +28,7 @@ When used correctly, push notifications can be an excellent way to drive user en
 Before getting started, it is important to understand that there are three types of [FCM push notifications](https://firebase.google.com/docs/cloud-messaging/concept-options) you can send to a device. 
 
 1. **Device Token**. Sends a message to a single device. 
-2. **Topic Subscription**. Sends a message to multiple devices that explicitly subscribed to a topic. Great for broadcasting important news to a large ground of users. 
+2. **Topic Subscription**. Sends a message to multiple devices that explicitly subscribed to a topic.
 3. **User Segment**. Sends a notification to a subset of users based on your analytics data. 
 
 ## Step 0: Initial Setup
@@ -54,7 +54,7 @@ dependencies:
 
 ### Android
 
-Android does not require any specific configuration, unless you want to run code after a notification is clicked in from the device tray from the background. 
+Android does not require any specific configuration, unless you want to run code after a notification is clicked-on from the device tray (while the app was in the backgrond).
 
 {{< file "file" "android/app/src/main/AndroidManifest.xml" >}}
 {{< highlight xml >}}
@@ -66,7 +66,7 @@ Android does not require any specific configuration, unless you want to run code
 
 ### iOS
 
-iOS apps are required to generate a certificate for the Apple Push Notification service (APNs). Rather than duplicate the content from the documentation, I recommend following the [official setup guide](https://firebase.google.com/docs/cloud-messaging/ios/certs) from Firebase. 
+iOS apps are required to generate a certificate for the Apple Push Notification service (APNs) and enable background services in Xcode. Rather than duplicate the content from the documentation, I recommend following the [official setup guide](https://firebase.google.com/docs/cloud-messaging/ios/certs) from Firebase. 
 
 
 ## Step 1: Receive Messages in Flutter (Frontend)
@@ -102,7 +102,7 @@ class _MessageHandlerState extends State<MessageHandler> {
 
 ### Get Permission on iOS
 
-On iOS, you must explicitly get permission from the user to send notifications. This can handled when the widget is initialized, or better yet, you might run this 
+On iOS, you must explicitly get permission from the user to send notifications. This can handled when the widget is initialized, or better yet, you might strategically request permission when the user is most likely to say "yes". 
 
 
 {{< file "dart" "main.dart" >}}
@@ -136,7 +136,7 @@ The [callback that fires](https://github.com/flutter/plugins/tree/master/package
 
 When the notification is received in the foreground (the app is open), we can handle it with one of Flutter's built-in widgets. 
 
-Simple notifications can be handled in the foreground with a [SnackBar](https://flutter.dev/docs/cookbook/design/snackbars). The snackbar has room for a short sentences and an action, and will be auto-dismissed if the user does not engage with the alert. 
+Simple notifications can be handled in the foreground with a [SnackBar](https://flutter.dev/docs/cookbook/design/snackbars). The snackbar has room for a short sentence and a single action. It will be auto-dismissed if the user does not engage with the alert. 
 
 
 More complex notifications may benefit from a full [AlertDialog](https://api.flutter.dev/flutter/material/AlertDialog-class.html) screen. The `onMessage` callback is called when the app is running in the foreground. 
@@ -192,7 +192,7 @@ When the app is closed, the notification will appear in the device tray with you
 
 ### Segmented Notifications 
 
-At this point, you can send segmented notifications directly from the firebase console based on the Analytics data you collect from users. 
+At this point, you can send segmented notifications directly from the Firebase Notification Composer console based on the Analytics data you collect from users. 
 
 
 {{< figure src="img/segmented-notification.png" alt="segmented push notification FCM" >}}
@@ -284,7 +284,7 @@ const fcm = admin.messaging();
 
 ### Send to Topic
 
-When it comes to topic-based notifications, you will often send the message in response to an event in the databases. For example, when a new document is created in *puppies* collection, we want to notify all users subscribed to *puppies* FCM topic. 
+When it comes to topic-based notifications, you will often send the message in response to an event in the database. For example, when a new document is created in *puppies* collection, we may want to notify all users subscribed to the *puppies* FCM topic. 
 
 {{< file "typescript" "functions/index.ts" >}}
 {{< highlight typescript >}}
@@ -298,7 +298,7 @@ export const sendToTopic = functions.firestore
         title: 'New Puppy!',
         body: `${puppy.name} is ready for adoption`,
         icon: 'your-icon-url',
-        click_action: 'FLUTTER_NOTIFICATION_CLICK'
+        click_action: 'FLUTTER_NOTIFICATION_CLICK' // required only for onResume or onLaunch callbacks
       }
     };
 

@@ -181,15 +181,16 @@
 
 .post-info {
   display: flex;
-  // background: var(--card-bg);
+  background: var(--nav-bg);
   box-shadow: var(--card-shadow);
   min-height: 150px;
   margin: 0 auto;
-  border-left: var(--h-border);
-  border-bottom: var(--h-border);
+  padding: 1em;
+  // border-left: var(--h-border);
+  // border-bottom: var(--h-border);
 
   .post-detail {
-    padding: 1em;
+    padding: 0.5em;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -199,6 +200,7 @@
   .post-description {
     text-align: left;
     padding: 0.5em;
+    font-size: 0.92em;
   }
 
   .post-buttons {
@@ -214,10 +216,6 @@
   flex-direction: row;
   max-width: 100%;
   min-width: 0;
-}
-
-.course-article {
-
 }
 
 
@@ -456,6 +454,7 @@ video, video-player, .video-overlay {
   display: flex;
   justify-content: left;
   font-weight: 500;
+  margin: 20px 0;
 
   .author-avatar {
     img {
