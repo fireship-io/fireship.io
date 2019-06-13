@@ -6,17 +6,10 @@
         Copy and Ask
     </button>
 </p>
-
-
-
 </div>
-
 <div *ngFor="let thread of threads" class="slack-thread">
-
   <user-profile [photoURL]="thread.image_32 || '/img/slack-avatar.png'" [displayName]="thread.display_name"></user-profile>
-
   <div class="slack-content" [innerHTML]="asHtml(thread.text)"></div>
-
   <div class="toggle-replies">
       <div *ngIf="activeThread !== thread.slackID" (click)="showReplies(thread.slackID)">Show Replies {{ repliesLen(thread) }}</div>
       <div *ngIf="activeThread === thread.slackID" (click)="showReplies('')">Hide</div>
@@ -26,26 +19,17 @@
       <div *ngFor="let reply of thread.replies | keyvalue" class="slack-reply">
           <div *ngIf="reply.value?.visible && reply.value?.text?.length; else hiddenMsg">
               <user-profile [photoURL]="reply.value?.image_32" [displayName]="reply.value?.display_name"></user-profile>
-
               <div class="slack-content"  [innerHTML]="asHtml(reply.value?.text)"></div>
-    
           </div>
-
           <ng-template #hiddenMsg>
             <div class="reply-hidden">
                 👻 <em>Hidden or deleted</em>
             </div>
           </ng-template>
-
           <a class="slack-link" [href]="reply.value?.slackURL">View on Slack</a>
       </div>
-
-
   </div>
-
   <div class="slack-answer">
       <a class="btn btn-sm btn-green" [href]="thread.slackURL" target="_blank">Answer</a>
   </div>
-
-
 </div>
