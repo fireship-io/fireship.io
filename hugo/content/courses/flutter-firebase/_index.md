@@ -18,7 +18,7 @@ tags:
 
 This is a project-based course that will teach you how to build a multiple choice quiz app, inspired by apps like Duolingo and QuizUp. The app implements user authentication, tracks quiz progress in Firestore, runs animations, and shares data between screens. 
 
-A quiz was chosen because it provides a moderate amount of complexity with plenty of variety between learning concepts. The goal of this course is to teach non-trivial concepts without getting bogged down into repetitive or boring tasks.
+A quiz was chosen because it provides a moderate amount of complexity with plenty of variety between learning concepts. My mission is to teach non-trivial concepts without getting bogged down into repetitive or boring tasks.
 
 {{< figure src="/courses/flutter-firebase/img/app-screens-trans.png" caption="Screenshots from the demo app" >}}
 
