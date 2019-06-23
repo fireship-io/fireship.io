@@ -40,8 +40,12 @@
         }
     </script>
 
-    <!-- Stripe -->
+    <!-- Payments -->
     <script src="https://js.stripe.com/v3/"></script>
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=ARNRNvgJTH0oaRUrQUC-p-MgCXzIOl5T6um6YqdW7U9mkwzV-ZkfCtp9c0QH6dRWArJY85Yh3rLCT5Vu&disable-funding=credit,card&vault=true">
+    </script>
+    <script defer></script>
 
     <!-- Extras -->
     {{ block "scripts" . }}

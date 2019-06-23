@@ -30,5 +30,6 @@ export {
 } from './stripe/subscriptions';
 
 export { stripeWebhookHandler } from './stripe/webhooks';
+export { paypalHandler } from './stripe/paypal';
 
 

@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewEncapsulation, ChangeDetectorRef, ElementRef, Input, OnDestroy } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectorRef, Input } from '@angular/core';
 import { AuthService } from 'src/app/users/auth.service';
 
 @Component({
@@ -10,6 +10,7 @@ export class AllowIfComponent {
   @Input() selector;
   @Input() level: 'pro' | 'user' | 'not-pro' | 'not-user';
   @Input() reverse = false;
+  @Input() product;
 
 
   constructor(
@@ -20,6 +21,15 @@ export class AllowIfComponent {
 
   get allowed() {
     const u = this.auth.userDoc;
+    const products = u && u.products && Object.keys(u.products);
+
+
+    // Handle Product
+    if (products && products.includes(this.product)) {
+      return true;
+    }
+
+    // Handle Level
     switch (this.level) {
       case 'user':
         return u;

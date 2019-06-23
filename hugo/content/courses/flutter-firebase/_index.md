@@ -1,4 +1,5 @@
 ---
+lastmod: 2019-06-21T10:23:30-09:00
 title: Flutter Firebase - The Full Course
 description: Build a full-stack Flutter app with Firebase from scratch. 
 weight: 0
@@ -7,7 +8,7 @@ tags:
     - flutter
     - dart
     - firebase
-    - firestoreit 
+    - firestore
 ---
 
 {{< vimeo 336110393 >}}
@@ -48,4 +49,5 @@ This course is intermediate level and designed to help you become productive at 
 You can download the app we're building on Google Play or the App Store, so give it a test drive before you enroll. 
 
 {{< partial "app-links" >}}
+
 

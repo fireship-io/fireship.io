@@ -1,1 +1,13 @@
-firestore: firestore
+# URL to sku for course single template
+# SKU to ID for buy-course partial
+
+
+flutter-firebase: sku_FJCsh7mvjI83Kz
+sku_FJCsh7mvjI83Kz: flutterFirebase
+
+stripe-payments: sku_FJEdgiT5ZF8bCQ
+sku_FJEdgiT5ZF8bCQ: stripePayments
+
+
+sku_FJEdx5Tz9dPrvm: firestoreDataModeling
+firestore-data-modeling: sku_FJEdx5Tz9dPrvm

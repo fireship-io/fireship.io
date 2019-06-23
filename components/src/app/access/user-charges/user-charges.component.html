@@ -1,3 +1,4 @@
+
 <div *ngIf="charges">
  
   <div *ngFor="let invoice of charges" class="well payments-charge">
@@ -24,6 +25,3 @@
 <div *ngIf="loading">
     <loading-spinner></loading-spinner> Fetching Invoices...
 </div>
-
-
-<!-- <button (click)="getCharges()" class="btn btn-blue" [disabled]="loading">{{ loading ? 'loading...' : 'Get Invoice History' }}</button> -->

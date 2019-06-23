@@ -1,0 +1,18 @@
+<allow-if level="user">
+
+        <product-select className="btn btn-red" product-id="{{ index .Site.Data.courses .sku }}" text="Buy this Course"></product-select>
+    
+        <a href="/pro" class="btn btn-success">Or Signup for Unlimited PRO Access</a>
+    
+        
+        <div class="payment-card">
+            <payment-form></payment-form>
+        </div>
+    
+    
+    
+    
+        <span slot="falsey">
+            {{ partial "login.html" }}
+        </span>
+    </allow-if>

@@ -45,7 +45,7 @@
   
       <div *ngIf="action !== 'source' && product">
 
-          <div class="coupon-form">
+          <div class="coupon-form" *ngIf="allowCoupons">
               <p *ngIf="couponResult" class="green">{{ couponResult?.name }}</p>
               <p *ngIf="couponError" class="red">Unable to apply coupon</p>
               <input placeholder="coupon code" class="input" maxlength="20" style="display: inline; margin-right: 10px; max-width: 256px;" type="text" #coupon>
@@ -77,6 +77,13 @@
   <div class="payment-terms">
       <button type="button" class="btn btn-contrast btn-sm" onclick="window.open('https://fireship.io/terms#memberships','_blank')">terms</button>
       <img class="stripe-badge" src="/img/brands/stripe.svg">
+  </div>
+
+  <hr>
+
+  <p>Or pay with PayPal</p>
+  <div class="paypal" #paypalElement>
+
   </div>
 
 

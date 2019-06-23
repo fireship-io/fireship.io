@@ -1,6 +1,11 @@
 {{ define "main" }}
 {{ $free := .Params.free }}
 
+{{ $courses := .Site.Data.courses }}
+
+{{ $sku := index $courses ( (index (split .RelPermalink "/") 2))  }}
+{{ $course := index $courses (string $sku) }}
+
 <article itemscope itemtype="http://schema.org/Article" >
     <header>
         <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
@@ -24,7 +29,7 @@
 
             </allow-if>
         {{ else }}
-            <allow-if level="pro">
+            <allow-if level="pro" product="{{ $sku }}">
 
 
                 <div class="vid">
@@ -36,17 +41,43 @@
                     <div class="box box-orange">
                         <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
                         <div class="box-content">
-                            This lesson is only available for PRO members. Sign-in and choose a plan below.
+                            This lesson is available for PRO members or as a single course purchase. Sign-in and choose a plan below.
                         </div>
                     </div>
 
-                    {{ partial "pricing" }}
 
-                    <span slot="falsey">
-                            {{ partial "video-login.html" }}
-                    </span>
+                    <allow-if level="user">
+
+
+                        <div class="text-center" style="padding: 2em;">
+                            <p><product-select class-name="btn btn-blue btn-lg" product-id="{{ $course }}" text="Enroll for $19.00"></product-select></p>
+                            
+                            <a href="/pro" class="btn btn-green">Or Signup for Unlimited PRO Access</a>
+                        
+                            
+                            <div class="payment-card">
+                                <payment-form></payment-form>
+                            </div>
+                        
+                        
+                        
+                        
+                            <!-- <span slot="falsey">
+                                {{ partial "login.html" }}
+                            </span> -->
+                        </allow-if>
+
+                    </div>
+
+
+                    <!-- {{ partial "pricing" }} -->
+
 
                 </allow-if>
+
+                <span slot="falsey">
+                        {{ partial "video-login.html" }}
+                </span>
             </allow-if>
 
         {{ end }}
@@ -58,12 +89,6 @@
         {{ end }}
 
 
-        {{ with .Params.video }}
-        
-
-
-
-        {{ end }}
 
     </header>
     {{ partial "chapters-next.html" . }}
@@ -76,7 +101,7 @@
         <section class="content-article no-toc course-article" itemprop="articleBody">{{ .Content }}</section>
 
     {{ else }}
-        <allow-if level="pro">
+        <allow-if level="pro" product="{{ $sku }}">
             <section class="content-article no-toc course-article" itemprop="articleBody">{{ .Content }}</section>
         </allow-if>
     {{ end }}
