@@ -29,16 +29,36 @@ export const proSignup = functions.firestore.document('users/{userId}').onUpdate
 
     const before = change.before.data();
     const after = change.after.data();
-    const upgraded = !before.is_pro && after.is_pro;
+    const upgraded = !before.is_pro && after.is_pro; // Pro membership
+    const purchased = JSON.stringify(before.products) !== JSON.stringify(after.products); // Single course
     const email = after.email;
 
-    if (!email || !upgraded) {
+    console.log(purchased && !after.is_pro)
+
+
+
+    if (!email) {
         return null;
     }
 
-    const templateId = 'd-d4ebc6fef6e34a5389dfe379f6d5d7b7';
+    // Send purchase receipt email
+    if (purchased && !after.is_pro) {
 
-    const emailMsg = msg([email], { templateId });
-    const adminEmail = msg(['hello@fireship.io'], { text: JSON.stringify(after), subject: 'New Pro Upgrade' });
-    return sendEmail([emailMsg, adminEmail]);
+          const templateId = 'd-0e01856a7d9e45a7b4e11938f4da9155';
+
+          const emailMsg = msg([email], { templateId });
+          const adminEmail = msg(['hello@fireship.io'], { text: JSON.stringify(after), subject: 'New Course Purchase' });
+          return sendEmail([emailMsg, adminEmail]);
+    }
+
+    // Send PRO email
+    if (upgraded) {
+        const templateId = 'd-d4ebc6fef6e34a5389dfe379f6d5d7b7';
+
+        const emailMsg = msg([email], { templateId });
+        const adminEmail = msg(['hello@fireship.io'], { text: JSON.stringify(after), subject: 'New Pro Upgrade' });
+        return sendEmail([emailMsg, adminEmail]);
+    }
+
+
 });

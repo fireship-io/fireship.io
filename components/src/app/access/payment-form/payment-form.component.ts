@@ -9,7 +9,9 @@ import { stripeStyle } from '../stripe-defaults';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { FormGroup } from '@angular/forms';
 
+// Global Script Namespaces
 declare var Stripe;
+declare var paypal;
 
 @Component({
   templateUrl: './payment-form.component.html'
@@ -17,6 +19,7 @@ declare var Stripe;
 export class PaymentFormComponent implements AfterViewInit {
 
   @Input() action = 'purchase';
+  @Input() allowCoupons;
 
   // Global product selection
   product;
@@ -42,6 +45,7 @@ export class PaymentFormComponent implements AfterViewInit {
 
   @ViewChild('cardElement') cardElement: ElementRef;
   @ViewChild('prElement') prElement: ElementRef;
+  @ViewChild('paypalElement') paypalElement: ElementRef;
 
   // FormGroup Require or angular with throw errors
   fg;
@@ -50,6 +54,7 @@ export class PaymentFormComponent implements AfterViewInit {
     this.pmt.product.pipe(
       tap(v => {
         this.setState('product', v);
+        this.paypalInit();
       })
     )
     .subscribe();
@@ -75,6 +80,54 @@ export class PaymentFormComponent implements AfterViewInit {
     this.card.mount(this.cardElement.nativeElement);
 
     this.listenToFormState();
+
+  }
+
+  // PAYPAL INTEGRATION
+  paypalInit() {
+    this.paypalElement.nativeElement.innerHTML = '';
+    const valid = this.product.type === 'order';
+    if (valid) {
+      paypal.Buttons({
+        createOrder: (data, actions) => {
+
+          if (this.total < 20000) {
+            return this.setState('serverError', 'Coupon exceeds max discount on Lifetime access, try a different coupon ');
+          }
+
+          return actions.order.create({
+            purchase_units: [{
+              description: this.product.description,
+              reference_id: this.product.sku,
+              amount: {
+                currency_code: 'USD',
+                value: this.paypalTotal,
+              }
+            }]
+          });
+        },
+        onApprove: async (data, actions) => {
+          this.setState('loadingState', 'processing payment...');
+          const order = await actions.order.capture();
+
+          this.setState('loadingState', 'success, setting up PRO access...');
+
+          const { res, serverError } = await this.pmt.paypalHandler(order);
+
+          if (serverError) {
+            this.setState('serverError', serverError.message);
+            this.setState('loadingState', null);
+          } else {
+            this.onSuccess();
+          }
+
+        },
+        onError: (err) => {
+          console.log(err);
+          this.setState('serverError', 'Unable to process PayPal payment');
+        }
+      }).render(this.paypalElement.nativeElement);
+    }
     this.cd.detectChanges();
   }
 
@@ -94,7 +147,6 @@ export class PaymentFormComponent implements AfterViewInit {
       this.setState('loadingState', null);
       this.setState('serverError', `Unsuccessful ${error}`);
     }
-
 
     this.setState('loadingState', 'processing...');
 
@@ -138,6 +190,10 @@ export class PaymentFormComponent implements AfterViewInit {
 
   get total() {
     return this.pmt.calcTotal(this.product.price, this.couponResult);
+  }
+
+  get paypalTotal() {
+    return (this.total / 100).toFixed(2);
   }
 
   async applyCoupon(e, val) {

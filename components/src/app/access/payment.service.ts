@@ -82,7 +82,9 @@ export class PaymentService {
     return this.callFunction('stripeCancelSubscription', { source, planId });
   }
 
-
+  async paypalHandler(order) {
+    return this.callFunction('paypalHandler', { order });
+  }
 
 
   private async callFunction(name, data) {

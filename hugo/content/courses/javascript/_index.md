@@ -1,6 +1,6 @@
 ---
 title: That Weird JavaScript Course
-lastmod: 2019-06-19T09:12:30-08:00
+lastmod: 2019-06-22T09:12:30-08:00
 description: Learn the basics of JavaScript and app development while having fun in the process
 type: courses
 tags: 

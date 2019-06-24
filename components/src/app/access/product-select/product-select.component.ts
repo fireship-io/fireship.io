@@ -9,6 +9,7 @@ export class ProductSelectComponent {
 
   @Input() productId;
   @Input() text = 'Choose Plan';
+  @Input() className = 'btn btn-green pricing-button';
 
   activeProduct;
 

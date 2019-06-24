@@ -1,6 +1,5 @@
 
 <div *ngIf="userDoc?.pro_status === 'lifetime'" class="well">
-    <hr>
   <h3>Fireship.io PRO Lifetime 🦄🚀</h3>
   <p>You have full access to all content on Fireship.io <strong>forever</strong> (see fine print below) at no additional cost.</p>
     
@@ -26,6 +25,8 @@
     <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red btn-sm" (click)="cancel(sub.id)">
       Cancel
     </button>
+
+    <p class="orange text-sm">🚨 Cancellation will immediately disable access to PRO content and courses.</p>
 
     <a class="btn btn-blue btn-sm" href="/dashboard/invoices">
       Invoices

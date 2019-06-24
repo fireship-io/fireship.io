@@ -45,13 +45,14 @@ export const testPlans = {
     description: 'Fireship.io Lifetime 🦄',
     type: 'order'
   },
-  stripeCourse: {
-    id: 'stripeCourse',
-    sku: 'sku_EYK0SsvBzq7pcM',
-    price: 1000,
-    description: 'Get access to the stripe payments course',
-    type: 'order'
-  }
+  // stripeCourse: {
+  //   id: 'stripeCourse',
+  //   sku: 'sku_EYK0SsvBzq7pcM',
+  //   price: 1900,
+  //   description: 'Stripe Payments Course 💰',
+  //   type: 'order'
+  // },
+
 };
 
 export const plans = {
@@ -77,6 +78,30 @@ export const plans = {
     price: 30000,
     description: 'Fireship.io Lifetime Access 🦄',
     type: 'order'
+  },
+  flutterFirebase: {
+    id: 'flutterFirebase',
+    sku: 'sku_FJCsh7mvjI83Kz',
+    description: 'The Flutter Firebase Course 🐦',
+    type: 'order',
+    price: 1900,
+    url: '/courses/flutter-firebase'
+  },
+  stripePayments: {
+    id: 'stripePayments',
+    sku: 'sku_FJEdgiT5ZF8bCQ',
+    description: 'Stripe Payments Course 💰',
+    type: 'order',
+    price: 1900,
+    url: '/courses/stripe-payments/'
+  },
+  firestoreDataModeling: {
+    id: 'firestoreDataModeling',
+    sku: 'sku_FJEdx5Tz9dPrvm',
+    description: 'Firestore Data Modeling Course 🔥',
+    type: 'order',
+    price: 1900,
+    url: '/courses/firestore-data-modeling/'
   }
 };
 

@@ -12,4 +12,18 @@
             {{ u?.is_pro ? 'pro' : 'basic' }}
         </span>
 
+        <div class="row" *ngIf="field == 'products'">
+            <div class="col-xs-12">
+            <h3 *ngIf="u?.products">Your Courses</h3>
+            <a  *ngFor="let sku of u?.products | keyvalue" [href]="planData(sku.key)?.url">
+                <div class="box box-sm chapter-item" *ngIf="sku != 'proLifetime'">
+                    <div class="box-content">
+
+                        <h4>{{ planData(sku.key)?.description }}</h4>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
 </ng-container>

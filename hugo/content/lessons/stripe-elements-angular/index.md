@@ -9,6 +9,7 @@ tags:
     - stripe
     - angular
     - firebase
+    - payments
 
 youtube: zTj0FZHunNE
 github: https://github.com/fireship-io/171-stripe-elements-angular
