@@ -1,11 +1,11 @@
-import { Component, ViewEncapsulation, ChangeDetectorRef, Input } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectorRef, Input, AfterViewInit, ElementRef } from '@angular/core';
 import { AuthService } from 'src/app/users/auth.service';
 
 @Component({
   templateUrl: './allow-if.component.html',
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class AllowIfComponent {
+export class AllowIfComponent implements AfterViewInit {
 
   @Input() selector;
   @Input() level: 'pro' | 'user' | 'not-pro' | 'not-user';
@@ -15,8 +15,13 @@ export class AllowIfComponent {
 
   constructor(
     private cd: ChangeDetectorRef,
-    public auth: AuthService
+    public auth: AuthService,
+    private el: ElementRef,
   ) { }
+
+  ngAfterViewInit() {
+    this.el.nativeElement.style.visibility = 'visible';
+  }
 
 
   get allowed() {

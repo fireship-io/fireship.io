@@ -86,12 +86,15 @@ export class PaymentFormComponent implements AfterViewInit {
   // PAYPAL INTEGRATION
   paypalInit() {
     this.paypalElement.nativeElement.innerHTML = '';
-    console.log(this.total);
     const valid = this.product.type === 'order';
     if (valid) {
       paypal.Buttons({
         createOrder: (data, actions) => {
-          console.log('WTF', this.product.sku);
+
+          if (this.total < 20000) {
+            return this.setState('serverError', 'Coupon exceeds max discount on Lifetime access, try a different coupon ');
+          }
+
           return actions.order.create({
             purchase_units: [{
               description: this.product.description,
@@ -104,19 +107,24 @@ export class PaymentFormComponent implements AfterViewInit {
           });
         },
         onApprove: async (data, actions) => {
-          // console.log(data);
-          // console.log({ actions, sub: actions.subscription, ord: actions.order });
           this.setState('loadingState', 'processing payment...');
           const order = await actions.order.capture();
 
-          console.log(order)
-
           this.setState('loadingState', 'success, setting up PRO access...');
 
-          const upgrade = await this.pmt.paypalHandler(order);
+          const { res, serverError } = await this.pmt.paypalHandler(order);
 
-          this.onSuccess();
+          if (serverError) {
+            this.setState('serverError', serverError.message);
+            this.setState('loadingState', null);
+          } else {
+            this.onSuccess();
+          }
 
+        },
+        onError: (err) => {
+          console.log(err);
+          this.setState('serverError', 'Unable to process PayPal payment');
         }
       }).render(this.paypalElement.nativeElement);
     }
