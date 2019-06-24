@@ -91,7 +91,7 @@ export class PaymentFormComponent implements AfterViewInit {
       paypal.Buttons({
         createOrder: (data, actions) => {
 
-          if (this.total < 20000) {
+          if (this.total < 20000 && this.product.id === 'proLifetime') {
             return this.setState('serverError', 'Coupon exceeds max discount on Lifetime access, try a different coupon ');
           }
 
