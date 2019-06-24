@@ -11,8 +11,8 @@ tags:
     - payments
     - paypal
 
-# youtube: 
-# github: 
+youtube: 
+github: 
 # disable_toc: true
 # disable_qna: true
 
