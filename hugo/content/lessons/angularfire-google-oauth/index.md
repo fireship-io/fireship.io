@@ -115,7 +115,7 @@ Let's start by modeling our user data as a TypeScript interface. Why? We are add
 
 {{< file "typescript" "user.model.ts" >}}
 {{< highlight typescript >}}
-interface User {
+export interface User {
   uid: string;
   email: string;
   photoURL?: string;
