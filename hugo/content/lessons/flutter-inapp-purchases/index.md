@@ -301,7 +301,9 @@ The stream only emits the latest purchase as a List, so make sure to merge the e
 
 ### Step 3 - Consume the Product
 
-If you are selling one-time upgrade purchase you're done at this point. However, we turned autoConsume off in the previous step, so the product can only be repurchased the purchase has been marked as consumed.
+If you are selling one-time upgrade purchase you're done at this point. However, we turned autoConsume off in the previous step, so the product can only be repurchased the purchase has been marked as consumed. 
+
+Keep in mind, you should also save the state of the consumable product on your backend database. It cannot be retrieved after the widget is destroyed. 
 
 {{< file "dart" "main.dart" >}}
 {{< highlight dart >}}
