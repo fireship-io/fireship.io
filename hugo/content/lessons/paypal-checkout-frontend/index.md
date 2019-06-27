@@ -172,74 +172,74 @@ npx create-react-app my-app
 
 {{< file "js" "App.js" >}}
 {{< highlight jsx >}}
-import "./App.css";
-import React, { useState, useRef, useEffect } from "react";
+import './App.css';
+import React, { useState, useRef, useEffect } from 'react';
 
-function App() {
+function Product({ product }) {
   const [paidFor, setPaidFor] = useState(false);
-  const [loaded, setLoaded] = useState(false);
-
-  let paypalRef = useRef();
-
-  const product = {
-    price: 777.77,
-    description: "fancy chair, like new",
-    img: "assets/couch.jpg"
-  };
+  const [error, setError] = useState(null);
+  const paypalRef = useRef();
 
   useEffect(() => {
-    // Load PayPal Script
-    const script = document.createElement("script");
-    script.src =
-      "https://www.paypal.com/sdk/js?client-id=YOUR-CLIENT-ID";
-    script.addEventListener("load", () => setLoaded(true));
-    document.body.appendChild(script);
+    window.paypal
+      .Buttons({
+        createOrder: (data, actions) => {
+          return actions.order.create({
+            purchase_units: [
+              {
+                description: product.description,
+                amount: {
+                  currency_code: 'USD',
+                  value: product.price,
+                },
+              },
+            ],
+          });
+        },
+        onApprove: async (data, actions) => {
+          const order = await actions.order.capture();
+          setPaidFor(true);
+          console.log(order);
+        },
+        onError: err => {
+          setError(err);
+          console.error(err);
+        },
+      })
+      .render(paypalRef.current);
+  }, [product.description, product.price]);
 
-    if (loaded) {
-      setTimeout(() => { // <-- weird issue with zoid in paypal
-        window.paypal
-          .Buttons({
-            createOrder: (data, actions) => {
-              return actions.order.create({
-                purchase_units: [
-                  {
-                    description: product.description,
-                    amount: {
-                      currency_code: "USD",
-                      value: product.price
-                    }
-                  }
-                ]
-              });
-            },
-            onApprove: async (data, actions) => {
-              const order = await actions.order.capture();
-              setPaidFor(true);
-              console.log(order);
-            },
-            onError: err => {
-              console.log(err);
-            }
-          })
-          .render(paypalRef);
-      });
-    }
-  });
+  if (paidFor) {
+    return (
+      <div>
+        <h1>Congrats, you just bought {product.name}!</h1>
+        <img alt={product.description} src={gif} />
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      {error && <div>Uh oh, an error occurred! {error.message}</div>}
+      <h1>
+        {product.description} for ${product.price}
+      </h1>
+      <div ref={paypalRef} />
+    </div>
+  );
+}
+
+function App() {
+  const product = {
+    price: 777.77,
+    name: 'comfy chair',
+    description: 'fancy chair, like new',
+    image: chair,
+  };
 
   return (
     <div className="App">
-      {paidFor ? (
-        <div>
-          <h1>Congrats, you just bought comfy chair!</h1>
-        </div>
-      ) : (
-        <div>
-          <h1>
-            {product.description} for ${product.price}
-          </h1>
-          <div ref={v => (paypalRef = v)} />
-        </div>
-      )}
+      <Product product={product} />
     </div>
   );
 }
