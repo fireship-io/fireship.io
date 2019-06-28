@@ -27,7 +27,7 @@ export const createOrder = async(uid: string, source: string, sku: string, coupo
     
     const paidOrder = await stripe.orders.pay(order.id, { customer: customerId });
 
-    const isLifetime = paidOrder.items.filter(item => item.parent === lifetimeSKU);
+    const isLifetime = paidOrder.items.filter(item => item.parent === lifetimeSKU).length;
 
 
     const docData = {
