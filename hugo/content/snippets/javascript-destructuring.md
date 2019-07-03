@@ -123,7 +123,7 @@ for (const { name, type } of animals) {
 {{< /highlight >}}
 
 
-You can even destrucutre nested properties on complex objects. In this case, each object has a `friends` Array and nested `profile` object. How do we assign values on the nested properties to variable names? 
+You can even destructure nested properties on complex objects. In this case, each object has a `friends` Array and nested `profile` object. How do we assign values on the nested properties to variable names? 
 
 {{< highlight javascript >}}
 const animals = [
