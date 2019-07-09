@@ -39,6 +39,13 @@
   }
 }
 
+.snippet-list-link {
+  text-decoration: none; 
+  margin-bottom: 10px; 
+  text-align: left; display: block; 
+  padding: 1em;
+}
+
 .card-course {
   max-width: 720px;
   text-align: center;
@@ -90,6 +97,12 @@
     svg {
       width: 33%;
       opacity: 0.5;
+    }
+  }
+  .box-icon-bright {
+    svg {
+      width: 33%;
+      opacity: 0.9;
     }
   }
   .box-content {
