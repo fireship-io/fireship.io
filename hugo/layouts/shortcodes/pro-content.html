@@ -1,0 +1,29 @@
+<allow-if level="pro">
+
+    {{ $.Inner }}
+
+    <allow-if slot="falsey" level="user">
+
+        <div class="box">
+            <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
+            <div class="box-content">
+                Section only available to PRO members. 
+            </div>
+        </div>
+
+
+        <a class="btn btn-lg" href="/pro">🦄 Upgrade</a>
+
+        <div slot="falsey" class="video-overlay">
+                <modal-button  selector="login-modal" class="">
+                    <button class="btn btn-green btn-lg" id="foo">🚀 Login to Access</button>
+                </modal-button>
+        </div>
+
+
+
+    </allow-if>
+
+
+
+</allow-if>

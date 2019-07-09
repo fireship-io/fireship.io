@@ -15,7 +15,7 @@ disable_qna: true
 ### Essentials
 
 - [Project Source Code](https://github.com/codediodeio/stripe-firebase-master-course)
-- [Slack Chat](https://goo.gl/8BKA1e)
+- [Slack Chat](https://fireship.page.link/slack)
 - [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/angularfirebase)
 
 ### Stripe Docs

@@ -2,37 +2,34 @@
 
 {{ define "main" }}
 
-<article itemscope itemtype="http://schema.org/Article">
-  <meta itemprop="datePublished" content="{{ .PublishDate }}" />
-  <meta itemprop="dateModified" content="{{ .Lastmod }}" />
-  <meta itemprop="image" content="img/featured.png" />
-  <meta itemprop="publisher" content="fireship.io" />
+  <article itemscope itemtype="http://schema.org/Article">
+    <meta itemprop="datePublished" content="{{ .PublishDate }}" />
+    <meta itemprop="dateModified" content="{{ .Lastmod }}" />
+    <meta itemprop="image" content="img/featured.png" />
+    <meta itemprop="publisher" content="fireship.io" />
 
 
-  <h1 itemprop="name headline" id="{{ anchorize .Title }}" class="post-title border-bottom">
-      {{ .Title }}
-  </h1>
-  
+    <h1 itemprop="name headline" id="{{ anchorize .Title }}" class="post-title border-bottom">
+        {{ .Title }}
+    </h1>
 
+    <div class="content-main">
 
-  <div class="content-main">
+      <section class="content-article" itemprop="articleBody">
+        {{ partial "lesson-headline" . }}
 
-    <section class="content-article" itemprop="articleBody">
-      {{ partial "lesson-headline" . }}
-      {{ .Content }}
+        <div class="content-body">
+          {{ .Content }}
+        </div>
 
-       <!-- <div class="the-end">🍰 The End 🍺</div> -->
+      </section>
 
-    </section>
+      {{ if not .Params.disable_toc }}
+        <aside class="toc">{{ .TableOfContents }}</aside>
+      {{ end }}
+    </div>
 
-    {{ if not .Params.disable_toc }}
-      <aside class="toc">{{ .TableOfContents }}</aside>
-    {{ end }}
-  </div>
-
-</article>
-
-
+  </article>
 
   {{ partial "qna.html" . }}
 

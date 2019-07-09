@@ -41,7 +41,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  firebase_core: ^0.2.5
+  firebase_core: ^0.4.0
   firebase_analytics: ^1.0.4
 
   cloud_firestore: ^0.8.2+3
@@ -49,8 +49,11 @@ dependencies:
   firebase_auth:  ^0.6.6
   google_sign_in: ^3.2.4
 
-  rxdart: 0.20.0 # optional, but recommended
+  rxdart: 0.22.0 # optional
 {{< /highlight >}}
+
+
+Note: You can find the [latest FlutterFire package versions](https://github.com/flutter/plugins/blob/master/FlutterFire.md). 
 
 
 ## Android Setup
@@ -116,10 +119,9 @@ That's it. Try executing `flutter run` with an Android device emulated or plugge
 The iOS setup is less tedious and can be completed in one step. 
 
 ### Register and Download the GoogleService-Info.plist
-Click *add your app to iOS* then download the `GoogleService-Info.plist` file into the `ios/Runner/Runner` directory.  
+Click *add your app to iOS* then download the `GoogleService-Info.plist` file into the `ios/Runner/Runner` directory from XCode.    
 
 {{< figure src="/img/snippets/flutterfire-ios-add.png" alt="add ios to your flutterfire project" >}}
-
 
 
 ## Troubleshooting

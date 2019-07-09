@@ -20,6 +20,55 @@
     </div>
     {{ end }}
 
+    {{ if .Params.vimeo }}
+
+    <div class="post-video" >
+        <div class="vid" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+
+            {{ if .Params.pro }}
+            <allow-if level="pro">
+
+
+                <div class="vid">
+                        <iframe src="https://player.vimeo.com/video/{{ .Params.vimeo }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+
+                <allow-if slot="falsey" level="user">
+
+                    <div class="box box-orange">
+                        <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
+                        <div class="box-content">
+                            Video only available to PRO members.
+                        </div>
+                    </div>
+
+                    <a class="btn btn-lg" href="/pro">🦄 Upgrade</a>
+
+                    <span slot="falsey">
+                            {{ partial "video-login.html" }}
+                    </span>
+
+                </allow-if>
+
+
+            </allow-if>
+
+            {{ else }}
+                <div class="vid">
+                        <iframe src="https://player.vimeo.com/video/{{ .Params.vimeo  }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            {{ end }}
+
+
+
+            <meta itemprop="thumbnailUrl" content="{{ $.Params.featured_image }}" />
+            <meta itemprop="description" content="{{ $.Page.Params.description }}" />
+            <meta itemprop="uploadDate" content="{{ $.Page.Params.publishdate }}" />
+            <meta itemprop="publisher" content="Fireship" />
+        </div>
+    </div>
+    {{ end }}
+
     <div class="post-info">
         <div class="post-description">
             <p itemprop="description">
@@ -27,11 +76,11 @@
             </p>
 
             {{ partial "author.html" . }}
+
             <div class="text-sm">
                 <time itemprop="dateCreated">{{  .Lastmod.Format "Mon Jan 2, 2006"  }}</time> 
                 <span class="text-thin" itemprop="wordCount">{{ .WordCount }} words.</span>
             </div>
-
 
         </div>
 

@@ -7,7 +7,6 @@ tags:
     - javascript
 ---
 
-
 **That Weird JavaScript Course** takes a unique approach towards teaching fundamental programming concepts. Not only will you learn practical techniques for building apps, but you will also gain knowledge about the history, science, and culture that surrounds the world's most widely-used programming language. My mission is to make you a well-rounded [JavaScript](https://fireship.io/tags/javascript/) developer who can nail job interviews and build apps in the browser and NodeJS.   
 
 ### 🤔 Is this Course Right for Me?

@@ -125,3 +125,14 @@ h1.tag {
     color: #fff;
     background: #000;
 }
+
+.tag-mvp, .tag-minimum-viable-product { 
+    color: white;
+    background-image: linear-gradient(to right, #ff8901, #db1d5f); 
+    font-weight: bold;
+}
+
+.tag-ionic {
+    background: white;
+    color: #4a8afc;
+}

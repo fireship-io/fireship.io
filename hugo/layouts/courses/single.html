@@ -6,6 +6,7 @@
 {{ $sku := index $courses ( (index (split .RelPermalink "/") 2))  }}
 {{ $course := index $courses (string $sku) }}
 
+
 <article itemscope itemtype="http://schema.org/Article" >
     <header>
         <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
@@ -117,3 +118,4 @@
 
 
 {{ end }}
+

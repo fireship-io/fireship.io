@@ -8,7 +8,7 @@ video: https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/co
 free: true
 vimeo: 320683074
 weight: 13
-emoji: 🧪
+emoji: ⚗️
 chapter_start: Testing 
 ---
 
