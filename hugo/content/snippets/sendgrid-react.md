@@ -4,7 +4,7 @@ lastmod: 2019-07-05T10:43:06-07:00
 publishdate: 2019-07-05T10:43:06-07:00
 author: Jeff Delaney
 draft: false
-description: Send transactional email from Flutter with ReactJS
+description: Send transactional email with SendGrid from ReactJS
 type: lessons
 # pro: true
 tags: 
