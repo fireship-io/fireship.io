@@ -267,7 +267,7 @@ Deploy your functions. You can test them from the Firebase console, or follow on
 firebase deploy --only functions
 {{< /highlight >}}
 
-{{< figure src="img/sendgrid-gmail.png" caption="Result in Gmail" >}}
+{{< figure src="img/result-email.png" caption="Result in Gmail" >}}
 
 
 ## Next Steps
