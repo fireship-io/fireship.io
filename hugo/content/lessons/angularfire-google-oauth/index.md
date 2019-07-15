@@ -297,7 +297,7 @@ In the component HTML, we define two templates based on the `user$` Observable. 
 
 A useful UX feature is to protect routes based on the user's auth state. Now that we have an Observable `user$` from the previous step, we can implement `canActivate` guard. 
 
-When the user navigates, alls routes using this guard will subscribe to the `user$`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
+When the user navigates, all routes using this guard will subscribe to the `user$`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
