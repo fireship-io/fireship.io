@@ -356,7 +356,7 @@ PRO Tip - You may find it useful to simplify this guard code by defining a metho
 
 ## Step 6: Backend Security Rules
 
-It is essential that only the *owner* of a user document can modify its data. We cannot just rely our frontend code to provide this security, so let's setup [Firestore rules](/snippets/firestore-rules-recipes/). I prefer to create a reusable function to determine document ownership because you are likely to need this logic in multiple rules.
+It is essential that only the *owner* of a user document can modify its data. We cannot just rely on our frontend code to provide this security, so let's setup [Firestore rules](/snippets/firestore-rules-recipes/). I prefer to create a reusable function to determine document ownership because you are likely to need this logic in multiple rules.
 
 
 {{< file "firebase" "firestore rules" >}}
