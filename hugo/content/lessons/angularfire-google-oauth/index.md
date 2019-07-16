@@ -297,7 +297,7 @@ In the component HTML, we define two templates based on the `user$` Observable. 
 
 A useful UX feature is to protect routes based on the user's auth state. Now that we have an Observable `user$` from the previous step, we can implement `canActivate` guard. 
 
-When the user navigates, alls routes using this guard will subscribe to the `user$`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
+When the user navigates, all routes using this guard will subscribe to the `user$`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
@@ -356,7 +356,7 @@ PRO Tip - You may find it useful to simplify this guard code by defining a metho
 
 ## Step 6: Backend Security Rules
 
-It is essential that only the *owner* of a user document can modify its data. We cannot just rely our frontend code to provide this security, so let's setup [Firestore rules](/snippets/firestore-rules-recipes/). I prefer to create a reusable function to determine document ownership because you are likely to need this logic in multiple rules.
+It is essential that only the *owner* of a user document can modify its data. We cannot just rely on our frontend code to provide this security, so let's setup [Firestore rules](/snippets/firestore-rules-recipes/). I prefer to create a reusable function to determine document ownership because you are likely to need this logic in multiple rules.
 
 
 {{< file "firebase" "firestore rules" >}}
