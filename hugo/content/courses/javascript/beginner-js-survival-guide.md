@@ -63,7 +63,7 @@ Notice how the function below can be called before it's actually declared. That'
 {{< file "js" "index.js" >}}
 {{< highlight javascript >}}
 
-// hoisting is as if your code was located here. 
+// hoisting is as if your `function fun() {}` was located here. 
 
 fun(); // works. 
 

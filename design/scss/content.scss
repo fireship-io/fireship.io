@@ -340,6 +340,11 @@
   }
 }
 
+.vid-center {
+  margin: 0 auto;
+  max-width: 75%;
+}
+
 video, video-player, .video-overlay {
   width: 100%;
   max-width: 1920px;
