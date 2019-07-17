@@ -102,6 +102,14 @@ export const plans = {
     type: 'order',
     price: 1900,
     url: '/courses/firestore-data-modeling/'
+  },
+  ionic: {
+    id: 'ionic',
+    sku: 'sku_FSAhASTSPQb1oh',
+    description: 'Ionic 4 (Angular) Master Course 📱',
+    type: 'order',
+    price: 1900,
+    url: '/courses/ionic/'
   }
 };
 
