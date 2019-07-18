@@ -56,7 +56,7 @@ false; // false
 
 ## Hoisting
 
-[Hosting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) means that your declarations, i.e. functions and variables, will always be placed in memory at the top of the execution context. 
+[Hoisting](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting) means that your declarations, i.e. functions and variables, will always be placed in memory at the top of the execution context. 
 
 Notice how the function below can be called before it's actually declared. That's hoisting in action. 
 
@@ -72,7 +72,7 @@ function fun() {}
 
 ## Closures
 
-What is a [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)? Here's a quick and simple definition that makes sense to me: 
+What is a [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)? Here's a quick and simple definition that makes sense to me (although "lexical environment" would be a more accurate than function): 
 
 > A function within a function, where the outer function's local variables remain available in memory after creation. 
 
