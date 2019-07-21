@@ -89,7 +89,7 @@ Now set the API key and template ID in the Firebase project with the following c
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
-firebase functions:config:set sendgrid.key=YOUR_KEY sengrid.template=TEMPLATE_ID
+firebase functions:config:set sendgrid.key=YOUR_KEY sendgrid.template=TEMPLATE_ID
 {{< /highlight >}}
 
 
