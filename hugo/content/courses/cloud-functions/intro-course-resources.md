@@ -28,4 +28,4 @@ We are only scratching the surface, check out these learning resources:
 Also, follow me on Github and Twitter to stay up to date:
 
 - Github Profile
-- Twitter @angularfirebase or @jeffdelaney23
+- Twitter @fireship_dev or @jeffdelaney23
