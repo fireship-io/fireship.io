@@ -547,3 +547,19 @@ video, video-player, .video-overlay {
 .stackblitz {
   width: 100%;
 }
+
+.brand-list {
+  display: flex; 
+  list-style-type: none;
+  justify-content: space-between; 
+  align-items: center; flex-direction: row; 
+  list-style: none;
+  margin: 10px 5vw;
+  li {
+    margin: 0 10px;
+    img {
+      max-height: 50px;
+    }
+  }
+
+}
