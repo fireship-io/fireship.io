@@ -15,6 +15,8 @@ tags:
 
 **Flutter Firebase - The Full Course** will take you from zero to a complex production-ready iOS or Android app using real-world cloud infrastructure. 
 
+{{< figure src="/img/testimonial/flutter-testimonial.png" >}}
+
 ### 🏗️ What will I build?
 
 This is a project-based course that will teach you how to build a multiple choice quiz app, inspired by apps like Duolingo and QuizUp. The app implements user authentication, tracks quiz progress in Firestore, runs animations, and shares data between screens. 
