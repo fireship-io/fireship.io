@@ -11,7 +11,7 @@ free: true
 
 {{< youtube Sh6lK57Cuk4 >}}
 
-JavaScript started as a prototype scripting language written by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich) in 1995 for the Netscape Navigator browse under the working name of "Mocha". After being renamed to "JavaScript", it was standardized by ECMA International as [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm), or ECMAScript in 1997. The authoritative group of people/orgs in charge of the standard is known as TC-39. 
+JavaScript started as a prototype scripting language written by [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich) in 1995 for the Netscape Navigator browser under the working name of "Mocha". After being renamed to "JavaScript", it was standardized by ECMA International as [ECMA-262](https://www.ecma-international.org/publications/standards/Ecma-262-arch.htm), or ECMAScript in 1997. The authoritative group of people/orgs in charge of the standard is known as TC-39. 
 
 Over the next 25 years, it would see a variety of highs and lows. The most notable releases include 
 

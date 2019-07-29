@@ -10,7 +10,7 @@ free: true
 
 {{< youtube 9emXNzqCKyg >}}
 
-The *JavaScript Survial Guide* is a primer for the so-called "weird" features of the language. These concepts are common pain-points for developers, but they become relatively simple when you understand relationship between your code and the JS engine. Not to mention, these topics come up frequently on JS interviews. 
+The *JavaScript Survival Guide* is a primer for the so-called "weird" features of the language. These concepts are common pain-points for developers, but they become relatively simple when you understand relationship between your code and the JS engine. Not to mention, these topics come up frequently on JS interviews. 
 
 All research this section is based on the guidance from [Mozilla](https://developer.mozilla.org) - the holy grail of JS documentation. 
 
@@ -19,7 +19,7 @@ All research this section is based on the guidance from [Mozilla](https://develo
 
 The lowest level building blocks in JavaScript are [primitives](https://developer.mozilla.org/en-US/docs/Glossary/Primitive), which include: undefined, null, string, number, bigint, boolean, and symbol. All primitives are immutable. 
 
-Anything that is not a primitive is an [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), or a descendent of it. Objects are collections of key/value pairs and used as the building block for more complex data structures. Here are a few examples:
+Anything that is not a primitive is an [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object), or a descendant of it. Objects are collections of key/value pairs and used as the building block for more complex data structures. Here are a few examples:
 
 
 {{< file "js" "index.js" >}}

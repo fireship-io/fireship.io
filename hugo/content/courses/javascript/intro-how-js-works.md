@@ -10,7 +10,7 @@ free: true
 
 {{< youtube FSs_JYwnAdI >}}
 
-JavaScript often described as some variation of "high-level, single-threaded, garbage-collected, interpreted (or just-in-time compiled),  prototype-based, multi-paradigm, dynamic language with a non-blocking event loop". You may encounter these terms during an JS job interview, but understanding their meaning will help you better understand the behavior of your code. Let's unpack each of these keys terms.
+JavaScript often described as some variation of "high-level, single-threaded, garbage-collected, interpreted (or just-in-time compiled),  prototype-based, multi-paradigm, dynamic language with a non-blocking event loop". You may encounter these terms during an JS job interview, but understanding their meaning will help you better understand the behavior of your code. Let's unpack each of these key terms.
 
 {{% box icon="scroll" %}}
 Keep in mind, you don't *need* to know these concepts to start using JavaScript productively. It may take years of development experience before they really start to sink in, so don't worry if it feels overwhelming. 
@@ -18,7 +18,7 @@ Keep in mind, you don't *need* to know these concepts to start using JavaScript 
 
 ## High Level
 
-**High-Level** refers to the abstraction the language provides over the machine's bare-metal hardware. JavaScript is considered high-level because it does not require direct interaction with the operating system, hardware. In addition, it does it require memory-management like C/C++ because the rutime always uses *garbage-collection*.
+**High-Level** refers to the abstraction the language provides over the machine's bare-metal hardware. JavaScript is considered high-level because it does not require direct interaction with the operating system, hardware. In addition, it does not require memory-management like C/C++ because the runtime always uses *garbage-collection*.
 
 ## Interpreted or Just-in-Time Compiled
 
@@ -34,7 +34,7 @@ Keep in mind, you don't *need* to know these concepts to start using JavaScript 
 
 ## Prototypal Inheritance
 
-**Prototypal Inheritance** means that objects can inherit behaviors from other objects. This differs from classical inheritence where you define a `class` or blueprint for each object and instantiate it. We will take a deep dive into prototypal inthertance later in this course. 
+**Prototypal Inheritance** means that objects can inherit behaviors from other objects. This differs from classical inheritance where you define a `class` or blueprint for each object and instantiate it. We will take a deep dive into prototypal inheritance later in this course. 
 
 ## Event-Loop Concurrency Model
 
@@ -42,7 +42,7 @@ Keep in mind, you don't *need* to know these concepts to start using JavaScript 
 
 So this begs the question... How does JavaScript handle jobs at the same time (i.e. concurrently)? 
 
-**Event Loop** refers to a feature implemented by engines like V8 that allow JS to offload tasks to separate threads.  Browser and Node APIs execute long-running tasks separate from the the main JS thread, then enqueue a `callback` function (which you define) to run on the main thread when the task is complete. This is why JS is called *non-blocking* because it should only ever wait for synchronous code from your JS functions. Think of the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) as message queue between the single JS thread and the OS. 
+**Event Loop** refers to a feature implemented by engines like V8 that allow JS to offload tasks to separate threads.  Browser and Node APIs execute long-running tasks separately from the the main JS thread, then enqueue a `callback` function (which you define) to run on the main thread when the task is complete. This is why JS is called *non-blocking* because it should only ever wait for synchronous code from your JS functions. Think of the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) as message queue between the single JS thread and the OS. 
 
 {{< file "js" "event-loop.js" >}}
 {{< highlight javascript >}}

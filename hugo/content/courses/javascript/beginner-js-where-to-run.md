@@ -20,7 +20,7 @@ console.log('hello world')
 
 ## How to Run JavaScript from the Command Line
 
-Running a JS program from the command line is handled by NodeJS. Start by installing NodeJS local machine if necessary. 
+Running a JS program from the command line is handled by NodeJS. Start by installing NodeJS on local machine if necessary. 
 
 1. {{< prereq "install-nodejs" >}}
 
@@ -65,7 +65,7 @@ It is worth mentioning that frameworks like React, Angular, Svelte, etc will tak
 
 ## Run JavaScript in a Sandbox
 
-This course uses StackBlitz to run JS code examples in an isolated standbox in the browser. This is a great option for sharing quick demos and issue reproductions 💡. 
+This course uses StackBlitz to run JS code examples in an isolated sandbox in the browser. This is a great option for sharing quick demos and issue reproductions 💡. 
 
 
 {{% stackblitz "https://stackblitz.com/edit/js-survival-hello-world?embed=1&file=index.js" %}}
