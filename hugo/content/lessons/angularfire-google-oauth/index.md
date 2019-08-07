@@ -365,7 +365,7 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     match /users/{userId} {
-        allow write: if isOwner(userId);
+        allow write, read: if isOwner(userId);
     }
 
     // Reusable function to determine document ownership
