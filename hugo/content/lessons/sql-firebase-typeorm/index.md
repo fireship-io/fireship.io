@@ -11,7 +11,7 @@ tags:
     - firebase
     - cloud-functions
 
-youtube: he6u3qAF_TY
+youtube: sSDHdWrSqLY
 github: https://github.com/fireship-io/201-cloud-functions-sql-typeorm
 # disable_toc: true
 # disable_qna: true
