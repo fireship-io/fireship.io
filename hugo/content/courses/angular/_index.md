@@ -1,7 +1,7 @@
 # The Angular 8 PWA Course
 
 - Architecture Overview
-- VS Code & Tooling
+- VS Code & Tooling & CLI
 - What is TypeScript
 - What is RxJS (Observable)
 - Starting a new project CLI
@@ -63,3 +63,39 @@
 - Building Feature Modules
 - Angular CDK
 
+##########
+
+
+## Demos
+
+- Button (Basics)
+
+
+- Install Nebular
+- Shell
+
+- Routing
+- Lazy Pages
+
+
+
+
+
+## PWA Features Top 10
+
+1 Camera
+2 Bluetooth
+3 Network checking
+4 Touch Gestures
+5 Fullscreen
+6 Offline
+7 Geolocation
+8 Payments
+9 Push Notifications
+10 Fetch
+
+11 IndexedDb
+12 Microphone
+13
+14
+15
