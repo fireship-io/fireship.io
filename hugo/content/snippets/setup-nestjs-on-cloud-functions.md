@@ -1,10 +1,10 @@
 ---
-title: Setup Nestjs on Cloud Functions
+title: Setup NestJS on Cloud Functions
 lastmod: 2019-08-12T10:26:16-07:00
 publishdate: 2019-08-12T10:26:16-07:00
 author: Jeff Delaney
 draft: false
-description: Run NestJS on Firebase Cloud Functions  
+description: Steps to run NestJS on Firebase Cloud Functions  
 
 tags:
     - nest
@@ -14,7 +14,7 @@ tags:
 type: lessons
 
 youtube: 
-code: https://github.com/fireship-io/nest-cloud-functions
+github: https://github.com/fireship-io/nest-cloud-functions
 # disable_toc: true
 # disable_qna: true
 
