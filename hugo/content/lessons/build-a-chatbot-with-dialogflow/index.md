@@ -4,7 +4,7 @@ lastmod: 2019-08-12T09:45:18-07:00
 publishdate: 2019-08-12T09:45:18-07:00
 author: Jeff Delaney
 draft: false
-description: Built a fullstack conversational bot with Dialogflow and Firebase Cloud Functions. 
+description: Build a fullstack conversational experience with Dialogflow and Firebase Cloud Functions. 
 tags: 
     - cloud-functions
     - node
