@@ -1,5 +1,5 @@
 ---
-title: Setup NestJS on Cloud Functions
+title: Setup Nest on Cloud Functions
 lastmod: 2019-08-12T10:26:16-07:00
 publishdate: 2019-08-12T10:26:16-07:00
 author: Jeff Delaney
@@ -13,7 +13,7 @@ tags:
 
 type: lessons
 
-youtube: 
+youtube: IVy3Tm8iHQ0
 github: https://github.com/fireship-io/nest-cloud-functions
 # disable_toc: true
 # disable_qna: true
@@ -25,11 +25,115 @@ github: https://github.com/fireship-io/nest-cloud-functions
 #     - "rxjs": 6.3
 ---
 
-The following snippet demonstrates how to setup [NestJS](https://nestjs.com/) on [Firebase Cloud Functions](/tags/cloud-functions)
+The following snippet demonstrates *two* different techniques for setting up [NestJS](https://nestjs.com/) on [Firebase Cloud Functions](/tags/cloud-functions).
 
-## Nest on Cloud Functions Step-by-Step
+## Option A - Point a Function to Nest
 
-I recommend starting from a Cloud Functions project, then bring in Nest incrementally. It is more difficult in my experience to merge Cloud Functions. 
+The first setup modifies the functions configuration to use the Nest `/dist` output, as opposed to the default functions directory. This option is ideal if you have an existing Nest app. 
+
+### Step 1 - Create Nest App
+
+{{< file "terminal" "command line" >}}
+{{< highlight terminal >}}
+nest generate app server
+{{< /highlight >}}
+
+
+### Step 2 - Add Functions
+
+Add functions, then delete the automatically generated directory.
+
+{{< file "terminal" "command line" >}}
+{{< highlight bash >}}
+npm i -g firebase-tools
+firebase init functions
+
+rm -rf functions # delete functions dir
+{{< /highlight >}}
+
+
+Now update the firebase config to point to the nest app. 
+
+{{< file "firebase" "firebase.json" >}}
+{{< highlight javascript >}}
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ],
+    "source": "server" // <-- here
+  }
+}
+{{< /highlight >}}
+
+### Step 3 - Install Dependencies
+
+{{< file "terminal" "command line" >}}
+{{< highlight terminal >}}
+cd server
+npm i firebase-functions firebase-admin express @nestjs/platform-express
+{{< /highlight >}}
+
+### Step 4 - Update the package.json
+
+Add the following lines to your package.json. 
+
+{{< file "npm" "package.json" >}}
+{{< highlight javascript >}}
+{
+  // ...
+  "main": "dist/index.js",
+  "engines": {
+    "node": "8"
+  }
+}
+{{< /highlight >}}
+
+
+### Step 5 - Export the Server
+
+Create a new file named `src/index.ts` that creates an exress app and wraps it with Nest.
+
+{{< file "nest" "src/index.ts" >}}
+{{< highlight typescript >}}
+import { NestFactory } from '@nestjs/core';
+import { ExpressAdapter } from '@nestjs/platform-express';
+import { AppModule } from './app.module';
+import * as express from 'express';
+import * as functions from 'firebase-functions';
+
+const server = express();
+
+export const createNestServer = async (expressInstance) => {
+  const app = await NestFactory.create(
+    AppModule,
+    new ExpressAdapter(expressInstance),
+  );
+
+  return app.init();
+};
+
+
+
+createNestServer(server)
+    .then(v => console.log('Nest Ready'))
+    .catch(err => console.error('Nest broken', err));
+
+export const api = functions.https.onRequest(server);
+{{< /highlight >}}
+
+### Step 6 - Build, Serve, Deploy
+
+
+{{< file "terminal" "command line" >}}
+{{< highlight bash >}}
+npm run build
+firebase serve --only functions
+firebase deploy --only functions
+{{< /highlight >}}
+
+## Option B - Add Nest to the Functions Source
+
+In this setup, we perform a fresh install of Nest in the Functions source code. This is a good approach if you have existing background functions, but want to wrap Nest as an HTTP function. 
 
 ### Step 1 - Initialize Cloud Functions
 
@@ -110,19 +214,19 @@ nest generate controller egg
 
 ### Step 6 - Create the Server
 
-Create a main file. Its purpose is to export an ExpressJS app and expose a function that wraps it with Nest. 
+Lastly, create the Nest server and wrap it in a Cloud Function. It's purpose is to export an ExpressJS app and expose a function that wraps it with Nest. 
 
-{{< file "typescript" "functions/src/main.ts" >}}
+{{< file "typescript" "functions/src/index.ts" >}}
 {{< highlight typescript >}}
+import * as functions from 'firebase-functions';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { AppModule } from './app.module';
-import express, { Express } from 'express';
+import express from 'express';
 
+const server = express();
 
-export const server: Express = express();
-
-export const createNestServer = async (expressInstance: Express) => {
+const createNestServer = async (expressInstance) => {
   const app = await NestFactory.create(
     AppModule,
     new ExpressAdapter(expressInstance),
@@ -131,28 +235,23 @@ export const createNestServer = async (expressInstance: Express) => {
   return app.init();
 };
 
-{{< /highlight >}}
-
-Lastly, create the Nest server and wrap it in a Cloud Function. 
-
-{{< file "typescript" "functions/src/index.ts" >}}
-{{< highlight typescript >}}
-import * as functions from 'firebase-functions';
-import { server, createNestServer } from './main';
 
 createNestServer(server)
     .then(v => console.log('Nest Ready'))
     .catch(err => console.error('Nest broken', err));
 
 export const api = functions.https.onRequest(server);
+
 {{< /highlight >}}
 
-### Step 7 - Test It
+### Step 7 - Build, Serve, Deploy
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
 cd functions
 npm run serve
+
+firebase deploy --only functions
 {{< /highlight >}}
 
 The should give you a URL that looks like
