@@ -63,7 +63,66 @@
 - Building Feature Modules
 - Angular CDK
 
-##########
+########## Demo Outline
+
+- Resources
+- Angular Primer
+- VS Code & Tooling
+- CLI
+- Anatomy of an Angular App (add custom fonts, scripts)
+
+- Button
+- Attribute Binding
+- Event Binding
+- NgIf Conditional Rendering
+- Styles / View Encapsulation
+- NgClass & Style
+- Transclusion
+
+- Tabset
+- Smart Dumb
+- ViewChild
+- NgFor
+- Event Emitter
+- Lifecycle Hooks
+
+- Popover
+- Directives
+- TemplateRef
+
+- Toast
+- Services
+- DI
+
+- Login Form
+- Email/Pass
+- HTTP
+- User Profile
+- Async Pipe
+
+- Pages
+- Feature Modules
+- Lazy Loading
+- Guards
+
+- SSR
+- Nest
+- Prerendering
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Demos
@@ -77,6 +136,18 @@
 - Routing
 - Lazy Pages
 
+
+
+##### 
+
+Angular Firebase Course. Infinite List, Crud. 
+
+- Button
+- List
+- Form
+- CDK
+- PWA
+- Universal
 
 
 
