@@ -22,9 +22,11 @@ type: lessons
 #     - "rxjs": 6.3
 ---
 
-The following guide will show you how to configure [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial) for [Svelte 3](https://svelte.dev/). 
+The following guide will show you how to configure [Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial) with [Svelte 3](https://svelte.dev/). 
 
 ## Enable the Google Maps JS API
+
+First, you must enable Google Maps with a Google Cloud or Firebase project, then grab your API from the *credentials* tab. 
 
 {{< figure src="/img/snippets/google-maps-enable.png" caption="Enable the Google Maps JavaScript API from a GCP or Firebase project." >}}
 
