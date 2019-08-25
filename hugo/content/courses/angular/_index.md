@@ -143,12 +143,14 @@
 Angular Firebase Course. Infinite List, Crud. 
 
 - Button
-- List
-- Form
-- CDK
-- PWA
+- Rating
+- Loading directive
+- Pages, Routing, Modules, Refactor to shared Module, Smart/Dumb
+- Toast, Services
+- List, CDK, Firestore
+- Form, Email Auth
+- PWA Features (Geo, Touch gestures, network)
 - Universal
-
 
 
 
