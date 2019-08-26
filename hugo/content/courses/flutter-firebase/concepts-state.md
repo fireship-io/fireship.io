@@ -2,11 +2,13 @@
 title: State Management
 description: Handle shared Firebase data with Provider
 weight: 20
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2019-08-23T10:13:30-04:00
 draft: false
 emoji: 🌊
 vimeo: 336144998
 ---
+
+Note: The code below is updated for *Provider* version `3.1`. The main change is that the `stream` param has been renamed to `value`. 
 
 ## Example Code
 
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
    return StreamProvider<UserModel>.value(
-     stream: stream,
+     value: stream,
      child: MaterialApp(
        home: HomeScreen(),
      ),

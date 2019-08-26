@@ -16,13 +16,11 @@
     &.modal-show {
         transform: scale(1);
         transition: transform 200ms ease-in;
+
     }
 }
 
-.algolia-close {
-    float: right;
-    margin-top: 10px;
-}
+
 
 .algolia-hits {
     width: auto;
@@ -31,6 +29,7 @@
     padding-top: 5em;
     overflow-y: scroll;
     @include scrollbar;
+
     em {
         color: var(--green);
     }
@@ -45,15 +44,32 @@
 }
 
 .algolia-hit {
-    border-bottom: var(--h-border);
+    // border-bottom: var(--h-border);
     display: block;
-    margin-top: 0.5em;
+    margin-top: 0.2em;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    padding: 10px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        // transform: scale(1.01);
+        background: var(--tag-bg);
+        transition: all 0.3s ease;
+      }
+
 
     .hit-type {
         color: var(--text-color);
         font-size: 0.9em;
         font-weight: 400;
     }
+}
+
+
+.algolia-close {
+    float: right;
+    margin-top: 10px;
 }
 
 .algolia-input {

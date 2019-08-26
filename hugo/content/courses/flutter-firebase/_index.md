@@ -1,5 +1,5 @@
 ---
-lastmod: 2019-06-21T10:23:30-09:00
+lastmod: 2019-08-24T10:23:30-09:00
 title: Flutter Firebase - The Full Course
 description: Build a full-stack Flutter app with Firebase from scratch. 
 weight: 0
@@ -46,10 +46,17 @@ A quiz was chosen because it provides a moderate amount of complexity with plent
 This course is intermediate level and designed to help you become productive at building full-stack Flutter apps. It assumes you have at least basic knowledge of programming, ideally in a language similar to JavaScript, C#, or Java. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
 
 
+### Is this Course Updated?
+
+Yes, the last code review and update was completed on **August 24th, 2019**. The course receives regular updates, especially to address breaking changes in Flutter and/or Firebase. 
+
+
 ### 🏎️ Test Drive
 
 You can download the app we're building on Google Play or the App Store, so give it a test drive before you enroll. 
 
 {{< partial "app-links" >}}
+
+
 
 
