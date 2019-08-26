@@ -243,7 +243,7 @@ export const getHippos = functions.https.onRequest(async (request, response) => 
     const hippoRepo = connection.getRepository(Hippo);
 
     // Get all rows
-    const allHippos = await hippos.find();
+    const allHippos = await hippoRepo.find();
 
     response.send(allHippos);
 
