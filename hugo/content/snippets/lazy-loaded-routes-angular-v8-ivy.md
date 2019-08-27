@@ -1,6 +1,6 @@
 ---
 title: Lazy Loaded Routes Angular V8 with Ivy
-lastmod: 2019-03-13T08:01:59-07:00
+lastmod: 2019-08-27T08:01:59-07:00
 publishdate: 2019-03-13T08:01:59-07:00
 author: Jeff Delaney
 draft: false
@@ -23,6 +23,7 @@ youtube:
 
 The following snippet will show you how to setup lazy-loaded routes in Angular v8.0 (and previous versions).
 
+Note. This is now the default way to generate lazy routes in Angular, Ivy does not need to be enabled. 
 
 
 {{< file "terminal" "command line" >}}
@@ -45,27 +46,26 @@ You lazy-load code in Angular by organizing it into modules. A common practice i
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
-ng g module lazy
+ng g module lazy --routing
 
-ng g component lazy-page -m lazy
+ng g component lazy/lazy-page
 {{< /highlight >}}
 
 
 ## Step 2: Add Routing to the Lazy Module
 
-{{< file "ngts" "lazy.module.ts" >}}
+{{< file "ngts" "lazy-routing.module.ts" >}}
 {{< highlight terminal >}}
-import { LazyPageComponent } from '../lazy/lazy-page/lazy-page.component';
+import { LazyPageComponent } from './lazy-page/lazy-page/lazy-page.component';
 import { RouterModule } from '@angular/router';
 
+const routes: Routes = [
+  { path: '', component: LazyPageComponent }
+];
+
 @NgModule({
-  declarations: [LazyPageComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild([
-      { path: '', component: LazyPageComponent }
-    ])
-  ]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class LazyModule { }
 {{< /highlight >}}
