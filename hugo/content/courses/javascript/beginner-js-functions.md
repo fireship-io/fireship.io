@@ -14,7 +14,7 @@ free: true
 
 ## Anatomy of a Function
 
-A function is piece of code that can be *called* durning the lifecycle of the app to perform a task or return a value. A function declaration can be broken down into the following pieces.
+A function is piece of code that can be *called* during the lifecycle of the app to perform a task or return a value. A function declaration can be broken down into the following pieces.
 
 1. Name.
 1. Parameters. A list of inputs that can be passed into a function.   
@@ -26,7 +26,7 @@ A function is piece of code that can be *called* durning the lifecycle of the ap
 A function declaration on its own does not do anything. You make use of functions by calling them. The return value of the function can be assigned to a variable. 
 
 1. Function call. Executes the code inside the function body. 
-1. Arguments. The values to bbe used as parameters in the function. 
+1. Arguments. The values to be used as parameters in the function. 
 1. Return value.  By default functions will return `undefined`, but can return the result of a computation when the body contains a `return` statement.  
 
 {{< figure src="/courses/javascript/img/function-call.png" alt="JavaScript function call" >}}
