@@ -23,7 +23,7 @@ github: https://github.com/fireship-io/202-chatbot-dialogflow
 #    rxdart: 0.20
 ---
 
-[Chatbots](https://en.wikipedia.org/wiki/Chatbot) make it possible for the average developer to deliver excellent (and affordable) customer service at scale - Fuilding conversational experiences has never been easier thanks to the  [Dialogflow](https://dialogflow.com/) conversation platform. 
+[Chatbots](https://en.wikipedia.org/wiki/Chatbot) make it possible for the average developer to deliver excellent (and affordable) customer service at scale - Building conversational experiences has never been easier thanks to the  [Dialogflow](https://dialogflow.com/) conversation platform. 
 
 Dialogflow is a free tool on Google Cloud for creating voice and text conversational interfaces. It uses Natural Language Processing [NLP](https://www.kaggle.com/romanj86/introduction-to-nlp/data) technology, allowing you to create experiences similar to Google Assistant or Amazon Alexa. In following lesson creates a chatbot from scratch in the three main steps: 
 
@@ -60,7 +60,7 @@ Bot recognizes question/intent and fulfills the request by updating Firestore fr
 
 ### Actions and Parameters
 
-In this example, we want our bot to determine the user's preferred display name and favorite color. We can do that my providing prompts that extract that data. After all required params have been extracted, we will use them to permanently update the user's record in the Firestore database. Dialogflow will ask the questions specified as *promts* until it receives a valid *entity* value for that param. 
+In this example, we want our bot to determine the user's preferred display name and favorite color. We can do that by providing prompts that extract that data. After all required params have been extracted, we will use them to permanently update the user's record in the Firestore database. Dialogflow will ask the questions specified as *prompts* until it receives a valid *entity* value for that param. 
 
 {{< figure src="img/params.png" alt="Dialogflow action and params" >}}
 
