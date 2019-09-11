@@ -9,7 +9,7 @@ emoji: 🤸
 chapter_start: Users
 ---
 
-Creates a lazy-loaded feature module to handle user sign-in and related tasks. 
+Create a lazy-loaded feature module to handle user sign-in and related tasks. 
 
 ## Steps
 

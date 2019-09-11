@@ -8,7 +8,7 @@ vimeo: 358715861
 emoji: 🏠
 ---
 
-This video looks routing basics in Angular and the usage of the `routerLink` directive in templates. 
+Learn routing basics in Angular and the usage of the `routerLink` directive in templates. 
 
 ## Steps
 

@@ -21,7 +21,7 @@ ng g c shared/delete-button
 
 ### Step 2 - Delete Button Component
 
-The delete button component is just UI (dumb), meaning it only emits an event with the user's delete intention. The parent component handles the actual database write. 
+The delete button component is just UI (dumb component), meaning it only emits an event with the user's delete intention. The parent component handles the actual database write. 
 
 {{< file "ngts" "delete-button.component.ts" >}}
 {{< highlight typescript >}}

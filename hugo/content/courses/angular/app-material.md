@@ -1,10 +1,9 @@
 ---
-title: Angular Design Systems
+title: Meet Angular Material
 description: Introduction to Angular Material and design systems
 weight: 21
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
-free: true
 vimeo: 358702411
 emoji: 🎨
 ---
@@ -71,4 +70,6 @@ $firestarter-demo-primary: mat-palette($custom-orange);
 
 ### Bonus Video
 
+<div class="vid-center">
 {{< youtube Ppl64MY6FFc >}}
+</div>

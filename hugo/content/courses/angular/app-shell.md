@@ -8,7 +8,7 @@ vimeo: 358714095
 emoji: 🐚
 ---
 
-In this section, we add a basic navigation shell to the app and make it responsive on mobile.
+Add a basic navigation shell to the app and make it responsive on mobile.
 
 ## Steps
 

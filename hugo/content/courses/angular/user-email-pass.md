@@ -9,7 +9,8 @@ emoji: 📧
 ---
 
 - Official [Reactive Forms Docs](https://angular.io/api/forms/ReactiveFormsModule)
-- Watch more about [Reactive Forms](https://angularfirebase.com/lessons/basics-reactive-forms-in-angular/)
+
+
 
 ## Steps
 
@@ -252,3 +253,11 @@ export class EmailLoginComponent implements OnInit {
   </button>
 </mat-card>
 {{< /highlight >}}
+
+
+## Bonus Video
+
+
+<div class="vid-center">
+{{< youtube JeeUY6WaXiA >}}
+</div>

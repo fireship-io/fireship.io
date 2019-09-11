@@ -7,16 +7,19 @@ draft: false
 vimeo: 359307600
 emoji: 💉
 youtube:
+free: true
 ---
+
+## Generate a Service
 
 {{< file "terminal" "command line" >}}
 {{< highlight terminal >}}
 ng g service clock
 {{< /highlight >}}
 
-## Use cases for Services
+## Use-Cases for Services
 
-Services can be used to share data and write code that follows DRY separation of concens practices. 
+Services can can inject shared data and methods into your components. They are also useful for writing code that maintains a DRY separation of concerns. 
 
 - Shared state. Services can connect data between components and are especially useful when components are not in a child/parent relationship. 
 - Shared logic. Stateless services that define common methods used in multiple components. 

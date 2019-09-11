@@ -8,7 +8,7 @@ vimeo: 359165026
 emoji: 🍱
 ---
 
-Create dialogs to create and update the data associated with boards and tasks. 
+Use Material dialogs to create and update the data associated with boards and tasks. 
 
 ## Steps 
 

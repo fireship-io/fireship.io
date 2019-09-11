@@ -1,11 +1,12 @@
 ---
-title: Intro to Angular
-description: A high-level overview of Angular
+title: Modules
+description: How NgModules help manage code and complexity
 weight: 17
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359307851
 emoji: 🧩
+free: true
 ---
 
 {{< file "terminal" "command line" >}}
