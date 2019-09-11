@@ -45,14 +45,6 @@ export const testPlans = {
     description: 'Fireship.io Lifetime 🦄',
     type: 'order'
   },
-  // stripeCourse: {
-  //   id: 'stripeCourse',
-  //   sku: 'sku_EYK0SsvBzq7pcM',
-  //   price: 1900,
-  //   description: 'Stripe Payments Course 💰',
-  //   type: 'order'
-  // },
-
 };
 
 export const plans = {
@@ -110,6 +102,14 @@ export const plans = {
     type: 'order',
     price: 1900,
     url: '/courses/ionic/'
+  },
+  angular: {
+    id: 'angular',
+    sku: 'sku_Fn7Ojng8TLwnC4',
+    description: 'Angular Firebase Project Course 🍱',
+    type: 'order',
+    price: 1900,
+    url: '/courses/angular/'
   }
 };
 

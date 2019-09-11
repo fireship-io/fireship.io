@@ -1,7 +1,7 @@
 ---
 title: Resources
 description: Source code and course resources
-weight: 1
+weight: 10
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 348429086

@@ -1,174 +1,51 @@
-# The Angular 8 PWA Course
+---
+lastmod: 2019-08-24T10:23:30-09:00
+title: Angular Firebase Project Coure
+description: Build a high-performance PWA with Angular and Firebase from scratch. 
+weight: 0
+type: courses
+tags: 
+    - angular
+    - pwa
+    - firebase
+    - firestore
+    - node
+    - cloud-run
+---
 
-- Architecture Overview
-- VS Code & Tooling & CLI
-- What is TypeScript
-- What is RxJS (Observable)
-- Starting a new project CLI
-- Ivy?
+{{< vimeo 336110393 >}}
 
-## Components
+**Angular Firebase PWA Course** will teach you how to build a complex progressive web app with Angular 8, Material Design, Firebase, and deploy it with server-side rendering on Google Cloud Run. 
 
-- Component CLI
-- Anatomy of a Component
-- Change Detection
-- Attribute Binding
-- Event Binding
-- Template Variables
-- Accessing DOM APIs (ElementRef)
+<!-- {{< figure src="/img/testimonial/flutter-testimonial.png" >}} -->
 
-## Directives
+## 🍱 What will I build?
 
-- Conditional Rendering *ngIf and *ngSwitch
-- Loops with *ngFor
-- Conditional CSS with ngClass and ngStyle
-- custom directives
+You will build a full-stack [Kanban (看板)](https://en.wikipedia.org/wiki/Kanban) storyboard app inspired by Trello. Users can drag-and-drop boards. 
 
-
-## Pipes
-
-- json, numbers
-- custom 
+<div>
+<a href="https://firestarter.fireship.io" class="btn btn-orange">Firestarter Live Demo</a>
+</div>
 
 
-## Services
+## 💡 What will I Learn?
 
-- Service CLI
-- Async Data Flow
-- HTTP Client
+- Code organization with feature modules
+- Lazy-loaded routing
+- Usage of common Angular Material components
+- User authentication with Firebase (Google OAuth, Email/Password)
+- Drag-and-Drop with the Angular CDK
+- Data modeling and complex writes/queries with Firestore
+- Firestore security rules
+- Angular Universal with Nest.js
+- Prerendering and/or deployment to Google Cloud Run 
 
+### 🤔 Is this Course Right for Me?
 
-
-## Architecture & Composition
-
-- NgModule
-- Parent to Child. Smart vs Dumb Components
-- Child to Parent. 
-- Global Data Sharing. 
-
-## Routing
-
-- Basic Routing 
-- RouterLink and router.navigate
-- ActivatedRoute
-- Lazy Loaded Routes
-
-## Forms
-
-- Template Driven Forms
-- Reactive Forms
-
-## Advanced Techniques
-
-- Building Feature Modules
-- Angular CDK
-
-########## Demo Outline
-
-- Resources
-- Angular Primer
-- VS Code & Tooling
-- CLI
-- Anatomy of an Angular App (add custom fonts, scripts)
-
-- Button
-- Attribute Binding
-- Event Binding
-- NgIf Conditional Rendering
-- Styles / View Encapsulation
-- NgClass & Style
-- Transclusion
-
-- Tabset
-- Smart Dumb
-- ViewChild
-- NgFor
-- Event Emitter
-- Lifecycle Hooks
-
-- Popover
-- Directives
-- TemplateRef
-
-- Toast
-- Services
-- DI
-
-- Login Form
-- Email/Pass
-- HTTP
-- User Profile
-- Async Pipe
-
-- Pages
-- Feature Modules
-- Lazy Loading
-- Guards
-
-- SSR
-- Nest
-- Prerendering
+This course is intermediate level and designed to expose you to real-world challenges when building PWAs with Angular. It assumes you have at least basic knowledge of programming, ideally in a language similar to JavaScript, C#, or Java. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
 
 
+### 🏎️ Test Drive
 
+Visit the [Firestarter demo app](https://firestarter.fireship.io/) and install it as a PWA to give it a test drive before you enroll. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Demos
-
-- Button (Basics)
-
-
-- Install Nebular
-- Shell
-
-- Routing
-- Lazy Pages
-
-
-
-##### 
-
-Angular Firebase Course. Infinite List, Crud. 
-
-- Button
-- Rating
-- Loading directive
-- Pages, Routing, Modules, Refactor to shared Module, Smart/Dumb
-- Toast, Services
-- List, CDK, Firestore
-- Form, Email Auth
-- PWA Features (Geo, Touch gestures, network)
-- Universal
-
-
-
-## PWA Features Top 10
-
-1 Camera
-2 Bluetooth
-3 Network checking
-4 Touch Gestures
-5 Fullscreen
-6 Offline
-7 Geolocation
-8 Payments
-9 Push Notifications
-10 Fetch
-
-11 IndexedDb
-12 Microphone
-13
-14
-15
