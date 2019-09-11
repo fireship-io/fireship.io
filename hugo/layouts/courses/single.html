@@ -12,8 +12,8 @@
         <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
             {{ .Title }}
 
-        {{ with .Params.weight }}
-            <span class="sub-heading">Step {{ . }}</span>
+        {{ with .Params.description }}
+            <span class="sub-heading">{{ . }}</span>
         {{ end }}
         </h1>
 

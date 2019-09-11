@@ -1,7 +1,7 @@
 ---
 title: Firestore Security Rules Cookbook
 publishdate: 2019-01-02T09:35:09-07:00
-lastmod: 2019-01-02T09:35:09-07:00
+lastmod: 2019-09-02T09:35:09-07:00
 draft: false
 author: Jeff Delaney
 type: lessons
@@ -74,7 +74,7 @@ function belongsTo(userId) {
 
 ### Secure by Owner, Has-Many Relationship
 
-Sometimes a user will own many documents in a collection, so the Document ID will be different than the User ID. In this case, we can look at the existing resource, assuming it has a `uid` property to track the relationship. Example: *user has-many posts*.
+Sometimes a user will own many documents in a collection, so the Document ID will be different than the User ID. In this case, we can look at the request (create) and or the existing resource (delete), assuming it has a `uid` property to track the relationship. Example: *user has-many posts*.
 
 {{< file "firebase" "firestore rules" >}}
 {{< highlight js >}}
@@ -82,10 +82,16 @@ service cloud.firestore {
   match /databases/{database}/documents {
 
     match /posts/{postId} {
-        allow write: if isOwner(userId);
+        allow write: if requestMatchesUID();
+        allow update: if requestMatchesUID() && resourceMatchesUID();
+        allow delete: if resourceMatchesUID();
     }
 
-    function isOwner(userId) {
+    function requestMatchesUID() {
+        return request.auth.uid == request.resource.data.uid;
+    }
+
+    function resourceMatchesUID() {
         return request.auth.uid == resource.data.uid;
     }
   }

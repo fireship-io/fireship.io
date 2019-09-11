@@ -30,7 +30,8 @@
 </div>
 
 <hr />
-<h2 class="text-center">Featured Courses</h2>
+<h2 class="text-center home-heading">Learn by Doing</h2>
+<h4 class="home-sub-heading text-center">Fast, efficient, project-based video courses</h3>
 <div class="row">
 
 
@@ -40,52 +41,123 @@
           <h3>Flutter Firebase App from Scratch</h3>
           Build a complex production-ready app from scratch with Flutter and Firebase 
 
-          <button class="btn btn-green btn-block">Start</button>
+          
       </div>
     </a>
 
-    <a class="card card-course" href="/courses/firestore-data-modeling">
+    <a class="card card-course" href="/courses/angular">
       <div class="card-content">
-          <div class="text-center"><img src="/courses/firestore-data-modeling/img/featured.jpg"></div>
-          <h3>Firestore Data Modeling Course</h3>
-          Learn how to model data and optimize queries with Cloud Firestore. 
-  
-          <button class="btn btn-green btn-block">Start</button>
+          <div class="text-center"><img src="/courses/angular/img/featured.jpg"></div>
+          <h3>Angular 8 Firebase Project Course</h3>
+          Build a high-performance progressive web application (PWA) with Angular & Firebase
+      
       </div>
+  
+  
   </a>
+
 
 </div>
 
 
+<hr>
+
+<h2 class="text-center home-heading">Modern Fullstack</h2>
+<h4 class="home-sub-heading text-center">Develop faster with scalable cloud infrastructure</h3>
+
+<div class="row ">
+  <a class="card card-course" href="/courses/firestore-data-modeling">
+    <div class="card-content">
+        <div class="text-center"><img src="/courses/firestore-data-modeling/img/featured.jpg"></div>
+        <h3>Firestore Data Modeling Course</h3>
+        Learn how to model data and optimize queries with Cloud Firestore. 
+
+        
+    </div>
+</a>
+
+<a class="card card-course" href="/courses/cloud-functions">
+  <div class="card-content">
+      <div class="text-center"><img src="/courses/cloud-functions/img/featured.jpg"></div>
+      <h3>Cloud Functions Master Course</h3>
+      Master the fundamentals of serverless with Firebase Cloud Functions by building seven different microservices from scratch.
+  
+      
+  </div>
 
 
+</a>
+</div> 
 
+<hr>
 
+<h2 class="text-center home-heading">Thinking Beyond the Code</h2>
+<h4 class="home-sub-heading text-center">Accept payments and build your business</h3>
+
+<div class="row">
+
+  <a class="card card-course" href="/courses/stripe-payments">
+    <div class="card-content">
+        <div class="text-center"><img src="/courses/stripe-payments/img/featured.jpg"></div>
+        <h3>Stripe Payments Master Course</h3>
+        Build a custom payment solution with Stripe, Firebase, and NodeJS.
+    </div>
+</a>
+
+</div>
+
+<div class="text-center row-home">
+<a href="/courses" class="btn btn-green text-center btn-lg">All PRO Courses</a>
+</div>
+
+<h2 class="text-center home-heading">Trusted by Developers</h2>
+<!-- <h4 class="home-sub-heading text-center">Used by teams of all sizes</h3> -->
+
+<!-- <hr>
+<ul class="brand-list">
+    {{ $teams := slice "google" "fbi" "uber" "algolia" "nrwl" "mapfire" }}
+
+    {{ range $teams }}
+        <li><img src="/img/brands/{{ . }}.png" alt="{{ . }} logo"></li>
+    {{ end }}
+    
+</ul> -->
 
 <hr>
 
 
+<!-- <h2 class="text-center home-heading">Testimonials</h2>
+<h4 class="home-sub-heading text-center">Accept payments and build your business</h3> -->
+
+<h4 class="home-sub-heading text-center">"I have a job thanks to you"</h3>
+
+<div class="text-center">
+  <img src="/img/testimonial.png" alt="Testimonials for Fireship.io code tutorials">
+</div>
+
 
 <div class="row row-home">
-  <div class="col-xs-12 col-sm-4 flex-center">
-    <a href="/courses"
-      ><img src="img/gif/internet.gif" alt="learn how to use the internet gif"
-    /></a>
-  </div>
-
   <div class="col-xs-12 col-sm-8">
     <h2>
-      <i>{{ partial "svg/backpack.svg" }}</i> Full Courses
+      <i>{{ partial "svg/video.svg" }}</i> Weekly Video Episodes
     </h2>
     <p>
-      Courses are
-      <strong>linear multi-step projects with several hours of video</strong>.
-      They teach you how to build advanced real-world app features from start to
-      finish. <a class="btn btn-sm" href="/courses">Courses</a>
+      Lessons are <strong>non-linear ~10min episodes</strong> covering a variety
+      of topics that include a video, writeup, and github repo. <a class="btn btn-sm" href="{{ .Site.Data.links.youtube }}">Watch</a>
     </p>
   </div>
-</div> 
 
+  <div class="col-xs-12 col-sm-4 flex-center">
+    <a href="{{ .Site.Data.links.youtube }}"
+      ><img
+        src="img/pages/yt.jpg"
+        alt="old film gif for video episodes on Fireship.io"
+    /></a>
+  </div>
+</div>
+
+<h2 class="text-center home-heading">Not your Average Code Tutorials</h2>
+<h4 class="home-sub-heading text-center">All lessons are backed by expert support</h3>
 
 <div class="row home-features">
 
@@ -104,7 +176,7 @@
   <div class="flex-center col-xs-12 col-md-4">
     <a class="card card-outline" href="{{ .Site.Data.links.github }}">
       <div class="card-content">
-        <h2>👨‍💻 Code</h2>
+        <h2>👨‍💻 Open Source Code</h2>
         <p>
           Almost every lesson is <strong>supported by a Github repo</strong>. Even this very
           website is open source.
@@ -128,28 +200,11 @@
 
 </div>
 
-<div class="row row-home">
-  <div class="col-xs-12 col-sm-8">
-    <h2>
-      <i>{{ partial "svg/video.svg" }}</i> Weekly Video Episodes
-    </h2>
-    <p>
-      Lessons are <strong>non-linear ~10min episodes</strong> covering a variety
-      of topics that include a video, writeup, and github repo. <a class="btn btn-sm" href="{{ .Site.Data.links.youtube }}">Watch</a>
-    </p>
-  </div>
-
-  <div class="col-xs-12 col-sm-4 flex-center">
-    <a href="{{ .Site.Data.links.youtube }}"
-      ><img
-        src="img/pages/yt.jpg"
-        alt="old film gif for video episodes on Fireship.io"
-    /></a>
-  </div>
-</div>
 
 
-<h2>Watch Recent Lessons</h2>
+
+<h2 class="text-center home-heading">Watch the Latest Lessons</h2>
+<h4 class="home-sub-heading text-center">New video content every few days</h3>
 
 <div class="row">
   {{ range (first 6 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) . }}
