@@ -1,6 +1,6 @@
 ---
 title: Lazy Loaded Login Feature
-description: Create a lazy-loaded login page and feature module
+description: Configure the router for lazy-loaded user module, aka code splitting.
 weight: 30
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false

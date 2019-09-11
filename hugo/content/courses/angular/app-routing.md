@@ -1,6 +1,6 @@
 ---
 title: Routing
-description: Configure the router for lazy loaded modules, aka code splitting. 
+description: Create a home page configured with the Angular Router. 
 weight: 25
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
