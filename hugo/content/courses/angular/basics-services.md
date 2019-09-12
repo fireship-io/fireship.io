@@ -19,7 +19,7 @@ ng g service clock
 
 ## Use-Cases for Services
 
-Services can can inject shared data and methods into your components. They are also useful for writing code that maintains a DRY separation of concerns. 
+Services can inject shared data and methods into your components. They are also useful for writing code that maintains a DRY separation of concerns. 
 
 - Shared state. Services can connect data between components and are especially useful when components are not in a child/parent relationship. 
 - Shared logic. Stateless services that define common methods used in multiple components. 
