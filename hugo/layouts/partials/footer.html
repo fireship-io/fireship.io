@@ -1,9 +1,10 @@
 <footer>
-    <div class="github-link">You've hit rock bottom. Find an issue? Submit a <a href="{{ .Site.Data.links.github_content }}/{{ .File.Path }}">fix on Github</a></div>
+    <div class="github-link">Find an issue with this page? <a href="{{ .Site.Data.links.github_content }}/{{ .File.Path }}">Fix it on Github</a></div>
 
-    <div>
+    <div class="copyright">
         <hr>
-        Copyright ©  {{ now.Format "2006"}} <br> Created with <i>{{ partial "svg/ng.svg"}}</i><i>{{ partial "svg/firebase.svg" }}</i>
+        Copyright ©  {{ now.Format "2006"}} Fireship LLC <br> 
+        Created with <i>{{ partial "svg/ng.svg"}}</i><i>{{ partial "svg/firebase.svg" }}</i>
         by <a href="{{ .Site.Data.links.gde }}">Jeff Delaney</strong>
         <i>{{ partial "svg/gde.svg"}}</i></a>
         <hr>

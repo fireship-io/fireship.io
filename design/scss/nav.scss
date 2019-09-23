@@ -260,11 +260,19 @@ a.item {
   }
 }
 
-// .active {
-//     .mega-menu, .mega-close {
-//         visibility: visible;
-//     }
-// }
+footer {
+  .github-link {
+    font-weight: 300;
+    color: var(--h-color);
+  }
+
+  .copyright {
+    
+    i {
+      svg { margin: 0 }
+    }
+  }
+}
 
 theme-btn,
 menu-toggler {

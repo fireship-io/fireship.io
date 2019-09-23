@@ -32,12 +32,12 @@ export const proSignup = functions.firestore.document('users/{userId}').onUpdate
     const upgraded = !before.is_pro && after.is_pro; // Pro membership
     const purchased = JSON.stringify(before.products) !== JSON.stringify(after.products); // Single course
     const email = after.email;
+    const wasPastDue = before.pro_status === 'past_due';
 
     console.log(purchased && !after.is_pro)
 
 
-
-    if (!email) {
+    if (!email || wasPastDue) {
         return null;
     }
 
@@ -57,6 +57,7 @@ export const proSignup = functions.firestore.document('users/{userId}').onUpdate
 
         const emailMsg = msg([email], { templateId });
         const adminEmail = msg(['hello@fireship.io'], { text: JSON.stringify(after), subject: 'New Pro Upgrade' });
+
         return sendEmail([emailMsg, adminEmail]);
     }
 

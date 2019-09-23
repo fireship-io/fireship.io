@@ -8,7 +8,7 @@ By accessing this web site, you are agreeing to be bound by these web site Terms
 
 ### Content Copyright Policy
 
-The site design, logo, video content subject to copyright © 2019-present | Fireship.io.
+The site design, logo, video content subject to copyright © 2019-present | Fireship LLC
 
 User contributions licensed under cc by-sa 3.0 with attribution required. 
 
@@ -35,4 +35,4 @@ To file a notice of copyright infringement with fireship.io, you will need to pr
 
 ### Governing Law
 
-Any claim relating to the Fireship.io web site shall be governed by the laws of the State of Nevada without regard to its conflict of law provisions. General Terms and Conditions applicable to Use of a Web Site.
+Any claim relating to the Fireship.io web site shall be governed by the laws of the State of Arizona without regard to its conflict of law provisions. General Terms and Conditions applicable to Use of a Web Site.
