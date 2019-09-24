@@ -7,6 +7,7 @@ tags:
     - firestore
     - firebase
     - nosql
+    - pro
 ---
 
 {{< vimeo 330781388 >}}

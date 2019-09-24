@@ -7,6 +7,7 @@ tags:
     - ionic
     - angular
     - firebase
+    - pro
 ---
 
 {{< vimeo 348641292 >}}

@@ -9,6 +9,7 @@ tags:
     - serverless
     - stripe
     - payments
+    - pro
 ---
 
 {{< vimeo 320651376 >}}

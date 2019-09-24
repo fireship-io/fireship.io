@@ -11,6 +11,7 @@ tags:
     - firestore
     - node
     - cloud-run
+    - pro
 ---
 
 {{< vimeo 359329279 >}}
