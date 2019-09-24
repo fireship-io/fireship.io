@@ -35,14 +35,8 @@
 
                 <allow-if slot="falsey" level="user">
 
-                    <div class="box box-orange">
-                        <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
-                        <div class="box-content">
-                            Video only available to PRO members.
-                        </div>
-                    </div>
-
-                    <a class="btn btn-lg" href="/pro">🦄 Upgrade</a>
+    
+                    {{ partial "video-upgrade.html" }}
 
                     <span slot="falsey">
                             {{ partial "video-login.html" }}

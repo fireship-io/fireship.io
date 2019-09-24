@@ -79,7 +79,7 @@ Communicating with Dialogflow must be done on the server. In this section, we cr
 
 Dialogflow requires your full [service account](https://firebase.google.com/docs/admin/setup#initialize_the_sdk). Download it from the Firebase Console to `functions/service-account.json`. 
 
-⚠️ Make sure to add the service account path to your `.gitignore` because it contains sensitive API keys that should not be exposed publically. 
+⚠️ Make sure to add the service account path to your `.gitignore` because it contains sensitive API keys that should not be exposed publicly. 
 
 {{< figure src="img/functions-service-account.png" caption="Download your service account" >}}
 

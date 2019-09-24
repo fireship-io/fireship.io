@@ -16,11 +16,65 @@
     <div class="content-main">
 
       <section class="content-article" itemprop="articleBody">
+
+        {{ if .Params.pro }}
         {{ partial "lesson-headline" . }}
 
-        <div class="content-body">
-          {{ .Content }}
-        </div>
+
+            <allow-if level="pro">
+    
+                <div class="content-body">
+                    {{ .Content }} 
+                </div>
+
+
+                <div slot="falsey">
+                  <div  class="content-body">
+                      {{ .Content | safeHTML | truncate 500 }} 
+                  </div>
+
+                  <allow-if level="user">
+
+                    <h2 class="text-center">Upgrade to PRO for the Full Lesson</h2>
+              
+                    {{ partial "pricing" }}
+
+
+                    
+                    <span slot="falsey">   
+                        <div class="box box-orange">
+                            <div class="box-icon">
+                             {{ partial "svg/hazard.svg"}}
+                            </div>
+                            <div class="box-content">
+                                <p> You must be logged in to view this content.  
+
+                                  <modal-button selector="login-modal">
+                                    <button class="btn btn-sm">Login</span>
+                                  </modal-button>
+                                </p>
+
+    
+                              
+                            </div>
+                              
+                        </div>
+                                  
+       </span>
+                  </allow-if>
+            
+                </div>
+
+
+            </allow-if>
+
+        {{ else }}
+          {{ partial "lesson-headline" . }}
+
+          <div class="content-body">
+            {{ .Content }} 
+          </div>
+        {{ end }}
 
       </section>
 
