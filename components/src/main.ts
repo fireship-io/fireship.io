@@ -16,8 +16,6 @@ import '@firebase/performance';
 
 
 firebase.initializeApp(environment.firebase);
-firebase.firestore().settings({ timestampsInSnapshots: true });
-
 firebase.performance();
 
 platformBrowserDynamic().bootstrapModule(AppModule, { ngZone: 'noop'})
