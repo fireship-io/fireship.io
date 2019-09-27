@@ -12,11 +12,13 @@ import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 import 'firebase/functions';
-import '@firebase/performance';
+import 'firebase/performance';
+import 'firebase/analytics';
 
 
 firebase.initializeApp(environment.firebase);
 firebase.performance();
+firebase.analytics();
 
 platformBrowserDynamic().bootstrapModule(AppModule, { ngZone: 'noop'})
   .catch(err => console.error(err));

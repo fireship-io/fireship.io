@@ -10,12 +10,14 @@ import { docData } from 'rxfire/firestore';
 import { of, Observable } from 'rxjs';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
   authClient = firebase.auth();
+  analytics = firebase.analytics();
 
   user$: Observable<any>;
   userDoc$: Observable<any>;
@@ -32,6 +34,9 @@ export class AuthService {
     .pipe(tap(u => {
       this.user = u;
       this.app.tick();
+      if (u) {
+        this.analytics.setUserId(u.uid);
+      }
     }));
 
 
