@@ -1,7 +1,8 @@
 .slack-thread {
     margin: 1em 0;
     box-shadow: var(--card-shadow);
-    background: var(--nav-bg);
+    background: var(--tag-bg);
+    border: 2px solid var(--text-color);
     padding: 1em;
 }
 
@@ -14,8 +15,9 @@
 
 .slack-content {
     padding: 1em;
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 .slack-reply {
@@ -28,4 +30,15 @@
 
 .slack-link {
     font-size: 0.85em;
+}
+
+.questions {
+    max-width: 998px;
+    margin: 0 auto;
+}
+
+.slack-cmd {
+    box-shadow: var(--card-shadow);
+    background: var(--card-bg);
+    padding: 1em;
 }
