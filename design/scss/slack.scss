@@ -1,9 +1,10 @@
 .slack-thread {
     margin: 1em 0;
     box-shadow: var(--card-shadow);
-    background: var(--tag-bg);
-    border: 2px solid var(--text-color);
+    background: var(--nav-bg);
+    border: 2px solid var(--tag-bg);
     padding: 1em;
+    border-radius: 10px;
 }
 
 .toggle-replies {
