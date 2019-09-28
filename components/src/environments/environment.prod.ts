@@ -8,7 +8,7 @@ export const environment = {
     storageBucket: 'fireship-app.appspot.com',
     messagingSenderId: '176605045081',
     appId: '1:176605045081:web:d87a63bd943e3032',
-    measurementId: 'G-03RG8EPQN0'
+    measurementId: 'G-VTJV5CVC6K'
   },
   // stripe: 'pk_test_m3a5moXVKgThpdfwzKILvnbG'
   stripe: 'pk_live_qSaGVmF1x4X3vIWZmpbgceNU'
