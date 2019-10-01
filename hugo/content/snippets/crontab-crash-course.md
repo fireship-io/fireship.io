@@ -23,7 +23,7 @@ type: lessons
 #     firebase-functions: 2
 ---
 
-[Cron](https://en.wikipedia.org/wiki/Cron) is a long-running process used on Linux servers that ticks at specific times based on the crontab pattern (with a max of 1 minute of granularity). It is used to setup *cronjobs*, which are background tasks that get executed at a specific time or interval. Also, Firebase now has a [time-triggered](https://firebase.googleblog.com/2019/04/schedule-cloud-functions-firebase-cron.html) Cloud Function that can be set with crontab. The following guide will teach you how to schedule cronjobs in this format. 
+[Cron](https://en.wikipedia.org/wiki/Cron) is a long-running process used on Linux servers that ticks at specific times based on the crontab pattern (with a minimum of 1 minute of granularity). It is used to setup *cronjobs*, which are background tasks that get executed at a specific time or interval. Also, Firebase now has a [time-triggered](https://firebase.googleblog.com/2019/04/schedule-cloud-functions-firebase-cron.html) Cloud Function that can be set with crontab. The following guide will teach you how to schedule cronjobs in this format. 
 
 Tip: I highly recommend checking out the [Crontab Guru](https://crontab.guru/every-weekday) app, as opposed to memorizing all the examples below. 
 
