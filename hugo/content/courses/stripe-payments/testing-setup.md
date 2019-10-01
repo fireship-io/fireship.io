@@ -8,7 +8,7 @@ emoji: 🔬
 vimeo: 320655594
 ---
 
-{{< file "typescript" "foo.component.ts" >}}
+{{< file "typescript" "test-config.ts" >}}
 {{< highlight typescript >}}
 import * as TestFunctions from 'firebase-functions-test';
 
