@@ -29,7 +29,7 @@ Nesting components inside each other is known as *transclusion*.
 
 Make your navigation responsive by listening to breakpoints.
 
-{{< file "ngts" "foo.component.ts" >}}
+{{< file "ngts" "shell.component.ts" >}}
 {{< highlight typescript >}}
 import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
