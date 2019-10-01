@@ -8,6 +8,8 @@ import { tap } from 'rxjs/operators';
 import { stripeStyle } from '../stripe-defaults';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { FormGroup } from '@angular/forms';
+import * as firebase from 'firebase/app';
+
 
 // Global Script Namespaces
 declare var Stripe;
@@ -49,6 +51,8 @@ export class PaymentFormComponent implements AfterViewInit {
 
   // FormGroup Require or angular with throw errors
   fg;
+
+  analytics = firebase.analytics();
 
   constructor(private cd: ChangeDetectorRef, public pmt: PaymentService, public ns: NotificationService) {
     this.pmt.product.pipe(
@@ -186,6 +190,7 @@ export class PaymentFormComponent implements AfterViewInit {
     this.ns.setNotification({ title: 'Success!', text: 'Thank you :)' });
     this.setState('loadingState', null);
     this.setState('success', true);
+    this.analytics.logEvent('pro_upgrade', { value: this.action, product: this.product && this.product.id });
   }
 
   get total() {

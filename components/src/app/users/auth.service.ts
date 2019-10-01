@@ -62,6 +62,7 @@ export class AuthService {
     this.authClient.signOut();
     location.replace('https://fireship.io');
     this.ns.setNotification(onLogout);
+    this.analytics.logEvent('logout', { });
   }
 
   async googleLogin() {
@@ -93,10 +94,10 @@ export class AuthService {
     try {
       res = await promise;
       this.ns.setNotification(onLogin);
+      this.analytics.logEvent('login', { });
     } catch (err) {
       serverError = err.message;
       console.error(err);
-      // this.ns.setNotification({ ...onError, message: serverError });
     }
 
     return { res, serverError };

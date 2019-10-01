@@ -4,8 +4,6 @@ import { AuthService } from '../auth.service';
 import { SetState } from 'src/app/state.decorator';
 import { tap } from 'rxjs/operators';
 
-import * as firebase from 'firebase/app';
-
 @Component({
   templateUrl: './email-login.component.html',
 })
@@ -19,8 +17,6 @@ export class EmailLoginComponent implements AfterViewInit, OnDestroy {
 
   serverError;
   isLoading = false;
-
-  analytics = firebase.analytics();
 
 
   constructor(private cd: ChangeDetectorRef, private fb: FormBuilder, public auth: AuthService) {
@@ -89,8 +85,6 @@ export class EmailLoginComponent implements AfterViewInit, OnDestroy {
     }
 
     this.setState('isLoading', false);
-
-    this.analytics.logEvent('auth', { name: this.type });
   }
 
   @SetState()

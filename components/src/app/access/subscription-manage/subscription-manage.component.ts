@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/users/auth.service';
 import { tap } from 'rxjs/operators';
 import { PaymentService } from '../payment.service';
 import { SetState } from 'src/app/state.decorator';
+import * as firebase from 'firebase/app';
 
 @Component({
   templateUrl: './subscription-manage.component.html'
@@ -11,6 +12,8 @@ export class SubscriptionManageComponent implements OnDestroy {
   docSub;
   userDoc;
   subs;
+
+  analytics = firebase.analytics();
 
   loading = true;
   canceling = false;
@@ -49,6 +52,7 @@ export class SubscriptionManageComponent implements OnDestroy {
     }
 
     this.setState('canceling', false);
+    this.analytics.logEvent('canceled_membership', { });
   }
 
   @SetState()
