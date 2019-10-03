@@ -43,6 +43,9 @@ export class AuthService {
     this.userDoc$ = this.getUserDoc$('users').pipe(tap(u => {
       this.userDoc = u;
       this.app.tick();
+      if (u) {
+        this.analytics.setUserProperties({ pro_status: u.pro_status });
+      }
     }));
 
 
