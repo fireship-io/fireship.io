@@ -8,7 +8,7 @@ vimeo: 359204468
 emoji: 🌩️
 ---
 
-Deploy Angular Universal to Google [Cloud Run](https://cloud.google.com/run/) and connect it to Firebase hosting. Make [Google Cloud SDK](https://cloud.google.com/sdk/) is installed on your local machine. Cloud Run is an solid choice because it gives you a fully-managed "serverless" runtime using a Docker container - not to mention a generous free tier. 
+Deploy Angular Universal to Google [Cloud Run](https://cloud.google.com/run/) and connect it to Firebase hosting. Make sure [Google Cloud SDK](https://cloud.google.com/sdk/) is installed on your local machine. Cloud Run is a solid choice, because it gives you a fully-managed "serverless" runtime using a Docker container - not to mention a generous free tier. 
 
 ## Dockerize the App
  
