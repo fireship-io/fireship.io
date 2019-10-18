@@ -45,12 +45,31 @@ First, obtain an [API key for Google Maps](https://cloud.google.com/maps-platfor
 @end
 {{< /highlight >}}
 
+{{< file "cog" "ios/Runner/AppDelegate.swift" >}}
+{{< highlight text >}}
+import UIKit
+import Flutter
+import GoogleMaps
+
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  override func application(
+    _ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+  ) -> Bool {
+    GMSServices.provideAPIKey("YOUR KEY HERE")
+    GeneratedPluginRegistrant.register(with: self)
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
+  }
+}
+{{< /highlight >}}
+
 Then define the following key-value pair in the Info.plist
 
 {{< file "cog" "ios/Runner/Info.plist " >}}
 {{< highlight html >}}
 <key>io.flutter.embedded_views_preview</key>
-<value>YES</value>
+<true/>
 {{< /highlight >}}
 
 
@@ -77,10 +96,10 @@ Add the permission request details to the Info.plist
 {{< file "cog" "ios/Runner/Info.plist " >}}
 {{< highlight html >}}
 <key>NSLocationWhenInUseUsageDescription</key>
-<value>So I can track you while you use the app</value>
+<string>So I can track you while you use the app</string>
 
 <key>NSLocationAlwaysUsageDescription</key>
-<value>So I can track you at all times</value>
+<string>So I can track you at all times</string>
 {{< /highlight >}}
 
 
