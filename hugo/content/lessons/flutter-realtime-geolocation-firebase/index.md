@@ -144,7 +144,7 @@ build(context) {
 }
 
 _addMarker() {
-  var marker = MarkerOptions(
+  var marker = Marker(
     position: mapController.cameraPosition.target,
     icon: BitmapDescriptor.defaultMarker,
     infoWindowText: InfoWindowText('Magic Marker', '🍄🍄🍄')
@@ -174,7 +174,7 @@ The location service is used in serval parts of the app, but a cool demonstratio
 
     mapController.animateCamera(CameraUpdate.newCameraPosition(
       CameraPosition(
-          target: LatLng(pos['latitude'], pos['longitude']),
+          target: LatLng(pos.latitude, pos.latitude),
           zoom: 17.0,
         )
       )
@@ -207,7 +207,7 @@ Next, add a method that writes to the database. This correct data strucutre with
 {{< highlight dart >}}
 Future<DocumentReference> _addGeoPoint() async {
   var pos = await location.getLocation();
-  GeoFirePoint point = geo.point(latitude: pos['latitude'], longitude: pos['longitude']);
+  GeoFirePoint point = geo.point(latitude: pos.latitude, longitude: pos.longitude);
   return firestore.collection('locations').add({ 
     'position': point.data,
     'name': 'Yay I can be queried!' 
@@ -272,7 +272,7 @@ The method below takes a list of documents from Firestore and updates the positi
     documentList.forEach((DocumentSnapshot document) {
         GeoPoint pos = document.data['position']['geopoint'];
         double distance = document.data['distance'];
-        var marker = MarkerOptions(
+        var marker = Marker(
           position: LatLng(pos.latitude, pos.longitude),
           icon: BitmapDescriptor.defaultMarker,
           infoWindowText: InfoWindowText('Magic Marker', '$distance kilometers from query center')
@@ -290,8 +290,8 @@ And now it's finally time to make the query to Firestore. The `_startQuery` meth
   _startQuery() async {
     // Get users location
     var pos = await location.getLocation();
-    double lat = pos['latitude'];
-    double lng = pos['longitude'];
+    double lat = pos.latitude;
+    double lng = pos.longitude;
 
 
     // Make a referece to firestore
