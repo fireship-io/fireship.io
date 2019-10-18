@@ -2,26 +2,28 @@
 title: Objects
 lastmod: 2019-04-16T09:12:30-08:00
 draft: false
-description: All about JS Objects
+description: Everything you need to know about the JavaScript Object
 weight: 6
-emoji: 📓
+emoji: 🧱
 free: true
 ---
 
-The JavaScript object is an array of key-value pairs, similar to a map, dictionary, or hash table in other programming languages. 
+{{< youtube napDjGFjHR0 >}}
+
+The JavaScript object is a collection of key-value pairs, similar to a map, dictionary, or hash-table in other programming languages. Anything that is not a JS primitive is an Object.
 
 - An **Object** is a collection of properties.
 - A **Property** is a key-value pair that contains a name and a value. 
-- A **Property Name** is a unique value that can be coreced to a string that points to a value. 
+- A **Property Name** is a unique value that can be coerced to a string that points to a value. 
 - A **Property Value** can be any value, including other objects or functions, that associated with the name/key. 
 
 {{< figure src="/courses/javascript/img/js-object-props.png" alt="An object is a collection of properties, aka key-value pairs" >}}
 
 ## Object Basics
 
-### Empty Object
+### Creation
 
-Create an an empty object. 
+Create an an empty object. You have several options. 
 
 {{< file "js" "objects.js" >}}
 {{< highlight javascript >}}
@@ -30,6 +32,9 @@ const dog = { }
 
 // constructor
 const cat = new Object();
+
+// static method
+const horse = Object.create({ })
 {{< /highlight >}}
 
 ### Get and Set Properties
@@ -55,11 +60,11 @@ obj.hi mom
 obj.23
 {{< /highlight >}}
 
-In modern JS, we have a convenient shorthand for setting properties
+Since ES6, we have a convenient shorthand for setting properties:
 
 {{< highlight javascript >}}
-const hello = 1;
-const world = 1;
+let hello;
+let world;
 
 // Old way 💩
 const obj = {
@@ -74,18 +79,28 @@ const obj = {
 }
 {{< /highlight >}}
 
-And lastly, object properties can be removed with the `delete` keyword. 
+Use a variable or expression as a property name by wrapping it in brackets - this is called a computed property. 
+
+{{< highlight javascript >}}
+const x = 'howdy';
+
+const obj = {
+  [x]: 23
+}
+
+obj.howdy // 23
+{{< /highlight >}}
+
+Object properties can be removed with the `delete` keyword. 
 
 {{< highlight javascript >}}
 delete obj.hello;
 delete obj.world;
 {{< /highlight >}}
 
-### Useful Object Methods
-
 ## References
 
-A special characteristic of an object is that that is variables maintain a *reference* to it, as opposed to a full copy of it. When checking for object equality, it checks the reference, or the actual value of properties.
+An object is stored in the [heap](https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101) memory, which means variables maintain a *reference* to it, as opposed to a full copy of it. When checking for object equality, it checks the reference - not the actual value of properties.
 
 {{< highlight javascript >}}
 const original = { }
@@ -97,7 +112,7 @@ x === y; // true
 x === {}; // false
 {{< /highlight >}}
 
-This means that any variable that points to that reference can set its properties and they will be shared between all variables. 
+Any variable that points to that reference can set its properties and they will be shared between all variables. 
 
 {{< highlight javascript >}}
 x.hello = 'world';
@@ -106,9 +121,9 @@ original.hello; // world
 y.hello; // world
 {{< /highlight >}}
 
-## Combining Objects
+## Combine Objects
 
-But what if we want to clone an object? `Object.assign` allows us to copy an object's properties and create a new reference. This means that changes to the original will not affect the clone. 
+But what if we want to clone an object to create a separate reference? `Object.assign` allows us to copy an object's properties and create a new reference. Its properties will be copied to the new object, thus changes to the original object will not affect the clone. 
 
 {{< highlight javascript >}}
 const original = {
@@ -126,7 +141,7 @@ clone.hello; // world (did not change)
 
 ### Spread Syntax
 
-Often a better alternative to Object.assign is the spread syntax.
+A more concise alternative to `Object.assign` is the spread syntax.
 
 {{< highlight javascript >}}
 const clone = Object.assign({ }, original);
@@ -145,7 +160,7 @@ When a function is assigned to an object, it is called a *method*.
 {{< highlight javascript >}}
 const obj = {
   hello() {
-	console.log('yo')
+	  console.log('yo')
   }
 }
 
@@ -154,6 +169,8 @@ obj.hello();
 
 
 ### This
+
+In a normal method, `this` refers to the object on which it is defined.
 
 {{< highlight javascript >}}
 const obj = {
@@ -168,7 +185,7 @@ obj.hello(); // My name is Jeff
 
 ### Arrow
 
-Functions using the arrow syntax are not bound to `this`, which means
+Functions using the arrow syntax are not bound to `this`, so it refers to the outer or global `this` context. 
 
 {{< highlight javascript >}}
 const obj = {
@@ -210,3 +227,26 @@ game.takeDamage().takeDamage().takeDamage().heal();
 👾 80
 {{< /highlight >}}
 
+## Constructors
+
+Constructors are just functions that describe how to create an Object. 
+
+{{< highlight javascript >}}
+function Boat(name) {
+  this.name = name;
+  this.created = Date.now()
+
+  this.horn = function () {
+    console.log(this.name)
+  }
+}
+{{< /highlight >}}
+
+The object is then instantiated with the `new` keyword. 
+
+{{< highlight javascript >}}
+const sally = new Boat('Sally');
+const molly = new Boat('Molly');
+
+sally.horn() // Sally
+{{< /highlight >}}
