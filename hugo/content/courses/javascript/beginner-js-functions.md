@@ -1,5 +1,5 @@
 ---
-title: JavaScript Functions
+title: Functions
 lastmod: 2019-04-16T09:12:30-08:00
 draft: false
 description: Key concepts and practical examples of JavaScript functions
