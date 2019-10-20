@@ -1,6 +1,13 @@
-import { Component, ChangeDetectorRef, AfterViewInit, HostListener, ViewChild, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  ChangeDetectorRef,
+  AfterViewInit,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  Input
+} from '@angular/core';
 import { environment } from '../../../environments/environment';
-
 
 import { SetState } from 'src/app/state.decorator';
 import { PaymentService } from '../payment.service';
@@ -10,7 +17,6 @@ import { NotificationService } from 'src/app/notification/notification.service';
 import { FormGroup } from '@angular/forms';
 import * as firebase from 'firebase/app';
 
-
 // Global Script Namespaces
 declare var Stripe;
 declare var paypal;
@@ -19,7 +25,6 @@ declare var paypal;
   templateUrl: './payment-form.component.html'
 })
 export class PaymentFormComponent implements AfterViewInit {
-
   @Input() action = 'purchase';
   @Input() allowCoupons;
 
@@ -30,23 +35,19 @@ export class PaymentFormComponent implements AfterViewInit {
   stripe: any;
   elements: any;
   card: any;
-  prButton: any;
-  pr: any;
 
   // UI State
   serverError;
   formState;
   loadingState;
-  success;
+  incomplete: string; // hosted_invoice_url
 
   // Coupon State
   couponResult;
   couponError;
   couponLoading: boolean;
 
-
   @ViewChild('cardElement') cardElement: ElementRef;
-  @ViewChild('prElement') prElement: ElementRef;
   @ViewChild('paypalElement') paypalElement: ElementRef;
 
   // FormGroup Require or angular with throw errors
@@ -54,14 +55,19 @@ export class PaymentFormComponent implements AfterViewInit {
 
   analytics = firebase.analytics();
 
-  constructor(private cd: ChangeDetectorRef, public pmt: PaymentService, public ns: NotificationService) {
-    this.pmt.product.pipe(
-      tap(v => {
-        this.setState('product', v);
-        this.paypalInit();
-      })
-    )
-    .subscribe();
+  constructor(
+    private cd: ChangeDetectorRef,
+    public pmt: PaymentService,
+    public ns: NotificationService
+  ) {
+    this.pmt.product
+      .pipe(
+        tap(v => {
+          this.setState('product', v);
+          this.paypalInit();
+        })
+      )
+      .subscribe();
     this.fg = new FormGroup({});
   }
 
@@ -71,76 +77,84 @@ export class PaymentFormComponent implements AfterViewInit {
 
   setup() {
     this.stripe = Stripe(environment.stripe);
-    this.elements = this.stripe.elements(
-      {
-        fonts: [{
+    this.elements = this.stripe.elements({
+      fonts: [
+        {
           cssSrc: 'https://use.typekit.net/rcr1opg.css'
-        }]
-      }
-    );
+        }
+      ]
+    });
 
     // Create an instance of the card Element.
-    this.card = this.elements.create('card', { style: stripeStyle, iconStyle: 'solid' });
+    this.card = this.elements.create('card', {
+      style: stripeStyle,
+      iconStyle: 'solid'
+    });
     this.card.mount(this.cardElement.nativeElement);
 
     this.listenToFormState();
-
   }
 
   // PAYPAL INTEGRATION
   paypalInit() {
     this.paypalElement.nativeElement.innerHTML = '';
-    const valid = this.product.type === 'order';
+    const valid = this.productType === 'order';
     if (valid) {
-      paypal.Buttons({
-        createOrder: (data, actions) => {
+      paypal
+        .Buttons({
+          createOrder: (data, actions) => {
+            if (this.total < 20000 && this.product.id === 'proLifetime') {
+              return this.setState(
+                'serverError',
+                'Coupon exceeds max discount on Lifetime access, try a different coupon '
+              );
+            }
 
-          if (this.total < 20000 && this.product.id === 'proLifetime') {
-            return this.setState('serverError', 'Coupon exceeds max discount on Lifetime access, try a different coupon ');
+            return actions.order.create({
+              purchase_units: [
+                {
+                  description: this.product.description,
+                  reference_id: this.product.sku,
+                  amount: {
+                    currency_code: 'USD',
+                    value: this.paypalTotal
+                  }
+                }
+              ]
+            });
+          },
+          onApprove: async (data, actions) => {
+            this.setState('loadingState', 'processing payment...');
+            const order = await actions.order.capture();
+
+            this.setState('loadingState', 'success, setting up PRO access...');
+
+            const { res, serverError } = await this.pmt.paypalHandler(order);
+
+            if (serverError) {
+              this.setState('serverError', serverError.message);
+              this.setState('loadingState', null);
+            } else {
+              this.onSuccess();
+            }
+          },
+          onError: err => {
+            console.error(err);
+            this.setState('serverError', 'Unable to process PayPal payment');
           }
-
-          return actions.order.create({
-            purchase_units: [{
-              description: this.product.description,
-              reference_id: this.product.sku,
-              amount: {
-                currency_code: 'USD',
-                value: this.paypalTotal,
-              }
-            }]
-          });
-        },
-        onApprove: async (data, actions) => {
-          this.setState('loadingState', 'processing payment...');
-          const order = await actions.order.capture();
-
-          this.setState('loadingState', 'success, setting up PRO access...');
-
-          const { res, serverError } = await this.pmt.paypalHandler(order);
-
-          if (serverError) {
-            this.setState('serverError', serverError.message);
-            this.setState('loadingState', null);
-          } else {
-            this.onSuccess();
-          }
-
-        },
-        onError: (err) => {
-          console.log(err);
-          this.setState('serverError', 'Unable to process PayPal payment');
-        }
-      }).render(this.paypalElement.nativeElement);
+        })
+        .render(this.paypalElement.nativeElement);
     }
     this.cd.detectChanges();
   }
 
   listenToFormState() {
-    this.card.addEventListener('change', (event) => {
+    this.card.addEventListener('change', event => {
       this.setState('formState', event);
     });
   }
 
+  // Fires when form is submitted for product or subscription
   async handleForm(e) {
     e.preventDefault();
     this.setState('serverError', null);
@@ -160,7 +174,17 @@ export class PaymentFormComponent implements AfterViewInit {
       this.setState('serverError', serverError.message);
       this.setState('loadingState', null);
     } else {
-      this.onSuccess();
+      console.log(res);
+      // Requires 3D secure validation
+      const isInvoice = res.object === 'invoice';
+      if (res.status === 'incomplete' || (isInvoice && !res.paid)) {
+        const { hosted_invoice_url } = isInvoice ? res : res.latest_invoice;
+        this.onIncomplete(hosted_invoice_url);
+
+        // Successful payment
+      } else {
+        this.onSuccess();
+      }
     }
   }
 
@@ -169,36 +193,69 @@ export class PaymentFormComponent implements AfterViewInit {
 
     switch (this.action) {
       case 'purchase':
-        if (this.product.type === 'subscribe') {
-          return this.pmt.createSubscription(source, this.product.planId, couponId);
+        if (this.productType === 'subscribe') {
+          return this.pmt.createSubscription(
+            source,
+            this.product.planId,
+            couponId
+          );
         }
 
-        if (this.product.type === 'order') {
-          return this.pmt.createOrder(source, this.product.sku, couponId);
+        if (this.productType === 'order') {
+          return this.pmt.createOrder(source, this.product.sku, this.total);
         }
         break;
-
 
       case 'source':
         return this.pmt.setSource(source);
     }
   }
 
-  onSuccess() {
-    this.card.clear();
+  // Fires when 3D Secure validation is required
+  onIncomplete(invoiceURL: any) {
+    this.resetForm();
     this.pmt.product.next(null);
-    this.ns.setNotification({ title: 'Success!', text: 'Thank you :)' });
-    this.setState('loadingState', null);
-    this.setState('success', true);
-    this.analytics.logEvent('pro_upgrade', { value: this.action, product: this.product && this.product.id });
+    this.setState('incomplete', invoiceURL);
+    this.ns.setNotification({
+      title: 'Confirmation Required!',
+      className: 'box-orange',
+      text: `Your payment card must be confirmed via 3D Secure. View the invoice and finish the payment at the following link: ${invoiceURL} `,
+      countdown: 300
+    });
+    this.analytics.logEvent('pro_upgrade', {
+      value: this.action,
+      product: this.product && this.product.id,
+      status: 'incomplete'
+    });
   }
 
-  get total() {
+  onSuccess() {
+    this.resetForm();
+    this.ns.setNotification({ title: 'Success!', text: 'Thank you :)' });
+    this.analytics.logEvent('pro_upgrade', {
+      value: this.action,
+      product: this.product && this.product.id
+    });
+  }
+
+  private resetForm() {
+    this.card.clear();
+    this.pmt.product.next(null);
+    this.setState('loadingState', null);
+  }
+
+  // Total as Stripe integer
+  get total(): number {
     return this.pmt.calcTotal(this.product.price, this.couponResult);
   }
 
+  // Total as paypal float
   get paypalTotal() {
     return (this.total / 100).toFixed(2);
+  }
+
+  get productType() {
+    return this.product && this.product.type;
   }
 
   async applyCoupon(e, val) {
@@ -231,5 +288,4 @@ export class PaymentFormComponent implements AfterViewInit {
   setState(k, v) {
     this[k] = v;
   }
-
 }

@@ -4,7 +4,7 @@ import { plans } from './stripe-defaults';
 import { AuthService } from '../users/auth.service';
 import { httpsCallable  } from 'rxfire/functions';
 import * as firebase from 'firebase/app';
-import { take, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import get from 'lodash.get';
 
 
@@ -22,7 +22,7 @@ export class PaymentService {
     this.app.tick();
   }
 
-  calcTotal(total, coupon?) {
+  calcTotal(total: number, coupon?) {
     if (coupon && coupon.percent_off) {
        total = total - (total * (coupon.percent_off / 100));
     }
@@ -74,11 +74,11 @@ export class PaymentService {
     return this.callFunction('stripeCreateSubscription', { source, planId, couponId });
   }
 
-  async createOrder(source, sku, couponId?) {
-    return this.callFunction('stripeCreateOrder', { source, sku, couponId });
+  async createOrder(source, sku, amount) {
+    return this.callFunction('stripeCreateOrder', { source, sku, amount });
   }
 
-  async cancelSubscription(source, planId, discountId?) {
+  async cancelSubscription(source, planId) {
     return this.callFunction('stripeCancelSubscription', { source, planId });
   }
 

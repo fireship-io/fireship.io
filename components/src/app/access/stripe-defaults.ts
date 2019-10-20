@@ -5,7 +5,6 @@ export const stripeStyle = {
     fontWeight: 500,
     fontFamily: 'ratio, sans-serif',
     fontSize: '18px',
-    // lineHeight: '22px',
     fontSmoothing: 'antialiased',
     ':-webkit-autofill': {
       color: '#9aa6b3',
@@ -21,37 +20,11 @@ export const stripeStyle = {
   }
 };
 
-export const testPlans = {
-  proMonthly: {
-    id: 'proMonthly',
-    productId: 'prod_EUeTur6JQYXZTe',
-    planId: 'plan_EUeUPIEBLwSEPI',
-    price: 1500,
-    description: 'Fireship.io PRO Monthly 🔥',
-    type: 'subscribe'
-  },
-  proQuarterly: {
-    id: 'proQuarterly',
-    productId: 'prod_EUeTur6JQYXZTe',
-    planId: 'plan_EUeUoZFmOd3huy',
-    price: 3000,
-    description: 'Fireship.io PRO Quarterly 🚀',
-    type: 'subscribe'
-  },
-  proLifetime: {
-    id: 'proLifetime',
-    sku: 'sku_EYK0SsvBzq7pcM',
-    price: 30000,
-    description: 'Fireship.io Lifetime 🦄',
-    type: 'order'
-  },
-};
-
 export const plans = {
   proMonthly: {
     id: 'proMonthly',
-    productId: 'prod_DAWCfOQLPlvU5g',
-    planId: 'plan_DAWDbxLaN5MwF3',
+    productId: 'prod_DAWCfOQLPlvU5g', // 'prod_EUeTur6JQYXZTe',
+    planId: 'plan_DAWDbxLaN5MwF3',  //  'plan_EUeUPIEBLwSEPI',
     price: 2500,
     description: 'Fireship.io PRO Monthly Membership 🔥',
     type: 'subscribe'
@@ -66,10 +39,11 @@ export const plans = {
   },
   proLifetime: {
     id: 'proLifetime',
-    sku: 'sku_Ebp0C4S9tei5CO',
+    sku: 'sku_Ebp0C4S9tei5CO', // 'sku_EcYoWGwIvW7AFt',
     price: 30000,
     description: 'Fireship.io Lifetime Access 🦄',
-    type: 'order'
+    type: 'order',
+    url: '/tags/pro'
   },
   flutterFirebase: {
     id: 'flutterFirebase',
@@ -105,7 +79,7 @@ export const plans = {
   },
   angular: {
     id: 'angular',
-    sku: 'sku_Fn7Ojng8TLwnC4',
+    sku:  'sku_Fn7Ojng8TLwnC4', // 'sku_EYK0SsvBzq7pcM',
     description: 'Angular Firebase Project Course 🍱',
     type: 'order',
     price: 1900,

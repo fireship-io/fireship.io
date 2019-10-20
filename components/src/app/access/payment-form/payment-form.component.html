@@ -7,6 +7,9 @@
       <p>You are purchasing <strong class="green">{{ product?.description }}</strong></p>
   </div>
 
+      <!-- Used for 3D secure validation -->
+
+
 <form [formGroup]="fg" id="payment-form" (ngSubmit)="handleForm($event)" class="form-stripe">
   
   <div class="form-row">
@@ -22,6 +25,8 @@
       {{ formState?.error?.message }}
       {{ serverError }}
     </div>
+
+
   </div>
 
   <div *ngIf="loadingState; else pmtBtn" class="payment-loading">
@@ -69,9 +74,6 @@
 
 </form>
 
-<div id="payment-request-button" #prElement>
-  <!-- A Stripe Element will be inserted here. -->
-</div>
 
 
   <div class="payment-terms">
@@ -100,3 +102,7 @@
   
 
   
+<div *ngIf="incomplete" class="well">
+  <a class="btn btn-orange text-center btn-lg" [href]="incomplete" target="blank">Verify your Card Now</a>
+  <p class="text-sm">Almost done! You must authorize the charge due to 3D Secure standards in Europe. <a href="https://stripe.com/guides/3d-secure-2">Learn more</a></p>
+</div>
