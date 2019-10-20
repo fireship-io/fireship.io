@@ -3,7 +3,7 @@ import { interval, timer, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 
 
-const defaults = { title: 'Hey!', text: '', icon: '🔔', className: '', dismissed: false, countdown: 10};
+const defaults = { title: 'Hey!', text: '', icon: '🔔', className: '', dismissed: false, countdown: 10 };
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +19,14 @@ export class NotificationService {
 
   setNotification(data) {
     this.current = { ...defaults, ...data };
-    this.startCountdown();
+    this.startCountdown(this.current.countdown * 1000);
     this.app.tick();
   }
 
-  startCountdown() {
+  startCountdown(len) {
     this.resetCountdown();
     const timingSource = interval(1000);
-    const timing = timer(10000);
+    const timing = timer(len);
     const example = timingSource.pipe(takeUntil(timing));
     this.countdown = example.subscribe(() => {
       this.current.countdown -= 1;

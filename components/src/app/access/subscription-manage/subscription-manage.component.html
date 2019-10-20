@@ -9,7 +9,7 @@
 
 <div *ngIf="subs">
 
-  <div *ngFor="let sub of subs" class="well">
+  <div *ngFor="let sub of subs" class="well" style="margin-bottom: 16px;">
 
     <h4>PRO Membership</h4>
 
@@ -22,15 +22,13 @@
       </li>
     </ul>
 
-    <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red btn-sm" (click)="cancel(sub.id)">
-      Cancel
-    </button>
+    <div *ngIf="sub.status === 'active'">
+        <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red btn-sm" (click)="cancel(sub.id)">
+            Cancel
+        </button>
+        <p class="orange text-sm">🚨 Cancellation will immediately disable access to PRO content and courses.</p>
+    </div>
 
-    <p class="orange text-sm">🚨 Cancellation will immediately disable access to PRO content and courses.</p>
-
-    <a class="btn btn-blue btn-sm" href="/dashboard/invoices">
-      Invoices
-    </a>
 
 
     <div *ngIf="canceling">

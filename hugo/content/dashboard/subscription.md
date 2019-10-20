@@ -13,3 +13,6 @@ hide_qna: true
 <user-sources></user-sources>
 
 <a href="/dashboard" class="btn">👈 Back</a>
+<a class="btn btn-blue" href="/dashboard/invoices">
+  Invoices
+</a>

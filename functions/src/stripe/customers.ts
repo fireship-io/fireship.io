@@ -7,9 +7,9 @@ import { db, stripe } from '../config';
  */
 export const createCustomer = async(firebaseUser: any) => {
     const { uid, email } = firebaseUser;
-    const customer = await stripe.customers.create({
+    const customer = await (stripe.customers as any).create({
         email,
-        metadata: { firebaseUID: uid }
+        metadata: { firebaseUID: uid },
     }, 
     { idempotency_key: uid })
 

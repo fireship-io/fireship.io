@@ -1,6 +1,14 @@
 export const environment = {
   production: true,
   firebase: {
+    // apiKey: 'AIzaSyAesSTpq6RdhSGqqh3BNcJErodzk1ePzps',
+    // authDomain: 'fireship-dev-17429.firebaseapp.com',
+    // databaseURL: 'https://fireship-dev-17429.firebaseio.com',
+    // projectId: 'fireship-dev-17429',
+    // storageBucket: 'fireship-dev-17429.appspot.com',
+    // messagingSenderId: '307044372590',
+    // appId: '1:307044372590:web:1acc71e3f0c7bfbef2967f',
+    // measurementId: 'G-test'
     apiKey: 'AIzaSyBns4UUCKIfb_3xOesTSezA9GbEyuIU7XA',
     authDomain: 'fireship-app.firebaseapp.com',
     databaseURL: 'https://fireship-app.firebaseio.com',
