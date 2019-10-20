@@ -39,5 +39,5 @@ The soruce code if the *source of truth* for this project. Updates to video cont
 
 Join the [Fireship Slack Team](https://fireship.page.link/slack) to chat with the community in the #ionic or #general channel. I check Slack daily, so feel free to reach out with a direct message. 
 
-Stay updated on [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/angularfirebase)
+Stay updated on [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
 

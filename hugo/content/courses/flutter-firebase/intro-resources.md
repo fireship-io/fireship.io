@@ -21,7 +21,7 @@ free: true
 
 ## Social
 - [Slack Chat](https://goo.gl/8BKA1e)
-- [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/angularfirebase)
+- [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
 
 ## Additional Resources
 
