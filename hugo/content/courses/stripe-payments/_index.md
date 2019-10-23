@@ -9,16 +9,19 @@ tags:
     - serverless
     - stripe
     - payments
+    - node
     - pro
 ---
 
 {{< vimeo 320651376 >}}
 
+{{< figure src="/courses/stripe-payments/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}}
 
 The **Stripe Payments Master Course** will provide a solid foundation for building complex payment systems with the world's leading payment API.
 
 ## Features
 
+- **NEW** Handle [3D Secure 2](https://stripe.com/guides/3d-secure-2) Payments
 - Connect Firebase Users to Stripe
 - Attach Payment Sources to Customers
 - Create Single Charges
@@ -28,7 +31,7 @@ The **Stripe Payments Master Course** will provide a solid foundation for buildi
 - And more...
 
 
-{{< figure src="/courses/stripe-payments/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}}
+
 
 
 ## This Project is for Developers who...
