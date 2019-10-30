@@ -88,6 +88,9 @@ Lastly, we create the map in its own *Map.svelte* component. We know that the Go
 {{< file "svelte" "Map.svelte" >}}
 {{< highlight html >}}
 <script>
+	 import mapStyles from './map-styles'; // optional
+
+
 	let container;
 	let map;
 	let zoom = 8;
@@ -98,7 +101,8 @@ Lastly, we create the map in its own *Map.svelte* component. We know that the Go
 	onMount(async () => {
 		map = new google.maps.Map(container, {
             zoom,
-            center,
+			center,
+			styles: mapStyles // optional
 		});
 	});
 </script>
@@ -115,3 +119,21 @@ Lastly, we create the map in its own *Map.svelte* component. We know that the Go
 
 
 {{< figure src="/img/snippets/svelte-google-maps.png" caption="Google Maps running in Svelte 3" >}}
+
+## Optional: Customize the Base Google Map
+
+Use [Google Maps Customization Wizard](https://mapstyle.withgoogle.com/) to change the style of the base map. This will give you a large JSON object of styles you can paste into a file named `map-styles.js` in your project. 
+
+{{< figure src="/img/snippets/custom-google-maps.gif" caption="Use the Google Maps Wizard to customize your app with ease" >}}
+
+Copy the JSON output and add the `export default` statement before pasting. This will make the file easier to work with in Svelte, which uses ES6 import syntax.
+
+{{< file "js" "map-styles.js" >}}
+{{< highlight javascript >}}
+export default [
+    {
+      "elementType": "geometry",
+      "stylers": [
+
+    // ... other map styles
+{{< /highlight >}}
