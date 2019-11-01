@@ -22,7 +22,7 @@
       </li>
     </ul>
 
-    <div *ngIf="sub.status === 'active'">
+    <div *ngIf="sub.status === 'active' || sub.status === 'past_due'">
         <button [disabled]="canceling" *ngIf="sub.status !== 'canceled'" class="btn btn-red btn-sm" (click)="cancel(sub.id)">
             Cancel
         </button>
