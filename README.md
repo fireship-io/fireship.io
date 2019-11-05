@@ -113,10 +113,6 @@ hugo new snippets/my-cool-snippet.md
 
 First time? Add your bio and a social links to `content/contributors`. 
 
-## Theme Development
-
-The CSS and JS required in critical path is located in `design`.
-
 ## Web Component Development
 
 Interactive features are built with Angular Elements web components in `components/`
