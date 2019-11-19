@@ -68,8 +68,8 @@ exports.keepCount = functions.firestore
     return db.runTransaction(async transaction => {
 
         // Get the metadata document and increment the count. 
-        const metaRef = await transaction.get( db.doc('metadata/customers') );
-        const metaData = metaRef.data();
+        const metaRef = db.doc('metadata/customers');
+        const metaData = ( await transaction.get( metaRef ) ).data();
 
         const number = metaData.count + 1;
 
