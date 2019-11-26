@@ -20,7 +20,7 @@ code: https://github.com/fireship-io/215-firestore-pagination
 # step: 0
 
 versions: 
-    - firebase: 7.3.0
+    firebase: 7.3.0
 ---
 
 [Pagination](https://en.wikipedia.org/wiki/Pagination) is the process of dividing data into discrete pages. In Firestore, it is achieved by ordering a collection by a field, limiting it to a consistent page size, then offsetting the query. The Firebase Web SDK v7.3.0 introduced a new `limitToLast(n)` method that makes the process much easier. The following lesson demonstrates how to paginate Firestore data in both a forward and backward direction and discusses advanced serverside techniques.  
