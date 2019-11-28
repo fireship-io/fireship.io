@@ -63,10 +63,10 @@ pre.highlight {
 .highlight {
 
   &:hover {
-    background: var(--tag-bg);
+    background: var(--nav-bg);
     cursor: copy;
     pre {
-      background: var(--tag-bg);
+      background: var(--nav-bg);
     }
   }
 
