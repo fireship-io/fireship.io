@@ -50,6 +50,15 @@ a.item {
   z-index: 99;
   transition: left 0.3s ease;
 
+  .svg-group {
+    .svg-primary {
+      fill: var(--text-color);
+    }
+    .svg-secondary {
+      fill: var(--tag-bg);
+    }
+  }
+
   &.on-top {
     height: var(--nav-width);
     min-height: 40px;
@@ -87,13 +96,15 @@ a.item {
     }
 
     .item-label {
-      // background: var(--h-color);
-      // color: var(--nav-bg);
       position: fixed;
       transform: scale(0) translateX(0px);
       transition: transform 300ms ease-out;
       opacity: 0.8;
       left: 10px;
+    }
+
+    &.item-highlight {
+      color: var(--green);
     }
   }
 }

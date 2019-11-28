@@ -5,8 +5,15 @@ draft: false
 description: Upgrade to a Fireship.io PRO Membership
 ---
 
-{{< partial "pricing" >}}
 
+<section>
+    {{< box icon="cake" class="box-purple" >}}
+        <h2>Black Friday sale in on!</h2> 
+        <p>Upgrade to PRO with a 33.33% discount using code: <strong>KaLg2d04</strong></p>
+    {{< /box >}}
+</section>
+
+{{< partial "pricing" >}}
 
 
 <div class="flex-center">

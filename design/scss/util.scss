@@ -34,9 +34,11 @@
     font-size: 1.6em;
 }
 .home-sub-heading {
-    font-size: 1.5em;
+    font-size: 0.8em;
     color: var(--text-color);
     font-weight: 400;
+    font-family: var(--font-code);
+    text-transform: uppercase;
 }
 
 .downcase {
@@ -83,6 +85,7 @@ text-cycle {
     opacity: 0;
     transition: opacity 300ms ease;
 }
+
 
 // Utils
 
@@ -160,4 +163,15 @@ text-cycle {
 
 .subtext {
     font-size: 0.9em; color: var(--text-color);
+}
+
+// Animation
+
+@keyframes delayedFade {
+    0% {opacity: 1;}
+    50% {opacity: 1;}
+    100% {opacity: 0;} 
+ } 
+.delayed-fade {
+    animation: delayedFade 2s;
 }

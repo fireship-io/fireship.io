@@ -33,8 +33,13 @@ h1.tag {
     background: var(--background);
 }
 
-.tag-pro {
+.tag-pro, .tag-green {
     background: var(--green);
+    color: white;
+}
+
+.tag-purple {
+    background: var(--purple);
     color: white;
 }
 

@@ -6,16 +6,13 @@
   color: var(--text-color);
   padding: 0;
   box-shadow: var(--card-shadow);
-
-  // max-width: calc(33% - 2em);
   display: inline-flex;
   flex-direction: column;
   margin: 0 0 1em;
   width: 100%;
-
-  // margin: 1em;
   transform: translateY(0);
   transition: transform 300ms;
+  border-radius: var(--card-radius);
 
   &:hover {
     transform: translateY(-3px);
@@ -54,6 +51,8 @@
 
 .card-lesson {
   max-width: 500px;
+  overflow: hidden;
+  font-weight: 300;
 }
 
 .card-outline {
@@ -85,7 +84,6 @@
   display: flex;
   min-height: 100px;
   margin: 0.5em 0;
-  // box-shadow: var(--card-shadow);
   .box-icon {
     display: flex;
     color: var(--text-color);
@@ -127,9 +125,6 @@
   min-height: 0;
   
   margin: 0;
-  p {
-    // margin: 0.1em;
-  }
   .box-content {
 
     padding: 0.3em;
@@ -150,6 +145,9 @@
 }
 .box-blue {
   @include color-box('blue');
+}
+.box-purple {
+  @include color-box('purple');
 }
 
 .box-blue-bookmark {
@@ -284,19 +282,18 @@
 // Table of Contents
 
 .toc {
-  position: sticky;
-  top: 20px;
-  width: 25%;
   min-width: 250px;
-  margin-left: 0.5em;
+  margin-right: 0.5em;
   nav {
+    border-top-left-radius: var(--card-radius);
+    border-bottom-left-radius: var(--card-radius);
     margin-bottom: 1em;
     background: var(--nav-bg);
     max-height: 80vh;
     margin-top: 1em;
     overflow-y: auto;
     position: sticky;
-    top: 20px;
+    top: 30px;
     box-shadow: var(--toc-shadow);
     @include scrollbar;
     ul {
@@ -305,10 +302,16 @@
       margin: 0;
       li {
         padding: 0.5em 0.5em;
-        border-bottom: 1px solid var(--gray-dark);
+        
         a {
           color: var(--blue);
           font-weight: 500;
+          &:hover {
+            color: var(--purple);
+            transition: color 0.4s;
+            border-bottom: 1px solid var(--purple);
+          }
+          transition: color 0.4s;
         }
       }
     }
@@ -441,7 +444,7 @@ video, video-player, .video-overlay {
   justify-content: flex-start;
   font-weight: bold;
   font-size: 1.25em;
-  img { width: 1.5em; border-radius: 0.25em; margin-right: 0.25em; }
+  img { width: 1.5em; border-radius: var(--card-radius); margin-right: 0.25em; }
 }
 
 .health-check {
@@ -487,14 +490,9 @@ video, video-player, .video-overlay {
 
 .lesson-type {
   position: absolute;
-  bottom: -0.33em;
-  right: -0.33em;
-  background: var(--code-bg);
-  a {
-    color: var(--h-border);
-  }
+  top: 0;
+  right: 0;
   padding: 0.5em;
-  border-radius: 50%;
 }
 
 .chapters-list {

@@ -17,8 +17,15 @@
     height: 24px;
     display: block;
     margin-right: 10px;
-
   }
+}
+
+.copy-alert {
+  opacity: 0;
+  color: var(--green);
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
 }
 
 .highlight {
@@ -31,15 +38,15 @@
 code,
 pre {
   font-family: var(--font-code);
-  font-size: 0.9em;
+  font-size: 0.95em;
   font-weight: 400;
 }
 
 p code,
 li code {
   background: var(--code-bg);
-  color: #ff8276;
-  padding: 0 0.3em;
+  color: var(--purple);
+  padding: 0 0.4em;
   border-radius: 3px;
   font-size: 0.85em;
   font-weight: bold;
@@ -54,6 +61,15 @@ pre.highlight {
 }
 
 .highlight {
+
+  &:hover {
+    background: var(--tag-bg);
+    cursor: copy;
+    pre {
+      background: var(--tag-bg);
+    }
+  }
+
   pre {
     background: var(--code-bg);
   }

@@ -11,7 +11,10 @@
 
   </div>
   {{ if .Params.youtube }}
-    <div class="lesson-type"><a href="{{ .RelPermalink }}"><i class="red">{{ partial "svg/youtube.svg" }}</i></a></div>
+    <span class="lesson-type">
+        <i class="red">{{ partial "svg/youtube.svg" }}</i>
+    </span>
+
   {{ end }}
 
 </div>

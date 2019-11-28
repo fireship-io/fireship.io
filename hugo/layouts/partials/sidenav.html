@@ -11,8 +11,19 @@
         </span>
     </modal-button> 
 
+    <allow-if level="pro">
+        <span slot="falsey">
+            <a class="item item-highlight" href="/pro">
+                {{ partial "svg/discount.svg" . }}
+                <span class="item-label tag tag-contrast tag-sm">black friday!</span>
+            </a>
+        </span>
+      </allow-if>
+
+
+
     <a class="item" href="/lessons">
-        {{ partial "svg/video.svg" . }}
+        {{ partial "svg/film.svg" . }}
         <span class="item-label tag tag-contrast tag-sm">video lessons</span>
     </a>
 
