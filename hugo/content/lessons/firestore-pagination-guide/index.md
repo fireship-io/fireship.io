@@ -84,7 +84,7 @@ Showing a list of pages requires us to know the total number of documents in the
 
 ### Option 1 - Offest Query Operator
 
-The Firebase Admin SDK contains a special operator [offset](https://cloud.google.com/nodejs/docs/reference/firestore/0.11.x/Query#offset). You could route all paginated requests through Cloud Function. 
+The Firebase Admin SDK contains a special operator [offset](https://cloud.google.com/nodejs/docs/reference/firestore/0.11.x/Query#offset). A potential solution is to route all paginated requests through Cloud Function with a parameter for the offset. 
 
 
 {{< file "js" "index.js" >}}
