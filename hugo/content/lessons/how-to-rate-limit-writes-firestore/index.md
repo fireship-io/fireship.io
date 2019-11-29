@@ -42,9 +42,6 @@ A user is limited to 5 projects per account. Imagine a SaaS app that expects to 
 This implementation requires two documents. First, you have the main UI data located somewhere like `projects/{id}`. Second, you need a document that stores the current project count that is connected to the current user, like `metadata/{uid}`.
 
 
-IMG
-
-
 In the app, you must perform a batch write to update the canonical document, in addition to the couter. 
 
 {{< file "js" "app.js" >}}
