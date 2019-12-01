@@ -67,13 +67,14 @@
         <div class="post-description">
             <p itemprop="description">
                 {{ .Params.description }}
+                <strong><span class="text-thin" itemprop="wordCount">{{ .WordCount }} words.</span></strong>
             </p>
 
             {{ partial "author.html" . }}
 
             <div class="text-sm">
-                <time itemprop="dateCreated">{{  .Lastmod.Format "Mon Jan 2, 2006"  }}</time> 
-                <span class="text-thin" itemprop="wordCount">{{ .WordCount }} words.</span>
+                Created <time itemprop="dateCreated">{{  .PublishDate.Format "Jan 2, 2006"  }}</time><br>
+                <span class="tag">Last Updated <time itemprop="dateModified">{{  .Lastmod.Format "Jan 2, 2006"  }}</time> </span>
             </div>
 
         </div>
