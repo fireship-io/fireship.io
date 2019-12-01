@@ -69,7 +69,7 @@ Going back to the previous page requires the the **first** document from current
   function prevPage(first) {
 
 	return ref.orderBy(field)
-			  .startAfter(first[field])
+			  .endBefore(first[field])
 			  .limitToLast(pageSize);
   }
 {{< /highlight >}}
