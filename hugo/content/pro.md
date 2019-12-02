@@ -8,8 +8,8 @@ description: Upgrade to a Fireship.io PRO Membership
 
 <section>
     {{< box icon="cake" class="box-purple" >}}
-        <h2>Black Friday sale in on!</h2> 
-        <p>Upgrade to PRO with a 33.33% discount using code: <strong>KaLg2d04</strong></p>
+        <h2>Cyber Monday sale in on!</h2> 
+        <p>Upgrade to PRO with a 25% discount using code: <strong>wHa61FjD</strong></p>
     {{< /box >}}
 </section>
 
