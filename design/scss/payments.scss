@@ -114,6 +114,15 @@
 
     }
 
+    .pricing-features {
+        a {
+            color: var(--h-color);
+            &:hover {
+                border-bottom: 2px solid var(--green);
+            }
+        }
+    }
+
     ul {
         border-top: var(--h-border);
         // border-bottom: var(--h-border);
@@ -122,7 +131,19 @@
         li {
             padding: .25em 0;
             &::before {
-                content: '✓';
+                content: '✅ ';
+            }
+
+            &.fire {
+                &::before {
+                    content: '🔥 ';
+                }
+            }
+
+            &.no-emoji {
+                &::before {
+                    content: '';
+                }
             }
         }
 
