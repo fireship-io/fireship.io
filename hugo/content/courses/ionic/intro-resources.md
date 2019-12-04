@@ -22,7 +22,7 @@ Bookmark these pages:
 ### Project
 
 {{% box icon="scroll"  %}}
-The soruce code if the *source of truth* for this project. Updates to video content may lag behind code udpates, so always refer to the master branch on Github. 
+The soruce code is the *source of truth* for this project. Updates to video content may lag behind code udpates, so always refer to the master branch on Github. 
 {{% /box %}}
 
 - [Source Code](https://github.com/codediodeio/ionic4-master-course)
