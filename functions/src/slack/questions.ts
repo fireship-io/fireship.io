@@ -1,19 +1,17 @@
+// import * as functions from 'firebase-functions';
 import * as functions from 'firebase-functions';
-import { db } from './../config';
+import { db } from '../config';
 import { omitBy, isUndefined, get } from 'lodash';
 import * as getUrls from 'get-urls';
 
-// TS import broken?
-const { PubSub } = require('@google-cloud/pubsub');
-const ps = new PubSub();
+import { questionBot, publishMessage } from './helpers';
 
-const PS_TOPIC = 'slack-question';
+const PUBSUB_TOPIC = 'slack-question';
 const BOT_ID = '<@UF68X24P9>';
 const BOT_RESPONSE =
   'Got it 👍 Feel free to start a thread on your original question if you want to add more details';
 
-import { WebClient } from '@slack/client';
-const bot = new WebClient(functions.config().slack.oauth);
+
 
 //// NOTE - Slack API is very weird with threads.
 //// ts or ts_thread === messageId
@@ -24,10 +22,9 @@ const bot = new WebClient(functions.config().slack.oauth);
 //// FML
 
 export const slashAskHandler = functions.https.onRequest(async (req, res) => {
-  console.log(req.body);
   const { channel_id, text } = req.body;
 
-  const thread: any = await bot.chat.postMessage({
+  const thread: any = await questionBot.chat.postMessage({
     as_user: true,
     channel: channel_id,
     text
@@ -35,10 +32,9 @@ export const slashAskHandler = functions.https.onRequest(async (req, res) => {
 
   const data = { ...req.body, ts: thread.ts };
 
-  await pub(data);
+  await publishMessage(PUBSUB_TOPIC, data);
 
   res.send({
-    // response_type: 'in_channel',
     text: BOT_RESPONSE
   });
 });
@@ -52,7 +48,6 @@ export const questionBotHandler = functions.https.onRequest(
     const { type, subtype } = body.event;
     const { thread_ts, text } = body.event.message || body.event;
 
-    console.log(body);
 
     // Attempt to filter invalid questions
     const okType = type === 'message';
@@ -63,7 +58,7 @@ export const questionBotHandler = functions.https.onRequest(
 
     // If OK, publish data
     if (okType && okUrl) {
-      await pub(body);
+      await publishMessage(PUBSUB_TOPIC, body);
     }
 
     res.sendStatus(200);
@@ -73,9 +68,9 @@ export const questionBotHandler = functions.https.onRequest(
 // @Question Bot https://fireship.io/foo hello
 // Creates and updates slack threads to that mention the bot
 export const recordMessage = functions.pubsub
-  .topic(PS_TOPIC)
+  .topic(PUBSUB_TOPIC)
   .onPublish(async (message, context) => {
-    console.log(message.json);
+    // console.log(message.json);
     const { event, command } = message.json;
 
     if (command) {
@@ -183,14 +178,13 @@ async function handleBotEvent(event) {
       await ref.set({ visible: false }, { merge: true });
     }
   } else {
-    console.log('new/update question');
     const ref = db.collection('slack').doc(ts);
     const permalink = extractPermalink(text);
     const data = { ...msg, permalink };
     await ref.set(data, { merge: true });
 
     if (!subtype) {
-      await bot.chat.postEphemeral({
+      await questionBot.chat.postEphemeral({
         text: BOT_RESPONSE,
         channel: channel,
         user: user
@@ -201,25 +195,14 @@ async function handleBotEvent(event) {
 
 async function getProfile(user) {
   // Get user profile
-  const profileRes: any = await bot.users.profile.get({ user });
+  const profileRes: any = await questionBot.users.profile.get({ user });
   return profileRes.profile;
-}
-
-async function pub(body) {
-  const data = JSON.stringify(body);
-  const dataBuffer = Buffer.from(data);
-  await ps
-    .topic(PS_TOPIC)
-    .publisher()
-    .publish(dataBuffer);
 }
 
 async function fillMentions(text: string) {
   if (!text) return '';
   const re = /<@(.*?)>/g;
   const mentions = text.match(re) || [];
-
-  console.log(mentions);
 
   let modified = text;
 
