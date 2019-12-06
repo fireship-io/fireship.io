@@ -2,9 +2,10 @@
 
 export { newUserSetup, proSignup } from './user/user';
 
-///// QnA /////
+///// Slack /////
 
-export { questionBotHandler, recordMessage, slashAskHandler } from './slack/slack';
+export { questionBotHandler, recordMessage, slashAskHandler } from './slack/questions';
+export {  proBotWelcome, proBotHandler, proBotSlash } from './slack/pro';
 
 ///// PAYMENTS /////
 
