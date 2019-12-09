@@ -270,6 +270,11 @@ Events are great, but somethings you want to give users tools to manually kick o
 
 {{< figure src="img/slack-app-slash.png" caption="Slash commands follow the same basic flow as events" >}}
 
+### /slap someone
+Deploying Firebase Cloud Function to use with Slack slash commands. Sending someone a /slap!
+![](https://cdn.sanity.io/images/hfh83o0w/production/9e279c7b45b755f818f551fbfd451f3456154dd8-1920x1080.png?w=800&fit=crop&fm=webp)
+https://ajonp.com/lessons/slap-someone-with-slack-commands/
+
 ### Add a Conversational Bot
 
 [DialogFlow](/lessons/build-a-chatbot-with-dialogflow/) can integrate into a Slack App with just a few button clicks. Turning your app into a full-blown chatbot allows users to have human-like conversations with the app, which is often more natural than slash commands. 
