@@ -7,3 +7,5 @@ draft: false
 emoji: 🔑
 vimeo: 336343322
 ---
+
+Note: If you experience issues with Google Auth, revisit the [Firebase Setup](/courses/flutter-firebase/intro-firebase-setup/) section to ensure the SHA fingerprint has been setup on your local machine. 
