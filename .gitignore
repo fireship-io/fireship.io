@@ -1,5 +1,6 @@
 # dependencies
 **/node_modules
+/.well_known
 
 /archive
 
