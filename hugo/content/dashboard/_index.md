@@ -23,10 +23,4 @@ Just fill out the form below. Make sure to use the same email address as your Fi
 </allow-if>
 
 
-## How do I redeem my T-shirt (lifetime members)
-
-<allow-if level="pro">
-
-</allow-if>
-
 
