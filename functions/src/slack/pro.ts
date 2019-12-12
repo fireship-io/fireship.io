@@ -99,9 +99,9 @@ export const proBotSlash = functions.pubsub
         case '/sticker':
           if (data && data.is_pro) {
             text =
-              '🔥 Eligible! This feature is under development. For now, direct message Jeff Delaney with your mailing address.';
+              '🔥 Eligible! Please fill out this form https://docs.google.com/forms/d/e/1FAIpQLSe18TfAoxvdrSiT8TcwWNxDW_kQULkZeRRmUtDgoSBWKdYR7A/viewform?usp=sf_link';
           } else {
-            text = 'You must be a lifetime member to register for a sticker.';
+            text = 'You must be a PRO member to register for a sticker.';
           }
           break;
       }
