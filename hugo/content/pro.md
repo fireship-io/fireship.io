@@ -15,6 +15,12 @@ description: Upgrade to a Fireship.io PRO Membership
 
 {{< partial "pricing" >}}
 
+<h2>PRO Benefits</h2>
+
+<div class="vid vid-center">
+{{< vimeo 379454037 >}}
+</div>
+
 
 <div class="flex-center">
 <img alt="Jeff Delaney Google Developer Expert" src="/img/pages/gde.png">
@@ -28,6 +34,24 @@ description: Upgrade to a Fireship.io PRO Membership
 {{< tweet 1014189767733305344 >}}
 </div>
 
+
+
+<div class="col-xs-12 col-md-4">
+{{< tweet 1182385771854073857 >}}
+</div>
+
+<div class="col-xs-12 col-md-4">
+{{< tweet 1187404816974336000 >}}
+</div>
+
+
+
+
+<div class="col-xs-12 col-md-4">
+{{< tweet 1129765192534040578 >}}
+</div>
+
+
 <div class="col-xs-12 col-md-4">
 {{< tweet 1096058942914846720 >}}
 </div>
@@ -35,6 +59,8 @@ description: Upgrade to a Fireship.io PRO Membership
 <div class="col-xs-12 col-md-4">
 {{< tweet 1098168242466639876 >}}
 </div>
+
+
 
 <div class="col-xs-12 col-md-4">
 {{< tweet 1087795764883992577 >}}
