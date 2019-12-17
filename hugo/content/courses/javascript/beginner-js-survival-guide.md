@@ -84,7 +84,7 @@ Notice how `outer` contains a local number variable, while `inner` increments it
 {{< highlight javascript >}}
 function outer() {
 
-    const count = 0; // persits in memory after outer is popped off the call stack
+    let count = 0; // persits in memory after outer is popped off the call stack
 
     function inner() {
         count++;
