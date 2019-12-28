@@ -71,7 +71,6 @@ const components = [ShellComponent];
 const modules = [
   CommonModule,
   MatButtonModule,
-  MatButtonModule,
   MatToolbarModule,
   MatIconModule,
   LayoutModule,
