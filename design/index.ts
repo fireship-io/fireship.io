@@ -84,7 +84,7 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
             }
             const alert = document.getElementById('copied') || createEl();
    
-            el.appendChild(alert);
+            el.parentElement.appendChild(alert);
             alert.classList.add('delayed-fade');
           })
         })
