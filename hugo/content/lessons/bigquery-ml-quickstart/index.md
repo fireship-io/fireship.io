@@ -77,9 +77,9 @@ WHERE age > 2
 LIMIT 1000
 {{< /highlight >}}
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 If the data looks malformatted at this point, you may need to open horses.csv in a MS excel and manually convert the number columns to numbers. BigQuery will error out if mismatched datatypes are present in the data. 
-{{% /box %}}
+{{< /box >}}
 
 
 ### Optional: Analyze in Data Studio
@@ -93,9 +93,9 @@ Make a query, then click **Export -> Explore in Data Studio**. A solid ML algori
 
 Now we're ready for the fun part - converting our horse racing data into a predictive ML model. We will use another GCP service called [DataLab](https://cloud.google.com/datalab/), which connects a cloud VM to a Python notebook, along with a connection to your BigQuery dataset. In other words, it puts unlimited compute resources at your fingertips for training ML models on your data. 
 
-{{% box icon="hazard" class="box-red" %}}
+{{< box icon="hazard" class="box-red" >}}
 The DataLab instance will accrue costs. Make sure to delete the VM from the compute tab and any other resources after you are finished with this tutorial. 
-{{% /box %}}
+{{< /box >}}
 
 ### Open a Cloud Shell
 

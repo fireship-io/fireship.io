@@ -31,9 +31,9 @@ update_notes: Google Maps for Flutter is currently in developer preview. This in
 
 Looking to build a realtime geolocation app like Lyft, Postmates, or Waze? It is easier than you might think when you combine the power of Flutter, Google Maps, and Firebase. The following lesson will show you how use [Google Maps in Flutter](https://pub.dartlang.org/packages/google_maps_flutter), then listen to a realtime feed of geolocation data in Firestore queried by its distance from a centerpoint - made possible by the [GeoFlutterFire](https://pub.dartlang.org/packages/geoflutterfire) package. 
 
-{{% box icon="unicorn" class="box-green" %}}
+{{< box icon="unicorn" class="box-green" >}}
 Special thanks to [Darshan Gowda](/contributors/darshan-gowda/) for creating the GeoFlutterFire library and providing the example code for this lesson. 
-{{% /box %}}
+{{< /box >}}
 
 
 ## Step 0: Prerequisites
@@ -223,9 +223,9 @@ The final step is to listen to stream of data from Firestore and update the mark
 
 We have two pieces of streaming data in this demo (1) the radius of the query in kilometers and (2) the result of the query from Firestore. The radius is modeled as an RxDart [BehaviorSubject](http://reactivex.io/rxjs/manual/overview.html#behaviorsubject), which is just a stream that has a current value and can have new values pushed to it. 
 
-{{% box icon="map" class="box-green" %}}
+{{< box icon="map" class="box-green" >}}
 You might also want to listen to the user's location in realtime and update your query reactively, which you can do with `location.onLocationChanged()`. 
-{{% /box %}}
+{{< /box >}}
 
 {{< highlight dart >}}
   BehaviorSubject<double> radius = BehaviorSubject(seedValue: 100.0);

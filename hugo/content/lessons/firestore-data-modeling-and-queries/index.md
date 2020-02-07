@@ -30,9 +30,9 @@ The following lesson will take you through a variety of practical examples of da
 
 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This post first appeared as [Episode 85 on AngularFirebase.com](https://angularfirebase.com/lessons/firestore-nosql-data-modeling-by-example/) and has been fully updated for Firestore v1. 
-{{% /box %}}
+{{< /box >}}
 
 ## Key Concepts
 
@@ -80,9 +80,9 @@ col.where(field, '>=', value)
 
 One of the most common data relationships you will encounter is when an entity **has one** item. Or in other words, an item **belongs-to** the entity. If you're using Firebase Auth, you can model ownership giving a document the same ID as the user. 
 
-{{% box icon="abacus" class="" %}}
+{{< box icon="abacus" class="" >}}
 Example: A user has one account. An account belongs to a user. 
-{{% /box %}}
+{{< /box >}}
 
 ### Database Structure
 
@@ -118,9 +118,9 @@ acctRef.onSnapshot(snapshot => doStuff);
 
 It is also possible for an entity to **have-many** of a certain item. 
 
-{{% box icon="abacus" class="" %}}
+{{< box icon="abacus" class="" >}}
 Example: A user has many tasks
-{{% /box %}}
+{{< /box >}}
 
 ### Database Structure
 

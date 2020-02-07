@@ -27,9 +27,9 @@ Social media and chat apps (think Slack, Facebook Messenger, etc) often have pre
 
 ## Step 0: Prerequisites
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This post first appeared as [Episode 41 on AngularFirebase.com](https://angularfirebase.com/lessons/user-presenece-system-in-realtime/) and has been fully updated with the latest best practices. 
-{{% /box %}}
+{{< /box >}}
 
 
 1. {{< prereq "install-angular" >}}
@@ -38,9 +38,9 @@ This post first appeared as [Episode 41 on AngularFirebase.com](https://angularf
 
 ## Step 1: Listen to the Realtime DB Connection
 
-{{% box icon="fire" class="box-orange" %}}
+{{< box icon="fire" class="box-orange" >}}
 Realtime presence is not directly supported in Firestore, but it is possible to mirror the RealtimeDB data with a Cloud Function using this [official guide](https://firebase.google.com/docs/firestore/solutions/presence). Personally, I find the setup to be quite cumbersome and recommend using RealtimeDB directly - at least until Firestore supports an **onDisconnect** hook.
-{{% /box %}}
+{{< /box >}}
 
 There are at least five distinct states that need to be addressed. Keep in mind, you may find additional edge cases beyond these. 
 

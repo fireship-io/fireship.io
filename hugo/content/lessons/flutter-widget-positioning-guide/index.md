@@ -25,9 +25,9 @@ The addition of Flexbox to CSS revolutionized the way we position elements on th
 
 The following lesson will teach you how to position containers and build layouts in Flutter with direct comparisons to CSS [Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox). 
 
-{{% box icon="bird" class="" %}}
+{{< box icon="bird" class="" >}}
 Throughout this lesson, you will see the 👉 emoji. Flutter will always be on the left, and CSS on the right.
-{{% /box %}}
+{{< /box >}}
 
 Make sure to also watch [Flutter for the JavaScript Developer](/lessons/flutter-for-js-developers/).
 

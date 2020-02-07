@@ -31,9 +31,9 @@ Firebase allows developers to modify authentication [ID tokens](https://firebase
 
 It is not possible (currently) to add custom claims from the Firebase Console. This means we need to write some code with [Firebase Admin](https://firebase.google.com/docs/admin/setup). 
 
-{{% box icon="scroll" %}}
+{{< box icon="scroll" >}}
 In the real world, you will most likely update custom claims from a [Cloud Function](https://fireship.io/courses/cloud-functions/). For example, the user makes a purchase and you update their claim as a *paid* user. 
-{{% /box %}}
+{{< /box >}}
 
 
 ### Initial Setup
@@ -58,9 +58,9 @@ Download your [service account](https://firebase.google.com/docs/admin/setup#ini
 
 The script below calls the `auth.setCustomUserClaims` method to add a claims object to the user's ID token. You can save any data to the claims object as long as it can be serialized to JSON. 
 
-{{% box icon="hazard" %}}
+{{< box icon="hazard" >}}
 The max size of the claims object is 1000 bytes. It is a good practice to only save the bare minimum amount of data required for authorization logic.
-{{% /box %}}
+{{< /box >}}
 
 {{< file "js" "index.js" >}}
 {{< highlight js >}}

@@ -38,9 +38,9 @@ The end result of this lesson is an Angular/Firebase app that supports the follo
 - Secure data on the backed with Firestore rules.
 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This post first appeared as [Episode 55 on AngularFirebase.com](https://angularfirebase.com/lessons/google-user-auth-with-firestore-custom-data/) and has been fully updated with the latest best practices. 
-{{% /box %}}
+{{< /box >}}
 
 ## Step 0: Prerequisites
 
@@ -96,9 +96,9 @@ const config = {/* your firebase web config */}
 export class AppModule {}
 {{< /highlight >}}
 
-{{% box icon="flask" class="box-green" %}}
+{{< box icon="flask" class="box-green" >}}
 For advanced options and pro tips check out the [@angular/fire install guide](/snippets/install-angularfire/). 
-{{% /box %}}
+{{< /box >}}
 
 ## Step 3: Build an Auth Service
 
@@ -226,11 +226,11 @@ export class AuthService {
 }
 {{< /highlight >}}
 
-{{% box icon="trophy" class="box-blue" %}}
+{{< box icon="trophy" class="box-blue" >}}
 #### Tip: Destructuring the Function
 
 You may prefer to modify the **updateUserData** function with [destructuring assignment](/snippets/javascript-destructuring/#function-arguments)
-{{% /box %}}
+{{< /box >}}
 
 
 
@@ -347,9 +347,9 @@ const routes: Routes = [
 ];
 {{< /highlight >}}
 
-{{% box icon="flask" class="box-green" %}}
+{{< box icon="flask" class="box-green" >}}
 PRO Tip - You may find it useful to simplify this guard code by defining a method in your auth service that can [retrive the Firebase UID as a Promise](/snippets/get-angularfire-userid-as-promise).
-{{% /box %}}
+{{< /box >}}
 
 
 

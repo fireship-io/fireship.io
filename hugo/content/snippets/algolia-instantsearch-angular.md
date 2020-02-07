@@ -22,9 +22,9 @@ type: lessons
 #     - "rxjs": 6.3
 ---
 
-{{% box emoji="👀" %}}
+{{< box emoji="👀" >}}
 This tutorial is an extension of the [Algolia Cloud Functions Guide](/lessons/algolia-cloud-functions/). You must have the Cloud Functions deployed to start making instant search queries from your frontend app. 
-{{% /box %}}
+{{< /box >}}
 
 ## Install Instantsearch
 

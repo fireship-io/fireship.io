@@ -96,13 +96,13 @@ tasks/{taskID}/
 
 ### Step 2: Task Runner Cloud Function
 
-{{% box icon="scroll" class="box-green" %}}
+{{< box icon="scroll" class="box-green" >}}
 #### Pro Tips
 
 This function will be invoked approx 45,000 times per month, but it can complete multiple tasks per run. Firebase provides 125K free invocations per month. 
 
 Max out the memory and timeout settings for your function. This will ensure the task runner can handle large batches of jobs in a single run. 
-{{% /box %}}
+{{< /box >}}
 
 Next, we need to define a Pub/Sub Cloud Function that queries the task collection every 60s (or whatever granularity you want) for tasks that are ready to perform. 
 

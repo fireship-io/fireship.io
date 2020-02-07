@@ -87,9 +87,9 @@ Sound good? Create a new file called `lib/auth.dart`.
 
 Let's start by adding our Firebase dependencies to the class and fleshing out it's API. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 The `_` prefix is used for property names to create private members in Dart. We will do this for the client libraries consumed by the class. 
-{{% /box %}}
+{{< /box >}}
 
 The streams provided by Firebase are [broadcast](https://www.dartlang.org/articles/libraries/broadcast-streams) to multiple subscribers (this is called as a hot Observable in Rx). In this demo, the `user` is the authentication record, while the `profile` represents custom data that will be saved about this user in Firestore. 
 
@@ -217,9 +217,9 @@ Now that our auth logic is in place, we have two options for rendering UI elemen
 
 Let's start by building a `StatefulWidget` that listens to the the `Observable profile` and displays its data in the UI. In this example, we are listening to the stream, then using the emitted values to call `setState` on widget, thus triggering a repaint. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 Only use `setState` to change properties on the widget and do all the computation elsewhere. Also, your state must be initialized, which is why the subscriptions are created in the `initState` lifecycle hook. 
-{{% /box %}}
+{{< /box >}}
 
 {{< file "dart" "main.dart" >}}
 {{< highlight dart >}}

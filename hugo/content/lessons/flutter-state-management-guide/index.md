@@ -47,9 +47,9 @@ We will start with nothing but Flutter, then add additional tools like [RxDart](
 In many cases, you can encapsulate all your data in a single widget. Ask yourself *do I need to access this data in other widgets?* If **no**, you can use the techniques described below. If **yes**, you will likely benefit from a shared state strategy in the next section. 
 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 TIP: In Flutter, data moves from top to bottom. If you have data in a child widget that you want to send up to a parent, you should use one of the global state management methods described in the second half of this lesson. 
-{{% /box %}}
+{{< /box >}}
 
 {{< figure src="img/flutter-widget-tree.png" caption="Flutter widget tree... Parent to child, good. Anything else, bad." >}}
 
@@ -184,9 +184,9 @@ class MyHomePage3 extends StatelessWidget {
 
 ### StreamBuilder + RxDart BehaviorSubject
 
-{{% box icon="scroll" class="box-green" %}}
+{{< box icon="scroll" class="box-green" >}}
 This is my preferred way to manage global state in Flutter. It's flexible, provides a good separation of concerns, and just feels intuitive to me. 
-{{% /box %}}
+{{< /box >}}
 
 The *BehaviorSubject* has a variety of characteristics that make it ideal for state management. 
 

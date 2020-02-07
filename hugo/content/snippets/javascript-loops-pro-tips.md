@@ -122,9 +122,9 @@ for (const [type, face] of equine) {
 
 ### Implementing your Own Iterator
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 An *iterator* is a Function that defines how a loop works. An *iterable* is something you can loop over (or call the iterator function on), like an Array. 
-{{% /box %}}
+{{< /box >}}
 
 So how does the `for-of` loop really work? Well it's actually just an [iterator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators) function. In fact, we can override the behavior of the loop by implementing our own from scratch. In this case, we append an emoji 🙈 to each element in the loop just because we can. 
 

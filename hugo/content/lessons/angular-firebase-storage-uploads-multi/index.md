@@ -32,9 +32,9 @@ Firebase makes it easy to upload a huge payload of raw files a cloud storage buc
 
 {{< figure src="img/dropzone-firebase-storage.png" alt="Firebase storage demo with multiple files" >}}
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This post first appeared as [Episode 82 on AngularFirebase.com](https://angularfirebase.com/lessons/firebase-storage-with-angularfire-dropzone-file-uploader/) and has been updated to handle multiple files and save additional data to Firestore. 
-{{% /box %}}
+{{< /box >}}
 
 
 The demo video below demonstrates how the complete feature should work after completing this lesson. 
@@ -82,9 +82,9 @@ progress::-webkit-progress-value {
 
 ## Step 1 - Directive to Receive Files from the Browser
 
-{{% box icon="scroll" class="box-green" %}}
+{{< box icon="scroll" class="box-green" >}}
 Want to skip this step? Consider using this zero-dependency [file-drop](https://github.com/GoogleChromeLabs/file-drop) web component developed by Google Chrome Labs  
-{{% /box %}}
+{{< /box >}}
 
 The first step is to create a directive that can receive the files from the browser. The directive customize the [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) to meet the specific needs of our feature. 
 
@@ -205,9 +205,9 @@ ng g component upload-task
 
 Each child component is a self contained [UploadTask](https://github.com/angular/angularfire2/blob/master/docs/storage/storage.md) that will start running as soon as the component is initialized. It will display the upload progress in realtime and save the download URL in firestore when it completes. 
 
-{{% box icon="fire" class="box-orange" %}}
+{{< box icon="fire" class="box-orange" >}}
 There is no hard limit on the number of files you can send to Firebase simultaneously. The SDK will attempt to use the most efficient strategy available to transfer them to the cloud, which is mostly dependent on the user's network connection.  
-{{% /box %}}
+{{< /box >}}
 
 
 ### Show Progress and Provide User Controls

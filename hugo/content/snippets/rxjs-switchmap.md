@@ -13,9 +13,9 @@ versions:
 
 `switchMap` is one of the most useful RxJS operators because it can compose Observables from an initial value that is unknown or that change. Conceptually, it is similar to chaining `then` functions with Promises, but operates on streams (Promises resolve once).
 
-{{% box icon="abacus" %}}
+{{< box icon="abacus" >}}
 Example: You have an Observable of a userID, then use it to *switch* to an HTTP request of all posts owned by that user.
-{{% /box %}}
+{{< /box >}}
 
 
 {{< file "js" "foo.js" >}}
@@ -40,9 +40,9 @@ boats$.subscribe(console.log);
 Notice how we only need to subscribe to the `boats$` Observable. It will automatically subscribe to the `$user`, then use the emitted userID to create the final observable of boats.
 
 
-{{% box icon="abacus" %}}
+{{< box icon="abacus" >}}
 Example 2: You have 2 Observables named `nums$` and `string$`. You want to get the value of the `string$` Observable when `nums$` emits even numbers. 
-{{% /box %}}
+{{< /box >}}
 
 
 {{< file "js" "bar.js" >}}

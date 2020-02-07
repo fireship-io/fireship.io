@@ -26,9 +26,9 @@ At Google I/O 2019, Firebase launched a new query type, [Collection Group Querie
 
 In the following lesson, we will look at the basic concepts of Collection Group Queries. Check out the full source code for a more complex [threaded comments](https://github.com/fireship-io/186-collection-group-queries-demo) feature in Angular. 
 
-{{% box icon="scroll" class="box-green" %}}
+{{< box icon="scroll" class="box-green" >}}
 If you have complex data requirements for Firestore, consider enrolling in the full [Firestore Data Modeling](/courses/firestore-data-modeling/) course.
-{{% /box %}}
+{{< /box >}}
 
 
 ## Collection Group Query

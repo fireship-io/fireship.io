@@ -28,9 +28,9 @@ An awesome [tweet](https://t.co/zVk5YJj0rh) was making the rounds last week that
 
 Creating an animated scrolling list with Flutter is a piece of cake, but calculating scroll direction/velocity from the pan events on the wheel is a bigger challenge. The following lesson demonstrates how to build UI elements with Flutter inspired by the iPod Classic. 
 
-{{% box icon="bird" class="box" %}}
+{{< box icon="bird" class="box" >}}
 Checkout this [rotational pan widget](/snippets/circular-drag-flutter) snippet if you're looking for a Flutter widget that is aware of clockwise rotation, like a knob or radial dial. 
-{{% /box %}}
+{{< /box >}}
 
 
 ## Demo

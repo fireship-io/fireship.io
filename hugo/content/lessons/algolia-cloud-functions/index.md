@@ -34,11 +34,11 @@ One of the most commonly encountered limitations of [Cloud Firestore](https://fi
 This lesson is integrated with multiple frontend frameworks. After deploying the backend code in this lesson, choose your favorite frontend flavor 🍧. 
 
 <nav>
-    {{% mvp-chapter name="angular" link="/snippets/algolia-instantsearch-angular" %}}
-    {{% mvp-chapter name="react" link="/snippets/algolia-instantsearch-react" %}}
-    <!-- {{% mvp-chapter name="vue" link="/snippets/algolia-instantsearch-vue" %}} -->
-    {{% mvp-chapter name="svelte" link="/snippets/algolia-instantsearch-svelte" %}}
-    <!-- {{% mvp-chapter name="flutter" link="/snippets/algolia-instantsearch-flutter" %}} -->
+    {{< mvp-chapter name="angular" link="/snippets/algolia-instantsearch-angular" >}}
+    {{< mvp-chapter name="react" link="/snippets/algolia-instantsearch-react" >}}
+    <!-- {{< mvp-chapter name="vue" link="/snippets/algolia-instantsearch-vue" >}} -->
+    {{< mvp-chapter name="svelte" link="/snippets/algolia-instantsearch-svelte" >}}
+    <!-- {{< mvp-chapter name="flutter" link="/snippets/algolia-instantsearch-flutter" >}} -->
 </nav>
 
 ## Initial Setup
@@ -191,6 +191,6 @@ cd functions
 node seed.js
 {{< /highlight >}}
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This post first appeared as [Episode 109 Algolia Firestore on AngularFirebase.com](https://angularfirebase.com/lessons/algolia-firestore-quickstart-with-firebase-cloud-functions/) and has been fully updated with the latest best practices. 
-{{% /box %}}
+{{< /box >}}

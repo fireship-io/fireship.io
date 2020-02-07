@@ -16,9 +16,9 @@ type: lessons
 
 The following guide is designed to get you up and running with Flutter and Firebase on both iOS and Android.
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 Refer to the [official FlutterFire setup instructions](https://firebase.google.com/docs/flutter/setup). 
-{{% /box %}}
+{{< /box >}}
 
 
 ## Create your Flutter App

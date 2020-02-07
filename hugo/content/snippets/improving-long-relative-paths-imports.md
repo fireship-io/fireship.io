@@ -43,9 +43,9 @@ Does not look good! This can become a problem if you change the file location be
 * `baseUrl` - Setting baseUrl informs the compiler where to find modules.
 * Add `path` settings inside `CompilerOptions` - It will be an object which keys are path aliases that you will be able to use in your code, and the values are arrays of paths the alias will be resolved to.
 
-{{% box icon="bug" class="box-red" %}}
+{{< box icon="bug" class="box-red" >}}
 Be careful with name collisions, I recommend prefix everything with the name of your app. 
-{{% /box %}} 
+{{< /box >}} 
 
 {{< file "file" "tsconfig.json">}}
 {{< highlight file >}}

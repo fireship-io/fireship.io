@@ -14,9 +14,9 @@ youtube:
 
 The following guide is designed to get you up and running with Google Maps in Flutter for iOS and Android, as well as device GPS tracking. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 Also refer to the [official Flutter Google Maps Plugin setup docs](https://pub.dartlang.org/packages/google_maps_flutter) as needed. 
-{{% /box %}}
+{{< /box >}}
 
 ## Google Maps for Flutter
 

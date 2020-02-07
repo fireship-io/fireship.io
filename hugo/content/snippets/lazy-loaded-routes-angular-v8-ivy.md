@@ -74,9 +74,9 @@ export class LazyModule { }
 
 Angular Ivy makes it possible to use [dynamic imports](https://developers.google.com/web/updates/2017/11/dynamic-import) - an awesome new web standard - that enables async loading of JS modules. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 If using the dynamic import method shown below make sure to enable Angular Ivy in your project. Existing projects can follow this [Ivy upgrade guide](/snippets/angular-upgrade-with-ivy). 
-{{% /box %}}
+{{< /box >}}
 
 {{< file "ngts" "app-routing.module.ts" >}}
 {{< highlight typescript >}}

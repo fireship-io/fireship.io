@@ -1,16 +1,17 @@
 import { Component, ChangeDetectorRef, ElementRef, Input, HostListener, ViewChild } from '@angular/core';
-import * as algolia from 'algoliasearch/lite';
+import algolia from 'algoliasearch/lite';
+
 
 const APP_ID = '05VYZFXKNM';
 const API_KEY = 'a0837b31f4379765240c2753fa141aa2';
-const client = (algolia as any)(APP_ID, API_KEY);
+const client = algolia(APP_ID, API_KEY);
 
 @Component({
   templateUrl: './algolia-search.component.html'
 })
 export class AlgoliaSearchComponent {
 
-  constructor(private cd: ChangeDetectorRef, private el: ElementRef) { }
+  constructor(private cd: ChangeDetectorRef, private el: ElementRef) {}
 
   index = client.initIndex('content');
 
@@ -54,15 +55,15 @@ export class AlgoliaSearchComponent {
     this.cd.detectChanges();
   }
 
-  handleSearch(query) {
+  async handleSearch(query: string) {
     this.query = query;
-    this.index.search({ query }, (err, res) => {
-      this.results = res;
-      this.hits = res.hits;
-      this.cd.detectChanges();
-    }
-    );
+    this.results = await this.index.search(query);
+
+    this.hits = this.results.hits;
+
     this.cd.detectChanges();
+
+    console.log(this.query, this.results);
   }
 
 

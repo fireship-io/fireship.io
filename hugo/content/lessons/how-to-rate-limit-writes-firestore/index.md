@@ -30,9 +30,9 @@ The following examples are based on an app that needs to...
 
 Firestore rules can achieve these security requirements by combining a batch write with [getAfter](https://firebase.google.com/docs/reference/rules/rules.firestore.html#.getAfter) - a new feature available in Firestore security rules. The following examples use this technique to ensure a user cannot manipulate a count beyond a certain threshold or time constraint. 
 
-{{% box icon="hazard" class="box-red" %}}
+{{< box icon="hazard" class="box-red" >}}
 Never use a rule like `allow write: true` in your database in production. Write operations should always include some form of authentication.  
-{{% /box %}}
+{{< /box >}}
 
 
 ## Rate Limit by Quantity

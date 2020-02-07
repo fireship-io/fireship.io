@@ -25,9 +25,9 @@ versions:
 
 [Pagination](https://en.wikipedia.org/wiki/Pagination) is the process of dividing data into discrete pages. In Firestore, it is achieved by ordering a collection by a field, limiting it to a consistent page size, then offsetting the query. The Firebase Web SDK v7.3.0 introduced a new `limitToLast(n)` method that makes the process much easier. The following lesson demonstrates how to paginate Firestore data in both a forward and backward direction and discusses advanced serverside techniques.  
 
-{{% box icon="scroll" class="box-orange" %}}
+{{< box icon="scroll" class="box-orange" >}}
 [Firestore Pagination](https://cloud.google.com/firestore/docs/query-data/query-cursors) is a tricky requirement when also listening to realtime updates. If the position of data changes midway through a query, you might see results jump around the screen, which may confuse users. Pagination is most well suited for collections where the expected query ordering does not change frequently.
-{{% /box %}}
+{{< /box >}}
 
 {{< figure src="img/firestore-pagination.gif" caption="Demo of Pagination feature in Firestore" >}}
 
@@ -76,9 +76,9 @@ Going back to the previous page requires the the **first** document from current
 
 ### Step 4 - Show a list of pages
 
-{{% box icon="hazard" class="box-red" %}}
+{{< box icon="hazard" class="box-red" >}}
 Showing a list of pages requires us to know the total number of documents in the query. We cannot simply request the count from Firestore without reading the entire collection, which defeats the purpose of pagination. See the serverside pagination section for your options. 
-{{% /box %}}
+{{< /box >}}
 
 ## Serverside Pagination
 

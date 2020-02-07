@@ -36,15 +36,15 @@ The following lesson will show you how to setup Angular Universal with ExpressJS
 1. Install [Google Cloud SDK](https://cloud.google.com/sdk/install)
 1. Install [Firebase Tools](https://github.com/firebase/firebase-tools)
 
-{{% box icon="angular" class="box-blue" %}}
+{{< box icon="angular" class="box-blue" >}}
 **What is Angular Universal?**
 
 Angular is a client-side framework designed to run apps in the browser. Universal is a tool that can run your Angular app on the server, allowing fully rendered HTML to be served on any route. After the initial page load, Angular will take over and use the router for all other route changes. This primary use cases include search engine optimization (SEO), visibility with social linkbots, and performance optimization.
-{{% /box %}}
+{{< /box >}}
 
-{{% box icon="fire" class="box-orange" %}}
+{{< box icon="fire" class="box-orange" >}}
 I highly recommend using [NVM](/snippets/install-nodejs/) with Node `v8.14.0` in your local environment. This is the version running on AppEngine and Cloud Functions and you might get unexpected errors on other verions.
-{{% /box %}}
+{{< /box >}}
 
 ## Step 1: Setup Universal in Angular
 

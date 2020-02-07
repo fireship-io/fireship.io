@@ -25,9 +25,9 @@ github: https://github.com/fireship-io/185-advanced-flutter-firestore
 
 The following article discusses patterns that I have found exceptionally useful when implementing Firebase User Authentication and Firestore in Flutter. In particular, the [Provider](https://pub.dev/packages/provider) provides an excellent solution for sharing and managing streams with minimal boilerplate. However, to take full advantage of this package you must deserialize your raw data to a Dart class. 
 
-{{% box icon="scroll" class="box-green" %}}
+{{< box icon="scroll" class="box-green" >}}
 If you are building a major project with Flutter & Firebase, consider enrolling in the [Full Flutter Firebase Course](/courses/flutter-firebase/).
-{{% /box %}}
+{{< /box >}}
 
 ## Basic Firestore Read
 

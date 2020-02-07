@@ -33,9 +33,9 @@ Common use-cases for transactional email include:
 - Send email email on a specific time interval i.e. weekly account summary. 
 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This post first appeared as [Episode 71 SendGrid V3 on AngularFirebase.com](https://angularfirebase.com/lessons/sendgrid-v3-nodejs-transactional-email-cloud-function/) and has been fully updated with the latest best practices. 
-{{% /box %}}
+{{< /box >}}
 
 
 ## Frontend Integrations
@@ -43,11 +43,11 @@ This post first appeared as [Episode 71 SendGrid V3 on AngularFirebase.com](http
 This lesson is integrated with multiple frontend frameworks. Choose your favorite flavor 🍧. 
 
 <nav>
-    {{% mvp-chapter name="angular" link="/snippets/sendgrid-angular" %}}
-    {{% mvp-chapter name="react" link="/snippets/sendgrid-react" %}}
-    {{% mvp-chapter name="vue" link="/snippets/sendgrid-vue" %}}
-    {{% mvp-chapter name="svelte" link="/snippets/sendgrid-svelte" %}}
-    {{% mvp-chapter name="flutter" link="/snippets/sendgrid-flutter" %}}
+    {{< mvp-chapter name="angular" link="/snippets/sendgrid-angular" >}}
+    {{< mvp-chapter name="react" link="/snippets/sendgrid-react" >}}
+    {{< mvp-chapter name="vue" link="/snippets/sendgrid-vue" >}}
+    {{< mvp-chapter name="svelte" link="/snippets/sendgrid-svelte" >}}
+    {{< mvp-chapter name="flutter" link="/snippets/sendgrid-flutter" >}}
 </nav>
 
 ## Initial Setup
@@ -275,9 +275,9 @@ firebase deploy --only functions
 You now have all the backend infrastructure in place for transactional email. The next step is to learn how to use these functions from your frontend app.  
 
 <nav>
-    {{% mvp-chapter name="angular" link="/snippets/sendgrid-angular" %}}
-    {{% mvp-chapter name="react" link="/snippets/sendgrid-react" %}}
-    {{% mvp-chapter name="vue" link="/snippets/sendgrid-vue" %}}
-    {{% mvp-chapter name="svelte" link="/snippets/sendgrid-svelte" %}}
-    {{% mvp-chapter name="flutter" link="/snippets/sendgrid-flutter" %}}
+    {{< mvp-chapter name="angular" link="/snippets/sendgrid-angular" >}}
+    {{< mvp-chapter name="react" link="/snippets/sendgrid-react" >}}
+    {{< mvp-chapter name="vue" link="/snippets/sendgrid-vue" >}}
+    {{< mvp-chapter name="svelte" link="/snippets/sendgrid-svelte" >}}
+    {{< mvp-chapter name="flutter" link="/snippets/sendgrid-flutter" >}}
 </nav>

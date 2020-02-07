@@ -68,4 +68,4 @@ It is worth mentioning that frameworks like React, Angular, Svelte, etc will tak
 This course uses StackBlitz to run JS code examples in an isolated sandbox in the browser. This is a great option for sharing quick demos and issue reproductions 💡. 
 
 
-{{% stackblitz "https://stackblitz.com/edit/js-survival-hello-world?embed=1&file=index.js" %}}
+{{< stackblitz "https://stackblitz.com/edit/js-survival-hello-world?embed=1&file=index.js" >}}

@@ -287,8 +287,8 @@ class _UploaderState extends State<Uploader> {
 
 ### Bonus Video
 
-{{% box icon="scroll" %}}
+{{< box icon="scroll" >}}
 In certain cases, you may want to convert an image to multiple formats after uploading. Watch the video below for a fill demo of this feature with Firebase Cloud Functions. 
-{{% /box %}}
+{{< /box >}}
 
 {{< youtube OKW8x8-qYs0 >}}

@@ -24,9 +24,9 @@ youtube: 25ArxpK48tU
 
 [Slack Apps](https://api.slack.com/start/overview), or Bots, allow you to extend slack with interactive features that can improve your teams productivity. The following lesson is a step-by-step guide to building a Slack App using Firebase [Cloud Functions](/tag/cloud-functions) as the backend server. 
 
-{{% box icon="slack" class="" %}}
+{{< box icon="slack" class="" >}}
 This lesson builds Slack App for the actual [Fireship Slack](https://fireship.page.link/slack). Join to see the CyberJeff bot in action. 
-{{% /box %}}
+{{< /box >}}
 
 Our Slack App will perform the following tasks. 
 
@@ -133,9 +133,9 @@ When receiving events from Slack, you should validate the **signing secret**, wh
 firebase functions:config:set slack.signing_secret=YOUR-TOKEN
 {{< /highlight >}}
 
-{{% box icon="lightbulb" class="" %}}
+{{< box icon="lightbulb" class="" >}}
 Read this the [Slack Signing Secret Validation](/snippets/verify-slack-api-signing-signature-node) snippet for further details.
-{{% /box %}}
+{{< /box >}}
 
 ### Add Scopes (Permissions) 
 

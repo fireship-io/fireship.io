@@ -26,9 +26,9 @@ github: https://github.com/fireship-io/193-paypal-checkout-v2-demos
 
 In February 2019, the PayPal Checkout API received a much needed [facelift](https://medium.com/paypal-engineering/launch-v2-paypal-checkout-apis-45435398b987) that brought massive improvements to the developer experience. The new [v2 API](https://developer.paypal.com/docs/api/overview/) has detailed documentation on par with [Stripe](/tags/stripe) and offers one of the smoothest paths to start accepting payments and/or subscriptions in a progressive web app. The following lesson will show you how to start accepting payments entirely from your frontend JavaScript code with PayPal Checkout with your choice of Angular, React, and Vue. 
 
-{{% box icon="money" class="box-green" %}}
+{{< box icon="money" class="box-green" >}}
 If you're looking to implement a fullstack payment solution, check out the [Stripe Payments Master Course](/courses/stripe). Ironically, you can pay for it with PayPal if you prefer 🤷. Both PayPal and Stripe share similar APIs, so concepts from the course overlap both APIs.  
-{{% /box %}}
+{{< /box >}}
 
 ## Live Demo
 

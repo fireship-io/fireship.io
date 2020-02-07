@@ -215,9 +215,9 @@ Topic-based notifications can be subscribed to in the background, or the user ca
     ),
 {{< /highlight >}}
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 You may also want to save the user's manual topic subscriptions in the database because they cannot be retrieved directly through the SDK. 
-{{% /box %}}
+{{< /box >}}
 
 ### Individual Device Notifications
 

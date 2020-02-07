@@ -17,9 +17,9 @@ The purpose of this snippet to list common [Firestore security rules](https://fi
 
 Let's start with some common use cases needed by almost every app.
 
-{{% box icon="fire" class="box-orange" %}}
+{{< box icon="fire" class="box-orange" >}}
 At runtime, Firebase rules look for the first valid `allow == true` rule and NOT vice-versa. This is very important to keep in mind, as you might think you secured a path, only for it to be allowed somewhere else. Always start with secure rules, then carefully allow access where needed.
-{{% /box %}}
+{{< /box >}}
 
 ### Locked Mode
 

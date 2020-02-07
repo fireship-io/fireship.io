@@ -25,9 +25,9 @@ versions:
 
 ## Step 0. Prerequisites
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 This lesson only covers the frontend code. Building a custom pament solution also requires backend code, which is covered in the [Stripe Payments Master Course](/courses/stripe-payments/) using callable Firebase Cloud Functions. 
-{{% /box %}}
+{{< /box >}}
 
 
 1. {{< prereq "install-angularfire" >}}

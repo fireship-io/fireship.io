@@ -39,7 +39,7 @@ cd functions
 
 
 
-{{% box icon="hazard" class="box-red" %}}
+{{< box icon="hazard" class="box-red" >}}
 ### Common Issue on Windows
 Incorrect environment path on windows https://github.com/firebase/firebase-tools/issues/610
-{{% /box %}}
+{{< /box >}}

@@ -28,9 +28,9 @@ youtube: aUjBvuUdkhg
 - [Vanilla Lazy Load](https://www.npmjs.com/package/vanilla-lazyload) - Lazy loaded images. 
 - Fireship.io - We use it to lazily load the comments at the bottom of the page. 
 
-{{% box icon="hazard" class="box-red" %}}
+{{< box icon="hazard" class="box-red" >}}
 Do not try to perform long-running or cpu intensive task in the observer's event handler. It runs on the main thread and may block other important tasks in the event loop. 
-{{% /box %}}
+{{< /box >}}
 
 ## Lazy Loaded Images 
 

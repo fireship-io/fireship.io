@@ -28,9 +28,9 @@ Firebase [announced Performance Monitoring](https://firebase.googleblog.com/2019
 
 The following demo uses Angular, but the principles apply to any frontend JavaScript web app - checkout the [official guide](https://firebase.google.com/docs/perf-mon/get-started-web) for setup instructions in non-Angular projects. By simplying including the performance package in your app you will receive metrics related to page load and HTTP performance. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 Keep in mind, you can use Firebase Performance as a standalone service without any other Firebase dependencies. In this case, you would want to load the lightweight script via the CDN as described in docs.  
-{{% /box %}}
+{{< /box >}}
 
 At the time of this article, performance in [AngularFire](https://github.com/angular/angularfire2) is available under the *next* tag.  
 
@@ -84,11 +84,11 @@ Just sit back and relax. Firebase will automatically collect the same page load 
 
 A common use-case for a custom trace is your user authentication flow. Failing to get a user logged in or signed up quickly is a good recipe to bounce them forever. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 #### What is the difference between an Attribute and a Metric?
 
 An attribute is a string value segments data on the Firebase console. A metric is a numeric value that can be charted and might change over the lifecycle of the trace - in other words, a metric is a value that you want to measure over time.
-{{% /box %}}
+{{< /box >}}
 
 
 

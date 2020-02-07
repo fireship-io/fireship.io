@@ -32,9 +32,9 @@ There are five ways to use decorators and we will look at examples of each one.
 - parameter
 - accessor 
 
-{{% box icon="fire" class="box-orange" %}}
+{{< box icon="fire" class="box-orange" >}}
 Decorators are very good at creating abstractions - almost too good. While it is tempting to create a decorator for all of the things, they are best suited for stable logic that needs to be duplicated in many places. 
-{{% /box %}}
+{{< /box >}}
 
 
 ## Class Decorator
@@ -65,9 +65,9 @@ class FroYo extends IceCream {} // error, cannont be extended
 
 ## Property Decorator
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 All of the examples in this guide use *Decorator Factories*. This just means the decorator itself is wrapped in a function so we can pass custom arguments to it, i.e `@Cool('stuff')` Feel free to omit the outer function if you want to apply a decorator without arguments `@Cool` . 
-{{% /box %}}
+{{< /box >}}
 
 Property decorators can be extremly useful because they can listen to state changes on a class. To fully understand the next example, it helps to be familar with JavaScript [PropertyDescriptors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). 
 

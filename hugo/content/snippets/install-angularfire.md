@@ -21,9 +21,9 @@ From your Firebase project click the gear icon next to "Project Overview" to bri
 
 {{< figure src="/img/snippets/firebase-web-config.png" alt="firebase web config location" >}}
 
-{{% box icon="shield" class="box-blue" %}}
+{{< box icon="shield" class="box-blue" >}}
 It is perfectly OK to expose these credentials in your client-side code. Yes, somebody could use these credentials to write to your database, but Firebase apps are secured by writing [rules](/snippets/firestore-rules-recipes/).
-{{% /box %}}
+{{< /box >}}
 
 
 ### 2. Install @angular/fire via NPM

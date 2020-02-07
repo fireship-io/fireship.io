@@ -93,9 +93,9 @@ dependencies:
 
 Let's start by creating a StatefulWidget with an abstract representation of the data we'll need to manage for In App Purchases. This widget handles the entire IAP flow, including the retrieval of products/purchases and the facilitation of new purchases.
 
-{{% box icon="scroll" %}}
+{{< box icon="scroll" >}}
 The code notes below marked `TODO` are recommendations that you should implement based on your backend setup. For example, you may want to save the the state of a consumable purchase in a database.
-{{% /box %}}
+{{< /box >}}
 
 
 {{< file "dart" "purchase.dart" >}}

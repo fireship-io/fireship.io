@@ -30,9 +30,9 @@ These animations are complex. Hypothetically, they could be created in Flutter n
 
 ## Part 1: Create Animated Icons with Flare 2D
 
-{{% box icon="scroll" class="box-green" %}}
+{{< box icon="scroll" class="box-green" >}}
 Access the files used in this lesson on my [Flare profile](https://www.2dimensions.com/a/delaneyphx/files/recent/all) or from the project github repo. 
-{{% /box %}}
+{{< /box >}}
 
 First, we need to create some awesome animated graphics with Flare. Create a free account, then complete the tasks below. These tasks represent the skills you need to have in Flare to re-create Giphy's animated icons. 
 
@@ -250,9 +250,9 @@ In this final section, we define a method that will turn the Flare animations in
 
 The *FlareActor* is a widget from the flare_flutter package that that will run the specified animation when the state changes. 
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 Remember, we defined the animation name as *go* in the Flare editor before exporting the file. By default, the animation name is *Untitled*. 
-{{% /box %}}
+{{< /box >}}
 
 {{< file "dart" "main.dart" >}}
 {{< highlight dart >}}

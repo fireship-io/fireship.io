@@ -22,11 +22,11 @@ tags:
 
 Angular Universal is a powerful tool that allows us to render our applications on the server, but it contains many pitfalls because NodeJS does not have the same APIs as the DOM. The snippet contains a collection of recipes to for common SSR use cases. 
 
-{{% box icon="angular" class="box-orange" %}}
+{{< box icon="angular" class="box-orange" >}}
 ### Work in Progress
 
 This snippet is a work in progress. If you have a useful addition feel free to add it below by making a [pull request on Github](/snippets/git-how-to-participate-on-github). 
-{{% /box %}}
+{{< /box >}}
 
 ## Platform Checking
 

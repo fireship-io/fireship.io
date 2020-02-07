@@ -167,9 +167,9 @@ Hopefully your build suceeds, but errors are very common when setting up CI/CD f
 
 ## Advanced: Secure your Environment Secrets
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 The env encryption steps are optional for Firebase because you can grant access via IAM. However, this is still a good pattern to follow if you need to authorize other 3rd party APIs. For example, you might want to update your Algolia Search index before deployment, which would require a sensitive API key. 
-{{% /box %}}
+{{< /box >}}
 
 There are serveral ways to manage environment variables for your CI builds, but I find the method outlined below to be the most flexible and it can easily scale to a large number of secret tokens. 
 
@@ -197,9 +197,9 @@ Let's add a custom NPM script for deployment using this token as an environment 
 
 ### Create an .env file
  
-{{% box icon="hazard" class="box-red" %}}
+{{< box icon="hazard" class="box-red" >}}
 Do not share the contents of the `.env` file publically and do not commit it to your public source code. It could be used to take destructive action on your project. 
-{{% /box %}}
+{{< /box >}}
 
 Create a file named `.env` in the root of your project. It will used to manage the secret tokens (or API keys) required to build/deploy your code. Currently this is only Firebase, but it is likely you will use other APIs and will organize complexity down the road. 
 

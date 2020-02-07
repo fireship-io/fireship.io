@@ -30,9 +30,9 @@ So you're a web developer working with JavaScript and curious about [Flutter](ht
 Source: [FlutterDev subreddit](https://www.reddit.com/r/FlutterDev/comments/92d995/what_do_you_like_or_not_like_about_the_dart/)
 
 
-{{% box icon="scroll" class="" %}}
+{{< box icon="scroll" class="" >}}
 Throughout this lesson, you will see the 👉 emoji. Dart will always be on the left, and JS on the right. These are not always perfect 1-to-1 comparisons, but you get the idea. 
-{{% /box %}}
+{{< /box >}}
 
 ## The Tradeoffs
 
@@ -57,9 +57,9 @@ Throughout this lesson, you will see the 👉 emoji. Dart will always be on the 
 
 Dart is a strongly-typed compiled language, while JS is a weakly-typed scripting language. Despite being polar opposites in these ways, they share many of the same convetions, so most JS devs will be productive on day one. 
 
-{{% box icon="dart" class="box-green" %}}
+{{< box icon="dart" class="box-green" >}}
 Want to write some Dart code right now? Head over to the [DartPad](https://dartpad.dartlang.org/) playground.
-{{% /box %}}
+{{< /box >}}
 
 ### Variables
 
@@ -274,9 +274,9 @@ class Component {
 }
 {{< /highlight >}}
 
-{{% box icon="scroll" class="box-blue" %}}
+{{< box icon="scroll" class="box-blue" >}}
 Starting any variable or property with `_` in Dart will make it private to its library or class. 
-{{% /box %}}
+{{< /box >}}
 
 {{< file "dart" "main.dart" >}} {{< highlight dart >}}
 main() {
