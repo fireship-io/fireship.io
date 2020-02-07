@@ -53,7 +53,7 @@ Before Slack can send events to our Cloud Function, it needs to verify that we o
 Initialize Cloud Functions. This demo uses the TypeScript flavor. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init functions
 {{< /highlight >}}
 
@@ -78,7 +78,7 @@ export const myBot = functions.https.onRequest( (req, res) => {
 Deploy it
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy --only functions:myBot
 {{< /highlight >}}
 
@@ -99,7 +99,7 @@ Now it's time to do some real work.
 The [Slack Node SDK](https://github.com/slackapi/node-slack-sdk) is a monorepo that contains several packages. The Web API can read and modify data in the workspace. Google PubSub will be used to handle long running background tasks in te following steps. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install @slack/web-api
 npm install @google-cloud/pubsub
 {{< /highlight >}}
@@ -119,7 +119,7 @@ Once installed, it will take you directly to the **OAuth token**. It usually sta
 Copy the OAuth Token and save it as a Firebase Functions [environment](https://firebase.google.com/docs/functions/config-env) variable. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase functions:config:set slack.token=YOUR-TOKEN
 {{< /highlight >}}
 
@@ -129,7 +129,7 @@ firebase functions:config:set slack.token=YOUR-TOKEN
 When receiving events from Slack, you should validate the **signing secret**, which can be found in Basic Info panel. This ensures that only requests from Slack can interact with your function by decoding the [digital signature](https://en.wikipedia.org/wiki/Digital_signature) of the request. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase functions:config:set slack.signing_secret=YOUR-TOKEN
 {{< /highlight >}}
 

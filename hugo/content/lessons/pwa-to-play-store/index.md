@@ -87,7 +87,7 @@ If you have an existing app, it should produce results similar to those below wh
 There are serveral modifcations that need to be made to the Android app to support a TWA, all of which are [well documented here](https://developers.google.com/web/updates/2019/02/using-twa#establish_an_association_from_the_website_to_the_app). However, an easier apporach is to just clone the repo for this lesson
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git clone https://github.com/fireship-io/169-pwa-trusted-web-activity.git twa
 cd twa
 {{< /highlight >}}
@@ -124,7 +124,7 @@ First, open Android Studio and create a keystore by navigating to *Build → Gen
 Then run the following command to extract the SHA256 fingerprint from the keystore you just created. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 keytool -list -v -keystore ~/my-keystore.ks -alias twa -storepass your-password  -keypass your-password
 
 
@@ -153,7 +153,7 @@ The correct location of this file is completly dependent on the build process of
 {{< figure src="img/well-known-asset.png" alt="Well know asset deployed to firebase hosting" >}}
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy --only hosting
 {{< /highlight >}}
 

@@ -43,14 +43,14 @@ Now we need to interact with the VM from the command line. Go to the instance de
 Find the [latest release of Code Server](https://github.com/codercom/code-server/releases/latest), then download and unzip the release into the VM's file system with the following commands: 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 wget https://github.com/codercom/code-server/releases/download/{version}/code-server-{version}-linux-x64.tar.gz
 tar -xvzf code-server-{version}-linux-x64.tar.gz
 {{< /highlight >}}
 
 Execute the binary to start serving VS Code on port 80.
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd code-server-{version}-linux-x64
 sudo ./code-server -p 80
 {{< /highlight >}}
@@ -84,7 +84,7 @@ After you have VSCode up and running in the cloud, you will likely want to confi
 Follow these instructions to [install NodeJS](http://localhost:1313/snippets/install-nodejs/). This will give you access to the `nvm` command for version management and the `npm` command for package management. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 nvm install 10
 
 npm install @angular/cli -g
@@ -96,7 +96,7 @@ npm install @angular/cli -g
 By default, GCP only exposes port 80 to inbound TCP traffic. That means if you try to run `ng serve` for Angular, which serves the app on port 4200 for example, it will not be accessible. Generally, I like to serve traffic on port 8080, and we can allow this by setting up a firewall rule like so. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 
 ng new my-app
 cd my-app

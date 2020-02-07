@@ -17,7 +17,7 @@ emoji: 📧
 ### Step 1 - Initial Setup
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component user/email-login
 {{< /highlight >}}
 

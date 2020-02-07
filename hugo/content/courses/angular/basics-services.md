@@ -13,7 +13,7 @@ free: true
 ## Generate a Service
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g service clock
 {{< /highlight >}}
 

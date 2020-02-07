@@ -38,7 +38,7 @@ After you find a repo that looks cool, the first step is to fork it. A fork will
 Now let's download the code to your local machine by cloning the fork. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git clone <your-fork-url.git>
 {{< /highlight >}}
 
@@ -49,7 +49,7 @@ You should now have a directory for your project that can be opened with your [p
 A git repo is just a big tree 🌳. You might have hundreds of people working on the same project and branches ensure that collaboration can happen without complete chaos. Changes on your branch are isolated from the work everybody else is doing.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git checkout -b my-cool-thing
 {{< /highlight >}}
 
@@ -60,7 +60,7 @@ At this point you can start making changes to the code.
 When you are happy with the changes, you can stage the changes and commit the code. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git add .
 git commit -m "🚀 I made this software better!"
 {{< /highlight >}}
@@ -73,7 +73,7 @@ A "pull request" is identical to a "git merge", but it is requested from an exte
 Let's push your branch to your fork.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git push origin my-cool-thing
 {{< /highlight >}}
 

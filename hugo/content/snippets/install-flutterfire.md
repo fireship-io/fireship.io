@@ -26,7 +26,7 @@ Refer to the [official FlutterFire setup instructions](https://firebase.google.c
 Create your app and open it in your IDE (VS Code).
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 flutter create my_app
 code my_app
 {{< /highlight >}}
@@ -67,7 +67,7 @@ Next, generate an SHA1 certificate to allow Firebase to provision an OAuth2 clie
 Mac/Linux users can use the command below. Windows users refer the the [official instructions](https://developers.google.com/android/guides/client-auth). 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 keytool -exportcert -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore
 
 # password: android

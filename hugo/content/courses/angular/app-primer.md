@@ -16,6 +16,6 @@ Recommended: Clone the [source code](https://github.com/codediodeio/angular-fire
 Start a new project and make sure to use routing and *scss* for styles. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng new firestarter
 {{< /highlight >}}

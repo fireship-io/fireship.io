@@ -42,7 +42,7 @@ This lesson is integrated with multiple frontend frameworks. Choose your favorit
 Let's start by initializing Firebase Cloud Functions with JavaScript. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init functions
 cd functions
 
@@ -77,7 +77,7 @@ Link previews are made possible by scraping the meta tags from `<head>` of an HT
 - **get-urls** is a utility for extracting URLs from text. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm i cheerio node-fetch get-urls cors
 {{< /highlight >}}

@@ -13,6 +13,6 @@ Schematics provide sophisticated code blueprints using the Angular CLI, with man
 For example, you could replace the component command from the last video with: 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng generate @angular/material:nav shared/shell
 {{< /highlight >}}

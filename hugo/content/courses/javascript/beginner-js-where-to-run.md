@@ -27,7 +27,7 @@ Running a JS program from the command line is handled by NodeJS. Start by instal
 Now simply open the command line in the same directory as the `index.js` script you created (VS Code will do this automatically with the integrated terminal). 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 node .
 
 // or 

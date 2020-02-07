@@ -51,7 +51,7 @@ I highly recommend using [NVM](/snippets/install-nodejs/) with Node `v8.14.0` in
 ### NG Add Universal
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng add @nguniversal/express-engine --clientProject myapp
 {{< /highlight >}}
 
@@ -71,7 +71,7 @@ Then ExpressJS is the actual server that will handle requests/responses and is d
 Our angular app needs a router-loaded component that generates its own metatags. The following example will hard code the meta tags, but you can also build them dynamically by reading data from your database.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component about -m app
 {{< /highlight >}}
 
@@ -135,7 +135,7 @@ export class AboutComponent implements OnInit {
 Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compiple the TypeScript code and run the Express server on *localhost:4000*.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm run build:ssr
 npm run serve:ssr
 {{< /highlight >}}
@@ -150,7 +150,7 @@ At this point, you should see an error that looks like this because our server i
 Firebase uses Websockets and XHR not included in Angular that we need to polyfill.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install ws xhr2 bufferutil utf-8-validate  -D
 {{< /highlight >}}
 
@@ -185,7 +185,7 @@ runtime: nodejs8
 With Google Cloud SDK installed on your system, simply run the deploy command.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 gcloud app deploy
 {{< /highlight >}}
 
@@ -212,7 +212,7 @@ If all went according to plan, you should now see your app on the AppEngine dash
 An alternative to AppEngine is to rewrite your Firebase Hosting rules to a [Firebase Cloud Function](https://firebase.google.com/docs/functions/).
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init
 
 # select hosting, functions
@@ -281,7 +281,7 @@ Make sure to rebuild the Angular app with `npm run build:ssr`.
 The cloud function needs access to your Angular build in order to render it on the server. Let's write a simple node script that copies the most recent Angular app to the functions dir on build.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm i fs-extra
 {{< /highlight >}}
@@ -331,7 +331,7 @@ export const ssr = functions.https.onRequest(universal);
 You can test it by serving both the hosting and function simultaneously - the moment of truth...
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm run build
 firebase serve
@@ -342,7 +342,7 @@ You should now be able to visit your server rendered site on **localhost:5000**.
 If it looks good, deploy the app with a single command:
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy
 {{< /highlight >}}
 

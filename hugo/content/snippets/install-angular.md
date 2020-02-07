@@ -14,7 +14,7 @@ Angular requires [Node version 8.x or 10.x installed](/snippets/install-nodejs/)
 ## Quick Installation Steps
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install -g @angular/cli
 
 # create an app

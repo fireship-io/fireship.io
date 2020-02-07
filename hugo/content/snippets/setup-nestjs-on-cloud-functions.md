@@ -34,7 +34,7 @@ The first setup modifies the functions configuration to use the Nest `/dist` out
 ### Step 1 - Create Nest App
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 nest generate app server
 {{< /highlight >}}
 
@@ -68,7 +68,7 @@ Now update the firebase config to point to the nest app.
 ### Step 3 - Install Dependencies
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd server
 npm i firebase-functions firebase-admin express @nestjs/platform-express
 {{< /highlight >}}
@@ -140,7 +140,7 @@ In this setup, we perform a fresh install of Nest in the Functions source code. 
 Initialize Cloud Functions making sure to choose the TypeScript option. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -g firebase-tools
 firebase init functions
 {{< /highlight >}}
@@ -150,7 +150,7 @@ firebase init functions
 Install Nest. If you have an existing project, also copy over the other dependencies from your Package.json. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm i --save @nestjs/core @nestjs/common rxjs reflect-metadata express @nestjs/platform-express
 {{< /highlight >}}
@@ -203,7 +203,7 @@ Nest uses TypeScript features that are not enabled in Cloud Functions by default
 ### Step 5 - Generate an App Module
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 nest generate module app --flat
 
 nest generate controller egg
@@ -247,7 +247,7 @@ export const api = functions.https.onRequest(server);
 ### Step 7 - Build, Serve, Deploy
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm run serve
 

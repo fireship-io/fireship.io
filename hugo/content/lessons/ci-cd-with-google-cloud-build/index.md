@@ -61,7 +61,7 @@ firebase init
 All of these frameworks ship with basic automated specs and build commands. This is what we want to automate with Cloud Build.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm run test
 npm run build
 firebase deploy
@@ -73,7 +73,7 @@ At this point, we need to connect your code to a remote git repo. This lesson wi
 
 Create a [Github repo](https://help.github.com/articles/create-a-repo/) (can be public or private), then commit your initial code to it.
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 git add .
 git commit -m "initial commit"
 
@@ -153,7 +153,7 @@ Almost done! We just need to connect our Github repo to Cloud Build by registeri
 
 Now for the moment of truth...
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 git add .
 git commit -m "feat: added CI/CD pipeline"
 git push origin master
@@ -178,7 +178,7 @@ There are serveral ways to manage environment variables for your CI builds, but 
 
 The command below will create an auth token that can authenticate a server into Firebase.
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase login:ci
 {{< /highlight >}}
 
@@ -207,14 +207,14 @@ Lastly, let's make sure to add this file to the `.gitignore`
 
 
 {{< file "git" ".gitignore" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 .env
 {{< /highlight >}}
 
 Now copy and paste the token from the previous step to the environment.
 
 {{< file "file" ".env" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 FIREBASE_TOKEN=<your-token>
 {{< /highlight >}}
 
@@ -236,7 +236,7 @@ Next, create a key for your secrets - let's give it a name of **cloudbuild-env**
 Run the command below to encrypt the environment secrets into a single file named `env.enc` - this file is safe to commit to the repo and can only be read by services with access to the keyring. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 gcloud kms encrypt \
   --plaintext-file=.env \
   --ciphertext-file=.env.enc \
@@ -274,7 +274,7 @@ steps:
 
 Sometimes you just want to build with making a git commit. You can do this at any time from the command line: 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 gcloud builds submit . --config=cloudbuild.yaml
 {{< /highlight >}}
 

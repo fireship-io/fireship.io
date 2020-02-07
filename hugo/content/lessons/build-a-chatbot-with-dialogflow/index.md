@@ -88,7 +88,7 @@ Dialogflow requires your full [service account](https://firebase.google.com/docs
 This first function is a generic endpoint that allows a frontend app to connect to the [Dialogflow API](https://github.com/googleapis/nodejs-dialogflow). The function expects the client to pass a `sessionId`, which is just a string that allows the bot to understand the current context of a conversation. It also expects the users `queryInput` text, which is what the user is saying to the bot. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm i dialogflow cors
 {{< /highlight >}}
@@ -133,7 +133,7 @@ exports.dialogflowGateway = functions.https.onRequest((request, response) => {
 The benefit of a webhook is that you can perform additional backend logic, like updating a database or reaching out to a another API, then format the response to the user dynamically. In this example, we take the *name* and *color* parameters from the user's conversation and update their account in Firestore. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i dialogflow-fulfillment actions-on-google
 {{< /highlight >}}
 
@@ -177,7 +177,7 @@ In this section, we build a user-friendly chat UI to interact with the bot. We c
 Install [Nebular](https://akveo.github.io/nebular/docs/components/chat-ui/overview#nbchatcomponent) and import Angular's HTTP Client in your app. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng new my-app --routing
 cd my-app
 

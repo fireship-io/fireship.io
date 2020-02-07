@@ -15,7 +15,7 @@ Use the Angular [CDK Drag and Drop](https://material.angular.io/cdk/drag-drop/ov
 ### Step 1 - Initial Setup
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g c kanban/board-list
 ng g c kanban/board
 {{< /highlight >}}

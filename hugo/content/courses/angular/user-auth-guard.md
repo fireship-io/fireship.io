@@ -15,7 +15,7 @@ Use a router guard to protect routes from unauthorized users and show a snackbar
 ### Step 1 - Generate the Guard
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g guard user/auth
 {{< /highlight >}}
 
@@ -56,7 +56,7 @@ export class AuthGuard implements CanActivate {
 Generate a global service that can be used to show snack bar message from any component. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g service services/snack
 {{< /highlight >}}
 

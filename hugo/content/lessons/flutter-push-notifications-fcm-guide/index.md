@@ -263,7 +263,7 @@ You can send messages with any of the Firebase Admin SDKs, but NodeJS with TypeS
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init functions
 
 cd functions

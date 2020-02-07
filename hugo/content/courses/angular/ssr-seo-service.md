@@ -15,7 +15,7 @@ Create a customers module that uses dynamic routing and generates SEO metatags b
 ### Generate Resources
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g module customers --routing
 
 ng g c customers/detail-page

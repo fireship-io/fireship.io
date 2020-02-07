@@ -57,7 +57,7 @@ In the database, we keep track of a user's presence under a the **status/{uid}/*
 In Angular, let's start by generating a service to handle the business logic for presence detection. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g service presence
 {{< /highlight >}}
 
@@ -192,7 +192,7 @@ Keep in mind, we are touching the DOM directly here, so this code will not work 
 
 At this point, we have all the business logic in place for realtime presence. Let's create a component that will consume the data from the RealtimeDB. 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component user-status
 {{< /highlight >}}
 

@@ -122,7 +122,7 @@ Generate a token for firebase ci:
 - `firebase login:ci` returns a token to be used in a CI server
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 Waiting for authentication...
 
 ✔ Success! Use this token to login on a CI server:

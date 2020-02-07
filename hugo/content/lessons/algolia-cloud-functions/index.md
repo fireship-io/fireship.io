@@ -48,7 +48,7 @@ This lesson is integrated with multiple frontend frameworks. After deploying the
 First, initialize Cloud Functions in your project with the Firebase Tools CLI. This lesson uses vanilla JS, but feel free to select TypeScript if you prefer. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -g firebase-tools
 firebase init functions
 {{< /highlight >}}
@@ -57,7 +57,7 @@ firebase init functions
 
 Indexing tasks can be handled in Node with the [Algolia JS SDK](https://www.algolia.com/doc/api-client/getting-started/install/javascript/?language=javascript) package. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm install algoliasearch
 {{< /highlight >}}
@@ -77,7 +77,7 @@ You can find your credentials under the *API Keys* tab. Your backend code requir
 Now set the API key and template ID in the Firebase project with the following command. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase functions:config:set algolia.app=YOUR_APP_ID algolia.key=ADMIN_API_KEY
 {{< /highlight >}}
 
@@ -155,7 +155,7 @@ exports.deleteFromIndex = functions.firestore.document('customers/{customerId}')
 Deploy your functions and test them from the Firebase console, or follow the seeding instructions in the next section. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy --only functions
 {{< /highlight >}}
 
@@ -186,7 +186,7 @@ Array(20).fill(0).forEach(fakeIt);
 Run the script from the command line like so:
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 node seed.js
 {{< /highlight >}}

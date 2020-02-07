@@ -27,7 +27,7 @@ Note. This is now the default way to generate lazy routes in Angular, Ivy does n
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng new myLazyApp --routing
 {{< /highlight >}}
 
@@ -45,7 +45,7 @@ Now add a link that you can click.
 You lazy-load code in Angular by organizing it into modules. A common practice is to lazy-load each routed page in the app. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g module lazy --routing
 
 ng g component lazy/lazy-page
@@ -55,7 +55,7 @@ ng g component lazy/lazy-page
 ## Step 2: Add Routing to the Lazy Module
 
 {{< file "ngts" "lazy-routing.module.ts" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 import { LazyPageComponent } from './lazy-page/lazy-page/lazy-page.component';
 import { RouterModule } from '@angular/router';
 

@@ -10,7 +10,7 @@ free: true
 ---
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng generate module cool
 {{< /highlight >}}
 

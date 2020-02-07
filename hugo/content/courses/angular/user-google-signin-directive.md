@@ -14,7 +14,7 @@ emoji: 👤
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g directive user/google-signin
 {{< /highlight >}}
 

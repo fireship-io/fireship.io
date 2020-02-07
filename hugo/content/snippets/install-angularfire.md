@@ -31,7 +31,7 @@ It is perfectly OK to expose these credentials in your client-side code. Yes, so
 Install `@angular/fire` and `firebase` as dependencies in your Angular Project. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install firebase @angular/fire
 {{< /highlight >}}
 

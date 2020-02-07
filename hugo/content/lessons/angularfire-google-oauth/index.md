@@ -65,7 +65,7 @@ At this point, it is assumed you have an existing Angular app `{{< version "@ang
 Let's install `{{< version "firebase">}}`  and `{{< version "@angular/fire">}}` and refer to the [official documentation](https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md) as needed. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng new awesomeApp --routing
 cd awesomeApp
 
@@ -105,7 +105,7 @@ For advanced options and pro tips check out the [@angular/fire install guide](/s
 Organizing our user authentication as an injectable service provides code reuse and state management for all components. For instance, any component that needs to know if the user is logged in can simply subscribe to our `user$` Observable. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng generate service auth
 {{< /highlight >}}
 
@@ -239,7 +239,7 @@ You may prefer to modify the **updateUserData** function with [destructuring ass
 Now it's time to put our auth service to use inside of a component that will allow the user to login, logout, and view their profile info. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng generate component user-profile
 {{< /highlight >}}
 
@@ -300,7 +300,7 @@ A useful UX feature is to protect routes based on the user's auth state. Now tha
 When the user navigates, all routes using this guard will subscribe to the `user$`. If it emits true, the route can be accessed. If false, the user is redirected to the login page.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng generate guard auth
 {{< /highlight >}}
 

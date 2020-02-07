@@ -62,7 +62,7 @@ The following steps demonstrate how to deploy a serverside-rendered SSR JavaScri
 Create a [new Nuxt app](https://nuxtjs.org/guide/installation) and make sure to choose *Universal* rendering mode when prompted.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npx create-nuxt-app my-app
 
 cd my-app
@@ -108,13 +108,13 @@ We can send the container directly to Google Cloud Build, but I generally prefer
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 sudo docker build ./
 {{< /highlight >}}
 
 It will take a few minutes to build the image, then give you an `image_id`  that looks like 2cabacd123. Go ahead and run it locally to make sure it works properly.
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 sudo docker run -p 8080:8080 <your-image-id>
 {{< /highlight >}}
 
@@ -122,7 +122,7 @@ sudo docker run -p 8080:8080 <your-image-id>
 Next, upload the image to Google Cloud's [Container Registry](https://cloud.google.com/container-registry/). 
 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 sudo docker tag 7e6fdc4b97db gcr.io/fireship-lessons/nuxt-server
 sudo docker push gcr.io/fireship-lessons/nuxt-server
 {{< /highlight >}}
@@ -148,7 +148,7 @@ As a final touch, let's integrate our microserice with Firebase hosting.
 Initialize Firebase Hosting, select NO for "single page app", then delete the public folder. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init hosting
 rm public
 {{< /highlight >}}
@@ -180,7 +180,7 @@ rm public
 
 Deploy your app to Firebase and you should now see Nuxt running with SSR on Firebase Hosting. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy --only hosting
 {{< /highlight >}}
 

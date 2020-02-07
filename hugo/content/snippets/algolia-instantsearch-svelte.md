@@ -33,7 +33,7 @@ Algolia does not provide official support for [Svelte](https://svelte.dev), but 
 Note. You can also use InstantSearch.js if you want pre-built components.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install algoliasearch
 {{< /highlight >}}
 

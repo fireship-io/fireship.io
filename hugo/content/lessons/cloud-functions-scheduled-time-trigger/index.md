@@ -42,7 +42,7 @@ Make sure you have the latest version of [firebase-tools](https://firebase.googl
 Learn more about [cron schedules](/snippets/crontab-crash-course). 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i firebase-tools@latest -g
 
 firebase init functions

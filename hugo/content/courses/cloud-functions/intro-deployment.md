@@ -11,7 +11,7 @@ emoji: 👶
 ---
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy --only functions
 
 # or 

@@ -29,7 +29,7 @@ Firebase recently announced support for [Analytics](https://firebase.google.com/
 Firebase Analytics was added to the JavaScript SDK in version 7.0.0. If you have an existing app, follow the [official setup guide](https://firebase.google.com/docs/analytics/get-started#before_you_begin). If working with a framework like Angular, React, etc, you will likely need to update your NPM package:
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install firebase@latest
 {{< /highlight >}}
 

@@ -15,7 +15,7 @@ Use Material dialogs to create and update the data associated with boards and ta
 ### Generate the Dialogs
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g c kanban/dialogs/board-dialog --flat --entry-component -s -t
 ng g c kanban/dialogs/task-dialog --flat --entry-component -s -t
 {{< /highlight >}}

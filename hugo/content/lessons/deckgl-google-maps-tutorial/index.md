@@ -46,7 +46,7 @@ First, create a Google Cloud (or Firebase) project and obtain a browser API key 
 Start a new project from an empty directory. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm init -y 
 npm i -D webpack-dev-server webpack webpack-cli
 {{< /highlight >}}
@@ -72,7 +72,7 @@ Now let's add a script to the package.json file to build and serve the app local
 Deck.gl is a monorepo with layers separated into multiple packages. Install them with the following command:
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i @deck.gl/{core,google-maps,layers,aggregation-layers}
 {{< /highlight >}}
 
@@ -121,7 +121,7 @@ window.initMap = () => {
 Run the start command and you should be up and running with hot module replacement on localhost:8080. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm start
 {{< /highlight >}}
 
@@ -138,7 +138,7 @@ Download the raw [gun violence JSON data](https://us-gun-violence.web.app/gundat
 Deck.gl expects and JSON array of objects. The format of the object does not matter, but should at least have properties that represent latitude (y) and longitude (x). Most datasets are in CSV format - here's a useful conversion script for Node.js if you're working with your own custom data.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -D convert-csv-to-json
 {{< /highlight >}}
 
@@ -158,7 +158,7 @@ csvToJson.fieldDelimiter(',')
 
 Run it:
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 node convert.js
 {{< /highlight >}}
 

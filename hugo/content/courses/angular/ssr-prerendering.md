@@ -13,7 +13,7 @@ Create a script that can prerender specific routes using Angular Universal.
 Note, make sure you have enabled Unviersal with the schematic from the previous video or with `ng add @nestjs/ng-universal`. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install --save-dev fs-extra http-server@0.9.0
 {{< /highlight >}}
 

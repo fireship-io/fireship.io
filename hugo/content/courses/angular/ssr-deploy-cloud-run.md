@@ -28,7 +28,7 @@ CMD ["npm", "run", "serve:ssr"]
 ## Register the Container on GCP
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 gcloud config set project <PROJECT_ID>
 gcloud builds submit --tag gcr.io/PROJECT_ID/nest-angular-ssr
 {{< /highlight >}}
@@ -38,7 +38,7 @@ gcloud builds submit --tag gcr.io/PROJECT_ID/nest-angular-ssr
 Connect your Cloud Run service to Firebase hosting. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
  firebase init hosting
  firebase deploy --only hosting
 {{< /highlight >}}

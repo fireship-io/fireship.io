@@ -20,7 +20,7 @@ In this section, we accomplish the following tasks
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init functions
 
 cd functions

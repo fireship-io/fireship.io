@@ -17,7 +17,7 @@ Create a server module using Angular Universal with the NestJS schematic.
 ### Add Universal and Nest
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng add @nestjs/ng-universal
 
 npm run build:ssr

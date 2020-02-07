@@ -29,7 +29,7 @@ The following guide will show you how to update packages in an Angular project a
 You may be able to update your project using the `ng update` command. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -g @angular/cli@latest
 ng update
 {{< /highlight >}}
@@ -43,7 +43,7 @@ You can manually upgrade Angular's most common packges using the commands below.
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -g @angular/cli@next
 
 # depencencies

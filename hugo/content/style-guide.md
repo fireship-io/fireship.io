@@ -31,7 +31,7 @@ I like to give away things you can hold in your hand. Here's what you can expect
 First, fork the main repo on github, then clone it to your local machine. You must have Hugo and Node installed. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git clone <your-forked-repo>
 npm install
 npm run dev
@@ -42,7 +42,7 @@ git checkout -b my-fix
 After making your fix or adding new content, submit a pull request on github. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 git commit -m "fix: corrected a typo"
 git push origin my-fix
 {{< /highlight >}}

@@ -50,14 +50,6 @@ a.item {
   z-index: 99;
   transition: left 0.3s ease;
 
-  .svg-group {
-    .svg-primary {
-      fill: var(--text-color);
-    }
-    .svg-secondary {
-      fill: var(--tag-bg);
-    }
-  }
 
   &.on-top {
     height: var(--nav-width);
@@ -84,10 +76,9 @@ a.item {
     margin-bottom: 10px;
     overflow-x: visible;
 
+
     &:hover {
-      svg {
-        color: var(--orange);
-      }
+
 
       .item-label {
         transform: scale(1) translateX(var(--nav-width));
@@ -294,4 +285,75 @@ menu-toggler {
 
 menu-toggler {
   z-index: 999;
+}
+
+
+/// DUOTONE ICONS
+
+.dark-theme {
+
+  .item {
+
+    .fk-primary {
+      color: var(--gray3);
+    }
+    .fk-secondary {
+      color: var(--gray4);
+    }
+
+
+    &:hover {
+      .fk-primary {
+        color: var(--orange);
+      }
+      .fk-secondary {
+        color: var(--orange-light);
+      }
+    }
+  }
+}
+
+.light-theme {
+
+  .item {
+    
+    .fk-primary {
+      color: var(--gray2);
+    }
+    .fk-secondary {
+      color: var(--gray3);
+    }
+
+    &:hover {
+      transition: color 500ms ease;
+      .fk-primary {
+        color: var(--orange);
+      }
+      .fk-secondary {
+        color: var(--orange-dark);
+      }
+    }
+  }
+}
+
+.topnav .item {
+  &:hover {
+    .fk-primary {
+      color: var(--text-color);
+    }
+    .fk-secondary { 
+      color: var(--h-color)
+    }
+  }
+}
+
+.item {
+  .fk-primary, .fk-secondary {
+    transition: color 500ms ease;
+  }
+  &:hover {
+    .fk-primary, .fk-secondary {
+      transition: color 500ms ease;
+    }
+  }
 }

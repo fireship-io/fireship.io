@@ -12,7 +12,7 @@ chapter_start: Kanban
 Setup another lazy-loaded feature module for the development of Kanban boards. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g module kanban --routing
 ng g component kanban/board-list
 {{< /highlight >}}

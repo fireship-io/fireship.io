@@ -18,7 +18,7 @@ Create a lazy-loaded feature module to handle user sign-in and related tasks.
 Generate a feature module with routing and add a component to it. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g module user --routing
 ng g component user/login-page
 {{< /highlight >}}

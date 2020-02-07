@@ -15,7 +15,7 @@ Create a delete button that confirms the operation before sending the write to t
 ### Step 1 - Generate the Component
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g c shared/delete-button
 {{< /highlight >}}
 

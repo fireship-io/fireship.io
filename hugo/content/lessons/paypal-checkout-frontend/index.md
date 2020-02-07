@@ -65,7 +65,7 @@ PayPal provides testing accounts that you can use to make mock transactions. Cha
 Create a new [Angular](https://angular.io/) project with the CLI. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng new myApp
 {{< /highlight >}}
 
@@ -164,7 +164,7 @@ The react implementation takes advantage of Hooks to manage state and initialize
 
 Create a new [React](https://reactjs.org/) project with create-react-app. 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npx create-react-app my-app
 {{< /highlight >}}
 
@@ -254,7 +254,7 @@ export default App;
 
 Create a new [Vue](https://vuejs.org/) app with the Vue CLI
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 vue create my-app
 {{< /highlight >}}
 

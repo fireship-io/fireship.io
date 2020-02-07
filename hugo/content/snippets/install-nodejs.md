@@ -21,7 +21,7 @@ It is likely that you already have [NodeJS](https://nodejs.org/en/) installed on
 Simply run the install script from the command line. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 {{< /highlight >}}
 
@@ -29,7 +29,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 Restart your terminal. You should now be able to easily install and manage Node versions.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 nvm install 10
 
 nvm use 10

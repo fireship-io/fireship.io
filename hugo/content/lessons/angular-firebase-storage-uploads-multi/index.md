@@ -90,7 +90,7 @@ The first step is to create a directive that can receive the files from the brow
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g directive dropzone
 {{< /highlight >}}
 
@@ -138,7 +138,7 @@ export class DropzoneDirective {
 The next step is put our directive to use in a component that will receive the files and loop over them. This component does not use Firebase directly, but rather it manages the files dropped by the user and renders an `upload-task` (which we will build in step 3) component for each file.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component uploader
 {{< /highlight >}}
 
@@ -199,7 +199,7 @@ export class UploaderComponent {
 ## Step 3 - Upload Task Component
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component upload-task
 {{< /highlight >}}
 

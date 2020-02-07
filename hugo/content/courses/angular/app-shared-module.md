@@ -17,7 +17,7 @@ Create a shared module to avoid duplicate imports and exports of common Angular 
 ### Step 1 - Create a Module
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g module shared
 {{< /highlight >}}
 
@@ -99,6 +99,6 @@ export class SharedModule {}
 ### Step 3 - Add a Component
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component shared/shell --export 
 {{< /highlight >}}

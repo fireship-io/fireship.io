@@ -17,7 +17,7 @@ We're ready to start building the app! It's ideal to kick off any new project wi
 - Install [Angular Material](https://material.angular.io/)
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng add @angular/material
 {{< /highlight >}}
 

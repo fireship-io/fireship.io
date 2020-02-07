@@ -41,7 +41,7 @@ In the real world, you will most likely update custom claims from a [Cloud Funct
 Th easiest way to update custom claims is to write a simple Node.js script. If starting from scratch, run the commands below in an empty directory. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm init -y
 npm i firebase-admin
 touch index.js
@@ -86,7 +86,7 @@ const customClaims = {
 Run the script from the command line making sure to set an environment variable that points to the service account. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 GOOGLE_APPLICATION_CREDENTIALS=service-account.json 
 node index.js
 {{< /highlight >}}

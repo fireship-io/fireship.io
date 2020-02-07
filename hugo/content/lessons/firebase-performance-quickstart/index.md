@@ -35,7 +35,7 @@ Keep in mind, you can use Firebase Performance as a standalone service without a
 At the time of this article, performance in [AngularFire](https://github.com/angular/angularfire2) is available under the *next* tag.  
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i firebase
 npm i @angular/fire@next
 {{< /highlight >}}

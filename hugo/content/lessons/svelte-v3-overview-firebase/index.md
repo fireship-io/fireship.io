@@ -42,7 +42,7 @@ Our goal is to build an authenticated realtime todo list with Svelte 3 and Fireb
 Let's start with a blank Svelte project and install [RxFire](https://github.com/firebase/firebase-js-sdk/tree/master/packages/rxfire). 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npx degit sveltejs/template realtime-todos
 cd realtime-todos
 

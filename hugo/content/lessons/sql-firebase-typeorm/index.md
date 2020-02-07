@@ -38,7 +38,7 @@ Start from an empty directory in your editor. Make sure you have the [Google Clo
 Initialize Cloud Functions and choose TypeScript as the language.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -g firebase-tools
 
 firebase init functions
@@ -61,7 +61,7 @@ A proxy is required connect to a Cloud SQL database locally. [Download the binar
 Run the command below with your connection name. You should see the message: **Ready for new connections**. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ./cloud_sql_proxy -instances=YOUR_CONNECTION=tcp:3306
 {{< /highlight >}}
 
@@ -71,7 +71,7 @@ Run the command below with your connection name. You should see the message: **R
 The final setup step is to install TypeORM and its dependencies in the Cloud Functions environment. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm install reflect-metadata typeorm mysql 
 {{< /highlight >}}
@@ -255,7 +255,7 @@ export const getHippos = functions.https.onRequest(async (request, response) => 
 Run the command below to serve the Cloud Functions on localhost.  
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase serve --only functions
 {{< /highlight >}}
 

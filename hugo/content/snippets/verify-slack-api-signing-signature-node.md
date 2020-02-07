@@ -31,7 +31,7 @@ Any Slack App that interacts with a server via a slash command, events API, or o
 First, install [tsscmp](https://www.npmjs.com/package/tsscmp)... unless you have a better way to perform *timing safe string comparison using double hashed message authentication code (HMAC)*. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i tsscmp
 {{< /highlight >}}
 

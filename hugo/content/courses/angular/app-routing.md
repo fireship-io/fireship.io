@@ -17,7 +17,7 @@ Learn routing basics in Angular and the usage of the `routerLink` directive in t
 Generate home page component that is loaded by the router. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component home-page
 {{< /highlight >}}
 

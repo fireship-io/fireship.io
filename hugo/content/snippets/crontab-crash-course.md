@@ -48,7 +48,7 @@ The snippets below show you to configure crontab for the most common use-cases.
 
 Remember, a cronjob can only be scheduled to a minimum interval of 1 minute. If we leave every value as a wildcard it will execute after every minute. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 * * * * *
 {{< /highlight >}}
 
@@ -56,7 +56,7 @@ Remember, a cronjob can only be scheduled to a minimum interval of 1 minute. If 
 
 You can use a slash for step values, meaning it will execute every N steps. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 */15 * * * *
 {{< /highlight >}}
 
@@ -65,13 +65,13 @@ You can use a slash for step values, meaning it will execute every N steps.
 
 We can schedule a daily task by defining the minute and hour values. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 30 5 * * *
 {{< /highlight >}}
 
 To make this 5:30 PM just add 12 to the hours. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 30 17 * * *
 {{< /highlight >}}
 
@@ -79,7 +79,7 @@ To make this 5:30 PM just add 12 to the hours.
 
 We can separate values by commas to have them execute at multiple values
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 0 10,22 * * *
 {{< /highlight >}}
 
@@ -87,7 +87,7 @@ We can separate values by commas to have them execute at multiple values
 
 We can run jobs on specific days of the week using the last slot. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 0 20 * * 1,3
 {{< /highlight >}}
 
@@ -98,6 +98,6 @@ Maybe we have a task that should only run during normal business hours. This can
 
 In other words: "At every 5th minute past every hour from 9 through 17 on every day-of-week from Monday through Friday"
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 */5 9-17 * * 1-5
 {{< /highlight >}}

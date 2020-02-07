@@ -27,7 +27,7 @@ export const testFunction = functions.https.onCall( async (data, context) => {
 Callable functions make it possible to call HTTP cloud functions with the user's Firebase auth context. This can dramatically simplify our code because it means we no longer need to manually validate auth headers in our cloud functions.
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init hosting 
 
 firebase deploy --only functions

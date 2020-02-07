@@ -57,7 +57,7 @@ This lesson is integrated with multiple frontend frameworks. Choose your favorit
 First, initialize Cloud Functions in your project with the Firebase Tools CLI. I recommend using TypeScript, but it is optional for this lesson. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm i -g firebase-tools
 firebase init functions
 {{< /highlight >}}
@@ -66,7 +66,7 @@ firebase init functions
 
 Email sending tasks can be handled with the [SendGrid Mail](https://github.com/sendgrid/sendgrid-nodejs/tree/master/packages/mail) package. 
 
-{{< highlight terminal >}}
+{{< highlight text >}}
 cd functions
 npm install @sendgrid/mail
 {{< /highlight >}}
@@ -88,7 +88,7 @@ Create a new API Key on SendGrid by going to *Settings -> Account Details -> API
 Now set the API key and template ID in the Firebase project with the following command. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase functions:config:set sendgrid.key=YOUR_KEY sendgrid.template=TEMPLATE_ID
 {{< /highlight >}}
 
@@ -263,7 +263,7 @@ export const weeklySummary =  functions.pubsub.schedule('every friday 05:00').on
 Deploy your functions. You can test them from the Firebase console, or follow one of the frontend framework integrations below. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase deploy --only functions
 {{< /highlight >}}
 

@@ -10,7 +10,7 @@ vimeo: 320654205
 ---
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 # add the secret key to the environment
 firebase functions:config:set stripe.secret="sk_your_test_key"
 {{< /highlight >}}

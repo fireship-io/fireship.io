@@ -48,7 +48,7 @@ Head over the Stripe dashboard and create a product. Make a note of the SKU.
 Create a new [Svelte](https://svelte.dev/) app and add the Stripe.js script tag to the head of the main HTML file. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npx degit sveltejs/my-svelte-store
 {{< /highlight >}}
 
@@ -137,7 +137,7 @@ The backend Cloud Functions use TypeScript to provide better intellisense with t
 💡 Tip: If using Firebase in your frontend app, it may be easier to implement *Callable* Cloud Functions, which you can learn more about in the [Stripe Payments Master Course](/courses/stripe-payments). 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase init functions # with TypeScript
 
 cd functions
@@ -203,7 +203,7 @@ app.post('/intents', async (req, res) => {
 Serve the API endpoint locally. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 firebase serve --only functions
 {{< /highlight >}}
 

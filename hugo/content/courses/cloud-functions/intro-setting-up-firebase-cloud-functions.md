@@ -17,7 +17,7 @@ Installation and setup is identical for Mac, Windows, and Linux. The only requir
 Cloud functions in either Node 6 or 8, so it is recommended that you setup your local env with. For example, with NVM
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 nvm install 8
 nvm use 8
 {{< /highlight >}}
@@ -27,7 +27,7 @@ nvm use 8
 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install firebase-tools -g
 
 firebase login

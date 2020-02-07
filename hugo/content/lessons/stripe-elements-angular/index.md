@@ -72,7 +72,7 @@ export class AuthService {
 Although optional, I highly recommended installing the [typings for Stripe Checkout](https://www.npmjs.com/package/@types/stripe-checkout) and [Elements](https://www.npmjs.com/package/@types/stripe-v3) to get autocomplete in your IDE with TypeScript. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 npm install --D @types/stripe-checkout
 npm install --D @types/stripe-v3
 {{< /highlight >}}
@@ -83,7 +83,7 @@ npm install --D @types/stripe-v3
 [Stripe Checkout](https://stripe.com/docs/checkout) is the quickest and easiest way to accept credit card payments, but does not offer much flexibility when it comes to customizing the checkout experience. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight terminal >}}
+{{< highlight text >}}
 ng g component checkout
 {{< /highlight >}}
 
