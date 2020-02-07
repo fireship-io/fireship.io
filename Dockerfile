@@ -1,6 +1,6 @@
 # Standard Environment for CI/CD
 
-FROM node:8
+FROM node:12
 
 ENV HUGO_VERSION=0.63.2
 ENV HUGO_TYPE=_extended
