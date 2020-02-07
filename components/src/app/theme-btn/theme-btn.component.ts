@@ -4,7 +4,7 @@ import { SetState } from '../state.decorator';
 import { LOCAL_STORAGE } from '../local-storage.service';
 
 
-export type Theme = 'dark-theme' | 'light-theme' | 'colorful-theme';
+export type Theme = 'dark-theme' | 'light-theme';
 
 
 @Component({
@@ -16,8 +16,8 @@ export class ThemeBtnComponent implements AfterViewInit {
 
   themeMap: {[key in Theme]: Theme} = {
     'dark-theme': 'light-theme',
-    'light-theme': 'colorful-theme',
-    'colorful-theme': 'dark-theme'
+    'light-theme': 'dark-theme',
+    // 'colorful-theme': 'dark-theme'
   };
 
   theme: Theme;

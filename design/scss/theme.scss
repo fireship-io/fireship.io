@@ -32,40 +32,39 @@ $colors: (
 }
 
 .light-theme {
-  --background: white;
+  --background: var(--gray0);
   --text-color: var(--gray4);
   --h-color: var(--gray6);
   --nav-shadow: 4px 0 10px -3px #c1c1c1;
   --card-shadow: 0 4px 8px rgba(0, 30, 84, 0.12);
   --toc-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
-  --nav-bg: var(--gray1);
+  --nav-bg: white;
   --tag-bg: var(--gray2);
-  --code-bg: #f5f5f5;
-  --card-bg: var(--gray1);
-  --form-bg: var(--gray1);
+  --code-bg: white;
+  --card-bg: white;
   --overlay-bg: rgba(255, 255, 255, 0.9);
   --h-border: 2px dashed var(--gray1);
   --nav-border: 2px dashed var(--text-color);
   transition: all 0.5s ease;
 }
 
-.colorful-theme {
-  --background: #fbf8ee;
-  --text-color: #a08fa2;
-  --h-color: #742b66;
-  --nav-shadow: 4px 0 10px -3px #c1c1c1;
-  --card-shadow: 0 4px 8px rgba(0, 30, 84, 0.12);
-  --toc-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
-  --nav-bg: #efeae8;
-  --tag-bg: #e3d0e1;
-  --code-bg: #efeae8;
-  --card-bg: #efeae8;
-  --form-bg: #eeeae7;
-  --overlay-bg: rgba(255, 255, 255, 0.9);
-  --h-border: 2px dashed var(--gray1);
-  --nav-border: 2px dashed var(--text-color);
-  transition: all 0.5s ease;
-}
+// .colorful-theme {
+//   --background: #fbf8ee;
+//   --text-color: #a08fa2;
+//   --h-color: #742b66;
+//   --nav-shadow: 4px 0 10px -3px #c1c1c1;
+//   --card-shadow: 0 4px 8px rgba(0, 30, 84, 0.12);
+//   --toc-shadow: rgba(0, 0, 0, 0.2) 0px 10px 20px 0px;
+//   --nav-bg: #efeae8;
+//   --tag-bg: #e3d0e1;
+//   --code-bg: #efeae8;
+//   --card-bg: #efeae8;
+//   --form-bg: #eeeae7;
+//   --overlay-bg: rgba(255, 255, 255, 0.9);
+//   --h-border: 2px dashed var(--gray1);
+//   --nav-border: 2px dashed var(--text-color);
+//   transition: all 0.5s ease;
+// }
 
 :root {
   @each $name, $color in $colors {

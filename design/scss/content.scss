@@ -290,6 +290,7 @@
     border-bottom-left-radius: var(--card-radius);
     margin-bottom: 1em;
     background: var(--nav-bg);
+    padding: 0.5em;
     max-height: 80vh;
     margin-top: 1em;
     overflow-y: auto;
@@ -316,7 +317,7 @@
         }
       }
     }
-    ul li ul li ul {
+    ul li ul { //    ul li ul li ul, 
       font-size: 0.75em;
       font-weight: 500;
 
