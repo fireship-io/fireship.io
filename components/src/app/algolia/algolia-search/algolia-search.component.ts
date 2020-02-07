@@ -62,8 +62,6 @@ export class AlgoliaSearchComponent {
     this.hits = this.results.hits;
 
     this.cd.detectChanges();
-
-    console.log(this.query, this.results);
   }
 
 
