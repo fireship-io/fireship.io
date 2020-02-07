@@ -1,7 +1,7 @@
 ---
 title: Github Action deploying Angular App to Firebase Hosting
 publishdate: 2019-02-19T23:12:09-07:00
-lastmod: 2019-02-20T00:04:09-07:00
+lastmod: 2019-12-30T14:25:09-07:00
 draft: false
 author: Marc Stammerjohann
 description: A step-by-step guide to create a Github Action to deploy your Angular App to Firebase Hosting.
@@ -28,7 +28,7 @@ To create your first workflow click on **Set up a workflow yourself**
 
 Your first Github action looks like this:
 
-{{< file "github" "main.workflow" >}}
+{{< file "github" "main.yml" >}}
 {{< highlight typescript >}}
 name: CI
 
@@ -140,7 +140,7 @@ Go to `Settings > Secrets`:
 
 Your final workflow should look something like this in the text editor:
 
-{{< file "github" "main.workflow" >}}
+{{< file "github" "main.yml" >}}
 {{< highlight typescript >}}
 name: CI
 
@@ -169,6 +169,6 @@ jobs:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 {{< /highlight >}}
 
-Now you can commit your new workflow to your repository. This workflow is added to `.github/workflows/main.workflow`. Go ahead and push a change to your Angular project and you can see the progress in the **Actions** tab and your change are deployed directly to Firebase. 
+Now you can commit your new workflow to your repository. This workflow is added to `.github/workflows/main.yml`. Go ahead and push a change to your Angular project and you can see the progress in the **Actions** tab and your change are deployed directly to Firebase. 
 
-[ng-firebase-github-action](https://github.com/marcjulian/ng-firebase-github-actions) is an example Angular app w/ the `main.workflow` deploying the app to Firebase hosting. The app is available on firebase [here](https://ng-firebase-github-actions.firebaseapp.com/).
+[ng-firebase-github-action](https://github.com/marcjulian/ng-firebase-github-actions) is an example Angular app w/ the `main.yml` deploying the app to Firebase hosting. The app is available on firebase [here](https://ng-firebase-github-actions.firebaseapp.com/).
