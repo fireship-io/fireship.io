@@ -3,7 +3,7 @@ import * as algolia from 'algoliasearch/lite';
 
 const APP_ID = '05VYZFXKNM';
 const API_KEY = 'a0837b31f4379765240c2753fa141aa2';
-const client = algolia(APP_ID, API_KEY);
+const client = (algolia as any)(APP_ID, API_KEY);
 
 @Component({
   templateUrl: './algolia-search.component.html'
