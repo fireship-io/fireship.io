@@ -17,7 +17,7 @@
 {{ end }}
 
 {{ define "feed" }}
-    {{ if len .Pages }}
+    {{ if and (len .Pages) (gt .Params.weight -1) }}
         {{ partial "chapters.html" (dict "chapters" .Pages "active" .RelPermalink) }}
     {{ end }}
 {{ end }}

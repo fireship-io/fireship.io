@@ -22,4 +22,6 @@ mainSections = ["lessons", "snippets"]
 vars = ["title", "description", "summary", "date", "publishdate", "lastmod", "permalink"]
 params = ["tags"]
 
+[markup.goldmark.renderer]
+unsafe= true
 
