@@ -248,7 +248,7 @@ export class ElementsComponent implements OnInit {
 
     if (error) {
       // Inform the customer that there was an error.
-      const cardErrors = error.message;
+      this.cardErrors = error.message;
     } else {
       // Send the token to your server.
       this.loading = true;
