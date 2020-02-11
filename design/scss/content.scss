@@ -564,3 +564,27 @@ video, video-player, .video-overlay {
   }
 
 }
+
+.pagination {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+
+  .page-item {
+    margin: 0.5em;
+    padding: 0;
+    &.active, &.disabled {
+      // color: var(--background);
+      opacity: 0.5;
+      transform: translateY(-2px);
+      cursor: default;
+    }
+    &.disabled {
+      background: none;
+    }
+    a { 
+      color: var(--text-color);
+      padding: 1em 2em;
+    }
+  }
+}

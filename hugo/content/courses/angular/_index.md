@@ -5,14 +5,13 @@ description: Build a high-performance PWA with Angular and Firebase from scratch
 weight: 0
 type: courses
 tags: 
+    - pro
     - angular
     - pwa
     - firebase
     - firestore
     - node
     - cloud-run
-
-    - pro
 ---
 
 {{< vimeo 359329279 >}}

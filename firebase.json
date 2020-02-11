@@ -5,11 +5,153 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "functions": {
+      "predeploy": [
+        "npm --prefix ./functions run build"
+      ]
+    },
+    "redirects": [ 
+      {
+        "source": "/lessons/angular-file-uploads-to-firebase-storage",
+        "destination": "/lessons/angular-firebase-storage-uploads-multi",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-firebase-authentication-tutorial-email-password-signup",
+        "destination": "/courses/angular/user-email-pass",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular4-transactional-email-with-cloud-functions-and-sendgrid",
+        "destination": "/lessons/sendgrid-transactional-email-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/understanding-firebase-database-rules-by-example",
+        "destination": "/snippets/firestore-rules-recipes",
+        "type": 301
+      },
+      {
+        "source": "/lessons/firestore-security-rules-guide",
+        "destination": "/snippets/firestore-rules-recipes",
+        "type": 301
+      },
+      {
+        "source": "/lessons/autocomplete-search-with-angular4-and-firebase",
+        "destination": "/lessons/typeahead-autocomplete-with-firestore/",
+        "type": 301
+      },
+      {
+        "source": "/lessons/drag-and-drop-file-uploads-to-firebase-storage/",
+        "destination": "/lessons/angular-firebase-storage-uploads-multi",
+        "type": 301
+      },
+      {
+        "source": "/lessons/simple-firebase-pagination-with-angularfire2",
+        "destination": "/lessons/firestore-pagination-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/managing-firebase-user-relationships-to-database-records",
+        "destination": "/courses/firestore-data-modeling",
+        "type": 301
+      },
+      {
+        "source": "/lessons/a-simple-explanation-of-ngmodule",
+        "destination": "/courses/angular/basics-modules",
+        "type": 301
+      },
+      {
+        "source": "/lessons/how-to-lazy-load-components-in-angular-4-in-three-steps",
+        "destination": "/snippets/lazy-loaded-routes-angular-v8-ivy",
+        "type": 301
+      },
+      {
+        "source": "/lessons/collect-payments-with-angular-stripe-checkout-and-firebase",
+        "destination": "/courses/stripe-payments",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-stripe-payments-part-2-firebase-cloud-functions-backend",
+        "destination": "/courses/stripe-payments",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-stripe-payments-part-3-sell-digital-content",
+        "destination": "/courses/stripe-payments",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-full-text-search-with-algolia-frontend-part-1",
+        "destination": "/lessons/algolia-cloud-functions",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-full-text-search-with-algolia-backend-part-2",
+        "destination": "/lessons/algolia-cloud-functions",
+        "type": 301
+      },
+      {
+        "source": "/lessons/top-7-rxjs-patterns-for-angular-development",
+        "destination": "/lessons/rxjs-basic-pro-tips",
+        "type": 301
+      },
+      {
+        "source": "/lessons/rxjs-quickstart-with-20-examples",
+        "destination": "/lessons/rxjs-basic-pro-tips",
+        "type": 301
+      },
+      {
+        "source": "/lessons/animation-examples-in-angular-4-3",
+        "destination": "/lessons/angular-animation-examples",
+        "type": 301
+      },
+      {
+        "source": "/lessons/multi-property-data-filtering-with-firebase-and-angular-4/",
+        "destination": "/courses/firestore-data-modeling",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      }
     ]
-  },
-  "functions": {
-    "predeploy": [
-      "npm --prefix ./functions run build"
-    ]
+
   }
 }

@@ -1,7 +1,7 @@
 ---
 title: Firestore Security Rules Cookbook
 publishdate: 2019-01-02T09:35:09-07:00
-lastmod: 2019-09-02T09:35:09-07:00
+lastmod: 2020-02-10T09:35:09-07:00
 draft: false
 author: Jeff Delaney
 type: lessons
@@ -9,6 +9,8 @@ description: Common Recipes for Firestore Security Rules
 tags:
     - firebase
     - firestore
+
+youtube: b7PUm7LmAOw
 ---
 
 The purpose of this snippet to list common [Firestore security rules](https://firebase.google.com/docs/firestore/security/get-started) patterns. Many of the rules below are extracted into functions to maximize code reuse.
@@ -39,6 +41,30 @@ service cloud.firestore {
   }
 }
 {{< /highlight >}}
+
+### Scope Rules to Specific Operations
+
+Rules can be enforced on various read/write operations that occur in a clientside app. We can scope rules to each of the follow read operations. 
+
+- `allow read` - Applies to both lists and documents.
+- `allow get` - When reading a single document.
+- `allow list` - When querying a collection.
+
+Write operations can be scoped as follows: 
+
+- `allow create` - When setting new data with `docRef.set()` or `collectionRef.add()`
+- `allow update` - When updating data with `docRef.update()` or `set()`
+- `allow delete` - When deleting data with `docRef.delete()`
+- `allow write` - Applies rule to create, update, and delete. 
+
+### Request vs Resource
+
+Firestore gives us access to several special variables that can be used to compose rules. 
+
+- `request` contains incoming data (including auth and time)
+- `resource` existing data that is being requested
+
+This part is confusing because a *resource* also exists on the *request* to represent the incoming data on write operations. I like to use use helper functions to make this code a bit more readable. 
 
 ## User-Based Rules
 
@@ -121,6 +147,10 @@ Let's imagine you create collection names dynamically and want them to be unlock
 
 {{< file "firebase" "firestore rules" >}}
 {{< highlight js >}}
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+
     function isSignedIn() {
       return request.auth != null;
     }
@@ -140,23 +170,58 @@ Let's imagine you create collection names dynamically and want them to be unlock
       return request.resource.data;
     }
 
+    // Does the logged-in user match the requested userId?
     function isUser(userId) {
       return request.auth.uid == userId;
     }
 
+    // Fetch a user from Firestore
+    function getUserData() {
+      return get(/databases/$(database)/documents/accounts/$(request.auth.uid)).data
+    }
+
+    // Fetch a user-specific field from Firestore
     function userEmail(userId) {
       return get(/databases/$(database)/documents/users/$(userId)).data.email;
     }
 
-    // example application for functions
-    service cloud.firestore {
-      match /databases/{database}/documents {
-        match /orders/{orderId} {
-          allow create: if isSignedIn() && emailVerified() && isUser(incomingData().userId);
-          allow read, list, update, delete: if isSignedIn() && isUser(existingData().userId);
-        }
 
-      }
+    // example application for functions
+    match /orders/{orderId} {
+      allow create: if isSignedIn() && emailVerified() && isUser(incomingData().userId);
+      allow read, list, update, delete: if isSignedIn() && isUser(existingData().userId);
     }
 
+  }
+}
+
 {{< /highlight >}}
+
+## Data Validation Example
+
+Now let's combine some of the functions created earlier to build a robust validation rule. By chaining together rules with `&&` we can validate the data structure of multiple fields as an `AND` condition. We can also use `||` for OR conditions. 
+
+{{< file "firebase" "firestore rules" >}}
+```js
+// allow update: if isValidProduct();
+
+function isValidProduct() {
+  return incomingData().price > 10 && 
+         incomingData().name.size() < 50 &&
+         incomingData().category in ['widgets', 'things'] &&
+         existingData().locked == false && 
+         getUserData().admin == true
+}
+```
+
+## Time-based Rules Examples
+
+Firestore also includes a `duration` helper to generate dates that can be operated upon. For example, we might want to throttle updates to 1 minute intervals. We can create this rule by comparing the `request.time` to a timestamp on the document + the throttle duration. 
+
+```js
+// allow update: if isThrottled() == false;
+
+function isThrottled() {
+  return request.time < resource.data.lastUpdate + duration.value(1, 'm')
+}
+```
