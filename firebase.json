@@ -108,47 +108,109 @@
         "type": 301
       },
       {
-        "source": "/lessons/multi-property-data-filtering-with-firebase-and-angular-4/",
+        "source": "/lessons/multi-property-data-filtering-with-firebase-and-angular-4",
         "destination": "/courses/firestore-data-modeling",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/reactive-forms-in-angular-with-the-firebase-database",
+        "destination": "/courses/angular",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/send-push-notifications-in-angular-with-firebase-cloud-messaging",
+        "destination": "/lessons/push-messages-with-firestore",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/methods-for-debugging-an-angular-application",
+        "destination": "/courses/angular",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/infinite-scroll-with-firebase-data-and-angular-animation",
+        "destination": "/lessons/infinite-scroll-firestore-angular",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/user-presenece-system-in-realtime",
+        "destination": "/lessons/realtime-presence-angular-firebase",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/typescript-with-firebase-cloud-functions",
+        "destination": "/courses/cloud-functions",
         "type": 301
       },      {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/role-based-permissions-and-authorization-with-firebase-auth",
+        "destination": "/lessons/role-based-authorization-with-firestore-nosql-and-angular-5",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
+        "source": "/lessons/geofire-location-queries-with-google-maps",
+        "destination": "/lessons/geolocation-query-in-firestore-realtime",
+        "type": 301
+      },
+      {
+        "source": "/lessons/firebase-with-angular-ngrx-redux",
+        "destination": "/lessons/angular-ngrx-redux-starter-guide",
+        "type": 301
+      },      {
+        "source": "/lessons/ngrx-with-firebase-auth-google-oauth-login",
+        "destination": "/lessons/angular-ngrx-redux-starter-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/state-changes-angularfire2-with-ngrx",
+        "destination": "/lessons/angular-ngrx-redux-starter-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/installable-angular-progressive-web-app",
+        "destination": "/courses/angular/start-angular-beginner-tutorial",
+        "type": 301
+      },
+      {
+        "source": "/lessons/firebase-database-performance-testing-and-profiling",
+        "destination": "/courses/firestore-data-modeling",
+        "type": 301
+      },
+      {
+        "source": "/lessons/stripe-recurring-subscription-payments-with-angular-and-firebase-cloud-functions",
+        "destination": "/courses/stripe-payments/subscriptions-intro",
+        "type": 301
+      },
+      {
+        "source": "/lessons/firestore-with-angularfire-basics",
+        "destination": "/courses/angular",
+        "type": 301
+      },
+      {
+        "source": "/lessons/google-user-auth-with-firestore-custom-data",
+        "destination": "/lessons/angularfire-google-oauth/",
+        "type": 301
+      },
+      {
+        "source": "/lessons/chatbot-in-angular-with-dialogflow-api-ai",
+        "destination": "/lessons/build-a-chatbot-with-dialogflow",
+        "type": 301
+      },      {
+        "source": "/lessons/dialogflow-with-firebase-cloud-functions",
+        "destination": "/lessons/build-a-chatbot-with-dialogflow",
+        "type": 301
+      },
+      {
+        "source": "/lessons/ngrx-entity-feature-modules-tutorial",
+        "destination": "/lessons/angular-ngrx-redux-starter-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/ngrx-with-angularfire-version-5-firestore",
+        "destination": "/lessons/angular-ngrx-redux-starter-guide",
+        "type": 301
+      },      {
+        "source": "/lessons/shorten-typescript-imports-in-an-angular-project",
+        "destination": "/snippets/improving-long-relative-paths-imports",
         "type": 301
       }
     ]
