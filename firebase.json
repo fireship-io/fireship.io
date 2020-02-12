@@ -208,9 +208,108 @@
         "source": "/lessons/ngrx-with-angularfire-version-5-firestore",
         "destination": "/lessons/angular-ngrx-redux-starter-guide",
         "type": 301
-      },      {
+      }, 
+      {
         "source": "/lessons/shorten-typescript-imports-in-an-angular-project",
         "destination": "/snippets/improving-long-relative-paths-imports",
+        "type": 301
+      },
+
+      {
+        "source": "/lessons/firestore-with-angularfire-basics",
+        "destination": "/tags/firestore",
+        "type": 301
+      },
+
+      {
+        "source": "/lessons/hnpwa-angular-5-progressive-web-app-service-worker-tutorial",
+        "destination": "/courses/angular",
+        "type": 301
+      },
+      {
+        "source": "/lessons/delete-firestore-collections-with-angular-and-rxjs",
+        "destination": "/snippets/delete-firestore-collection",
+        "type": 301
+      },
+      {
+        "source": "/lessons/payment-request-api-with-stripe-elements",
+        "destination": "/courses/stripe-payments",
+        "type": 301
+      },
+      {
+        "source": "/lessons/firebase-storage-with-angularfire-dropzone-file-uploader",
+        "destination": "/lessons/angular-firebase-storage-uploads-multi",
+        "type": 301
+      },
+      {
+        "source": "/lessons/firestore-nosql-data-modeling-by-example",
+        "destination": "/courses/firestore-data-modeling",
+        "type": 301
+      },
+
+      {
+        "source": "/lessons/generate-a-custom-spash-screen-and-icons-in-ionic",
+        "destination": "/courses/ionic",
+        "type": 301
+      },
+      {
+        "source": "/lessons/ionic-google-login-with-firebase-and-angularfire",
+        "destination": "/courses/ionic/users-primer",
+        "type": 301
+      },
+      {
+        "source": "/lessons/ionic-native-with-firebase-fcm-push-notifications-ios-android",
+        "destination": "/courses/ionic/fcm-primer",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "",
+        "type": 301
+      },
+      {
+        "source": "/lessons/sms-texting-with-twilio",
+        "destination": "/lessons",
+        "type": 301
+      },
+      {
+        "source": "/lessons/contentful-cms-progressive-web-apps",
+        "destination": "/lessons",
+        "type": 301
+      },
+      {
+        "source": "/lessons/coinbase-bitcoin-oauth-firebase-cloud-function/",
+        "destination": "/lessons",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "/lessons",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "/lessons",
+        "type": 301
+      },
+      {
+        "source": "",
+        "destination": "/lessons",
         "type": 301
       }
     ]

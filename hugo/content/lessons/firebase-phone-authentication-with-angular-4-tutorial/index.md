@@ -8,7 +8,7 @@ description: Use the Firebase to implement Phone authentication on the web.
 tags: 
     - angular
     - firebase
-    - authentication
+    - auth
 
 youtube: XIq_VU1Njw0
 # github: 
