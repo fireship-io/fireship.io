@@ -60,7 +60,7 @@ npm install -D @types/stripe
 
 Then go to the stripe dashboard and grab your *secret* key. We will set it as an environment variable in Firebase to prevent it from being exposed publicly.
 
-{{< figure src="img/stripe-secretkey.png"}}
+{{< figure src="img/stripe-secretkey.png" >}}
 
 You can set it as an environment variable by running: 
 
