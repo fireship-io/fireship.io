@@ -123,6 +123,11 @@
         "type": 301
       },
       {
+        "source": "/lessons/fcm-topic-notifications-angularfire-and-callable-functions",
+        "destination": "/lessons/push-messages-with-firestore",
+        "type": 301
+      },
+      {
         "source": "/lessons/methods-for-debugging-an-angular-application",
         "destination": "/courses/angular",
         "type": 301
@@ -263,26 +268,6 @@
         "type": 301
       },
       {
-        "source": "",
-        "destination": "",
-        "type": 301
-      },
-      {
-        "source": "",
-        "destination": "",
-        "type": 301
-      },
-      {
-        "source": "",
-        "destination": "",
-        "type": 301
-      },
-      {
-        "source": "",
-        "destination": "",
-        "type": 301
-      },
-      {
         "source": "/lessons/sms-texting-with-twilio",
         "destination": "/lessons",
         "type": 301
@@ -298,18 +283,175 @@
         "type": 301
       },
       {
-        "source": "",
-        "destination": "/lessons",
+        "source": "/lessons/capacitor-five-apps-in-five-minutes",
+        "destination": "/courses/ionic",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "/lessons",
+        "source": "/lessons/server-side-rendering-firebase-angular-universal",
+        "destination": "/lessons/angular-universal-firebase",
         "type": 301
       },
       {
-        "source": "",
-        "destination": "/lessons",
+        "source": "/snippets/angular-6-universal-simple-guide",
+        "destination": "/lessons/angular-universal-firebase",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-6-universal-ssr-prerendering-firebase-hosting",
+        "destination": "/courses/angular/ssr-prerendering",
+        "type": 301
+      },
+      {
+        "source": "/lessons/ask-me-anything-april-2018",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/lessons/scheduled-tasks-and-cron-jobs-with-firebase",
+        "destination": "/lessons/cloud-functions-scheduled-time-trigger",
+        "type": 301
+      },
+      {
+        "source": "/lessons/basics-angular-cli",
+        "destination": "/courses/angular/basics-cli",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-elements-advanced-techniques/",
+        "destination": "/angular-elements-quick-start-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/google-assistant-quick-start/",
+        "destination": "/tags/dialogflow",
+        "type": 301
+      },     
+      {
+        "source": "/lessons/airtable-firebase-customer-relationship-management",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/lessons/top-10-vscode-pro-tips",
+        "destination": "/tags/vscode",
+        "type": 301
+      },
+      {
+        "source": "/lessons/basics-angular-router",
+        "destination": "/courses/angular/app-routing",
+        "type": 301
+      },
+      {
+        "source": "/lessons/graphql-apollo-2-tutorial-node",
+        "destination": "/lessons/graphql-basics-tutorial",
+        "type": 301
+      },
+      {
+        "source": "/lessons/apollo-angular-tutorial-query-and-mutate",
+        "destination": "/lessons/graphql-basics-tutorial/",
+        "type": 301
+      },
+      {
+        "source": "/lessons/should-you-use-ionic-4-for-mobile-app",
+        "destination": "/courses/ionic",
+        "type": 301
+      },
+      {
+        "source": "/lessons/cdk-reactive-data-tables-in-angular",
+        "destination": "/courses/angular",
+        "type": 301
+      },
+      {
+        "source": "/lessons/query-by-array-contains-firestore",
+        "destination": "/lessons/firestore-array-queries-guide",
+        "type": 301
+      },
+      {
+        "source": "/lessons/managing-firebase-costs/",
+        "destination": "/tags/firebase",
+        "type": 301
+      },
+      {
+        "source": "/lessons/angular-console-quick-start-guide",
+        "destination": "/tags/angular",
+        "type": 301
+      },      {
+        "source": "/lessons/how-to-use-puppeteer-on-firebase-cloud-functions/",
+        "destination": "/lessons/web-scraping-guide/",
+        "type": 301
+      },
+      {
+        "source": "/lessons/code-this-not-that-javascript-pro-tips",
+        "destination": "/courses/javascript",
+        "type": 301
+      },
+      {
+        "source": "/lessons/sortable-drag-and-drop-lists-in-firestore",
+        "destination": "/courses/angular",
+        "type": 301
+      },
+      {
+        "source": "/lessons/async-await-pro-tips/",
+        "destination": "/courses/javascript",
+        "type": 301
+      },
+      {
+        "source": "/lessons/git-pro-tips/",
+        "destination": "/tags/git",
+        "type": 301
+      },
+      {
+        "source": "/lessons/cloud-scheduler-for-firebase-functions/",
+        "destination": "/lessons/cloud-functions-scheduled-time-trigger",
+        "type": 301
+      },
+      {
+        "source": "/lessons/the-real-state-of-javascript-2018/",
+        "destination": "/courses/javascript",
+        "type": 301
+      },
+      {
+        "source": "/lessons/typescript-the-basics/",
+        "destination": "/tags/typescript",
+        "type": 301
+      },
+      {
+        "source": "/lessons/hold-to-delete-button-angular-directive-with-firestore",
+        "destination": "/courses/angular",
+        "type": 301
+      },      {
+        "source": "/snippets/how-manage-shared-components-in-an-ionic-4-app",
+        "destination": "/courses/ionic",
+        "type": 301
+      },
+      {
+        "source": "/snippets/making-ionic4-seo-friendly",
+        "destination": "/courses/ionic",
+        "type": 301
+      },
+      {
+        "source": "/snippets/avoid-observable-flicker-firebase-auth",
+        "destination": "/snippets",
+        "type": 301
+      },
+      {
+        "source": "/snippets/how-to-use-a-firebase-fcm-service-worker-with-angular-s-ngsw-service-worker",
+        "destination": "/snippets",
+        "type": 301
+      },
+      {
+        "source": "/snippets/how-to-format-document-data-for-the-firestore-rest-api",
+        "destination": "/snippets",
+        "type": 301
+      },      {
+        "source": "/snippets/angularfire-migration-from-v4-to-v5-guide",
+        "destination": "/snippets",
+        "type": 301
+      },
+      {
+        "source": "/snippets/firebase-storage-cloud-function-image-thumbnail-generator",
+        "destination": "/lessons/image-thumbnail-resizer-cloud-function/",
         "type": 301
       }
     ]
