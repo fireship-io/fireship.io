@@ -10,7 +10,7 @@ emoji: 📂
 
 Create a script that can prerender specific routes using Angular Universal. 
 
-Note, make sure you have enabled Unviersal with the schematic from the previous video or with `ng add @nestjs/ng-universal`. 
+Note, make sure you have enabled Universal with the schematic from the previous video or with `ng add @nestjs/ng-universal`. 
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}

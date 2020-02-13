@@ -21,7 +21,7 @@ tags:
 {{< figure src="/img/testimonial/angular-testimonial.png" alt="Finally, the world will see Angular for what it truly is"  >}}
 
 
-The **Angular Firebase PWA Course** will teach you how to build a complex progressive web app with Angular 8, Material Design, and Firebase. It starts from absolute basics and eventually culminates with the deployment of a server-rendered PWA on Google Cloud Run. 
+The **Angular Firebase PWA Course** will teach you how to build a complex progressive web app with Angular 9 (ivy), Material Design, and Firebase. It starts from absolute basics and eventually culminates with the deployment of a server-rendered PWA on Google Cloud Run. 
 
 You will build a full-stack [Kanban (看板)](https://en.wikipedia.org/wiki/Kanban) storyboard app inspired by Trello. Authenticated users can create, sort, update, and delete boards with all interaction persisted in Firestore. 
 
