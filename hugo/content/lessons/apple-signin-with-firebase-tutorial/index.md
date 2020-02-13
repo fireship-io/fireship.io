@@ -6,7 +6,7 @@ author: Jeff Delaney
 draft: false
 description: Authenticate users into your Firebase app with Apple SignIn on the web.  
 tags: 
-    - authentication
+    - auth
     - ios
     - javascript
 

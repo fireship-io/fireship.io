@@ -6,8 +6,11 @@
 
 {{ define "feed" }}
 
+{{ $paginator := .Paginate (where .Pages "Type" "lessons") 24 }}
+
+
     <div class="row">
-      {{ range .Pages }}
+      {{ range $paginator.Pages  }}
 
         <div class="col-sm-12 col-md-6 col-lg-4">
                 <div class="card card-lesson">
@@ -29,5 +32,8 @@
 
       {{ end }}
     </div>
+
+{{ template "_internal/pagination.html" . }}
+
 
 {{ end }}

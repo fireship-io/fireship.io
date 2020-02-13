@@ -20,3 +20,13 @@ The following beginner-level tutorial teaches you how to build a Tic-Tac-Toe gam
 [Tic-Tac-Toe Source Code](https://github.com/fireship-io/angular-tic-tac-toe)
 
 {{< figure src="/courses/angular/img/tic-tac-toe-demo.png" caption="Example of the final tic-tac-toe PWA deployed in this section" >}}
+
+
+## Recommended Lessons
+
+You may also find the following lessons useful for mastering the basics of Angular. 
+
+- [Reactive Forms Basics](/lessons/basics-reactive-forms-in-angular)
+- [Testing Angular Apps](/lessons/angular-testing-guide-including-firebase)
+- [Material Datatables](/lessons/material-data-tables-with-firestore)
+- [Kitchen Sink](/tags/angular)
