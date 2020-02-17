@@ -25,6 +25,7 @@ import { AllowIfComponent } from './access/allow-if/allow-if.component';
 import { EmailLoginComponent } from './users/email-login/email-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginModalComponent } from './users/login-modal/login-modal.component';
+import { CarbonAdsComponent } from './access/ads/carbon-ads.component';
 
 const comps = [
   GoogleLoginComponent,
@@ -46,7 +47,8 @@ const comps = [
   SubscriptionManageComponent,
   SpinnerComponent,
   AllowIfComponent,
-  EmailLoginComponent
+  EmailLoginComponent,
+  CarbonAdsComponent
 ];
 
 @NgModule({
@@ -86,7 +88,8 @@ export class AppModule {
       [SubscriptionManageComponent, 'subscription-manage'],
       [SpinnerComponent, 'loading-spinner'],
       [AllowIfComponent, 'allow-if'],
-      [EmailLoginComponent, 'email-login']
+      [EmailLoginComponent, 'email-login'],
+      [CarbonAdsComponent, 'carbon-ads']
     ];
 
     for (const [component, name] of elements) {
