@@ -4,7 +4,7 @@ lastmod: 2020-02-13T09:37:39-07:00
 publishdate: 2020-02-13T09:37:39-07:00
 author: Jeff Delaney
 draft: false
-description: Security concepts that every web developer would know about. 
+description: Security concepts, risks, and exploits that every web developer should know about. 
 tags: 
     - javascript
     - security
@@ -22,11 +22,6 @@ youtube: 4YOpILi9Oxs
 ---
 
 Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100% secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
-
-<!-- <div class="insta">
-{{< instagram B786AL7HD04 >}}
-</div> -->
-
 
 ## 1. Zero-day Vulnerability
 
@@ -53,6 +48,11 @@ npm audit fix
 ## 3. Cross-site Scripting (XSS)
 
 > The Samy worm was an XSS attack that spread to over 1 million MySpace pages in 24 hours. If affected, it would updated your profile to say *but most of all, samy is my hero*
+
+<div class="insta">
+{{< instagram B8rJPG7gvv7 >}}
+</div>
+
 
 Cross Site Scripting occurs when a hacker runs malicious JavaScript on a client's browser. In can happen in a variety of ways, but is commonly the result of rendering raw HTML from the server. 
 
