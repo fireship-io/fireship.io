@@ -60,3 +60,14 @@
     line-height: 1;
   }
   
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    #carbonads {
+      bottom: 0px;
+      right: 0px;
+      width: 100%;
+      max-width: 480px;
+    }
+    
+  }

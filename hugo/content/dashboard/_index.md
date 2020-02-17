@@ -7,12 +7,6 @@ hide_feed: true
 ---
 {{< partial "dashboard" >}}
 
-
-{{< box icon="slack" >}}
-PRO members get special treatment on [Slack](https://fireship.page.link/slack). Create an account expect a welcome message from @CyberJeff. Use the **/pro** slash command to see secret features.
-{{< /box >}}
-
-
 ## How do I redeem my Sticker?
 
 Just fill out the form below. Make sure to use the same email address as your Fireship PRO account. 
