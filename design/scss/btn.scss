@@ -8,13 +8,26 @@
     }
 }
 
+@mixin btn-outline($bg, $color: #ffffff) {
+    background: transparent;
+    color: $bg;
+    border: 2px solid var(--#{$bg});
+    transition: background 400ms ease;
+    &:hover {
+        box-shadow: var(--card-shadow);
+        background: var(--#{$bg});
+        color: $color;
+        transition: background 400ms ease;
+    }
+}
+
 .btn, .page-item {
     background: var(--nav-bg);
     margin: 0.25em;
     margin-left: 0;
     color: var(--text-color);
     font-size: 0.625em;
-    border: none;
+    border: 2px solid transparent;
     padding: 1em 2em;
     text-decoration: none;
     display: inline-flex;
@@ -78,3 +91,5 @@
 .btn-green { @include btn-color('green'); }
 .btn-blue { @include btn-color('blue'); }
 .btn-orange { @include btn-color('orange'); }
+
+.btn-orange-outline { @include btn-outline('orange'); }

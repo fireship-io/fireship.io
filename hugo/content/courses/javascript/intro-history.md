@@ -5,7 +5,7 @@ draft: false
 description: ECMAScript's evolution over the last 25 years
 weight: 1
 emoji: 📜
-chapter_start: Intro 
+chapter_start: What is JavaScript, really?
 free: true
 ---
 

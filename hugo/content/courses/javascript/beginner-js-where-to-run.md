@@ -6,7 +6,7 @@ description: How and where to run JavaScript code
 weight: 3
 emoji: 🚀
 free: true
-chapter_start: Fundamental Concepts
+chapter_start: Becoming a JS Developer
 ---
 
 In order to follow along with this course, you need to know how and where your run your JavaScript code. You have several options to run your first hello world programming:

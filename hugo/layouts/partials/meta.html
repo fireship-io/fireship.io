@@ -6,7 +6,7 @@
 
 
 {{ if .Params.featured_img }}
-  {{ $img = print .Permalink .Params.featured_img }}
+  {{ $img = print .Params.featured_img }}
 {{ end }}
 
 {{ $description := .Description | default .Summary }}
