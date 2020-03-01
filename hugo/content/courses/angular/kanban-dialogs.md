@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359165026
 emoji: 🍱
+video_length: 8:03
 ---
 
 Use Material dialogs to create and update the data associated with boards and tasks. 

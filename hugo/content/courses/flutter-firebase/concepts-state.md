@@ -6,6 +6,7 @@ lastmod: 2019-08-23T10:13:30-04:00
 draft: false
 emoji: 🌊
 vimeo: 336144998
+video_length: 3:21
 ---
 
 Note: The code below is updated for *Provider* version `3.1`. The main change is that the `stream` param has been renamed to `value`. 

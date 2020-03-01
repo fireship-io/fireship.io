@@ -6,6 +6,7 @@ description: Comparing Firestore to RDBMS or SQL
 weight: 3
 emoji: 👶
 vimeo: 330782755
+video_length: 2:17
 ---
 
 

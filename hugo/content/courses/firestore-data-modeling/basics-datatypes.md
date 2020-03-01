@@ -8,6 +8,7 @@ emoji: 🔥
 vimeo: 330784466
 
 chapter_start: Core Concepts 
+video_length: 3:10
 ---
 
 Learn more about Firestore's [supported data types](https://firebase.google.com/docs/firestore/manage-data/data-types)

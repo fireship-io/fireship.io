@@ -8,4 +8,5 @@ emoji: 🎉
 vimeo: 336426123
 
 chapter_start: Release
+video_length: 4:23
 ---

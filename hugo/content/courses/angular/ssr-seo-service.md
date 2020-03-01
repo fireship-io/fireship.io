@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359182030
 emoji: 🏷️
+video_length: 5:32
 ---
 
 Create a customers module that uses dynamic routing and generates SEO metatags based on a Firestore document query. 

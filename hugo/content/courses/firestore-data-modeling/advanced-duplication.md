@@ -7,4 +7,5 @@ weight: 14
 emoji: 📐
 vimeo: 330798185
 chapter_start: Advanced Techniques
+video_length: 1:00
 ---

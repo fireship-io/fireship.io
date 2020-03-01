@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 358702411
 emoji: 🎨
+video_length: 5:21
 ---
 
 We're ready to start building the app! It's ideal to kick off any new project with a solid foundation for design. An app that looks good from the day one will keep you happy and motivated throughout the development process. 

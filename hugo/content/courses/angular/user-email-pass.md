@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 358928542
 emoji: 📧
+video_length: 11:32
 ---
 
 - Official [Reactive Forms Docs](https://angular.io/api/forms/ReactiveFormsModule)

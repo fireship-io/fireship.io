@@ -8,6 +8,7 @@ vimeo:
 emoji: 📦
 youtube:
 free: true
+video_length: 13:51
 ---
 
 ## Components, Directive, and Pipes

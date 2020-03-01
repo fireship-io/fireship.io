@@ -420,11 +420,20 @@ video, video-player, .video-overlay {
 }
 
 .chapter-item {
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
   &:hover {
     transform: scale(1.02);
     background: var(--tag-bg);
   }
-  transition: all 0.3s ease;
+
+  .video-labels {
+    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: 1rem;
+  }
+  
 }
 
 .home-features {
@@ -501,6 +510,7 @@ video, video-player, .video-overlay {
   max-width: 998px;
   margin: 0 auto;
 }
+
 
 
 .the-end {

@@ -6,6 +6,8 @@ description: Security considerations with data modeling
 weight: 9
 emoji: 🔥
 vimeo: 330792111
+video_length: 1:22
+
 ---
 
 {{< file "firebase" "rules.json" >}}

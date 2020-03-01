@@ -6,4 +6,5 @@ description: A brief history of Cloud Firestore
 weight: 2
 emoji: 👶
 vimeo: 330783033
+video_length: 3:16
 ---

@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359159386
 emoji: 🍱
+video_length: 3:06
 ---
 
 Animate the the CDK Drag & Drop elements using CSS transitions.

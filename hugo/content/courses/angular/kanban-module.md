@@ -7,6 +7,7 @@ draft: false
 vimeo: 359141176
 emoji: 🍱
 chapter_start: Kanban
+video_length: 2:10
 ---
 
 Setup another lazy-loaded feature module for the development of Kanban boards. 

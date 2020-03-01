@@ -8,6 +8,7 @@ emoji: 🍰
 vimeo:
 chapter_start: Bonus Round
 free: true
+video_length: 11:45
 ---
 
 <div class="vid" style="min-width: 80vw; margin-bottom: 50px;">

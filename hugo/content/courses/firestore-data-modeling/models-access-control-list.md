@@ -6,6 +6,7 @@ description: Use an ACL for fine-grained user authorization
 weight: 18
 emoji: 🎁
 vimeo: 331445138
+video_length: 2:26
 ---
 
 Sample Firestore security rules for an Access Control List (ACL), where the content determines which users have authorization. 

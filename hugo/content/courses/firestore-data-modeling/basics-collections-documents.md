@@ -6,6 +6,7 @@ description: The four main techniques for data modeling in Firestore
 weight: 5
 emoji: 🔥
 vimeo: 330791614
+video_length: 3:44
 ---
 
 

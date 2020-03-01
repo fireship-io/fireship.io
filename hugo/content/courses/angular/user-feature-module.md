@@ -7,6 +7,7 @@ draft: false
 vimeo: 358915030
 emoji: 🤸
 chapter_start: Users
+video_length: 3:54
 ---
 
 Create a lazy-loaded feature module to handle user sign-in and related tasks. 

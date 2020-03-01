@@ -7,6 +7,7 @@ draft: false
 emoji: 🎨
 vimeo: 336138357
 chapter_start: Flutter Concepts
+video_length: 2:30
 ---
 
 ## Example Code

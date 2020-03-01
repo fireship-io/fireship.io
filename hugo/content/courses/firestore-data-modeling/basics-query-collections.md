@@ -6,6 +6,7 @@ description: How to query collections of documents.
 weight: 7
 emoji: 🔥
 vimeo: 330791975
+video_length: 3:22
 ---
 
 Examples of how to make queries in Firestore that resemble SQL. 

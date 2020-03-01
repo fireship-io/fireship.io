@@ -9,6 +9,7 @@ vimeo: 336120794
 emoji: 👶
 chapter_start: Intro 
 free: true
+video_length: 1:42
 ---
 
 ## Course Resources

@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 358714095
 emoji: 🐚
+video_length: 8:45
 ---
 
 Add a basic navigation shell to the app and make it responsive on mobile.

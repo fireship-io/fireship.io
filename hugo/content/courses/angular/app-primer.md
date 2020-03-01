@@ -7,6 +7,7 @@ draft: false
 vimeo: 358695516
 emoji: 💻
 chapter_start: App
+video_length: 2:50
 ---
 
 Recommended: Clone the [source code](https://github.com/codediodeio/angular-firestarter) as a reference. 

@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359196566
 emoji: 🦅
+video_length: 2:56
 ---
 
 Create a server module using Angular Universal with the NestJS schematic.

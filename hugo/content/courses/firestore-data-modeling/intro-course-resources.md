@@ -7,6 +7,7 @@ weight: 1
 emoji: 👶
 vimeo: 330782565
 chapter_start: Intro 
+video_length: 1:53
 ---
 
 ## Course Resources

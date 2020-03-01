@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359176203
 emoji: 🗑️
+video_length: 3:10
 ---
 
 Create a delete button that confirms the operation before sending the write to the database. 

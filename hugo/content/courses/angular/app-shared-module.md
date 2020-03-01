@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 358706034
 emoji: 🤝
+video_length: 3:59
 ---
 
 Create a shared module to avoid duplicate imports and exports of common Angular Material features. 

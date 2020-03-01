@@ -6,6 +6,7 @@ description: Role-based access control and security rules
 weight: 17
 emoji: 🎁
 vimeo: 331445271
+video_length: 3:25
 ---
 
 Sample Firestore rules for Role-based Authorization where the user document determines the access level. 

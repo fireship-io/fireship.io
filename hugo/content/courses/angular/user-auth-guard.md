@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359089400
 emoji: 👮
+video_length: 4:59
 ---
 
 Use a router guard to protect routes from unauthorized users and show a snackbar error message. 

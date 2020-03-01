@@ -6,6 +6,7 @@ description:  User-to-user follows and follower feeds
 weight: 20
 emoji: 🎁
 vimeo: 331445416
+video_length: 4:21
 ---
 
 The code below uses this data model to follow/unfollow users & query the most recent posts from users that are being followed. 

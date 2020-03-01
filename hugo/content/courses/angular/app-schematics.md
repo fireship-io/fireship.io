@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 358708708
 emoji: 🏗️
+video_length: 1:10
 ---
 
 Schematics provide sophisticated code blueprints using the Angular CLI, with many [recipes](https://material.angular.io/guide/schematics#navigation-schematic) included for Angular Material. 

@@ -35,17 +35,25 @@
 
         <div class="box-content">
             <strong>{{ add $index 1 }} {{ .Title }}
-                {{ with .Params.free }}
-                <span class="tag tag-sm tag-pro">free</span> 
-                {{ end }}
 
             </strong> 
 
             <span class="subtext">{{ .Description }}</span>
       
-
         </div>
 
+        <div class="video-labels">
+
+            {{ with .Params.free }}
+            <span class="tag tag-sm tag-pro">free</span> 
+            {{ end }}
+
+            {{ with .Params.video_length }}
+                <span class="tag tag-sm">{{ . }}</span>
+            {{ end }}
+        </div>
+
+        
       
       </div>
     </a>

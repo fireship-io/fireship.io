@@ -6,6 +6,7 @@ lastmod: 2019-07-16T10:23:30-09:00
 draft: false
 vimeo: 359157470
 emoji: 🍱
+video_length: 6:36
 ---
 
 Use the Angular [CDK Drag and Drop](https://material.angular.io/cdk/drag-drop/overview) Module to enable reordering of Kanban boards and tasks. 

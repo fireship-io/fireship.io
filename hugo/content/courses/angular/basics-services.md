@@ -8,6 +8,7 @@ vimeo: 359307600
 emoji: 💉
 youtube:
 free: true
+video_length: 3:18
 ---
 
 ## Generate a Service

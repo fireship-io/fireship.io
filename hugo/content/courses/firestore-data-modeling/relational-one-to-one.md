@@ -6,6 +6,7 @@ description: Model and query a one-to-one relationship
 weight: 11
 emoji: 👪
 vimeo: 330797883
+video_length: 2:01
 ---
 
 {{< file "js" "firestore.js" >}}

@@ -7,6 +7,7 @@ draft: false
 vimeo: 359314479
 emoji: ⚡
 free: true
+video_length: 4:01
 ---
 
 The [Angular CLI](https://angular.io/cli) provides a powerful set of tools that can bundle your app with webpack, generate boilerplate code, and configure third-party extensions. 

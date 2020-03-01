@@ -7,6 +7,7 @@ draft: false
 vimeo: 359307851
 emoji: 🧩
 free: true
+video_length: 2:41
 ---
 
 {{< file "terminal" "command line" >}}

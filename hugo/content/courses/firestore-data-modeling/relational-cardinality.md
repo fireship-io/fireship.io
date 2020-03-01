@@ -8,6 +8,7 @@ emoji: 👪
 vimeo: 330792203
 free: true
 chapter_start: Relational Data Modeling 
+video_length: 1:30
 ---
 
 Consider the cardinality or maximum size of a set. A loose rule to follow is...

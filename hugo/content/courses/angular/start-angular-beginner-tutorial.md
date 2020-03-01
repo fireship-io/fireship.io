@@ -7,6 +7,7 @@ draft: false
 emoji: 👶
 chapter_start: Optional Beginner Project
 free: true
+video_length: 20:23
 ---
 
 <div class="vid-center">
