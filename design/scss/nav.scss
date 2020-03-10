@@ -181,7 +181,7 @@ a.item {
   position: fixed;
   opacity: 0;
   width: 60%;
-  min-width: 700px;
+  min-width: 750px;
   visibility: hidden;
   color: white;
   box-shadow: var(--nav-shadow);
@@ -220,6 +220,8 @@ a.item {
   .mega-main {
     margin-top: 10px;
     padding: 0 1em 1em;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   .mega-footer {

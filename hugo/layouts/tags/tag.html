@@ -1,7 +1,5 @@
 {{ define "main" }}
-
-    <div class="row">
-    <header class="col-xs-12">
+    <header>
         <h1 class="tag tag-contrast tag-{{ anchorize .Title }} shadow">
             {{ title .Title }}
         </h1>
@@ -17,10 +15,11 @@
             </div>
         {{ end }}
     </header>
-
+    
+    <div class="row">
     {{ range.Pages }}
 
-    <div class="col-sm-12 col-md-6 col-lg-4">{{ partial "lesson-card" . }}</div>
+    {{ partial "lesson-card" . }}
 
     {{ end }}
     </div>
