@@ -26,9 +26,9 @@ I like to give away things you can hold in your hand. Here's what you can expect
 - Guest post or major code improvements === 👕 T-shirt. 
 - Course collaboration === 💰 Paid freelance job or revenue share. 
 
-## How to Fix, Improve, and Create Content via Github
+## How to Fix, Improve, and Create Content via GitHub
 
-First, fork the main repo on github, then clone it to your local machine. You must have Hugo and Node installed. 
+First, fork the main repo on GitHub, then clone it to your local machine. You must have Hugo and Node installed. 
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
@@ -39,7 +39,7 @@ npm run dev
 git checkout -b my-fix
 {{< /highlight >}}
 
-After making your fix or adding new content, submit a pull request on github. 
+After making your fix or adding new content, submit a pull request on GitHub. 
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
