@@ -12,12 +12,10 @@
 
     {{ if not .Params.hide_feed }}
 
-    <div class="row" id="grid">
+    <div class="row">
       {{ range .Pages }}
 
-        <div class="col-sm-12 col-md-6 col-lg-4">
             {{ partial "lesson-card" . }}
-        </div>
 
       {{ end }}
     </div>

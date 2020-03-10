@@ -1,11 +1,9 @@
 {{ define "main"}}
 
 <div class="row" style="margin-top: 3em;">
-  <div class="col-xs-12 col-md-6">
     <div class="vid">
       <iframe src="https://player.vimeo.com/video/379454037" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> 
-  </div>
-  <div class="col-xs-12 col-md-6" style="justify-content: space-between; display: flex; flex-direction: column;">
+  <div  style="justify-content: space-between; display: flex; flex-direction: column;">
     <h1>Build and ship 🔥 your app ⚡ faster</h1>
     <p class="text-lg">
       Fireship.io is an ecosystem of practical resources for
@@ -137,7 +135,7 @@
 
 
 <div class="row row-home">
-  <div class="col-xs-12 col-sm-8">
+  <section>
     <h2>
       <i>{{ partial "svg/video.svg" }}</i> Weekly Video Episodes
     </h2>
@@ -145,15 +143,15 @@
       Lessons are <strong>non-linear ~10min episodes</strong> covering a variety
       of topics that include a video, writeup, and github repo. <a class="btn btn-sm" href="{{ .Site.Data.links.youtube }}">Watch</a>
     </p>
-  </div>
+  </section>
 
-  <div class="col-xs-12 col-sm-4 flex-center">
+  <section>
     <a href="{{ .Site.Data.links.youtube }}"
       ><img
         src="img/pages/yt.jpg"
         alt="old film gif for video episodes on Fireship.io"
     /></a>
-  </div>
+  </section>
 </div>
 
 <h2 class="text-center home-heading">Not your Average Code Tutorials</h2>
@@ -161,7 +159,7 @@
 
 <div class="row home-features">
 
-  <div class="flex-center col-xs-12 col-md-4">
+  <section>
     <a class="card card-outline" href="{{ .Site.Data.links.slack }}">
       <div class="card-content">
         <h2>💬 Slack Chat</h2>
@@ -171,9 +169,9 @@
         </p>
       </div>
     </a>
-  </div>
+  </section>
 
-  <div class="flex-center col-xs-12 col-md-4">
+  <section>
     <a class="card card-outline" href="{{ .Site.Data.links.github }}">
       <div class="card-content">
         <h2>👨‍💻 Open Source Code</h2>
@@ -183,9 +181,9 @@
         </p>
       </div>
     </a>
-  </div>
+  </section>
 
-  <div class="flex-center col-xs-12 col-md-4">
+  <section>
         <a class="card card-outline" href="{{ .Site.Data.links.github }}">
           <div class="card-content">
                 <h2>🍰 Cake</h2>
@@ -195,7 +193,7 @@
                 </p>
           </div>
         </a>
-      </div>
+      </section>
 
 
 </div>
@@ -206,27 +204,27 @@
 <h2 class="text-center home-heading">Watch the Latest Lessons</h2>
 <h4 class="home-sub-heading text-center">New video content every few days</h3>
 
-<div class="row">
+<div class="row-max-3">
   {{ range (first 6 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) . }}
 
-  <div class="col-sm-12 col-md-6 col-lg-4">{{ partial "lesson-card" . }}</div>
+  {{ partial "lesson-card" . }}
 
   {{ end }}
 
-  <modal-button selector="algolia-search" class="col-xs-12">
+  <modal-button selector="algolia-search">
     <button class="btn btn-green">Search All Lessons</button>
   </modal-button>
 </div>
 
 <div class="row row-home">
-    <div class="col-xs-12 col-sm-4 flex-center">
+    <section>
       <a href="/about"
         ><img
           src="/img/pages/jeffdelaney-gde.webp" onerror="this.onerror=null; this.src='/img/pages/jeffdelaney-gde-lc.png'"
           alt="Jeff Delaney Google Developer Expert"
       /></a>
-    </div>
-    <div class="col-xs-12 col-sm-8">
+    </section>
+    <section>
       <h2>
         <i>{{ partial "svg/microphone.svg" }}</i> Your Host
       </h2>
@@ -235,7 +233,7 @@
         apps. My mission is simple 👉 produce practical
         content that <strong>increases developer happiness and productivity</strong> 🚀. 
       </p>
-    </div>
+    </section>
   </div>
   
 
