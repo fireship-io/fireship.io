@@ -23,7 +23,8 @@ jobs:
           node-version: 10
       - uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.63.2/extended'
+          hugo-version: '0.63.2'
+          extended: true
       - run: npm ci
       - run: npm ci
         working-directory: ./components
