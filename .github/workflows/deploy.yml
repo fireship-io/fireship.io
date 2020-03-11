@@ -1,0 +1,29 @@
+name: Deploy to Firebase Hosting
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
+  ALGOLIA_APP_ID: 05VYZFXKNM 
+  ALGOLIA_ADMIN_KEY: ${{secrets.ALGOLIA_ADMIN_KEY}}
+  ALGOLIA_INDEX_NAME: content 
+  ALGOLIA_INDEX_FILE: public/algolia.json
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm ci
+      - run: npm ci
+        working-directory: ./components
+      - run: npm run build
+      - run: npm run algolia
+      - run: npm run deploy
