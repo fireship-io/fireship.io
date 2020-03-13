@@ -55,11 +55,11 @@ Use the command above to convert the JSON service account to a base64 string.
 
 ## Firestore Backup Github Action
 
-Now, we're ready to create the Github Action to run this job.
+Create the Github Action to run the export job on a schedule.
 
 ### Workflow
 
-The workflow below use a cron schedule to run the export once per day at midnight. GCP has an official action that handles the [setup for gcloud](https://github.com/GoogleCloudPlatform/github-actions/blob/master/setup-gcloud/README.md). 
+The workflow below uses a cron schedule to run the export once per day at midnight. GCP has an official action that handles the [setup for gcloud](https://github.com/GoogleCloudPlatform/github-actions/blob/master/setup-gcloud/README.md). 
 
 {{< file "yaml" ".github/workflows/backup.yaml" >}}
 ```yaml
@@ -97,7 +97,7 @@ git commit -m "backup my firestore data"
 git push origin master
 ```
 
-We the cron schedule fires, you should see a successful export job similar to this. The exported data will be available in your Firebase storage bucket. 
+When the schedule event fires, you should see a successful export job similar to the output below. The exported data will be available in your Firebase storage bucket. 
 
 
-{{< figure src="/img/snippets/backup-firestore-success.png" caption="Download the JSON version to your local system" >}}
+{{< figure src="/img/snippets/backup-firestore-success.png" caption="Example of successful Firestore export job in Github Actions" >}}
