@@ -1,8 +1,8 @@
-name: Export Firestore
+name: Export Firestore Data
 
 on:
   schedule:
-    - cron:  '10 * * * *'
+    - cron:  '0 0 * * *'
 
 env:
   PROJECT_ID: fireship-app
