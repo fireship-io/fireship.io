@@ -1,5 +1,3 @@
-![Fireship.io PWA](https://github.com/fireship-io/fireship.io/workflows/Deploy%20to%20Firebase%20Hosting/badge.svg)
-
 # [Fireship.io](https://fireship.io/)
 
 Content [designed](https://fireship.io/mission/) to increase developer happiness 😁 and productivity 🚀.

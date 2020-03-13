@@ -8,7 +8,8 @@ description: How to implement a daily background job that exports your Firestore
 tags: 
     - firebase
     - firestore
-    - github-actions
+    - github
+
 type: lessons
 # youtube: 
 # code: 
