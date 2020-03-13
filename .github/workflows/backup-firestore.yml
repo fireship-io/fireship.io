@@ -1,9 +1,14 @@
 name: Backup Firestore
 
 on:
-  schedule:
-    - cron:  '*/5 * * * *'
+  watch:
+    types: [started]
+  # schedule:
+  #   - cron:  '*/5 * * * *'
 
+env:
+  PROJECT_ID: fireship-app
+  BUCKET: gs://fireship-app-backups
 
 jobs:
   backup:
@@ -14,3 +19,5 @@ jobs:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true
     - run: gcloud info
+    # - run: gcloud config set project $PROJECT_ID
+    # - run: gcloud firestore export $BUCKET
