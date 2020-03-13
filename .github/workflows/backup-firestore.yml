@@ -1,15 +1,12 @@
 name: Backup Firestore
 
 on:
-  watch:
-    types: [started]
-  # schedule:
-  #   - cron:  '*/5 * * * *'
-
+  schedule:
+    - cron:  '0 0 * * *'
 env:
   PROJECT_ID: fireship-app
   BUCKET: gs://fireship-app-backups
-
+  
 jobs:
   backup:
     runs-on: ubuntu-latest
