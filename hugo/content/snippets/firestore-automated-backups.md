@@ -11,8 +11,8 @@ tags:
     - github
 
 type: lessons
-# youtube: 
-# code: 
+# youtube: eB0nUzAI7M8
+# code: https://github.com/fireship-io/225-github-actions-demo
 # disable_toc: true
 # disable_qna: true
 
