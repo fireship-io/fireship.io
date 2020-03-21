@@ -29,7 +29,7 @@ Continuous Integration (CI) automates the process of testing and building your c
 
 ### Workflow
 
-{{< file "yaml" ".github/workflows/worflow.yml" >}}
+{{< file "yaml" ".github/workflows/workflow.yml" >}}
 ```yaml
 name: Node Continuous Integration
 
@@ -64,7 +64,7 @@ Do you maintain an open source package? It can be tedious to re-publish your pac
 
 ### Workflow
 
-{{< file "yaml" ".github/workflows/worflow.yml" >}}
+{{< file "yaml" ".github/workflows/workflow.yml" >}}
 
 ```yaml
 name: Sveltefire Package
@@ -125,7 +125,7 @@ Also see the lessons about [Building a Slack Bot](https://fireship.io/lessons/ho
 
 ### Workflow
 
-{{< file "yaml" ".github/workflows/worflow.yml" >}}
+{{< file "yaml" ".github/workflows/workflow.yml" >}}
 ```yaml
 name: Slack Issues
 
