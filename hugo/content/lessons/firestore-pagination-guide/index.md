@@ -12,7 +12,7 @@ tags:
 
 type: lessons
 youtube: yFlhTvxcrQ8
-code: https://github.com/fireship-io/215-firestore-pagination
+github: https://github.com/fireship-io/215-firestore-pagination
 # disable_toc: true
 # disable_qna: true
 

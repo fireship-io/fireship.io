@@ -11,7 +11,7 @@ tags:
     - dart
 
 # youtube: 
-code: https://github.com/fireship-io/216-flutter-ipod/blob/master/lib/wheel.dart
+github: https://github.com/fireship-io/216-flutter-ipod/blob/master/lib/wheel.dart
 # disable_toc: true
 # disable_qna: true
 type: lessons

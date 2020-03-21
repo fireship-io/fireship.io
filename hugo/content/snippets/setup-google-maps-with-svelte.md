@@ -10,7 +10,7 @@ tags:
     - svelte
 
 # youtube: 
-code: https://github.com/fireship-io/svelte3-google-maps
+github: https://github.com/fireship-io/svelte3-google-maps
 type: lessons
 # disable_toc: true
 # disable_qna: true

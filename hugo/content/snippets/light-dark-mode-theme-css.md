@@ -10,7 +10,7 @@ tags:
     - javascript
 
 # youtube: 
-code: https://github.com/fireship-io/222-responsive-icon-nav-css/blob/master/public/theme.js
+github: https://github.com/fireship-io/222-responsive-icon-nav-css/blob/master/public/theme.js
 type: lessons
 # disable_toc: true
 # disable_qna: true
