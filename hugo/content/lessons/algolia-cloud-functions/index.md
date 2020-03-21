@@ -43,6 +43,10 @@ This lesson is integrated with multiple frontend frameworks. After deploying the
 
 ## Initial Setup
 
+### Blaze plan required
+
+Make sure you are at least using the Firebase Blaze plan because this will enable you to make network requests to third-party APIs like Algolia.
+
 ### Initialize Cloud Functions
 
 First, initialize Cloud Functions in your project with the Firebase Tools CLI. This lesson uses vanilla JS, but feel free to select TypeScript if you prefer. 
