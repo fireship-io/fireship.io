@@ -580,5 +580,5 @@ subject.connect();
 ## See Also 
 
 <div class="vid vid-center">
-{{ youtube 2LCo926NFLI }}
+{{< youtube 2LCo926NFLI >}}
 </div>
