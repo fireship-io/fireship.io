@@ -53,7 +53,7 @@ git push origin my-fix
 Content is written in [markdown](https://gohugo.io/content-management/formats/#learn-markdown). Posts should only use h2 and h3 tags.
 
 {{< file "md" "some-cool-post.md" >}}
-{{< highlight markdown >}}
+```markdown
 
 ## Step 1: Do Something
 
@@ -62,39 +62,21 @@ some overview text
 ### Specific Details
 
 [link](/style-guide/) to somewhere useful
-
-{{< /highlight >}}
+```
 
 Images for lessons are saved in the relative image dir, `lessons/<lesson>/img/` and use the Hugo figure shortcode. 
 
 {{< file "md" "some-cool-post.md" >}}
-{{< highlight mardown >}}
+```markdown
 {{</* figure src="img/my-images.png" alt="cool image" */>}}
-{{< /highlight >}}
-
-Code snippets use Hugo shortcodes. Optionally, you can give the code block a icon and filename. The available icons are listed in the `layouts/partials/svg` dir. 
-
-
-{{< file "md" "some-cool-post.md" >}}
-{{< highlight mardown >}}
-
-{{</* file "ngts" "index.ts" */>}}
-{{</* highlight typescript */>}}
-
-    console.log('hello')
-
-{{</* /highlight */>}}
-
-{{< /highlight >}}
-
-Note: Angular specific icons are prefixed the `ng`. 
+```
 
 ## Add Contributor Bio
 
-Thank you for contributing 🙏. Make sure you add details to the contributors section and save your avatar image to the `static/img` dir. 
+Thank you for contributing 🙏. Make sure you add details to the contributors section and save your avatar image to the `static/img/contributors` dir. 
 
 {{< file "md" "michael-jordan.md" >}}
-{{< highlight mardown >}}
+```markdown
 ---
 title: Michael Jordan
 draft: false
@@ -111,7 +93,7 @@ portfolio:
 
 I used to play baseball...
 
-{{< /highlight >}}
+```
 
 
 
