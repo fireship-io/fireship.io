@@ -79,11 +79,19 @@ export const plans = {
   },
   angular: {
     id: 'angular',
-    sku:  'sku_Fn7Ojng8TLwnC4', // 'sku_EYK0SsvBzq7pcM',
+    sku:  'sku_Fn7Ojng8TLwnC4',
     description: 'Angular Firebase Project Course 🍱',
     type: 'order',
     price: 1900,
     url: '/courses/angular/'
-  }
+  },
+  vueFirebase: {
+    id: 'vue-firebase',
+    sku:  'sku_H1XsUY6LLGAgVx',
+    description: 'Vue Firebase Project Course 💬',
+    type: 'order',
+    price: 1900,
+    url: '/courses/vue/'
+  },
 };
 
