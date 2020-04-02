@@ -30,7 +30,7 @@ In this course you will learn...
 - Usage of the Vuefire Package
 - Vue Composition API
 - Chat Features in Firestore
-- Record audio in PWA
+- Record audio on the web
 - Upload files to Firebase Storage
 
 
