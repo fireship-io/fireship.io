@@ -36,4 +36,4 @@ In this course you will learn...
 
 ### 🤔 Is this Course Right for Me?
 
-This course is **intermediate level** and designed to expose you to real-world challenges when building PWAs with Angular. It assumes you have at least basic knowledge of web programming, including basic skills in JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
+This course is **intermediate level** and designed to expose you to useful patterns when building realtime web apps with [Vue](https://vuejs.org/) and [Firebase](https://firebase.google.com/). It assumes you have at least basic knowledge of web programming, including basic skills in JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
