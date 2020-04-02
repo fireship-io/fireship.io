@@ -74,7 +74,7 @@ exports.deleteCollection = functions.runWith({ timeoutSeconds: 540})
         recursive: true,
         yes: true,
       })
-      .then(() => ({ result: 'all done!' });
+      .then(() => ({ result: 'all done!' }));
   });
 
 ```
