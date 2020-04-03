@@ -10,6 +10,7 @@ video_length: 2:02
 chapter_start: User Authentication
 ---
 
+
 ## Login Component
 
 {{< file "vue" "App.vue" >}}
