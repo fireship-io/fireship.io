@@ -85,10 +85,10 @@ export const plans = {
     price: 1900,
     url: '/courses/angular/'
   },
-  vueFirebase: {
-    id: 'vue-firebase',
+  vue: {
+    id: 'vue',
     sku:  'sku_H1XsUY6LLGAgVx',
-    description: 'Vue Firebase Project Course 💬',
+    description: 'Vue Firebase Project Course 🖖',
     type: 'order',
     price: 1900,
     url: '/courses/vue/'
