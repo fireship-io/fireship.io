@@ -157,7 +157,7 @@ If using Zsh, open the `~/.zshrc` file and update the plugins:
 ```bash
 plugins=(git nvm)
 ```
-## Install Node
+### Install Node
 
 
 Install the recommended [LTS version](https://nodejs.org/en/) of Node. It will automatically install NPM and Node. 
