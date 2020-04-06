@@ -1,10 +1,6 @@
 ---
 title: Web Development Setup Guide for Windows with Linux (WSL)
-<<<<<<< HEAD
 lastmod: 2020-04-05T13:22:42-07:00
-=======
-lastmod: 2020-04-03T13:22:42-07:00
->>>>>>> f4d9924476ec1bf5420e1c49f6dcc5c9edb9cce4
 publishdate: 2020-04-03T13:22:42-07:00
 author: Jeff Delaney
 draft: false
@@ -28,11 +24,7 @@ youtube: -atblwgc63E
 
 Historically, Windows has not been been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps. 
 
-<<<<<<< HEAD
 Unlike a dual boot system, where two operating systems are installed on the same hard drive, WSL runs Linux in a compatibility layer that can run unmodified ELF64 binaries. The following lesson will teach you how to enable WSL and setup other important tools for web development, like Node.js, git, Docker, browsers, and more. 
-=======
-Unlike a dual boot system, where two operating systems are installed on the same hard drive, WSL runs Linux in a compatibility layer that can run unmodified l64 binaries. The following lesson will teach you how to enable WSL and setup other important tools for web development, like Node.js, git, Docker, browsers, and more. 
->>>>>>> f4d9924476ec1bf5420e1c49f6dcc5c9edb9cce4
 
 ## Linux on Windows
 
