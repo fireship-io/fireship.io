@@ -121,9 +121,9 @@ signupBtn.onclick = async () => {
 };
 ```
 
-## Part 2: Register a Phone as Secondary Factor
+## Part 2: Register a Phone as a Secondary Factor
 
-At this point, the user is signed in and they have decided to enroll in a second factor. Usually, it is an optional security feature recommended to the user, but you might also require it immediately upon signup. 
+At this point, the user is signed in and ready to enroll in a second factor. Usually, it is an optional security feature recommended to the user, but you might also require it immediately upon signup. 
 
 The user will stay logged in after enrolling the second factor, but future logins will require SMS verification. 
 
