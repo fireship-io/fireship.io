@@ -1,18 +1,16 @@
 ---
 title: Auto-save Vue Forms with Firestore
-lastmod: 2020-03-31T15:14:17-07:00
-publishdate: 2020-03-31T15:14:17-07:00
-author: Jeff Delaney
+lastmod: 2020-04-07T15:14:17-07:00
+publishdate: 2020-04-07T15:14:17-07:00
+author: Johan Walhout
 draft: false
-description: Build forms that preload and autosave data with Firestore with the option to revoke the data
+description: Build a form that preloads and autosaves data to Firestore in realtime. 
 tags: 
-    - pro
     - vue
     - firestore
     - forms
 
-pro: true
-# youtube: In5b6TDxb30
+youtube: wvRVfyPKOA0
 github: https://github.com/fireship-io/vue-autosaving-forms-with-firestore
 # disable_toc: true
 # disable_qna: true
@@ -24,42 +22,64 @@ github: https://github.com/fireship-io/vue-autosaving-forms-with-firestore
 #    rxdart: 0.20
 ---
 
-We see more and more application replacing the manually save-action by the user with automatically saving changes. A few examples are Google Docs and Microsoft Office: 
+Modern applications that accept complex user inputs often provide an automatic save action that runs in the background, such as Google Docs and Microsoft Office: 
+
 {{< figure src="img/office-autosave.png" caption="Microsoft Office files are auto-saved" >}} 
 
-Two years ago, we have made a reliable solution for syncing frondend forms to any backend database with a custom Angular Directive on a the [ReactiveFormsModule](https://angular.io/guide/reactive-forms). In this lesson we take a look at a from made in VueJs which autosaves the form data automatically into Firestore. But this could be saved to any backed database. Because we are automatically saving the data, we provide the form with a 'Revoke to original data' function, which resets Firestore and the form with the original data.
+The following lesson builds a reactive Vue form that automatically syncs the user's input to a backend database -  [Firestore](/tags/firestore). It keeps track of the state of the form, and when modified, waits for a short debounce before writing the changes to the backend database. From a UX perspective, this feature allows a user to save their progress and access it later from any device.  Also, see the [Angular Auto-saving Forms Demo](/lessons/auto-save-reactive-forms-with-firestore/) demo. 
 
-Setup and saving data form a form in VueJs is a breath, with Firestore as backend which manage the data and provide realtime updates, we have a powerful combination to build extensive webapplications. 
+{{< tweet 1247955207448924161 >}}
 
-{{< figure src="img/vue-autosaving-forms-firestore-demo.gif" caption="Auto saving Vue form data in to Firestore with a revoke function" >}}
+## Initial Setup
 
-## Setup a black Vue project
 Make sure you have the latest vue-cli installed.
+
 ```shell
 npm install -g @vue/cli
 
 vue create vue-autosaving-forms-with-firestore
 ```
 
-{{< figure src="img/createvueproject.png"> caption="You will see this when Vue created this project"}}
-
 Open the folder `vue-autosaving-forms-with-firestore` in VS Code and run:
+
 ```shell
 npm i firebase vuefire debounce
 npm run serve
 ```
 
-Now our VueJs project is up and running with three additional packages: Firebase, Vuefire (a wrapper for Vue to add Firebase logic) and Debounce (a package which we'll use to delay the auto-save function).
+Now our project is up and running with three additional packages: [Firebase](https://firebase.google.com/docs/reference/js), [Vuefire](https://vuefire.vuejs.org/) (a wrapper for Vue to add Firebase logic) and [debounce](https://www.npmjs.com/package/debounce) (a package which we'll use to delay the auto-save function).
 
-## Setup Firebase project with a Firestore database
-1. Create a new Firebase project
-2. Create a the Firestore database with one collection and one document and three fields: name, email and phonenumber.
-3. Add a wep-app to the Firebase project and copy the firebaseConfig-data
+### Setup a Firebase Project with Firestore
 
-Now Firebase is up and running 🔥
+1. Create a new [Firebase project](https://firebase.google.com/).
+2. Create a the Firestore database in test mode. 
+3. Add a web app to the Firebase project and copy the `firebaseConfig` object. 
 
-## Connect Firestore to the VueJs project
-1. Open the `main.ts` file and the Vuefire package like:
+Firebase is up and running 🔥
+
+### Initialize Firebase
+
+Create a file named `firebase.js`. Copy and paste your Firebase config from the console and export the Firestore database. 
+
+```typescript
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
+const firebaseApp = firebase.initializeApp({
+  // Populate your firebase configuration data here.
+});
+
+const db = firebaseApp.firestore();
+
+// Export the database for components to use.
+export { db }
+```
+Now we can use the Firestore database throughout the application. 
+
+### Enable VueFire
+
+Open the `main.js` file and the enable the Vuefire package:
+
 ```typescript
 // omitted
 
@@ -68,280 +88,150 @@ Vue.use(firestorePlugin, { wait: true })
 
 // omitted
 ```
-2. Create a file `firebase.ts` 
-3. Copy and paste your Firebase config-data into this file, even with the following code:
 
-```typescript
-import firebase from 'firebase/app'
-import 'firebase/firestore'
+## Autosave Feature
 
-const firebaseApp = firebase.initializeApp({
-  // Populate your firebase configuration data here.
-  apiKey: "...",
-  authDomain: "...",
-  databaseURL: "...",
-  projectId: "...",
-  storageBucket: "...",
-  messagingSenderId: "...",
-  appId: "...",
-  measurementId: "..."
-});
+### Make a Realtime Connection to Firestore
 
-const db = firebaseApp.firestore();
+First, make a realtime connection to Firestore using the VueFire plugin. We also initialize the reactive data that will be needed to manage the state of the form, which includes: 
 
-// Export the database for components to use.
-export { db }
-```
-Now we can use the Firestore database in every component we want to.
+- `firebaseData` - the realtime data from Firestore database.
+- `formData` - the data entered by the user in the HTML form.
+- `state` - possible states include loading, synced, modified, revoked, error
 
-## Setup the form and connect it to Firestore
-There are several different ways to connect the Firestore data and the VueJs form. In our case we just create three variables in the component to store and show the:
-- Form data
-- Original data
-- Firestore data, which will be automatically updates
+{{< file "vue" "AutoForm.vue" >}}
+```js
+import { db } from './firebase';
+import { debounce } from 'debounce';
 
-First let's start with some CSS to style the page and the form. So, within the style-tags paste the following CSS:
-```SCSS
-h1,
-h2,
-h3 {
-  font-weight: 600;
-}
-
-#app {
-  font-family: "sofia-pro", sans-serif;
-  text-align: center;
-  padding: 10vh 15vw;
-}
-
-p.help {
-  text-align: left;
-}
-```
-
-Then we add the logic to the App.vue as follows:
-```typescript
-import { db } from "./firebase";
-import { debounce } from "debounce";
+const documentPath = 'contacts/jeff';
 
 export default {
   data() {
     return {
-      state: "",
-      originalData: {},
+      state: 'loading', // synced, modified, revoked, error
+      firebaseData: null,
       formData: {},
-      firebaseData: {}
+      errorMessage: ''
     };
   },
 
   firestore() {
     return {
-      firebaseData: db.doc("documents/contact")
+      firebaseData: db.doc(documentPath),
     };
   },
+});
+```
 
-  methods: {
-    updateFirebase: debounce(async function() {
-      try {
-        this.state = "synced";
-        await db.doc("documents/contact").set(this.formData);
-      } catch (error) {
-        this.state = "error";
-      }
-    }, 1500),
+### Preload the Form Data
 
-    revokeData() {
-      const _that = this as any;
-      this.formData = (_that as any).originalData;
-      this.updateFirebase();
-      this.state = "revoked";
-    },
+Next, preload the data from Firestore so the user can continue working on an existing form using the `created` lifecycle hook. 
 
-    getDataOnce: async function() {
-      const data = await db.doc("documents/contact").get();
-      return data.data();
-    },
+```js
+export default {
 
-    fieldUpdate() {
-      this.state = "modified";
-      this.updateFirebase();
-    },
+  // omitted
+
+  created: async function () {
+    const docRef = db.doc(documentPath);
+
+    let data = (await docRef.get() ).data();
+
+    if (!data) {
+      data = { name: '', phone: '', email: '' }
+      docRef.set(data)
+    }
+
+    this.formData = data;
+    this.state = 'synced'
   },
-
-  created: async function() {
-    (this as any).originalData = await (this as any).getDataOnce();
-    (this as any).formData = await (this as any).getDataOnce();
-  }
-};
-```
-There is quite a bit happening here, so let's walk through it:
-- Frist, we import the Firestore logic from our `firebase.ts` file
-- We import the Debounce package for use here
-
-We initialize four properties in this Vue-component:
-- state: "" => here we store the active state in which the data is, we implement: *synced*, *modified*, *revoked* and *error*.
-They will speak for themselves:
-- originalData: {},
-- formData: {},
-- firebaseData: {}
-
-Next we implement:
-```Typescript
-firebaseData: db.doc("documents/contact")
-```
-To subscribe to the changes from the Firestore database.
-
-In our function `getDataOnce` we will get the data when the pages is created and assign it to the properties:
-```typescript
-getDataOnce: async function() {
-  const data = await db.doc("documents/contact").get();
-  return data.data();
-},
-
-// ...
-
-created: async function() {
-  (this as any).originalData = await (this as any).getDataOnce();
-  (this as any).formData = await (this as any).getDataOnce();
-}
+});
 ```
 
-With the VueJs directive `@input` we listen to changes on a form-field. So, every time the value in a field changes, we call `fieldUpdate()` to change the state and call `updateFirebase()`.
+### Save the Form Data to Firestore
 
-With the debounce wrapped around the `updateFirebase()` function, we can wait to finish the user typing in the formfield:    
-```typescript
-updateFirebase: debounce(async function() {
-  try {
-    this.state = "synced";
-    await db.doc("documents/contact").set(this.formData);
-  } catch (error) {
-    this.state = "error";
-  }
-}, 1500),
-```
-
-But when we're not content with the changes, we can call `revokeData()` which simply pass the *originalData* to the form, which triggers the `fieldUpdate()` and everything starts over.
-```typescript
-revokeData() {
-  const _that = this as any;
-  this.formData = (_that as any).originalData;
-  this.updateFirebase();
-  this.state = "revoked";
-},
-```
-
-Finally, to wrap up the form, we have to setup the html in the template-tag as follows:
+Create a form to accept user input and bind it to the data with `v-model`. 
 
 ```html
-<div id="app">
-  <div class="notification is-success" v-if="state === 'synced'">Form is synced with Firestore</div>
-  <div
-    class="notification is-link"
-    v-else-if="state === 'modified'"
-  >From data changed, will sync with Firebase</div>
-  <div
-    class="notification is-warning"
-    v-else-if="state === 'revoked'"
-  >From data and Firebase revoked to original data</div>
-  <div class="notification is-danger" v-else-if="state === 'error'">Failed to save to Firestore</div>
-  <div class="notification is-info" v-else>Waiting for changes...</div>
+    <form @submit.prevent="updateFirebase">
 
-  <hr />
-  <div class="columns">
-    <div class="column">
-      <h3>Original Data</h3>
-      <br />
-      {{ originalData }}
-    </div>
-  </div>
-  <div class="columns">
-    <div class="column">
-      <h3>Vue Form Data</h3>
-      <br />
-      {{ formData }}
-    </div>
-    <div class="column">
-      <h3>Firestore Data</h3>
-      <br />
-      {{ firebaseData }}
-    </div>
-  </div>
+      <input type="text" name="name" v-model="formData.name" />
+      <input type="email" name="name" v-model="formData.email" />
+      <input type="tel" name="name" v-model="formData.phone" />
 
-  <hr />
+      <button type="submit" v-if="state === 'modified'">Save Changes</button>
 
-  <form @submit.prevent="saveForm">
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label">Contact</label>
-      </div>
-      <div class="field-body">
-        <div class="field">
-          <p class="control is-expanded has-icons-left">
-            <input
-              class="input"
-              type="text"
-              name="name"
-              v-model="formData.name"
-              @input="fieldUpdate"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-user"></i>
-            </span>
-          </p>
-        </div>
-        <div class="field">
-          <p class="control is-expanded has-icons-left has-icons-right">
-            <input
-              class="input"
-              type="email"
-              name="email"
-              v-model="formData.email"
-              @input="fieldUpdate"
-            />
-            <span class="icon is-small is-left">
-              <i class="fas fa-envelope"></i>
-            </span>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="field is-horizontal">
-      <div class="field-label is-normal">
-        <label class="label">Phone</label>
-      </div>
-      <div class="field-body">
-        <div class="field is-expanded">
-          <div class="field has-addons">
-            <p class="control">
-              <a class="button is-static">+44</a>
-            </p>
-            <p class="control is-expanded">
-              <input
-                class="input"
-                type="tel"
-                name="phonenumber"
-                v-model="formData.phonenumber"
-                @input="fieldUpdate"
-              />
-            </p>
-          </div>
-          <p class="help">Do not enter the first zero</p>
-        </div>
-      </div>
-    </div>
-    <hr />
-    Vue Form State: {{ state == '' ? "waiting for changes" : state }}
-    <hr />
-  </form>
-  <button class="button is-warning is-rounded" @click="revokeData">
-    <span class="icon">
-      <i class="fas fa-undo"></i>
-    </span>
-    <span>Revoke to original data</span>
-  </button>
-</div>
+    </form>
 ```
 
-In VueJs it's possible to make your own custom directives as well, just take a look [Custom Directives in VueJs](https://vuejs.org/v2/guide/custom-directive.html)
+Create a method that uses the form data to run a `set` operation to the document in Firestore. We can also handle errors here by wrapping it in a try/catch block. 
 
-In this example we have placed the whole form and logic around it into a simple file, but this could be easily separated to use in a global Vue-project. If you have any questions or feedback, please leave a comment or drop me a line on Slack.
+
+```js
+  methods: {
+    async updateFirebase() {
+      try {
+        await db.doc(documentPath).set(this.formData);
+        this.state = 'synced';
+      } catch (error) {
+        this.errorMessage = JSON.stringify(error)
+        this.state = 'error';
+      }
+    }
+  },
+```
+
+### Debounce and Autosave Changes
+
+Currently, the form can be saved by the user manually. Update the form to listen the `@input` event. In addition, let's clearly display the state of the form in the UI. 
+
+
+
+```html
+<template>
+  <div id="app">
+
+    <div v-if="state === 'synced'">
+      Form is synced with Firestore
+    </div>
+    <div v-else-if="state === 'modified'">
+      From data changed, will sync with Firebase
+    </div>
+    <div v-else-if="state === 'revoked'">
+      From data and Firebase revoked to original data
+    </div>
+    <div v-else-if="state === 'error'">
+      Failed to save to Firestore. {{ errorMessage }}
+    </div>
+    <div v-else-if="state === 'loading'">Loading...</div>
+
+
+    <form @submit.prevent="updateFirebase" @input="fieldUpdate">
+
+      <input type="text" name="name" v-model="formData.name" />
+      <input type="email" name="name" v-model="formData.email" />
+      <input type="tel" name="name" v-model="formData.phone" />
+
+      <button type="submit" v-if="state === 'modified'">Save Changes</button>
+
+    </form>
+  </div>
+</template>
+```
+
+Write a method the handles changes to the form. Debounce the call to Firestore to prevent excessive writes to the database that could cost money and/or exceed Firestore's rate limits. 
+
+```js
+  methods: {
+    fieldUpdate() {
+      this.state = 'modified';
+      this.debouncedUpdate();
+    },
+    debouncedUpdate: debounce(function() {
+      this.updateFirebase()
+    }, 1500)
+  },
+```
+
+And we're done! Keep in mind, it is possible to make your own custom directives to share autosaving logic across multiple forms. Learn more in the [Custom Directives in Vue](https://vuejs.org/v2/guide/custom-directive.html) doc. If you have any questions or feedback, please leave a comment or drop me a line on Slack.
