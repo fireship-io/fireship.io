@@ -1,5 +1,5 @@
 ---
-title: Auto-save Vue Forms with Firestore
+title: Autosave Vue Forms with Firestore
 lastmod: 2020-04-07T15:14:17-07:00
 publishdate: 2020-04-07T15:14:17-07:00
 author: Johan Walhout
