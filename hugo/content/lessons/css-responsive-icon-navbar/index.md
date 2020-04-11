@@ -56,7 +56,7 @@ We start with a typical HTML layout - just a navigation bar `<nav>` element with
         </a>
       </li>
 
-    <li class="nav-link">
+    <li class="nav-item">
         <a href="#" class="nav-link">
           <span class="link-text">Cats</span>
           <svg>...</svg>
