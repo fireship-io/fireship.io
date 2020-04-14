@@ -98,7 +98,12 @@ FutureBuilder(
     
     if (snapshot.data == true) {
         return AppleSignInButton(
-            onPressed: auth.appleSignIn,
+          onPressed: () async { 
+            FirebaseUser user = await auth.appleSignIn();
+            if (user != null) {
+              Navigator.pushReplacementNamed(context, '/topics');
+            }
+          },
         );
     } else {
         return Container();
