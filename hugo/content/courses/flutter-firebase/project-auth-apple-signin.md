@@ -1,6 +1,6 @@
 ---
 title: Sign In with Apple
-description: Sign in with Apple on Flutter to comply with the latest iOS requirements
+description: Sign in with Apple on Flutter & Firebase to comply with the latest iOS requirements
 weight: 35
 lastmod: 2020-04-12T10:11:30-02:00
 draft: false
@@ -33,12 +33,12 @@ Enable the *Apple* authentication method in Firebase. Do not worry about the OAu
 
 ## Install apple_sign_in
 
-Install the [apple_sign_in](https://pub.dev/packages/apple_sign_in) package in your project (and [firebase_auth](https://pub.dev/packages/firebase_auth)).
+Install the [apple_sign_in](https://pub.dev/packages/apple_sign_in) package in your project (and of course [firebase_auth](https://pub.dev/packages/firebase_auth)).
 
 
 ## Auth Service
 
-The auth service provides a `appleSignIn` method that will first authenticates the user with their Apple ID. 
+The auth service provides an `appleSignIn` method that will trigger a dialog for the user to authenticate with their Apple ID. After the user signs in with Apple, the resulting token is used to create an `AuthCredential` for to sign in as `FirebaseUser`. 
 
 {{< file "dart" "auth.dart" >}}
 ```dart
