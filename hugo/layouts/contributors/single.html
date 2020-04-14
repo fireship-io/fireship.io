@@ -2,21 +2,20 @@
 
 <article itemscope itemtype="http://schema.org/Author" class="content-pad">
 
-    <div class="author-headline row">
-        <div class="author-avatar"><img src="{{ .Params.featured_img }}" alt="{{ .Title }} avatar image"></div>
-        <div class="author-bio">
+    <div class="author-headline">
+             <div class="author-avatar"><img src="{{ .Params.featured_img }}" alt="{{ .Title }} avatar image"></div>
             <h1 itemprop="name" id="{{ .Title }}" class="post-title border-bottom">
                 {{ .Title }} Contributor Bio
             </h1>
 
-            {{ partial "contributor-links.html" . }}
+
+            <div class="text-center">
+                {{ partial "contributor-links.html" . }}
+            </div>
 
             <div class="text-left">
                     {{ .Content }}
             </div>
-       
-        </div>
-
 
     </div>
 
