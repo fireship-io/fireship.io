@@ -1,10 +1,10 @@
 ---
 title: Database Model
 description: Firestore document structure for quizzes.
-weight: 26.5
-lastmod: 2019-07-13T10:13:30-04:00
+weight: 41
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
-emoji: 💽 
+emoji: 💽
 ---
 
 In order to build an app identical to the live demo, you need to populate Firestore with data. 

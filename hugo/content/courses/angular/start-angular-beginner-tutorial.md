@@ -2,7 +2,7 @@
 title: Angular Tutorial for Beginners
 description: Build a Tic-Tac-Toe game with Angular
 weight: 1
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
 emoji: 👶
 chapter_start: Optional Beginner Project

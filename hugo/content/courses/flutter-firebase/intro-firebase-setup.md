@@ -2,11 +2,18 @@
 title: Firebase setup
 description: Add Firebase to Flutter
 weight: 4
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
 emoji: 👶
 vimeo: 336023357
 video_length: 3:15
 ---
 
-[Official Docs](https://firebase.google.com/docs/flutter/setup)
+## Tasks
+
+1. Create a Firebase Project
+1. Add an iOS app to your project
+1. Add an Android app to your project
+1. Use the keytool to generate an SHA Certificate. See my [Flutter Firebase SHA guide](https://fireship.io/snippets/install-flutterfire/#project-id-and-sha1-certificate) if you get stuck at this part. 
+
+Also reference the latest [Official FlutterFire Setup Docs](https://firebase.google.com/docs/flutter/setup)

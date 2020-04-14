@@ -2,7 +2,7 @@
 title: Text
 description: Working with the Text widget
 weight: 11
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
 emoji: 🐦
 vimeo: 336025807

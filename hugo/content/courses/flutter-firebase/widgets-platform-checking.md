@@ -2,7 +2,7 @@
 title: Platform Checking
 description: Material vs Cupertino Widgets
 weight: 7
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
 emoji: 🐦
 vimeo: 336025307

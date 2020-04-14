@@ -2,7 +2,7 @@
 title: Animated Widgets
 description: Use AnimatedContainer for automatic motion
 weight: 16
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
 emoji: 🐦
 vimeo: 336198064

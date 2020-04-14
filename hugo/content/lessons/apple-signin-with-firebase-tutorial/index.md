@@ -1,10 +1,10 @@
 ---
-title: Apple SignIn with Firebase
-lastmod: 2020-02-09T08:41:24-07:00
+title: Sign In with Apple on Firebase
+lastmod: 2020-04-20T08:41:24-07:00
 publishdate: 2020-02-09T08:41:24-07:00
 author: Jeff Delaney
 draft: false
-description: Authenticate users into your Firebase app with Apple SignIn on the web.  
+description: Authenticate users into your Firebase app using Sign In with Apple on the web
 tags: 
     - auth
     - ios
@@ -25,15 +25,16 @@ youtube: UafqYgRoIC0
 
 [Sign in with Apple](https://developer.apple.com/videos/play/wwdc2019/706/) was announced in 2019 and allows users to authenticate into your Firebase app with an Apple ID. Users must have two-factor authentication (2FA) enabled on their Apple account AND be signed into iCloud. 
 
-The following lesson demonstrates how to configure Apple SignIn with the Firebase JavaScript SDK. 
 
-## Sign in with Apple Setup
 
-Follow the steps outlined below to implement [Sign In with Apple](https://developer.apple.com/sign-in-with-apple/) in your app. 
+The following lesson demonstrates how to configure Apple SignIn with the Firebase JavaScript SDK (web). 
 
-### Step 0 - Apple Developer Program
+🚨 As of April 2020, all native iOS apps that offer social auth methods (Google, Facebook, etc.) MUST also include Apple Sign In as an option. See the detailed [guideline](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple). If you're looking for Flutter, check out this [Sign In with Apple on Flutter](/courses/flutter-firebase/project-auth-apple-signin) section from the full course. 
 
-You must be a member of the Apple Developer Program. It costs $99 per year. 
+
+## Sign in with Apple Setup (Web)
+
+Follow the steps outlined below to implement [Sign In with Apple](https://developer.apple.com/sign-in-with-apple/) in your web app. 
 
 ### Step 1 - Create or Update an App ID
 

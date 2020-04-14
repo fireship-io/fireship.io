@@ -2,7 +2,7 @@
 title: Resources
 description: How to be successful in this course
 weight: 1
-lastmod: 2019-07-13T10:13:30-04:00
+lastmod: 2020-04-12T10:11:30-02:00
 draft: false
 emoji: 
 vimeo: 336120794
@@ -21,10 +21,11 @@ video_length: 1:42
 
 
 ## Social
-- [Slack Chat](https://goo.gl/8BKA1e)
+- [Slack Chat](https://fireship.page.link/slack)
 - [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
 
 ## Additional Resources
 
 - [Get it on the App Store](https://itunes.apple.com/us/app/fireship/id1462592372?mt=8)
 - [Get it on Google Play](https://play.google.com/store/apps/details?id=io.fireship.quizapp)
+- [Advanced Flutter Tutorials](tag/flutter/)
