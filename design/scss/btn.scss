@@ -93,3 +93,15 @@
 .btn-orange { @include btn-color('orange'); }
 
 .btn-orange-outline { @include btn-outline('orange'); }
+
+// Used for apple/google signin
+.btn-signin {
+    background-color: white;
+    color: black;
+    text-transform: none;
+    border: 2px black solid;
+    font-size: 1rem;
+    i {
+        margin-right: 16px;
+    }
+}

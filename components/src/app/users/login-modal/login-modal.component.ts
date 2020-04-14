@@ -8,7 +8,7 @@ export class LoginModalComponent implements OnDestroy {
 
   sub;
 
-  constructor(private cd: ChangeDetectorRef, private auth: AuthService) {
+  constructor(private cd: ChangeDetectorRef, public auth: AuthService) {
     this.sub = this.auth.user$.subscribe(u => u ? this.hide() : null);
   }
 

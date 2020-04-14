@@ -73,6 +73,13 @@ export class AuthService {
     return this.loginHandler(credential);
   }
 
+  async appleLogin() {
+    const provider = new firebase.auth.OAuthProvider('apple.com');
+    const credential = this.authClient.signInWithPopup(provider);
+    return this.loginHandler(credential);
+  }
+
+
   get userId() {
     return this.user ? this.user.uid : null;
   }

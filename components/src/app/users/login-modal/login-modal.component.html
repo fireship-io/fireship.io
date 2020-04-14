@@ -2,10 +2,15 @@
   <div class="login-wrapper in-modal">
 
     <google-login show-signout="false">
-        <button slot="signin" class="btn btn-lg btn-block">
-            <i><img width="24px" src="/img/google-login.svg" alt="google login"></i> Login with Google
+        <button slot="signin" class="btn btn-signin">
+            <i><img width="24px" src="/img/google-login.svg" alt="google login"></i> Sign in with Google
         </button>
     </google-login>
+
+
+    <button class="btn btn-signin" (click)="auth.appleLogin()">
+      <i><img width="24px" src="/img/apple-login.svg" alt="apple login"></i> Sign in with Apple
+    </button>
       
 
     <email-login show-signout="false"></email-login>
