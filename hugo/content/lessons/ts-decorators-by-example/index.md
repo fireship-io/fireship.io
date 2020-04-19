@@ -59,7 +59,7 @@ function Frozen(constructor: Function) {
 
 console.log(Object.isFrozen(IceCream)); // true
 
-class FroYo extends IceCream {} // error, cannont be extended
+class FroYo extends IceCream {} // error, cannot be extended
 {{< /highlight >}}
 
 
