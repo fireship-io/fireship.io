@@ -64,7 +64,7 @@ mkdir testing # make directory
 cd testing # move into directory
 touch somefile.txt # create a file
 cat somefile.txt # read a file
-vi somefile.txt # edit a file with vim
+vim somefile.txt # edit a file with vim
 code somefile.txt # edit a file with vscode
 ```
 
@@ -85,7 +85,7 @@ Currently the command line (bash) prompt for Ubuntu is very long `jeffd23@DESKTO
 {{< file "terminal" "command line" >}}
 ```bash
 code ~/.bashrc # vscode 
-vi ~/.bashrc # vim
+vim ~/.bashrc # vim
 ```
 
 Below you you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
