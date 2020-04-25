@@ -28,6 +28,7 @@ The **Stripe Payments JavaScript Course** is a complete guide to building fullst
 - Attach Payment Sources to Customers
 - Create Single Charges
 - Manage Recurring Subscriptions
+- Metered Payments
 
 ## Frontend Integrations
 
