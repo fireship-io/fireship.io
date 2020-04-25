@@ -123,7 +123,7 @@ exports.addToIndex = functions.firestore.document('customers/{customerId}')
         const data = snapshot.data();
         const objectID = snapshot.id;
 
-        return index.addObject({ ...data, objectID });
+        return index.saveObject({ ...data, objectID });
 
     });
 {{< /highlight >}}
