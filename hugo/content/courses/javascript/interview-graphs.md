@@ -6,7 +6,7 @@ description: Graph Traversal with breadth-first (BFS) and depth-first Search (DF
 weight: 30
 emoji: 🌳
 free: true
-featured_img: courses/javascript/img/graphs-featured.png
+featured_img: courses/javascript/img/graph-featured.png
 chapter_start: JS Interview Prep
 ---
 
