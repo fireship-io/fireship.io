@@ -71,7 +71,7 @@ export const proBotSlash = functions.pubsub
           } else if (!data.is_pro) {
             text = `Account located, but your PRO status is not active. Verify your status here https://fireship.io/dashboard. If you think there's problem direct message Jeff Delaney`;
           } else {
-            text = `🦄 PRO status confirmed!\n\n- Use */t-shirt* to register for a lifetime T-shirt\n- Use */sticker* to get a free sticker\n- Use */one-on-one* to setup a video call\n- Use */beer-me* for unlimited free beer.`;
+            text = `🦄 PRO status confirmed!\n\n- Use */t-shirt* to register for a lifetime T-shirt\n- Use */sticker* to get a free sticker\n- Use */meetup* to join the weekly video meetup\n- Use */beer-me* for unlimited free beer.`;
             if (!data.pro_slack) {
               await publishMessage(WELCOME, {
                 event: { user: user_id, channel: channel_id },
@@ -91,6 +91,14 @@ export const proBotSlash = functions.pubsub
         case '/one-on-one':
           if (data && data.is_pro) {
             text = '✅ Thank you for being a member! Please use this secret link to schedule a one-on-one: https://calendly.com/fireship/fireship-pro-one-on-one';
+          } else {
+            text = 'Sorry, not able to verify PRO status. If you think this is a mistake, DM real Jeff.';
+          }
+          break;
+
+        case '/meetup':
+          if (data && data.is_pro) {
+            text = '✅ Join the next meeting here https://meet.google.com/uhe-bvvo-arv';
           } else {
             text = 'Sorry, not able to verify PRO status. If you think this is a mistake, DM real Jeff.';
           }
@@ -163,6 +171,12 @@ app.post('/one-on-one', async (req, res) => {
   await publishMessage(SLASH_PRO, req.body);
   res.status(200).send({ text: 'verifying...' });
 });
+
+app.post('/meetup', async (req, res) => {
+  await publishMessage(SLASH_PRO, req.body);
+  res.status(200).send({ text: 'verifying...' });
+});
+
 
 app.post('/sticker', async (req, res) => {
   await publishMessage(SLASH_PRO, req.body);

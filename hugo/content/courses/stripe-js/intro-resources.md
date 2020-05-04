@@ -7,6 +7,6 @@ draft: false
 vimeo: 
 emoji: 📜
 free: true
-chapter_start: Get to Know Stripe 
+chapter_start: Get Started
 video_length: 1:00
 ---

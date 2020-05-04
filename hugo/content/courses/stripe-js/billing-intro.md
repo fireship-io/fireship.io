@@ -7,6 +7,6 @@ draft: false
 vimeo: 
 emoji: 💳
 free: true
-chapter_start: Subscriptions
+chapter_start: Subscriptions & Billing
 video_length: 1:00
 ---

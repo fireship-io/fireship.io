@@ -30,6 +30,18 @@ The **Stripe Payments JavaScript Course** is a complete guide to building fullst
 - Manage Recurring Subscriptions
 - Metered Payments
 
+## Use Cases
+
+The course covers the following use-cases. 
+
+- Stripe Checkout Sessions. 
+- Payment Intents. One-time 3D secure Payments with Stripe Elements. 
+- Customers & Setup Intents. Save a Card for future charges. 
+- Subscriptions and Invoices.
+- Metered Billing. 
+
+*All use-cases are integrated with Firebase Auth & Firestore, but can be easily swapped out with other auth providers and/or databases. 
+
 ## Frontend Integrations
 
 The course demonstrates how to connect your backend payments API to a variety of popular JavaScript web frameworks, including: 
