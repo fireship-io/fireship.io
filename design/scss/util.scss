@@ -165,6 +165,10 @@ text-cycle {
     font-size: 0.9em; color: var(--text-color);
 }
 
+.gde-logo {
+    max-width: 300px;
+}
+
 // Animation
 
 @keyframes delayedFade {
@@ -175,3 +179,4 @@ text-cycle {
 .delayed-fade {
     animation: delayedFade 2s;
 }
+
