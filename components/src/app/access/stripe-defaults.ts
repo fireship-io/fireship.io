@@ -93,5 +93,13 @@ export const plans = {
     price: 1900,
     url: '/courses/vue/'
   },
+  stripeJs: {
+    id: 'stripeJs',
+    sku:  'sku_HG8dqucZV4x6F2',
+    description: 'Stripe JavaScript Full Course 💸',
+    type: 'order',
+    price: 1900,
+    url: '/courses/stripe-js/'
+  },
 };
 

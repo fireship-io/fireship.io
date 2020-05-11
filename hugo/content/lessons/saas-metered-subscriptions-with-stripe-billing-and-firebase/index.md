@@ -22,6 +22,8 @@ pro: true
 #    rxdart: 0.20
 ---
 
+💰 Are you building a payment solution with Stripe? Consider enrolling the [Stripe JavaScript Master Course](/courses/stripe). 
+
 Today we will something very ambitious - our own Software-as-a-Service (SaaS) product that bills users based on metered usage. The app is a hypothetical *project management* tool with a pay-as-you-go billing system based on the volume of usage (just like the Blaze plan in Firebase). A user can create multiple projects, each at a cost of $1.00 and will receive a monthly bill for the volume of projects used. 
 
 There are two new technologies (in 2018) that make a product like this possible in a single tutorial.

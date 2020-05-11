@@ -1,12 +1,11 @@
 ---
 title: Billing 
-description: Change and save credit card details with Payment Intents API
+description: Use Stripe billing to manage customers and their payment history
 weight: 50
 lastmod: 2020-04-20T10:23:30-09:00
 draft: false
-vimeo: 
-emoji: 💳
-free: true
+vimeo: 416888411
+emoji: 🔄
 chapter_start: Subscriptions & Billing
-video_length: 1:00
+video_length: 2:01
 ---
