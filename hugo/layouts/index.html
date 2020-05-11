@@ -23,6 +23,34 @@
 </div>
 
 <hr />
+<h2 class="text-center home-heading">New Courses</h2>
+<h4 class="home-sub-heading text-center">Brand New Courses and Updates Every Month</h3>
+<div class="row">
+
+
+  <a class="card card-course" href="/courses/stripe-js">
+    <div class="card-content">
+        <div class="text-center"><img src="/courses/stripe-js/img/featured.jpg"></div>
+        <h3>Stripe Payments Master Course</h3>
+        Build a fullstack payment solution with Node.js and React.  
+
+        <button class="btn btn-green btn-block">Start</button>
+    </div>
+</a>
+
+
+<a class="card card-course" href="/courses/vue">
+    <div class="card-content">
+        <div class="text-center"><img src="/courses/vue/img/featured.jpg"></div>
+        <h3>Vue Firebase Project Course</h3>
+        Build a basic voice chat prototype using Vue & Firebase.
+        <button class="btn btn-green btn-block">Start</button>
+    </div>
+</a>
+
+</div>
+
+<hr />
 <h2 class="text-center home-heading">Learn by Doing</h2>
 <h4 class="home-sub-heading text-center">Fast, efficient, project-based video courses</h3>
 <div class="row">
@@ -53,7 +81,7 @@
 </div>
 
 
-<hr>
+<hr />
 
 <h2 class="text-center home-heading">Modern Fullstack</h2>
 <h4 class="home-sub-heading text-center">Develop faster with scalable cloud infrastructure</h3>
@@ -82,22 +110,8 @@
 </a>
 </div> 
 
-<hr>
+<hr />
 
-<h2 class="text-center home-heading">Thinking Beyond the Code</h2>
-<h4 class="home-sub-heading text-center">Accept payments and build your business</h3>
-
-<div class="row">
-
-  <a class="card card-course" href="/courses/stripe-payments">
-    <div class="card-content">
-        <div class="text-center"><img src="/courses/stripe-payments/img/featured.jpg"></div>
-        <h3>Stripe Payments Master Course</h3>
-        Build a custom payment solution with Stripe, Firebase, and NodeJS.
-    </div>
-</a>
-
-</div>
 
 <div class="text-center row-home">
 <a href="/courses" class="btn btn-green text-center btn-lg">All PRO Courses</a>
@@ -198,6 +212,28 @@
 
 <h2 class="text-center home-heading">Watch the Latest Lessons</h2>
 <h4 class="home-sub-heading text-center">New video content every few days</h3>
+
+  {{ range (first 1 (where .Site.RegularPages "Type" "in" "lessons")) . }}
+
+  <div class="row row-max-1">
+
+      <div class="card card-lesson">
+        {{ partial "lesson-image.html" . }}
+        <div class="card-content">
+
+        <a href="{{ .RelPermalink }}">
+            <h3>{{ .Title }}</h3>
+        </a>
+
+        <p>{{ .Params.description }}</p>
+
+        {{ partial "tags.html" .  }}
+
+        </div>
+    </div>
+  </div>
+
+  {{ end }}
 
 <div class="row-max-3">
   {{ range (first 6 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) . }}

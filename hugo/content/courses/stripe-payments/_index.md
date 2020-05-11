@@ -15,9 +15,14 @@ tags:
 
 {{< vimeo 320651376 >}}
 
-{{< figure src="/courses/stripe-payments/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}}
+
 
 The **Stripe Payments Master Course** will provide a solid foundation for building complex payment systems with the world's leading payment API.
+
+{{< box emoji="⚠️" class="" >}}
+This course has been deprecated! While the code here will still work, the it is recommended that you use the latest Stripe APIs shown in the new <a href="/courses/stripe-js">Fullsack Stripe JS Course 💸</a>
+{{< /box >}}
+
 
 ## Features
 
@@ -29,9 +34,6 @@ The **Stripe Payments Master Course** will provide a solid foundation for buildi
 - Apply Coupons
 - Unit Tests with Jest
 - And more...
-
-
-
 
 
 ## This Project is for Developers who...
