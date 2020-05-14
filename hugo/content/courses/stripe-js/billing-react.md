@@ -4,7 +4,7 @@ description: Integrate stripe subscription billing in React
 weight: 56
 lastmod: 2020-04-28T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 418656213
 icon: react
 video_length: 5:58
 ---

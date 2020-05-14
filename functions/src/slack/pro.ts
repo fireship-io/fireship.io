@@ -2,6 +2,11 @@ import * as functions from 'firebase-functions';
 import { db } from '../config';
 import * as express from 'express';
 
+// Deploy
+// rm -rf functions/lib
+// cd functions && npm run build
+// firebase deploy --only functions:proBotSlash,functions:proBotHandler
+
 import { legitSlackRequest, proBot, publishMessage } from './helpers';
 
 const WELCOME = 'slack-welcome';
@@ -98,7 +103,7 @@ export const proBotSlash = functions.pubsub
 
         case '/meetup':
           if (data && data.is_pro) {
-            text = '✅ Join the next meeting here https://meet.google.com/uhe-bvvo-arv';
+            text = '✅ Join the next meeting here https://calendly.com/fireship/pro-meetup-may-15th';
           } else {
             text = 'Sorry, not able to verify PRO status. If you think this is a mistake, DM real Jeff.';
           }
