@@ -38,7 +38,7 @@ Create a service account on GCP Console with the minimum permissions needed to r
 
 {{< figure src="/img/snippets/backup-firestore-service-account.png" caption="Create a service account that has the Cloud Datastore Import Export Admin & Storage Admin permissions" >}}
 
-{{< figure src="/img/snippets/backup-firestore-key-json.png" caption="Download service account JSON file to your local system" >}}
+{{< figure src="/img/snippets/backup-firestore-key-json.PNG" caption="Download service account JSON file to your local system" >}}
 
 ### Save it as a Secret on Github
 
