@@ -94,7 +94,7 @@ steps:
 
 ### Step 7. Deploy to Firebase
 
-Our last step is to deploy the Angular app to Firebase Hosting. [GitHub Action for Firebase](https://github.com/marketplace/actions/github-action-for-firebase) enables us to easily deply our app to Firebase.
+Our last step is to deploy the Angular app to Firebase Hosting. [GitHub Action for Firebase](https://github.com/marketplace/actions/github-action-for-firebase) enables us to easily deploy our app to Firebase.
 
 {{< highlight typescript >}}
 steps:
