@@ -53,7 +53,7 @@ You can then use them in other project files like so: `import 'screens/screens.d
 
 Use a `BottomNavigationBar` to move between screens. 
 
-{{< file "dart" "main.dart" >}}
+{{< file "dart" "bottom_nav.dart" >}}
 ```dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
