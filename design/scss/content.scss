@@ -1,5 +1,5 @@
 // Cards
-@import './mixins.scss';
+@import "./mixins.scss";
 
 .card {
   background: var(--card-bg);
@@ -28,7 +28,6 @@
     padding: 1em;
   }
 
-
   @media (max-width: 768px) {
     max-width: 100%;
     width: 100%;
@@ -37,9 +36,10 @@
 }
 
 .snippet-list-link {
-  text-decoration: none; 
-  margin-bottom: 10px; 
-  text-align: left; display: block; 
+  text-decoration: none;
+  margin-bottom: 10px;
+  text-align: left;
+  display: block;
   padding: 1em;
 }
 
@@ -71,7 +71,9 @@
 @mixin color-box($bg) {
   background: var(--#{$bg});
   color: white;
-  h3 { color: white; }
+  h3 {
+    color: white;
+  }
   .box-icon {
     background: var(--#{$bg}-dark);
     color: white;
@@ -102,7 +104,10 @@
     flex-direction: column;
     padding: 1em;
     align-items: flex-start;
-    h2, h3, h4, a {
+    h2,
+    h3,
+    h4,
+    a {
       color: currentColor;
       border: none;
       margin: 0;
@@ -110,38 +115,37 @@
     a {
       text-decoration: underline;
     }
-    p { line-height: 1.5; }
+    p {
+      line-height: 1.5;
+    }
   }
 }
 
 .box-sm {
   font-size: 0.9em;
   min-height: 0;
-  
+
   margin: 0;
   .box-content {
-
     padding: 0.3em;
     padding: 0.75em 0.3em;
   }
-
 }
-
 
 .box-red {
-  @include color-box('red');
+  @include color-box("red");
 }
 .box-green {
-  @include color-box('green');
+  @include color-box("green");
 }
 .box-orange {
-  @include color-box('orange');
+  @include color-box("orange");
 }
 .box-blue {
-  @include color-box('blue');
+  @include color-box("blue");
 }
 .box-purple {
-  @include color-box('purple');
+  @include color-box("purple");
 }
 
 .box-blue-bookmark {
@@ -153,7 +157,7 @@
   // width: 100%;
   left: 4em;
   right: 1em;
-  bottom: 2em;  
+  bottom: 2em;
   z-index: 9999;
   margin: 0;
   opacity: 0.95;
@@ -174,7 +178,8 @@
   margin: 0 auto;
 }
 
-.post-title, .page-title {
+.post-title,
+.page-title {
   font-size: 3em;
   text-align: center;
   padding-bottom: 0.5em;
@@ -223,7 +228,6 @@
   min-width: 0;
 }
 
-
 .content-article {
   width: 75%;
   margin: 1em 2.5em;
@@ -240,7 +244,8 @@
     color: var(--text-color);
   }
 
-  ol, ul {
+  ol,
+  ul {
     font-weight: 300;
     color: var(--h-color);
     font-size: 1.1em;
@@ -250,13 +255,13 @@
     line-height: 1.8;
   }
 
-  em { 
+  em {
     font-weight: bold;
   }
 
   strong {
     font-weight: 700;
-    font-size: .9em;
+    font-size: 0.9em;
     // text-transform: uppercase;
     color: var(--h-color);
   }
@@ -266,11 +271,10 @@
     color: var(--h-color);
     font-weight: 600;
     box-shadow: inset 0 -3px 0 #b4e7f8;
-    transition: background .15s cubic-bezier(0.33, 0.66, 0.66, 1);
+    transition: background 0.15s cubic-bezier(0.33, 0.66, 0.66, 1);
     &:hover {
       background-color: rgba(0, 255, 242, 0.3);
     }
-
   }
 }
 // Table of Contents
@@ -297,7 +301,7 @@
       margin: 0;
       li {
         padding: 0.5em 0.5em;
-        
+
         a {
           color: var(--blue);
           font-weight: 500;
@@ -310,7 +314,8 @@
         }
       }
     }
-    ul li ul { //    ul li ul li ul, 
+    ul li ul {
+      //    ul li ul li ul,
       font-size: 0.75em;
       font-weight: 500;
 
@@ -329,7 +334,8 @@
   padding-bottom: 56.25%;
   position: relative;
   height: 0;
-  iframe, video {
+  iframe,
+  video {
     position: absolute;
     top: 0;
     left: 0;
@@ -343,7 +349,9 @@
   max-width: 75%;
 }
 
-video, video-player, .video-overlay {
+video,
+video-player,
+.video-overlay {
   width: 100%;
   max-width: 1920px;
 }
@@ -354,13 +362,21 @@ video, video-player, .video-overlay {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(45deg, var(--nav-bg) 25%, var(--background) 25%, var(--background) 50%, var(--nav-bg) 50%, var(--nav-bg) 75%, var(--background) 75%, var(--background) 100%);
+  background-image: linear-gradient(
+    45deg,
+    var(--nav-bg) 25%,
+    var(--background) 25%,
+    var(--background) 50%,
+    var(--nav-bg) 50%,
+    var(--nav-bg) 75%,
+    var(--background) 75%,
+    var(--background) 100%
+  );
   background-size: 56.57px 56.57px;
   padding: 20% 0;
   margin: 0 auto;
   max-height: 0;
 }
-
 
 .err-404 {
   display: flex;
@@ -372,7 +388,6 @@ video, video-player, .video-overlay {
   }
 }
 
-
 @media (max-width: 1024px) {
   .content-main {
     flex-direction: column-reverse;
@@ -383,7 +398,6 @@ video, video-player, .video-overlay {
   .content-main {
     position: static;
     width: 100%;
-
   }
   .toc {
     margin-left: 0;
@@ -399,7 +413,7 @@ video, video-player, .video-overlay {
 
   a {
     max-width: 75%;
-    background: var(--overlay-bg)
+    background: var(--overlay-bg);
   }
 
   .chapter-prev {
@@ -426,12 +440,11 @@ video, video-player, .video-overlay {
     margin-left: auto;
     margin-right: 1rem;
   }
-  
 }
 
 .home-features {
   .card {
-      min-height: 240px;
+    min-height: 240px;
   }
 }
 
@@ -448,7 +461,11 @@ video, video-player, .video-overlay {
   justify-content: flex-start;
   font-weight: bold;
   font-size: 1.25em;
-  img { width: 1.5em; border-radius: var(--card-radius); margin-right: 0.25em; }
+  img {
+    width: 1.5em;
+    border-radius: var(--card-radius);
+    margin-right: 0.25em;
+  }
 }
 
 .health-check {
@@ -462,7 +479,6 @@ video, video-player, .video-overlay {
 }
 
 .author-headline {
-
   margin-top: 5rem;
 
   .author-avatar {
@@ -505,15 +521,12 @@ video, video-player, .video-overlay {
   margin: 0 auto;
 }
 
-
-
 .the-end {
   text-align: center;
   text-transform: uppercase;
   font-weight: 500;
   padding: 2em 0;
 }
-
 
 .content-pad {
   padding: 0 3em;
@@ -546,7 +559,6 @@ video, video-player, .video-overlay {
   &.in-modal {
     margin-top: 4em;
   }
-
 }
 
 .stackblitz {
@@ -554,10 +566,11 @@ video, video-player, .video-overlay {
 }
 
 .brand-list {
-  display: flex; 
+  display: flex;
   list-style-type: none;
-  justify-content: space-between; 
-  align-items: center; flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
   list-style: none;
   margin: 10px 5vw;
   li {
@@ -566,18 +579,22 @@ video, video-player, .video-overlay {
       max-height: 50px;
     }
   }
-
 }
 
 .pagination {
   display: flex;
   list-style: none;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    flex-wrap: wrap;
+    padding: 0;
+  }
 
   .page-item {
     margin: 0.5em;
     padding: 0;
-    &.active, &.disabled {
+    &.active,
+    &.disabled {
       // color: var(--background);
       opacity: 0.5;
       transform: translateY(-2px);
@@ -586,7 +603,7 @@ video, video-player, .video-overlay {
     &.disabled {
       background: none;
     }
-    a { 
+    a {
       color: var(--text-color);
       padding: 1em 2em;
     }

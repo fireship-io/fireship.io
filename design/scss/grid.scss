@@ -1,27 +1,26 @@
 .row {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .row-max-1 {
   display: grid;
   gap: 1.5rem;
-  grid-template-columns: repeat(1, minmax(350px,650px));
+  grid-template-columns: repeat(1, minmax(250px, 650px));
   justify-content: center;
 }
 
 .row-max-2 {
   display: grid;
   gap: 1.75rem;
-  grid-template-columns: repeat(auto-fit,minmax(450px,600px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 600px));
   justify-content: center;
 }
 
 .row-max-3 {
   display: grid;
   gap: 1.25rem;
-  grid-template-columns: repeat(auto-fit,minmax(350px,500px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 500px));
   justify-content: space-evenly;
 }
-
