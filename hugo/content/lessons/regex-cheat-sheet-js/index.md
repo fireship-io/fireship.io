@@ -60,7 +60,7 @@ Much like Gif vs Jif, the proper pronunciation of RegEx is passionately debated 
 - `bob|alice` match bob or alice
 - `z?` zero or one occurrences
 - `z*`	zero or multiple occurrences
-- `z+`	zero or multiple occurrences
+- `z+`	one or multiple occurrences
 - `z{n}` n occurrences
 - `z{min,max}` min/max occurrences
 
