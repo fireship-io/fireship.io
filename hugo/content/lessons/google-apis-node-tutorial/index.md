@@ -1,5 +1,5 @@
 ---
-title: Google APIs with OAuth 2.0 in Node
+title: Access Google APIs for Users with OAuth 2.0
 lastmod: 2020-05-23T00:33:26-07:00
 publishdate: 2020-05-23T00:33:26-07:00
 author: Jeff Delaney
