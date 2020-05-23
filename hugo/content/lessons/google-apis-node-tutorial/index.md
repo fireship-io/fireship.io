@@ -1,14 +1,15 @@
 ---
-title: Google APIs with Node
+title: Google APIs with OAuth 2.0 in Node
 lastmod: 2020-05-23T00:33:26-07:00
 publishdate: 2020-05-23T00:33:26-07:00
 author: Jeff Delaney
 draft: false
-description: How to use Google APIs with Node.js Cloud Functions & Firebase
+description: How to use Google APIs on behalf of users with Node.js Cloud Functions and Firebase
 tags: 
     - pro
     - firebase
     - node
+    - cloud-functions
 
 vimeo: 421920721
 # github:
