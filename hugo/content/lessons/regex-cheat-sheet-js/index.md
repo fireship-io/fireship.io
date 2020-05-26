@@ -96,7 +96,7 @@ There are several ways to use a regular expression on a string primitive, such a
 const matches = 'aBC'.match(/[A-Z]/g);
 // Output: Array [B, C]
 
-const index = 'aBC'.search(/[A-Z]);
+const index = 'aBC'.search(/[A-Z]/);
 // Output: 1
 
 const next = 'aBC'.replace(/a/, 'A');
