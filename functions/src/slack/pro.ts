@@ -103,7 +103,7 @@ export const proBotSlash = functions.pubsub
 
         case '/meetup':
           if (data && data.is_pro) {
-            text = '✅ Join the next meeting here https://calendly.com/fireship/pro-meetup-may-15th';
+            text = '✅ Join the next meeting here https://calendly.com/fireship/pro-meetup-june-5th?month=2020-06&date=2020-06-05';
           } else {
             text = 'Sorry, not able to verify PRO status. If you think this is a mistake, DM real Jeff.';
           }
