@@ -104,7 +104,6 @@ Here are some variables commonly used in the prompt
 - `\W` basename of the current working directory
 - `\h` hostname
 - `\u` username
-- `\t` full working directory
 - `\t` time 24-hour HH:MM:SS
 - `\T` time 12-hour HH:MM:SS
 - `\@` time 12-hour am/pm
