@@ -139,7 +139,7 @@ Read this the [Slack Signing Secret Validation](/snippets/verify-slack-api-signi
 
 ### Add Scopes (Permissions) 
 
-OAuth scopes define what your app is allowed to do. You can fine tune permissions under the *OAuth & Permissions* page. Follow the principle of least privledge and only allow your bot access to resources that it actually needs to do its job. In our case, we need to read a user profile and add them to a specific slack channel. 
+OAuth scopes define what your app is allowed to do. You can fine tune permissions under the *OAuth & Permissions* page. Follow the principle of least privilege and only allow your bot access to resources that it actually needs to do its job. In our case, we need to read a user profile and add them to a specific slack channel. 
 
 ## Listen to Events
 

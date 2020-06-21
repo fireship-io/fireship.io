@@ -4,7 +4,7 @@ lastmod: 2019-01-24T07:14:41-07:00
 publishdate: 2019-01-24T07:14:41-07:00
 author: Jeff Delaney
 draft: false
-description: Common recipies and solutions for serverside rendering (SSR) with Angular Universal 
+description: Common recipes and solutions for serverside rendering (SSR) with Angular Universal 
 tags: 
     - angular
 

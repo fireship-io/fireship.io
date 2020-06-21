@@ -129,7 +129,7 @@ export class ContentModule { }
 
 ### 2. Point the App Routing Module to the Lazy Module
 
-The main app routing module will now lazy load the content module whenever the user navigates to a router under the `/hn/` path. In this case, I am automatically redirecting, but you are not requried to do this. 
+The main app routing module will now lazy load the content module whenever the user navigates to a router under the `/hn/` path. In this case, I am automatically redirecting, but you are not required to do this. 
 
 ```typescript
 import { NgModule } from '@angular/core';

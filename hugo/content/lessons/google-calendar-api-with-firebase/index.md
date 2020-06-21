@@ -24,7 +24,7 @@ pro: true
 #    rxdart: 0.20
 ---
 
-I use Google Calendar almost every day and really appreciate apps that can coordinate important events for me automatically. Today, we'll learn how to integrate [Google's JavaScript API client](https://developers.google.com/api-client-library/javascript/start/start-js) with [Firebase](https://firebase.google.com/docs/auth/web/google-signin) to make authenticated requests to the Calendar API on the behalf of a user. This article was inspired by the real-world requirements of a [Broadway Life](https://broadway.life), a tour company in NYC and needs to perform full CRUD operations on their clients' calender. 
+I use Google Calendar almost every day and really appreciate apps that can coordinate important events for me automatically. Today, we'll learn how to integrate [Google's JavaScript API client](https://developers.google.com/api-client-library/javascript/start/start-js) with [Firebase](https://firebase.google.com/docs/auth/web/google-signin) to make authenticated requests to the Calendar API on the behalf of a user. This article was inspired by the real-world requirements of a [Broadway Life](https://broadway.life), a tour company in NYC and needs to perform full CRUD operations on their clients' calendar. 
 
 
 {{< figure src="img/google-calendar-firebase-demo.gif" caption="Using Google Calendar with Firebase" >}}
@@ -55,7 +55,7 @@ First, add the gapi script tag to the head of your `index.html` to make it globa
 ```
 
 
-## Authenticate with the Calender API Scope
+## Authenticate with the Calendar API Scope
 
 The following section will (1) initialize the *gapi* client (2) login the user with the permission to manage their calendar. 
 
@@ -116,7 +116,7 @@ export class AuthService {
 
 ### Login with Google, then Firebase Manually
 
-The method below uses *gapi* to trigger the login popup window. After the user is logged in,we take the JWT and pass it Firebase. Now we have an logged-in Firebase and access to manage their calender events. 
+The method below uses *gapi* to trigger the login popup window. After the user is logged in,we take the JWT and pass it Firebase. Now we have an logged-in Firebase and access to manage their calendar events. 
 
 ```typescript
 async login() {

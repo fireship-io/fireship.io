@@ -39,7 +39,7 @@ If you would like to install bleeding-edge Angular packages, use the manual upgr
 
 ## Manual Upgrade
 
-You can manually upgrade Angular's most common packges using the commands below. Keep in mind, you many need to add additional packages based on what exists in your *package.json*. The commands below use the `@next` tag, which will upgrade to the latest beta or rc versions of Angular. Change this tag to `@latest` for the latest stable version. 
+You can manually upgrade Angular's most common packages using the commands below. Keep in mind, you many need to add additional packages based on what exists in your *package.json*. The commands below use the `@next` tag, which will upgrade to the latest beta or rc versions of Angular. Change this tag to `@latest` for the latest stable version. 
 
 
 {{< file "terminal" "command line" >}}

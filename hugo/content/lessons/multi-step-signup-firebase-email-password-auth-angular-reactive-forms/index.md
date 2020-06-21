@@ -136,7 +136,7 @@ export class AuthService {
     this.notify.update(error.message, 'error')
   }
 
-  // Sets user data to firestore after succesful login
+  // Sets user data to firestore after successful login
   private setUserDoc(user) {
 
     const userRef: AngularFirestoreDocument<User> = this.afs.doc(`users/${user.uid}`);

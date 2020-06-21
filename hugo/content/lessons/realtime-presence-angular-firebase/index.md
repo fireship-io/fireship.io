@@ -34,7 +34,7 @@ This post first appeared as [Episode 41 on AngularFirebase.com](https://angularf
 
 1. {{< prereq "install-angular" >}}
 1. {{< prereq "install-angularfire" >}}
-1. You should have a working user auth system in place. Most of the relevent code for the auth service is shown below, however I recommend following [Firebase Authentication System](https://fireship.io/lessons/angularfire-google-oauth/) lesson first. 
+1. You should have a working user auth system in place. Most of the relevant code for the auth service is shown below, however I recommend following [Firebase Authentication System](https://fireship.io/lessons/angularfire-google-oauth/) lesson first. 
 
 ## Step 1: Listen to the Realtime DB Connection
 

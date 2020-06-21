@@ -155,7 +155,7 @@ export class AuthService {
 
 ### Observe the AuthState 
 
-The most important element this feature is being able to react to changes to the user's authentiaction state. When logged-out, will have an Observable of `null`. When logged-in, we want to [switchMap](/snippets/rxjs-switchmap) to an Observable of the user's profile document in Firestore. This is equivilent *joining* custom data and we can set this up in the constructor. 
+The most important element this feature is being able to react to changes to the user's authentiaction state. When logged-out, will have an Observable of `null`. When logged-in, we want to [switchMap](/snippets/rxjs-switchmap) to an Observable of the user's profile document in Firestore. This is equivalent *joining* custom data and we can set this up in the constructor. 
 
 {{< figure src="img/firestore-custom-user-data.png" alt="custom user data in the Firestore database" caption="Notice how the UID on the document also matches user's assigned UID from firebase auth." >}}
 
@@ -348,7 +348,7 @@ const routes: Routes = [
 {{< /highlight >}}
 
 {{< box icon="flask" class="box-green" >}}
-PRO Tip - You may find it useful to simplify this guard code by defining a method in your auth service that can [retrive the Firebase UID as a Promise](/snippets/get-angularfire-userid-as-promise).
+PRO Tip - You may find it useful to simplify this guard code by defining a method in your auth service that can [retrieve the Firebase UID as a Promise](/snippets/get-angularfire-userid-as-promise).
 {{< /box >}}
 
 

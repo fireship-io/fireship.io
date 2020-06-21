@@ -28,7 +28,7 @@ The soruce code if the *source of truth* for this project. Updates to video cont
 - [Source Code](https://github.com/codediodeio/ionic4-master-course)
 - [Live Demo](https://ionic4-fire.web.app/)
 
-### Offical Docs
+### Official Docs
 
 
 - [Ionic Docs](https://ionicframework.com/docs)

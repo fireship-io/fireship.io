@@ -14,7 +14,7 @@ tags:
 For a full Angular example, make sure to watch the [Google Calendar Lesson](/lessons/google-calendar-api-with-firebase). 
 
 
-Firebase auth is great because we can signup and login users with a single line of code, but it is limited to readonly access on the user's Google profile. It does NOT provide OAuth2 scopes to other Google services like Calender, Adwords, Drive, GCP, GSuite, and dozens more.
+Firebase auth is great because we can signup and login users with a single line of code, but it is limited to readonly access on the user's Google profile. It does NOT provide OAuth2 scopes to other Google services like Calendar, Adwords, Drive, GCP, GSuite, and dozens more.
 
 We can overcome this limitation by using [Google's JavaScript API client](https://developers.google.com/api-client-library/javascript/features/authentication) to authenticate the user with additional scopes, then sign in manually with Firebase. 
 

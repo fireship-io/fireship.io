@@ -4,7 +4,7 @@ lastmod: 2019-02-18T13:45:50-07:00
 publishdate: 2019-02-18T13:45:50-07:00
 author: Jeff Delaney
 draft: false
-description: Build a dropzone file uploader in Angular that can send multiple files to Firebase storage simultanously.
+description: Build a dropzone file uploader in Angular that can send multiple files to Firebase storage simultaneously.
 tags: 
     - firebase
     - angular

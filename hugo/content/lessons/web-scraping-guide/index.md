@@ -62,7 +62,7 @@ The advantage 👍 of this approach is that it is fast and simple, but the disad
 ### Link Preview Function
 
 {{< box icon="scroll" >}}
-It is not possibile to generate link previews entirely from the frontend due to [Cross-Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) vulnerabilities. 
+It is not possible to generate link previews entirely from the frontend due to [Cross-Site Scripting](https://en.wikipedia.org/wiki/Cross-site_scripting) vulnerabilities. 
 {{< /box >}}
 
 An excellent use-case for this strategy is a *link preview* service that shows the name, description, and image of a 3rd party website when a URL posted into an app. For example, when you post a link into an app like Twitter, Facebook, or Slack, it renders out a nice looking preview. 

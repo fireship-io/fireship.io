@@ -87,9 +87,9 @@ Many APIs and Cloud Providers provide API keys that allow you to interact with p
 You can prevent credential leaks by NOT putting them in your source code. Instead, use environment variables or a service like [Secret Manager](https://cloud.google.com/secret-manager/docs). 
 
 
-## 6. Principle of Least Privledge
+## 6. Principle of Least Privilege
 
-In the event that your credentials are compromised, you can mitigate the damage by following the Principle of Least Privledge. Basically, this means **grant access only when it is absolutely required**. 
+In the event that your credentials are compromised, you can mitigate the damage by following the Principle of Least Privilege. Basically, this means **grant access only when it is absolutely required**. 
 
 A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allow you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, then selectively allow access as needed. 
 

@@ -24,7 +24,7 @@ versions:
 
 Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunites for both large teams and independent entrepreneurs.
 
-In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply commiting your code to Github:
+In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply committing your code to Github:
 
 - Run unit tests
 - Build the production code
@@ -163,7 +163,7 @@ git push origin master
 {{< figure src="img/cloud-build-fail.png" alt="cloud build results" >}}
 
 
-Hopefully your build suceeds, but errors are very common when setting up CI/CD for the first time. All of the logs can be found be directly in build details page, so review the last entries to see what failed. 
+Hopefully your build succeeds, but errors are very common when setting up CI/CD for the first time. All of the logs can be found be directly in build details page, so review the last entries to see what failed. 
 
 ## Advanced: Secure your Environment Secrets
 
@@ -171,7 +171,7 @@ Hopefully your build suceeds, but errors are very common when setting up CI/CD f
 The env encryption steps are optional for Firebase because you can grant access via IAM. However, this is still a good pattern to follow if you need to authorize other 3rd party APIs. For example, you might want to update your Algolia Search index before deployment, which would require a sensitive API key. 
 {{< /box >}}
 
-There are serveral ways to manage environment variables for your CI builds, but I find the method outlined below to be the most flexible and it can easily scale to a large number of secret tokens. 
+There are several ways to manage environment variables for your CI builds, but I find the method outlined below to be the most flexible and it can easily scale to a large number of secret tokens. 
 
 
 ### Obtain the Firebase CI Auth Token
@@ -198,7 +198,7 @@ Let's add a custom NPM script for deployment using this token as an environment 
 ### Create an .env file
  
 {{< box icon="hazard" class="box-red" >}}
-Do not share the contents of the `.env` file publically and do not commit it to your public source code. It could be used to take destructive action on your project. 
+Do not share the contents of the `.env` file publicly and do not commit it to your public source code. It could be used to take destructive action on your project. 
 {{< /box >}}
 
 Create a file named `.env` in the root of your project. It will used to manage the secret tokens (or API keys) required to build/deploy your code. Currently this is only Firebase, but it is likely you will use other APIs and will organize complexity down the road. 
@@ -222,7 +222,7 @@ FIREBASE_TOKEN=<your-token>
 
 We now have a secret token, so how do we transfer it to the server via a public git repo? We encrypt it. 
 
-Go the GCP console and find **IAM >> Cryptographic Keys**. First, create a keyring for your app - it can be used to encrypt mulitple keys via a single container. 
+Go the GCP console and find **IAM >> Cryptographic Keys**. First, create a keyring for your app - it can be used to encrypt multiple keys via a single container. 
 
 {{< figure src="img/kms-keyring.png" alt="create a keyring on GCP" >}}
 
