@@ -1,0 +1,17 @@
+image:
+  file: .gitpod.dockerfile
+ports:
+  - port: 1313
+    onOpen: ignore
+tasks:
+  - command: >
+      gp await-port 1313 &&
+      sleep 5 &&
+      gp preview $(gp url 1313)
+  - init: >
+      cd components &&
+      npm install &&
+      npm run build &&
+      cd .. &&
+      npm install
+    command: npm run dev

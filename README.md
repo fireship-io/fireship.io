@@ -40,7 +40,13 @@ git commit -m "fix: corrected a typo"
 git push origin my-fix
 ```
 
-Lastly, open a pull request on Github. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline. 
+Lastly, open a pull request on Github. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline.
+
+### Option 3 - One-click IDE
+
+Alternatively, you can develop the site in Gitpod.io, a free pre-configured online dev environment for GitHub:
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/fireship-io/fireship.io)
 
 ## Running the Site
 
