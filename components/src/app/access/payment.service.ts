@@ -74,8 +74,8 @@ export class PaymentService {
     return this.callFunction('stripeCreateSubscription', { source, planId, couponId });
   }
 
-  async createOrder(source, sku, amount) {
-    return this.callFunction('stripeCreateOrder', { source, sku, amount });
+  async createOrder(source, sku, amount, couponId) {
+    return this.callFunction('stripeCreateOrder', { source, sku, amount, couponId });
   }
 
   async cancelSubscription(source, planId) {

@@ -202,7 +202,7 @@ export class PaymentFormComponent implements AfterViewInit {
         }
 
         if (this.productType === 'order') {
-          return this.pmt.createOrder(source, this.product.sku, this.total);
+          return this.pmt.createOrder(source, this.product.sku, this.total, couponId);
         }
         break;
 
