@@ -149,6 +149,7 @@ a.item {
 }
 
 
+.pro-link { color: white; }
 
 .item-pro {
   border-bottom-left-radius: 40%;
@@ -157,7 +158,6 @@ a.item {
   font-family: var(--font-body);
   text-transform: uppercase;
   font-weight: bold;
-  a { color: white; }
 
   @media (max-width: 768px) {
     border-radius: 0;
