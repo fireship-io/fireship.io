@@ -24,7 +24,7 @@
     "firebase-admin": "^6.0.0",
     "firebase-functions": "^2.3.1",
     "get-urls": "^8.0.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "stripe": "^6.36.0",
     "tsscmp": "^1.0.6"
   },
