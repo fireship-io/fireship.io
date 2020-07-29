@@ -9,7 +9,7 @@ tags:
     - vue
     - firebase
     - firestore
-    - authentication
+    - auth
 
 # youtube: 
 # code: 
