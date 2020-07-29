@@ -7,7 +7,7 @@ draft: false
 description: How to perform multifactor authentication (2FA) with SMS text verification using Firebase
 tags: 
     - firebase
-    - authentication
+    - auth
     - pro
 
 pro: true

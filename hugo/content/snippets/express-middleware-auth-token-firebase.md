@@ -8,7 +8,7 @@ description: How to setup express middleware for serverside auth in Firebase
 tags: 
     - node
     - security
-    - authentication
+    - auth
 
 type: lessons
 # youtube: 

@@ -24,7 +24,7 @@
 
 <hr />
 <h2 class="text-center home-heading">New Courses</h2>
-<h4 class="home-sub-heading text-center">Brand New Courses and Updates Every Month</h3>
+<h4 class="home-sub-heading text-center">Brand New Courses and Updates Every Month</h4>
 <div class="row">
 
 
@@ -52,7 +52,7 @@
 
 <hr />
 <h2 class="text-center home-heading">Learn by Doing</h2>
-<h4 class="home-sub-heading text-center">Fast, efficient, project-based video courses</h3>
+<h4 class="home-sub-heading text-center">Fast, efficient, project-based video courses</h4>
 <div class="row">
 
 
@@ -84,7 +84,7 @@
 <hr />
 
 <h2 class="text-center home-heading">Modern Fullstack</h2>
-<h4 class="home-sub-heading text-center">Develop faster with scalable cloud infrastructure</h3>
+<h4 class="home-sub-heading text-center">Develop faster with scalable cloud infrastructure</h4>
 
 <div class="row ">
   <a class="card card-course" href="/courses/firestore-data-modeling">
@@ -95,7 +95,7 @@
 
         
     </div>
-</a>
+  </a>
 
 <a class="card card-course" href="/courses/cloud-functions">
   <div class="card-content">
@@ -111,6 +111,22 @@
 </div> 
 
 <hr />
+
+<h2 class="text-center home-heading">New to Firebase?</h2>
+<h4 class="home-sub-heading text-center">Learn the basics in 25 minutes 👇</h4>
+
+<div class="row ">
+  <a class="card card-course" href="/lessons/firebase-quickstart">
+    <div class="card-content">
+        <div class="text-center"><img src="/lessons/firebase-quickstart/img/featured.jpg"></div>
+        <h3>Firebase - The Basics</h3>
+        Learn the fundamental concepts needed to start building serious apps with Firebase. 
+
+        
+    </div>
+  </a>
+
+</div>
 
 
 <div class="text-center row-home">
@@ -164,7 +180,7 @@
 </div>
 
 <h2 class="text-center home-heading">Not your Average Code Tutorials</h2>
-<h4 class="home-sub-heading text-center">All lessons are backed by expert support</h3>
+<h4 class="home-sub-heading text-center">All lessons are backed by expert support</h4>
 
 <div class="row home-features">
 
@@ -211,9 +227,9 @@
 
 
 <h2 class="text-center home-heading">Watch the Latest Lessons</h2>
-<h4 class="home-sub-heading text-center">New video content every few days</h3>
+<h4 class="home-sub-heading text-center">New video content every few days</h4>
 
-  {{ range (first 1 (where .Site.RegularPages "Type" "in" "lessons")) . }}
+  {{ range first 1 (where site.RegularPages "Type" "in" "lessons") }}
 
   <div class="row row-max-1">
 
@@ -236,7 +252,7 @@
   {{ end }}
 
 <div class="row-max-3">
-  {{ range (first 6 (where .Site.RegularPages "Type" "in" .Site.Params.mainSections)) . }}
+  {{ range first 6 (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 
   {{ partial "lesson-card" . }}
 
