@@ -91,7 +91,7 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
        
       }
 
-      copyCodeSnippets();
+      // copyCodeSnippets();
       positionMenus();
     }
 
