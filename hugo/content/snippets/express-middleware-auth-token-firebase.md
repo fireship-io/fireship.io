@@ -44,7 +44,7 @@ async function fetchFromAPI() {
   const token = user && (await user.getIdToken());
 
   const res = await fetch(url, {
-    methodL 'GET',
+    method: 'GET',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
