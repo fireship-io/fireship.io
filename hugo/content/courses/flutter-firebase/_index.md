@@ -20,7 +20,7 @@ tags:
 
 ## ⚡ What will I build?
 
-<span class="tag tag-sm tag-pro">Updated Apr 14th, 2020</span> <span class="tag tag-sm tag-flutter">Flutter v1.12.13</span>
+<span class="tag tag-sm tag-pro">Updated Aug 10th, 2020</span> <span class="tag tag-sm tag-flutter">Flutter v1.12.13</span>
 
 This is a project-based course that will teach you how to build a multiple choice quiz app, inspired by apps like Duolingo and QuizUp. The app implements user authentication (Sign in with Google or Apple), tracks quiz progress in Firestore, runs animations, and shares data between screens. 
 

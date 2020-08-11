@@ -1,29 +1,28 @@
 ---
-title: Flutter Firebase App Setup
-lastmod: 2019-01-12T10:13:59-07:00
-publishdate: 2019-01-12T10:13:59-07:00
+title: Flutter Firebase App Setup for Power Users
+lastmod: 2020-07-31T10:13:59-07:00
+publishdate: 2020-07-31T10:13:59-07:00
 author: Jeff Delaney
 draft: false
-description: How to setup and configure a new app with FlutterFire for Auth, Firestore, and Analytics
+description: How to setup a new Flutter project with Firebase, Firestore, Crashlytics, Analytics, and more. 
 tags: 
     - dart
     - flutter
     - firebase
 
-youtube: 
+youtube: Mx24wiPilHg
 type: lessons 
+featured_img: /img/snippets/featured-flutterfire.png
 ---
 
-The following guide is designed to get you up and running with Flutter and Firebase on both iOS and Android.
+The following guide is designed to get you up and running with Flutter and Firebase on both iOS and Android. In addition to the core setup, we will also configure optional services like [Crashlytics](https://firebase.google.com/docs/crashlytics), [Performance](https://firebase.google.com/docs/perf-mon), and [App Distribution](https://firebase.google.com/docs/app-distribution). 
 
-{{< box icon="scroll" class="box-blue" >}}
-Refer to the [official FlutterFire setup instructions](https://firebase.google.com/docs/flutter/setup). 
-{{< /box >}}
+💡 If you run into issues, refer to [official FlutterFire setup instructions](https://firebase.google.com/docs/flutter/setup). 
 
 
 ## Create your Flutter App
 
-Create your app and open it in your IDE (VS Code).
+First, make sure you have [Flutter installed](https://flutter.dev/docs/get-started/install/). Create an app and open it an IDE (VS Code or Android Studio).
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
@@ -33,24 +32,32 @@ code my_app
 
 ### Install Dependencies
 
-Below are the dependencies you will need for most FlutterFire apps, assuming you are using Firestore and Google SignIn. [RxDart](https://pub.dartlang.org/packages/rxdart) is optional, but highly recommended for working with realtime data sources in Firebase. 
+Below are the dependencies used in most FlutterFire apps, however the only required package is `firebase_core`, so feel free to remove any packages you don't plan on using. 
 
 {{< file "yaml" "pubspec.yaml" >}}
-{{< highlight yaml >}}
+```yaml
 dependencies:
   flutter:
     sdk: flutter
 
-  firebase_core: ^0.4.0
-  firebase_analytics: ^1.0.4
+  firebase_core: 
 
-  cloud_firestore: ^0.8.2+3
+  # Database
+  cloud_firestore: 
 
-  firebase_auth:  ^0.6.6
-  google_sign_in: ^3.2.4
+  # User Auth
+  firebase_auth: 
+  google_sign_in: 
 
-  rxdart: 0.22.0 # optional
-{{< /highlight >}}
+  # Analytics
+  firebase_analytics:
+
+  # Crashlytics
+  firebase_crashlytics:
+
+  # Performance
+  firebase_performance:
+```
 
 
 Note: You can find the [latest FlutterFire package versions](https://github.com/flutter/plugins/blob/master/FlutterFire.md). 
@@ -58,23 +65,23 @@ Note: You can find the [latest FlutterFire package versions](https://github.com/
 
 ## Android Setup
 
-### Project ID and SHA1 Certificate
+First, you need to decide on a project ID for your app using the following pattern `<com>.<brand>.<app>`. For example, the app for Fireship would be `io.fireship.lessonapp`. Create your app from the Firebase console. 
 
-First, you need to decide on a project ID for your app using the following pattern `<com>.<brand>.<app>`. For example, the app for Fireship would be `io.fireship.lessonapp`. 
+{{< figure src="/img/snippets/flutterfire-android-add.png" alt="add an Android app to your Firebase project" >}}
 
-Next, generate an SHA1 certificate to allow Firebase to provision an OAuth2 client and API key when using Google Sign-in and/or dynamic links. 
 
-Mac/Linux users can use the command below. Windows users refer the the [official instructions](https://developers.google.com/android/guides/client-auth). 
+### SHA1 Certificate (Optional)
+
+An SHA1 certificate identifies your local machine allowing you use certain Firebase features, like Google Sign-In and Phone Auth. 
 
 {{< file "terminal" "command line" >}}
-{{< highlight text >}}
-keytool -exportcert -list -v -alias androiddebugkey -keystore ~/.android/debug.keystore
+```bash
+cd android
+./gradlew signingReport
+```
+{{< figure src="/img/snippets/flutter-sha1.png" alt="Copy the SHA1 value from the debugAndroidTest variant" >}}
 
-# password: android
-{{< /highlight >}}
-
-{{< figure src="/img/snippets/sha1-android.png" alt="obtain the sha1 certificate for android firebase" >}}
-
+Use the `debugAndroidTest` SHA1 value when creating your project from the Firebase console.
 
 ### Download and save the google-services.json
 
@@ -89,28 +96,39 @@ Next, go to the Firebase Console and register your app by clicking *Add Firebase
 Now we need to register our Google services in the Gradle build files. 
 
 {{< file "gradle" "android/build.gradle" >}}
-{{< highlight gradle >}}
+```gradle
 buildscript {
    dependencies {
        // ...
-       classpath 'com.google.gms:google-services:3.2.1'   // <-- here
+       classpath 'com.google.gms:google-services:4.3.3'  // <-- here
    }
 }
-{{< /highlight >}}
+```
 
 Next, update your project ID and register the Google services plugin at the bottom of gradle build file in the app directory. 
 
 {{< file "gradle" "android/app/build.gradle" >}}
-{{< highlight gradle >}}
+```gradle
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services' // <-- add this line
+
+// ...
+
     defaultConfig {
         applicationId "io.fireship.lessonapp" // <-- update this line
         minSdkVersion 21 // <-- you might also need to change this to 21
-        // ...
+        multiDexEnabled true // <-- optional, but recommended
     }
 
-// ... bottom of file
-apply plugin: 'com.google.gms.google-services' // <-- add
-{{< /highlight >}}
+    // ...
+
+    dependencies {
+      implementation 'com.android.support:multidex:1.0.3'
+    }
+
+
+```
 
 That's it. Try executing `flutter run` with an Android device emulated or plugged-in to verify the setup worked. 
 
@@ -119,15 +137,123 @@ That's it. Try executing `flutter run` with an Android device emulated or plugge
 The iOS setup is less tedious and can be completed in one step. 
 
 ### Register and Download the GoogleService-Info.plist
-Click *add your app to iOS* then download the `GoogleService-Info.plist` file into the `ios/Runner/Runner` directory from XCode.    
+
+Click *add your app to iOS* then download the `GoogleService-Info.plist`. Open the `ios/runner.xcworkspace` directory with Xcode, then drag the plist file into the `Runner/Runner` directory.  
 
 {{< figure src="/img/snippets/flutterfire-ios-add.png" alt="add ios to your flutterfire project" >}}
 
+### Signing Certificate
 
-## Troubleshooting
+You must have a valid iOS Signing Certificate from your [Apple Developer Account](https://developer.apple.com/). If not, you will receive an error of *No valid code signing certificates were found*.  Follow the steps below:
 
-At this point, you should be able to serve the app by running `flutter run`. 
+  - Log in with your Apple ID in Xcode first
+  - Ensure you have a valid unique Bundle ID
+  - Register your device with your Apple Developer Account
+  - Let Xcode automatically provision a profile for your app
+  - Rebuild your Project
 
-- Run `flutter doctor` and resolve any detected issues
-- Open the app in Android Studio or XCode and build it. Inspect the logs. 
-- If your app crashes at startup without logs it may be because you changed the id in the *AndroidManifest.xml* file. Look at this [Github issue](https://github.com/flutter/flutter/issues/13762#issuecomment-399450334) 
+
+## Emulator Setup
+
+### Firestore Emulator
+
+Checkout the following snippet to use the [Firestore Emulator in Flutter](/snippets/firestore-emulator-flutter). 
+
+
+🔥 Also checkout the [advanced emulator tutorial](/lessons/firebase-emulator-advanced/) for additional tips and tricks.
+
+## Optional Superpowers
+
+There are several additional Firebase superpowers you will likely want in your app bundle from day-one. Let's go ahead and install them now.
+
+### Analytics
+
+[Firebase Analytics](https://pub.dev/packages/firebase_analytics) can automatically collect data about your users and the screens they view in the app. Analytic data is a precursor to many other Firebase features like Predictions, Remote Config, and more. 
+
+{{< file "flutter" "main.dart" >}}
+```dart
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_analytics/observer.dart';
+
+FirebaseAnalytics analytics;
+
+void main() {
+  analytics = FirebaseAnalytics();
+  runApp(MyApp());
+}
+```
+
+### Performance Monitoring
+
+[Performance Monitoring](https://pub.dev/packages/firebase_performance) is another automatic tool that will help you find performance bottlenecks and improve the user experience. Think of it as a ⏲️ *timer* that can aggregated across your entire user base. 
+
+Include the package in your source code for automatic traces, or setup a custom trace. 
+
+{{< file "flutter" "main.dart" >}}
+```dart
+import 'package:firebase_performance/firebase_performance.dart';
+
+// Custom trace example
+
+class _MyHomePageState extends State<MyHomePage> {
+
+  _perfTrace() async {
+    Trace trace = FirebasePerformance.instance.newTrace('cool_trace');
+    trace.start();
+    await Future.delayed(Duration(seconds: 5));
+    trace.stop();
+  }
+
+}
+```
+
+### Crashlytics
+
+[Crashlytics](https://pub.dev/packages/firebase_crashlytics) detects errors and aggregates them into issues. It is a highly valuable feature for detecting problems that affect specific devices and user groups (before they turn into bad reviews on the app store). 
+
+
+{{< file "gradle" "android/build.gradle" >}}
+```gradle
+buildscript {
+ ]
+    dependencies {
+        // ...
+        classpath 'com.google.gms:google-services:4.3.3'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.2.0'
+    }
+}
+```
+
+Next, update your project ID and register the Google services plugin at the bottom of gradle build file in the app directory. 
+
+{{< file "gradle" "android/app/build.gradle" >}}
+```gradle
+apply plugin: 'com.google.firebase.crashlytics'
+apply plugin: 'com.google.gms.google-services'
+
+// ...
+
+
+  dependencies {
+    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
+  }
+```
+
+And finally, use the crashlytics plugin to catch all Flutter errors in at runtime. 
+
+{{< file "flutter" "main.dart" >}}
+```dart
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+
+void main() {
+  Crashlytics.instance.enableInDevMode = true; // turn this off after seeing reports in in the console. 
+  FlutterError.onError = Crashlytics.instance.recordFlutterError;
+  runApp(MyApp());
+}
+```
+
+
+
+## Next Steps
+
+At this point, you should be able to serve the app by running `flutter run` without breaking. If you want to learn more about Flutter Firebase stack, consider enrolling in the [Flutter Firebase Full Course](/courses/flutter-firebase/). 
