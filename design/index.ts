@@ -70,26 +70,26 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
         ifExists(toc, 'top', '120px');
       }
 
-      function copyCodeSnippets() {
-        const snips = document.querySelectorAll('.highlight').forEach(el => {
-          el.addEventListener('click', (e) => {
-            (navigator as any).clipboard.writeText((el as any).innerText);
-            const createEl = () => {
-              const newEl = document.createElement('span');
-              newEl.id = 'copied';
-              newEl.innerHTML = 'copied!';
-              newEl.classList.add('tag', 'tag-green', 'copy-alert'); 
+      // function copyCodeSnippets() {
+      //   const snips = document.querySelectorAll('.highlight').forEach(el => {
+      //     el.addEventListener('click', (e) => {
+      //       (navigator as any).clipboard.writeText((el as any).innerText);
+      //       const createEl = () => {
+      //         const newEl = document.createElement('span');
+      //         newEl.id = 'copied';
+      //         newEl.innerHTML = 'copied!';
+      //         newEl.classList.add('tag', 'tag-green', 'copy-alert'); 
               
-              return newEl;
-            }
-            const alert = document.getElementById('copied') || createEl();
+      //         return newEl;
+      //       }
+      //       const alert = document.getElementById('copied') || createEl();
    
-            el.parentElement.appendChild(alert);
-            alert.classList.add('delayed-fade');
-          })
-        })
+      //       el.parentElement.appendChild(alert);
+      //       alert.classList.add('delayed-fade');
+      //     })
+      //   })
        
-      }
+      // }
 
       // copyCodeSnippets();
       positionMenus();
