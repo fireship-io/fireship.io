@@ -17,7 +17,7 @@ Note: If you experience issues with Google Auth, revisit the [Firebase Setup](/c
 
 Create an auth service to isolate the business logic for Firebase authentication methods and user management. 
 
-{{< file "dart" "main.dart" >}}
+{{< file "dart" "auth.dart" >}}
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
