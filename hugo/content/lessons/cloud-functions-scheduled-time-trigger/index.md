@@ -74,7 +74,7 @@ Our task queue or job queue is simply a Firestore collection that will be querie
 
 ### Step 1: Data Model for Background Jobs
 
-A *task* is a generic document that tells the Cloud Function how to run the backgorund code.  
+A *task* is a generic document that tells the Cloud Function how to run the background code.  
 
 - `performAt` when to execute the task as a Firestore timestamp. 
 - `status` the state of the tasks, useful for debugging and/or querying. 
