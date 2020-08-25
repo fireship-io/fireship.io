@@ -26,7 +26,7 @@ The following snippet demonstrates how to access the iteration index when using 
 
 ## Problem
 
-Dnlike JavaScript, one cannot simply access the index of a list during a `List.map` operation in Dart. 
+Unlike JavaScript, one cannot simply access the index of a list during a `List.map` operation in Dart. 
 
 {{< file "dart" "main.dart" >}}
 {{< highlight dart >}}
