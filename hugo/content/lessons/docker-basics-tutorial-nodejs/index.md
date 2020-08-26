@@ -46,6 +46,15 @@ EXPOSE 8080
 CMD [ "npm", "start" ]
 ```
 
+### Dockerignore
+
+A Dockerignore file is required so we don't add the node_modules folder to the image.
+
+{{< file "docker" ".dockerignore" >}}
+```docker
+node_modules
+```
+
 
 ### Node.js App
 
