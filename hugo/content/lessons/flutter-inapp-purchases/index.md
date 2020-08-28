@@ -233,9 +233,13 @@ In the case of consumable products, you will also likely need to query your own 
         await _iap.queryPastPurchases();
 
     for (PurchaseDetails purchase in response.pastPurchases) {
-      if (Platform.isIOS) {
-        InAppPurchaseConnection.instance.completePurchase(purchase);
-      }
+      final pending = Platform.isIOS
+        ? purchaseDetails.pendingCompletePurchase
+        : !purchaseDetails.billingClientPurchase.isAcknowledged;
+
+        if (pending) {
+          InAppPurchaseConnection.instance.completePurchase(purchase);
+        }
     }
 
     setState(() {
