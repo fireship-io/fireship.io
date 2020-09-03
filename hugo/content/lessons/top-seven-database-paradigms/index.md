@@ -4,12 +4,12 @@ lastmod: 2020-09-01T16:09:39-07:00
 publishdate: 2020-09-01T16:09:39-07:00
 author: Jeff Delaney
 draft: false
-description: Visual explanation of the top 7 database paradigms
+description: Visual explanation of the top 7 database paradigms and what they do best. 
 tags: 
     - sql
     - firestore
 
-youtube: 
+youtube: W2Z7fbCLSTw
 # github: 
 # disable_toc: true
 # disable_qna: true
