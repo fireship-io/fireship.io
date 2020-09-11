@@ -68,6 +68,15 @@ vim somefile.txt # edit a file with vim
 code somefile.txt # edit a file with vscode
 ```
 
+### Update the Linux
+
+Keeping the kernel up to date would simplify your life. Just run those commands:
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+```
+
 ### Run the Linux Train
 
 You can run a the famous Linux shell train with the following commands: 
