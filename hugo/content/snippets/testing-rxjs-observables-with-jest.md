@@ -21,7 +21,7 @@ tags:
 #     - "rxjs": 6.3
 ---
 
-The snippet below shows you how to text asynchronous [RxJS Observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) with [Jest](https://facebook.github.io/jest/). It's probably easier than you think because you can simply
+The snippet below shows you how to test asynchronous [RxJS Observables](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html) with [Jest](https://facebook.github.io/jest/). It's probably easier than you think.
 
 ## Testing a Single Emitted Value
 
