@@ -11,7 +11,7 @@ video_length: 1:51
 
 ## User Profile Component
 
-{{< file "vue" "User.vue" >}}
+{{< file "vue" "UserProfile.vue" >}}
 ```html
 <template>
   <div>
