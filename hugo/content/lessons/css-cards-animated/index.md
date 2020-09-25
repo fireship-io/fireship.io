@@ -203,7 +203,7 @@ A gradient text background cannot be applied with the `color` property. Instead,
 }
 
 .card-header h2 {
-    font-size: 20px;s
+    font-size: 20px;
     margin: .25rem 0 auto;
     cursor: pointer;
 }
