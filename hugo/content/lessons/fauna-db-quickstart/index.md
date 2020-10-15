@@ -9,7 +9,7 @@ tags:
     - fauna
     - javascript
 
-youtube: CipVwISumA
+youtube: 2CipVwISumA
 github: https://github.com/fireship-io/faunadb-basics
 # disable_toc: true
 # disable_qna: true
