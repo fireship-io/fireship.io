@@ -49,6 +49,7 @@ const client = new faunadb.Client({ secret: 'YOUR-KEY' })
 
 // FQL functions
 const {
+    Ref,
     Paginate,
     Get,
     Match,
