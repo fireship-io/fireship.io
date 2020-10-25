@@ -94,7 +94,7 @@ class MyApp extends StatelessWidget {
 {{< /highlight >}}
 
 
-The beauty of this approach is that `StreamProvider` will automatically listen to the subscription for us (an dispose if necessary, it is actually just a StreamBuilder under the hood), allowing us to treat the underlying data as a synchronous value available to the entire app. We can access it in a build method like so:
+The beauty of this approach is that `StreamProvider` will automatically listen to the subscription for us (and dispose if necessary, it is actually just a StreamBuilder under the hood), allowing us to treat the underlying data as a synchronous value available to the entire app. We can access it in a build method like so:
 
 {{< highlight dart >}}
 // Some widget deeply nested in the widget tree...
