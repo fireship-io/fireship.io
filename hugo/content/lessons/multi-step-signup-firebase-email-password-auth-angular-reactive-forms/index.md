@@ -1,7 +1,7 @@
 ---
 title: Multi-step Reactive Form for Email-Password Signup
 lastmod: 2017-11-12T12:05:03-07:00
-publishdate: 2020-11-12T12:05:03-07:00
+publishdate: 2017-11-12T12:05:03-07:00
 author: Jeff Delaney
 draft: false
 description: Build a multi-step reactive form for email-password auth with Firebase

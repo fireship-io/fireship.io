@@ -50,7 +50,7 @@ npm audit fix
 > The Samy worm was an XSS attack that spread to over 1 million MySpace pages in 24 hours. If affected, it would updated your profile to say *but most of all, samy is my hero*
 
 <div class="insta">
-{{< instagram B8rJPG7gvv7 >}}
+
 </div>
 
 
