@@ -25,7 +25,7 @@ This article is focused on frontend browser JS, but the [Node Console API](https
 ## Console FAQ
 
 <div class="insta">
-{{< instagram B8txYEEgPrv >}}
+
 </div>
 
 ### How to show variable names when console logging?
