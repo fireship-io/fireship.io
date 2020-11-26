@@ -97,8 +97,8 @@ export class PhoneNumber {
 ```typescript
 import { Component, OnInit } from '@angular/core';
 import { WindowService } from '../window.service';
-import * as firebase from 'firebase';
-
+import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from 'firebase/app';
 
 @Component({
   selector: 'phone-login',
@@ -115,7 +115,7 @@ export class PhoneLoginComponent implements OnInit {
 
   user: any;
 
-  constructor(private win: WindowService) { }
+  constructor(public auth: AngularFireAuth, private win: WindowService) { }
 
   ngOnInit() {
     this.windowRef = this.win.windowRef
