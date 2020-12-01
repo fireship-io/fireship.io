@@ -80,7 +80,7 @@ export class AppModule {}
 
 Done! Now you can use any of these modules in your components or services. For example, let's listen to a Firestore database collection in realtime. 
 
-{{< file "ngts" "src/app/app.module.ts" >}}
+{{< file "ngts" "src/app/app.component.ts" >}}
 {{< highlight typescript >}}
 import { AngularFirestore } from '@angular/fire/firestore';
 
