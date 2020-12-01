@@ -1,7 +1,7 @@
 ---
-title: Read Other Documents 
-description: Read documents with get() and exists()
-weight: 31
+title: Role-based Auth Example
+description: Chat data validation example
+weight: 33
 lastmod: 2020-11-20T10:11:30-02:00
 draft: false
 vimeo: 

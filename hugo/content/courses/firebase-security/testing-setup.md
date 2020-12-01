@@ -10,3 +10,19 @@ emoji: 👶
 chapter_start: Testing 
 video_length: 1:42
 ---
+
+Install [Jest](https://jestjs.io/) and the [Firebase Testing Package](https://www.npmjs.com/package/@firebase/rules-unit-testing). 
+
+{{< file "terminal" "command line" >}}
+```bash
+npm install --save-dev jest @firebase/rules-unit-testing
+```
+
+
+
+{{< file "npm" "package.json" >}}
+```json
+  "scripts": {
+    "test": "jest --env=node --forceExit",
+  },
+```

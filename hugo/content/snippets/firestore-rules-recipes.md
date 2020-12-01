@@ -1,7 +1,7 @@
 ---
 title: Firestore Security Rules Cookbook
 publishdate: 2019-01-02T09:35:09-07:00
-lastmod: 2020-02-10T09:35:09-07:00
+lastmod: 2020-12-01T09:35:09-07:00
 draft: false
 author: Jeff Delaney
 type: lessons
@@ -13,11 +13,11 @@ tags:
 youtube: b7PUm7LmAOw
 ---
 
-The purpose of this snippet to list common [Firestore security rules](https://firebase.google.com/docs/firestore/security/get-started) patterns. Many of the rules below are extracted into functions to maximize code reuse.
+The purpose of this reference is to demonstrate common [Firestore security rules](https://firebase.google.com/docs/firestore/security/get-started) patterns. Many of the rules below are extracted into functions to maximize code reuse.
 
 ## Basic Recipes
 
-Let's start with some common use cases needed by almost every app.
+Let's start with some common Firestore security use cases needed by almost every app.
 
 {{< box icon="fire" class="box-orange" >}}
 At runtime, Firebase rules look for the first valid `allow == true` rule and NOT vice-versa. This is very important to keep in mind, as you might think you secured a path, only for it to be allowed somewhere else. Always start with secure rules, then carefully allow access where needed.
@@ -123,6 +123,18 @@ service cloud.firestore {
   }
 }
 {{< /highlight >}}
+
+### Block Anonymous Users
+
+If you implement lazy registration, you may want to limit the privileges of anonymous user s. You can determine if a user is anonymous on the auth token. 
+
+{{< file "firebase" "firestore.rules" >}}
+```javascript
+match /posts/{postId} {
+  allow create: if request.auth.uid != null 
+                && request.auth.token.firebase.sign_in_provider != 'anonymous';
+
+```
 
 ## Advanced Scenarios
 

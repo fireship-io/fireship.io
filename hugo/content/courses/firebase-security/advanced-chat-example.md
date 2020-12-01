@@ -1,11 +1,10 @@
 ---
-title: Read
-description: Read documents with get() and exists()
+title: Chat Example
+description: Chat data validation example
 weight: 32
 lastmod: 2020-11-20T10:11:30-02:00
 draft: false
-emoji: 
 vimeo: 
-emoji: 👶
+emoji: 🛡️
 video_length: 1:42
 ---

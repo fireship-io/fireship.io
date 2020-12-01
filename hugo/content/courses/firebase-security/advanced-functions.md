@@ -1,7 +1,7 @@
 ---
-title: Read Other Documents 
-description: Read documents with get() and exists()
-weight: 31
+title: Functions
+description: Extracting complex logic into reusable functions
+weight: 30
 lastmod: 2020-11-20T10:11:30-02:00
 draft: false
 vimeo: 
