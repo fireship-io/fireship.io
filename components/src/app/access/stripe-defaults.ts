@@ -101,5 +101,12 @@ export const plans = {
     price: 1900,
     url: '/courses/stripe-js/'
   },
+  firebaseSecurity: {
+    id: 'firebaseSecurity',
+    sku:  'sku_IVIjaiCRlivYD3',
+    description: 'Firebase Security Course 🛡️',
+    type: 'order',
+    price: 1900,
+    url: '/courses/firebase-security/'
+  }
 };
-

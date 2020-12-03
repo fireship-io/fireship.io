@@ -23,6 +23,8 @@ github: https://github.com/AngularFirebase/147-firestore-emulator-rules-testing
 #    rxdart: 0.20
 ---
 
+🔥 Deep dive with the [Firestore Security Rules Master Course](/courses/firebase-security).
+
 The most exciting announcement (in my opinion) at Firebase Summit 2018 was the [local emulator](https://firebase.google.com/docs/firestore/security/test-rules-emulator) for Firestore and RTDB, making it possible to test security rules locally or on a CI server. If you're brand new to Firebase security, make sure to watch the [Firestore Security Rules Guide](/lessons/firestore-security-rules-guide/). 
  
 ## Project Setup
