@@ -1,7 +1,7 @@
 ---
-lastmod: 2020-11-15T10:23:30-09:00
+lastmod: 2020-12-02T10:23:30-09:00
 title: Firebase Security Course
-description: Learn how to fully secure a Firebase app. 
+description: Secure your Firebase app by mastering security rules
 weight: 0
 type: courses
 tags: 
