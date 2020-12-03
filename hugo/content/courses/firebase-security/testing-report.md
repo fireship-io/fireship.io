@@ -1,11 +1,11 @@
 ---
 title: Debugging Report 
 description: Debug rules using the Firestore code coverage report. 
-weight: 41
+weight: 43
 lastmod: 2020-11-20T10:11:30-02:00
 draft: false
-emoji: 
-vimeo: 
-emoji: 👶
-video_length: 1:42
+vimeo: 486474399
+emoji: 🧪
+video_length: 2:04
+free: true
 ---
