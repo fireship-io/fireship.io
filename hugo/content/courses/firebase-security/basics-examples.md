@@ -22,7 +22,7 @@ match /todos/{docId} {
 
     allow read: if resource.data.status == 'published';
 
-    allow create: if request.auth.uid == resource.data.uid 
+    allow create: if request.auth.uid == request.resource.data.uid 
                 && request.time == request.resource.data.createdAt;
                 
 
