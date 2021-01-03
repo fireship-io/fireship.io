@@ -43,7 +43,7 @@ Angular is a client-side framework designed to run apps in the browser. Universa
 {{< /box >}}
 
 {{< box icon="fire" class="box-orange" >}}
-I highly recommend using [NVM](/snippets/install-nodejs/) with Node `v8.14.0` in your local environment. This is the version running on AppEngine and Cloud Functions and you might get unexpected errors on other verions.
+I highly recommend using [NVM](/snippets/install-nodejs/) with Node `v8.14.0` in your local environment. This is the version running on AppEngine and Cloud Functions and you might get unexpected errors on other versions.
 {{< /box >}}
 
 ## Step 1: Setup Universal in Angular

@@ -554,7 +554,7 @@ setTimeout(() => {
 
 ## 20. MultiCast - Share values, not side effects
 
-Subjects allow you broadcast values from a shared source, while limiting side effects to only one occurance. You start with a regular Observable, then multicast it to a Subject to be consumed by the end user. This magic happens because a single shared subscription is created to the underlying observable. 
+Subjects allow you broadcast values from a shared source, while limiting side effects to only one occurrence. You start with a regular Observable, then multicast it to a Subject to be consumed by the end user. This magic happens because a single shared subscription is created to the underlying observable. 
 
 ```js
 const observable = Rx.Observable.fromEvent(document, 'click');

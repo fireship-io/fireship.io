@@ -69,7 +69,7 @@ The next step is to configure Electron. There are all sorts of possibilities for
 
 Create a new file named `main.js` in the root of your project - this is the Electron NodeJS backend. This is the entry point for Electron and defines how our desktop app will react to various events performed via the desktop operating system.
 
-The `createWindow` function defines the properties of the program window that the user will see. There are many more [window options](https://github.com/electron/electron/blob/master/docs/api/browser-window.md#class-browserwindow) that faciliate additional customization, child windows, modals, etc.
+The `createWindow` function defines the properties of the program window that the user will see. There are many more [window options](https://github.com/electron/electron/blob/master/docs/api/browser-window.md#class-browserwindow) that facilitate additional customization, child windows, modals, etc.
 
 Notice we are loading the window by pointing it to the `index.html` file in the `dist/` folder. Do NOT confuse this with the index file in the `src/` folder. At this point, this file does not exist, but it will be created automatically in the next step by running `ng build --prod`
 
@@ -99,7 +99,7 @@ function createWindow () {
   })
 }
 
-// Create window on electron intialization
+// Create window on electron initialization
 app.on('ready', createWindow)
 
 // Quit when all windows are closed.

@@ -267,7 +267,7 @@ So far, everything all the tests I've shown you have been synchronous, but Angul
   }
 ```
 
-We can test this code by running it inside a fake async zone, then using `tick()` with the number of of miliseconds to simulate the passage of time. 
+We can test this code by running it inside a fake async zone, then using `tick()` with the number of of milliseconds to simulate the passage of time. 
 
 ```typescript
   // Async
@@ -393,7 +393,7 @@ describe('AlertButtonComponent', () => {
 
 Protractor documentation is limited, but it is the coolest testing tool Angular has to offer in my opinion. Unlike the isolated tests we created in the previous section, it will simulate how an end user experiences your app by running it on a web browser. You can click buttons, fill out forms, and iteract with the app in a very natural way. 
 
-When it comes to testing the complex realtime behavior of Firebase, it is often much easier to write e2e tests, rather than try to simulate edge cases with a mock backend. If you go this route, I highly recommend setting up [separate development and production projects](https://angularfirebase.com/lessons/development-and-production-environments-for-angular-firebase-projects/) in Firebase so you don't accidently screw-up all of your live user data. 
+When it comes to testing the complex realtime behavior of Firebase, it is often much easier to write e2e tests, rather than try to simulate edge cases with a mock backend. If you go this route, I highly recommend setting up [separate development and production projects](https://angularfirebase.com/lessons/development-and-production-environments-for-angular-firebase-projects/) in Firebase so you don't accidentally screw-up all of your live user data. 
 
 
 {{< figure src="img/protractor-spec-angular.gif" caption="" >}}

@@ -84,7 +84,7 @@ If you have an existing app, it should produce results similar to those below wh
 
 ### Clone the TWA Starter Android App
 
-There are serveral modifcations that need to be made to the Android app to support a TWA, all of which are [well documented here](https://developers.google.com/web/updates/2019/02/using-twa#establish_an_association_from_the_website_to_the_app). However, an easier apporach is to just clone the repo for this lesson
+There are several modifcations that need to be made to the Android app to support a TWA, all of which are [well documented here](https://developers.google.com/web/updates/2019/02/using-twa#establish_an_association_from_the_website_to_the_app). However, an easier apporach is to just clone the repo for this lesson
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
@@ -148,7 +148,7 @@ Take the SHA fingerprint from the previous step and generate a statement with th
 
 Create a file that contains the contents from the digital asset tool that is publicly accessible from your PWA's web host at the following path: *.well-known/assetlinks.json*
 
-The correct location of this file is completly dependent on the build process of your web app, but the end result should be this file living in the deployed files, usually *public* or *dist*. Deploy your webapp when complete:
+The correct location of this file is completely dependent on the build process of your web app, but the end result should be this file living in the deployed files, usually *public* or *dist*. Deploy your webapp when complete:
 
 {{< figure src="img/well-known-asset.png" alt="Well know asset deployed to firebase hosting" >}}
 

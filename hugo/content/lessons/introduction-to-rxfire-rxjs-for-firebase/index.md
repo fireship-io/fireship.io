@@ -84,7 +84,7 @@ getDownloadURL(ref).subscribe(url => console.log(url))
 
 **Switch to a Different Observable Stream for Relational Data**
 
-Let's imagine we have one document for an Animal and another for its feeding schedule. We need to read that animal's ID before retriving the food document. 
+Let's imagine we have one document for an Animal and another for its feeding schedule. We need to read that animal's ID before retrieving the food document. 
 
 ```js
 import { docData } from 'rxfire/firestore';

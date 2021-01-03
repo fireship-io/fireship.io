@@ -21,7 +21,7 @@ versions:
    rxdart: 0.20
 ---
 
-State management is a hot-button topic that brings out strong opinions in developers, and in extreme cases results in Twitter fights. In my experience, people tend to over-engineer features that would otherwise be straight-forward because they assume a full-blown state management library is necessary. In some cases, they just add complexity, but in others, they can be extremly valuable. My recommendation is to analyze these strategies closely and choose an approach that feels right for your app's requirements and your team's style. 
+State management is a hot-button topic that brings out strong opinions in developers, and in extreme cases results in Twitter fights. In my experience, people tend to over-engineer features that would otherwise be straight-forward because they assume a full-blown state management library is necessary. In some cases, they just add complexity, but in others, they can be extremely valuable. My recommendation is to analyze these strategies closely and choose an approach that feels right for your app's requirements and your team's style. 
 
 The following lesson is designed to teach you the fundamental tools in [Flutter](https://flutter.dev/docs/development/data-and-backend/state-mgmt) for managing local and shared app state. 
 

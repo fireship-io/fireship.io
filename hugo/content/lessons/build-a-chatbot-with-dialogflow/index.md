@@ -73,7 +73,7 @@ When an intent is completed you can setup a simple response in the Dialogflow co
 
 ## Part 2: Backend Cloud Functions
 
-Communicating with Dialogflow must be done on the server. In this section, we create HTTP Cloud Functions that enable frontend applications to communcation with our agent. 
+Communicating with Dialogflow must be done on the server. In this section, we create HTTP Cloud Functions that enable frontend applications to communication with our agent. 
 
 ### Add your Service Account
 

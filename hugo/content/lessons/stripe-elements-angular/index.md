@@ -22,7 +22,7 @@ versions:
 
 💰 Are you building a payment solution with Stripe? Consider enrolling the [Stripe JavaScript Master Course](/courses/stripe). 
 
-[Stripe](https://stripe.com/docs/stripe-js) provides serveral JavaScript libraries - Stripe Elements & Checkout - that makes it easy to collect and validate payment sources like credit cards, bank accounts, and more. The following lesson will show you how to integrate Stripe's clientside JS packages into an Angular application. 
+[Stripe](https://stripe.com/docs/stripe-js) provides several JavaScript libraries - Stripe Elements & Checkout - that makes it easy to collect and validate payment sources like credit cards, bank accounts, and more. The following lesson will show you how to integrate Stripe's clientside JS packages into an Angular application. 
 
 ## Step 0. Prerequisites
 

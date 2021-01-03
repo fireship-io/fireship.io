@@ -134,7 +134,7 @@ export class LoginComponent {
 
 ### Trace Lifecycle Hooks
 
-On iOS and Android, Firebase runs a screen trace to measure the lifetime of a screen detect frozen screens. You can use lifecycle hooks in your preferred framework to get similar results on the web. Here's how we can achive this in Angular:
+On iOS and Android, Firebase runs a screen trace to measure the lifetime of a screen detect frozen screens. You can use lifecycle hooks in your preferred framework to get similar results on the web. Here's how we can archive this in Angular:
 
 {{< file "ngts" "login.component.ts" >}}
 {{< highlight typescript >}}
