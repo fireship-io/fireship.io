@@ -30,7 +30,7 @@ Common use-cases for transactional email include:
 - Send a welcome email after signup. 
 - Send a email via HTTP request (completely dynamic based on frontend logic). 
 - Send an email on a Firestore database update. For example, "user A" comments on a post from "user B", triggering a email to user B. 
-- Send email email on a specific time interval i.e. weekly account summary. 
+- Send email on a specific time interval i.e. weekly account summary. 
 
 
 {{< box icon="scroll" class="box-blue" >}}
