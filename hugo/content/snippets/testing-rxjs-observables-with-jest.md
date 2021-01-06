@@ -33,7 +33,7 @@ You can then write your expectations inside of the the subscribe callback, then 
 import { of } from 'rxjs';
 
 test('the observable emits hello', done => {
-  of('hello').subscribe( str => {
+  of('hello').subscribe( data => {
     expect(data).toBe('hola');
     done();
   });
