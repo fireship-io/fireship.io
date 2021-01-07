@@ -1,7 +1,7 @@
 ---
 title: Seven Awesome PWA Features
 lastmod: 2021-01-05T09:31:10-07:00
-publishdate: 2020-12-21T09:31:10-07:00
+publishdate: 2021-01-05T09:31:10-07:00
 author: Jeff Delaney
 draft: false
 description: Seven awesome web-platform features features you didn't know about.
