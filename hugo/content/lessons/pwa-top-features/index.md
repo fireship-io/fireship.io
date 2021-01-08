@@ -4,7 +4,7 @@ lastmod: 2021-01-05T09:31:10-07:00
 publishdate: 2021-01-05T09:31:10-07:00
 author: Jeff Delaney
 draft: false
-description: Seven awesome web-platform features features you didn't know about.
+description: Seven awesome web-platform features you didn't know about.
 tags: 
     - javascript
     - pwa
