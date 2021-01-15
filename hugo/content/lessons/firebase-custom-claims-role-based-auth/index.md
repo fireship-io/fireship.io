@@ -123,7 +123,7 @@ The Firestore rules grant read access to all admins, but limit write access to a
 
 ### Use Case
 
-A very common requirement is role-based authorization. A user can be assigned a list of roles, which determine if that user is can perform a certain action. This strategy is common is CMS platforms - Wordpress for example has roles like *super_admin*, *admin*, *editor*, *author*, and so on. 
+A very common requirement is role-based authorization. A user can be assigned a list of roles, which determine if that user can perform a certain action. This strategy is common is CMS platforms - Wordpress for example has roles like *super_admin*, *admin*, *editor*, *author*, and so on. 
 
 {{< highlight javascript >}}
 const customClaims = {
