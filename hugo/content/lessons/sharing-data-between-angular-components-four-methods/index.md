@@ -123,7 +123,7 @@ export class ChildComponent {
 
 ## Child to Parent: Sharing Data via Output() and EventEmitter
 
-Another way to share data is to emit data from the child, which can be listed to by the parent. This approach is ideal when you want to share data changes that occur on things like button clicks, form entires, and other user events.
+Another way to share data is to emit data from the child, which can be listened to by the parent. This approach is ideal when you want to share data changes that occur on things like button clicks, form entires, and other user events.
 
 In the parent, we create a function to receive the message and set it equal to the message variable.
 
