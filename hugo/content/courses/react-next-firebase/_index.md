@@ -17,7 +17,7 @@ tags:
 
 ## Expected Release Late January 2021
 
-**React Firebase - The Full Course** takes you from zero to production-ready progressive web app (PWA). Learn how build a high-performance React app including support for server-side rendering with Next.js
+**React Firebase - The Full Course** takes you from zero to production-ready progressive web app (PWA). Learn how to build a high-performance React app including support for server-side rendering with Next.js
 
 
 
