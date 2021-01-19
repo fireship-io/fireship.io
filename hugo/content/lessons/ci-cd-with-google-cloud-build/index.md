@@ -272,7 +272,7 @@ steps:
 
 ### Run a Build without a Git Trigger
 
-Sometimes you just want to build with making a git commit. You can do this at any time from the command line: 
+Sometimes you just want to build without making a git commit. You can do this at any time from the command line: 
 
 {{< highlight text >}}
 gcloud builds submit . --config=cloudbuild.yaml
