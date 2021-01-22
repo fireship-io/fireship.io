@@ -20,6 +20,25 @@ tags:
 **React Firebase - The Full Course** takes you from zero to production-ready progressive web app (PWA). Learn how build a high-performance React app including support for server-side rendering with Next.js
 
 
+# Preq
+
+- Next
+- Firebase
+
+# Basics
+
+- Resources
+- Routing setup
+- Firebase setup
+
+## Signup Feature
+
+## Admin Feature
+
+## SEO Feature
+
+## Deployment
+
 
 
 
