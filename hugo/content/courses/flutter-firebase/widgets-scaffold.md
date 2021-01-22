@@ -23,8 +23,8 @@ class MyApp extends StatelessWidget {
        floatingActionButton: FloatingActionButton(onPressed: () {}),
        drawer: Drawer(),
        bottomNavigationBar: BottomNavigationBar(items: [
-         BottomNavigationBarItem(title: Text('foo'), icon: Icon(Icons.call)),
-         BottomNavigationBarItem(title: Text('bar'), icon: Icon(Icons.cached))
+          BottomNavigationBarItem(label: 'foo', icon: Icon(Icons.call)),
+          BottomNavigationBarItem(label: 'bar', icon: Icon(Icons.cached))
        ]),
      ),
    );
