@@ -208,18 +208,6 @@ export const createUserRecord = functions.auth
 
 The auth function is tested in the same manner as Firestore. In fact, all background functions (Firestore, RTDB, Auth, Storage, PubSub) follow similar testing patterns. Notice how we use `testEnv.auth.makeUserRecord(...)`. This allows us to generate a fake user record specifically for this test with the values we specify.
 
-<div class="pro-anchor2">
-```typescript
-describe('createUserRecord', () => {
-
-  // ... pro only
-
-})
-```
-</div>
-
-<div class="pro-only2">
-
 ```typescript
 describe('createUserRecord', () => {
   let wrapped;
@@ -243,7 +231,6 @@ describe('createUserRecord', () => {
   });
 });
 ```
-</div>
 
 ## HTTP Function Tests (Offline)
 
