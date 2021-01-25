@@ -1,3 +1,26 @@
+---
+title: Create your own Express Middleware
+lastmod: 2021-01-20T08:43:13-07:00
+publishdate: 2021-01-20T08:43:13-07:00
+author: Antariksh Verma
+draft: false
+description: Lear how to build and use middleares in Express.js, the most popular Node.js web framework.
+tags: 
+    - expressjs
+    - nodejs
+    - javascript
+
+github: https://github.com/antriksh123/create-your-own-express-middleware
+# disable_toc: true
+# disable_qna: true
+
+# courses
+# step: 0
+
+# versions:
+#    rxdart: 0.20
+---
+
 What's up? Today I'll be teaching you how to create your own Express JS middleware from scratch. It's much easier than it sounds. We are going to be making a middleware I like to call logger. Don't worry, the code will be on GitHub. Although I won't put my entire Express JS project, but the main function we are going to write. So, the first thing first, we need to setup the project, so make sure you have npm and Node JS installed. Then, if you know have worked with Express JS (I am presuming you have), just create a new Express JS project.
 After you have set your project, create a folder named middleware. In that folder, create a new file called logger.js
 
