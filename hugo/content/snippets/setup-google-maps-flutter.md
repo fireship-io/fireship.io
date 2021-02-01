@@ -96,10 +96,13 @@ Add the permission request details to the Info.plist
 {{< file "cog" "ios/Runner/Info.plist " >}}
 {{< highlight html >}}
 <key>NSLocationWhenInUseUsageDescription</key>
-<string>So I can track you while you use the app</string>
+<string>This app needs access to location when open.</string>
 
 <key>NSLocationAlwaysUsageDescription</key>
-<string>So I can track you at all times</string>
+<string>This app needs access to location when in the background.</string>
+
+<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>This app needs access to location when open and in the background.</string>
 {{< /highlight >}}
 
 
