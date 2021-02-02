@@ -11,5 +11,6 @@ video_length: 16:00
 chapter_start: Intro
 ---
 
-Coming soon...
-
+<div class="vid-center">
+    {{< youtube TNhaISOUy6Q >}}
+</div>
