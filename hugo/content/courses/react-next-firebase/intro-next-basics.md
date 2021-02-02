@@ -1,8 +1,8 @@
 ---
 title: Next.js Basics
 description: Learn the fundamentals of Next.js and server-side rendering
-weight: 2
-lastmod: 2021-01-03T10:23:30-09:00
+weight: 3
+lastmod: 2021-02-01T10:23:30-09:00
 draft: false
 vimeo: 
 free: true
