@@ -38,7 +38,7 @@ export class GoogleSigninDirective {
 
   @HostListener('click')
   onclick() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 }
 
@@ -82,6 +82,6 @@ export class LoginPageComponent {
       Logged in as <strong>{{ user.email }}</strong>
     </p>
 
-    <button mat-stroked-button (click)="afAuth.auth.signOut()">Logout</button>
+    <button mat-stroked-button (click)="afAuth.signOut()">Logout</button>
   </div>
 {{< /highlight >}}

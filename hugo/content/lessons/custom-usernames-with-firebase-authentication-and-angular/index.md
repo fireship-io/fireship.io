@@ -21,7 +21,7 @@ youtube: NLWHEiH1FZY
 #    rxdart: 0.20
 ---
 
-⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app. 
+⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app and the [custom Firebase Usernames](/lessons/custom-usernames-firebase) tutorial. 
 
 <p>Firebase authentication is super convenient, but you can’t easily assign custom usernames out of the box. In this lesson, we are going to give users custom usernames and asynchronously validate their availability during the signup process. On every keyup, the username will be checked for duplicates, so we can display a helpful message to the user.</p>
 
