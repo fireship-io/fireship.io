@@ -1,18 +1,22 @@
 ---
 title: Google SignIn
-description: Sign in via OAuth with Google SignIn
+description: Authenticate via OAuth with Google SignIn
 weight: 21
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
-emoji: 🔥
-video_length: 11:47
+vimeo: 508645809
+emoji: 👤
+video_length: 2:51
 ---
+
+## Google Auth Provider
 
 {{< file "js" "lib/firebase.js" >}}
 ```javascript
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 ```
+
+## SignIn Button
 
 {{< file "js" "posts/enter.js" >}}
 ```javascript

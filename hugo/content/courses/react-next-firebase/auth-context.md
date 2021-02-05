@@ -1,15 +1,17 @@
 ---
 title: Auth Context
-description: Manage the global auth state with the React context API
+description: Manage the global auth state with the React Context API
 weight: 22
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
-emoji: 🔥
-video_length: 11:47
+vimeo: 508645691
+emoji: 🌐
+video_length: 3:07
 ---
 
 ## Create Context
+
+Learn more about [React Context](https://reactjs.org/docs/context.html).
 
 {{< file "js" "lib/context.js" >}}
 ```javascript

@@ -1,12 +1,12 @@
 ---
 title: Next.js Setup
-description: Setup and Next.js app and explore the file system
+description: Setup a Next.js app and explore the file system
 weight: 11
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 508599862
 emoji: 💻
-video_length: 11:47
+video_length: 5:41
 ---
 
 ## Create a Next.js App

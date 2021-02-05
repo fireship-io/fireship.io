@@ -1,17 +1,17 @@
 ---
-title: User Profile Page
-description: User getServerSide props to render a user profile
-weight: 21
+title: SSR User Profile Page
+description: Implement server-side rendering to fetch data on the server
+weight: 32
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
-emoji: 🔥
-video_length: 11:47
+vimeo: 508681163
+emoji: 😎
+video_length: 5:43
 ---
 
 ## Helpers
 
-The following helpers will be reused on in other components to simplify our code.
+The following helpers will be reused on in other components to simplify the code.
 
 {{< file "js" "lib/firebase.js" >}}
 ```javascript
@@ -88,12 +88,18 @@ export default function UserProfilePage({ user, posts }) {
 
 
 ## User Profile
+
+[UserProfile Code](https://github.com/fireship-io/next-firebase-course/tree/main/components/UserProfile.js)
+
 {{< file "js" "components/UserProfile.js" >}}
 ```javascript
  // see full source code
 ```
 
 ## Post Feed
+
+[UserProfile Code](https://github.com/fireship-io/next-firebase-course/blob/main/components/PostFeed.js)
+
 
 {{< file "js" "components/PostFeed.js" >}}
 ```javascript

@@ -1,15 +1,21 @@
 ---
 title: README
-description: Watch the video before starting the course!
-weight: 2
+description: Watch this video before starting the course!
+weight: 1
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 508521439
 free: true
 emoji: 🚨
-video_length: 5:00
+video_length: 2:12
 chapter_start: Prerequisites
 ---
+
+## Essentials
+
+- 🚀 [Live Demo](https://next.fireship.io/)
+- 💾 [Source code](https://github.com/fireship-io/next-firebase-course)
+- 💬 [Slack](https://fireship.page.link/slack)
 
 ## Official Resources
 

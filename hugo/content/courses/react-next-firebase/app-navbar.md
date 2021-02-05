@@ -1,17 +1,15 @@
+---
+title: Navbar
+description: Create a dynamic navigation bar with React 
+weight: 16
+lastmod: 2021-02-01T10:23:30-09:00
+draft: false
+vimeo: 508623279
+emoji: 🍫
+video_length: 3:24
+---
 
-{{< file "js" "pages/_app.js" >}}
-```javascript
-import Navbar from '../components/Navbar';
-
-function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <Navbar />
-      <Component {...pageProps} />
-    </>
-  );
-}
-```
+## Navbar Component
 
 {{< file "js" "components/Navbar.js" >}}
 ```javascript
@@ -60,4 +58,21 @@ export default function Navbar() {
   );
 }
 
+```
+
+## Usage in the App Component
+
+
+{{< file "js" "pages/_app.js" >}}
+```javascript
+import Navbar from '../components/Navbar';
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Navbar />
+      <Component {...pageProps} />
+    </>
+  );
+}
 ```

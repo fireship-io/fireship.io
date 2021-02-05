@@ -1,14 +1,17 @@
 ---
 title: Auth Hook
 description: Join Firestore data to the current user with a custom react hook
-weight: 22
+weight: 23
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
-emoji: 🔥
-video_length: 11:47
+vimeo: 508645520
+emoji: 🎣
+video_length: 3:57
 ---
 
+## Custom User Data Hook
+
+Use this hook to read the current Firebase User, then use the uid to fetch the public profile document from Firestore. 
 
 {{< file "js" "lib/hooks.js" >}}
 ```javascript
@@ -40,6 +43,8 @@ export function useUserData() {
   return { user, username };
 }
 ```
+
+## Usage in the App Component
 
 {{< file "js" "_app.js" >}}
 ```javascript

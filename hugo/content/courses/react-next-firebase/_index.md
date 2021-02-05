@@ -1,50 +1,56 @@
 ---
 lastmod: 2021-01-04T10:23:30-09:00
-title: React Firebase - The Full Course
-description: Build a full-stack PWA with React, Firebase, and Next.js
+title: Next.js Firebase - The Full Course
+description: Build a full-stack app with React, Firebase, and Next.js
 weight: 0
 type: courses
 tags: 
     - react
-    - next
+    - nextjs
     - firebase
     - firestore
     - pro
 ---
 
-![React Next.js Firebase Course](img/featured.png)
+{{< vimeo 508494924 >}}
+
+**Next.js Firebase - The Full Course** takes you from zero to a production-ready hybrid-rendered webapp. Learn how build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js 
 
 
-## Expected Release Late January 2021
+## 🦄 What will I build?
 
-**React Firebase - The Full Course** takes you from zero to production-ready progressive web app (PWA). Learn how build a high-performance React app including support for server-side rendering with Next.js
+You will build a full-stack **Social Blogging Platform** inspired by sites like 🌈 [DEV.to](https://dev.to) and [Medium](https://medium.com). Authors can create content under their custom username, then publish publicly with SEO-friendly rendering, while readers can heart or like posts in realtime. Featuring...
 
-
-# Preq
-
-- Next
-- Firebase
-
-# Basics
-
-- Resources
-- Routing setup
-- Firebase setup
-
-## Signup Feature
-
-## Admin Feature
-
-## SEO Feature
-
-## Deployment
+- 👨‍🎤 Custom Firebase usernames
+- 📰 Bot-friendly content (SEO)
+- 🦾 Advanced SSR, SSG, and ISR techniques
+- 🔥 Firestore realtime CRUD and data modeling
+- ⚛️ Reactive forms with react-hook-form
+- 📂 Image file uploads
+- 💞 Realtime hearts
+- 🚀 Security & Deployment
 
 
 
-- intro
-- app
-- auth
-- ssr
-- admin
-- hearts
-- deploy
+## 🤔 Is this Course Right for Me?
+
+This course is intermediate level 🟦 and will challenge you to build an app that delivers high-performance and search engine visibility via server-side rendering. It assumes you have at least basic knowledge of web programming with familiarity of JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and followed in a long linear format.
+
+### Test drive
+
+Visit the demo app and give it a test drive before you enroll. 
+
+<div>
+<a href="https://next.fireship.io" class="btn btn-orange">Nextfire Live Demo</a>
+</div>
+
+### When was the course last updated?
+
+<span class="tag tag-sm tag-pro">Updated Feb 5th, 2021</span> <span class="tag tag-sm tag-next">Next v10.0</span>
+
+### How do I enroll?
+
+The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you have two options:
+
+- Become a [Fireship PRO](/pro) member to access ALL courses and content (recommended)
+- OR just buy this one-time single course

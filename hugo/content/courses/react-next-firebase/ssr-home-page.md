@@ -1,15 +1,17 @@
 ---
-title: Home Page Feed
+title: SSR + Paginated Home Page Feed
 description: Render a feed of the latest posts with a collectionGroup query
-weight: 22
+weight: 33
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
-emoji: 🔥
-video_length: 11:47
+vimeo: 508681044
+emoji: 📚
+video_length: 3:40
 ---
 
 ## Firebase Lib
+
+Use this function to convert a Firestore timestamp to a number. 
 
 {{< file "js" "lib/firebase.js" >}}
 ```javascript
@@ -17,6 +19,8 @@ export const fromMillis = firebase.firestore.Timestamp.fromMillis;
 ```
 
 ## Home Page Post Feed
+
+The first batch is rendered on the server, while all subsequent queries are executed clientside.
 
 {{< file "js" "pages/index.js" >}}
 ```javascript

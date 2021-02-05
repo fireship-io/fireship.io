@@ -108,5 +108,14 @@ export const plans = {
     type: 'order',
     price: 1900,
     url: '/courses/firebase-security/'
+  },
+  reactNextFirebase: {
+    id: 'reactNextFirebase',
+    sku:  'sku_ItHZfVSApb3xkT',
+    description: 'The Next.js Firebase Course 🚀',
+    type: 'order',
+    price: 1900,
+    url: '/courses/react-next-firebase/'
   }
 };
+

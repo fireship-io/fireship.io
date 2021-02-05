@@ -1,12 +1,12 @@
 ---
 title: Firebase Setup
-description: Install Firebase in a Next.js project
+description: Install and configure Firebase in a Next.js project
 weight: 13
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 508599406
 emoji: 🔥
-video_length: 11:47
+video_length: 5:09
 ---
 
 ## Firebase Setup
@@ -15,6 +15,13 @@ video_length: 11:47
 ```bash
 npm install firebase react-firebase-hooks
 ```
+
+- [Firebase JS](https://firebase.google.com/docs/web/setup) works in both the browser and Node.js
+- [react-firebase-hooks](https://www.npmjs.com/package/react-firebase-hooks) abstracts realtime Firebase streams to React hooks 
+
+## Firebase Lib
+
+Export common Firebsae SDKs and utilities.
 
 {{< file "js" "lib/firebase.js" >}}
 ```javascript
