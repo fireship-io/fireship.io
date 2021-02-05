@@ -13,7 +13,7 @@ video_length: 2:30
 
 The post value will prefer the realtime value, but default to the server rendered content while it is loading. 
 
-{{< file "js" "username/slug.js" >}}
+{{< file "js" "pages/username/slug.js" >}}
 ```javascript
 import { useDocumentData } from 'react-firebase-hooks/firestore';
 
