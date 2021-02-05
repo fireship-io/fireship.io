@@ -46,7 +46,7 @@ export function useUserData() {
 
 ## Usage in the App Component
 
-{{< file "js" "_app.js" >}}
+{{< file "js" "pages/_app.js" >}}
 ```javascript
 import { useUserData } from '../lib/hooks';
 
