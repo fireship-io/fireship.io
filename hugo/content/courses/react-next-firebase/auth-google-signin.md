@@ -18,7 +18,7 @@ export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 
 ## SignIn Button
 
-{{< file "js" "posts/enter.js" >}}
+{{< file "js" "pages/enter.js" >}}
 ```javascript
 import { auth, googleAuthProvider } from '../lib/firebase';
 
