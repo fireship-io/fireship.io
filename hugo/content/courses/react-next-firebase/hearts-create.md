@@ -12,7 +12,7 @@ chapter_start: Hearts
 
 ## Heart Button
 
-{{< file "js" "app.js" >}}
+{{< file "js" "components/HeartButton.js" >}}
 ```javascript
 import { firestore, auth, increment } from '../lib/firebase';
 import { useDocument } from 'react-firebase-hooks/firestore';
@@ -54,7 +54,7 @@ export default function Heart({ postRef }) {
 
 ## Usage in a Component
 
-{{< file "js" "posts/username/slug.js" >}}
+{{< file "js" "pages/username/slug.js" >}}
 ```javascript
 import HeartButton from '../../components/HeartButton';
 import AuthCheck from '../../components/AuthCheck';
