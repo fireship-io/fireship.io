@@ -52,4 +52,4 @@ Visit the demo app and give it a test drive before you enroll.
 
 ### How do I enroll?
 
-The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you have two options:
+The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 
