@@ -3,6 +3,7 @@ title: Cloud Functions Master Course
 description: Master the fundamentals of serverless with Firebase Cloud Functions where we build seven different microservices
 weight: 0
 type: courses
+free: true
 tags: 
     - cloud-functions
     - firestore

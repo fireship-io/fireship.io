@@ -1,5 +1,5 @@
 ---
-lastmod: 2021-01-04T10:23:30-09:00
+lastmod: 2021-02-06T10:23:30-09:00
 title: Next.js Firebase - The Full Course
 description: Build a full-stack app with React, Firebase, and Next.js
 weight: 0
@@ -15,6 +15,8 @@ tags:
 {{< vimeo 508494924 >}}
 
 **Next.js Firebase - The Full Course** takes you from zero to a production-ready hybrid-rendered webapp. Learn how build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js 
+
+{{< figure src="/courses/react-next-firebase/img/testimonial.png" alt="The new fireship Nextjs Firebase is a masterpiece! Totally worth it"  >}}
 
 
 ## 🦄 What will I build?
@@ -51,6 +53,3 @@ Visit the demo app and give it a test drive before you enroll.
 ### How do I enroll?
 
 The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you have two options:
-
-- Become a [Fireship PRO](/pro) member to access ALL courses and content (recommended)
-- OR just buy this one-time single course
