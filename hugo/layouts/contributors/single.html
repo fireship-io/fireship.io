@@ -3,7 +3,13 @@
 <article itemscope itemtype="http://schema.org/Author" class="content-pad">
 
     <div class="author-headline">
-             <div class="author-avatar"><img src="{{ .Params.featured_img }}" alt="{{ .Title }} avatar image"></div>
+            <div class="author-avatar">
+                <img
+                    src="{{ .Params.featured_img }}"
+                    alt="{{ .Title }} avatar image"
+                    onerror="this.onerror=null; this.src='/img/contributer-avatar.svg'"
+                >
+            </div>
             <h1 itemprop="name" id="{{ .Title }}" class="post-title border-bottom">
                 {{ .Title }} Contributor Bio
             </h1>
