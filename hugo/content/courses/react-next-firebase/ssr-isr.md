@@ -14,7 +14,7 @@ video_length: 3:45
 
 This page is statically generated, BUT regenerated after new requests come in at an interval of 5000ms. If a prerendered page does not exist, will fallback to regular SSR. 
 
-{{< file "js" "username/slug.js" >}}
+{{< file "js" "pages/username/slug.js" >}}
 ```javascript
 import styles from '../../styles/Post.module.css';
 import PostContent from '../../components/PostContent';

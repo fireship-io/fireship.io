@@ -13,7 +13,7 @@ video_length: 7:02
 
 The form below asynchronously validates the existance of a Firestore document. Learn more with a full breakdown of [Firebase custom usernames](/lessons/custom-usernames-firebase/)
 
-{{< file "js" "enter.js" >}}
+{{< file "js" "pages/enter.js" >}}
 ```javascript
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { UserContext } from '../lib/context';

@@ -13,7 +13,7 @@ video_length: 2:02
 
 React Hook Form makes it easy to add reactive form validation. 
 
-{{< file "js" "posts/admin/slug.js" >}}
+{{< file "js" "pages/admin/slug.js" >}}
 ```jsx
 
   const { register, handleSubmit, reset, watch, formState, errors } = useForm({ defaultValues, mode: 'onChange' });
