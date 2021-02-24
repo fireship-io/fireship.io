@@ -23,7 +23,7 @@ export const UserContext = createContext({ user: null, username: null });
 
 ## Provide Context
 
-{{< file "js" "lib/context.js" >}}
+{{< file "js" "pages/_app.js" >}}
 ```javascript
 import { UserContext } from '../lib/context';
 
