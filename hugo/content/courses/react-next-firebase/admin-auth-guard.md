@@ -28,7 +28,7 @@ export default function AuthCheck(props) {
 
 ## Usage in a Component
 
-{{< file "js" "admin/index.js.js" >}}
+{{< file "js" "admin/index.js" >}}
 ```javascript
 import AuthCheck from '../../components/AuthCheck';
 
