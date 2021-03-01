@@ -18,8 +18,6 @@ tags:
 
 ## 🍱 What will I build?
 
-{{< figure src="/img/testimonial/angular-testimonial.png" alt="Finally, the world will see Angular for what it truly is"  >}}
-
 
 The **Angular Firebase PWA Course** will teach you how to build a complex progressive web app with Angular 9 (ivy), Material Design, and Firebase. It starts from absolute basics and eventually culminates with the deployment of a server-rendered PWA on Google Cloud Run. 
 

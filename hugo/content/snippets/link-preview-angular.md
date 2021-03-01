@@ -29,9 +29,7 @@ github: https://github.com/fireship-io/198-web-scraper-link-preview
 
 ---
 
-{{< box emoji="👀" >}}
-This tutorial is an extension of the [Web Scraping Guide](/lessons/web-scraping-guide/). You must have the HTTP Cloud Function running locally or deployed to production to fetch link data from third-party websites.  
-{{< /box >}}
+👀 This tutorial is an extension of the [Web Scraping Guide](/lessons/web-scraping-guide/). You must have the HTTP Cloud Function running locally or deployed to production to fetch link data from third-party websites.  
 
 
 ## Link Preview Component

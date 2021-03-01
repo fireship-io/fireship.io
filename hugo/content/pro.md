@@ -6,13 +6,6 @@ description: Upgrade to a Fireship.io PRO Membership
 ---
 
 
-<!-- <section>
-    {{< box icon="gift" class="box-purple" >}}
-        <h2>Holiday sale in on!</h2> 
-        <p>Upgrade to PRO with a 25% discount using code: <strong>wHa61FjD</strong></p>
-    {{< /box >}}
-</section> -->
-
 {{< partial "pricing" >}}
 
 <h2>PRO Benefits</h2>
