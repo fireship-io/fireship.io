@@ -4,7 +4,7 @@ import * as crypto from 'crypto';
 import * as tsscmp from 'tsscmp';
 const { PubSub } = require('@google-cloud/pubsub');
 
-
+ 
 export const questionBot = new WebClient(functions.config().slack.oauth);
 export const proBot = new WebClient(functions.config().slack.pro_token);
 
