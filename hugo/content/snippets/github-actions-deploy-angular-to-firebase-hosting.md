@@ -1,10 +1,10 @@
 ---
-title: Github Action deploying Angular App to Firebase Hosting
+title: GitHub Action deploying Angular App to Firebase Hosting
 publishdate: 2019-02-19T23:12:09-07:00
 lastmod: 2019-12-30T14:25:09-07:00
 draft: false
 author: Marc Stammerjohann
-description: A step-by-step guide to create a Github Action to deploy your Angular App to Firebase Hosting.
+description: A step-by-step guide to create a GitHub Action to deploy your Angular App to Firebase Hosting.
 tags:
   - firebase
   - github
@@ -12,13 +12,13 @@ tags:
   - devops
 ---
 
-This snippet helps you to setup [Github Actions](https://github.com/features/actions) in your **Angular** project to build and deploy your app to **Firebase** on `git push`.
+This snippet helps you to setup [GitHub Actions](https://github.com/features/actions) in your **Angular** project to build and deploy your app to **Firebase** on `git push`.
 
 ### Step 1. Actions
 
 In your repository click on **Actions**.
 
-{{< figure src="/img/snippets/repo-actions.png" alt="clicking actions tab in github" >}}
+{{< figure src="/img/snippets/repo-actions.png" alt="clicking actions tab in GitHub" >}}
 
 ### Step 2. New Workflow
 
@@ -26,7 +26,7 @@ To create your first workflow click on **Set up a workflow yourself**
 
 {{< figure src="/img/snippets/set-up-a-workflow.png" alt="Set up a workflow" >}}
 
-Your first Github action looks like this:
+Your first GitHub action looks like this:
 
 {{< file "github" "main.yml" >}}
 {{< highlight typescript >}}
@@ -115,7 +115,7 @@ Now click on **Start commit** on the right side to commit your new workflow.
 
 ### Step 8. Firebase Token
 
-Github requires a **FIREBASE_TOKEN** to be able to deploy your Angular app to Firebase.
+GitHub requires a **FIREBASE_TOKEN** to be able to deploy your Angular app to Firebase.
 Generate a token for firebase ci:
 
 - install `npm i -g firebase-tools`
