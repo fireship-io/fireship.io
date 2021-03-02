@@ -14,7 +14,7 @@ It is likely that you already have [NodeJS](https://nodejs.org/en/) installed on
 
 ## Node Version Manager NVM
 
-[Node Version Manager](https://github.com/creationix/nvm) NVM makes it easy to switch between Node versions in your local environment. I highly recommend using it over the native install on your system. 
+[Node Version Manager](https://github.com/nvm-sh/nvm) NVM makes it easy to switch between Node versions in your local environment. I highly recommend using it over the native install on your system. 
 
 ### Mac and Linux
 
@@ -22,7 +22,7 @@ Simply run the install script from the command line.
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 {{< /highlight >}}
 
 
