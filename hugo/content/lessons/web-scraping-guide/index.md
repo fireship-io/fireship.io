@@ -10,6 +10,7 @@ tags:
     - firebase
     - cloud-functions
     - puppeteer
+    - mvp
 
 youtube: dXjKh66BR2U 
 github: https://github.com/fireship-io/198-web-scraper-link-preview
