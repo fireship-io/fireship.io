@@ -98,7 +98,7 @@ export default function UserProfilePage({ user, posts }) {
 
 ## Post Feed
 
-[UserProfile Code](https://github.com/fireship-io/next-firebase-course/blob/main/components/PostFeed.js)
+[PostFeed Code](https://github.com/fireship-io/next-firebase-course/blob/main/components/PostFeed.js)
 
 
 {{< file "js" "components/PostFeed.js" >}}
