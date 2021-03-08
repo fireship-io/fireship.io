@@ -72,7 +72,7 @@ on:
 
 ### Step 5. Update checkout action
 
-The workflow uses `actions/checkout@v1` which has the lastest version `2.0.0`. Lets update it to `actions/checkout@v2` or even `actions/checkout@master`
+The workflow uses `actions/checkout@v1` which has the latest version `2.0.0`. Lets update it to `actions/checkout@v2` or even `actions/checkout@master`
 
 {{< highlight typescript >}}
 - uses: actions/checkout@master
