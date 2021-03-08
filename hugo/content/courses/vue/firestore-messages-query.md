@@ -75,19 +75,19 @@ export default {
     };
   },
     methods: {
-    async addMessage(uid) {
+      async addMessage(uid) {
 
-        this.loading = true;
+          this.loading = true;
 
-        const { id: messageId } = this.messagesCollection.doc();
+          const { id: messageId } = this.messagesCollection.doc();
 
-         await this.messagesCollection.doc(messageId).set({
-            text: this.newMessageText,
-            sender: uid,
-            createdAt: Date.now(),
+           await this.messagesCollection.doc(messageId).set({
+              text: this.newMessageText,
+              sender: uid,
+              createdAt: Date.now(),
 
-        });
-
+          });
+      }
     },
 };
 </script>
