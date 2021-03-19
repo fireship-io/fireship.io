@@ -375,7 +375,7 @@ Dependencies are registered in the **pubspec.yaml** and should auto-update on sa
 - Widget 👉  Component
 - `build` 👉 `render`
 
-As you may have guessed, , which can be called when state changes. 
+As you may have guessed, Flutter has components similar to those in React, with a build method that can be called when state changes. 
 
 {{< file "typescript" "index.ts" >}} {{< highlight typescript >}}
 import React from 'react';
