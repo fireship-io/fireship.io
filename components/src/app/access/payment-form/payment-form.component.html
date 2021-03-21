@@ -87,6 +87,13 @@
 
   </div>
 
+  <div *ngIf="crypto">
+    <a class="btn btn-purple"
+       [href]="'https://commerce.coinbase.com/checkout/' + crypto">
+       ₿ Pay with Crypto
+    </a>
+  </div>
+
 
 </div>
 

@@ -27,6 +27,7 @@ declare var paypal;
 export class PaymentFormComponent implements AfterViewInit {
   @Input() action = 'purchase';
   @Input() allowCoupons;
+  @Input() crypto;
 
   // Global product selection
   product;
