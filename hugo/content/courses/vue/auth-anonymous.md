@@ -13,7 +13,7 @@ chapter_start: User Authentication
 
 ## Login Component
 
-{{< file "vue" "App.vue" >}}
+{{< file "vue" "Login.vue" >}}
 ```html
 <template>
   <aside class="section">
