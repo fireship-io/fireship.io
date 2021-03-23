@@ -53,7 +53,7 @@ export default {
     }
   },
 
-  destroyed() {
+  unmounted() {
     this.unsubscribe()
   }
 }
