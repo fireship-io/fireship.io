@@ -157,8 +157,10 @@ footer {
   font-size: 0.85em;
   opacity: 0.8;
 
-  @media (max-width: 1150px) {
-    margin-bottom: 140px;
+  &[data-ad-shown="true"] {
+    @media (max-width: 1150px) {
+      margin-bottom: 140px;
+    }
   }
 }
 

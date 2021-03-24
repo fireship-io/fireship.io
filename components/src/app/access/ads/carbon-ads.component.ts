@@ -30,6 +30,8 @@ export class CarbonAdsComponent implements OnInit, OnDestroy {
 
   removeAd() {
     document.getElementById('carbonads')?.remove();
+
+    document.querySelector('footer[data-ad-shown]')?.setAttribute('data-ad-shown', 'false');
   }
 
   ngOnDestroy() {
