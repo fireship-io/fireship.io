@@ -13,6 +13,7 @@ export const stripeSigningSecret = functions.config().stripe.signing_secret;
 export const stripeSecret = functions.config().stripe.secret;
 export const lifetimeSKU = functions.config().stripe.lifetimesku;
 
+
 // Stripe
 import * as Stripe from 'stripe'; 
 export const stripe = new Stripe(stripeSecret);

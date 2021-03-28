@@ -53,6 +53,9 @@ export class PaymentFormComponent implements AfterViewInit {
   // FormGroup Require or angular with throw errors
   fg;
 
+  // coinbase state
+  cryptoCharge;
+
   analytics = firebase.analytics();
 
   constructor(
@@ -275,6 +278,14 @@ export class PaymentFormComponent implements AfterViewInit {
     }
     this.couponLoading = false;
     this.cd.detectChanges();
+  }
+
+  async createCryptoCharge() {
+    console.log(this.product)
+    const { res } = await this.pmt.coinbaseHandler(this.product);
+    this.setState('cryptoCharge', res)
+
+    console.log(this.cryptoCharge);
   }
 
   @HostListener('document:DOMContentLoaded')
