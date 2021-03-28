@@ -281,9 +281,9 @@ export class PaymentFormComponent implements AfterViewInit {
   }
 
   async createCryptoCharge() {
-    console.log(this.product)
+    console.log(this.product);
     const { res } = await this.pmt.coinbaseHandler(this.product);
-    this.setState('cryptoCharge', res)
+    this.setState('cryptoCharge', res);
 
     console.log(this.cryptoCharge);
   }
