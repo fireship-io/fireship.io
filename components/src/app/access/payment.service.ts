@@ -86,6 +86,10 @@ export class PaymentService {
     return this.callFunction('paypalHandler', { order });
   }
 
+  async coinbaseHandler(product) {
+    return this.callFunction('coinbaseCreateCharge', { product });
+  }
+
 
   private async callFunction(name, data) {
     let res;

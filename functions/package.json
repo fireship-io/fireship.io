@@ -30,6 +30,7 @@
     "tsscmp": "^1.0.6"
   },
   "devDependencies": {
+    "@types/coinbase-commerce-node": "^1.0.5",
     "@types/express": "^4.17.2",
     "@types/jest": "^23.3.13",
     "@types/node": "^12.12.14",

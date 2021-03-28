@@ -2,11 +2,9 @@
 {{ $free := .Params.free }}
 
 {{ $courses := .Site.Data.courses }}
-{{ $crypto := .Site.Data.crypto }}
 
 {{ $sku := index $courses ( (index (split .RelPermalink "/") 2))  }}
 {{ $course := index $courses (string $sku) }}
-{{ $crypto_id := index $crypto (string $sku) }}
 
 
 <article itemscope itemtype="http://schema.org/Article" >
@@ -63,7 +61,7 @@
                         
                             
                             <div class="payment-card">
-                                <payment-form crypto="{{ $crypto_id }}"></payment-form>
+                                <payment-form></payment-form>
                             </div>
 
        
