@@ -1,5 +1,5 @@
 ---
-title: "Crypto Payments Web Firebase"
+title: Accept Crypto Payments with Coinbase Commerce
 lastmod: 2021-03-29T11:13:56-07:00
 publishdate: 2021-03-29T11:13:56-07:00
 author: Jeff Delaney
