@@ -24,16 +24,7 @@ Node is a runtime that allows you to run JavaScript on the server. Learn more in
 
 ## Step 2 - Install Node
 
-Use Node Version Manager (NVM) to manage your installation. This course uses Node version 12, `nvm install 12`. 
-
-### Mac/Linux
-
-NVM for [Mac & Linux](https://github.com/nvm-sh/nvm). 
-
-### Windows
-
-NVM for [Windows](https://github.com/coreybutler/nvm-windows).  
-
+Follow these instructions to [install NodeJS](/snippets/install-nodejs/). This course uses Node version 12, `nvm install 12`. 
 
 ## Step 3 - Hello world
 
