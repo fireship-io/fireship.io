@@ -155,7 +155,7 @@ If using bash, install NVM like so:
 
 {{< file "terminal" "command line" >}}
 ```text
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
 
 ### Zsh Install
@@ -173,7 +173,7 @@ Install the recommended [LTS version](https://nodejs.org/en/) of Node. It will a
 
 {{< file "terminal" "command line" >}}
 ```text
-nvm install 12.16.1
+nvm install --lts
 
 node -v
 npm -v
