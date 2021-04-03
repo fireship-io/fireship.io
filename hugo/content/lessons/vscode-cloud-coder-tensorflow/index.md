@@ -81,7 +81,7 @@ After you have VSCode up and running in the cloud, you will likely want to confi
 
 ### Install Node
 
-Follow these instructions to [install NodeJS](http://localhost:1313/snippets/install-nodejs/). This will give you access to the `nvm` command for version management and the `npm` command for package management. 
+Follow these instructions to [install NodeJS](/snippets/install-nodejs/). This will give you access to the `nvm` command for version management and the `npm` command for package management. 
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
