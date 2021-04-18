@@ -21,3 +21,6 @@ npx create-next-app nextfire
 - `components` reusable UI components
 - `lib` reusable JavaScript libraries and/or helper functions
 - `pages` main routes for site
+
+## Global CSS
+https://raw.githubusercontent.com/fireship-io/next-firebase-course/main/styles/globals.css
