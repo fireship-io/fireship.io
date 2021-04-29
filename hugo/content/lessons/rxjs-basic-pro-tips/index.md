@@ -369,7 +369,7 @@ The result is a high score that increases after each click.
 
 <p class="success">Scan is a great tool for the Redux pattern when combining states. think `scan( (current, new) => {...current, ...new } )` 
 
-Learn more about using [Redux with Angular](https://angularfirebase.com/lessons/angular-ngrx-redux-starter-guide/. 
+Learn more about using [Redux with Angular](https://angularfirebase.com/lessons/angular-ngrx-redux-starter-guide/). 
 </p>
 
 
