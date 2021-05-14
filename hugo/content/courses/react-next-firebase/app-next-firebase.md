@@ -21,7 +21,7 @@ npm install firebase react-firebase-hooks
 
 ## Firebase Lib
 
-Export common Firebsae SDKs and utilities.
+Export common Firebase SDKs and utilities.
 
 {{< file "js" "lib/firebase.js" >}}
 ```javascript
