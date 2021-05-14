@@ -23,7 +23,7 @@ The JavaScript object is a collection of key-value pairs, similar to a map, dict
 
 ### Creation
 
-Create an an empty object. You have several options. 
+Create an empty object. You have several options. 
 
 {{< file "js" "objects.js" >}}
 {{< highlight javascript >}}
