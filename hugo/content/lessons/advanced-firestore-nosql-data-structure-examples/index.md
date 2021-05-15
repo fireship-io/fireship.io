@@ -124,12 +124,12 @@ Building an ecommerce solution is no simple task - that goes for both SQL and No
 
 The challenges are as follows:
 
-duct prices may change and should be reflected in the cart.
-duct inventory stock is limited.
+Product prices may change and should be reflected in the cart.
+Product inventory stock is limited.
 
 ```text
 products/{productID}
-  -ductInfo (any)
+  -productInfo (any)
   -- amountInStock (number)
 
 users/{userID}
@@ -141,7 +141,7 @@ users/{userID}
 
 carts/{userID}
   -- total (number)
-  -ducts {
+  -products {
       productId: quantity
     }
   ]
