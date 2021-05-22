@@ -138,7 +138,7 @@ export class AuthService {
   }
 
   private async oAuthLogin(provider) {
-    const credential = await this.afAuth.auth.signInWithPopup(provider);
+    const credential = await this.afAuth.signInWithPopup(provider);
     return this.updateUserData(credential.user);
   }
 
@@ -156,7 +156,7 @@ export class AuthService {
   }
 
   async signOut() {
-    await this.afAuth.auth.signOut();
+    await this.afAuth.signOut();
     return this.router.navigate(['/']);
   }
 }

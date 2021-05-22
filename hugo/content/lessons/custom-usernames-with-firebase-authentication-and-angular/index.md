@@ -108,7 +108,7 @@ export class AuthService {
 
    googleLogin() {
      const provider = new firebase.auth.GoogleAuthProvider()
-     return this.afAuth.auth.signInWithPopup(provider)
+     return this.afAuth.signInWithPopup(provider)
        .then(() =>  console.log('successful auth'))
        .catch(error => console.log(error));
    }

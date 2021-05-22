@@ -133,13 +133,13 @@ export class EmailLoginComponent implements OnInit {
 
     try {
       if (this.isLogin) {
-        await this.afAuth.auth.signInWithEmailAndPassword(email, password);
+        await this.afAuth.signInWithEmailAndPassword(email, password);
       }
       if (this.isSignup) {
-        await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
+        await this.afAuth.createUserWithEmailAndPassword(email, password);
       }
       if (this.isPasswordReset) {
-        await this.afAuth.auth.sendPasswordResetEmail(email);
+        await this.afAuth.sendPasswordResetEmail(email);
         this.serverMessage = 'Check your email';
       }
     } catch (err) {

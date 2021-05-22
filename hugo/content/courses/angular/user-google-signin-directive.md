@@ -28,7 +28,7 @@ The directive listens to the click event on the host element to trigger the sign
 {{< highlight typescript >}}
 import { Directive, HostListener } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app;
 
 @Directive({
   selector: '[appGoogleSignin]'

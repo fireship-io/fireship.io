@@ -116,7 +116,7 @@ export class AuthService {
   //// Email/Password Auth ////
   
   emailSignUp(email: string, password: string) {
-    return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+    return this.afAuth.createUserWithEmailAndPassword(email, password)
       .then(user => {
         return this.setUserDoc(user) // create initial user document
       })

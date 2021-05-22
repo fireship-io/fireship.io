@@ -114,7 +114,7 @@ export class LoginComponent {
     trace.start();
 
     try {
-      const credential = await this.afAuth.auth.signInWithEmailAndPassword(email, pass);
+      const credential = await this.afAuth.signInWithEmailAndPassword(email, pass);
 
       trace.putAttribute('verified', `${credential.user.emailVerified}`);
       trace.stop();
