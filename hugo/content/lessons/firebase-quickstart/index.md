@@ -99,7 +99,7 @@ firebase init
 firebase serve
 ```
 
-When initializing the project, select *hosting* and and *emulators*. Select YES for single page application, then choose the defaults for all other options. After running the serve command, you should see your site on `http://localhost:5000` in the browser. 
+When initializing the project, select *hosting* and *emulators*. Select YES for single page application, then choose the defaults for all other options. After running the serve command, you should see your site on `http://localhost:5000` in the browser. 
 
 💡 Optional. It's also a good idea to install the [Firebase Explorer VS Code](https://marketplace.visualstudio.com/items?itemName=jsayol.firebase-explorer) extension. 
 
