@@ -11,4 +11,4 @@ links:
     facebook: https://www.facebook.com/buttusamaiftikhar
 ---
 
-Usama Iftikhar Butt (PSEUDO) is a student of Computer science. He is interested in web technologies and in artificial intelligence.
+Usama Iftikhar Butt (PSEUDO) is a developer. Mainly interested in web technologies and in deep learning.
