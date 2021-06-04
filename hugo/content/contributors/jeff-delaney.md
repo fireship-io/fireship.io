@@ -13,4 +13,4 @@ links:
     portfolio: https://jeffdelaney.me
 ---
 
-Jeff Delaney is a Google Developer Expert for Firebase and the creator of fireship.io When not writing code he is out seeking adventure with his wife, boys, and pug.
+Jeff Delaney is a Google Developer Expert for Firebase and the creator of fireship.io. When not writing code he is out seeking adventure with his wife, boys, and pug.
