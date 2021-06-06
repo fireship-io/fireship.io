@@ -26,8 +26,8 @@ Anything that is not a primitive is an [Object](https://developer.mozilla.org/en
 {{< highlight javascript >}}
 typeof  23; // number
 typeof "foo" // string
-typeof null // null
 
+typeof null // object
 typeof {} // object
 typeof [] // object
 typeof function() {} // function (which inherits from object)
