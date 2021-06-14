@@ -15,7 +15,6 @@ Create the following routes.
 
 - `/enter` 
 - `/[username]` 
-- `/[username]/[slug]` 
 - `/admin`
 - `/admin/[slug]` 
 
