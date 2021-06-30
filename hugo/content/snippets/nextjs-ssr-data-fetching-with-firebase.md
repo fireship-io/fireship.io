@@ -81,6 +81,8 @@ The code above uses the nullish coalescing operator `??` to fallback to props, b
 
 {{< file "react" "custom-hook.js" >}}
 ```jsx
+import { useDocumentData } from 'react-firebase-hooks/firestore'
+
 function useDocumentDataSSR(ref, options) {
   const [value, loading, error] = useDocumentData(ref, options)
 
@@ -97,8 +99,6 @@ Now access fields on the Firestore document without worrying about whether it ca
 
 {{< file "react" "some-page.js" >}}
 ```jsx
-import { useDocumentData } from 'react-firebase-hooks/firestore'
-
 export default function SomePage(props) {
 
   const ref = firestore.doc('items/foo')
