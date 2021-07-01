@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import { assert, getUID, catchErrors } from './helpers';
-import { db, stripe, lifetimeSKU } from '../config';
+import { db, stripe, lifetimeSKU, stripeProducts } from '../config';
 import { attachSource } from './sources';
 import { subscriptionStatus } from './subscriptions';
 
@@ -51,12 +51,62 @@ export const createOrder = async (
   }
 };
 
+export const getCoupon = async (coupon) => {
+  try {
+    stripe.coupons.retrieve(coupon);
+  } catch(error) {
+    return undefined;
+  }
+};
+
+export const validateAmount = async(sku, clientAmount, couponId) => {
+  if ( ! ( stripeProducts[sku] && stripeProducts[sku].price ) ) {
+    return false;
+  }
+  const actualAmount = stripeProducts[sku].price;
+
+  let couponResult;
+  if ( couponId ) {
+    couponResult = await getCoupon(couponId);
+  }
+
+  if ( couponResult ) {
+    let discountAmount;
+    if ( couponResult.percent_off ) {
+      discountAmount = actualAmount * (couponResult.percent_off / 100);
+    } else if ( couponResult.amount_off ) {
+      discountAmount = couponResult.amount_off;
+    } else {
+      discountAmount = 0;
+    }
+
+    const totalAmount = clientAmount + discountAmount;
+    if (actualAmount  === totalAmount ) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    if ( actualAmount === clientAmount ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+};
+
 export const stripeCreateOrder = functions.https.onCall(
   async (data, context) => {
     const uid = getUID(context);
     const source = assert(data, 'source');
     const sku = assert(data, 'sku');
     const amount = assert(data, 'amount');
-    return catchErrors(createOrder(uid, source.id, sku, amount));
+    const couponId = data['couponId'];
+    const isValid = await validateAmount(sku, amount, couponId);
+    if ( isValid ) {
+      return catchErrors(createOrder(uid, source.id, sku, amount));
+    } else {
+      throw new functions.https.HttpsError('invalid-argument', 'invalid amount passed for order');
+    }
   }
 );
