@@ -20,7 +20,7 @@ tags:
 The **Stripe Payments Master Course** will provide a solid foundation for building complex payment systems with the world's leading payment API.
 
 {{< box emoji="⚠️" class="" >}}
-This course has been deprecated! While the code here will still work, the it is recommended that you use the latest Stripe APIs shown in the new <a href="/courses/stripe-js">Fullsack Stripe JS Course 💸</a>
+This course has been deprecated! While the code here will still work, the it is recommended that you use the latest Stripe APIs shown in the new <a href="/courses/stripe-js">Fullstack Stripe JS Course 💸</a>
 {{< /box >}}
 
 
