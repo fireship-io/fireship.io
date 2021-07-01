@@ -71,7 +71,9 @@ export default function Home(props) {
     setPosts(posts.concat(newPosts));
     setLoading(false);
 
-
+    if (newPosts.length < LIMIT) {
+      setPostsEnd(true);
+    }
   };
 
   return (
