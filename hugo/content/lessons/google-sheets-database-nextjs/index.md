@@ -69,7 +69,7 @@ From there, click the *Keys* tab and add an new JSON key.
 
 ### Save the Key
 
-This will download a JSON file to your system. Save it to the root of the project as `secrets.json`, but do NOT expose it publically. Add it to gitignore to be safe. 
+This will download a JSON file to your system. Save it to the root of the project as `secrets.json`, but do NOT expose it publicly. Add it to gitignore to be safe. 
 
 {{< file "git" ".gitignore" >}}
 ```bash
