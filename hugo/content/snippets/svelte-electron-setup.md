@@ -81,7 +81,7 @@ Make the following changes to the rollup config file. Update the serve function 
 {{< file "rollup" "rollup.config.json" >}}
 ```js
 export default {
-	input: 'src/svelte.js',  // <-- here
+	input: 'src/main.js',  // <-- here
     // ...omitted
 }
 
