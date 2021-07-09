@@ -30,7 +30,7 @@ import { UserContext } from '../lib/context';
 function MyApp({ Component, pageProps }) {
   
   return (
-    <UserContext.Provider>
+    <UserContext.Provider value={{ user: {}, username: 'jeff' }}>
       <Navbar />
       <Component {...pageProps} />
       <Toaster />
