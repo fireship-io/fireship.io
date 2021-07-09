@@ -1,12 +1,13 @@
 ---
-title: Format currency using Intl.NumberFormat
-lastmod: 2021-06-27T20:47:49-04:00
+title: Format currency with Intl
+lastmod: 2021-07-08T20:00:49-04:00
 publishdate: 2021-06-27T20:47:49-04:00
 author: Kyle Leary
 draft: false
-description: Currency and number formatting based on locale using Intl.NumberFormat
+description: Use Intl.NumberFormat() to convert currency, units, notation, and other numeric values
 tags: 
     - javascript
+    - intl
 
 # youtube: 
 # code: 
@@ -21,43 +22,42 @@ tags:
 
 type: lessons
 ---
-The [Intl.NumberFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) object enables language-sensitive number formatting. We can use this to convert currency, numbers, percentages, units, and other notation into formatted strings. This is particularly useful in eCommerce applications and social platforms like [Twitter](https://twitter.com/fireship_dev) or [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) where counter values can be in the millions.
+The [Intl.NumberFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) object enables language-sensitive number formatting. We can use this to convert currency, numbers, percentages, units, and other notation into formatted strings. This is particularly useful in eCommerce applications, with examples like displaying an item price or recipt printing. Another example are social platforms like [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA), which use compact notation to display high counts of views and followers.
 
 ## Currency formatting 
 
-You can reference currency codes [here](https://www.currency-iso.org/en/home/tables/table-a1.html) and locales [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation)
+📚 You can reference currency codes [here](https://www.currency-iso.org/en/home/tables/table-a1.html) and locale values [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl#locale_identification_and_negotiation)
 
 ### Number to $USD
 
 {{< file "js" "showMeTheMoney.js" >}}
 {{< highlight javascript >}}
 
-function convertToUSD(someNumber) {
+const convertToUSD = (someNumber) => {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
   }).format(someNumber);
 };
 
-// Get dollas in english
-showMeTheMoney(12.99); // "$12.99"
+// Get dollas in english 🇺🇸
+convertToUSD(12.99); // "$12.99"
 {{< /highlight >}}
 
 ### Number to EURO € 
 
-{{< file "js" "showMeTheMoney.js" >}}
+{{< file "js" "zeigMirDasGeld.js" >}}
 {{< highlight javascript >}}
 
-function inEuroUmrechnen(eineZahl) {
+const inEuroUmrechnen = (eineZahl) => {
   return new Intl.NumberFormat("de-DE", {
     style: "currency",
     currency: "EUR",
   }).format(eineZahl);
 };
 
-// Get Euros in Deutsche
-inEuroUmrechnen(717.23); // "717,23 €"
-
+// Holen sie sich Euro in deutsche 🇩🇪
+inEuroUmrechnen(39.99); // "39,99 €"
 {{< /highlight >}}
 
 ## Compact notation
@@ -65,8 +65,7 @@ inEuroUmrechnen(717.23); // "717,23 €"
 {{< file "js" "oneMillionSubs.js" >}}
 {{< highlight javascript >}}
 
-// 📹 YouTube subscribers
-function subscriberCount(subscribers) {
+const subscriberCount = (subscribers) => {
   return new Intl.NumberFormat("en-US", {
     notation: "compact",
   compactDisplay: "short"
@@ -82,11 +81,10 @@ subscriberCount(1000000); // "1M"
 
 ### Unit conversion
 
-{{< file "js" "howMuchData.js" >}}
+{{< file "js" "unitConversion.js" >}}
 {{< highlight javascript >}}
 
-// MB to GB
-function getGigabytes(megabytes) {
+const convertToGigabytes = (megabytes) => {
   return new Intl.NumberFormat("en-US", {
     style: "unit",
     unit: "gigabyte",
@@ -95,23 +93,26 @@ function getGigabytes(megabytes) {
   }).format(megabytes / 1000);
 };
 
-// Return the value in GB:
-getGigabytes(77778); // "77.78GB"
+// 💾 Convert MB value to GB:
+convertToGigabytes(77778); // "77.78GB"
+{{< /highlight >}}
 
-// 🔥 BONUS 🔥 //
+### 🔥 BONUS EXAMPLE 🔥
 
-// Firebase storage used this month:
-const storedGB = getGigabytes(77778);
+{{< file "js" "getStorageBill.js" >}}
+{{< highlight javascript >}}
+
+// Example monthly Firebase storage used:
+const stored = convertToGigabytes(77778); // "77.78GB"
 
 // 5GB Free tier monthly allowance:
-const freeTier = 5;
+const free = 5;
 
 // Calculate total Firebase storage bill:
-const billableData = (parseInt(storedGB) - freeTier);
+const billable = (parseFloat(stored) - free); // 72.78
 
 // Format total using currency conversion
-convertToUSD(billableData * 0.026); // $1.87
-
+const totalBill = convertToUSD(billable * 0.026); // "$1.89"
 {{< /highlight >}}
 
 ### Temperature conversion
@@ -119,11 +120,10 @@ convertToUSD(billableData * 0.026); // $1.87
 {{< file "js" "tempConversion.js" >}}
 {{< highlight javascript >}}
 
-// 🌡 Convert celsius or farenheit:
-function returnTemp(unit, degrees) {
+// 🌡 Convert tempertaure to °C or °F:
+const convertTemp = (unit, degrees) => {
 
-  // Handle login based on the unit
-  
+  // Handle output based on unit input:
   switch (unit) {
     case "celsius":
       degrees = ((degrees - 32) / 1.8000);
@@ -131,24 +131,21 @@ function returnTemp(unit, degrees) {
     case "fahrenheit":
       degrees = ((degrees * 1.8000) + 32);
       break;
-    default: // "fahrenheit"
-      degrees = ((degrees * 1.8000) + 32);
-      break;
   }
 
   return new Intl.NumberFormat("en-US", {
     style: "unit",
     unit: unit,
-    maximumFractionDigits: 2
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
   }).format(degrees);
-
 };
 
 // °C → 🥶 → °F
-returnTemp("fahrenheit", 21); // "69.8°F"
+convertTemp("fahrenheit", 21); // "69.80°F"
 
 // °F → 🔥 → °C
-returnTemp("celsius", 97); // "36.11° C"
+convertTemp("celsius", 97); // "36.11° C"
 {{< /highlight >}}
 
-Learn more about [Intl.NumberFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat), the [Internationalization](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)API, and the [ECMAScript](https://402.ecma-international.org/1.0/#sec-11.1) specification for all the properties, values, and methods available!
+You can learn more about [Intl.NumberFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat), the [Internationalization](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl) API, and the [ECMAScript](https://402.ecma-international.org/1.0/#sec-11.1) specification for all the properties, values, and methods available on [MDN](https://developer.mozilla.org/)
