@@ -20,7 +20,7 @@ tags:
 #     - "rxjs": 6.3
 ---
 
-Some of the most visually impressive websites use scroll animations with [Three.js](https://threejs.org/). The following snippet is configures a Three.js scene to animate when the user moves the scrollbar. 
+Some of the most visually impressive websites use scroll animations with [Three.js](https://threejs.org/). The following snippet configures a Three.js scene to animate when the user moves the scrollbar. 
 
 ## Scene
 
