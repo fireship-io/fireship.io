@@ -26,3 +26,10 @@ app.get('/dog', (request, response) => {
 
 export const api = functions.https.onRequest(app);
 {{< /highlight >}}
+
+
+{{< file "typescript" "http.ts" >}}
+{{< highlight typescript >}}
+export {basicHTTP} from "./http";
+export {api} from "./http";
+{{< /highlight >}}
