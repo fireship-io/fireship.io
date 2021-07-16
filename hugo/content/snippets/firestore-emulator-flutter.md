@@ -57,11 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     String host = Platform.isAndroid ? '10.0.2.2:8080' : 'localhost:8080';
 
-    Firestore.instance.settings(
-      host: host,
-      sslEnabled: false,
-      persistenceEnabled: false,
-    );
+    FirebaseFirestore.instance.settings = Settings(host: host, sslEnabled: false);
 
 
     super.initState();
