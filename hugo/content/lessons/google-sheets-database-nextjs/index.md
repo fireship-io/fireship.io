@@ -36,7 +36,7 @@ Create a spreadsheet and add some data to it. Make a note of the sheet ID in the
 
 ### Create a Next.js App
 
-💡 This demo uses Next.js, but the process is the same for virtually any **server-side** application. Keep in mind, this code should only run server-side because requires sensitive auth credentials that should be exposed client-side. 
+💡 This demo uses Next.js, but the process is the same for virtually any **server-side** application. Keep in mind, this code should only run server-side because it requires sensitive auth credentials that shouldn't be exposed client-side. 
 
 Create a next app and install the [googleapis](https://github.com/googleapis/google-api-nodejs-client) package. 
 
