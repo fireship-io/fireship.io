@@ -18,6 +18,7 @@ export const basicHTTP = functions.https.onRequest((request, response) => {
 
   if (!name) {
     response.status(400).send('ERROR you must supply a name :(');
+    return;
   }
 
   response.send(`hello ${name}`);
