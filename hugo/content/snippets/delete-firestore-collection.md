@@ -40,12 +40,12 @@ First, obtain CI token to authenticate firebase tools.
 
 ```shell
 cd functions
-npm i firebase-tools -D
+npm i firebase-tools
 
 firebase login:ci
 # your_token
 
-firebase functions:config:set ci_token="your_token"
+firebase functions:config:set fb.token="your_token"
 ```
 
 The function should validate the user has permission to run the operation. If allowed, it runs the CLI command recursively on the collection and its nested subcollections. 
