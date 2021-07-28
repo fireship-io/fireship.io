@@ -1,5 +1,5 @@
 ---
-title: Handle Radial Pan Events Flutter
+title: Handle Radial Pan Events in Flutter
 lastmod: 2019-12-02T09:19:58-07:00
 publishdate: 2019-12-02T09:19:58-07:00
 author: Jeff Delaney
