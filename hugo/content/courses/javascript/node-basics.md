@@ -48,8 +48,8 @@ node index.js
 
 Node has several global variables that you should know about:
 
-- `global` use it to save global variable throughout the app. Similar to `window` in the browser. 
-- `process` interact with the current process to information like the OS platform or environment variables. 
+- `global` use it to save global variables throughout the app. Similar to `window` in the browser. 
+- `process` interact with the current process to get information like the OS platform or environment variables. 
 
 
 ## Step 5 - Events & Emitters
