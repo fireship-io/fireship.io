@@ -195,6 +195,23 @@ blockquote {
   color: white;
 }
 
+@media (min-width: 769px) {
+  // Custom scrollbar design for bigger screens
+  // Disabled on mobile devices for better accessibility
+
+  body::-webkit-scrollbar {
+    width: 0.75em;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: var(--nav-bg);
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--orange);
+  }
+}
+
 @media (max-width: 768px) {
   :root {
     --font-size: 15px;
