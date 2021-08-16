@@ -33,7 +33,6 @@ description: Upgrade to a Fireship.io PRO Membership
     {{< tweet 983832812708036608 >}}
     {{< tweet 1013371079505661952 >}}
     {{< tweet 1043009810201862144 >}}
-    {{< tweet 1043184825170124800 >}}
 </div>
 
 
