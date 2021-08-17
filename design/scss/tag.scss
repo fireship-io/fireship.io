@@ -43,6 +43,11 @@ h1.tag {
     color: white;
 }
 
+.tag-blue {
+    background: var(--blue);
+    color: white;
+}
+
 .tag-contrast {
     background: var(--text-color);
     color: var(--background);

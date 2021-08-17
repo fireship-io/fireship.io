@@ -11,6 +11,7 @@ $colors: (
 
 @mixin default-theme {
   --background: var(--gray6);
+  --background-opacity: #12181b95;
   --text-color: var(--gray2);
   --h-color: white;
   --nav-shadow: 4px 0 10px -3px #010101;
@@ -33,6 +34,7 @@ $colors: (
 
 .light-theme {
   --background: var(--gray0);
+  --background-opacity: #f8f8f895;
   --text-color: var(--gray4);
   --h-color: var(--gray6);
   --nav-shadow: 4px 0 10px -3px #c1c1c1;
@@ -100,11 +102,12 @@ body {
 }
 
 main {
-  margin-left: calc(var(--nav-width) + 0.5em);
+  // margin-left: calc(var(--nav-width) + 0.5em);
   // margin-right: 0.5em;
-  padding: 1em;
-  flex: 1;
-  transition: margin 0.3s ease;
+  margin-top: var(--nav-width);
+  padding: 1rem;
+  // flex: 1;
+  // transition: margin 0.3s ease;
 }
 
 a {
