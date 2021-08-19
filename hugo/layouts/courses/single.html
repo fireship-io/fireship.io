@@ -6,89 +6,98 @@
 {{ $sku := index $courses ( (index (split .RelPermalink "/") 2))  }}
 {{ $course := index $courses (string $sku) }}
 
-
 <article itemscope itemtype="http://schema.org/Article" >
-    <header>
-        <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
-            {{ .Title }}
 
-        {{ with .Params.description }}
-            <span class="sub-heading">{{ . }}</span>
-        {{ end }}
-        </h1>
+    <div class="coursewrap">
+        <div class="chapters">
+        {{ $chapters := .Parent.Pages.ByWeight }} 
+        {{ partial "chapters.html" (dict "chapters" $chapters "active" .RelPermalink) }}
+        </div>
 
-        {{ with .Params.vimeo }}
-
-        {{ if $free }}
-            <allow-if level="user">
-
-                    <div class="vid vid-center">
-                            <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                
-                <span slot="falsey">{{ partial "video-login.html" }}</span>
-
-            </allow-if>
-        {{ else }}
-            <allow-if level="pro" product="{{ $sku }}">
-
-
-                <div class="vid vid-center">
-                        <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                </div>
-
-                <allow-if slot="falsey" level="user">
-
-                    <div class="box box-orange">
-                        <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
-                        <div class="box-content">
-                            This lesson is available for PRO members or as a single course purchase. Sign-in and choose a plan below.
-                        </div>
-                    </div>
-
-
-                    <allow-if level="user">
-
-
-                        <div class="text-center" style="padding: 2em;">
-
-                            <a href="/pro" class="btn btn-green btn-lg">SignUp for Unlimited PRO Access</a>
-                            <p>OR</p>
-                            <p><product-select class-name="btn btn-blue" product-id="{{ $course }}" text="Enroll for $19.00"></product-select>
-                                <br><span class="text-sm">*Enrollment provides full access to this course (and updates) for life.</span>
-                            </p>
-                            
-                        
-                            
-                            <div class="payment-card">
-                                <payment-form></payment-form>
-                            </div>
-
-       
- 
+        <div>
     
-                        </allow-if>
-
+            {{ with .Params.vimeo }}
+    
+            {{ if $free }}
+                <allow-if level="user">
+    
+                    <div class="vid vid-center">
+                        <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
-
-
+                    
+                    <span slot="falsey">{{ partial "video-login.html" }}</span>
+    
                 </allow-if>
-
-                <span slot="falsey">
-                        {{ partial "video-login.html" }}
-                </span>
-            </allow-if>
-
-            {{ end }}
+            {{ else }}
+                <allow-if level="pro" product="{{ $sku }}">
+    
+    
+                    <div class="vid vid-center">
+                        <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+    
+                    <allow-if slot="falsey" level="user">
+    
+                        <div class="box box-orange">
+                            <div class="box-icon">{{ partial "svg/hazard.svg" }}</div>
+                            <div class="box-content">
+                                This lesson is available for PRO members or as a single course purchase. Sign-in and choose a plan below.
+                            </div>
+                        </div>
+    
+    
+                        <allow-if level="user">
+    
+    
+                            <div class="text-center" style="padding: 2em;">
+    
+                                <a href="/pro" class="btn btn-green btn-lg">SignUp for Unlimited PRO Access</a>
+                                <p>OR</p>
+                                <p><product-select class-name="btn btn-blue" product-id="{{ $course }}" text="Enroll for $19.00"></product-select>
+                                    <br><span class="text-sm">*Enrollment provides full access to this course (and updates) for life.</span>
+                                </p>
+                                
+                            
+                                
+                                <div class="payment-card">
+                                    <payment-form></payment-form>
+                                </div>
+    
+           
+                            </div>
         
-        {{ end }}
+                            </allow-if>
+    
+                    </allow-if>
+    
+                    <span slot="falsey">
+                            {{ partial "video-login.html" }}
+                    </span>
+                </allow-if>
+    
+                {{ end }}
+            
+            {{ end }}
+    
+    
+    
+        </div>
+
+    </div>
 
 
 
-    </header>
-    {{ partial "chapters-next.html" . }}
+    <!-- {{ partial "chapters-next.html" . }} -->
 
-  <div class="content-main">
+  <section>
+
+    <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
+        {{ .Title }}
+
+    {{ with .Params.description }}
+        <span class="sub-heading">{{ . }}</span>
+    {{ end }}
+    </h1>
 
     
 
@@ -102,10 +111,9 @@
     {{ end }}
 
 
-  </div>
+    </section>
 
-  {{ $chapters := .Parent.Pages.ByWeight }} 
-  {{ partial "chapters.html" (dict "chapters" $chapters "active" .RelPermalink) }}
+
 </article>
 
     {{ partial "qna.html" . }}
