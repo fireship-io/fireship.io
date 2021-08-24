@@ -33,7 +33,7 @@ git clone <your-forked-repo>
 npm install
 npm run dev
 
-git checkout -b my-fix
+git switch -c my-fix
 # fix some code...
 
 git commit -m "fix: corrected a typo"
