@@ -9,7 +9,7 @@ free: true
 chapter_start: Becoming a JS Developer
 ---
 
-In order to follow along with this course, you need to know how and where your run your JavaScript code. You have several options to run your first hello world programming:
+In order to follow along with this course, you need to know how and where you run your JavaScript code. You have several options to run your first hello world programming:
 
 Open your editor and create a file named `index.js`. 
 
