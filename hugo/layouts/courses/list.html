@@ -59,6 +59,9 @@
 
 {{ define "feed" }}
     {{ if and (len .Pages) (gt .Params.weight -1) }}
-        {{ partial "chapters.html" (dict "chapters" .Pages "active" .RelPermalink) }}
+        <h2 class="text-center home-heading">Chapters</h2>
+        <nav class="chapters-list">
+            {{ partial "chapters.html" (dict "chapters" .Pages "active" .RelPermalink) }}
+        </nav>
     {{ end }}
 {{ end }}

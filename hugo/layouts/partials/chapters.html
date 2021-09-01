@@ -2,8 +2,7 @@
 
 {{ $active := .active }}
 
-<nav class="chapters-list">
-        <h2>Chapters</h2>
+<div class="chapters-wrap">
   {{ range $index, $element := .chapters }}
 
     {{ with .Params.chapter_start }}
@@ -11,7 +10,7 @@
     {{ end }}
 
     <a href="{{ .RelPermalink }}">
-        <div class="box box-sm chapter-item {{ if eq $active .RelPermalink }}box-blue-bookmark{{ end }}">
+        <div class="box box-sm chapter-item {{ if eq $active .RelPermalink }}box-bookmark{{ end }}">
         <i class="box-icon" >
             {{ if .Params.icon }}
 
@@ -59,4 +58,4 @@
     </a>
 
   {{ end }}
-</nav>
+</div>

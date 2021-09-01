@@ -8,18 +8,16 @@
       {{ partial "topnav.html" . }}
     {{ end }}
 
-    {{ block "sidenav" . }}
+    <!-- {{ block "sidenav" . }}
       {{ partial "sidenav.html" . }}
-    {{ end }}
+    {{ end }} -->
 
     
     <main role="main">
       {{ block "main" . }}{{ end }}
       {{ block "feed" . }}{{ end }}
 
-      {{ block "footer" . }}
-       {{ partial "footer.html" . }}
-      {{ end }}
+
     </main>
 
     <carbon-ads></carbon-ads>

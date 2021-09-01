@@ -86,7 +86,7 @@
   display: flex;
   min-height: 100px;
   margin: 0.5em 0;
-  border-radius: 3px;
+  // border-radius: 0px;
   .box-icon {
     display: flex;
     color: var(--text-color);
@@ -149,8 +149,8 @@
   @include color-box('purple');
 }
 
-.box-blue-bookmark {
-  border-bottom: 3px var(--blue) dashed;
+.box-bookmark {
+  background: var(--tag-bg);
 }
 
 .notification {
@@ -347,7 +347,7 @@
 
 .vid-center {
   margin: 0 auto;
-  max-width: 75%;
+  // max-width: 75%;
 }
 
 video,
@@ -374,9 +374,10 @@ video-player,
     var(--background) 100%
   );
   background-size: 56.57px 56.57px;
-  padding: 20% 0;
-  margin: 0 auto;
-  max-height: 0;
+  // padding: 20% 0;
+  // margin: 0 auto;
+  // max-height: 0;
+  aspect-ratio: 16/9;
 }
 
 .err-404 {
@@ -440,6 +441,9 @@ video-player,
     font-size: 0.9rem;
     margin-left: auto;
     margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
@@ -517,10 +521,6 @@ video-player,
   padding: 0.5em;
 }
 
-.chapters-list {
-  max-width: 998px;
-  margin: 0 auto;
-}
 
 .the-end {
   text-align: center;
@@ -617,6 +617,49 @@ video-player,
   justify-content: center;
 }
 
-.coursewrap {
-  display: flex;
+.chapters-sticky {
+  position: sticky;
+  top: 80px;
+  background: var(--purple);
+  text-align: center;
 }
+
+.chapters {
+  z-index: 99;
+}
+
+.chapters-list {
+  max-width: 998px;
+  margin: 0 auto;
+}
+
+.chapters-list-fixed {
+  position: fixed;
+  width: clamp(250px, 25vw, 500px);
+  overflow-y: scroll;
+  height: 100vh;
+  top: 20px;
+  font-size: 0.9em;
+
+  @include scrollbar;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.chapters-wrap {
+  margin-bottom: 2rem;
+}
+
+.course-article {
+  margin-left: clamp(250px, 25vw, 500px);
+  padding: 1rem 2rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+

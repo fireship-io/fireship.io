@@ -6,15 +6,16 @@
 {{ $sku := index $courses ( (index (split .RelPermalink "/") 2))  }}
 {{ $course := index $courses (string $sku) }}
 
-<article itemscope itemtype="http://schema.org/Article" >
 
-    <div class="coursewrap">
-        <div class="chapters">
-        {{ $chapters := .Parent.Pages.ByWeight }} 
-        {{ partial "chapters.html" (dict "chapters" $chapters "active" .RelPermalink) }}
-        </div>
+<article itemscope itemtype="http://schema.org/Article" class="course-article">
 
-        <div>
+        <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
+            {{ .Title }}
+        {{ with .Params.description }}
+            <span class="sub-heading">{{ . }}</span>
+        {{ end }}
+        </h1>
+
     
             {{ with .Params.vimeo }}
     
@@ -83,41 +84,32 @@
     
         </div>
 
-    </div>
+
+        
+        {{ if $free }}
+            <section itemprop="articleBody">{{ .Content }}</section>
+        {{ else }}
+            <allow-if level="pro" product="{{ $sku }}">
+                <section  itemprop="articleBody">{{ .Content }}</section>
+            </allow-if>
+        {{ end }}
 
 
+        {{ partial "chapters-next.html" . }}
 
-    <!-- {{ partial "chapters-next.html" . }} -->
-
-  <section>
-
-    <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
-        {{ .Title }}
-
-    {{ with .Params.description }}
-        <span class="sub-heading">{{ . }}</span>
-    {{ end }}
-    </h1>
-
-    
-
-    {{ if $free }}
-        <section class="content-article no-toc course-article" itemprop="articleBody">{{ .Content }}</section>
-
-    {{ else }}
-        <allow-if level="pro" product="{{ $sku }}">
-            <section class="content-article no-toc course-article" itemprop="articleBody">{{ .Content }}</section>
-        </allow-if>
-    {{ end }}
-
-
-    </section>
-
+        {{ partial "qna.html" . }}
 
 </article>
 
-    {{ partial "qna.html" . }}
+<nav class="chapters-list-fixed">
+    <!-- <div class="chapters-sticky box box-purple box-sm chapter-item">
+        <h3 class="text-center">Chapters</h3>
+    </div> -->
+    {{ $chapters := .Parent.Pages.ByWeight }} 
+    {{ partial "chapters.html" (dict "chapters" $chapters "active" .RelPermalink) }}
 
+    <h5 class="text-center">The End</h5>
 
 {{ end }}
+
 

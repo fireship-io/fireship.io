@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 $colors: (
   red: hsl(348, 100%, 61%),
   blue: #498afb,
@@ -99,6 +101,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  // @include scrollbar;
 }
 
 main {
