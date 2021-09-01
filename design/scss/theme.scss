@@ -68,7 +68,7 @@ $colors: (
   --nav-width: 4em;
 
   --font-body: 'sofia-pro', sans-serif;
-  --font-head: 'sofia-pro', sans-serif; 
+  --font-head: 'cubano', sans-serif; 
   --font-code: 'attribute-mono', monospace;
   --font-size: 20px;
 
@@ -126,9 +126,9 @@ h4,
 h5,
 h6 {
   color: var(--h-color);
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-style: normal;
+  font-family: var(--font-head);  
+  font-weight: normal;
+  
 }
 
 img {
