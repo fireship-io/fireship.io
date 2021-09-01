@@ -26,6 +26,7 @@ $colors: (
   --overlay-bg: rgba(0, 0, 0, 0.9);
   --h-border: 2px dashed var(--nav-bg);
   --nav-border: 2px dashed var(--text-color);
+  --card-border: 1px solid var(--nav-bg);
   --card-radius: 0.25em;
   transition: all 0.3s ease;
 }
@@ -49,6 +50,7 @@ $colors: (
   --overlay-bg: rgba(255, 255, 255, 0.9);
   --h-border: 2px dashed var(--gray1);
   --nav-border: 2px dashed var(--text-color);
+  --card-border: 1px solid var(--gray1);
   transition: all 0.5s ease;
 }
 
@@ -162,6 +164,15 @@ footer {
   margin-top: 120px;
   font-size: 0.85em;
   opacity: 0.8;
+
+  .footer-links {
+    // font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: var(--green);
+    }
+  }
 }
 
 hr {

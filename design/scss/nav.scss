@@ -18,7 +18,7 @@ $maxWidth: 70px;
 
   z-index: 999;
   transition: top 0.3s ease;
-  border-bottom: 1px solid var(--nav-bg);
+  border-bottom: var(--card-border);
   font-size: 1.2rem;
 
   .item {

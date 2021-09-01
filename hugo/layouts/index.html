@@ -1,13 +1,13 @@
 {{ define "main"}}
 
-<div class="row" style="margin-top: 3em;">
-    <div class="vid">
-      <iframe src="https://player.vimeo.com/video/379454037" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div> 
-  <div  style="justify-content: space-between; display: flex; flex-direction: column;">
+<div class="row home-hero">
+    <div class="vid hero-vid">
+      <iframe src="https://player.vimeo.com/video/379454037" width="100%" height="auto" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    </div> 
+  <div  class="hero-content">
     <h1>Build and ship 🔥 your app ⚡ faster</h1>
     <p class="text-lg">
-      Fireship.io is an ecosystem of practical resources for
-      developers who want to
+      Fireship.io a gateway drug for developers who want to
       <strong class="text-contrast">build high-quality web & mobile apps</strong>.      
       
     </p>
@@ -17,8 +17,6 @@
       <a class="btn btn-green" href="/courses">PRO Courses</a>  
     </p>
 
-
-  <hr>
   </div>
 </div>
 
@@ -159,76 +157,12 @@
   <img src="/img/testimonial.png" alt="Testimonials for Fireship.io code tutorials">
 </div>
 
-
-<div class="row row-home">
-  <section>
-    <h2>
-      <i>{{ partial "svg/video.svg" }}</i> Weekly Video Episodes
-    </h2>
-    <p>
-      Lessons are <strong>non-linear ~10min episodes</strong> covering a variety
-      of topics that include a video, writeup, and GitHub repo. <a class="btn btn-sm" href="{{ .Site.Data.links.youtube }}">Watch</a>
-    </p>
-  </section>
-
-  <section>
-    <a href="{{ .Site.Data.links.youtube }}"
-      ><img
-        src="img/pages/yt.jpg"
-        alt="old film gif for video episodes on Fireship.io"
-    /></a>
-  </section>
-</div>
-
-<h2 class="text-center home-heading">Not your Average Code Tutorials</h2>
-<h4 class="home-sub-heading text-center">All lessons are backed by expert support</h4>
-
-<div class="row home-features">
-
-  <section>
-    <a class="card card-outline" href="{{ .Site.Data.links.slack }}">
-      <div class="card-content">
-        <h2>💬 Slack Chat</h2>
-        <p>
-          Join our Slack channel with over 3K users for project support, news,
-          and <strong>just having fun</strong>.
-        </p>
-      </div>
-    </a>
-  </section>
-
-  <section>
-    <a class="card card-outline" href="{{ .Site.Data.links.github }}">
-      <div class="card-content">
-        <h2>👨‍💻 Open Source Code</h2>
-        <p>
-          Almost every lesson is <strong>supported by a GitHub repo</strong>. Even this very
-          website is open source.
-        </p>
-      </div>
-    </a>
-  </section>
-
-  <section>
-        <a class="card card-outline" href="{{ .Site.Data.links.github }}">
-          <div class="card-content">
-                <h2>🍰 Cake</h2>
-                <p>
-                  There will be cake! Access additional <strong>free stuff</strong> like books, stickers,
-                  cheat sheets, swag, and more.
-                </p>
-          </div>
-        </a>
-      </section>
+<hr>
 
 
-</div>
+<h2 class="text-center home-heading gradient-text text-italic">Not your Average Code Tutorials</h2>
+<h4 class="home-sub-heading text-center">PRO lessons are backed by expert support</h4>
 
-
-
-
-<h2 class="text-center home-heading">Watch the Latest Lessons</h2>
-<h4 class="home-sub-heading text-center">New video content every few days</h4>
 
   {{ range first 1 (where site.RegularPages "Type" "in" "lessons") }}
 
@@ -287,6 +221,7 @@
   </div>
 
   
+  {{ partial "footer.html" .  }}
 
 {{ end }}
 

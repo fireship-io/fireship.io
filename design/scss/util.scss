@@ -26,6 +26,19 @@
   text-align: right;
 }
 
+.text-italic {
+  font-style: italic;
+}
+
+.hi {
+  color: rgb(203, 255, 143);
+  background-color: #4e5556;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: normal;
+}
+
+
 .sub-heading {
   display: block;
   font-size: 0.4em;
@@ -207,3 +220,11 @@ text-cycle {
 .delayed-fade {
   animation: delayedFade 2s;
 }
+
+.gradient-text {
+  background-image: linear-gradient(90deg, var(--orange), var(--pink));
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
