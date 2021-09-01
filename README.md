@@ -4,7 +4,7 @@ Content [designed](https://fireship.io/mission/) to increase developer happiness
 
 ## Project Tour
 
-The monorepo is organized into five sub-projects. 
+The monorepo is organized into five sub-projects: 
 
 1. `hugo` - Static Site Generator. This is where the content lives
 2. `design` - Theme & CSS
@@ -16,11 +16,11 @@ The monorepo is organized into five sub-projects.
 
 ## Contributing
 
-Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for small issues. For large issues or features open an issue first. 
+Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for small issues. For large issues or features, open an issue first. 
 
 ### Option 1 - Simple Typo Fixes
 
-For small issues, like a typo or broken link, use Github's inline file editor to make the fix and submit a pull request. 
+For small issues, like a typo or broken link, use Github's inline file editor or web editor(open by pressing <kbd>.</kbd> in your fork's code tab) to make the fix and submit a pull request. 
 
 ### Option 2 - Work on your own Fork
 
