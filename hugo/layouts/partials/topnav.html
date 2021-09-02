@@ -1,41 +1,76 @@
 <nav class="topnav">
-  <allow-if level="pro">
-    <span slot="falsey">
 
-    <a href="/pro" class="pro-link">
-        <div class="item item-pro"> 
-            PRO
-      </div>
+  <div class="topnav-logo">
+    <a href="/" class="item logo">
+      {{ partial "svg/logo.svg" . }}
+      <!-- <div class="version">v{{ .Site.Data.defaults.version }}</div> -->
     </a>
-    </span>
-  </allow-if>
-  
-  <allow-if level="user" class="hide-lg">
+  </div>
 
-      <a class="item" href="/dashboard">
-          <span class="item-avatar"><user-data field="photo-url"></user-data></span>
+  <div class="topnav-links flex-center hide-sm">
+    <a href="/lessons" class="item item-text" aria-label="lessons">
+      {{ partial "svg/tv.svg" . }}
+      Lessons
+    </a>
+    <a href="/courses" class="item item-text" aria-label="full courses">
+      {{ partial "svg/backpack.svg" . }}
+      Courses
+    </a>
 
-      </a>
-      
-      <modal-button slot="falsey" selector="login-modal" class="item">
-              <span><img src="/img/google-login.svg" alt="google login"></span>
-      </modal-button>
-  </allow-if>
+    <a href="/tags" class="item item-text" aria-label="full courses">
+      {{ partial "svg/tags.svg" . }}
+      Tags
+    </a>
+  </div>
 
-  <modal-button selector="algolia-search" class="hide-lg">
+
+  <div class="topnav-icons flex-center">
+
+    
+    <modal-button selector="algolia-search">
       <span class="item">
-          {{ partial "svg/telescope.svg" . }}
+          {{ partial "svg/search.svg" . }}
+          <span class="item-label tag tag-blue tag-sm">Search</span>
       </span>
-  </modal-button> 
-
+    </modal-button>
+    <allow-if level="pro">
+      <span slot="falsey">
+      <a href="/pro" class="pro-link" aria-label="fireship pro">
+          <div class="item">
+            {{ partial "svg/rocket.svg" . }}
+              <!-- <button class="btn btn-green" aria-label="fireship pro">PRO</button> -->
+              <span class="item-label tag tag-green tag-sm">pro</span>
+          </div>
+      </a>
+      </span>
+    </allow-if>
 
   <theme-btn>
       <span slot="dark" class="item">{{ partial "svg/sun.svg" }}</span>
       <span slot="light" class="item">{{ partial "svg/moon.svg" }}</span>
-  </theme-btn>  
+      <span class="item-label tag tag-pink tag-sm">theme</span>
+  </theme-btn>
+    
+    
+    <allow-if level="user">
+        <a class="item" href="/dashboard">
+            <span class="item-avatar"><user-data field="photo-url"></user-data></span>
+        </a>
+    
+        <modal-button slot="falsey" selector="login-modal" >
+          <span class="item last">
+            {{ partial "svg/user-visor.svg" . }}
+            <span class="item-label tag tag-purple tag-sm">login</span>
+          </span>
+                <!-- <img src="/img/google-login.svg" alt="google login" class="google-login-img"> -->
+                <!-- <button class="btn btn-blue" aria-label="fireship sign up">Sign In</button> -->
+        </modal-button>
+    </allow-if>
+
+  </div>
 
 
-  <menu-toggler selector="#mega">
+  <!-- <menu-toggler selector="#mega">
 
     <div slot="button" class="item mega-dropdown">
       {{ partial "svg/ellipsis.svg" }}
@@ -44,9 +79,9 @@
     <div slot="close" class="item mega-dropdown close">
       {{ partial "svg/close.svg" }}
     </div>
-  </menu-toggler>
+  </menu-toggler> -->
 
-  <div id="mega" class="mega-menu">
+  <!-- <div id="mega" class="mega-menu">
       <div class="mega-main">
           <section>
             <h3>Content</h3>
@@ -81,5 +116,5 @@
       </div>
       <div class="row mega-footer">
           <span>Fireship.io</span> <a href="/terms">terms</a> <a href="/privacy-policy">privacy</a> <a href="/style-guide">style guide</a>
-      </div>
+      </div> -->
 </nav>

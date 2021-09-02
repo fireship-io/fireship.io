@@ -63,9 +63,9 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
         topNav.style.top = '0';
         logo.style.opacity = '1';
         if (isSmall()) {
-           main.style.marginLeft = '0.25em'; // for subtle stretch animation
+          //  main.style.marginLeft = '0.25em'; // for subtle stretch animation
         } else {
-          main.style.marginLeft = '3.5em';
+          // main.style.marginLeft = '3.5em';
         }
         ifExists(toc, 'top', '120px');
       }
