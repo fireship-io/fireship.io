@@ -9,12 +9,13 @@
 
 <article itemscope itemtype="http://schema.org/Article" class="course-article">
 
-        <h1 itemprop="name" id="{{ anchorize .Title }}" class="post-title border-bottom">
-            {{ .Title }}
-        {{ with .Params.description }}
-            <span class="sub-heading">{{ . }}</span>
-        {{ end }}
-        </h1>
+    <h1 itemprop="name" id="{{ anchorize .Title }}" class="course-title border-bottom">
+        {{ .Title }}
+    {{ with .Params.description }}
+        <span class="sub-heading">{{ . }}</span>
+    {{ end }}
+    </h1>
+
 
     
             {{ with .Params.vimeo }}
@@ -30,13 +31,15 @@
     
                 </allow-if>
             {{ else }}
+                <!-- user IS pro -->
                 <allow-if level="pro" product="{{ $sku }}">
     
     
                     <div class="vid vid-center">
                         <iframe src="https://player.vimeo.com/video/{{ . }}" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                     </div>
-    
+                    
+                    <!-- user NOT pro -->
                     <allow-if slot="falsey" level="user">
     
                         <div class="box box-orange">
@@ -46,16 +49,16 @@
                             </div>
                         </div>
     
-    
+                        <!-- user IS logged and NOT pro -->
                         <allow-if level="user">
     
     
-                            <div class="text-center" style="padding: 2em;">
+                            <div class="text-center video-overlay" style="flex-direction: column;">
     
-                                <a href="/pro" class="btn btn-green btn-lg">SignUp for Unlimited PRO Access</a>
+                                <a href="/pro" class="btn btn-lg btn-green-outline font-head">Get Unlimited PRO Access</a>
                                 <p>OR</p>
                                 <p><product-select class-name="btn btn-blue" product-id="{{ $course }}" text="Enroll for $19.00"></product-select>
-                                    <br><span class="text-sm">*Enrollment provides full access to this course (and updates) for life.</span>
+                                    <br><span class="text-sm hi-alt">*Enrollment provides full access to this course (and updates) for life.</span>
                                 </p>
                                 
                             
@@ -67,13 +70,18 @@
            
                             </div>
         
-                            </allow-if>
+                        </allow-if>
+
+                        <!-- user is NOT logged in -->
+                        <span slot="falsey">
+                            {{ partial "video-login.html" }}
+                        </span>
     
                     </allow-if>
     
-                    <span slot="falsey">
-                            {{ partial "video-login.html" }}
-                    </span>
+                    <!-- <span slot="falsey">
+                        {{ partial "video-login.html" }}
+                    </span> -->
                 </allow-if>
     
                 {{ end }}

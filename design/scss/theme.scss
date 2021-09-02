@@ -103,16 +103,11 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  // @include scrollbar;
 }
 
 main {
-  // margin-left: calc(var(--nav-width) + 0.5em);
-  // margin-right: 0.5em;
   margin-top: var(--nav-width);
   padding: 1rem;
-  // flex: 1;
-  // transition: margin 0.3s ease;
 }
 
 a {

@@ -7,19 +7,15 @@ $maxWidth: 70px;
 .topnav {
   position: fixed;
   background: var(--background);
-  // opacity: 0.5;
-  // left: 0; //var(--nav-width);
   box-shadow: var(--nav-shadow);
-  // margin: 0.5em 1.5em;
   display: flex;
   flex-direction: row;
-  // width: calc(140px + 1em)
   width: 100%;
-
   z-index: 999;
   transition: top 0.3s ease;
   border-bottom: var(--card-border);
   font-size: 1.2rem;
+  opacity: 0.95;
 
   .item {
     &:hover {
@@ -33,23 +29,18 @@ $maxWidth: 70px;
       transform: scale(0) translateX(0px);
       transition: transform 200ms ease;
       opacity: 0.8;
-      // left: 10px;
     }
   }
 
   @media (max-width: 768px) {
     margin: 0;
-    // margin: 0.5em 1.5em;
   }
 }
 
 .item {
   position: relative;
-  // min-width: 4rem; // var(--nav-width);
-  // max-width: $maxWidth;
   height: var(--nav-width);
   max-height: $maxWidth;
-  // background: var(--nav-bg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,10 +55,6 @@ $maxWidth: 70px;
   a {
     color: var(--text-color);
   }
-  // .version {
-  //   font-size: 0.5em;
-  //   color: white;
-  // }
   .btn {
     padding: 0.5em 1em;
   }
@@ -90,9 +77,6 @@ a.item {
     height: 2em;
   }
   &:hover {
-    // background-image: url('/img/computer-bg.gif');
-    // background-size: contain;
-    // color: orange;
     svg {
       fill: var(--orange-pink);
     }
@@ -100,7 +84,6 @@ a.item {
 }
 
 .item-text {
-  // font-size: 0.9rem;
   transition: color 0.3s;
   flex-direction: row;
   &:hover {

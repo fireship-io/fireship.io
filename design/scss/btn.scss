@@ -9,8 +9,7 @@
 }
 
 @mixin btn-outline($bg, $color: #ffffff) {
-    background: transparent;
-    color: $bg;
+    background: var(--background);
     border: 2px solid var(--#{$bg});
     transition: background 400ms ease;
     &:hover {
@@ -93,6 +92,9 @@
 .btn-orange { @include btn-color('orange'); }
 
 .btn-orange-outline { @include btn-outline('orange'); }
+.btn-green-outline { @include btn-outline('green'); }
+.btn-blue-outline { @include btn-outline('blue'); }
+.btn-purple-outline { @include btn-outline('purple'); }
 
 // Used for apple/google signin
 .btn-signin {
