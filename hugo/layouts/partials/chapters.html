@@ -11,7 +11,7 @@
 
     <a href="{{ .RelPermalink }}">
         <div class="box box-sm chapter-item {{ if eq $active .RelPermalink }}box-bookmark{{ end }}">
-        <i class="box-icon" >
+        <i class="box-icon">
             {{ if .Params.icon }}
 
             {{ partial  (print "svg/" .Params.icon ".svg") }}

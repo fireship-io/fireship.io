@@ -645,13 +645,6 @@ video-player,
   justify-content: center;
 }
 
-.chapters-sticky {
-  position: sticky;
-  top: 80px;
-  background: var(--purple);
-  text-align: center;
-}
-
 .chapters {
   z-index: 99;
 }
@@ -661,13 +654,28 @@ video-player,
   margin: 0 auto;
 }
 
+.chapters-sticky {
+  position: sticky;
+  top: 0px;
+  background: var(--purple);
+  text-align: center;
+}
+
 .chapters-list-fixed {
   position: fixed;
-  width: clamp(250px, 25vw, 500px);
+  width: clamp(250px, 24vw, 500px);
   overflow-y: scroll;
   height: 100vh;
-  top: 20px;
+  top: 0px;
+  left: 0px;
   font-size: 0.9em;
+  padding: 0 1rem;
+  padding-top: 70px;
+  background: var(--nav-bg);
+
+  h3 {
+    margin: 1rem 0 .25rem;
+  }
 
   @include scrollbar;
 
@@ -684,8 +692,8 @@ video-player,
 }
 
 .course-article {
-  margin-left: clamp(250px, 25vw, 500px);
-  padding: 1rem 2rem;
+  margin-left: clamp(260px, 25vw, 500px);
+  padding: 0 2rem;
   @media screen and (max-width: 768px) {
     margin-left: 0;
   }

@@ -6,7 +6,7 @@ $maxWidth: 70px;
 
 .topnav {
   position: fixed;
-  background: var(--background);
+  background: var(--nav-bg);
   box-shadow: var(--nav-shadow);
   display: flex;
   flex-direction: row;
@@ -15,7 +15,7 @@ $maxWidth: 70px;
   transition: top 0.3s ease;
   border-bottom: var(--card-border);
   font-size: 1.2rem;
-  opacity: 0.95;
+  // opacity: 0.95;
 
   .item {
     &:hover {

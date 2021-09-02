@@ -9,7 +9,7 @@ description: Upgrade to a Fireship.io PRO Membership
 {{< partial "pricing" >}}
 
 <h2 class="text-center home-heading">Welcome Aboard!</h2>
-<h4 class="home-sub-heading text-center">What other professional  devs say about Fireship content</h4>
+<h4 class="home-sub-heading text-center">What other professional devs say about Fireship content</h4>
 
 <div class="row tweet-grid">
 
@@ -101,7 +101,7 @@ Hey @Jeffdelaney23 thank you for your YouTube channel. You have done <span class
 
 
 <h2 class="text-center home-heading">Taught by Experts</h2>
-<h4 class="home-sub-heading text-center">Content so good that Google noticed it</h4>
+<h4 class="home-sub-heading text-center">Content so good that Google knighted us</h4>
 
 <div class="flex-center">
 <img alt="Jeff Delaney Google Developer Expert" src="/img/pages/gde.png">
