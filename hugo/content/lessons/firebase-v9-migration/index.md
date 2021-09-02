@@ -24,6 +24,11 @@ github:
 #    rxdart: 0.20
 ---
 
+npm i @angular/{common,animations,compiler,core,elements,forms,platform-browser,platform-browser-dynamic}@latest
+npm i @angular/{cli,compiler-cli,language-service}@latest -D
+
+npm install typescript">=4.2.3 <4.4.0" -D
+
 ## Migrating to the new version 9 Firebase web SDK
 
 The Google Firebase team recently released a new web SDK that utilizes "tree-shaking" in order to lower bundle sizes introduced into builds when imported.
@@ -139,7 +144,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
 
 export const googleSignIn = async () => {
-  await signInWithPopup(googleProvider)
+  await signInWithPopup(auth, googleProvider)
     .then((user) => {
       console.log(user);
     })

@@ -1,36 +1,39 @@
 import { Component, ChangeDetectorRef, AfterViewInit, OnDestroy, Input } from '@angular/core';
 
-import * as firebase from 'firebase/app';
 import { collectionData } from 'rxfire/firestore';
 import { tap } from 'rxjs/operators';
 import { slackdown } from './slackdown';
 import { SetState } from '../state.decorator';
+import { getFirestore, collection, where, query } from 'firebase/firestore';
 
 @Component({
   templateUrl: './slack-mirror.component.html',
 })
 export class SlackMirrorComponent implements AfterViewInit, OnDestroy {
-
   @Input() permalink;
 
-  db = firebase.firestore();
+  firestore = getFirestore();
 
   activeThread: string;
   threads: any[];
   sub;
 
-  constructor(private cd: ChangeDetectorRef) { }
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
-    const ref = this.db.collection('slack');
-    const q = ref.where('permalink', '==', this.fullUrl).where('visible', '==', true);
-    this.sub = collectionData(q, 'slackID').pipe(
-      tap(data => {
-        this.activeThread = data[0] && (data[0] as any).slackID;
-        this.setState('threads', data);
-      })
-    ).subscribe();
+    const ref = collection(this.firestore, 'slack');
+    const q1 = where('permalink', '==', this.fullUrl);
+    const q2 = where('visible', '==', true);
+    const colQuery = query(ref, q1, q2);
 
+    this.sub = collectionData(colQuery, {idField: 'slackID'})
+      .pipe(
+        tap((data) => {
+          this.activeThread = data[0] && (data[0] as any).slackID;
+          this.setState('threads', data);
+        })
+      )
+      .subscribe();
   }
 
   @SetState()
@@ -75,11 +78,9 @@ export class SlackMirrorComponent implements AfterViewInit, OnDestroy {
     } else {
       return slackdown(val);
     }
-
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 }

@@ -15,7 +15,7 @@ import { tap } from 'rxjs/operators';
 import { stripeStyle } from '../stripe-defaults';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { FormGroup } from '@angular/forms';
-import * as firebase from 'firebase/app';
+import { getAnalytics, logEvent } from 'firebase/analytics';
 
 // Global Script Namespaces
 declare var Stripe;
@@ -56,7 +56,7 @@ export class PaymentFormComponent implements AfterViewInit {
   // coinbase state
   cryptoCharge;
 
-  analytics = firebase.analytics();
+  analytics = getAnalytics()
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -225,7 +225,7 @@ export class PaymentFormComponent implements AfterViewInit {
       text: `Your payment card must be confirmed via 3D Secure. View the invoice and finish the payment at the following link: ${invoiceURL} `,
       countdown: 300
     });
-    this.analytics.logEvent('pro_upgrade', {
+    logEvent(this.analytics, 'pro_upgrade', {
       value: this.action,
       product: this.product && this.product.id,
       status: 'incomplete'
@@ -235,7 +235,7 @@ export class PaymentFormComponent implements AfterViewInit {
   onSuccess() {
     this.resetForm();
     this.ns.setNotification({ title: 'Success!', text: 'Thank you :)' });
-    this.analytics.logEvent('pro_upgrade', {
+    logEvent(this.analytics, 'pro_upgrade', {
       value: this.action,
       product: this.product && this.product.id
     });
