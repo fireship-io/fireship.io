@@ -253,5 +253,9 @@ text-cycle {
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  
+  &::selection {
+    -webkit-text-fill-color: var(--h-color);
+  }
 }
 
