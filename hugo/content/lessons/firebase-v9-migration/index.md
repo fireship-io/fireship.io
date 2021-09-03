@@ -1,10 +1,10 @@
 ---
-title: "Firebase V9 Migration"
+title: Firebase v9 Migration
 lastmod: 2021-09-02T12:10:52-07:00
 publishdate: 2021-09-02T12:10:52-07:00
 author: Jeff Delaney
 draft: false
-description: How to migrate to Firebase V9 JavaScript SDK. A complete guide. 
+description: How to migrate to the new Firebase V9 JavaScript SDK. A complete guide. 
 tags: 
     - pro
     - javascript
@@ -12,8 +12,8 @@ tags:
 
 # youtube: 
 pro: true
-vimeo: 
-github: 
+vimeo: 596932628
+# github: 
 # disable_toc: true
 # disable_qna: true
 
@@ -24,28 +24,26 @@ github:
 #    rxdart: 0.20
 ---
 
-## Migrating to the new version 9 Firebase web SDK
+The Firebase team [recently released](https://firebase.googleblog.com/2021/08/the-new-firebase-js-sdk-now-ga.html) a new web SDK that utilizes [tree-shaking](https://webpack.js.org/guides/tree-shaking/) in order to lower 
+JavaScript bundle sizes when used with module bundlers like Webpack and Rollup. At a high level, it works by only importing the functions/classes/code that we actually NEED, versus importing entire modules like auth, firestore, and so on. The Fireship site was able to **reduce its JavaScript bundle size by ~35%** 🤯 by upgrading to the new version.
 
-The Google Firebase team recently released a new web SDK that utilizes "tree-shaking" in order to lower bundle sizes introduced into builds when imported.
+Below is a guide for migrating from Firebase version 8 or older *to version 9+*. This lesson is designed as a reference that can be used for converting an existing app in production, starting a new project from scratch, or making adjustments to your code while going through a past Fireship tutorial. 
 
-At a high level, the way this works is by importing only the methods, properties, etc. that we actually NEED, vs importing entire modules like auth, firestore, etc.
-
-Below is a guide to getting your project up and running - whether it's converting an existing app in production, starting a new project from scratch, or even making adjustments to your code while learning a new tutorial.
-
-In this article, we will cover:
+In this article, we will do a side-by-side comparison of the old and new versions of the Firebase SDK:
 
 1. [Initializing Firebase, Authentication, and Firestore](#initialization)
-
 2. [Sign-in with Google as a provider, email/password, sign out, and the auth state listener](#authentication)
-
 3. [Add/read/update/delete documents && collections, timestamps, querying data, and using batch operations](#firestore)
 
----
+Also watch the more basic [Firebase v9 overview](https://youtu.be/zd6ffqoK_EU) on YouTube. 
+
+
+
+## Setup
 
 ### Configuration
 
-> firebaseConfig.js
-
+{{< file "js" "firebaseConfig.js" >}}
 ```js
 // Your projects firebase configuration
 const firebaseConfig = {
@@ -65,8 +63,7 @@ export default firebaseConfig;
 
 v8 and earlier:
 
-> firebaseInit.js
-
+{{< file "js" "firebaseConfig.js" >}}
 ```js
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
@@ -103,13 +100,13 @@ export const firestore = getFirestore(firebaseApp);
 export default firebaseApp;
 ```
 
-### Authentication
+## Authentication
 
-#### Sign in with Google (auth provider)
+### Sign in with Google (auth provider)
 
 v8 and earlier:
 
-> firebaseAuth.js
+{{< file "js" "auth.js" >}}
 
 ```js
 import firebase, { auth } from "./firebaseInit";
@@ -139,7 +136,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 const googleProvider = new GoogleAuthProvider();
 
 export const googleSignIn = async () => {
-  await signInWithPopup(googleProvider)
+  await signInWithPopup(auth, googleProvider)
     .then((user) => {
       console.log(user);
     })
@@ -149,11 +146,9 @@ export const googleSignIn = async () => {
 };
 ```
 
-#### Sign in with email and password
+### Sign in with email and password
 
 v8 and earlier:
-
-> firebaseAuth.js
 
 ```js
 import { auth } from "./firebaseInit";
@@ -189,11 +184,9 @@ const emailSignIn = async (email, password) => {
 };
 ```
 
-#### Sign out
+### Sign out
 
 v8 and earlier:
-
-> firebaseAuth.js
 
 ```js
 import { auth } from "./firebaseInit";
@@ -229,11 +222,9 @@ const signOutUser = async () => {
 };
 ```
 
-#### Auth state listener
+### Auth state listener
 
 v8 and earlier:
-
-> firebaseAuth.js
 
 ```js
 import { auth } from "./firebaseInit";
@@ -270,14 +261,13 @@ onAuthStateChanged(auth, (user) => {
 });
 ```
 
-### Firestore
+## Firestore
 
-#### Add/Set a document
+### Add/Set a document
 
 v8 and earlier:
 
-> firestore.js
-
+{{< file "js" "firestore.js" >}}
 ```js
 import { firestore } from "./firebaseInit";
 
@@ -362,11 +352,9 @@ const mergeExisitngDoc = async () => {
 };
 ```
 
-#### Update/delete a document
+### Update/delete a document
 
 v8 and earlier:
-
-> firestore.js
 
 ```js
 import firebase, { firestore } from "./firebaseInit";
@@ -508,11 +496,9 @@ const RemoveArrayItem = async () => {
 };
 ```
 
-#### Server timestamps and incrementing counters
+### Server timestamps and incrementing counters
 
 v8 and earlier:
-
-> firestore.js
 
 ```js
 import firebase, { firestore } from "./firebaseInit";
@@ -564,11 +550,9 @@ const incrementCounter = async () => {
 };
 ```
 
-#### Batch operations
+### Batch operations
 
 v8 and earlier:
-
-> firestore.js
 
 ```js
 import firebase, { firestore } from "./firebaseInit";
@@ -635,11 +619,9 @@ const commitBatch = async () => {
 };
 ```
 
-#### Querying and reading data
+### Querying and reading data
 
 v8 and earlier:
-
-> firestore.js
 
 ```js
 import { firestore } from "./firebaseInit";
