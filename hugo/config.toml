@@ -1,6 +1,7 @@
 baseURL = "https://fireship.io/"
 languageCode = "en-us"
 title = "Fireship.io"
+ignoreErrors = ["error-remote-getjson"]
 publishDir = "../public"
 pygmentsStyle = "atom"
 pygmentsUseClasses = true
