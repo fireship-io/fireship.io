@@ -119,7 +119,7 @@ app.on('activate', function () {
 })
 ```
 
-That's it for the Electron setup, all the desktop app magic is happens under the hood. 
+That's it for the Electron setup, all the desktop app magic happens under the hood. 
 
 ## Custom Build Command
 
