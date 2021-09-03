@@ -23,7 +23,7 @@ tags:
 
 ## Introduction
 
-Go is an open-source programming language developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is often described as “C for the 21st century”, however, it borrows important ideas from several other languages like ALGOL, Pascal, Modula-2, Oberon, CSP, and others. At its core, Go relies on simplicity, reliability, and efficiency to overcome the shortcomings of its ancestors. Go has garbage collection, a package system, first-class functions, lexical scope, immutable strings that rely on UTF-8, and an awesome concurrency model.
+[Go](https://en.wikipedia.org/wiki/Go_(programming_language)) is an open-source programming language developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is often described as "C for the 21st century", however, it borrows important ideas from several other languages like ALGOL, Pascal, Modula-2, Oberon, CSP, and others. At its core, Go relies on simplicity, reliability, and efficiency to overcome the shortcomings of its ancestors. Go has garbage collection, a package system, first-class functions, lexical scope, immutable strings that rely on UTF-8, and an awesome concurrency model.
 
 As a compiled language, Go is generally faster than interpreted languages and is safer from crashes thanks to its built-in type system. That being said, there is a good balance between expressiveness and safety that gives programmers the benefits of a strong type system without the burden of complex workflows.
 
