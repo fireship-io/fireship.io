@@ -81,6 +81,10 @@ a.item {
       fill: var(--orange-pink);
     }
   }
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0.25em;
+  }
 }
 
 .item-text {

@@ -459,19 +459,51 @@ video-player,
 
 .home-hero {
   margin-top: 3em;
-  padding: 4rem 10vw;
+  padding: 4rem 7vw;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      margin-left: 0;
+    }
+
+    .btn + .btn {
+      margin-left: .5em;
+    }
+
+    .btn:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .hero-vid {
+    margin-top: 1.5em;
+  }
 }
 
 .hero-content {
   display: flex; 
   flex-direction: column;
   justify-content: space-between; 
-  padding: 0 2rem
+  padding: 0 2rem;
 }
 
-.hero-vid {}
+.hero-vid {
+  // max-width: 80vw;
+}
 
 .snippet-title {
   font-size: 2em;
