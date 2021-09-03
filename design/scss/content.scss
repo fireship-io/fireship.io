@@ -466,6 +466,34 @@ video-player,
 
 }
 
+@media screen and (max-width: 768px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      margin-left: 0;
+    }
+
+    .btn + .btn {
+      margin-left: .5em;
+    }
+
+    .btn:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .hero-vid {
+    margin-top: 1.5em;
+  }
+}
+
 .hero-content {
   display: flex; 
   flex-direction: column;
