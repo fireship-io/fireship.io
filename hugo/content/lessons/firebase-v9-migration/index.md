@@ -37,8 +37,6 @@ In this article, we will do a side-by-side comparison of the old and new version
 
 Also watch the more basic [Firebase v9 overview](https://youtu.be/zd6ffqoK_EU) on YouTube. 
 
-
-
 ## Setup
 
 ### Configuration

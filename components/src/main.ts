@@ -8,17 +8,22 @@ if (environment.production) {
   enableProdMode();
 }
 
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
-import 'firebase/functions';
-import 'firebase/performance';
-import 'firebase/analytics';
+import { initializeApp } from 'firebase/app';
+const app = initializeApp(environment.firebase);
+
+import { initializeAnalytics } from 'firebase/analytics';
+initializeAnalytics(app)
+
+// import * as firebase from 'firebase/app';
+// import 'firebase/compat/auth';
+// import 'firebase/compat/firestore';
+// import 'firebase/compat/functions';
+// import 'firebase/compat/performance';
+// import 'firebase/compat/analytics';
+// firebase.initializeApp(environment.firebase);
+// firebase.performance();
 
 
-firebase.initializeApp(environment.firebase);
-firebase.performance();
-firebase.analytics();
 
 platformBrowserDynamic().bootstrapModule(AppModule, { ngZone: 'noop'})
   .catch(err => console.error(err));

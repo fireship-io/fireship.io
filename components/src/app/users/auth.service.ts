@@ -1,7 +1,18 @@
 import { Injectable, ApplicationRef } from '@angular/core';
 
-import * as firebase from 'firebase/app';
-import { auth } from 'firebase/app';
+import {
+  getAuth,
+  signOut,
+  OAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail,
+} from 'firebase/auth';
+import { getAnalytics, logEvent, setUserId, setUserProperties } from 'firebase/analytics';
+import { getFirestore, doc } from 'firebase/firestore';
+
 import { user } from 'rxfire/auth';
 import { tap, switchMap } from 'rxjs/operators';
 import { NotificationService } from '../notification/notification.service';
@@ -9,15 +20,13 @@ import { onLogout, onLogin, onError } from '../notification/notifications';
 import { docData } from 'rxfire/firestore';
 import { of, Observable } from 'rxjs';
 
-
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  authClient = firebase.auth();
-  analytics = firebase.analytics();
+  auth = getAuth();
+  analytics = getAnalytics();
+  firestore = getFirestore();
 
   user$: Observable<any>;
   userDoc$: Observable<any>;
@@ -29,74 +38,77 @@ export class AuthService {
 
   constructor(private app: ApplicationRef, private ns: NotificationService) {
     // Why service subsciptions? Maintain state between route changes with change detection.
-    this.user$ = user(this.authClient)
+    this.user$ = user(this.auth).pipe(
+      tap((u) => {
+        this.user = u;
+        this.app.tick();
+        if (u) {
+          // this.analytics.setUserId(u.uid);
+          setUserId(this.analytics, u.uid);
+        }
+      })
+    );
 
-    .pipe(tap(u => {
-      this.user = u;
-      this.app.tick();
-      if (u) {
-        this.analytics.setUserId(u.uid);
-      }
-    }));
-
-
-    this.userDoc$ = this.getUserDoc$('users').pipe(tap(u => {
-      this.userDoc = u;
-      this.app.tick();
-      if (u) {
-        this.analytics.setUserProperties({ pro_status: u.pro_status });
-      }
-    }));
-
+    this.userDoc$ = this.getUserDoc$('users').pipe(
+      tap((u) => {
+        this.userDoc = u;
+        this.app.tick();
+        if (u) {
+          setUserProperties(this.analytics, { pro_status: u.pro_status });
+        }
+      })
+    );
 
     this.user$.subscribe();
     this.userDoc$.subscribe();
-   }
+  }
 
-   getUserDoc$(col) {
-    return user(this.authClient).pipe(
-      switchMap(u => {
-        return u ? docData(firebase.firestore().doc(`${col}/${(u as any).uid}`)) : of(null);
+  getUserDoc$(col) {
+    return user(this.auth).pipe(
+      switchMap((u) => {
+        if (u) {
+          return docData(doc(this.firestore, `${col}/${(u as any).uid}`));
+        } else {
+          return of(null);
+        }
       })
     );
-   }
+  }
 
   signOut() {
-    this.authClient.signOut();
+    signOut(this.auth);
     location.replace('https://fireship.io');
     this.ns.setNotification(onLogout);
-    this.analytics.logEvent('logout', { });
+    logEvent(this.analytics, 'logout', {});
   }
 
   async googleLogin() {
-    const credential = this.authClient.signInWithPopup(new auth.GoogleAuthProvider());
+    const credential = signInWithPopup(this.auth, new GoogleAuthProvider());
     return this.loginHandler(credential);
   }
 
   async appleLogin() {
-    const provider = new firebase.auth.OAuthProvider('apple.com');
-    const credential = this.authClient.signInWithPopup(provider);
+    const provider = new OAuthProvider('apple.com');
+    const credential = signInWithPopup(this.auth, provider);
     return this.loginHandler(credential);
   }
-
 
   get userId() {
     return this.user ? this.user.uid : null;
   }
 
-
   async emailSignup(email: string, password: string) {
-    const credential = this.authClient.createUserWithEmailAndPassword(email, password);
+    const credential = createUserWithEmailAndPassword(this.auth, email, password);
     return this.loginHandler(credential);
   }
 
   async emailLogin(email: string, password: string) {
-    const credential = this.authClient.signInWithEmailAndPassword(email, password);
+    const credential = signInWithEmailAndPassword(this.auth, email, password);
     return this.loginHandler(credential);
   }
 
   async resetPassword(email: string) {
-    return this.authClient.sendPasswordResetEmail(email);
+    return sendPasswordResetEmail(this.auth, email);
   }
 
   async loginHandler(promise) {
@@ -104,7 +116,7 @@ export class AuthService {
     try {
       res = await promise;
       this.ns.setNotification(onLogin);
-      this.analytics.logEvent('login', { });
+      logEvent(this.analytics, 'login', {});
     } catch (err) {
       serverError = err.message;
       console.error(err);

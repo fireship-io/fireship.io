@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { plans } from './stripe-defaults';
 import { AuthService } from '../users/auth.service';
 import { httpsCallable  } from 'rxfire/functions';
-import * as firebase from 'firebase/app';
+import { getFunctions } from 'firebase/functions';
 import { map } from 'rxjs/operators';
 import get from 'lodash.get';
 
@@ -13,6 +13,7 @@ import get from 'lodash.get';
 })
 export class PaymentService {
 
+  functions = getFunctions();
   product = new Subject();
 
   constructor(private app: ApplicationRef, private auth: AuthService) { }
@@ -95,7 +96,7 @@ export class PaymentService {
     let res;
     let serverError;
     try {
-      res = await httpsCallable(firebase.functions(), name)(data).toPromise();
+      res = await httpsCallable(this.functions, name)(data).toPromise();
     } catch (err) {
       console.log(err);
       serverError = err;
