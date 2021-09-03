@@ -9,12 +9,10 @@
     margin: 0.25em 0.1em;
 }
 
-
 h1.tag {
     margin-left: 0;
     margin-right: 0;
 }
-
 
 .tag-sm {
     font-size: 0.7em;
@@ -22,7 +20,6 @@ h1.tag {
     letter-spacing: 0.15ch;
     font-weight: 400;
 }
-
 
 .tag-lg {
     font-size: 1.2em;
@@ -33,7 +30,8 @@ h1.tag {
     background: var(--background);
 }
 
-.tag-pro, .tag-green {
+.tag-pro,
+.tag-green {
     background: var(--green);
     color: white;
 }
@@ -54,12 +52,14 @@ h1.tag {
 }
 
 .tag-javascript {
-    background: #f0db4f;;
+    background: #f0db4f;
+    ;
     color: black;
 }
 
 .tag-typescript {
-    background: #2775c3;;
+    background: #2775c3;
+    ;
     color: white;
 }
 
@@ -108,7 +108,8 @@ h1.tag {
     color: white;
 }
 
-.tag-stripe, .tag-fauna {
+.tag-stripe,
+.tag-fauna {
     color: white;
     background: #6675e0;
 }
@@ -127,18 +128,21 @@ h1.tag {
     color: #ffffff;
     background: #ff3e00;
 }
+
 .tag-react {
     color: #00d8ff;
     background: #222;
 }
+
 .tag-ios {
     color: #fff;
     background: #000;
 }
 
-.tag-mvp, .tag-minimum-viable-product { 
+.tag-mvp,
+.tag-minimum-viable-product {
     color: white;
-    background-image: linear-gradient(to right, #ff8901, #db1d5f); 
+    background-image: linear-gradient(to right, #ff8901, #db1d5f);
     font-weight: bold;
 }
 
@@ -192,3 +196,7 @@ h1.tag {
     background: #BC1142;
 }
 
+.tag-go {
+    color: #ffffff;
+    background: #00ADD8;
+}
