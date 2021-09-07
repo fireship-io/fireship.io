@@ -4,9 +4,9 @@ description: Upload local code to GitHub
 weight: 21
 lastmod: 2021-09-05T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 599117496
 emoji: ☝️
-video_length: 2:00
+video_length: 1:45
 ---
 
 Use git push to upload your local code to GitHub.

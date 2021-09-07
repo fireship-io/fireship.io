@@ -4,9 +4,9 @@ description: Connect a remote GitHub repo to your local repo
 weight: 20
 lastmod: 2021-09-05T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 599117582
 emoji: ☁️
-video_length: 2:00
+video_length: 1:40
 chapter_start: Remote 
 ---
 

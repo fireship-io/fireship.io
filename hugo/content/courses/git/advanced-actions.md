@@ -8,3 +8,10 @@ vimeo:
 emoji: 🦾
 video_length: 2:00
 ---
+
+<div class="vid-center">
+{{< youtube eB0nUzAI7M8 >}}
+</div>
+
+
+Also see our [GitHub Actions Guide](/lessons/five-useful-github-actions-examples/)
