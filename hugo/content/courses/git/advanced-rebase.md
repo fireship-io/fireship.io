@@ -4,7 +4,7 @@ description: Use git rebase to merge updates with a clean commit history
 weight: 44
 lastmod: 2021-09-05T10:23:30-09:00
 draft: false
-vimeo: 
+vimeo: 599244606
 emoji: 📜
 video_length: 2:16
 ---
