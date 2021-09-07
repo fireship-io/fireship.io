@@ -7,6 +7,7 @@ draft: false
 vimeo: 599073661
 emoji: 🏠
 video_length: 1:28
+free: true
 ---
 
 Crate a new git repository:

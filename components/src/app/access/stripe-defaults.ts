@@ -126,6 +126,15 @@ export const plans = {
     price: 1900,
     url: '/courses/react-next-firebase/',
     crypto: true,
+  },
+  git: {
+    id: 'git',
+    sku:  'sku_KBHTYbTWv1Hmb7',
+    description: 'The Git & GitHub Course 🍽️',
+    type: 'order',
+    price: 1900,
+    url: '/courses/git/',
+    crypto: true,
   }
 };
 

@@ -12,7 +12,7 @@ tags:
 
 {{< vimeo 599074745 >}}
 
-**Git & GitHub - The Full Course** teaches you how to use Git and GitHub to manage your code like a professional software engineer. We take a hands approach to learn the basics of version control from the command line, then level up with a bunch of VS Code tips and tricks.
+**The Git & GitHub Full Course** teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands approach to learn the basics of version control from the command line with around 1 hour of video content and exercises. 
 
 
 ## 🦄 What will I learn?
@@ -21,11 +21,11 @@ This course will teach the basics of [Git](https://git-scm.com/) and [GitHub](ht
 
 - 👨‍🎤 Get Good at Git & GitHub
 - 🦾 Boost Programming Productivity
-- 📰 Be More Prepared of for Software Engineer Interview
-- ⚔️ Fix common issues like Merge Conflict
+- 📰 Be Prepared for Software Engineer Interviews
+- ⚔️ Fix common issues like Merge Conflicts
 - 🤝 Contribute to Open-Source Projects
 - 🔥 Use VS Code like a Pro
-- 🕹️ Git is used in DevOps (GitHub Actions)
+- 🕹️ Use Git for DevOps wit GitHub Actions
 
 
 ## 🤔 Is this Course Right for Me?
