@@ -14,7 +14,7 @@ Clone a remote repository to your local machine and optionally change the name o
 {{< file "terminal" "command line" >}}
 ```bash
 git clone <repo-url> <local-directory>
-```cc
+```
 
 ## Practice
 
