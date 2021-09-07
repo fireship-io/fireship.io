@@ -25,7 +25,7 @@ This course will teach the basics of [Git](https://git-scm.com/) and [GitHub](ht
 - ⚔️ Fix common issues like Merge Conflicts
 - 🤝 Contribute to Open-Source Projects
 - 🔥 Use VS Code like a Pro
-- 🕹️ Use Git for DevOps wit GitHub Actions
+- 🕹️ Use Git for DevOps with GitHub Actions
 
 
 ## 🤔 Is this Course Right for Me?
