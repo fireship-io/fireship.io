@@ -270,41 +270,14 @@ Now the end user of the web component can just pass a span that references the s
 
 At this point we have a working custom element, but how do we use it outside of our Angular CLI project? The answer is simple... We just need to export the JavaScript.
 
-Currently, running `ng build --prod` will generate three separate bundles for the app - main, polyfills, and inline. All we need to do is concatenate these files into a single script. 
+Currently, running `ng build --prod` will generate three separate bundles for the app - main, polyfills, and inline. All we need to do is concatenate these files into a single script.
 
-Let's install a few Node packages to make life easier. 
-
-```shell
-npm install fs-extra concat --save-dev
-```
-
-Now create a new file called `build-script.js`. It will take our three JS bundles and merge them to a single file in the *elements* directory. 
-
-```js
-const fs = require('fs-extra');
-const concat = require('concat');    
-
-(async function build() {
-
-    const files =[
-        './dist/inline.bundle.js',
-        './dist/polyfills.bundle.js',
-        './dist/main.bundle.js'
-    ]
-    
-    await fs.ensureDir('elements')
-    
-    await concat(files, 'elements/user-poll.js')
-    console.info('Elements created successfully!')
-
-})()
-```
-
-Lastly, let's add a build command to NPM scripts in `package.json`. 
+Lastly, let's add two build commands in `package.json`. The first script called `concat:scripts`, it will take our three JS packages and merge it into a single file in the *elements* directory. Cool, huh?! Then will use the previous one after the build is complete.
 
 ```json
 "scripts": {
-  "build:elements": "ng build --prod --output-hashing false && node build-script.js",
+  "concat:bundles": "cat dist/{inline,polyfills,main}.bundle.js > elements/user-poll.js",
+  "build:elements": "ng build --prod --output-hashing false && npm run concat:bundles",
 }
 ```
 

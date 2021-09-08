@@ -14,7 +14,7 @@ The code below uses this data model to follow/unfollow users & query the most re
 {{< file "js" "firestore.js" >}}
 {{< highlight javascript >}}
 import { db } from './config';
-import * as firebase from 'firebase/app';
+import firebase from 'firebase/app;
 const remove = firebase.firestore.FieldValue.arrayRemove;
 const union = firebase.firestore.FieldValue.arrayUnion;
 

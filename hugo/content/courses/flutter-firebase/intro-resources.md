@@ -17,7 +17,7 @@ video_length: 1:42
 - [QuizApp Source Code](https://github.com/fireship-io/flutter-firebase-quizapp-course)
 - [Quiz Questions Repo](https://github.com/fireship-io/fireship-quizapp-data)
 - [Flutter Docs](https://flutter.dev)
-- [FlutterFire Docs](https://firebaseopensource.com/projects/flutter/plugins/)
+- [FlutterFire Docs](https://firebaseopensource.com/projects/firebaseextended/flutterfire)
 
 
 ## Social

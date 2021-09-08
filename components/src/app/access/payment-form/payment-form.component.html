@@ -9,7 +9,6 @@
 
       <!-- Used for 3D secure validation -->
 
-
 <form [formGroup]="fg" id="payment-form" (ngSubmit)="handleForm($event)" class="form-stripe">
   
   <div class="form-row">
@@ -81,9 +80,18 @@
       <img class="stripe-badge" src="/img/brands/stripe.svg">
   </div>
 
-  <hr>
 
   <div class="paypal" #paypalElement>
+
+  </div>
+
+  <div class="crypto-charge">
+    <button *ngIf="product?.crypto" class="btn btn-contrast" (click)="createCryptoCharge()">
+       ₿ Pay with Crypto
+    </button>
+
+    <p class="text-center" *ngIf="cryptoCharge">Complete your crypto payment <a class="btn btn-sm btn-orange" [href]="cryptoCharge?.hosted_url">here</a></p>
+    <p class="text-sm text-center" *ngIf="cryptoCharge">*You will have instant access to the content after the payment is sent</p>
 
   </div>
 

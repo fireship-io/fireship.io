@@ -137,7 +137,7 @@ Now let's define a method that will fire off the email when the user clicks the 
 async sendEmailLink() {
   const actionCodeSettings = { ...yourSettings }
   try {
-    await this.afAuth.auth.sendSignInLinkToEmail(
+    await this.afAuth.sendSignInLinkToEmail(
       this.email,
       actionCodeSettings
     );
@@ -163,7 +163,7 @@ The user must return to our site with the same email. Because we saved it to [lo
 ```typescript
   async confirmSignIn(url) {
     try {
-      if (this.afAuth.auth.isSignInWithEmailLink(url)) {
+      if (this.afAuth.isSignInWithEmailLink(url)) {
         let email = window.localStorage.getItem('emailForSignIn');
 
         // If missing email, prompt user for it
@@ -172,7 +172,7 @@ The user must return to our site with the same email. Because we saved it to [lo
         }
 
         // Signin user and remove the email localStorage
-        const result = await this.afAuth.auth.signInWithEmailLink(email, url);
+        const result = await this.afAuth.signInWithEmailLink(email, url);
         window.localStorage.removeItem('emailForSignIn');
       }
     } catch (err) {

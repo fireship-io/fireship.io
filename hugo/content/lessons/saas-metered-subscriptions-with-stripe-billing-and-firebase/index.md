@@ -151,7 +151,7 @@ export class AuthService {
   
 
   async anonymousLogin() {
-    const credential = await this.afAuth.auth.signInAnonymously();
+    const credential = await this.afAuth.signInAnonymously();
     return await this.updateUserData(credential.user);
   }
 

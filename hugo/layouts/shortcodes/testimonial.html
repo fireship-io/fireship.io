@@ -1,0 +1,21 @@
+{{ $img := .Get "img" }}
+{{ $name := .Get "name"  }}
+{{ $handle := .Get "handle" }}
+{{ $icon := .Get "icon" }}
+
+<div class="tweet-card">
+    <div class="tweet-icon">
+        {{ partial (print "svg/" ($icon | default "twitter") ".svg") }}
+    </div>
+    <div class="tweet-user">
+        <img src="/img/testimonial/{{ $img }}">
+        <div class="tweet-details">
+            <div class="tweet-name">{{ $name }}</div>
+            <div class="tweet-handle">{{ $handle }}</div>
+        </div>
+    </div>
+    <div class="tweet-content">
+        {{ $.Inner }}
+    </div>
+      
+</div>

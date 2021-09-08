@@ -10,7 +10,7 @@ weight: 3
 emoji: 👶
 ---
 
-Installation and setup is identical for Mac, Windows, and Linux. The only requirement is NodeJS which is likely available on your system, but if not, install NVM https://github.com/creationix/nvm. 
+Installation and setup is identical for Mac, Windows, and Linux. The only requirement is NodeJS which is likely available on your system, but if not, install NVM https://github.com/nvm-sh/nvm. 
 
 ## Install Node
 

@@ -129,18 +129,18 @@ async login() {
 
   const credential = auth.GoogleAuthProvider.credential(token);
 
-  await this.afAuth.auth.signInAndRetrieveDataWithCredential(credential);
+  await this.afAuth.signInAndRetrieveDataWithCredential(credential);
 
 
   // Alternative approach, use the Firebase login with scopes and make RESTful API calls
   // const provider = new auth.GoogleAuthProvider()
   // provider.addScope('https://www.googleapis.com/auth/calendar');
-  // this.afAuth.auth.signInWithPopup(provider)
+  // this.afAuth.signInWithPopup(provider)
   
 }
 
 logout() {
-  this.afAuth.auth.signOut();
+  this.afAuth.signOut();
 }
 ```
 

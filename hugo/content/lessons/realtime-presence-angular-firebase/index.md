@@ -162,7 +162,7 @@ The offline status is dependent on the `onDisconnect` hook, which will run an up
 
 async signOut() {
     await this.setPresence('offline');
-    await this.afAuth.auth.signOut();
+    await this.afAuth.signOut();
 }
 {{< /highlight >}}
 

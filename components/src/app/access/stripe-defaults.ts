@@ -43,7 +43,8 @@ export const plans = {
     price: 30000,
     description: 'Fireship.io Lifetime Access 🦄',
     type: 'order',
-    url: '/tags/pro'
+    url: '/tags/pro',
+    crypto: true,
   },
   flutterFirebase: {
     id: 'flutterFirebase',
@@ -51,7 +52,8 @@ export const plans = {
     description: 'The Flutter Firebase Course 🐦',
     type: 'order',
     price: 1900,
-    url: '/courses/flutter-firebase'
+    url: '/courses/flutter-firebase',
+    crypto: true,
   },
   stripePayments: {
     id: 'stripePayments',
@@ -59,7 +61,8 @@ export const plans = {
     description: 'Stripe Payments Course 💰',
     type: 'order',
     price: 1900,
-    url: '/courses/stripe-payments/'
+    url: '/courses/stripe-payments/',
+    crypto: true,
   },
   firestoreDataModeling: {
     id: 'firestoreDataModeling',
@@ -67,7 +70,8 @@ export const plans = {
     description: 'Firestore Data Modeling Course 🔥',
     type: 'order',
     price: 1900,
-    url: '/courses/firestore-data-modeling/'
+    url: '/courses/firestore-data-modeling/',
+    crypto: true,
   },
   ionic: {
     id: 'ionic',
@@ -75,7 +79,8 @@ export const plans = {
     description: 'Ionic 4 (Angular) Master Course 📱',
     type: 'order',
     price: 1900,
-    url: '/courses/ionic/'
+    url: '/courses/ionic/',
+    crypto: true,
   },
   angular: {
     id: 'angular',
@@ -83,7 +88,8 @@ export const plans = {
     description: 'Angular Firebase Project Course 🍱',
     type: 'order',
     price: 1900,
-    url: '/courses/angular/'
+    url: '/courses/angular/',
+    crypto: true,
   },
   vue: {
     id: 'vue',
@@ -91,7 +97,8 @@ export const plans = {
     description: 'Vue Firebase Project Course 🖖',
     type: 'order',
     price: 1900,
-    url: '/courses/vue/'
+    url: '/courses/vue/',
+    crypto: true,
   },
   stripeJs: {
     id: 'stripeJs',
@@ -99,7 +106,8 @@ export const plans = {
     description: 'Stripe JavaScript Full Course 💸',
     type: 'order',
     price: 1900,
-    url: '/courses/stripe-js/'
+    url: '/courses/stripe-js/',
+    crypto: true,
   },
   firebaseSecurity: {
     id: 'firebaseSecurity',
@@ -107,7 +115,8 @@ export const plans = {
     description: 'Firebase Security Course 🛡️',
     type: 'order',
     price: 1900,
-    url: '/courses/firebase-security/'
+    url: '/courses/firebase-security/',
+    crypto: true,
   },
   reactNextFirebase: {
     id: 'reactNextFirebase',
@@ -115,7 +124,17 @@ export const plans = {
     description: 'The Next.js Firebase Course 🚀',
     type: 'order',
     price: 1900,
-    url: '/courses/react-next-firebase/'
+    url: '/courses/react-next-firebase/',
+    crypto: true,
+  },
+  git: {
+    id: 'git',
+    sku:  'sku_KBHTYbTWv1Hmb7',
+    description: 'The Git & GitHub Course 🍽️',
+    type: 'order',
+    price: 1900,
+    url: '/courses/git/',
+    crypto: true,
   }
 };
 

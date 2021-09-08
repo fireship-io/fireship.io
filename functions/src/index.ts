@@ -32,3 +32,4 @@ export {
 
 export { stripeWebhookHandler } from './stripe/webhooks';
 export { paypalHandler } from './stripe/paypal';
+export { coinbaseWebhookHandler, coinbaseCreateCharge } from './stripe/coinbase';

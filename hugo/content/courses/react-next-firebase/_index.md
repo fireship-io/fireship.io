@@ -1,6 +1,6 @@
 ---
-lastmod: 2021-02-06T10:23:30-09:00
-title: Next.js Firebase - The Full Course
+lastmod: 2021-09-02T10:23:30-09:00
+title: Next.js Firebase Full Course
 description: Build a full-stack app with React, Firebase, and Next.js
 weight: 0
 type: courses
@@ -48,7 +48,7 @@ Visit the demo app and give it a test drive before you enroll.
 
 ### When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated Feb 5th, 2021</span> <span class="tag tag-sm tag-next">Next v10.0</span>
+<span class="tag tag-sm tag-pro">Updated Sep 3rd, 2021</span> <span class="tag tag-sm tag-next">Next v11.1</span>
 
 ### How do I enroll?
 

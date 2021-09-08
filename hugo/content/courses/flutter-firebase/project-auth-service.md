@@ -90,6 +90,8 @@ Access the current user with Provider.
 
 {{< file "dart" "main.dart" >}}
 ```dart
+import 'package:firebase_auth/firebase_auth.dart';
+
 Widget build(BuildContext context) {
     return MultiProvider(
       providers: [

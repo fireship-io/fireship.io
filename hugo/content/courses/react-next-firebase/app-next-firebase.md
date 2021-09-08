@@ -21,7 +21,7 @@ npm install firebase react-firebase-hooks
 
 ## Firebase Lib
 
-Export common Firebsae SDKs and utilities.
+Export common Firebase SDKs and utilities.
 
 {{< file "js" "lib/firebase.js" >}}
 ```javascript
@@ -42,6 +42,36 @@ export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
 ```
+
+## Update September 2021
+
+If you are using [Firebase Version 9](/lessons/firebase-v9-migration/) you may end up with this error:
+
+```
+TypeError: Cannot read property 'apps' of undefined
+```
+
+**Option 1** Downgrade to firebase version 8, by running:
+
+{{< file "terminal" "command line" >}}
+```bash
+npm install firebase@8.2.1
+```
+
+
+**Option 2** Alternatively, if you wish to continue using firebase version 9, change your imports as follows:
+
+
+{{< file "js" "lib/firebase.js" >}}
+```javascript
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import 'firebase/compat/storage';
+```
+
+Check out the [Firebase Version 9 Migration guide](/lessons/firebase-v9-migration/) for additional details on the new Firebase SDKs.
+
 
 ## Optional
 

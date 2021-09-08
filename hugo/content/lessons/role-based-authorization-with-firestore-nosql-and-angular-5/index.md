@@ -116,14 +116,14 @@ export class AuthService {
   }
 
   private oAuthLogin(provider) {
-    return this.afAuth.auth.signInWithPopup(provider)
+    return this.afAuth.signInWithPopup(provider)
       .then((credential) => {
         this.updateUserData(credential.user)
       })
   }
 
   signOut() {
-    this.afAuth.auth.signOut()
+    this.afAuth.signOut()
   }
 
   private updateUserData(user) {

@@ -15,7 +15,7 @@ import { tap } from 'rxjs/operators';
 import { stripeStyle } from '../stripe-defaults';
 import { NotificationService } from 'src/app/notification/notification.service';
 import { FormGroup } from '@angular/forms';
-import * as firebase from 'firebase/app';
+import { getAnalytics, logEvent } from 'firebase/analytics';
 
 // Global Script Namespaces
 declare var Stripe;
@@ -53,7 +53,10 @@ export class PaymentFormComponent implements AfterViewInit {
   // FormGroup Require or angular with throw errors
   fg;
 
-  analytics = firebase.analytics();
+  // coinbase state
+  cryptoCharge;
+
+  analytics = getAnalytics()
 
   constructor(
     private cd: ChangeDetectorRef,
@@ -222,7 +225,7 @@ export class PaymentFormComponent implements AfterViewInit {
       text: `Your payment card must be confirmed via 3D Secure. View the invoice and finish the payment at the following link: ${invoiceURL} `,
       countdown: 300
     });
-    this.analytics.logEvent('pro_upgrade', {
+    logEvent(this.analytics, 'pro_upgrade', {
       value: this.action,
       product: this.product && this.product.id,
       status: 'incomplete'
@@ -232,7 +235,7 @@ export class PaymentFormComponent implements AfterViewInit {
   onSuccess() {
     this.resetForm();
     this.ns.setNotification({ title: 'Success!', text: 'Thank you :)' });
-    this.analytics.logEvent('pro_upgrade', {
+    logEvent(this.analytics, 'pro_upgrade', {
       value: this.action,
       product: this.product && this.product.id
     });
@@ -275,6 +278,14 @@ export class PaymentFormComponent implements AfterViewInit {
     }
     this.couponLoading = false;
     this.cd.detectChanges();
+  }
+
+  async createCryptoCharge() {
+    console.log(this.product);
+    const { res } = await this.pmt.coinbaseHandler(this.product);
+    this.setState('cryptoCharge', res);
+
+    console.log(this.cryptoCharge);
   }
 
   @HostListener('document:DOMContentLoaded')

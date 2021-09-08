@@ -16,7 +16,18 @@
 }
 
 .paypal {
+    padding-top: 1rem;
     border-top: var(--h-border);
+}
+
+.crypto-charge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button {
+        max-width: 300px;
+    }
 }
 
 .btn-stripe {
@@ -24,17 +35,15 @@
 }
 
 .payment-terms {
-    // img { width: 100px; }
     border-top: var(--h-border);
     border-color: var(--gray3);
     padding-top: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1rem;
 }
-.form-stripe {
-    // margin-bottom: 25px;
-}
+
 
 .payment-loading {
     margin: 1em 0;
@@ -93,7 +102,7 @@
         }
 
         &:hover {
-            .pricing-icon, {
+            .pricing-icon {
                 color: var(--green);
                 // font-size: 3.2em;
                 transition: all 300ms ease-in-out;

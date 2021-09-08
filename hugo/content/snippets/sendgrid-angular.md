@@ -90,7 +90,7 @@ export class AppComponent {
 
 
   loginWithGoogle() {
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+    this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
   }
 
   sendEmail() {
