@@ -96,9 +96,8 @@ Hey @Jeffdelaney23 thank you for your YouTube channel. You have done <span class
 <h4 class="home-sub-heading text-center">Unlimited access to content for serious developers</h4>
 
 <div class="vid vid-center">
-{{< vimeo 379454037 >}}
+{{< vimeo 599890291 >}}
 </div>
-
 
 <h2 class="text-center home-heading">Taught by Experts</h2>
 <h4 class="home-sub-heading text-center">Content so good that Google knighted us</h4>
