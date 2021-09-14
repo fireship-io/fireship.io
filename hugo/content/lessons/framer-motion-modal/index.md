@@ -9,7 +9,7 @@ tags:
     - react
     - animation
 
-youtube: 
+youtube: SuqU904ZHA4
 github: https://github.com/fireship-io/framer-demo
 # disable_toc: true
 # disable_qna: true
@@ -21,7 +21,7 @@ github: https://github.com/fireship-io/framer-demo
 #    rxdart: 0.20
 ---
 
-[Framer Motion](https://www.framer.com/motion/) is a react libary for adding declarative animations to your components. In this lesson, we will build a modal with Framer Motion with a variety of different animations styles. 
+[Framer Motion](https://www.framer.com/motion/) is a React library for adding declarative animations to your components. It provides a variety of components that wrap plain HTML elements to extend them with animation superpowers 🦸. In this lesson, we will build a modal with Framer Motion with a variety of different animations styles. 
 
 🚀 Try out the [live demo](https://react-framer-demo.netlify.app/)
 
@@ -52,7 +52,7 @@ $ npm i framer-motion
 
 ### Trigger Button
 
-Create a button that can when clicked will open a modal. Define a stateful value `modalOpen` to keep track of the open/close state. In this example, we use the `motion.div` component also animate the button iself.
+Create a button that can when clicked will open a modal. Define a stateful value `modalOpen` to keep track of the open/close state. In this example, we use the `motion.div` component also animate the button itself.
 
 {{< file "react" "App.js" >}}
 ```jsx
@@ -79,7 +79,7 @@ function App() {
 
 ### Backdrop
 
-Create a component to serve as the backdrop for the modal. This component will be a `motion.div` component that fades in and out. It takes a `onClick` prop to close the modal when the backdrop is clicked.
+Create a component to serve as the backdrop for the modal. This component will be a `motion.div` component that fades in and out. It takes the `onClick` prop to close the modal when the backdrop is clicked.
 
 {{< file "react" "components/Backdrop/index.js" >}}
 ```jsx
@@ -159,9 +159,9 @@ const Modal = ({ handleClose, text }) => {
   export default Modal;
 ```
 
-### Animate Presense
+### Animate Presence
 
-Framer Motion has a built in `AnimatePresence` component that can handle animations for components that get added/removed from the DOM - we need it to animate the removal of a modal component.
+Framer Motion has a built in [AnimatePresence](https://www.framer.com/docs/animate-presence/) component that can handle animations for components that get added/removed from the DOM - we need it to animate the removal of a modal component.
 
 {{< file "react" "App.js" >}}
 ```jsx
@@ -272,3 +272,7 @@ const badSuspension = {
   },
 };
 ```
+
+## Up Next
+
+Check out the more advanced [Framer Motion Notification Feed tutorial](/lessons/framer-motion-advanced-notifications/).
