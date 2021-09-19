@@ -26,7 +26,7 @@ For small issues, like a typo or broken link, use Github's inline file editor or
 
 For more complex contributions, like guest posts and new features, you should work on the project on your local system. 
 
-First, fork this repo on Github.
+First, fork this repo on GitHub.
 
 ```shell
 git clone <your-forked-repo>
@@ -40,7 +40,7 @@ git commit -m "fix: corrected a typo"
 git push origin my-fix
 ```
 
-Lastly, open a pull request on Github. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline. 
+Lastly, open a pull request on GitHub. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline. 
 
 ## Running the Site
 

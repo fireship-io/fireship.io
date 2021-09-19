@@ -1,6 +1,7 @@
 name: Export Firestore Data
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '0 0 * * 0'
 
@@ -12,7 +13,7 @@ jobs:
   backup:
     runs-on: ubuntu-latest
     steps:
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+    - uses: google-github-actions/setup-gcloud@master
       with:
         service_account_key: ${{ secrets.GCP_SA_KEY }}
         export_default_credentials: true

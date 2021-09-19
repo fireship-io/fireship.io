@@ -1,3 +1,5 @@
+@import './mixins.scss';
+
 $colors: (
   red: hsl(348, 100%, 61%),
   blue: #498afb,
@@ -11,6 +13,7 @@ $colors: (
 
 @mixin default-theme {
   --background: var(--gray6);
+  --background-opacity: #12181b95;
   --text-color: var(--gray2);
   --h-color: white;
   --nav-shadow: 4px 0 10px -3px #010101;
@@ -23,6 +26,7 @@ $colors: (
   --overlay-bg: rgba(0, 0, 0, 0.9);
   --h-border: 2px dashed var(--nav-bg);
   --nav-border: 2px dashed var(--text-color);
+  --card-border: 1px solid var(--nav-bg);
   --card-radius: 0.25em;
   transition: all 0.3s ease;
 }
@@ -32,7 +36,8 @@ $colors: (
 }
 
 .light-theme {
-  --background: var(--gray0);
+  --background: var(--gray1);
+  --background-opacity: #f8f8f895;
   --text-color: var(--gray4);
   --h-color: var(--gray6);
   --nav-shadow: 4px 0 10px -3px #c1c1c1;
@@ -45,6 +50,7 @@ $colors: (
   --overlay-bg: rgba(255, 255, 255, 0.9);
   --h-border: 2px dashed var(--gray1);
   --nav-border: 2px dashed var(--text-color);
+  --card-border: 1px solid var(--gray1);
   transition: all 0.5s ease;
 }
 
@@ -66,7 +72,7 @@ $colors: (
   --nav-width: 4em;
 
   --font-body: 'sofia-pro', sans-serif;
-  --font-head: 'sofia-pro', sans-serif; 
+  --font-head: 'cubano', sans-serif; 
   --font-code: 'attribute-mono', monospace;
   --font-size: 20px;
 
@@ -100,11 +106,8 @@ body {
 }
 
 main {
-  margin-left: calc(var(--nav-width) + 0.5em);
-  // margin-right: 0.5em;
-  padding: 1em;
-  flex: 1;
-  transition: margin 0.3s ease;
+  margin-top: var(--nav-width);
+  padding: 1rem;
 }
 
 a {
@@ -123,9 +126,9 @@ h4,
 h5,
 h6 {
   color: var(--h-color);
-  font-family: var(--font-head);
-  font-weight: 800;
-  font-style: normal;
+  font-family: var(--font-head);  
+  font-weight: normal;
+  
 }
 
 img {
@@ -156,6 +159,15 @@ footer {
   margin-top: 120px;
   font-size: 0.85em;
   opacity: 0.8;
+
+  .footer-links {
+    // font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: var(--green);
+    }
+  }
 }
 
 hr {

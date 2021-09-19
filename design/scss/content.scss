@@ -86,7 +86,7 @@
   display: flex;
   min-height: 100px;
   margin: 0.5em 0;
-  border-radius: 3px;
+  // border-radius: 0px;
   .box-icon {
     display: flex;
     color: var(--text-color);
@@ -149,8 +149,8 @@
   @include color-box('purple');
 }
 
-.box-blue-bookmark {
-  border-bottom: 3px var(--blue) dashed;
+.box-bookmark {
+  background: var(--tag-bg);
 }
 
 .notification {
@@ -186,6 +186,12 @@
   padding-bottom: 0.5em;
 }
 
+.course-title {
+  font-size: 2em;
+  text-align: left;
+  padding-bottom: 0.5rem;
+}
+
 .page-title {
   text-align: left;
 }
@@ -197,8 +203,6 @@
   min-height: 150px;
   margin: 0 auto;
   padding: 1em;
-  // border-left: var(--h-border);
-  // border-bottom: var(--h-border);
 
   .post-detail {
     padding: 0.5em;
@@ -347,7 +351,7 @@
 
 .vid-center {
   margin: 0 auto;
-  max-width: 75%;
+  // max-width: 75%;
 }
 
 video,
@@ -374,9 +378,10 @@ video-player,
     var(--background) 100%
   );
   background-size: 56.57px 56.57px;
-  padding: 20% 0;
-  margin: 0 auto;
-  max-height: 0;
+  // padding: 20% 0;
+  // margin: 0 auto;
+  // max-height: 0;
+  aspect-ratio: 16/9;
 }
 
 .err-404 {
@@ -440,6 +445,9 @@ video-player,
     font-size: 0.9rem;
     margin-left: auto;
     margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
   }
 }
 
@@ -447,6 +455,54 @@ video-player,
   .card {
     min-height: 240px;
   }
+}
+
+.home-hero {
+  margin-top: 3em;
+  padding: 4rem 7vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+
+}
+
+@media screen and (max-width: 768px) {
+  .home-hero {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-buttons {
+    display: flex;
+    justify-content: center;
+
+    .btn {
+      margin-left: 0;
+    }
+
+    .btn + .btn {
+      margin-left: .5em;
+    }
+
+    .btn:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .hero-vid {
+    margin-top: 1.5em;
+  }
+}
+
+.hero-content {
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 0 2rem;
+}
+
+.hero-vid {
+  // max-width: 80vw;
 }
 
 .snippet-title {
@@ -517,10 +573,6 @@ video-player,
   padding: 0.5em;
 }
 
-.chapters-list {
-  max-width: 998px;
-  margin: 0 auto;
-}
 
 .the-end {
   text-align: center;
@@ -561,6 +613,14 @@ video-player,
   &.in-modal {
     margin-top: 4em;
   }
+}
+
+.title-box {
+  display: inline-block;
+  margin: 1rem auto;
+  background: var(--h-color);
+  color: var(--background);
+  padding: 0.5rem;
 }
 
 .stackblitz {
@@ -615,4 +675,129 @@ video-player,
 .insta {
   display: flex;
   justify-content: center;
+}
+
+.chapters {
+  z-index: 99;
+}
+
+.chapters-list {
+  max-width: 998px;
+  margin: 0 auto;
+}
+
+.chapters-sticky {
+  position: sticky;
+  top: 0px;
+  background: var(--purple);
+  text-align: center;
+}
+
+.chapters-list-fixed {
+  position: fixed;
+  width: clamp(250px, 24vw, 500px);
+  overflow-y: scroll;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  font-size: 0.9em;
+  padding: 0 1rem;
+  padding-top: 70px;
+  background: var(--nav-bg);
+
+  h3 {
+    margin: 1rem 0 .25rem;
+  }
+
+  @include scrollbar;
+
+  @media screen and (max-width: 768px) {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}
+
+.chapters-wrap {
+  margin-bottom: 2rem;
+}
+
+.course-article {
+  margin-left: clamp(260px, 25vw, 500px);
+  padding: 0 2rem;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.tweet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-column-gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    padding-bottom: 24px;
+}
+
+.tweet-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 3rem 2rem;
+    margin-bottom: 2rem;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    line-height: 1.5;
+
+    .tweet-user {
+      display: flex;
+      margin-bottom: 2rem;
+      img {
+        width: 48px;
+        height: 48px;
+        margin-right: 12px;
+        border-radius: 100%;
+      }
+    }
+
+    .tweet-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tweet-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .tweet-content {
+      font-weight: 300;
+    }
+
+    .tweet-icon {
+      position: absolute;
+      right: 24px;
+      color: #E3E9F0;
+      svg {
+        color: var(--h-color);
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+    
+}
+
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  place-items: center;
+  padding: 4rem 1rem;
+  margin: 4rem 0;
+  img {
+    max-width: 200px;
+    margin: 2rem;
+    filter: grayscale(100%);
+  }
 }
