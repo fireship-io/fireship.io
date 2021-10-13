@@ -2,11 +2,11 @@
 title: Dart CLI
 description: Run and compile Dart programs from the command line
 weight: 12
-lastmod: 2021-09-18T11:11:30-09:00
+lastmod: 2021-10-08T11:11:30-09:00
 draft: false
-vimeo: 599073861
-emoji: 💿
-video_length: 1:51
+vimeo: 629642700
+emoji: 🔨
+video_length: 3:02
 ---
 
 ## Create a New Dart Project

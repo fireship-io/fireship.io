@@ -2,12 +2,12 @@
 title: Null Safety Explained
 description: A practical guide to null safety in Dart
 weight: 14
-lastmod: 2021-09-18T11:11:30-09:00
+lastmod: 2021-10-08T11:11:30-09:00
 draft: false
-vimeo: 
+vimeo: 629643814
 youtube:
 emoji: 🦺
-video_length: 1:51
+video_length: 2:53
 free: true
 ---
 
@@ -19,7 +19,8 @@ Variables cannot be `null` by default. Attempting to assign a null value will re
 
 {{< file "dart" "main.dart" >}}
 ```dart
-
+int age = 75; // non-nullable
+int age = null; // error
 ```
 
 ## Allow Null
@@ -28,7 +29,7 @@ In some cases, it is useful to allow a variable to be null, which is achieved by
 
 {{< file "dart" "main.dart" >}}
 ```dart
-
+int? age; // nullable
 ```
 
 ## Late Variable Initialization
@@ -38,7 +39,14 @@ In many cases, we can't set the value of a variable during initialization, BUT w
 
 {{< file "dart" "main.dart" >}}
 ```dart
+class Animal {
+  late final String _size;
 
+  void goBig() {
+    _size = 'big';
+    print(_size);
+  }
+}
 ```
 
 
@@ -49,6 +57,10 @@ Another possible situation is that you want to assign a *nullable value* TO a *n
 
 {{< file "dart" "main.dart" >}}
 ```dart
+String? answer;
 
+String result = answer; // error;
+
+String result = answer! // works;
 ```
 

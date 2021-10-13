@@ -1,13 +1,13 @@
 ---
 title: Operators
-description: Learn how to use operators in Dart
+description: Review common operators in Dart
 weight: 21
-lastmod: 2021-09-18T11:11:30-09:00
+lastmod: 2021-10-08T11:11:30-09:00
 draft: false
-vimeo: 
+vimeo: 629644932
 youtube:
 emoji: 🎯
-video_length: 1:51
+video_length: 3:24
 ---
 
 Let's take a look at some of the more interesting operators in Dart.

@@ -1,13 +1,13 @@
 ---
 title: Variables
-description: Fundamentals of variables and common data types in 
+description: Fundamentals of variables and common data types in Dart
 weight: 13
-lastmod: 2021-09-18T11:11:30-09:00
+lastmod: 2021-10-08T11:11:30-09:00
 draft: false
-vimeo: 
+vimeo: 629643910
 youtube:
-emoji: 🎯
-video_length: 1:51
+emoji: 🧰
+video_length: 4:49
 ---
 
 ## Basic data types
