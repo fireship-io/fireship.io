@@ -135,6 +135,15 @@ export const plans = {
     price: 1900,
     url: '/courses/git/',
     crypto: true,
-  }
+  },
+  dart: {
+    id: 'dart',
+    sku:  'sku_KOyOvlrmLikRz8',
+    description: 'Dart - The Full Course 🎯',
+    type: 'order',
+    price: 1900,
+    url: '/courses/dart/',
+    crypto: true,
+  },
 };
 
