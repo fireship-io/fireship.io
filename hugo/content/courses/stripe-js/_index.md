@@ -1,5 +1,5 @@
 ---
-lastmod: 2020-04-28T10:23:30-09:00
+lastmod: 2021-10-25T10:23:30-09:00
 title: Stripe Payments JavaScript Course
 description: A full Stripe Payments Course using Node.js & React
 weight: 0
