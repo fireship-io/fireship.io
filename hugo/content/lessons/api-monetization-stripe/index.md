@@ -134,7 +134,7 @@ function generateAPIKey() {
 function hashAPIKey(apiKey) {
   const { createHash } = require('crypto');
 
-  const hashedAPIKey = createHash('md5').update(apiKey).digest('hex');
+  const hashedAPIKey = createHash('sha256').update(apiKey).digest('hex');
 
   return hashedAPIKey;
 }
