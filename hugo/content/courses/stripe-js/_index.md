@@ -1,5 +1,5 @@
 ---
-lastmod: 2020-04-28T10:23:30-09:00
+lastmod: 2021-10-25T10:23:30-09:00
 title: Stripe Payments JavaScript Course
 description: A full Stripe Payments Course using Node.js & React
 weight: 0
@@ -16,7 +16,7 @@ tags:
 {{< vimeo 416381401 >}}
 
 
-<!-- {{< figure src="/courses/stripe-payments/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}} -->
+{{< figure src="/courses/stripe-payments/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}}
 
 The **Stripe Payments JavaScript Course** is a project-based guide to building fullstack payment solutions on the web with Node.js and React. 
 
@@ -38,11 +38,11 @@ You will build a fullstack web app with Node.js and React that contains the foll
 
 ## 🤔 Is this Course Right for Me?
 
-This course is beginner-friendly, but expects you to have some experience with web development and JavaScript. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. I stand by my work 100%, so just drop me a line if you are not satisfied for any reason. 
+This course is beginner-friendly, but expects you to have some experience with web development and JavaScript. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/fireship), but far more in-depth and comprehensive. I stand by my work 100%, so just drop me a line if you are not satisfied for any reason. 
 
 ## Is this Course Updated?
 
-The last code review and update was completed on **May 11th, 2020** using Stripe API version `2020-03-02`. The course receives regular updates to address major changes to the Stripe API and its Node SDKs. 
+The last code review and update was completed on **October 15th, 2021** using Stripe API version `2020-03-02`. The course receives regular updates to address major changes to the Stripe API and its Node SDKs. 
 
 
 ## 🏎️ Test Drive
