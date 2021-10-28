@@ -10,8 +10,8 @@ tags:
     - node
     - javascript
 
-youtube: 
-github: 
+youtube: MbqSMgMAzxU
+github: https://github.com/fireship-io/api-monetization-demo
 # disable_toc: true
 # disable_qna: true
 
@@ -22,14 +22,14 @@ github:
 #    rxdart: 0.20
 ---
 
-Building a monetized API might seem like a daunting task, but it's actually relatively simple when you bring in tools like Stripe's [Metered Billing](https://stripe.com/docs/billing/subscriptions/metered-billing) feature. There are 4 main steps in the process: 
+Building a monetized API for a SaaS prodct might seem like a daunting task, but it's actually relatively simple when you bring in tools like Stripe's [Metered Billing](https://stripe.com/docs/billing/subscriptions/metered-billing) feature. There are 4 main steps in the process: 
 
 1. Create an API
 2. Subscribe a customer to a recurring subscription in Stripe
 4. Create custom API keys to authenticate requests to the API
 3. Report API usage to Stripe
 
-The following lesson demonstrates the backend flow for building API with [Express.js](https://expressjs.com) and monetizing it with Stripe Metered Billing. This lesson is fairly advanced, check out the [Stripe JavaScript Course](/courses/stripe) for a complete introduction to payment flows.  
+The following lesson demonstrates the backend flow for building API with [Express.js](https://expressjs.com) and monetizing it with Stripe Metered Billing. This lesson is fairly advanced, check out the [Stripe JavaScript Course](/courses/stripe) for a complete breakdown of payment flows.  
 
 ## Initial Setup
 
@@ -37,7 +37,7 @@ The following lesson demonstrates the backend flow for building API with [Expres
 
 Sign up for a [Stripe account](https://dashboard.stripe.com) and create a new product. It is important that this product is **recurring** and **metered**.
 
-{{< figure src="stripe-metered-product.png" caption="Create a metered product on Stripe" >}}
+{{< figure src="img/stripe-metered-product.png" caption="Create a metered product on Stripe" >}}
 
 ### Node Setup
 
