@@ -22,7 +22,7 @@ github: https://github.com/fireship-io/api-monetization-demo
 #    rxdart: 0.20
 ---
 
-Building a monetized API for a SaaS prodct might seem like a daunting task, but it's actually relatively simple when you bring in tools like Stripe's [Metered Billing](https://stripe.com/docs/billing/subscriptions/metered-billing) feature. There are 4 main steps in the process: 
+Building a monetized API for a SaaS product might seem like a daunting task, but it's actually relatively simple when you bring in tools like Stripe's [Metered Billing](https://stripe.com/docs/billing/subscriptions/metered-billing) feature. There are 4 main steps in the process: 
 
 1. Create an API
 2. Subscribe a customer to a recurring subscription in Stripe
@@ -113,7 +113,7 @@ const apiKeys = {
 
 Node has a built `crypto` module for generating random values. It is important for API keys to be unique, so we make this a recursive function that verifies that the key is unique. 
 
-In addition, we don't want to store the actual vaule in the database, but rather a hash of the value. 
+In addition, we don't want to store the actual value in the database, but rather a hash of the value. 
 
 {{< file "js" "app.js" >}}
 ```javascript
