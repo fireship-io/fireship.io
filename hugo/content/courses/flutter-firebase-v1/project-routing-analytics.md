@@ -2,7 +2,7 @@
 title: Routing & Firebase Analytics
 description: Configure Flutter screen routing for Firebase Analytics
 weight: 22
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🚆
 vimeo: 407358481

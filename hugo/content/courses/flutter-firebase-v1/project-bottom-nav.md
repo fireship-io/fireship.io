@@ -2,7 +2,7 @@
 title: Bottom Navigation Bar
 description: Create a shared bottom navigation bar
 weight: 23
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🍫
 vimeo: 407358897

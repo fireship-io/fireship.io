@@ -2,7 +2,7 @@
 title: Current User Data in Firestore
 description: Connect a Firebase User to their Data in Firestore
 weight: 43
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 💥
 vimeo: 407365331

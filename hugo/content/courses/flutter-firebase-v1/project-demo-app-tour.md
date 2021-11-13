@@ -2,7 +2,7 @@
 title: App Tour
 description: Take a closer look at the quiz app that we're building
 weight: 20
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🎫
 free: true

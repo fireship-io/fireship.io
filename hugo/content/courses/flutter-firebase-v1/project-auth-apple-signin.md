@@ -2,7 +2,7 @@
 title: Sign In with Apple
 description: Sign in with Apple on Flutter & Firebase to comply with the latest iOS requirements
 weight: 35
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 free: true
 emoji: 🍎

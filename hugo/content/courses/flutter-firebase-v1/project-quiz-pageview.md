@@ -2,7 +2,7 @@
 title: Quiz PageView
 description: Advanced usage of the PageView widget
 weight: 55
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: ✔️
 vimeo: 336425781

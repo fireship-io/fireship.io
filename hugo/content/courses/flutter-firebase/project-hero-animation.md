@@ -2,7 +2,7 @@
 title: Hero Animation
 description: Create beautiful transitions between screens the with the Hero widget
 weight: 51
-lastmod: 2021-11-01T10:23:30-09:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 😎
 vimeo: 336425047
