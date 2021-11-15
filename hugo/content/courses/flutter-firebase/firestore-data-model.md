@@ -1,17 +1,24 @@
 ---
 title: Database Model
 description: Firestore document structure for quizzes.
-weight: 41
+weight: 40
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
+vimeo:
 emoji: 💽
+chapter_start: Firestore
 ---
 
 In order to build an app identical to the live demo, you need to populate Firestore with data. 
 
-## Populate your Database with Quiz Data
+## Task: Populate your Database with Quiz Data
 
 I recommend cloning the [Quiz Questions Repo](https://github.com/fireship-io/fireship-quizapp-data). It is a node script that allows you to populate all the quiz data in your own database with a single command.
+
+At the very least, create the following documents from the schema images below.
+
+1. One document located at `topics/my-topic`. 
+1. One document located at `quizzes/my-quiz`.
 
 ## Database Model
 

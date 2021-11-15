@@ -1,12 +1,25 @@
-<!-- {{< file "flutter" "auth.dart" >}}
+---
+title: Login Screen
+description: Build a login screen with Anonymous sign in. 
+weight: 31
+lastmod: 2021-11-11T10:23:30-09:00
+draft: false
+emoji: 👶
+vimeo: 336023357
+video_length: 3:15
+---
+
+# Anonymous Auth
+
+Enable anonymous auth in the Firebase console, then implemment it in the auth service. 
+
+{{< file "flutter" "services/auth.dart" >}}
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
-  final userStream = FirebaseAuth.instance.authStateChanges();
-  final user = FirebaseAuth.instance.currentUser;
-
-    /// Anonymous Firebase login
+    // ..
+  /// Anonymous Firebase login
   Future<void> anonLogin() async {
     try {
       await FirebaseAuth.instance.signInAnonymously();
@@ -18,20 +31,15 @@ class AuthService {
   Future<void> signOut() async {
     await FirebaseAuth.instance.signOut();
   }
-
-
 }
 ```
 
+## Login Screen
 
-## Login
+Create a login screen and resuable button to support multiple login methods. 
 
-{{< file "flutter" "main.dart" >}}
+{{< file "flutter" "login.dart" >}}
 ```dart
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quizapp/services/auth.dart';
-
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -96,13 +104,13 @@ class LoginButton extends StatelessWidget {
     );
   }
 }
-
 ```
 
+## Sign Out
 
-## Profile
+Use the signout method in the Profile screen. 
 
-{{< file "flutter" "profile.dart" >}}
+{{< file "flutter" "main.dart" >}}
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/auth.dart';
@@ -127,4 +135,4 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-``` -->
+```

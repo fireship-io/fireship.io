@@ -4,9 +4,9 @@ description: Install Flutter and native IDEs
 weight: 3
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 👶
-vimeo: 336023165
-video_length: 5:37
+emoji: 💾
+vimeo: 645766239
+video_length: 3:20
 ---
 
 ## Tasks
