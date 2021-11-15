@@ -4,8 +4,9 @@ description: How to use JSON Serializable with Firestore
 weight: 41
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-vimeo:
-emoji: 💽
+vimeo: 645765479
+emoji: 🗿
+video_length: 3:20
 ---
 
 [JSON serializable](https://pub.dev/packages/json_serializable) provides a way to covert a dynamic Firestore Map to strongly typed Dart class instance.

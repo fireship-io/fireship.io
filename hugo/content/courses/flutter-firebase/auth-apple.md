@@ -5,11 +5,13 @@ weight: 33
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🍎
-vimeo: 336023357
-video_length: 3:15
+vimeo:
+video_length: 0:00
 ---
 
 🚨 Video is a work in progress.
+
+Refer to the [Official Guide](https://firebase.flutter.dev/docs/auth/social#apple). 
 
 As of April 2020, all native iOS apps that offer social auth methods (Google, Facebook, etc.) MUST also include Apple Sign In as an option. See the official [guidance from Apple](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple). 
 

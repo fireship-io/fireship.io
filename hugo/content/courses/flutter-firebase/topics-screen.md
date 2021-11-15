@@ -5,8 +5,8 @@ weight: 50
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 📳
-vimeo: 336424429
-video_length: 5:25
+vimeo: 645767062
+video_length: 3:12
 chapter_start: Core UI
 ---
 

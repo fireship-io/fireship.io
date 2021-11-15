@@ -4,10 +4,9 @@ description: Using Provider for state management
 weight: 12
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 👶
-vimeo: 
-free: true
-video_length: 4:55
+emoji: 🤝
+vimeo: 645859684
+video_length: 2:17
 ---
 
 [Provider](https://pub.dev/packages/provider) is one of the most popular state management libraries in Flutter. It wraps `InheritedWidget` and provides an easy way to share data between widgets.

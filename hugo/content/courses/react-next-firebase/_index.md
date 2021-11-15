@@ -38,7 +38,20 @@ You will build a full-stack **Social Blogging Platform** inspired by sites like 
 
 This course is intermediate level 🟦 and will challenge you to build an app that delivers high-performance and search engine visibility via server-side rendering. It assumes you have at least basic knowledge of web programming with familiarity of JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and followed in a long linear format.
 
-### Test drive
+<div class="row tweet-grid">
+{{< testimonial name="Lee Robinson" handle="@leeerob" img="lee.jpg" >}}
+    260,000 views already? 🤯 @fireship_dev <span class="hi">this video is incredible</span>.
+{{< /testimonial >}}
+{{< testimonial name="Tiger Abrodi" handle="@TAbrodi" img="tiger.jpg" >}}
+I finished the "Next.js Firebase Full Course" by @fireship_dev, <span class="hi">such an awesome course</span> 🎉
+{{< /testimonial >}}
+
+{{< testimonial name="Shehriyar Nadeem" handle="@Sharlil" img="shar.jpg" >}}
+I have been going through this awesome course by fireship for Next js and <span class="hi">it's brilliant</span>
+{{< /testimonial >}}
+</div>
+
+## 🚀 Test drive
 
 Visit the demo app and give it a test drive before you enroll. 
 
@@ -46,10 +59,10 @@ Visit the demo app and give it a test drive before you enroll.
 <a href="https://next.fireship.io" class="btn btn-orange">Nextfire Live Demo</a>
 </div>
 
-### When was the course last updated?
+## When was the course last updated?
 
 <span class="tag tag-sm tag-pro">Updated Oct 27th, 2021</span> <span class="tag tag-sm tag-next">Next v12.0</span>
 
-### How do I enroll?
+## How do I enroll?
 
 The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 

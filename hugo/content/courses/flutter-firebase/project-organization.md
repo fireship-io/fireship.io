@@ -5,13 +5,13 @@ weight: 22
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🍱
-vimeo: 336344350
+vimeo: 645766751
 video_length: 3:19
 ---
 
 ## Task 
 
-Create a director and file for each screen in the app. 
+Create a directory and file for each screen in the app. 
 
 - about
 - home

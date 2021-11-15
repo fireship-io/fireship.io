@@ -1,13 +1,17 @@
 ---
-title: Profile Page
+title: User Profile
 description: Create a profile page with the total quiz score
 weight: 54
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 😎
-vimeo: 336425047
-video_length: 1:10
+emoji: 🤹‍♀️
+vimeo: 645880283
+video_length: 1:33
 ---
+
+## Profile Page
+
+Customize your profile screen with the total quiz score.
 
 {{< file "flutter" "profile.dart" >}}
 ```dart

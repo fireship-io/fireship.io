@@ -1,12 +1,12 @@
 ---
 title: Routing
-description: Define Named Routes in Flutter
+description: Configure named routes for each screen
 weight: 23
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🚆
-vimeo: 407358481
-video_length: 2:03
+vimeo: 645766831
+video_length: 3:32
 ---
 
 ## Routing Configuration

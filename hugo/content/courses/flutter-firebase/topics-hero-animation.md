@@ -4,9 +4,9 @@ description: Create beautiful transitions between screens the with the Hero widg
 weight: 51
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 😎
-vimeo: 336425047
-video_length: 1:10
+emoji: 🦸
+vimeo: 645859506
+video_length: 4:08
 ---
 
 ## Task: Image Assets

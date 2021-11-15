@@ -4,8 +4,8 @@ description: Add and hot reload any font from Google Fonts
 weight: 25
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 🎨
-vimeo: 336138357
+emoji: 🗛
+vimeo: 645766700
 video_length: 0:45
 ---
 

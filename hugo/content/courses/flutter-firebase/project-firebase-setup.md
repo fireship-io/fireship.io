@@ -1,12 +1,12 @@
 ---
 title: Firebase setup
-description: Add Firebase to Flutter
+description: Add Firebase to Flutter for iOS & Android
 weight: 21
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 👶
-vimeo: 336023357
-video_length: 3:15
+emoji: 🔥
+vimeo: 645766493
+video_length: 4:30
 ---
 
 ## Tasks

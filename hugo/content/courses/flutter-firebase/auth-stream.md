@@ -4,13 +4,15 @@ description: Listen to the current Firebase user
 weight: 30
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 🔑
-vimeo: 336023357
-video_length: 3:15
+emoji: 🌊
+vimeo: 645765099
+video_length: 3:18
 chapter_start: User Authentication
 ---
 
 # Auth Service
+
+Create a file named `auth.dart` in the `services` directory.
 
 {{< file "flutter" "services/auth.dart" >}}
 ```dart

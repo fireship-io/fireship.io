@@ -1,12 +1,13 @@
 ---
 title: Database Model
-description: Firestore document structure for quizzes.
+description: Model relationships between quiz entities in Firestore
 weight: 40
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-vimeo:
+vimeo: 645765586
 emoji: 💽
 chapter_start: Firestore
+video_length: 3:00
 ---
 
 In order to build an app identical to the live demo, you need to populate Firestore with data. 

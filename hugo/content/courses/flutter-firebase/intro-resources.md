@@ -4,8 +4,7 @@ description: How to be successful in this course
 weight: 2
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 
-vimeo: 
+vimeo: 645855130
 emoji: 📚
 video_length: 1:42
 ---

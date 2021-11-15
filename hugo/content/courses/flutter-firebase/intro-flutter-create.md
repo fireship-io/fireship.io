@@ -4,9 +4,9 @@ description: Create a new flutter app with a bundle ID & dependencies
 weight: 4
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 👶
-vimeo: 
-video_length: 5:37
+emoji: 🏁
+vimeo: 645766000
+video_length: 3:06
 ---
 
 ## Create an App

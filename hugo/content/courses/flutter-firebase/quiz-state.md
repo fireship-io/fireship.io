@@ -4,9 +4,9 @@ description: Use Provider to separte state from the parent widget
 weight: 60
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 😎
-vimeo: 336425047
-video_length: 1:10
+emoji: ✨
+vimeo: 645855420
+video_length: 4:09
 chapter_start: Quiz UI
 ---
 

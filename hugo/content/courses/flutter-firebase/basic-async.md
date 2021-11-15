@@ -4,9 +4,9 @@ description: Use StreamBuilder & FutureBuilder to handle async data
 weight: 11
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 👶
-vimeo: 
-video_length: 4:55
+emoji: ⏱️
+vimeo: 645859760
+video_length: 1:45
 ---
 
 ## Example of StreamBuilder
