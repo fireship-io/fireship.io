@@ -1,0 +1,73 @@
+---
+title: Flutter Create
+description: Create a new flutter app with a bundle ID & dependencies
+weight: 4
+lastmod: 2021-11-11T10:23:30-09:00
+draft: false
+emoji: 🏁
+vimeo: 645766000
+video_length: 3:06
+---
+
+## Create an App
+
+Create an app with a bundle ID. Choose any bundle ID you'd like, following the reverse domain naming convention.
+
+{{< file "terminal" "command line" >}}
+```bash
+flutter create --org io.fireship myapp
+```
+
+## Dependencies
+
+The current version of this course uses the following dependencies. For the most reliable results, you should use the same versions.
+
+Flutter & Firebase regularly update these packages and later versions may break the code in this course, so update them at your own risk. 
+
+{{< file "flutter" "pubspec.yaml" >}}
+```yaml
+name: REPLACE_WITH_YOUR_APP_NAME
+description: A new Flutter project.
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  # firebase_core: 1.8.0
+  # cloud_firestore: 2.5.0
+  # firebase_auth: 3.1.4
+  # google_sign_in: 5.2.0
+  # sign_in_with_apple: 3.2.0
+  # crypto: 3.0.1
+  # font_awesome_flutter: 9.2.0
+  # google_fonts: 2.1.0
+  # provider: 6.0.1
+  # rxdart: 0.27.2
+  # json_annotation: 4.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^1.0.0
+
+  # build_runner: 2.1.4
+  # json_serializable: 6.0.0
+
+flutter:
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - assets/
+  #   - assets/covers/
+  #   - assets/congrats.gif
+```

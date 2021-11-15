@@ -1,13 +1,13 @@
 ---
 title: App Tour
-description: Take a closer look at the quiz app that we're building
+description: Build an interactive fullstack quiz app for iOS & Android
 weight: 20
-lastmod: 2020-04-12T10:11:30-02:00
+lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🎫
 free: true
-vimeo: 336343659
+vimeo: 645855070
 chapter_start: Let's Build an App
-video_length: 2:45
+video_length: 1:38
 ---
 
