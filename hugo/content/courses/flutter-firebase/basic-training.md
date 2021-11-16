@@ -11,9 +11,11 @@ video_length: 12:05
 chapter_start: Basic Training
 ---
 
-🚨 Video is in Progress 🚨
+<div class="vid-center">
+    {{< youtube 1xipg02Wu8s >}}
+</div>
 
-Before we build our first app, let's get familiar with the core UI building blocks of [Flutter](https://flutter.dev/). 
+Before we build our first app, let's get familiar with the core UI building blocks of [Flutter](https://flutter.dev/). This tutorial is a quick introduction to the basic building blocks of Flutter that we'll be using throughout the rest of the course. Play around with these code samples to get a feel for how UI design in Flutter works.
 
 ## Main Function
 
@@ -21,7 +23,11 @@ Flutter will inflate the widget passed to `runApp` into the root widget of the a
 
 {{< file "flutter" "main.dart" >}}
 ```dart
+import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());
+}
 ```
 
 ## Stateless Widgets
@@ -30,10 +36,13 @@ Flutter will inflate the widget passed to `runApp` into the root widget of the a
 
 {{< file "flutter" "main.dart" >}}
 ```dart
-import 'package:flutter/material.dart';
+class MyApp extends StatelessWidget {
+  const MyApp({ Key? key }) : super(key: key);
 
-void main() {
-  runApp(const MyApp());
+  @override
+  Widget build(BuildContext context) {
+    // return a widget here
+  }
 }
 ```
 
