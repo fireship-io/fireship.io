@@ -16,19 +16,16 @@ The pattern below is useful for listening to a realtime stream that depends on t
 {{< file "flutter" "firestore.dart" >}}
 ```dart
 class FirestoreService {
-  /// Updates the current user's report document after completing quiz
-  Future<void> updateUserReport(Quiz quiz) {
-    var user = AuthService().user!;
-    var ref = _db.collection('reports').doc(user.uid);
-
-    var data = {
-      'total': FieldValue.increment(1),
-      'topics': {
-        quiz.topic: FieldValue.arrayUnion([quiz.id])
+  /// Listens to current user's report document in Firestore
+  Stream<Report> streamReport() {
+    return AuthService().userStream.switchMap((user) {
+      if (user != null) {
+        var ref = _db.collection('reports').doc(user.uid);
+        return ref.snapshots().map((doc) => Report.fromJson(doc.data()!));
+      } else {
+        return Stream.fromIterable([Report()]);
       }
-    };
-
-    return ref.set(data, SetOptions(merge: true));
+    });
   }
 }
 ```
