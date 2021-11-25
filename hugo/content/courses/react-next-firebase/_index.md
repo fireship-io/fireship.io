@@ -46,8 +46,8 @@ This course is intermediate level 🟦 and will challenge you to build an app th
 I finished the "Next.js Firebase Full Course" by @fireship_dev, <span class="hi">such an awesome course</span> 🎉
 {{< /testimonial >}}
 
-{{< testimonial name="Shehriyar Nadeem" handle="@Sharlil" img="shar.jpg" >}}
-I have been going through this awesome course by fireship for Next js and <span class="hi">it's brilliant</span>
+{{< testimonial name="John Guest" handle="@JohnGue47344579" img="john.png" >}}
+I'm doing his Nextjs course. It's really exciting. Its <span class="hi">100x better</span> than any Udemy course.
 {{< /testimonial >}}
 </div>
 

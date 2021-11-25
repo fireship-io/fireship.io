@@ -1,12 +1,13 @@
 ---
 title: File Explorer
-description: Quickly navigate your file system
-weight: 3
+description: Quickly navigate the file system
+weight: 5
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
-emoji: 🧐
-vimeo: 645855281
-video_length: 3:47
+emoji: 🗺️
+vimeo: 649706924
+video_length: 1:43
+free: true
 ---
 
 ## Tasks

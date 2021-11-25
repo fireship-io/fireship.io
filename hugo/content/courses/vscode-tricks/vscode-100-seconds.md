@@ -8,4 +8,5 @@ emoji: ⚡
 vimeo: 645855281
 video_length: 3:47
 chapter_start: Get Started
+free: true
 ---

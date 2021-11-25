@@ -145,5 +145,14 @@ export const plans = {
     url: '/courses/dart/',
     crypto: true,
   },
+  vscodeTricks: {
+    id: 'vscodeTricks',
+    sku:  'sku_Kf57qdqUerVTUS',
+    description: 'VS Code Magic Tricks Course ✨',
+    type: 'order',
+    price: 1900,
+    url: '/courses/vscode-tricks/',
+    crypto: true,
+  }
 };
 
