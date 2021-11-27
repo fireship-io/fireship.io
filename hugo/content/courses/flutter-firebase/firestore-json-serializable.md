@@ -9,11 +9,11 @@ emoji: 🗿
 video_length: 3:20
 ---
 
-[JSON serializable](https://pub.dev/packages/json_serializable) provides a way to covert a dynamic Firestore Map to strongly typed Dart class instance.
+[JSON serializable](https://pub.dev/packages/json_serializable) provides a way to convert a dynamic Firestore Map to strongly typed Dart class instance.
 
 ## Models
 
-Creat a file named `model.dart` in the `services` folder. Each document or object in the database will be represented by a class.
+Create a file named `models.dart` in the `services` folder. Each document or object in the database will be represented by a class.
 
 I would recommend using null-safety for every property, then setting a default value if the property is in fact null in Firestore.
 
