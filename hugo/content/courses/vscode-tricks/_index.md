@@ -30,7 +30,7 @@ The **VS Code Magic Tricks** course will teach you how to write code *faster* an
 
 ## 🤔 Is this Course Right for Me?
 
-This course is for beginners and experienced developers alike. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/fireship), but far more in-depth and comprehensive. 
+This course is for beginners and experienced developers alike. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/c/Fireship), but far more in-depth and comprehensive. 
 
 ## How do I enroll?
 
