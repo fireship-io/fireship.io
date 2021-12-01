@@ -130,7 +130,7 @@ Machine learning models are trained by iterating over batches of samples and slo
   }
 ```
 
-<p class="tip">What the hell is a tensor? There's no easy explanation, but just think `Tensor === Array`. It's really just an abstraction of a multi-dimensional array for doing math in TensorFlow. If you want a detailed physical explanation, watch this professor's [breakdown](https://youtu.be/f5liqUk0ZTw).</p>
+<p class="tip">What the hell is a tensor? There's no easy explanation, but just think `Tensor === Array`. It's really just an abstraction of a multi-dimensional array for doing math in TensorFlow. If you want a detailed physical explanation, watch this professor's <a href="https://youtu.be/f5liqUk0ZTw">breakdown</a>.</p>
 
 ### Step 5 - Make a Prediction with the Model
 
