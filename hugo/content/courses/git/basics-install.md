@@ -14,15 +14,15 @@ Check your machine's current git version:
 
 {{< file "terminal" "command line" >}}
 ```bash
-git config --global user.name "Jeff Delaney"
-git config --global user.email "hello@fireship.io"
+git --version
 ```
 
 ## Set a Username & Email
 
 {{< file "terminal" "command line" >}}
 ```bash
-git cong 
+git config --global user.name "Jeff Delaney"
+git config --global user.email "hello@fireship.io"
 ```
 
 ## Windows Installation
