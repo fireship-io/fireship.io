@@ -33,7 +33,6 @@ You will build a full-stack **Social Blogging Platform** inspired by sites like 
 - 🚀 Security & Deployment
 
 
-
 ## 🤔 Is this Course Right for Me?
 
 This course is intermediate level 🟦 and will challenge you to build an app that delivers high-performance and search engine visibility via server-side rendering. It assumes you have at least basic knowledge of web programming with familiarity of JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and followed in a long linear format.
@@ -61,7 +60,7 @@ Visit the demo app and give it a test drive before you enroll.
 
 ## When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated Oct 27th, 2021</span> <span class="tag tag-sm tag-next">Next v12.0</span>
+<span class="tag tag-sm tag-pro">Updated Dec 9th, 2021</span> <span class="tag tag-sm tag-next">Next v12.0</span>
 
 ## How do I enroll?
 
