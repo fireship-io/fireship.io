@@ -1,7 +1,7 @@
 ---
 title: git status
 description: Check the status of a repository
-weight: 13
+weight: 12
 lastmod: 2021-09-05T10:23:30-09:00
 draft: false
 vimeo: 599073941

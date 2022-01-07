@@ -22,7 +22,7 @@ git config --global user.email "hello@fireship.io"
 
 {{< file "terminal" "command line" >}}
 ```bash
-git cong 
+git config --list 
 ```
 
 ## Windows Installation
