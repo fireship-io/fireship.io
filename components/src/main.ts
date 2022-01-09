@@ -14,6 +14,12 @@ const app = initializeApp(environment.firebase);
 import { initializeAnalytics } from 'firebase/analytics';
 initializeAnalytics(app)
 
+import { initializeAppCheck, ReCaptchaV3Provider } from 'firebase/app-check';
+const appCheck = initializeAppCheck(app, {
+  provider: new ReCaptchaV3Provider('6LeswQAeAAAAAJEcDr64c4HiAaHPRYu4mFTqqJdc'),
+  isTokenAutoRefreshEnabled: true
+});
+
 // import * as firebase from 'firebase/app';
 // import 'firebase/compat/auth';
 // import 'firebase/compat/firestore';

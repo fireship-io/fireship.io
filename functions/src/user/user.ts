@@ -16,13 +16,13 @@ export const newUserSetup = functions.auth.user().onCreate(async (user, context)
         joined: Date.now()
     }, { merge: true })
 
-    const templateId = 'd-9976c169423544e8a0f59cc8d21fa54f';
-
-    const emailMsg = msg([email], { templateId });
+    // const templateId = 'd-9976c169423544e8a0f59cc8d21fa54f';
+    // const emailMsg = msg([email], { templateId });
+    // await sendEmail([emailMsg])
 
     await createCustomer(user) 
 
-    return sendEmail([emailMsg]);
+    return true;
 });
 
 export const proSignup = functions.firestore.document('users/{userId}').onUpdate(async (change, context) => {
