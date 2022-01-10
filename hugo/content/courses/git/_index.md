@@ -30,7 +30,7 @@ This course will teach the basics of [Git](https://git-scm.com/) and [GitHub](ht
 
 ## 🤔 Is this Course Right for Me?
 
-This course is beginner level 🟢 and will walk you through the fundamentals of Git & GitHub. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and followed in a long linear format.
+This course is beginner level 🟢 and will walk you through the fundamentals of Git & GitHub. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/c/Fireship/), but far more in-depth and followed in a long linear format.
 
 
 ### When was the course last updated?

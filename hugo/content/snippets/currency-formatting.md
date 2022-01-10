@@ -22,7 +22,7 @@ tags:
 
 type: lessons
 ---
-The [Intl.NumberFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) object enables language-sensitive number formatting. We can use this to convert currency, numbers, percentages, units, and other notation into formatted strings. This is particularly useful in eCommerce applications, with examples like displaying an item price or recipt printing. Another example are social platforms like [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA), which use compact notation to display high counts of views and followers.
+The [Intl.NumberFormat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat) object enables language-sensitive number formatting. We can use this to convert currency, numbers, percentages, units, and other notation into formatted strings. This is particularly useful in eCommerce applications, with examples like displaying an item price or recipt printing. Another example are social platforms like [YouTube](https://www.youtube.com/c/Fireship/), which use compact notation to display high counts of views and followers.
 
 ## Currency formatting 
 

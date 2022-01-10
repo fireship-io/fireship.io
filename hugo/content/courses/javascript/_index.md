@@ -15,4 +15,4 @@ This course is *beginner to intermediate* level and designed to teach you JavaSc
 
 ### 🔨 Work in Progress
 
-This course is being released in weekly intervals and is currently a work in progress. Make sure to [subscribe on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) to catch the next episode. 
+This course is being released in weekly intervals and is currently a work in progress. Make sure to [subscribe on YouTube](https://www.youtube.com/c/Fireship/) to catch the next episode. 

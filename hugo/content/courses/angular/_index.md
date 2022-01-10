@@ -44,7 +44,7 @@ You will build a full-stack [Kanban (看板)](https://en.wikipedia.org/wiki/Kanb
 
 ### 🤔 Is this Course Right for Me?
 
-This course is intermediate level and designed to expose you to real-world challenges when building PWAs with Angular. It assumes you have at least basic knowledge of web programming and basic skills in JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
+This course is intermediate level and designed to expose you to real-world challenges when building PWAs with Angular. It assumes you have at least basic knowledge of web programming and basic skills in JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/c/Fireship/), but far more in-depth and comprehensive. 
 
 ## Is this Course Updated?
 

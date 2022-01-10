@@ -38,7 +38,7 @@ You will build a fullstack web app with Node.js and React that contains the foll
 
 ## 🤔 Is this Course Right for Me?
 
-This course is beginner-friendly, but expects you to have some experience with web development and JavaScript. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/fireship), but far more in-depth and comprehensive. I stand by my work 100%, so just drop me a line if you are not satisfied for any reason. 
+This course is beginner-friendly, but expects you to have some experience with web development and JavaScript. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/c/Fireship/), but far more in-depth and comprehensive. I stand by my work 100%, so just drop me a line if you are not satisfied for any reason. 
 
 ## Is this Course Updated?
 
