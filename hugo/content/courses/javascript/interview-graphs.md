@@ -68,7 +68,7 @@ function bfs(start) {
 
     const visited = new Set();
 
-    const queue = [start]
+    const queue = [start];
 
 
     while (queue.length > 0) {
@@ -79,7 +79,6 @@ function bfs(start) {
 
 
         for (const destination of destinations) {
-;
 
             if (destination === 'BKK')  {
                 console.log(`BFS found Bangkok!`)
