@@ -7,6 +7,7 @@ draft: false
 vimeo: 
 emoji: 🦾
 video_length: 2:00
+free: true
 ---
 
 <div class="vid-center">
