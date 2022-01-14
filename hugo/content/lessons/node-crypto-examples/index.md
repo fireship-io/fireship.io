@@ -24,7 +24,7 @@ github: https://github.com/fireship-io/node-crypto-examples
 
 The mysterious discipline of [cryptography](https://en.wikipedia.org/wiki/Cryptography) is the backbone of the internet. Without it, there would be no secrets and no privacy in the digital world. As a developer, you don’t need to understand the math that goes into cryptography, but it’s absolutely essential to know key concepts like hashes, salt, keypairs, encryption, and signing. 
 
-The follow tutorial explains essential cryptography concepts and implements then with the builtin [Node.js crypto module](https://nodejs.org/api/crypto.html).
+The following tutorial explains essential cryptography concepts and implements them with the builtin [Node.js crypto module](https://nodejs.org/api/crypto.html).
 
 
 ## 1. Hash
@@ -33,7 +33,7 @@ The word hash actually has [culinary roots](https://softwareengineering.stackexc
 
 - The same input will always produce the same output.
 - Fast to compute, but computationally expensive to find the original input
-- Small proability of collision (unique)
+- Small probability of collision (unique)
 
 {{< figure src="img/hash.png" caption="hash function diagram" >}}
 
@@ -151,7 +151,7 @@ console.log(hmac)
 
 ## 4. Symmetric Encryption
 
-Encryption is the process making a message confidential (like a hash), while allowing it to be reversable (decrypted) with the proper key. Each time a message is encrypted it is randomized to produce a different output. In *symmetric encryption*, the same key is used to encrypt and decrypt the message. 
+Encryption is the process of making a message confidential (like a hash), while allowing it to be reversible (decrypted) with the proper key. Each time a message is encrypted it is randomized to produce a different output. In *symmetric encryption*, the same key is used to encrypt and decrypt the message. 
 
 - The same input will produce a different output, unlike hashes 
 - Encrypted message can be reversed with the key
@@ -190,7 +190,7 @@ console.log(`Deciphered: ${decryptedMessage.toString('utf-8')}`);
 
 ## 5. Keypairs
 
-Using a shared key works for encryption works, but the problem is that both parties must agree upon the key. This is problematic in the real world because it's not practical or secure to share across a network. The solution is to use an algoritm like [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) that generates a keypair containing a public and private key. As their names indicate, the private key should be kept secret, while the public key can be shared freely. 
+Using a shared key works for encryption works, but the problem is that both parties must agree upon the key. This is problematic in the real world because it's not practical or secure to share across a network. The solution is to use an algorithm like [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) that generates a keypair containing a public and private key. As their names indicate, the private key should be kept secret, while the public key can be shared freely. 
 
 {{< figure src="img/keypairs.png" caption="keypair diagram" >}}
 
@@ -253,7 +253,7 @@ console.log(decryptedData.toString('utf-8'));
 
 Signing is the process of creating a digital signature of a message. A signature is a hash of the original message which is then encrypted with the sender's private key. 
 
-The signature can be verfied by the recipient using the public key of the sender. This can guarantee the the original message is authentic and unmodified. 
+The signature can be verified by the recipient using the public key of the sender. This can guarantee the original message is authentic and unmodified. 
 
 {{< figure src="img/signing.png" caption="signing diagram" >}}
 
@@ -286,5 +286,4 @@ const isVerified = verifier.verify(publicKey, siguature, 'hex');
 
 console.log(isVerified);
 ```
-
 
