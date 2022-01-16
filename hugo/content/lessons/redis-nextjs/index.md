@@ -24,7 +24,7 @@ github: https://github.com/fireship-io/redis-nextjs-fulltext-search
 
 [Redis](https://redis.io/) is an in-memory key-value store that is often used as a cache to make  traditional databases faster. However, it has evolved into a [multimodel database](https://redis.io/modules) capable of fulltext search, graph relationships, AI workloads, and more. 
 
-The following tutorial, we use [Next.js](https://nextjs.org/) and Redis Enterprise Cloud to build a webapp that can store JSON data in the cloud, then query it with results that update instantly in the UI. 
+In the following tutorial, we use [Next.js](https://nextjs.org/) and Redis Enterprise Cloud to build a webapp that can store JSON data in the cloud, then query it with results that update instantly in the UI. 
 
 ## Initial Setup
 
@@ -48,7 +48,7 @@ cd myapp
 npm install redis-om
 ```
 
-Now, we need tell Next.js how to connect to the database. Create a file to hold an environment variable called `REDIS_URL`. Replace the values with config details provided by Redis Enterprise Cloud. 
+Now, we need to tell Next.js how to connect to the database. Create a file to hold an environment variable called `REDIS_URL`. Replace the values with config details provided by Redis Enterprise Cloud. 
 
 {{< file "cog" ".env.local" >}}
 ```text
@@ -167,7 +167,7 @@ export default function CarForm() {
 
 ## Fulltext Instant Search
 
-Now that we can save entites, let's use RediSearch to index and query our data. 
+Now that we can save entities, let's use RediSearch to index and query our data. 
 
 ### Create an Index
 
