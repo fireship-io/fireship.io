@@ -9,6 +9,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   sendPasswordResetEmail,
+  sendSignInLinkToEmail, 
+  isSignInWithEmailLink, 
+  signInWithEmailLink
 } from 'firebase/auth';
 import { getAnalytics, logEvent, setUserId, setUserProperties } from 'firebase/analytics';
 import { getFirestore, doc } from 'firebase/firestore';
@@ -109,6 +112,36 @@ export class AuthService {
 
   async resetPassword(email: string) {
     return sendPasswordResetEmail(this.auth, email);
+  }
+
+  async sendPasswordlessEmail(email: string) {
+    const actionCodeSettings = {
+      url: 'https://fireship.io/dashboard',
+      // url: 'http://localhost:1313/dashboard',
+      // This must be true.
+      handleCodeInApp: true,
+    };
+
+    const res = sendSignInLinkToEmail(this.auth, email, actionCodeSettings);
+    window.localStorage.setItem('emailForSignIn', email);
+
+    return res;
+
+  }
+
+  async passwordlessSignin() {
+
+    if (isSignInWithEmailLink(this.auth, window.location.href)) {
+      let email = window.localStorage.getItem('emailForSignIn');
+      if (!email) {
+        email = window.prompt('Please provide your email for confirmation');
+      }
+
+      const credential =  signInWithEmailLink(this.auth, email, window.location.href);
+      window.localStorage.removeItem('emailForSignIn');
+      return this.loginHandler(credential);
+    }
+    
   }
 
   async loginHandler(promise) {
