@@ -1,7 +1,7 @@
 ---
 title: Web3 NFT Tutorial
-lastmod: 2021-12-26T13:14:09-07:00
-publishdate: 2021-12-26T13:14:09-07:00
+lastmod: 2022-01-17T13:14:09-07:00
+publishdate: 2022-01-17T13:14:09-07:00
 author: Jeff Delaney
 dra: false
 description: Mint an NFT with Hardhat and Solidity, then interact with the smart contract using Ethers.js and React. 
