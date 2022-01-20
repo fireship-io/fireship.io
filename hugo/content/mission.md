@@ -22,20 +22,20 @@ Building software is not easy and never will be. Unhappiness grows exponentially
 
 > The only true wisdom is in knowing you know nothing - Socrates
 
-Do not be limited by any single paradigm or narrow set of ideas. The best-practices of today will be called anti-patterns tomorrow. End-users do not care *how* you built the product, but rather *what* it does to make their lives better. 
+Do not be limited by any single paradigm or narrow set of ideas. The best practices of today will be called anti-patterns tomorrow. End-users do not care *how* you built the product, but rather *what* it does to make their lives better. 
 
 ### 3. 🍞 Embrace Simplicity, Ignore Hype
 
-> I have great expectations for the future, because the past was highly overrated - Sylvester Stallone
+> I have great expectations for the future because the past was highly overrated - Sylvester Stallone
 
-There is a complex ecosystem of competing interests in the OSS industry, many of which are built on hype. It is never easy to navigate, but always ask yourself *is this the best tool for the job*?. Just because *Tool X* has a fancy interface and is used by *Hipster App Inc* does not mean you should use it. We have a tendency to over-engineer everything - fight this urge.
+There is a complex ecosystem of competing interests in the OSS industry, many of which are built on hype. It is never easy to navigate, but always ask yourself *is this the best tool for the job*?. Just because *Tool X* has a fancy interface and is used by *Hipster App Inc* does not mean you should use it. We tend to over-engineer everything - fight this urge.
  
 
 ### 4. 🧰 *Code* is Just a Tool
 
 > However tight things are, you still need to have the big picture at the forefront of your mind. - Richard Branson
 
-Software is about solving problems for people. *Code* is just one piece of the bigger puzzle that is *building a product*. Do not get trapped into over-thinking the technical aspects of a project. Take a walk outside and think about the mission, the end user, the marketing, and the community. The more you focus on the smallest details, the more likely you are to lose sight of the big picture. 
+Software is about solving problems for people. *Code* is just one piece of the bigger puzzle that is *building a product*. Do not get trapped into over-thinking the technical aspects of a project. Take a walk outside and think about the mission, the end-user, the marketing, and the community. The more you focus on the smallest details, the more likely you are to lose sight of the big picture. 
 
 ### 5. 🚀 Ship It
 
