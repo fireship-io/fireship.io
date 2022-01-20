@@ -20,7 +20,7 @@ Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for 
 
 ### Option 1 - Simple Typo Fixes
 
-For small issues, like a typo or broken link, use Github's inline file editor or web editor(open by pressing <kbd>.</kbd> in your fork's code tab) to make the fix and submit a pull request. 
+For small issues, like a typo or broken link, use Github's inline file editor or web editor (open by pressing <kbd>.</kbd> in your fork's code tab) to make the fix and submit a pull request. 
 
 ### Option 2 - Work on your own Fork
 
