@@ -27,9 +27,9 @@ This site contains links to other websites not owned by Fireship. In general, th
 Fireship is committed to complying with the Children’s Online Privacy Protection Act (COPPA). We do not use our services to intentionally solicit data from or market to children under the age of 13. We encourage parents and guardians to report any suspicions that a child has provided us with information without their consent. We will take reasonable action to remove this information.
 
 ### Your Choices
-**Opt-Out of Third Party Advertisement Cookies**: You may opt out of a third-party vendor's use of cookies for interest based advertising by visiting aboutads.info.
+**Opt-Out of Third Party Advertisement Cookies**: You may opt out of a third-party vendor's use of cookies for interest based advertising by visiting https://aboutads.info.
 
-**Do Not Track Browser settings**: If you enable Do Not Track settings in the browser you are using, Fireship will not use information about websites you visit, other than our site. Learn more about Do Not Track by visiting allaboutdnt.com.
+**Do Not Track Browser settings**: If you enable Do Not Track settings in the browser you are using, Fireship will not use information about websites you visit, other than our site. Learn more about Do Not Track by visiting https://allaboutdnt.com.
 
 **Email Communication Opt-Out**: If you receive promotional emails from Fireship, you can unsubscribe by clicking the bottom Unsubscribe or Opt-Out link at the bottom of every email.
 
