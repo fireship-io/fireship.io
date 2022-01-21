@@ -27,8 +27,7 @@ Web developers already have a variety of interesting options for using JavaScrip
 
 {{< figure src="img/googleplay-badge.png" >}}
 
-{{< box icon="fire" class="" >}}
-Special thanks to Sven Budak for writing [This TWA stuff rocks! Finally I got my PWA on Google Play Store ](https://medium.com/@svenbudak/this-twa-stuff-rocks-finally-i-got-my-pwa-on-google-play-store-b92fe8dae31f?sk=7bc452d3081de636db736199370a364b). 
+{{< box icon="fire" class="" >}}Special thanks to Sven Budak for writing <a href="https://svenbudak.medium.com/this-twa-stuff-rocks-finally-i-got-my-pwa-on-google-play-store-b92fe8dae31f">This TWA stuff rocks! Finally I got my PWA on Google Play Store</a>. 
 {{< /box >}}
 
 ## Wait, what is a Trusted Web Activity? 

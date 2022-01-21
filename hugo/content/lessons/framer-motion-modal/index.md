@@ -107,7 +107,7 @@ export default Backdrop;
 
 The modal component uses the `Backdrop`, then has its own `motion.div` component that animates in and out. The animation states are defined in the `dropIn` object. Framer will transition from one state to the other when it is mounted in the DOM.
 
-Also notice how [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) is called when the modal is clicked - this prevents it from from closing when the modal is clicked.
+Also notice how [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) is called when the modal is clicked - this prevents it from closing when the modal is clicked.
 
 {{< file "react" "components/Modal/index.js" >}}
 ```jsx

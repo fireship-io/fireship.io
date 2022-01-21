@@ -220,7 +220,7 @@ firebase init
 
 Now make your public folder `dist/browser`, but rewrite all traffic to a function.
 
-{{< file "terminal" "command line" >}}
+{{< file "js" "firebase.json" >}}
 {{< highlight json >}}
 {
   "hosting": {

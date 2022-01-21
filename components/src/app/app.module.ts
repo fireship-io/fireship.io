@@ -26,6 +26,8 @@ import { EmailLoginComponent } from './users/email-login/email-login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginModalComponent } from './users/login-modal/login-modal.component';
 import { CarbonAdsComponent } from './access/ads/carbon-ads.component';
+import { PasswordlessLogin } from './users/passwordless-login/passwordless-login.component';
+import { PasswordlessHandler } from './users/passwordless-handler/passwordless-handler-component';
 
 const comps = [
   GoogleLoginComponent,
@@ -48,7 +50,9 @@ const comps = [
   SpinnerComponent,
   AllowIfComponent,
   EmailLoginComponent,
-  CarbonAdsComponent
+  CarbonAdsComponent,
+  PasswordlessLogin,
+  PasswordlessHandler,
 ];
 
 @NgModule({
@@ -89,7 +93,9 @@ export class AppModule {
       [SpinnerComponent, 'loading-spinner'],
       [AllowIfComponent, 'allow-if'],
       [EmailLoginComponent, 'email-login'],
-      [CarbonAdsComponent, 'carbon-ads']
+      [CarbonAdsComponent, 'carbon-ads'],
+      [PasswordlessLogin, 'passwordless-login'],
+      [PasswordlessHandler, 'passwordless-handler'],
     ];
 
     for (const [component, name] of elements) {
