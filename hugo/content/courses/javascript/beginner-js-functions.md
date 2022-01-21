@@ -192,7 +192,7 @@ When building an app, you will often ask yourself *should I write a new function
 
 > DRY Do Not Repeat Yourself
 
-Find yourself writing repetitive code? Try abstracting it into a custom function. Sounds simple enough, but you should not take DRY to the extreme.  If you find yourself having a difficult time coming up with readable function names, it probably means your are over-optimizing and starting to build your own complex framework of abstractions - possibly a much worse situation than duplicated code. People have recognized this issue and counter DRY with WET. 
+Find yourself writing repetitive code? Try abstracting it into a custom function. Sounds simple enough, but you should not take DRY to the extreme. If you find yourself having a difficult time coming up with readable function names, it probably means your are over-optimizing and starting to build your own complex framework of abstractions - possibly a much worse situation than duplicated code. People have recognized this issue and counter DRY with WET. 
 
 > WET Write Everything Twice, but not Thrice
 
