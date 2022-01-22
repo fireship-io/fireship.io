@@ -10,7 +10,7 @@
     "test": "cypress open",
     "dev:design": "webpack --watch",
     "dev:hugo": "cd hugo && hugo server --disableFastRender",
-    "dev": "concurrently \"npm run dev:hugo\" \"npm run dev:design\"",
+    "dev": "concurrently \"npm run dev:hugo\" \"npm run dev:design\" --kill-others-on-fail",
     "build:design": "webpack",
     "build:hugo": "cd hugo && hugo",
     "build:components": "cd components && npm run build",
