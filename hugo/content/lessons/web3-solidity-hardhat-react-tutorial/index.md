@@ -40,7 +40,7 @@ To follow this tutorial, you **don't need to generate any art**. Feel free to us
 
 ### Upload Art to IPFS
 
-NFTs do not actaully store images on the blockchain. Instead, they store a hash of the image. This hash is called the NFT's content ID (CID) and is typically hosted on [IPFS](https://docs.ipfs.io/concepts/). Once content is uploaded, it cannot be modified without changing the CID. 
+NFTs do not actually store images on the blockchain. Instead, they store a hash of the image. This hash is called the NFT's content ID (CID) and is typically hosted on [IPFS](https://docs.ipfs.io/concepts/). Once content is uploaded, it cannot be modified without changing the CID. 
 
 I would recommend using a tool like [Pinata](https://pinata.cloud/) to simplify the process of uploading your art on IPFS.
 
@@ -349,7 +349,7 @@ function Home() {
 
 ### Mint a new Token
 
-Finally, we can implement a method on each NFT image to mint a new token. It first makes a reference to the metadata URI. When the mint button is clicked it connects the user's wallet to the smart contact on the blockchain, then mints a new token use the `payToMint` method we defined in the Solidity code.
+Finally, we can implement a method on each NFT image to mint a new token. It first makes a reference to the metadata URI. When the mint button is clicked it connects the user's wallet to the smart contact on the blockchain, then mints a new token using the `payToMint` method we defined in the Solidity code.
 
 ```jsx
 function NFTImage({ tokenId, getCount }) {
