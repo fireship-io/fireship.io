@@ -28,11 +28,11 @@ function Payments() {
   const createPaymentIntent = async (event) => {
 
     // Clamp amount to Stripe min/max
-    const validAmonut = Math.min(Math.max(amount, 50), 9999999);
-    setAmount(validAmonut);
+    const validAmount = Math.min(Math.max(amount, 50), 9999999);
+    setAmount(validAmount);
 
     // Make the API Request
-    const pi = await fetchFromAPI('payments', { body: { amount: validAmonut } });
+    const pi = await fetchFromAPI('payments', { body: { amount: validAmount } });
     setPaymentIntent(pi);
   };
 
