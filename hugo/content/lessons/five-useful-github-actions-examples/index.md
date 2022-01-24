@@ -48,7 +48,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm test
-      - run: npm run build`
+      - run: npm run build
 ```
 
 ## Example 2: Continuous Deployment
