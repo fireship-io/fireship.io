@@ -16,7 +16,7 @@ free: true
 
 A function is piece of code that can be *called* during the lifecycle of the app to perform a task or return a value. A function declaration can be broken down into the following pieces.
 
-1. Name.
+1. Name. The name of the function
 1. Parameters. A list of inputs that can be passed into a function.   
 1. Body. The logic or statements that perform the computation.
 
