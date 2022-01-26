@@ -183,7 +183,7 @@ export class ChildComponent {
 
 ## Unrelated Components: Sharing Data with a Service
 
-When passing data between components that lack a direct connection, such as siblings, grandchildren, etc, you should you a shared service. When you have data that should aways been in sync, I find the <a href="https://xgrommx.github.io/rx-book/content/subjects/behavior_subject/index.html">RxJS BehaviorSubject</a> very useful in this situation.
+When passing data between components that lack a direct connection, such as siblings, grandchildren, etc, you should have a shared service. When you have data that should aways been in sync, I find the <a href="https://xgrommx.github.io/rx-book/content/subjects/behavior_subject/index.html">RxJS BehaviorSubject</a> very useful in this situation.
 
 You can also use a regular RxJS Subject for sharing data via the service, but here's why I prefer a BehaviorSubject.
 
