@@ -1,4 +1,3 @@
-// import * as functions from 'firebase-functions';
 import * as functions from 'firebase-functions';
 import { db } from '../config';
 import { omitBy, isUndefined, get } from 'lodash';
