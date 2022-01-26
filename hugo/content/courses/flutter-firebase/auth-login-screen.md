@@ -110,7 +110,7 @@ class LoginButton extends StatelessWidget {
 
 Use the signout method in the Profile screen. 
 
-{{< file "flutter" "main.dart" >}}
+{{< file "flutter" "profile.dart" >}}
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/auth.dart';

@@ -239,7 +239,7 @@ export class ChatService {
 
 ### Joining User Profile Data to Chat Messages
 
-The code below is the the most advanced part of this lesson. It grabs the unique IDs from the chat messages array, then joins the user profile data to each message and keeps the entire payload synced in realtime. I highly recommend also watching the [Advanced Firestore Joins lesson](/lessons/firestore-joins-similar-to-sql/) if you get lost in this section. 
+The code below is the most advanced part of this lesson. It grabs the unique IDs from the chat messages array, then joins the user profile data to each message and keeps the entire payload synced in realtime. I highly recommend also watching the [Advanced Firestore Joins lesson](/lessons/firestore-joins-similar-to-sql/) if you get lost in this section. 
 
 ```typescript
   joinUsers(chat$: Observable<any>) {

@@ -1,7 +1,7 @@
 ---
 title: git add
 description: Staging changes to be committed
-weight: 12
+weight: 13
 lastmod: 2021-09-05T10:23:30-09:00
 draft: false
 vimeo: 599073543
