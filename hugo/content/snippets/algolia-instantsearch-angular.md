@@ -23,7 +23,7 @@ type: lessons
 ---
 
 {{< box emoji="👀" >}}
-This tutorial is an extension of the [Algolia Cloud Functions Guide](/lessons/algolia-cloud-functions/). You must have the Cloud Functions deployed to start making instant search queries from your frontend app. 
+This tutorial is an extension of the <a href="/lessons/algolia-cloud-functions/">Algolia Cloud Functions Guide</a>. You must have the Cloud Functions deployed to start making instant search queries from your frontend app.
 {{< /box >}}
 
 ## Install Instantsearch
