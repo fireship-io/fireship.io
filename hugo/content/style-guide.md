@@ -7,7 +7,7 @@ draft: false
 description: Style Guide for Contributing Content to Fireship.io
 ---
 
-This guide is for authors and developers who contribute content to Fireship.io.
+This guide is for authors and developers who contribute content to Fireship.io
 
 ## Things to Know
 
