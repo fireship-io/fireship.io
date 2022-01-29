@@ -1,6 +1,6 @@
 ---
 title: Wei Lun
-draft: false
+draft: "false
 featured_img: /img/contributors/weilun.jpg
 
 links: 
