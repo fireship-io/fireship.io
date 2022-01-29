@@ -96,7 +96,7 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
     }
 
 
-    ///// DO IT /////
+    ///// DO IT ////
     doOnRouteChange();
     window.addEventListener('router:end', e => {
       doOnRouteChange();
