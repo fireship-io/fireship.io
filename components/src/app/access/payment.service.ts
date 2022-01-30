@@ -72,7 +72,7 @@ export class PaymentService {
   }
 
   async createSubscription(source, planId, couponId?) {
-    return this.callFunction('stripeCreateSubscription', { source, planId, couponId });
+    return this.callFunction('stripeCreeteSubscription', { source, planId, couponId });
   }
 
   async createOrder(source, sku, amount) {
