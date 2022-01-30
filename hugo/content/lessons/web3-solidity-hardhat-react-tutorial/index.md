@@ -349,7 +349,7 @@ function Home() {
 
 ### Mint a new Token
 
-Finally, we can implement a method on each NFT image to mint a new token. It first makes a reference to the metadata URI. When the mint button is clicked it connects the user's wallet to the smart contact on the blockchain, then mints a new token use the `payToMint` method we defined in the Solidity code.
+Finally, we can implement a method on each NFT image to mint a new token. It first makes a reference to the metadata URI. When the mint button is clicked it connects the user's wallet to the smart contact on the blockchain, then mints a new token using the `payToMint` method we defined in the Solidity code.
 
 ```jsx
 function NFTImage({ tokenId, getCount }) {
