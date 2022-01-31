@@ -1,5 +1,5 @@
 # URL to sku for course single template
-# SKU to ID for buy-course partial
+# SKU to ID's for buy-course partial
 
 flutter-firebase: sku_FJCsh7mvjI83Kz
 sku_FJCsh7mvjI83Kz: flutterFirebase
