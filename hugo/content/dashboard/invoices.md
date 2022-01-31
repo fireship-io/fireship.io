@@ -7,7 +7,7 @@ hide_qna: true
 ---
 
 <div class="well">
-  📜 If you purchased via PayPal, you can access your invoice from your PayPal account.
+  📜 If you purchased via PayPal, you can access your invoice from your PayPal account
 </div>
 
 <user-charges></user-charges>
