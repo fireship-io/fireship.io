@@ -26,7 +26,7 @@ We provide support through various services in addition to content production.
 
 <hr>
 
-## Frequently Asked Questions
+## Frequently Asked Questions FAQ
 
 ### Who Are You?
 
