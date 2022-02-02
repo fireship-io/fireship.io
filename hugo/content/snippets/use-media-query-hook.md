@@ -42,7 +42,7 @@ const useMediaQuery = (query) => {
   useEffect(() => {
     const media = window.matchMedia(query);
 
-    if (media.matches) {
+    if (media.matches !== matches) {
       setMatches(media.matches);
     }
 
@@ -60,7 +60,7 @@ const useMediaQuery = (query) => {
         media.removeListener(listener);
       }
     };
-  }, [query]);
+  }, [matches, query]);
 
   return matches;
 }
