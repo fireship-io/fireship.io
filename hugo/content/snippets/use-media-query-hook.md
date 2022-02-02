@@ -41,13 +41,26 @@ const useMediaQuery = (query) => {
 
   useEffect(() => {
     const media = window.matchMedia(query);
-    if (media.matches !== matches) {
+
+    if (media.matches) {
       setMatches(media.matches);
     }
+
     const listener = () => setMatches(media.matches);
-    window.addEventListener("resize", listener);
-    return () => window.removeEventListener("resize", listener);
-  }, [matches, query]);
+    if (media?.addEventListener) {
+      media.addEventListener('change', listener, { passive: true });
+    } else {
+      media.addListener(listener);
+    }
+
+    return () => {
+      if (media?.removeEventListener) {
+        media.removeEventListener('change', listener);
+      } else {
+        media.removeListener(listener);
+      }
+    };
+  }, [query]);
 
   return matches;
 }
