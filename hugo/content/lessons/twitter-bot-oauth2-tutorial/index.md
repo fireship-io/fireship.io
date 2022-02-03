@@ -10,7 +10,7 @@ tags:
     - cloud-functions
     - javascript
 
-youtube: https://youtu.be/V7LEihbOv3Y
+youtube: V7LEihbOv3Y
 github: https://github.com/fireship-io/gpt3-twitter-bot
 # disable_toc: true
 # disable_qna: true
