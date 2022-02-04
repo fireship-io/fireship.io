@@ -26,7 +26,7 @@ tags:
 
 ## 🤔 Is this Course Right for Me?
 
-This course is designed for experienced Firebase developers. It assumes you have built or are currently building a Firebase app, with the intention of shipping it without security vulnerabilities. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
+This course is designed for experienced Firebase developers. It assumes you have built or are currently building a Firebase app, with the intention of shipping it without security vulnerabilities. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/fireship), but far more in-depth and comprehensive. 
 
 The course focuses on [Cloud Firestore](https://firebase.google.com/docs/firestore) - if you're looking for specific Realtime Database techniques you may be disappointed.
 

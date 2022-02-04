@@ -45,7 +45,7 @@ A quiz was chosen because it provides a <span class="hi">moderate amount of comp
 
 ## 🤔 Is this Course Right for Me?
 
-This course is intermediate level and designed to help you become a productive full-stack Flutter app developer. It assumes you have some basic knowledge of programming, ideally in a language similar to JavaScript, C#, or Java. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive.
+This course is intermediate level and designed to help you become a productive full-stack Flutter app developer. It assumes you have some basic knowledge of programming, ideally in a language similar to JavaScript, C#, or Java. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/fireship), but far more in-depth and comprehensive.
 
 If you're new to programming consider going through the [Dart Language Course](/courses/dart) first. 
 

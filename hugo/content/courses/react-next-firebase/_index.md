@@ -35,7 +35,7 @@ You will build a full-stack **Social Blogging Platform** inspired by sites like 
 
 ## 🤔 Is this Course Right for Me?
 
-This course is intermediate level 🟦 and will challenge you to build an app that delivers high-performance and search engine visibility via server-side rendering. It assumes you have at least basic knowledge of web programming with familiarity of JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and followed in a long linear format.
+This course is intermediate level 🟦 and will challenge you to build an app that delivers high-performance and search engine visibility via server-side rendering. It assumes you have at least basic knowledge of web programming with familiarity of JavaScript, HTML, and CSS. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/fireship), but far more in-depth and followed in a long linear format.
 
 <div class="row tweet-grid">
 {{< testimonial name="Lee Robinson" handle="@leeerob" img="lee.jpg" >}}
