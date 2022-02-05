@@ -75,7 +75,7 @@ hugo new snippets/my-cool-snippet.md
 
 ### Add Your Bio
 
-First time? Add your bio and social links to `content/contributors`. 
+First time? Add your bio and social links to `hugo/content/contributors`. 
 
 ## Web Component Development
 
