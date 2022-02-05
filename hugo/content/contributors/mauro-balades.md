@@ -2,7 +2,7 @@
 title: Mauro Baladés
 date: 2022-02-05T09:32:30-07:00
 draft: false
-featured_img: /img/contributors/mauro-balades.jpg
+featured_img: /img/contributors/mauro-balades.png
 
 links: 
     github: https://github.com/mauro-balades
