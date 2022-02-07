@@ -1,8 +1,8 @@
 ---
-title: COBOL Enterprise Course
-date: 2019-02-27T09:32:30-07:00
-draft: false
-description: Take the Fireship COBOL Enterprise Course
+Title: COBOL Enterprise Course
+Date: 2019-02-27T09:32:30-07:00
+Draft: false
+Description: Take the Fireship COBOL Enterprise Course
 ---
 
 - Launch Date: Aug 21, 2059
