@@ -1,7 +1,7 @@
 ---
-title: About
-date: 2019-02-27T09:32:30-07:00
-draft: false
+Title: About
+Date: 2019-02-27T09:32:30-07:00
+Draft: false
 ---
 
 Fireship.io exists to make developers happier and more productive. 
@@ -43,5 +43,4 @@ are handled by Firebase. The static HTML and content is managed with Hugo
 
 - **Code** with VS Code, [Fira Code](https://github.com/tonsky/FiraCode) font and [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 - **Video Production** with Adobe Premiere. 
-- **Graphics** with Figma and AfterEffects.
-
+- **Graphics** with Figma and After Effects.
