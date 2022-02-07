@@ -70,7 +70,7 @@ export default App;
 
 ### Preview the Video File
 
-Use a file input to collect a video file, then convert it to a URL with `URL.createObjectURL` so it can be used in video element. 
+Use a file input to collect a video file, then convert it to a URL with `URL.createObjectURL` so it can be used in a video element. 
 
 
 {{< file "react" "App.js" >}}
