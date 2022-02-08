@@ -71,7 +71,7 @@ auth.signInWithPopup(someProvider)
 
 ### Validate Username Selection
 
-Create a form input where the user can type their username. After each change to the form input, make a request to Firestore to check if the username exists. If it does NOT exist, show a green check mark saying username is available. If it does exists, show an error saying username taken.
+Create a form input where the user can type their username. After each change to the form input, make a request to Firestore to check if the username exists. If it does NOT exist, show a green checkmark saying username is available. If it does exists, show an error saying username taken.
 
 **Optimization**. Reduce the number of reads sent to the database by wrapping this function in a [debounce](https://lodash.com/docs/#debounce) to wait for the user to stop typing before sending the request. 
 
