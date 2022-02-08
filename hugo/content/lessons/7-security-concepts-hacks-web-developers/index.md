@@ -54,9 +54,9 @@ npm audit fix
 </div>
 
 
-Cross Site Scripting occurs when a hacker runs malicious JavaScript on a client's browser. It can happen in a variety of ways, but is commonly the result of rendering raw HTML from the server. 
+Cross-Site Scripting occurs when a hacker runs malicious JavaScript on a client's browser. It can happen in a variety of ways, but is commonly the result of rendering raw HTML from the server. 
 
-{{< figure src="img/xss-diagram.png" caption="A diagram of a typical Cross Site Scripting attack" >}}
+{{< figure src="img/xss-diagram.png" caption="A diagram of a typical Cross-Site Scripting attack" >}}
 
 1. Hacker saves some JS code to the database like `<script>alert('you got got')</script>` by submitting a comment via the web app. 
 2. The victim user visits the webpage with that comment, but the developer did not sanitize the hacker's comment, so the browser thinks it's a trusted script/html. 
@@ -91,7 +91,7 @@ You can prevent credential leaks by NOT putting them in your source code. Instea
 
 In the event that your credentials are compromised, you can mitigate the damage by following the Principle of Least Privilege. Basically, this means **grant access only when it is absolutely required**. 
 
-A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allow you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, then selectively allow access as needed. 
+A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allow you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, then selectively allowing access as needed. 
 
 ## 7. DDoS Attacks
 
