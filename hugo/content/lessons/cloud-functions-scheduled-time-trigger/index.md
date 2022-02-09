@@ -26,7 +26,7 @@ versions:
 Last week, Firebase announced a new scheduled [cron trigger for Cloud Functions](https://firebase.googleblog.com/2019/04/schedule-cloud-functions-firebase-cron.html) that makes it easy to run serverless code on a set time interval. This function type is special because it combines the powers of [Cloud Scheduler](https://cloud.google.com/scheduler/) and [Pub/Sub](https://cloud.google.com/pubsub/docs/overview) to guarantee security that you don't have with a regular HTTP-triggered function. 
 
 
-Scheduling a function on a static time interval is straight forward, but what if you want to build a dynamic task queue where users can schedule their own background jobs? For example, you might want to...
+Scheduling a function on a static time interval is straightforward, but what if you want to build a dynamic task queue where users can schedule their own background jobs? For example, you might want to...
 
 - allow users to customize times for transactional email delivery
 - schedule push notifications or similar alerts dynamically
