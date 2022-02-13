@@ -198,7 +198,7 @@ obj.hello(); // My name is undefined
 
 ### Chaining
 
-In certain JS libraries you will see method chaining with `obj.doThis().toThat()`, which is made possible by simply returning the value of *this* from each method. 
+In certain JS libraries you will see method chaining with `obj.doThis().toThat()`, which is made possible by simply returning the value of `this` from each method. 
 
 {{< file "js" "jquery.js" >}}
 {{< highlight javascript >}}
