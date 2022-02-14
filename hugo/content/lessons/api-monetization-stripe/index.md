@@ -124,7 +124,7 @@ function generateAPIKey() {
 
   // Ensure API key is unique
   if (apiKeys[hashedAPIKey]) {
-    generateAPIKey();
+    return generateAPIKey();
   } else {
     return { hashedAPIKey, apiKey };
   }
