@@ -45,14 +45,14 @@ npm i firebase-tools -D
 firebase login:ci
 # your_token
 
-firebase functions:config:set ci_token="your_token"
+firebase functions:config:set ci.token="your_token"
 ```
 
 The function should validate the user has permission to run the operation. If allowed, it runs the CLI command recursively on the collection and its nested subcollections. 
 
 ```js
 const project = process.env.GCLOUD_PROJECT;
-const token = functions.config().ci_token;
+const token = functions.config().ci.token;
 
 exports.deleteCollection = functions.runWith({ timeoutSeconds: 540})
   .https.onCall((data, context) => {
