@@ -20,7 +20,7 @@ github: https://github.com/fireship-io/216-flutter-ipod
 #    rxdart: 0.20
 ---
 
-An awesome [tweet](https://t.co/zVk5YJj0rh) was making the rounds last week that recreates the [iPod Classic](https://en.wikipedia.org/wiki/IPod_Classic) UI with SwiftUI. It features a *click wheel* that scrolls through a list of items when rotated and makes a excellent Flutter UI challenge. 
+An awesome [tweet](https://t.co/zVk5YJj0rh) was making the rounds last week that recreates the [iPod Classic](https://en.wikipedia.org/wiki/IPod_Classic) UI with SwiftUI. It features a *click wheel* that scrolls through a list of items when rotated and makes an excellent Flutter UI challenge. 
 
 <div class="flex-center"> 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Turned my iPhone into an iPod Classic with Click Wheel and Cover Flow with <a href="https://twitter.com/hashtag/SwiftUI?src=hash&amp;ref_src=twsrc%5Etfw">#SwiftUI</a> <a href="https://t.co/zVk5YJj0rh">pic.twitter.com/zVk5YJj0rh</a></p>&mdash; Elvin (@elvin_not_11) <a href="https://twitter.com/elvin_not_11/status/1199717678908366854?ref_src=twsrc%5Etfw">November 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -118,7 +118,7 @@ The `PageView.builder` creates a view that only builds the children when they ar
 
 The builder for the PageView references a custom widget named `AlbumCard`. It represents the UI for a single page or item in the list. 
 
-The albums off center should be scaled down slightly and tilted along the y-axis. We can make that happen with a Transform widget that sets perspective on a 4x4 matrix. Learn more about transforms by watching the video below: 
+The album off centre should be scaled down slightly and tilted along the y-axis. We can make that happen with a Transform widget that sets perspective on a 4x4 matrix. Learn more about transforms by watching the video below: 
 
 <div class="vid vid-center">
 {{< youtube 9z_YNlRlWfA >}}
@@ -174,7 +174,7 @@ The most difficult aspect of this demo is building a circular shape that control
 
 ### Doughnut-shaped Gesture Detector
 
-The GestureDetector should only fire events when the outer ring or doughnut is panned across. Placing the widgets in a [Stack](/courses/flutter-firebase/widgets-stack/) allow a smaller circle to be placed on top, which blocks the detection of events in this areas. 
+The GestureDetector should only fire events when the outer ring or doughnut is panned across. Placing the widgets in a [Stack](/courses/flutter-firebase/widgets-stack/) allow a smaller circle to be placed on top, which blocks the detection of events in these areas. 
 
 {{< file "dart" "main.dart" >}}
 {{< highlight dart >}}
@@ -232,7 +232,7 @@ Notice how it uses the PageController to animate to a new position on a button p
 
 ### Handle Rotational Pan Movement
 
-Building a rotation-aware widget requires some calculations. Checkout the [draggable rotating wheel in Flutter](/snippets/circular-drag-flutter) snippet for a more detailed explanation of these calculations. Basically, this gives us a way to detect clockwise or counter-clockwise movement. 
+Building a rotation-aware widget requires some calculations. Check out the [draggable rotating wheel in Flutter](/snippets/circular-drag-flutter) snippet for a more detailed explanation of these calculations. Basically, this gives us a way to detect clockwise or counter-clockwise movement. 
 
 {{< vimeo 376862979 >}}
 
