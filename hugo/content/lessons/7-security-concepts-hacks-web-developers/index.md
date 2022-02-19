@@ -21,13 +21,13 @@ youtube: 4YOpILi9Oxs
 #    rxdart: 0.20
 ---
 
-Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100% secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
+Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100%, secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
 
 ## 1. Zero-day Vulnerability
 
 A **zero-day vulnerability** is a weakness that is unknown or unfixed as of today. When a hacker decides to attack this weakness, it's called **zero-day exploit**. 
 
-After it becomes known, you can think of it as a one-day or 20-day exploit based on the time since initial discovery. 
+After it becomes known, you can think of it as a one-day or 20-day exploit based on the time since the initial discovery. 
 
 ## 2. Packages with Known Vulnerabilities
 
@@ -47,28 +47,28 @@ npm audit fix
 
 ## 3. Cross-site Scripting (XSS)
 
-> The Samy worm was an XSS attack that spread to over 1 million MySpace pages in 24 hours. If affected, it would updated your profile to say *but most of all, samy is my hero*
+> The Samy worm was an XSS attack that spread to over 1 million MySpace pages in 24 hours. If affected, it would update your profile to say *but most of all, samy is my hero*
 
 <div class="insta">
 
 </div>
 
 
-Cross Site Scripting occurs when a hacker runs malicious JavaScript on a client's browser. In can happen in a variety of ways, but is commonly the result of rendering raw HTML from the server. 
+Cross Site Scripting occurs when a hacker runs malicious JavaScript on a client's browser. It can happen in a variety of ways, but is commonly the result of rendering raw HTML from the server. 
 
 {{< figure src="img/xss-diagram.png" caption="A diagram of a typical Cross Site Scripting attack" >}}
 
 1. Hacker saves some JS code to the database like `<script>alert('you got got')</script>` by submitting a comment via the web app. 
-2. The victim user visits the webpage with that comment, but the developer did not sanitize the hackers comment, so the browser thinks it's a trusted script/html. 
+2. The victim user visits the webpage with that comment, but the developer did not sanitize the hacker's comment, so the browser thinks it's a trusted script/html. 
 3. At this point, the hacker's JS is running as if it were the end-user. 
 
 ## 4. SQL Injection
 
 > In 2008, Heartland Payment Systems exposed the data encoded on credit cards via a SQL injection attack. The hackers used this data to make physical counterfeit credit cards. The ringleader, Albert Gonzalez, was caught and sentenced to 20 years in prison. 
 
-[SQL injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) is similar conceptually to XSS, but instead it runs malicious code on the database. 
+[SQL injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) is similar conceptually to XSS, but instead, it runs malicious code on the database. 
 
-Notice how the code below relies on an external parameter to construct the query. If not not sanitized, an attacker can submit raw SQL code and the database will execute it. 
+Notice how the code below relies on an external parameter to construct the query. If not sanitized, an attacker can submit raw SQL code and the database will execute it. 
 
 {{< highlight sql >}}
 "SELECT * FROM users WHERE uid='" + request.getParameter("uid") + "'";
@@ -97,6 +97,6 @@ A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/)
 
 > In 2018, Github survived the largest DDoS attack in history after it was bombarded with 1.35 terabits of data per second. It only took the site down for about ten minutes thanks to a backup service, Akamai, which re-routed traffic and blocked the spoofed requests. 
 
-A [DDoS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack attempts to flood the a service with so much traffic that it simply shuts down. The attack is typically distributed via many spoofed sources, making it impossible to just block a single IP address. 
+A [DDoS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack attempts to flood the service with so much traffic that it simply shuts down. The attack is typically distributed via many spoofed sources, making it impossible to just block a single IP address. 
 
 For most developers, the best mitigation strategy is to use a large Cloud provider that has the bandwidth and monitoring capabilities to deal with such attacks. 

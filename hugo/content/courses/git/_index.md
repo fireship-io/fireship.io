@@ -12,7 +12,7 @@ tags:
 
 {{< vimeo 599074745 >}}
 
-**The Git & GitHub Full Course** teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands approach to learn the basics of version control from the command line with around 1 hour of video content and exercises. 
+**The Git & GitHub Full Course** teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands on approach to learn the basics of version control from the command line with around 1 hour of video content and exercises. 
 
 
 ## 🦄 What will I learn?

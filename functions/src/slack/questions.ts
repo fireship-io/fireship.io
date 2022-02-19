@@ -152,7 +152,7 @@ async function handleBotEvent(event) {
   } else if (isReply) {
     const thread = get(event, 'message.deleted_ts') || thread_ts;
 
-    // We are dealing with a thread, atttach to parent
+    // We are dealing with a thread, attach to parent
     const ref = db.collection('slack').doc(thread);
     const parent = await ref.get();
 

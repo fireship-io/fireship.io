@@ -22,7 +22,7 @@ youtube: KEDeL77_bc4
 # versions:
 #    rxdart: 0.20
 ---
-The following lesson uses the [Cloud Vision API](https://cloud.google.com/vision/) on Google Cloud to extract text from raw images. This is a highly sought after feature in business applications that still work with non-digitized text documents. 
+The following lesson uses the [Cloud Vision API](https://cloud.google.com/vision/) on Google Cloud to extract text from raw images. This is a highly sought-after feature in business applications that still work with non-digitized text documents. 
 
 The [Cloud Vision Node.js documentation](https://cloud.google.com/nodejs/docs/reference/vision/0.14.x/v1.ImageAnnotatorClient) is a good reference to keep by your side.
 
@@ -43,7 +43,7 @@ npm install @google/cloud-vision -s
 
 ## Google Cloud Vision Advanced Techniques
 
-We're going to explore some a few of the more advanced features in Google Cloud Vision and talk about how you might use them to build an engaging UX. My goal is to give you some inspiration that you can use when building your next app. 
+We're going to explore a few of the more advanced features in Google Cloud Vision and talk about how you might use them to build an engaging UX. My goal is to give you some inspiration that you can use when building your next app. 
 
 {{< figure src="img/cloud-vision-text-ocr.png" caption="Text extraction demo using Google Cloud Vision" >}}
 
@@ -51,7 +51,7 @@ We're going to explore some a few of the more advanced features in Google Cloud 
 
 Optical Character Recognition, or [OCR](https://en.wikipedia.org/wiki/Optical_character_recognition), is optimized by Google's deep learning algorithms and made available in the API. The response is an array of objects, each containing a piece of extracted text. 
 
-The first element in the response array contains the fully parsed text. In most cases, this is all you need, but you can also get the position of each individual word. It also responds with a bounding box for each object, allowing you to determine where exactly this text appears in the image. 
+The first element in the response array contains the fully parsed text. In most cases, this is all you need, but you can also get the position of each word. It also responds with a bounding box for each object, allowing you to determine where exactly this text appears in the image. 
 
 Inspiration - Build an image-to-text tool as a PWA. 
 
@@ -63,7 +63,7 @@ Facial detection, not to be confused with facial recognition, is used to extract
 
 The response includes the exact position of every facial feature (eyebrows, nose, etc), which makes it especially useful for positioning an overlay image. Imagine you are an apparel company and you want users to upload an image, then try on different hats or glasses. The Vision API would allow you to position the overlay precisely without much effort. 
 
-Inspiration - Build an app the measures the overall mood of your family photos. 
+Inspiration - Build an app that measures the overall mood of your family photos. 
 
 
 ### Web Detection
@@ -80,7 +80,7 @@ Inspiration - Build an app that checks for image copyright infringement or creat
 
 ## Vision API with Cloud Function
 
-Now that we have learned how to handle data from the Vision API, we need to write some server side code to make the actual request. 
+Now that we have learned how to handle data from the Vision API, we need to write some server-side code to make the actual request. 
 
 Firebase Cloud Functions are just a Node.js environment, so we can use the Vision API client library. It is also possible to make requests to the REST API, but why make life more complicated? 
 
@@ -182,5 +182,5 @@ Our cloud function saves the response from the function in the Firestore Databas
 
 ## The End
 
-Cloud vision with deep learning is a rapidly evolving technology and is putting new opportunities in the hands of creative developers.  Hopefully this tutorial gives you some inspiration for building next-gen features into your app. 
+Cloud vision with deep learning is a rapidly evolving technology and is putting new opportunities in the hands of creative developers.  Hopefully, this tutorial gives you some inspiration for building next-gen features into your app. 
 

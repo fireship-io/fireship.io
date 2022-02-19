@@ -199,7 +199,7 @@ auth.onAuthStateChanged(user => {
 
 ## Firestore
 
-Once you have a user authenticated, you probably want that user do something interesting, which typically means saving records to a database. [Firestore](https://cloud.google.com/firestore) is a NoSQL [document-oriented](https://en.wikipedia.org/wiki/Document-oriented_database) database similar to MongoDB. It's easy to manage and flexible, but modeling data relationships can be somewhat challenging. From the Firebase console, enable Firestore. 
+Once you have a user authenticated, you probably want that user to do something interesting, which typically means saving records to a database. [Firestore](https://cloud.google.com/firestore) is a NoSQL [document-oriented](https://en.wikipedia.org/wiki/Document-oriented_database) database similar to MongoDB. It's easy to manage and flexible, but modeling data relationships can be somewhat challenging. From the Firebase console, enable Firestore. 
 
 {{< figure src="img/firestore-enable.png" caption="Enable Firestore in test mode. We will secure the database at the end of this tutorial." >}}
 
@@ -313,7 +313,7 @@ auth.onAuthStateChanged(user => {
 
 ### Composite Indexes 
 
-Certain queries can only be performed if an index is in place. The browser console with throw an error with a link you can follow you to create the necessary index. 
+Certain queries can only be performed if an index is in place. The browser console will throw an error with a link you can follow to create the necessary index. 
 
 When combining a where method using `==` with a range operator like `<` or `orderBy` you will need an index, for example: 
 
