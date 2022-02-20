@@ -20,7 +20,7 @@ console.log('hello world')
 
 ## How to Run JavaScript from the Command Line
 
-Running a JS program from the command line is handled by NodeJS. Start by installing NodeJS on local machine if necessary. 
+Running a JS program from the command line is handled by NodeJS. Start by installing NodeJS on your local machine if necessary. 
 
 1. {{< prereq "install-nodejs" >}}
 
