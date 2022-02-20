@@ -34,7 +34,7 @@ A function declaration on its own does not do anything. You make use of function
 
 ## Function Declarations vs Expressions
 
-A function *declaration* is a statement that describe what your code does. Declarations are [hoisted](/courses/javascript/beginner-js-survival-guide/), which means they are loaded at the top of the scope before any other code runs. 
+A function *declaration* is a statement that describes what your code does. Declarations are [hoisted](/courses/javascript/beginner-js-survival-guide/), which means they are loaded at the top of the scope before any other code runs. 
 
 {{< file "js" "fun.js" >}}
 {{< highlight javascript >}}
@@ -196,6 +196,6 @@ Find yourself writing repetitive code? Try abstracting it into a custom function
 
 > WET Write Everything Twice, but not Thrice
 
-In this world, we only break down code into custom functions when it is duplicated more than twice. The rational is that it provides more confidence that this extra layer of absctraction is actually required. As programmers, we often try to optimize too early because we're terrified of duplication. 
+In this world, we only break down code into custom functions when it is duplicated more than twice. The rationale is that it provides more confidence that this extra layer of absctraction is actually required. As programmers, we often try to optimize too early because we're terrified of duplication. 
 
 In brief, both DRY and WET are useful principles, but neither are perfect - it just takes practice. 
