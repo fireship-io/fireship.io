@@ -21,7 +21,7 @@ github: https://github.com/fireship-io/code-this-not-that-python-edition/tree/ma
 
 ## Introduction
 
-_Python_ is one of the most popular languages in the world. It has many practical applications including web development, desktop apps, IoT, data analysis, and machine learning. This lesson explores ten language features that will make your code more pythonic.
+_Python_ is one of the most popular languages in the world. It has many practical applications including web development, desktop apps, IoT, data analysis, and machine learning. This lesson contains ten tips that will make your code more pythonic.
 
 To make life simpler, we’ll use the following key to denote a few categories
 
