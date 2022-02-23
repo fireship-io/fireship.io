@@ -44,6 +44,7 @@ npm install
 npm run dev
 
 git checkout -b my-fix # "my-fix" would be the name of what you are fixing, for example: "README-edits. Also the name of the branch"
+
 # fix some code...
 
 git commit -m "fix: corrected a typo" # Please try your best to follow this format
