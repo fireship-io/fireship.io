@@ -18,7 +18,7 @@ video_length: 1:53
 
 ## Social
 - [Slack Chat](https://goo.gl/8BKA1e)
-- [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
+- [YouTube](https://www.youtube.com/fireship) & [Twitter](https://twitter.com/fireship_dev)
 
 ## Additional Resources
 

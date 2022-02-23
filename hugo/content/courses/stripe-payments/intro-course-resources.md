@@ -16,7 +16,7 @@ disable_qna: true
 
 - [Project Source Code](https://github.com/codediodeio/stripe-firebase-master-course)
 - [Slack Chat](https://fireship.page.link/slack)
-- [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
+- [YouTube](https://www.youtube.com/fireship) & [Twitter](https://twitter.com/fireship_dev)
 
 ### Stripe Docs
 

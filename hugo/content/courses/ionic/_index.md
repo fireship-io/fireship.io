@@ -36,7 +36,7 @@ This is a project-based course that starts from zero and works up to an **authen
 
 ### 🤔 Is this Course Right for Me?
 
-This course is an intermediate level project-based course where you *learn by doing*. It assumes you have at least basic knowledge of programming, ideally with web tech like JavaScript, CSS, and HTML. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA?), but far more in-depth and comprehensive. 
+This course is an intermediate level project-based course where you *learn by doing*. It assumes you have at least basic knowledge of programming, ideally with web tech like JavaScript, CSS, and HTML. It is fast-paced and similar to [my style on YouTube](https://www.youtube.com/fireship), but far more in-depth and comprehensive. 
 
 
 ### 🏎️ Test Drive
