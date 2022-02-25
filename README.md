@@ -1,6 +1,13 @@
-<img src="https://i.imgur.com/BljQEd9.png">
+<div align='center'>
+    <a href="https://fireship.io">
+        <img src="https://i.imgur.com/BljQEd9.png" />
+    </a>
+    <p>
+        Content <a href="https://fireship.io/mission/">designed</a> to increase developer happiness 😁 and productivity 🚀.
+    </p>
+</div>
 
-Content [designed](https://fireship.io/mission/) to increase developer happiness 😁 and productivity 🚀.
+-------
 
 Project Tour
 ============
