@@ -15,7 +15,7 @@ The JavaScript object is a collection of key-value pairs, similar to a map, dict
 - An **Object** is a collection of properties.
 - A **Property** is a key-value pair that contains a name and a value. 
 - A **Property Name** is a unique value that can be coerced to a string that points to a value. 
-- A **Property Value** can be any value, including other objects or functions, that associated with the name/key. 
+- A **Property Value** can be any value, including other objects or functions, associated with the name/key. 
 
 {{< figure src="/courses/javascript/img/js-object-props.png" alt="An object is a collection of properties, aka key-value pairs" >}}
 
@@ -41,7 +41,7 @@ const horse = Object.create({ })
 
 Now that we have an empty object, we need to add properties to it using [accessors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_accessors). 
 
-Valid property names include anything that can be coerced to a string, but must not used reserved words like `function`, `var`, `return` and so on. 
+Valid property names include anything that can be coerced to a string but must not use reserved words like `function`, `var`, `return` and so on. 
 
 {{< highlight javascript >}}
 get = object.property;
@@ -198,7 +198,7 @@ obj.hello(); // My name is undefined
 
 ### Chaining
 
-In certain JS libraries you will see method chaining with `obj.doThis().toThat()`, which is made possible by simply returning the value of *this* from each method. 
+In certain JS libraries, you will see method chaining with `obj.doThis().toThat()`, which is made possible by simply returning the value of *this* from each method. 
 
 {{< file "js" "jquery.js" >}}
 {{< highlight javascript >}}
