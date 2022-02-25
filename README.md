@@ -22,6 +22,12 @@ For the ease of use for people view this, this mono-repo has been categorized in
 4. `functions` [(dir)](https://github.com/fireship-io/fireship.io/tree/master/functions) - Firebase cloud functions; Server-less backend
 5. `hugo` [(dir)](https://github.com/fireship-io/fireship.io/tree/master/hugo) - Static site generator. This is the home of the main content
 
+### Technologies Used:
+
+This project uses technologies such as:</br>
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) </br>
+_and many more_
+
 Contributing
 ============
 
