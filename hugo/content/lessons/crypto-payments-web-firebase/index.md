@@ -32,7 +32,7 @@ Crypto payments are push-based, which means Coinbase needs to constantly listen 
 
 1. Your server creates a *charge* with an amount for the user to pay. Expires after 1 hour.  
 2. The user pays, which puts the charge in *pending* status (handle via webhook). 
-3. Some time later, up to 10 minutes, charge is *confirmed* or *failed* (handle via webhook). 
+3. Sometime later, up to 10 minutes, charge is *confirmed* or *failed* (handle via webhook). 
 
 
 {{< figure src="img/coinbase-payment-flow.png" caption="Coinbase Payment Flow (courtesy of Coinbase)" >}}
