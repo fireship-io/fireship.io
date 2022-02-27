@@ -236,6 +236,9 @@
 .content-article {
   width: 75%;
   margin: 1em 2.5em;
+  @media screen and (min-width:1600px) {
+    max-width: 50%;
+  }
   &.no-toc {
     width: 100%;
   }
