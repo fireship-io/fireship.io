@@ -25,16 +25,16 @@ A function is piece of code that can be *called* during the lifecycle of the app
 
 A function declaration on its own does not do anything. You make use of functions by calling them. The return value of the function can be assigned to a variable. 
 
-1. Function call. Executes the code inside the function body. 
+1. Function call. Executes the code inside the function's body. 
 1. Arguments. The values to be used as parameters in the function. 
-1. Return value.  By default functions will return `undefined`, but can return the result of a computation when the body contains a `return` statement.  
+1. Return value. By default functions will return `undefined`, but can return the result of a computation when the body contains a `return` statement.  
 
 {{< figure src="/courses/javascript/img/function-call.png" alt="JavaScript function call" >}}
 
 
 ## Function Declarations vs Expressions
 
-A function *declaration* is a statement that describe what your code does. Declarations are [hoisted](/courses/javascript/beginner-js-survival-guide/), which means they are loaded at the top of the scope before any other code runs. 
+A function *declaration* is a statement that describes what your code does. Declarations are [hoisted](/courses/javascript/beginner-js-survival-guide/), which means they are loaded at the top of the scope before any other code runs. 
 
 {{< file "js" "fun.js" >}}
 {{< highlight javascript >}}
@@ -45,7 +45,7 @@ function makeBread(qty) {
 }
 {{< /highlight >}}
 
-An alternative approach is use a function as a value or *expression* by assigning an anonymous function to a variable or parameter. 
+An alternative approach is to use a function as a value or *expression* by assigning an anonymous function to a variable or parameter. 
 
 {{< highlight javascript >}}
 const makeBeer = function(qty) {
