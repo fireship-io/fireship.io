@@ -10,11 +10,11 @@ free: true
 
 {{< youtube gigtS_5KOqo >}}
 
-[Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) are the backbone JavaScript of development, but perhaps the most difficult concept to master. The following section defines key concepts related to JS functions with practical examples that you can try on your own. 
+[Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) are the backbone of JavaScript development, but perhaps the most difficult concept to master. The following section defines key concepts related to JS functions with practical examples that you can try on your own. 
 
 ## Anatomy of a Function
 
-A function is piece of code that can be *called* during the lifecycle of the app to perform a task or return a value. A function declaration can be broken down into the following pieces.
+A function is a piece of code that can be *called* during the lifecycle of the app to perform a task or return a value. A function declaration can be broken down into the following pieces.
 
 1. Name.
 1. Parameters. A list of inputs that can be passed into a function.   
@@ -23,7 +23,7 @@ A function is piece of code that can be *called* during the lifecycle of the app
 {{< figure src="/courses/javascript/img/function-declaration.png" alt="JavaScript function declaration" >}}
 
 
-A function declaration on its own does not do anything. You make use of functions by calling them. The return value of the function can be assigned to a variable. 
+A function declaration on its own does nothing. You make use of functions by calling them. The return value of the function can be assigned to a variable. 
 
 1. Function call. Executes the code inside the function body. 
 1. Arguments. The values to be used as parameters in the function. 
