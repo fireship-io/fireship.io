@@ -1,6 +1,6 @@
 ---
 title: App Navigation Shell
-description: Add a responsive navigation shell to the app
+description: Add a responsive navigation shell to the app.
 weight: 24
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
@@ -15,7 +15,7 @@ Add a basic navigation shell to the app and make it responsive on mobile.
 
 ### Step 1 - Update the App Component
 
-Nesting components inside each other is known as *transclusion*. 
+Nesting components inside each other is known as *transclusion*: 
 
 {{< file "html" "app.component.html" >}}
 {{< highlight html >}}
@@ -28,7 +28,7 @@ Nesting components inside each other is known as *transclusion*.
 
 ### Shell Breakpoint Logic
 
-Make your navigation responsive by listening to breakpoints.
+Make your navigation responsive by listening to breakpoints:
 
 {{< file "ngts" "shell.component.ts" >}}
 {{< highlight typescript >}}
@@ -57,7 +57,7 @@ export class ShellComponent {
 
 ### Shell HTML
 
-Full markup for the navigation shell. 
+Full markup for the navigation shell: 
 
 {{< file "html" "shell.component.html" >}}
 {{< highlight html >}}
