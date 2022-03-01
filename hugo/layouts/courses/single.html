@@ -56,10 +56,12 @@
                             <div class="text-center video-overlay" style="flex-direction: column;">
     
                                 <a href="/pro" class="btn btn-lg btn-green-outline font-head">Get Unlimited PRO Access</a>
+                                {{ if $course }}
                                 <p>OR</p>
                                 <p><product-select class-name="btn btn-blue" product-id="{{ $course }}" text="Enroll for $19.00"></product-select>
                                     <br><span class="text-sm hi-alt">*Enrollment provides full access to this course (and updates) for life.</span>
                                 </p>
+                                {{ end }}
                                 
                             
                                 
@@ -94,13 +96,15 @@
 
 
         
-        {{ if $free }}
+        <!-- {{ if $free }}
             <section itemprop="articleBody">{{ .Content }}</section>
         {{ else }}
             <allow-if level="pro" product="{{ $sku }}">
                 <section  itemprop="articleBody">{{ .Content }}</section>
             </allow-if>
-        {{ end }}
+        {{ end }} -->
+
+        <section itemprop="articleBody">{{ .Content }}</section>
 
 
         {{ partial "chapters-next.html" . }}
