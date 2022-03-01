@@ -4,7 +4,7 @@ description: How to handle events in JSX
 weight: 7
 lastmod: 2022-02-22T11:11:30-09:00
 draft: false
-vimeo: 
+vimeo: 683055453
 emoji: 💥
 video_length: 1:23
 ---
