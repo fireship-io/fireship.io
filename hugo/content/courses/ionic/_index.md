@@ -31,7 +31,7 @@ This is a project-based course that starts from zero and works up to an **authen
 - Cloud Function integration with NodeJS
 - Firebase Auth, Firestore, and Cloud Messaging
 - How to release Ionic to the Google Play Store and the Apple App Store
-- And more...
+- and more...
 
 
 ### 🤔 Is this Course Right for Me?
