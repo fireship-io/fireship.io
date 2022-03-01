@@ -1,6 +1,6 @@
 ---
 title: Schematics
-description: Using Angular Material Schematics 
+description: Using Angular Material Schematics.
 weight: 22
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
