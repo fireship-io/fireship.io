@@ -487,4 +487,4 @@ describe('My Awesome App', () => {
 
 ## The End
 
-That's it for component testing basics. Let me know if you have any questions in the comments or chat with me on Slack. 
+That's it for the basics of component testing. Let me know if you have any questions in the comments or chat with me on Slack. 
