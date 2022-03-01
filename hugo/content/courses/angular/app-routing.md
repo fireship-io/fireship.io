@@ -15,7 +15,7 @@ Learn routing basics in Angular and the usage of the `routerLink` directive in t
 
 ### Step 1 - Generate a Component
 
-Generate home page component that is loaded by the router. 
+Generate home page component that is loaded by the router: 
 
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
@@ -45,7 +45,7 @@ export class AppRoutingModule { }
 
 ### Step 3 - Navigate with routerLink
 
-Example of a router link with a special CSS class when active. 
+Example of a router link with a special CSS class when active:
 
 {{< file "html" "some.component.html" >}}
 {{< highlight html >}}
