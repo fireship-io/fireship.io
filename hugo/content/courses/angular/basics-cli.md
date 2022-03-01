@@ -14,6 +14,8 @@ The [Angular CLI](https://angular.io/cli) provides a powerful set of tools that 
 
 ## Getting Started
 
+Install Angular CLI:
+
 {{< file "terminal" "command line" >}}
 {{< highlight text >}}
 npm install -g @angular/cli
