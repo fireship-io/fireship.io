@@ -29,7 +29,6 @@ All animations can be boiled down into two simple steps:
 
 Angular uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API">Web Animations API</a> (WAAPI), which shares many similarities to CSS3 animations. WAAPI is fully production ready today because it ships with an advanced polyfill library to support most browsers.  
 
-
 ## Initial Setup
 
 <p>Angular Animations are kept in their own module, so we need to import them into the module where they will be used.</p>
@@ -60,9 +59,7 @@ You build Angular animations by giving them a name, then use them in the HTML by
 ```html
 <span [@animationName]="stateOfElement">Content</span>
 ```
-
 In the component TypeScript, you define the appearance of 'show' and 'hide', then define the timing for a transition between the states.
-
 
 ```typescript
 import { Component } from '@angular/core';
@@ -102,7 +99,6 @@ export class PopOverComponent {
     return this.show ? 'show' : 'hide'
   }
 
-
   toggle() {
     this.show = !this.show;
   }
@@ -122,7 +118,6 @@ In the HTML, we can now apply this animation to a div and provide a button to to
 ## 2. MultiState Animation
 
 {{< figure src="img/animate-2.gif" caption="multi state animation" >}}
-
 
 <p>Now let’s build an animation that can move between multiple states. This will translate (move), rotate (spin), and scale (enlarge) the the image around the screen. Notice how I am using the wildcard transition `* => *` to apply the same transition settings to all states.</p>
 
@@ -148,7 +143,6 @@ In the HTML, we can now apply this animation to a div and provide a button to to
 ## 3. Keyframe Animation
 
 {{< figure src="img/animate-3.gif" caption="keyframe animation" >}}
-
 
 <p>What if you want to control the intermediate steps in an animation? That’s where <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes">keyframes</a> come in. </p>
 
