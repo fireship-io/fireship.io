@@ -48,8 +48,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 ## 1. Basic Animation Two-State
 
-<img src="https://angularfirebase.com/wp-content/uploads/2017/07/animate-1.gif" alt="animated pop over in Angular 4" width="600" height="338" class="content-image" />
-
 {{< figure src="img/animate-1.gif" caption="animated popover" >}}
 
 
