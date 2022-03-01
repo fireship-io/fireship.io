@@ -109,7 +109,7 @@ module.exports = {
 }
 ```
 
-Another file can use this code by importing it. 
+Another file can use this code by importing it:
 
 ```javascript
 const { hello } = require('./cool.js');
@@ -119,7 +119,7 @@ console.log(hello);
 ```
 
 
-Install remote modules by initializing an NPM project. 
+Install remote modules by initializing an NPM project:
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -132,7 +132,7 @@ npm install express
 
 ### Use Express to create an HTTP endpoint
 
-Create an HTML file. 
+Create an HTML file:
 
 {{< file "html" "home.html" >}}
 ```html
@@ -169,14 +169,14 @@ app.listen(process.env.PORT || 3000, () => console.log(`App available on http://
 
 Create a Google Cloud account and install the [gcloud SDK](https://cloud.google.com/sdk). 
 
-Configure your server. 
+Configure your server:
 
 {{< file "yaml" "app.yaml" >}}
 ```yaml
 runtime: nodejs12
 ```
 
-Deploy it.
+Deploy it:
 
 {{< file "terminal" "command line" >}}
 ```text
