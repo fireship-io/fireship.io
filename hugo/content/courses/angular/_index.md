@@ -22,7 +22,7 @@ tags:
 
 The **Angular Firebase PWA Course** will teach you how to build a complex progressive web app with Angular 12 (ivy), Material Design, and Firebase. It starts from absolute basics and eventually culminates with the deployment of a server-rendered PWA on Google Cloud Run. 
 
-You will build a full-stack [Kanban (看板)](https://en.wikipedia.org/wiki/Kanban) storyboard app inspired by Trello. Authenticated users can create, sort, update, and delete boards with all interaction persisted in Firestore. 
+You will build a full-stack [Kanban (看板)](https://en.wikipedia.org/wiki/Kanban) storyboard app inspired by Trello. Authenticated users can create, sort, update, and delete boards with all interactions persisted in Firestore. 
 
 <div>
 <a href="https://firestarter.fireship.io" class="btn btn-orange">Firestarter Live Demo</a>
