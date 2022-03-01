@@ -21,8 +21,8 @@ This course provides a tour of [Dart](https://dart.dev/) and teaches essential c
 
 - 👨‍🎤 Become confident with the Dart language
 - 🐦 Get Prepared for Flutter
-- 🦺 Master null-safety
-- 🦾 Learn how to use the Dart CLI
+- Master null-safety
+- Learn how to use the Dart CLI
 - 🕹️ Practice OOP and Functional Programming Concepts
 - 🌊 Asynchronous programming with Futures & Streams
 
