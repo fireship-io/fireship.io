@@ -48,3 +48,9 @@ function Lifecycle() {
 
 }
 ```
+
+## Challenge
+
+Implement a `CountdownTimer` component that implements `useState()` and `useEffect()` in conjunction with `setInterval` to handle the timer. Make sure you use the `useEffect()` hook to call `clearTimeout()` when the component is destroyed.
+
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-2j1xe5?embed=1&file=src/App.js"></iframe>
