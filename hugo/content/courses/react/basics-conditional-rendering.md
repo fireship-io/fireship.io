@@ -38,3 +38,9 @@ function Conditional({ count }) {
 ```jsx
 {count && 2 === 0 ? <h1>Count is even</h1> }
 ```
+
+## Challenge
+
+Define a *LoadingButton* component. The button takes loading state, onClick, and label as props then renders the label or loader depending on the loading state.
+
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-ksebra?embed=1&file=src/App.js"></iframe>
