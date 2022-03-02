@@ -34,3 +34,9 @@ function ListOfAnimals() {
 
 }
 ```
+
+## Challenge
+
+Define an array of animals called *data*. Use a `.map()` to return a list of all the animals in the data array.
+
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-xkdagk?embed=1&file=src/App.js"></iframe>
