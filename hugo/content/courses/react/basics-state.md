@@ -14,13 +14,22 @@ video_length: 1:46
 {{< file "react" "App.js" >}}
 ```jsx
 function Stateful() {
+
   const [count, setCount] = useState(0);
+  const [prevCount, setPrevCount] = useState(0);
+
+  const handleClick = () => {
+    setCount((prev) => {
+      setPrevCount(prev);
+      setCount(count + 1);
+    });
+  };
 
   return (
     <>
-      <p>{count}</p>
-
-      <button onClick={() => setCount(count + 1)}>+</button>
+      <h3>Current count: {count}</h3>
+      <h3>Previous count: {prevCount}</h3>
+      <button onClick={handleClick}>Increment</button>
     </>
   );
 }
@@ -42,10 +51,16 @@ function Stateful() {
 
   return (
     <>
-      <p>{state.count}</p>
-
-      <button onClick={handleClick}>+</button>
+      <h3>Count: {state.count}</h3>
+      <h3>User: {state.user}</h3>
+      <button onClick={handleClick}>Increment</button>
     </>
   );
 }
 ```
+
+## Challenge
+
+Implement a `handleClick()` function to handle state using `useState()`.
+
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-zu9llg?embed=1&file=src/App.js"></iframe>

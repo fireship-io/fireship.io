@@ -15,22 +15,27 @@ The most common way to loop over a collection of data in React is to use the Arr
 
 {{< file "react" "App.js" >}}
 ```jsx
+const data = [
+  { id: 1, name: 'Fido 🐕' },
+  { id: 2, name: 'Snowball 🐈' },
+  { id: 3, name: 'Murph 🐈‍⬛' },
+  { id: 4, name: 'Zelda 🐈' },
+];
+
 function ListOfAnimals() {
-
-  const data = [
-    { id: 1, name: 'Fido 🐕' }, 
-    { id: 2, name: 'Snowball 🐈' }
-  ];
-
   return (
     <ul>
-      {data.map(({ id, name }) => 
-        
-        <li key={id}>{name}</li> 
-
-      )}
+      {data && // Only render if there's data - see 'Conditional Rendering'
+        data.map(({ id, name }) => {
+          return <li key={id}>{name}</li>;
+        })}
     </ul>
   );
-
 }
 ```
+
+## Challenge
+
+Define an array of animals called *data*. Use a `.map()` to return a list of all the animals in the data array.
+
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-xkdagk?embed=1&file=src/App.js"></iframe>

@@ -32,5 +32,6 @@ function Events() {
 
 ## Challenge
 
-Implement a button that logs a number passed passed via an argument to the event handler.
+Implement a text input that updates the input value and logs the event target.
 
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-7xn78o?embed=1&file=src/App.js"></iframe>
