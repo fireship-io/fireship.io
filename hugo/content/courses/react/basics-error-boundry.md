@@ -46,3 +46,9 @@ function Main() {
   );
 }
 ```
+
+## Challenge
+
+Create an `ErrorBoundary` class component that provides a fallback UI in the event an error occurs. 
+
+<iframe class="frame-full" src="https://stackblitz.com/edit/react-bhv9ih?embed=1&file=src/App.js"><iframe>
