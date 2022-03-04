@@ -1,5 +1,5 @@
 ---
-title: "Code This ✅ Not That ❌ - Python Edition"
+title: "Code This, Not That - Python Edition"
 lastmod: 2022-02-20T15:31:36+01:00
 publishdate: 2022-02-20T15:31:36+01:00
 author: Alex Guja
