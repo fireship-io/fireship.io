@@ -51,4 +51,9 @@ function Main() {
 
 Create an `ErrorBoundary` class component that provides a fallback UI in the event an error occurs. 
 
+<div>
 <iframe class="frame-full" src="https://stackblitz.com/edit/react-bhv9ih?embed=1&file=src/App.js"><iframe>
+</div>
+
+
+<!-- <iframe class="frame-full" src="https://stackblitz.com/edit/react-4xm5fc?embed=1&file=src/App.js"></iframe> -->
