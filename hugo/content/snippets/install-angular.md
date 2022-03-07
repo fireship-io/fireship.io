@@ -18,8 +18,8 @@ Angular requires [Node version 8.x or 10.x installed](/snippets/install-nodejs/)
 npm install -g @angular/cli
 
 # create an app
-ng new myApp
+`ng new myApp`
 
 # serve it
-ng serve -o
+`ng serve -o
 {{< /highlight >}}
