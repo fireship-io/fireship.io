@@ -93,7 +93,7 @@ Put this component to use anywhere in the app to access the current user's data,
 
 ## Reactive Realtime Document
 
-The following code creates a `reactive` value, then subscribes 
+The following code creates a `reactive` value, then subscribes.
 
 ### Making Firestore Reactive in Vue
 
