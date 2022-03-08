@@ -14,7 +14,7 @@ video_length: 2:51
 There are many ways to build a react app. The most common options include:
 
 - [Create React App](https://create-react-app.dev/)
-- [Vite](https://vite.dev/)
+- [Vite](https://vitejs.dev/)
 - [Next.js](https://nextjs.org/)
 - [Gatsby](https://www.gatsbyjs.org/)
 
