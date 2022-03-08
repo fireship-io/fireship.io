@@ -31,7 +31,7 @@ github: https://github.com/fireship-io/196-sendgrid-email-cloud-functions
 ---
 
 {{< box emoji="👀" >}}
-This tutorial is an extension of the [SendGrid Transactional Email Guide](/lessons/sendgrid-transactional-email-guide/). You must have the Cloud Functions deployed to start sending email from your frontend app. 
+This tutorial is an extension of the  <a href="/lessons/sendgrid-transactional-email-guide/">SendGrid Transactional Email Guide</a>. You must have the Cloud Functions deployed to start sending email from your frontend app. 
 {{< /box >}}
 
 
