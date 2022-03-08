@@ -34,7 +34,7 @@ Common use-cases for transactional email include:
 
 
 {{< box icon="scroll" class="box-blue" >}}
-This post first appeared as [Episode 71 SendGrid V3 on AngularFirebase.com](https://angularfirebase.com/lessons/sendgrid-v3-nodejs-transactional-email-cloud-function/) and has been fully updated with the latest best practices. 
+This post first appeared as <a href="https://angularfirebase.com/lessons/sendgrid-v3-nodejs-transactional-email-cloud-function/">Episode 71 SendGrid V3 on AngularFirebase.com</a> and has been fully updated with the latest best practices. 
 {{< /box >}}
 
 
