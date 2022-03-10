@@ -16,7 +16,7 @@ The monorepo is organized into five sub-projects:
 
 ## Contributing
 
-Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for small issues. For large issues or features, open an issue first. 
+Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for small issues. For large issues or features, open an issue first! 
 
 ### Option 1 - Simple Typo Fixes
 
