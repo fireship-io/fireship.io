@@ -38,6 +38,7 @@ hugo/static/design
 .vscode
 *.launch
 *.sublime-workspace
+*.code-workspace
 
 # misc
 .env
