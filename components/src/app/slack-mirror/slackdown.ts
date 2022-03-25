@@ -1,5 +1,3 @@
-import { strictEqual } from 'assert';
-
 function replaceURLs(text) {
   const pattern = /\b(?:https?|ftp):\/\/[a-z0-9-+&@#\/%?=~_|!:,.;]*[a-z0-9-+&@#\/%=~_|]/gim;
   const regex = new RegExp(pattern);
