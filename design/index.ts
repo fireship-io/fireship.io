@@ -1,9 +1,13 @@
 import './styles.scss';
 import hotroute from 'hotroute';
-declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: any): void;
+declare function gtag(
+  command: 'config' | 'set' | 'event',
+  id: string,
+  config?: any
+): void;
 
 (() => {
-  document.addEventListener('DOMContentLoaded', e => {
+  document.addEventListener('DOMContentLoaded', (e) => {
     ///// ROUTING /////
     const router = hotroute({ log: true });
 
@@ -18,7 +22,7 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
 
     const $ = (selector): HTMLElement => {
       return document.querySelector(selector);
-    }
+    };
 
     ///// SCROLL BEHAVIOR  /////
     function doOnRouteChange() {
@@ -70,35 +74,28 @@ declare function gtag(command: 'config' | 'set' | 'event', id: string, config?: 
         ifExists(toc, 'top', '120px');
       }
 
-      // function copyCodeSnippets() {
-      //   const snips = document.querySelectorAll('.highlight').forEach(el => {
-      //     el.addEventListener('click', (e) => {
-      //       (navigator as any).clipboard.writeText((el as any).innerText);
-      //       const createEl = () => {
-      //         const newEl = document.createElement('span');
-      //         newEl.id = 'copied';
-      //         newEl.innerHTML = 'copied!';
-      //         newEl.classList.add('tag', 'tag-green', 'copy-alert'); 
-              
-      //         return newEl;
-      //       }
-      //       const alert = document.getElementById('copied') || createEl();
-   
-      //       el.parentElement.appendChild(alert);
-      //       alert.classList.add('delayed-fade');
-      //     })
-      //   })
-       
-      // }
+      function initComments() {
+        const commentsContainer = document.getElementById('qna');
+        const commentsScript = document.createElement('script');
+        commentsScript.src = 'https://utteranc.es/client.js';
+        commentsScript.setAttribute('repo', 'fireship-io/fireship.io');
+        commentsScript.setAttribute('issue-term', 'pathname');
+        commentsScript.setAttribute('theme', 'github-dark');
+        commentsScript.setAttribute('crossorigin', 'anonymous');
+        commentsScript.setAttribute('async', '');
+        commentsScript.setAttribute('label', 'question');
+        commentsContainer.appendChild(commentsScript);
+      }
 
-      // copyCodeSnippets();
+
+
       positionMenus();
+      initComments();
     }
-
 
     ///// DO IT /////
     doOnRouteChange();
-    window.addEventListener('router:end', e => {
+    window.addEventListener('router:end', (e) => {
       doOnRouteChange();
       const page_path = new URL(window.history.state['url']).pathname;
 
