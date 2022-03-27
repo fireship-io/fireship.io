@@ -87,6 +87,8 @@ export default {
               createdAt: Date.now(),
 
           });
+          this.loading = false;
+          this.newMessageText = "";
       }
     },
 };
