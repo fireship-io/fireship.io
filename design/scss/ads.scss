@@ -1,7 +1,8 @@
 #carbonads {
     font-family: var(--font-body);
+    z-index: 101;
+    
   }
-  
   
   #carbonads {
     display: flex;
@@ -60,7 +61,6 @@
     font-size: 9px;
     line-height: 1;
   }
-  
 
   @media (min-width: 320px) and (max-width: 480px) {
   

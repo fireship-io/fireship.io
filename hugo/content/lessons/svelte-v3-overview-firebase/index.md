@@ -23,7 +23,7 @@ github: https://github.com/fireship-io/182-svelte-firebase
 ---
 
 
-[Svelte](https://svelte.dev/) 3 was [announced](https://twitter.com/Rich_Harris/status/1120342713843507201) recently and it delivers a refreshing alternative to the big three component frameworks/libraries of React, Angular, and Vue. In fact, calling it a framework/library would not be very accurante, because Svelte is actually a *compiler* that turns your code into Vanilla JS, meaning it does not need to ship the entire framework in the JS bundle. Its focus on simplicity really stands out and makes for a very developer-friendly JavaScript experience. 
+[Svelte](https://svelte.dev/) 3 was [announced](https://twitter.com/Rich_Harris/status/1120342713843507201) recently and it delivers a refreshing alternative to the big three component frameworks/libraries of React, Angular, and Vue. In fact, calling it a framework/library would not be very accurate, because Svelte is actually a *compiler* that turns your code into Vanilla JS, meaning it does not need to ship the entire framework in the JS bundle. Its focus on simplicity really stands out and makes for a very developer-friendly JavaScript experience. 
 
 I highly recommend watching the video from Svelte's creator, Rich Harris, to get a better of the low-level engineering decisions that make this tool special.  
 

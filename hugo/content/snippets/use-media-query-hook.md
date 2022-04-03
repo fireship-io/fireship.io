@@ -1,7 +1,7 @@
 ---
 title: Handle media queries in React with hooks
 lastmod: 2021-07-08T23:11:49-04:00
-lastmod: 2021-07-08T23:11:49-04:00
+publishdate: 2021-07-08T23:11:49-04:00
 author: Kyle Leary
 draft: false
 description: Handle media queries in React with a useMediaQuery() hook
