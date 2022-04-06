@@ -36,12 +36,12 @@ We provide support through various services in addition to content production.
 
 With JavaScript of course. More specifically, the UI mostly relies on Web
 Components via Angular Elements. User auth and all backend cloud resources
-are handled by Firebase. The static HTML and content is managed with Hugo
+are handled by Firebase. The static HTML and content is managed with Hugo.
 - it's the JAM Stack on steroids.
 
 ### What Tools do you Use?
 
-- **Code** with VS Code, [Fira Code](https://github.com/tonsky/FiraCode) font and [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
+- **Code** with VS Code, [Fira Code](https://github.com/tonsky/FiraCode) font, and [vscode-icons](https://marketplace.visualstudio.com/items?itemName=vscode-icons-team.vscode-icons)
 - **Video Production** with Adobe Premiere. 
 - **Graphics** with Figma and AfterEffects.
 
