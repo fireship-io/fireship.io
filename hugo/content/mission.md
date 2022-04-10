@@ -28,7 +28,7 @@ Do not be limited by any single paradigm or narrow set of ideas. The best practi
 
 > I have great expectations for the future because the past was highly overrated - Sylvester Stallone
 
-There is a complex ecosystem of competing interests in the OSS industry, many of which are built on hype. It is never easy to navigate, but always ask yourself *is this the best tool for the job*?. Just because *Tool X* has a fancy interface and is used by *Hipster App Inc* does not mean you should use it. We tend to over-engineer everything - fight this urge.
+There is a complex ecosystem of competing interests in the OSS industry, many of which are built on hype. It is never easy to navigate, but always ask yourself *is this the best tool for the job*? Just because *Tool X* has a fancy interface and is used by *Hipster App Inc* does not mean you should use it. We tend to over-engineer everything - fight this urge.
  
 
 ### 4. 🧰 *Code* is Just a Tool
