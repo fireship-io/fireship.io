@@ -65,7 +65,7 @@ npm run build
 
 ## Contribute a Post
 
-Read the [style guide](https://fireship.io/style-guide/) for some tips before contributing. 
+Read the [style guide](https://fireship.io/style-guide/) for some tips before contributing!
 
 ```shell
 cd hugo
@@ -75,7 +75,7 @@ hugo new snippets/my-cool-snippet.md
 
 ### Add Your Bio
 
-First time? Add your bio and social links to `content/contributors`. 
+First time? Add your bio and social links to `content/contributors`.
 
 ## Web Component Development
 
