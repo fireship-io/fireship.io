@@ -61,4 +61,4 @@ While in preview, this course is only available to PRO Members.
 
 ## 🚨 Work in Progress!
 
-This course is a **Work in Progress**. It will be updated with new content weekly until it is completed in March 2022.
+This course is a **Work in Progress**. It will be updated with new content weekly until it is completed in Spring 2022.
