@@ -106,7 +106,7 @@ Now create a Vue component or page to fetch the data and display it in the UI.
 
 ## Client-Side Hydration
 
-At this point, we are able to fetch data from the server, but it will not resond to realtime updates. For that, we need to initialize the Firebase Web SDK and hydrate the data.
+At this point, we are able to fetch data from the server, but it will not respond to realtime updates. To add a realtime listener, we need to initialize the Firebase Web SDK and hydrate the data.
 
 Note: This process results in 2 document reads on the initial page load. 
 
