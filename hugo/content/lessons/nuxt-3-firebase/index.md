@@ -24,7 +24,7 @@ pro: true
 #    rxdart: 0.20
 ---
 
-Nuxt3 hit release candidate [recently](https://nuxtjs.org/announcements/nuxt3-rc/) with a variety of awesome new features. But you might be wondering... how do I use Nuxt3 with Firebase? There is no documented best practice as of today, so I put together a demo that is capable of server-side rendering (SSR) via Firestore, followed by hyrdation to secure realtime data on the client. This gives a website the benefits SEO-friendly HTML, without sacrificing the power the realtime data updates after the initial page load. 
+Nuxt3 hit release candidate [recently](https://nuxtjs.org/announcements/nuxt3-rc/) with a variety of awesome new features. But you might be wondering... how do I use Nuxt3 with Firebase? There is no documented best practice as of today, so I put together a demo that is capable of server-side rendering (SSR) via Firestore, followed by hydration to secure realtime data on the client. This gives a website the benefits SEO-friendly HTML, without sacrificing the power the realtime data updates after the initial page load. 
 
 ## Initial Setup
 
@@ -48,9 +48,7 @@ The [Firebase Admin SDK](https://firebase.google.com/docs/reference/admin) is th
 ```
 ### Initialize Firebase Admin
 
-Firebase admin requires us to authenticate the server. Download your service account from the Firebase console and save it as `service-account.json` in the root of the project. 
-
-⚠ Keep this file secret!
+Firebase Admin requires us to authenticate the server. Download your service account from the Firebase console and save it as `service-account.json` in the root of the project. ⚠ Keep this file secret!
 
 {{< figure src="img/service-account.png" >}}
 
@@ -112,7 +110,7 @@ Note: This process results in 2 document reads on the initial page load.
 
 ### Initialize the Firebase Web SDK
 
-Grap the firebase web config, then create a composable to access Firebase from a Vue component. 
+Grab the Firebase web config, then create a composable to access Firebase from a Vue component. 
 
 {{< file "typescript" "composables/useFirebase.ts" >}}
 ```typescript
@@ -136,7 +134,7 @@ export const useFirebase = () => {
 
 ### Hydrate Realtime Data
 
-When the client loads, we need to refetch the same data and listen to changes with `onSnapshot`. It's important that we **only run Firebase Web code on the client** by placing it inside the `onMounted` lifecycle hook on inside a function.  
+When the client loads, the app needs to refetch the same data and listen to changes with `onSnapshot`. It's important to **only run Firebase Web code on the client** by placing it inside the `onMounted` lifecycle hook on inside a function.
 
 {{< file "js" "pages/animal.vue" >}}
 ```html
