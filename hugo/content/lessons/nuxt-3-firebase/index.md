@@ -9,6 +9,7 @@ tags:
     - vue
     - nuxt
     - firebase
+    - pro
 
 # youtube: 
 github: https://github.com/fireship-io/nuxt3-firebase-starter
