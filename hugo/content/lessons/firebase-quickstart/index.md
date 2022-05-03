@@ -62,7 +62,7 @@ In the `<head>` of the HTML file, paste the snippet. Also, include script tags f
 
   <script>
     var firebaseConfig = {
-      // TODO: Add your our config here
+      // TODO: Add your own config here
     };
     firebase.initializeApp(firebaseConfig);
   </script>
