@@ -21,5 +21,5 @@ npm install -g @angular/cli
 `ng new myApp`
 
 # serve it
-`ng serve -o
+`ng serve -o`
 {{< /highlight >}}
