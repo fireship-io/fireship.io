@@ -45,7 +45,7 @@ function makeBread(qty) {
 }
 {{< /highlight >}}
 
-An alternative approach is use a function as a value or *expression* by assigning an anonymous function to a variable or parameter. 
+An alternative approach is use a function as a *value* or *expression* by assigning an anonymous function to a variable or parameter. 
 
 {{< highlight javascript >}}
 const makeBeer = function(qty) {
