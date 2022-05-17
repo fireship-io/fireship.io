@@ -305,7 +305,7 @@ v9 and later:
 
 ```js
 import { firestore } from "./firebaseInit";
-import { addDoc, setDoc, doc,, collection } from "firebase/firestore";
+import { addDoc, setDoc, doc, collection } from "firebase/firestore";
 
 // Collection/doc ref
 const collectionRef = collection(firestore, "some-collection");
