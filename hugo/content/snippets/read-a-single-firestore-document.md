@@ -62,7 +62,7 @@ async function getUserByEmail(email) {
 
 ### With a Non-Unique Field
 
-Another common use-case is to *fetch the most recent post* In this case, we order by the desired field, then limit the result set. 
+Another common use-case is to *fetch the most recent post* in this case, we order by the desired field, then limit the result set. 
 
 {{< highlight javascript >}}
 async function getMostRecent() {
