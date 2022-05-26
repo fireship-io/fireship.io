@@ -104,7 +104,7 @@ Each entity is managed by the `Repository` class, which is responsible for savin
 export async function createCar(data) {
     await connect();
   
-    const repository = new Repository(schema, client);
+    const repository = client.fetchRepository(schema)
   
     const car = repository.createEntity(data);
   
