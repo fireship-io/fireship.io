@@ -1,10 +1,10 @@
 ---
-title: "Style Guide"
-lastmod: 2019-01-06T06:14:45-07:00
-publishdate: 2019-01-06T06:14:45-07:00
-author: Jeff Delaney
-draft: false
-description: Style Guide for Contributing Content to Fireship.io
+Title: "Style Guide"
+Lastmod: 2019-01-06T06:14:45-07:00
+Publishdate: 2019-01-06T06:14:45-07:00
+Author: Jeff Delaney
+Draft: false
+Description: Style Guide for Contributing Content to Fireship.io
 ---
 
 This guide is for authors and developers who contribute content to Fireship.io
