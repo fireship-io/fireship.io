@@ -60,7 +60,7 @@ const settings = Settings.getInstance();
 
 ### Prototype
 
-Prototype allows objects to be clones of other objects, rather then extended via inheritance.
+Prototype allows objects to be clones of other objects, rather than extended via inheritance.
 
 {{< file "typescript" "software.ts" >}}
 ```typescript
@@ -109,7 +109,7 @@ const btn2 = factory.createButton(os);
 ```
 ### Builder
 
-The builder pattern is a creational design pattern that lets you construct complex objects step by step. It JavaScript, we can achieve this with method chaining. 
+The builder pattern is a creational design pattern that lets you construct complex objects step by step. In JavaScript, we can achieve this with method chaining. 
 
 {{< file "typescript" "software.ts" >}}
 ```typescript
@@ -146,19 +146,19 @@ Structural patterns are primarily used to handle relationships between objects.
 
 ### Facade
 
-A facade is a class that provides a simplified API for larger body of code. It is often to used to hide low-level details of a subsystem.
+A facade is a class that provides a simplified API for larger body of code. It is often used to hide low-level details of a subsystem.
 
 {{< file "typescript" "software.ts" >}}
 ```typescript
 class PlumbingSystem {
-  // low evel access to plubming system
+  // low level access to plubming system
   setPressure(v: number) {}
   turnOn() {}
   turnOff() {}
 }
 
 class ElectricalSystem {
-  // low evel access to electrical system
+  // low level access to electrical system
   setVoltage(v: number) {}
   turnOn() {}
   turnOff() {}
@@ -262,7 +262,7 @@ tv1.unsubscribe();
 ```
 ### Mediator
 
-The mediator is provids a middle layer between objects that communicate with each other. This pattern implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
+The mediator provids a middle layer between objects that communicate with each other. This pattern is implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
 
 {{< file "typescript" "software.ts" >}}
 ```typescript
