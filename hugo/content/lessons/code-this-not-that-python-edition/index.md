@@ -99,10 +99,19 @@ and append results to the list.
 
 Python provides a neat one-liner for this purpose, called a "list comprehension". 
 
-Python provides a neat one-liner for this purpose, called a "list comprehension". To write a list comprehension, start with the expression you would normally pass to the <code>append</code> method. From there, write the <code>for</code> loop condition immediately after the initial expression. Lastly, put everything inside a pair of square brackets. Comprehensions can be used with dictionaries, sets, and generators, however, try to avoid them with complex expressions. Readability is key.
+{{< file "python" "list_comprehension_examples.py" >}}
+{{< highlight "python" >}}
+# List comprehensions can 'map' data to new values: 
+bigger_nums = [num+1 for num in nums]
 
-When making your code more dense, be careful not to make it less readable. More complex logic may be more readable with a full loop.
-[At Google, they never allow nested list comprehensions.](https://google.github.io/styleguide/pyguide.html#274-decision)
+# And they can 'filter' data, skipping some values: 
+even_nums = [num for num in nums if num%2 == 0]
+
+# Or both at once:
+bigger_even_nums = [num+1 for num in nums if num%2 == 0]
+{{< /highlight >}}
+
+Comprehensions can be used with dictionaries, sets, and generators, however, try to avoid them with complex expressions. Readability is key. [At Google, they never allow nested list comprehensions.](https://google.github.io/styleguide/pyguide.html#274-decision)
 
 {{< file "python" "list_comprehension.py" >}}
 {{< highlight "python" >}}
