@@ -91,6 +91,9 @@ One way to do this is to define a list, and use a <code>for</code> loop to itera
 
 Python provides a neat one-liner for this purpose, called a "list comprehension". To write a list comprehension, start with the expression you would normally pass to the <code>append</code> method. From there, write the <code>for</code> loop condition immediately after the initial expression. Lastly, put everything inside a pair of square brackets. Comprehensions can be used with dictionaries, sets, and generators, however, try to avoid them with complex expressions. Readability is key.
 
+When making your code more dense, be careful not to make it less readable. More complex logic may be more readable with a full loop.
+[At Google, they never allow nested list comprehensions.](https://google.github.io/styleguide/pyguide.html#274-decision)
+
 {{< file "python" "list_comprehension.py" >}}
 {{< highlight "python" >}}
 # OK version 🤔 - For loop and append ❌ 
