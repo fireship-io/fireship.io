@@ -30,7 +30,7 @@ Creational patterns are related to the creation of new objects.
 
 ### Singleton
 
-A singleton is an object that can only be instantiated once. It is useful fo implementing a global object that can be accessed from anywhere in the application.
+A singleton is an object that can only be instantiated once. It is useful for implementing a global object that can be accessed from anywhere in the application.
 
 {{< file "typescript" "software.ts" >}}
 ```typescript
