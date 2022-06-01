@@ -83,7 +83,7 @@ for language in languages:
     if my_language == language:
         print(f"{my_language} is contained in the list")
 
-# Pythonic version 🐍: Use "if x in L" ✅
+# Pythonic version 🐍: Use "if item in collection" ✅
 if my_language in languages:
     print(f"{my_language} is contained in the list")
 {{< /highlight >}}
@@ -133,13 +133,11 @@ for num in nums:
     if num < 0:
         contains_neg = True
 
-
 # Pythonic way 🐍 - Using the built-in "any" function ✅
 contains_neg = any(num < 0 for num in nums) # True
 
 # Bonus Tip 💡: Python also has a built-in "all" function ✅
 contains_neg = not all(num >= 0 for num in nums) # True
-
 {{< /highlight >}}
 
  - <code>any</code> - Returns True if a condition applies to any element of the iterable. If the iterable is empty, returns False. 
@@ -178,7 +176,7 @@ traits = ["big", "salty", "scary"]
 animals = ["cat", "oyster", "crocodile"]
 
 # OK version 🤔: Index in range ❌ 
-for i in range(len(A)):
+for i in range(len(animals)):
     trait, animal = traits[i], animals[i]
     print(i, trait, animal)
 
