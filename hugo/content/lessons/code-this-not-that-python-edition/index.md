@@ -30,22 +30,30 @@ To make life simpler, we’ll use the following key to denote a few categories
 - 🐍 - code that is considered pythonic.
 - 💡 - bonus tips.
 
-## Null checks
+## Null / empty checks
+ 
+Certain "empty" values in Python resolve to <code>False</code> (they're "falsey"), including <code>None</code> (Python's null), <code>0</code>, <code>""</code>, and empty collections.
+Other values resolve to <code>True</code> ("truthy").
 
-A common scenario is checking that a variable isn't empty (or null) before use. In Python, _null_ is denoted by the keyword <code>None</code>. The two code snippets below produce identical results. However, Python supports a simplified null check using the <code>if</code> keyword followed by the name of a variable.
+Because of this, <code>if some_var:</code> can concisely check if a variable is non-empty.
+
+For example, if a variable starts as <code>None</code> and is later initialized to a non-empty value, <code>if some_var:</code> will show if it has been initialized.
+
+Be careful if some falsey values should be treated differently in the logic, 
+like if you want to reject <code>None</code> but accept <code>0</code> or <code>""</code>. 
+In these cases, specifying <code>if some_var is not None:</code> is necessary.
 
 💡 _Bonus Tip_: Use <code>f-strings</code> for string formatting. Initiate an f-string by typing an _f_ immediately before a regular string <code>(f"...")</code>, and place variables inside curly braces. Python will format the result into a string containing the variables.
 
 {{< file "python" "null_checks.py" >}}
 {{< highlight "python" >}}
-# Null check: OK version 🤔 - Explicit "if x is not None" ❌
-n = 42
-if n is not None:
-    print(f"n exists and is equal to {n}")
+# Explicit null check: Necessary if the value could be falsey even if not None
+if num_comments is not None: # Could be 0
+    print(f"num_comments exists and equals {num_comments}")
 
-# Pythonic version 🐍: Use simplified if ✅
-if n:
-    print(f"n exists and is equal to {n}")
+# Concise version 🐍: Use simplified if when safe ✅
+if user: # an object
+    print(f"user exists and equals {user}")
 {{< /highlight >}}
 
 
