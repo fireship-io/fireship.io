@@ -96,7 +96,7 @@ When making your code more dense, be careful not to make it less readable. More 
 
 {{< file "python" "list_comprehension.py" >}}
 {{< highlight "python" >}}
-# OK version 🤔 - For loop and append ❌ 
+# OK version 🤔: For loop and append ❌ 
 squares = []
 for num in range(12):
     squares.append(num ** 2)
@@ -122,7 +122,7 @@ Speaking of one-liners, Python provides some built-in functions that can check c
 # Checking for negative values in a list
 nums = [1, 2, 3, 4, 5, -42, 6, 7, 8]
 
-# Inefficinet way 🤔 - Using a for loop and a flag ❌
+# Complex way 🤔: Using a for loop and a flag ❌
 contains_neg = False # flag
 for num in nums:
     if num < 0:
@@ -149,7 +149,7 @@ Python provides a nice syntax for iteration that many users tend to ignore. For 
 # Iterating over a single list
 letters = ["a", "b", "c", "d"]
 
-# OK version 🤔 - Index in range ❌ 
+# OK version 🤔: Index in range ❌ 
 for i in range(len(letters)):
     letter = letters[i]
     print(i, letter)
@@ -172,7 +172,7 @@ using <code>zip</code>. If an index is required, we can use a combination of <co
 traits = ["big", "salty", "scary"]
 animals = ["cat", "oyster", "crocodile"]
 
-# OK version 🤔 - Index in range ❌ 
+# OK version 🤔: Index in range ❌ 
 for i in range(len(A)):
     trait, animal = traits[i], animals[i]
     print(i, trait, animal)
@@ -195,13 +195,13 @@ A more efficient way is to unpack the elements directly.
 # Tuple unpacking
 some_tuple = (1, 2, 3)
 
-# OK version 🤔 - Unpack elements by index ❌
+# OK version 🤔: Unpack elements by index ❌
 x = some_tuple[0]
 y = some_tuple[1]
 z = some_tuple[2]
 
 
-# Pythonic way 🐍 - Unpack elements directly ✅
+# Pythonic version 🐍 - Unpack elements directly ✅
 x, y, z = some_tuple
 {{< /highlight >}}
 
@@ -220,13 +220,13 @@ to understand. Do what you think is best for your situation.
 # Assign a value based on a condition
 score = 42
 
-# OK version 🤔 - if/else blocks ❌ 
+# OK version 🤔: if/else blocks ❌ 
 if score > 0:
     sign = "positive"
 else:
     sign = "negative"
 
-# Pythonic way 🐍 - Use a ternary operator ✅
+# Pythonic version 🐍: Use a ternary operator ✅
 sign = "positive" if (score > 0) else "negative" # parentheses are optional
 {{< /highlight >}}
 
@@ -242,12 +242,12 @@ Using a generator reduces this value to 112 bytes. That's pretty awesome 🔥.
 {{< highlight "python" >}}
 from sys import getsizeof 
 
-# Inefficent way 💩: Using a list ❌
+# Inefficient version 💩: Using a list ❌
 numbers_list = [n for n in range(42_000)]
 sum(numbers_list) # 881979000
 getsizeof(numbers_list) # 351064 bytes
 
-# Efficient way 🔥: Use a generator ✅
+# Efficient version 🔥: Use a generator ✅
 numbers_generator = (num for num in range(42_000))
 sum(numbers_generator) # 881979000
 getsizeof(numbers_generator) # 112 bytes
@@ -258,7 +258,7 @@ Python supports default values for function parameters. If a value for a paramet
 
 {{< file "python" "mutable_default_args.py" >}}
 {{< highlight "python" >}}
-# Mutable default arguments 💩:  Wrong way  ❌
+# Buggy version 💩: Mutable default arguments ❌
 def append_element(elem, previous_list=[]):
     previous_list.append(elem)
     return previous_list
@@ -267,7 +267,7 @@ my_numbers_1 = append_element(21) # [21]
 my_numbers_2 = append_element(42) # [21, 42] - Oops..
 
 
-# Correct way 🔥: Use None ✅
+# Working version 🔥: Use None as a default ✅
 def better_append(elem, previous_list=None):
     if previous_list is None:
         previous_list = []
@@ -285,12 +285,12 @@ In this case, the simple code will run just fine, however, if more complex logic
 
 {{< file "python" "context_managers.py" >}}
 {{< highlight "python" >}}
-# Managing files - using open and f.close() ❌
+# Dangerous version 🤔: Using open and f.close() ❌
 file = open("file.txt", "w")
 file.write("Hi mom!") 
 file.close()
 
-# Pythonic way 🐍 -  Use a context manager ✅
+# Pythonic version 🐍: Use a context manager ✅
 with open("file.txt", "w") as file:
     file.write("Hi mom!") 
 {{< /highlight >}}
