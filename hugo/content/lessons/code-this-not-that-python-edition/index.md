@@ -43,7 +43,10 @@ Be careful if some falsey values should be treated differently in the logic,
 like if you want to reject <code>None</code> but accept <code>0</code> or <code>""</code>. 
 In these cases, specifying <code>if some_var is not None:</code> is necessary.
 
-💡 _Bonus Tip_: Use <code>f-strings</code> for string formatting. Initiate an f-string by typing an _f_ immediately before a regular string <code>(f"...")</code>, and place variables inside curly braces. Python will format the result into a string containing the variables.
+💡 _Bonus Tip_: Use <code>f-strings</code> for string formatting. 
+Initiate an f-string by typing an _f_ immediately before a regular string and place variables inside curly braces, 
+like <code>(f"My variable is {my_var}")</code>. 
+Python will format the result into a string containing the variables.
 
 {{< file "python" "null_checks.py" >}}
 {{< highlight "python" >}}
