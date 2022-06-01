@@ -50,13 +50,15 @@ Python will format the result into a string containing the variables.
 
 {{< file "python" "null_checks.py" >}}
 {{< highlight "python" >}}
+user = get_user() # user could be a truthy user object, or None
+
 # OK version 🤔: Unnecessary explicit check  
-if user is not None: # user is an object, always truthy if not None
+if user is not None: 
     print(f"user exists and equals {user}")
 # This is okay if it makes the code safer or more readable.
 
 # Pythonic version 🐍: Shorten when safe ✅
-if user: # user is an object, always truthy if not None
+if user:
     print(f"user exists and equals {user}")
 
 # Pythonic version 🐍: Use specific guard if the value could be falsey when not None ✅
