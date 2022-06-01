@@ -47,13 +47,18 @@ In these cases, specifying <code>if some_var is not None:</code> is necessary.
 
 {{< file "python" "null_checks.py" >}}
 {{< highlight "python" >}}
-# Explicit null check: Necessary if the value could be falsey even if not None
+# OK version 🤔: Unnecessary explicit check  
+if user is not None: # user is an object, always truthy if not None
+    print(f"user exists and equals {user}")
+# This is okay if it makes the code safer or more readable.
+
+# Pythonic version 🐍: Shorten when safe ✅
+if user: # user is an object, always truthy if not None
+    print(f"user exists and equals {user}")
+
+# Pythonic version 🐍: Use specific guard if the value could be falsey when not None ✅
 if num_comments is not None: # Could be 0
     print(f"num_comments exists and equals {num_comments}")
-
-# Concise version 🐍: Use simplified if when safe ✅
-if user: # an object
-    print(f"user exists and equals {user}")
 {{< /highlight >}}
 
 
@@ -67,7 +72,7 @@ One way to do this is by using a <code>for</code> loop to iterate over all eleme
 langauges = ["JavaScript", "Python", "Ruby", "PHP", "Rust"]
 my_language = "Rust"
 
-# OK version 🤔 - For loop and a equality check ❌
+# OK version 🤔: For loop and a equality check ❌
 for i in range(len(languages)):
     if my_language == languages[i]:
         print(f"{my_language} is contained in the list")
@@ -197,7 +202,14 @@ x, y, z = some_tuple
 {{< /highlight >}}
 
 ## Ternary Operators
-Python uses <code>if/elif/else</code> blocks for control flow. For example, consider the need to decide on the sign of a variable based on its value. The naive way is to use an <code>if/else</code> block to make the decision. A neater way to simplify this is by using a ternary operator.
+Python uses <code>if/elif/else</code> blocks for control flow. 
+For example, consider the need to decide on the sign of a variable based on its value. 
+The typical way is to use an <code>if/else</code> block to make the decision. 
+
+The ternary operator gives a more concise option, fitting the tree in a single expression.
+
+Shortening code like this can make it easier to read if the logic is simple, but it can make more complex logic harder 
+to understand. Do what you think is best for your situation.
 
 {{< file "python" "ternary_operator.py" >}}
 {{< highlight "python" >}}
@@ -215,7 +227,12 @@ sign = "positive" if (score > 0) else "negative" # parentheses are optional
 {{< /highlight >}}
 
 ## Generators
-[_Generators_](https://docs.python.org/3/howto/functional.html#generators) are a powerful tool to save memory and improve performance. In general, they _yield_ one value at a time and can be iterated over multiple times. Let's imagine we're interested in the sum of the first 42 000 natural numbers. We could use a list comprehension to compute the values and call the built-in <code>sum</code> function. Building a list requires 351064 bytes. Using a generator reduces this value to 112 bytes. That's pretty awesome 🔥.
+[_Generators_](https://docs.python.org/3/howto/functional.html#generators) are a powerful tool to save memory and improve performance. 
+In general, they _yield_ one value at a time and can be iterated over multiple times. 
+Let's imagine we're interested in the sum of the first 42 000 natural numbers. 
+We could use a list comprehension to compute the values and call the built-in <code>sum</code> function. 
+Building a list requires 351064 bytes. 
+Using a generator reduces this value to 112 bytes. That's pretty awesome 🔥.
 
 {{< file "python" "generators.py" >}}
 {{< highlight "python" >}}
