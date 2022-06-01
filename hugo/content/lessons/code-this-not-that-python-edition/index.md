@@ -64,17 +64,17 @@ One way to do this is by using a <code>for</code> loop to iterate over all eleme
 {{< file "python" "contains.py" >}}
 {{< highlight "python" >}}
 # Check if a value is contained in a list
-L = ["JavaScript", "Python", "Ruby", "PHP", "Rust"]
-x = "Rust"
+langauges = ["JavaScript", "Python", "Ruby", "PHP", "Rust"]
+my_language = "Rust"
 
 # OK version 🤔 - For loop and a equality check ❌
-for i in range(len(L)):
-    if x == L[i]:
-        print(f"{x} is contained in the list")
+for i in range(len(languages)):
+    if my_language == languages[i]:
+        print(f"{my_language} is contained in the list")
 
 # Pythonic version 🐍: Use "if x in L" ✅
-if x in L:
-    print(f"{x} is contained in the list")
+if my_language in languages:
+    print(f"{my_language} is contained in the list")
 {{< /highlight >}}
 
 
@@ -138,20 +138,20 @@ Python provides a nice syntax for iteration that many users tend to ignore. For 
 {{< file "python" "iterations.py" >}}
 {{< highlight "python" >}}
 # Iterating over a single list
-L = ["a", "b", "c", "d"]
+letters = ["a", "b", "c", "d"]
 
 # OK version 🤔 - Index in range ❌ 
-for i in range(len(L)):
-    val = L[i]
-    print(i, val)
+for i in range(len(letters)):
+    letter = letters[i]
+    print(i, letter)
 
 # Pythonic version 🐍: Access elements directly ✅
-for el in L:
-    print(el)
+for letter in letters:
+    print(letter)
 
 # Pythonic version 🐍: Use enumerate if you need the index, value pair ✅
-for i, val in enumerate(L):
-    print(i, val)
+for i, letter in enumerate(letters):
+    print(i, letter)
 {{< /highlight >}}
 
 💡 _Bonus Tip_: These ideas also apply when iterating over multiple lists. We can iterate directly over values in two collections
@@ -160,21 +160,21 @@ using <code>zip</code>. If an index is required, we can use a combination of <co
 {{< file "python" "iterations.py" >}}
 {{< highlight "python" >}}
 # Bonus Tip 💡:  Iterating over multiple lists
-A = ["a", "b", "c", "d"]
-B = ["e", "f", "g", "h"]
+traits = ["big", "salty", "scary"]
+animals = ["cat", "oyster", "crocodile"]
 
 # OK version 🤔 - Index in range ❌ 
 for i in range(len(A)):
-    va, vb = A[i], B[i]
-    print(i, va, vb)
+    trait, animal = traits[i], animals[i]
+    print(i, trait, animal)
 
 # Pythonic version 🐍: Use zip to get the values ✅
-for va, vb in zip(A, B):
-    print(va, vb)
+for trait, animal in zip(traits, animals):
+    print(trait, animal)
 
 # Pythonic version 🐍: Use a combination of zip and enumerate to get the index and the values ✅
-for i, (va, vb) in enumerate(zip(A, B)):
-    print(i, va, vb)
+for i, (trait, animal) in enumerate(zip(traits, animals)):
+    print(i, trait, animal)
 {{< /highlight >}}
 
 ## Tuple Unpacking
@@ -202,16 +202,16 @@ Python uses <code>if/elif/else</code> blocks for control flow. For example, cons
 {{< file "python" "ternary_operator.py" >}}
 {{< highlight "python" >}}
 # Assign a value based on a condition
-a = 42
+score = 42
 
 # OK version 🤔 - if/else blocks ❌ 
-if a > 0:
+if score > 0:
     sign = "positive"
 else:
     sign = "negative"
 
 # Pythonic way 🐍 - Use a ternary operator ✅
-sign = "positive" if (a > 0) else "negative" # parentheses are optional
+sign = "positive" if (score > 0) else "negative" # parentheses are optional
 {{< /highlight >}}
 
 ## Generators
@@ -222,14 +222,14 @@ sign = "positive" if (a > 0) else "negative" # parentheses are optional
 from sys import getsizeof 
 
 # Inefficent way 💩: Using a list ❌
-L = [n for n in range(42_000)]
-sum(L) # 881979000
-getsizeof(L) # 351064 bytes
+numbers_list = [n for n in range(42_000)]
+sum(numbers_list) # 881979000
+getsizeof(numbers_list) # 351064 bytes
 
 # Efficient way 🔥: Use a generator ✅
-G = (n for n in range(42_000))
-sum(G) # 881979000 bytes
-getsizeof(G) # 112 bytes
+numbers_generator = (num for num in range(42_000))
+sum(numbers_generator) # 881979000
+getsizeof(numbers_generator) # 112 bytes
 {{< /highlight >}}
 
 ## Mutable Default Arguments
@@ -238,23 +238,23 @@ Python supports default values for function parameters. If a value for a paramet
 {{< file "python" "mutable_default_args.py" >}}
 {{< highlight "python" >}}
 # Mutable default arguments 💩:  Wrong way  ❌
-def append_element(elem, L=[]):
-    L.append(elem)
-    return L
+def append_element(elem, previous_list=[]):
+    previous_list.append(elem)
+    return previous_list
 
-L1 = append_element(21) # [21]
-L2 = append_element(42) # [21, 42] - Oops..
+my_numbers_1 = append_element(21) # [21]
+my_numbers_2 = append_element(42) # [21, 42] - Oops..
 
 
 # Correct way 🔥: Use None ✅
-def better_append(elem, L=None):
-    if L is None:
-        L = []
-    L.append(elem)
-    return L
+def better_append(elem, previous_list=None):
+    if previous_list is None:
+        previous_list = []
+    previous_list.append(elem)
+    return previous_list
 
-L1 = better_append(21) # [21]
-L2 = better_append(42) # [42]
+my_numbers_1 = better_append(21) # [21]
+my_numbers_2 = better_append(42) # [42]
 
 {{< /highlight >}}
 
@@ -265,11 +265,11 @@ In this case, the simple code will run just fine, however, if more complex logic
 {{< file "python" "context_managers.py" >}}
 {{< highlight "python" >}}
 # Managing files - using open and f.close() ❌
-f = open("file.txt", "w")
-f.write("Hi mom!") 
-f.close()
+file = open("file.txt", "w")
+file.write("Hi mom!") 
+file.close()
 
 # Pythonic way 🐍 -  Use a context manager ✅
-with open("file.txt", "w") as f:
-    f.write("Hi mom!") 
+with open("file.txt", "w") as file:
+    file.write("Hi mom!") 
 {{< /highlight >}}
