@@ -63,18 +63,19 @@ if num_comments is not None: # Could be 0
 
 
 ## Included values
-In this section, we need to check if a list <code>(L)</code> contains the value of a particular variable <code>(x)</code>.
-One way to do this is by using a <code>for</code> loop to iterate over all elements and check for equality. Python provides a nice shortcut, using the <code>in</code> keyword.
+In this section, we need to check if a list <code>(languages)</code> contains the value of a particular variable <code>(my_language)</code>.
+One way to do this is by using a <code>for</code> loop to iterate over all elements and check for equality. 
+Python provides a nice shortcut, using the <code>in</code> keyword.
 
 {{< file "python" "contains.py" >}}
 {{< highlight "python" >}}
 # Check if a value is contained in a list
-langauges = ["JavaScript", "Python", "Ruby", "PHP", "Rust"]
+languages = ["JavaScript", "Python", "Ruby", "PHP", "Rust"]
 my_language = "Rust"
 
-# OK version 🤔: For loop and a equality check ❌
-for i in range(len(languages)):
-    if my_language == languages[i]:
+# OK version 🤔: For loop and an equality check ❌
+for language in languages:
+    if my_language == language:
         print(f"{my_language} is contained in the list")
 
 # Pythonic version 🐍: Use "if x in L" ✅
