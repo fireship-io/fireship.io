@@ -2,7 +2,7 @@
 title: "Code This, Not That - Python Edition"
 lastmod: 2022-02-20T15:31:36+01:00
 publishdate: 2022-02-20T15:31:36+01:00
-author: Alex Guja
+author: Alex Guja, Toren Darby
 draft: false
 description: 10 Tips to make your code more Pythonic.
 tags:
