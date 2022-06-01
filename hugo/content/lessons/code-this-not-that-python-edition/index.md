@@ -68,7 +68,9 @@ if num_comments is not None: # Could be 0
 
 
 ## Included values
-In this section, we need to check if a list <code>(languages)</code> contains the value of a particular variable <code>(my_language)</code>.
+In this section, we need to check if a list (<code>languages</code>) 
+contains the value of a particular variable (<code>my_language</code>).
+
 One way to do this is by using a <code>for</code> loop to iterate over all elements and check for equality. 
 Python provides a nice shortcut, using the <code>in</code> keyword.
 
@@ -92,7 +94,10 @@ if my_language in languages:
 ## List Comprehensions
 A common data processing pattern is to define an empty list and append values to it.
 For example, let's assume we want to generate a list of square numbers in a certain range.
-One way to do this is to define a list, and use a <code>for</code> loop to iterate over a range of values and append each value to the list.
+One way to do this is to define a list, use a <code>for</code> loop to iterate over a range of values,
+and append results to the list.
+
+Python provides a neat one-liner for this purpose, called a "list comprehension". 
 
 Python provides a neat one-liner for this purpose, called a "list comprehension". To write a list comprehension, start with the expression you would normally pass to the <code>append</code> method. From there, write the <code>for</code> loop condition immediately after the initial expression. Lastly, put everything inside a pair of square brackets. Comprehensions can be used with dictionaries, sets, and generators, however, try to avoid them with complex expressions. Readability is key.
 
@@ -140,8 +145,8 @@ contains_neg = any(num < 0 for num in nums) # True
 contains_neg = not all(num >= 0 for num in nums) # True
 {{< /highlight >}}
 
- - <code>any</code> - Returns True if a condition applies to any element of the iterable. If the iterable is empty, returns False. 
- - <code>all</code> - Returns True if a condition applies to  all elements of the iterable (or if the iterable is empty).
+ - <code>any</code> - Returns True if a condition applies to _any_ element of the iterable. Returns <code>False</code> when empty.
+ - <code>all</code> - Returns True if a condition applies to _all_ elements of the iterable. Returns <code>True</code> when empty.
   
 ## Iterations
 
@@ -283,8 +288,14 @@ my_numbers_2 = better_append(42) # [42]
 {{< /highlight >}}
 
 ## Context Managers
-The last tip is to use a context manager to ensure that a resource is properly closed. Let's consider a simple example of writing to a text file.
-In this case, the simple code will run just fine, however, if more complex logic is involved and an exception is raised during the write, the file won't be closed. Another common scenario is simply to forget to close the file. Using a context manager ensures the file will always be closed, regardless of any exception.
+The last tip is to use a context manager to ensure that a resource is properly closed. 
+Let's consider a simple example of writing to a text file.
+
+The simple code will run just fine, but if more complex logic is involved and an exception is raised during the <code>file.write</code>, 
+the file won't be closed. 
+It is also easy to forget to close the file. 
+
+Using a context manager ensures the file will always be closed, regardless of any exception.
 
 {{< file "python" "context_managers.py" >}}
 {{< highlight "python" >}}
