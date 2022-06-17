@@ -37,7 +37,7 @@ import 'package:quizapp/topics/topics.dart';
 import 'package:quizapp/services/auth.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ Update the login screen with a Scaffold.
 {{< file "flutter" "main.dart" >}}
 ```dart
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

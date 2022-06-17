@@ -153,7 +153,7 @@ Stateful widgets provide widgets with state, which is just data that changes. Us
 
 ```dart
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -216,7 +216,7 @@ class HomeScreen extends StatelessWidget {
 }
 
 class AboutScreen extends StatelessWidget {
-  const AboutScreen({Key? key}) : super(key: key);
+  const AboutScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

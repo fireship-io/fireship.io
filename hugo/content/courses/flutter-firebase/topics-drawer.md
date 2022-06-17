@@ -115,8 +115,7 @@ class QuizBadge extends StatelessWidget {
   final String quizId;
   final Topic topic;
 
-  const QuizBadge({Key? key, required this.quizId, required this.topic})
-      : super(key: key);
+  const QuizBadge({super.key, required this.quizId, required this.topic});
 
   @override
   Widget build(BuildContext context) {

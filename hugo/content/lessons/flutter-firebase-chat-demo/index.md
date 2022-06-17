@@ -131,7 +131,7 @@ The authentication UI consists of a button, that when tapped, will trigger the m
 {{< file "flutter" "lib/landing_screen.dart" >}}
 ```dart
 class LandingScreen extends StatelessWidget {
-  const LandingScreen({Key? key}) : super(key: key);
+  const LandingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -202,7 +202,7 @@ class Chats extends StatelessWidget {
       .limit(15)
       .snapshots();
 
-  Chats({Key? key}) : super(key: key);
+  Chats({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -263,7 +263,7 @@ The final step is to provide a form input where the user can send a new message 
 {{< file "flutter" "lib/bottom_chat_bar.dart" >}}
 ```dart
 class BottomChatBar extends StatefulWidget {
-  const BottomChatBar({Key? key}) : super(key: key);
+  const BottomChatBar({super.key});
 
   @override
   _BottomChatBarState createState() => _BottomChatBarState();

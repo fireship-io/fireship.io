@@ -23,7 +23,7 @@ class AuthService {
   Future<void> anonLogin() async {
     try {
       await FirebaseAuth.instance.signInAnonymously();
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       // handle error
     }
   }
@@ -41,7 +41,7 @@ Create a login screen and resuable button to support multiple login methods.
 {{< file "flutter" "login.dart" >}}
 ```dart
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,12 +77,11 @@ class LoginButton extends StatelessWidget {
   final Function loginMethod;
 
   const LoginButton(
-      {Key? key,
+      {super.key,
       required this.text,
       required this.icon,
       required this.color,
-      required this.loginMethod})
-      : super(key: key);
+      required this.loginMethod});
 
   @override
   Widget build(BuildContext context) {
@@ -116,7 +115,7 @@ import 'package:flutter/material.dart';
 import 'package:quizapp/services/auth.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

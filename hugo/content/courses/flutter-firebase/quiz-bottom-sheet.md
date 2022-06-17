@@ -17,7 +17,7 @@ The QuestionPage implements a method that creates a modal bottom sheet to tell t
 ```dart
 class QuestionPage extends StatelessWidget {
   final Question question;
-  const QuestionPage({Key? key, required this.question}) : super(key: key);
+  const QuestionPage({super.key, required this.question});
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class QuestionPage extends StatelessWidget {
                       children: [
                         Icon(
                             state.selected == opt
-                                ? FontAwesomeIcons.checkCircle
+                                ? FontAwesomeIcons.circleCheck
                                 : FontAwesomeIcons.circle,
                             size: 30),
                         Expanded(

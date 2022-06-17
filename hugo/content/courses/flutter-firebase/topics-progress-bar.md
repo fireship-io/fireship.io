@@ -23,8 +23,7 @@ class AnimatedProgressbar extends StatelessWidget {
   final double value;
   final double height;
 
-  const AnimatedProgressbar({Key? key, required this.value, this.height = 12})
-      : super(key: key);
+  const const AnimatedProgressbar({super.key, required this.value, this.height = 12});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +80,7 @@ Combine the progress bar with Firestore data to display the user's progress on e
 
 ```dart
 class TopicProgress extends StatelessWidget {
-  const TopicProgress({Key? key, required this.topic}) : super(key: key);
+  const TopicProgress({super.key, required this.topic});
 
   final Topic topic;
 
