@@ -13,6 +13,7 @@ video_length: 3:15
 
 Implement Google Login in the auth service.
 
+
 {{< file "flutter" "services/auth.dart" >}}
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
