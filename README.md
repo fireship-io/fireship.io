@@ -79,4 +79,4 @@ First time? Add your bio and social links to `content/contributors`.
 
 ## Web Component Development
 
-Interactive features are built with Angular Elements web components in `components/`
+Interactive features are built with Angular Elements web components in `components/`.
