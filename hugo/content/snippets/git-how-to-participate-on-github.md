@@ -82,7 +82,7 @@ When you go back to Github you should automatically see a button labeled **Creat
 {{< figure src="/img/snippets/git-pr.png" alt="pull requests on a github repo" >}}
 
 {{< box icon="github" class="box-blue" >}}
-Many larger projects have their own "Contributor Guidelines" and may require you to sign a [CLA](https://en.wikipedia.org/wiki/Contributor_License_Agreement) before participating. 
+Many larger projects have their own "Contributor Guidelines" and may require you to sign a <a href="https://en.wikipedia.org/wiki/Contributor_License_Agreement">CLA</a> before participating. 
 {{< /box >}}
 
 ## Submit your First PR?
