@@ -31,16 +31,16 @@ A quiz was chosen because it provides a <span class="hi">moderate amount of comp
 
 ## 🕊️ What will I Learn?
 
-- 👨‍🎤 Build a complete Flutter app with Firebase 
-- 🐣 Master the most common Flutter UI widgets
+- 👨‍🎤 Building a complete Flutter app with Firebase 
+- 🐣 Mastering the most common Flutter UI widgets
 - 🔏 User Authentication (Apple, Google, Anonymous)
 - ⚒️ State Management with Provider
 - 🔥 Model relational Firestore data 
 - 🎭 Animation for realtime data streams
-- ⚓ Organize large Flutter projects
-- 🤖 Convert Firestore data to Dart Classes with JSON Serializable
+- ⚓ Organizing large Flutter projects
+- 🤖 Converting Firestore data to Dart Classes with JSON Serializable
 - 🦺 Null safety
-- 🚀 Deploy to the Apple App Store and Google Play
+- 🚀 Deploying to the Apple App Store and Google Play
 
 
 ## 🤔 Is this Course Right for Me?
@@ -70,7 +70,7 @@ You can download the app we're building on Google Play or the App Store, so give
 
 ## How do I enroll?
 
-The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 
+The first few videos are *free*, so just dive in 🤿. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO to continue further.
 
 
 
