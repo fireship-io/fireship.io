@@ -76,7 +76,7 @@ What is a [Closure](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Clos
 
 > A function within a function, where the outer function's local variables remain available in memory after creation. 
 
-If you come from an classical OOP background, you may notice how closure is very similar to a class instance with properties and methods. 
+If you come from a classical OOP background, you may notice how closure is very similar to a class instance with properties and methods. 
 
 Notice how `outer` contains a local number variable, while `inner` increments it. Even though outer is only called once, we can still access the count because JS "closes over" the inner function to preserve the execution context. 
 
@@ -84,7 +84,7 @@ Notice how `outer` contains a local number variable, while `inner` increments it
 {{< highlight javascript >}}
 function outer() {
 
-    let count = 0; // persits in memory after outer is popped off the call stack
+    let count = 0; // persists in memory after outer is popped off the call stack
 
     function inner() {
         count++;
