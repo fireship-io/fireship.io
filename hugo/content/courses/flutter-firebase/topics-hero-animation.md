@@ -36,7 +36,7 @@ import 'package:quizapp/shared/progress_bar.dart';
 
 class TopicItem extends StatelessWidget {
   final Topic topic;
-  const TopicItem({ Key? key, required this.topic}) : super(key: key);
+  const TopicItem({super.key, required this.topic});
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +98,7 @@ When tapped, the card to navigate to the topic screen and keep the image in the 
 class TopicScreen extends StatelessWidget {
   final Topic topic;
 
-  const TopicScreen({Key? key,required this.topic}) : super(key: key);
+  const TopicScreen({super.key, required this.topic});
 
   @override
   Widget build(BuildContext context) {

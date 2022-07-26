@@ -1,5 +1,5 @@
 ---
-lastmod: 2021-11-02T10:23:30-09:00
+lastmod: 2022-06-15T10:23:30-09:00
 title: Flutter Firebase - The Full Course
 description: Build a full-stack Flutter app with Firebase from scratch. 
 weight: 0
@@ -20,7 +20,7 @@ tags:
 
 ## ⚡ What will I build?
 
-<span class="tag tag-sm tag-pro">Updated Nov 14th, 2021</span> <span class="tag tag-sm tag-flutter">Flutter v2.5</span>
+<span class="tag tag-sm tag-pro">Updated June 15th, 2022</span> <span class="tag tag-sm tag-flutter">Flutter v3.1</span>
 
 This is a project-based course that will teach you how to build a multiple choice quiz app, inspired by apps like Duolingo and QuizUp. The app implements user authentication (Sign in with Google or Apple), tracks quiz progress in Firestore, uses dynamic animations, and shares data between screens. 
 

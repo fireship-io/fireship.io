@@ -40,18 +40,18 @@ dependencies:
   flutter:
     sdk: flutter
 
-  cupertino_icons: ^1.0.2
-  # firebase_core: 1.8.0
-  # cloud_firestore: 2.5.0
-  # firebase_auth: 3.1.4
-  # google_sign_in: 5.2.0
-  # sign_in_with_apple: 3.2.0
+  cupertino_icons: ^1.0.5
+  # firebase_core: 1.18.0
+  # cloud_firestore: 3.1.18
+  # firebase_auth: 3.3.20
+  # google_sign_in: 5.3.3
+  # sign_in_with_apple: 4.0.0
   # crypto: 3.0.1
-  # font_awesome_flutter: 9.2.0
-  # google_fonts: 2.1.0
-  # provider: 6.0.1
-  # rxdart: 0.27.2
-  # json_annotation: 4.3.0
+  # font_awesome_flutter: 10.1.0
+  # google_fonts: 3.0.1
+  # provider: 6.0.3
+  # rxdart: 0.27.4
+  # json_annotation: 4.5.0
 
 dev_dependencies:
   flutter_test:
@@ -59,8 +59,8 @@ dev_dependencies:
 
   flutter_lints: ^1.0.0
 
-  # build_runner: 2.1.4
-  # json_serializable: 6.0.0
+  # build_runner: 2.1.11
+  # json_serializable: 6.2.0
 
 flutter:
   uses-material-design: true

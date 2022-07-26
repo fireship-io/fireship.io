@@ -47,7 +47,7 @@ Now that we have our state, we need to make it available to widgets that depend 
 {{< file "flutter" "quiz.dart" >}}
 ```dart
 class QuizScreen extends StatelessWidget {
-  const QuizScreen({Key? key, required this.quizId}) : super(key: key);
+  const QuizScreen({super.key, required this.quizId});  
   final String quizId;
 
   @override

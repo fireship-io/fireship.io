@@ -14,61 +14,72 @@ video_length: 1:43
 {{< file "dart" "profile.dart" >}}
 ```dart
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import '../services/services.dart';
-import '../shared/shared.dart';
 import 'package:provider/provider.dart';
+import 'package:quizapp/services/services.dart';
+import 'package:quizapp/shared/shared.dart';
 
-class ProfileScreen extends StatelessWidget {
-  final AuthService auth = AuthService();
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
 
   @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  @override
   Widget build(BuildContext context) {
-    FirebaseUser user = Provider.of<FirebaseUser>(context);
+    var report = Provider.of<Report>(context);
+    var user = AuthService().user;
 
     if (user != null) {
-
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.deepOrange,
-        title: Text(user.displayName ?? 'Guest'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            if (user.photoUrl != null)
+      return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.deepOrange,
+          title: Text(user.displayName ?? 'Guest'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
               Container(
                 width: 100,
                 height: 100,
-                margin: EdgeInsets.only(top: 50),
+                margin: const EdgeInsets.only(top: 50),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                    image: NetworkImage(user.photoUrl),
+                    image: NetworkImage(user.photoURL ??
+                        'https://www.gravatar.com/avatar/placeholder'),
                   ),
                 ),
               ),
-            Text(user.email ?? '', style: Theme.of(context).textTheme.headline),
-            Spacer(),
-            FlatButton(
-                child: Text('logout'),
-                color: Colors.red,
+              Text(user.email ?? '',
+                  style: Theme.of(context).textTheme.headline6),
+              const Spacer(),
+              Text('${report.total}',
+                  style: Theme.of(context).textTheme.headline2),
+              Text('Quizzes Completed',
+                  style: Theme.of(context).textTheme.subtitle2),
+              const Spacer(),
+              ElevatedButton(
+                child: const Text('logout'),
                 onPressed: () async {
-                  await auth.signOut();
-                  Navigator.of(context).pushNamedAndRemoveUntil('/', (route) => false);
-                }),
-            Spacer()
-          ],
+                  await AuthService().signOut();
+                  if (mounted) {
+                    Navigator.of(context)
+                        .pushNamedAndRemoveUntil('/', (route) => false);
+                  }
+                },
+              ),
+              const Spacer(),
+            ],
+          ),
         ),
-      ),
-    );
+      );
     } else {
-      return Text('not logged in...');
+      return const Loader();
     }
   }
-
 }
-
 ```

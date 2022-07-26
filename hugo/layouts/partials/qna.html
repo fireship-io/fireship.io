@@ -1,12 +1,15 @@
 {{ if not .Params.disable_qna }}
 
-<div class="qna-header">
-        <h2>Q&A Chat <i class="zero-top">{{ partial "svg/magic.svg"}}</i></h2>
-    </div>
 
-<div class="questions">
-        <lazy-content selector="slack-mirror,permalink:{{ .RelPermalink }}"></lazy-content>
+<div class="qna-header">
+  <h2>Questions?</h2>
+  <p>
+    Ask questions via GitHub below OR chat on 
+    <a href="https://fireship.page.link/slack">Slack #questions</a>
+  </p>
 </div>
+
+<div id="qna"></div>
 
 
 {{ end }}

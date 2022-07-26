@@ -1,19 +1,16 @@
 const path = require('path');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const AssetsPlugin = require('assets-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin  = require('terser-webpack-plugin');
 
 module.exports = {
   optimization: {
+    minimize: true,
     minimizer: [
-      new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        sourceMap: true 
-      }),
-      new OptimizeCSSAssetsPlugin({})
+      new TerserPlugin(),
+      new CssMinimizerPlugin(),
     ]
   },
   entry: {
@@ -55,11 +52,7 @@ module.exports = {
     poll: 1000
   },
   plugins: [
-    new CleanWebpackPlugin(['js', 'css'], {
-      root: path.join(__dirname, 'hugo/static/design'),
-      beforeEmit: true,
-      watch: true,
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[chunkhash].css',
       chunkFilename: '[id].css'
@@ -67,7 +60,8 @@ module.exports = {
     new AssetsPlugin({
       filename: 'webpack_assets.json',
       path: path.join(__dirname, './hugo/data/'),
-      prettyPrint: true
+      prettyPrint: true,
+      removeFullPathAutoPrefix: true
     })
   ]
 };

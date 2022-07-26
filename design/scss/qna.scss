@@ -1,6 +1,7 @@
 
 .qna-header {
     margin-top: 75px;
+    text-align: center;
 
     h2 {
         text-align: center;
@@ -8,6 +9,10 @@
         padding-bottom: 10px;
         font-size: 2em;
     }
+}
+
+.utterances {
+    max-width: 100%;
 }
 
 .questions {

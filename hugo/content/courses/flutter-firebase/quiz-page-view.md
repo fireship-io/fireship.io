@@ -19,7 +19,7 @@ In the quiz screen, update the Scaffold to use a PageView.
         appBar: AppBar(
         title: AnimatedProgressbar(value: state.progress),
         leading: IconButton(
-            icon: const Icon(FontAwesomeIcons.times),
+            icon: const Icon(FontAwesomeIcons.xmark),
             onPressed: () => Navigator.pop(context),
         ),
         ),

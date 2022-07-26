@@ -10,7 +10,7 @@ By accessing this website, you are agreeing to be bound by these website Terms a
 
 The site design, logo, video content subject to copyright © 2019-present | Fireship LLC
 
-User contributions licensed under cc by-sa 3.0 with attribution required.
+User contributions licensed under CC by-SA 3.0 with attribution required.
 
 ### Memberships
 
@@ -22,16 +22,16 @@ Lapsed Payment: If payment for a subscription fails, the user account will be do
 
 ### Disclaimer
 
-The materials on the fireship.io website are provided “as is”. Fireship.io makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Fireship.io does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet website or otherwise relating to such materials or on any sites linked to this site.
+The materials on the Fireship.io website are provided “as is”. Fireship.io makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Fireship.io does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet website or otherwise relating to such materials or on any sites linked to this site.
 
 ### Limitations
 
-In no event shall fireship.io liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the fireship.io Internet site, even if fireship.io or a fireship.io authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+In no event shall fireship.io liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on the Fireship.io Internet site, even if Fireship.io or a Fireship.io authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
 
 ### Intellectual Property Rights
 
-Fireship.io is committed to protecting intellectual property rights. fireship.io strictly follows DMCA guidelines for unauthorized use of copyrighted material. Any inquires regarding the reproduction of the content on this site must be directed to the party holding the proprietary rights to the specified content. You shall not distribute, publish, transmit, modify, display or create derivative works from material obtained with this service.
-To file a notice of copyright infringement with fireship.io, you will need to provide a written communication that follows the guidelines set in Section 512(c)(3) of the Digital Millennium Copyright Act (the “DMCA”).
+Fireship.io is committed to protecting intellectual property rights. Fireship.io strictly follows DMCA guidelines for unauthorized use of copyrighted material. Any inquires regarding the reproduction of the content on this site must be directed to the party holding the proprietary rights to the specified content. You shall not distribute, publish, transmit, modify, display or create derivative works from material obtained with this service.
+To file a notice of copyright infringement with Fireship.io, you will need to provide a written communication that follows the guidelines set in Section 512(c)(3) of the Digital Millennium Copyright Act (the “DMCA”).
 
 ### Governing Law
 
