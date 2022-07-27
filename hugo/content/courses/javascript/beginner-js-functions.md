@@ -10,7 +10,7 @@ free: true
 
 {{< youtube gigtS_5KOqo >}}
 
-[Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) are the backbone JavaScript of development, but perhaps the most difficult concept to master. The following section defines key concepts related to JS functions with practical examples that you can try on your own. 
+[Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions) are the backbone of JavaScript development, but perhaps the most difficult concept to master. The following section defines key concepts related to JS functions with practical examples that you can try on your own. 
 
 ## Anatomy of a Function
 
