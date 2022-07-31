@@ -60,7 +60,7 @@ MaterialApp(
 
 ## Container
 
-A `Container` is a is the most layout widget. It takes a single child and allows you to control alignment, padding, margin, width, height, and more. 
+A `Container` is a layout widget. It takes a single child and allows you to control alignment, padding, margin, width, height, and more. 
 
 Tip: Use widgets like `SizedBox` and `Padding` instead of a container to make your code more readable.
 
