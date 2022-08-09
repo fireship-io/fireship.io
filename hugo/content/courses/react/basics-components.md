@@ -24,7 +24,7 @@ function MyComponent() {
   return <p>🔥 Hello!</p>;
 }
 
-<MyComponent />;
+<MyComponent />
 ```
 
 ## Share Data with Props
@@ -35,20 +35,20 @@ You can pass data into a component with props. Every functional component has a 
 
 ```javascript
 function MyComponent(props) {
-  return <p>🔥 {props.name}</p>;
+  return <p>🔥 {props.name}</p>
 }
 
-<MyComponent name="Jeff" />;
+<MyComponent name="Jeff" />
 
 // Or use desctruturing to pass props
 
 function MyComponent({ name }) {
-  return <p>🔥 {name}</p>;
+  return <p>🔥 {name}</p>
 }
 
 // Use braces to pass an expression
 
-<MyComponent name={`JeffD` + 23} />;
+<MyComponent name={`JeffD` + 23} />
 ```
 
 ## Virtual DOM and React Fiber
