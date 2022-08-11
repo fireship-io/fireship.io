@@ -1,7 +1,6 @@
 ---
 title: Iker Nieto
 date: 2022-08-11T11:30:30
-featured_img: /img/contributors/jeff-delaney.png
 
 links: 
     linkedin: https://www.linkedin.com/in/iker-nieto-79985b232/
