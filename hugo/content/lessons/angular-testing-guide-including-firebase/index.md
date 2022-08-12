@@ -32,7 +32,7 @@ Testing is the [single-most effective tool](https://medium.com/javascript-scene/
 *Source: Effects of Test-Driven Development: A
 Comparative Analysis of Empirical Studies. Simo Mäkinen and Jürgen Münch. University of Helsinki.*
 
-Angular uses it's own testing utilities, combined with the popular JavaScript libraries [Jasmine](https://jasmine.github.io/2.4/introduction.html) and [Karma](https://karma-runner.github.io/1.0/index.html), to make it easy for developers to test their code.  When frontend JavaScript frameworks first hit the scene, a lack of test-ability was one of their harshest criticisms. Today, testing in Angular is as powerful as any other software development field.  
+Angular uses its own testing utilities, combined with the popular JavaScript libraries [Jasmine](https://jasmine.github.io/2.4/introduction.html) and [Karma](https://karma-runner.github.io/1.0/index.html), to make it easy for developers to test their code.  When frontend JavaScript frameworks first hit the scene, a lack of test-ability was one of their most harsh criticisms. Today, testing in Angular is as powerful as any other software development field.  
 
 ## High Level Overview
 
@@ -88,9 +88,9 @@ Angular will re-run your test suite whenever a file changes so you can immediate
 
 ### What is a Test Bed?
 
-First, we need to learn about concept of a *Test Bed*. If you're unfamilar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
+First, we need to learn about the concept of a *Test Bed*. If you're unfamilar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
 
-A Test Bed creates an Angular testing module, which is just a class an NgModule class. For example, notice how you have the `declarations: [ AlertButtonComponent ]` meta data just like any NgModule. This makes it possible to test your components in isolation. 
+A Test Bed creates an Angular testing module, which is just an NgModule class. For example, notice how you have the `declarations: [ AlertButtonComponent ]` meta data just like any NgModule. This makes it possible to test your components in isolation. 
 
 ```typescript
   beforeEach(async(() => {
