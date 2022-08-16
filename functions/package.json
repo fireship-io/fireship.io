@@ -12,7 +12,7 @@
   },
   "main": "lib/index.js",
   "dependencies": {
-    "@google-cloud/pubsub": "^0.22.2",
+    "@google-cloud/pubsub": "^3.1.0",
     "@sendgrid/mail": "^6.3.1",
     "@slack/client": "^4.8.0",
     "@slack/events-api": "^2.3.0",
