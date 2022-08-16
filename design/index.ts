@@ -1,5 +1,6 @@
 import './styles.scss';
-import hotroute from 'hotroute';
+// import hotroute from 'hotroute';
+import flamethrower from 'flamethrower-router';
 declare function gtag(
   command: 'config' | 'set' | 'event',
   id: string,
@@ -9,7 +10,8 @@ declare function gtag(
 (() => {
   document.addEventListener('DOMContentLoaded', (e) => {
     ///// ROUTING /////
-    const router = hotroute({ log: true });
+    // const router = hotroute({ log: true });
+    const router = flamethrower({ log: false });
 
     ///// HELPERS ////
     const ifExists = (el, style, val) => {

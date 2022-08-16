@@ -25,6 +25,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "flamethrower-router": "^0.0.0-meme.2",
     "hotroute": "0.0.7"
   },
   "devDependencies": {
