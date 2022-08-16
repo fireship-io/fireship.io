@@ -35,7 +35,7 @@
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "cypress": "^9.5.2",
-    "firebase-admin": "^6.1.0",
+    "firebase-admin": "^11.0.1",
     "firebase-tools": "^7.14.0",
     "fs-extra": "^7.0.0",
     "http-server": "^0.11.1",
