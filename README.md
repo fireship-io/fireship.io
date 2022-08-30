@@ -6,9 +6,9 @@ Content [designed](https://fireship.io/mission/) to increase developer happiness
 
 The monorepo is organized into five sub-projects: 
 
-1. `hugo` - Static Site Generator. This is where the content lives
+1. `hugo` - Static Site Generator. This is where the content lives.
 2. `design` - Theme & CSS
-3. `components` - Angular Elements Web Components
+3. `components` - Angular Elements Web Components. [Flamethrower](https://github.com/fireship-io/flamethrower) is used for fast page transitions
 4. `functions` - Firebase Cloud Functions Serverless Backend
 5. `cypress` - End-to-End & Integration Specs
 
