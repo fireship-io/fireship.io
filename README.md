@@ -1,6 +1,6 @@
 # [Fireship.io](https://fireship.io/)
 
-Content [designed](https://fireship.io/mission/) to increase developer happiness 😁 and productivity 🚀.
+Content [designed](https://fireship.io/mission/) to increase developer happiness 😁 and productivity 🚀
 
 ## Project Tour
 
@@ -11,7 +11,6 @@ The monorepo is organized into five sub-projects:
 3. `components` - Angular Elements Web Components
 4. `functions` - Firebase Cloud Functions Serverless Backend
 5. `cypress` - End-to-End & Integration Specs
-
 
 
 ## Contributing
@@ -43,7 +42,6 @@ git push origin my-fix
 Lastly, open a pull request on GitHub. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline. 
 
 ## Running the Site
-
 
 First, install [Hugo](https://gohugo.io/getting-started/installing/).
 
