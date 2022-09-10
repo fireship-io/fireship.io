@@ -165,9 +165,9 @@ What if you want to scrape a single page JavaScript app, like Angular or React? 
 
 ### Instagram Scraper
 
-Instagram on the web uses React, which means we won't see any dynamic content util the page is fully loaded. [Puppeteer](https://try-puppeteer.appspot.com/) is available in the Clould Functions runtime, allowing you to spin up a chrome browser on your server. It will render JavaScript and handle events just like the browser you're using right now.
+Instagram on the web uses React, which means we won't see any dynamic content util the page is fully loaded. [Puppeteer](https://try-puppeteer.appspot.com/) is available in the Cloud Functions runtime, allowing you to spin up a chrome browser on your server. It will render JavaScript and handle events just like the browser you're using right now.
 
-First, the function logs into a real instagram account. The `page.type` method will find the cooresponding DOM element and type characters into it. Once logged in, we navigate to a specific username and wait for the `img` tags to render on the screen, then scrape the *src* attribute from them. 
+First, the function logs into a real instagram account. The `page.type` method will find the corresponding DOM element and type characters into it. Once logged in, we navigate to a specific username and wait for the `img` tags to render on the screen, then scrape the *src* attribute from them. 
 
 {{< figure src="img/puppeteer-instagram-login.png" alt="Sign into a real Instagram account with Puppeteer." >}}
 
