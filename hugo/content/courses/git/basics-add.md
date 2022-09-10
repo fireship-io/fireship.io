@@ -9,7 +9,7 @@ emoji: ➕
 video_length: 1:19
 ---
 
-Add a entire working directory to the staging area:
+Add an entire working directory to the staging area:
 
 {{< file "terminal" "command line" >}}
 ```bash
