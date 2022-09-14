@@ -2,13 +2,13 @@ import './styles.scss';
 // import hotroute from 'hotroute';
 import flamethrower from 'flamethrower-router';
 declare function gtag(
-  command: 'config' | 'set' | 'event',
+  command: "config" | "set" | "event",
   id: string,
   config?: any
 ): void;
 
 (() => {
-  document.addEventListener('DOMContentLoaded', (e) => {
+  document.addEventListener("DOMContentLoaded", (e) => {
     ///// ROUTING /////
     // const router = hotroute({ log: true });
     const router = flamethrower({ log: false });
@@ -33,10 +33,10 @@ declare function gtag(
       let acc = 0;
 
       const lim = 400;
-      const topNav = $('.topnav');
-      const logo = $('.logo');
-      const main = $('main');
-      const toc = $('#TableOfContents');
+      const topNav = $(".topnav");
+      const logo = $(".logo");
+      const main = $("main");
+      const toc = $("#TableOfContents");
 
       window.onscroll = positionMenus;
       window.onresize = positionMenus;
