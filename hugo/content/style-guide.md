@@ -16,7 +16,7 @@ Here are a few tips to keep in mind before working on this project:
 - Feel free to pull request typos or obvious minor fixes (no issues or discussion necessary). 
 - Discuss your article ideas on Slack first. 
 - Content is managed with [Hugo](https://gohugo.io) and located under `hugo/content`. 
-- If you contribute I want to make it worth-your-while (see tier below)
+- If you contribute I want to make it worth your while (see tier below)
 
 ### Contribution Tier
 
