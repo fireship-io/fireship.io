@@ -22,16 +22,16 @@ code: electron-svelte-boilerplate
 #     - "rxjs": 6.3
 ---
 
-The following guide demonstrates how to setup Svelte with Electron Forge. The end result is an electron app capable of hot reloading the render process. 
+The following guide demonstrates how to setup Svelte with Electron Forge. The end result is an Electron app capable of hot reloading the render process. 
 
-💡 You can skip these steps by manually cloning the [electron-forge-svelte template](https://github.com/codediodeio/electron-forge-svelte) from github. 
+💡 You can skip these steps by manually cloning the [electron-forge-svelte template](https://github.com/codediodeio/electron-forge-svelte) from GitHub. 
 
 {{< figure src="/img/snippets/electron-svelte-hello.png" caption="Svelte running with Electron Forge" >}}
 
 
 ## Step 1 - Generate an Electron Forge App
 
-First, generate an electron forge app.
+First, generate an Electron Forge app.
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -41,16 +41,16 @@ cd my-app
 
 ## Step 2 - Manually Integrate Svelte & Rollup
 
-At this point, we need to manually add svelte to the project. This guide uses the official [Svelte Template](https://github.com/sveltejs/template) for the source code. Get ready for some surgical copy and pasting... 
+At this point, we need to manually add svelte to the project. This guide uses the official [Svelte template](https://github.com/sveltejs/template) for the source code. Get ready for some surgical copy and pasting... 
 
 1. Delete `index.html` and `index.css` from the `src` directory.
-1. Create a `public` folder, then copy the `index.html`, `global.css`, and `favicon.png` from the Svelte Template. 
-1. Copy the `src/main.js` and `src/App.svelte` files from the Svelte Template. To avoid confusion with Electron's main process, change the name of `main` to `svelte`. 
-1. Copy the `rollup.config.js` file from the svelte template.
+1. Create a `public` folder, then copy the `index.html`, `global.css`, and `favicon.png` from the Svelte template. 
+1. Copy the `src/main.js` and `src/App.svelte` files from the Svelte template. To avoid confusion with Electron's main process, change the name of `main` to `svelte`. 
+1. Copy the `rollup.config.js` file from the Svelte template.
 
 ### Package.json Setup
 
-Copy the dependencies and and devDependencies from the Svelte Template to your project's package.json. 
+Copy the dependencies and devDependencies from the Svelte Template to your project's package.json. 
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -58,7 +58,7 @@ npm install
 npm install concurrently
 ```
 
-Copy the scripts from Svelte Template, the append `svelte-` to each script name. Next, modify the `start` script to concurrently run svelte and electron. 
+Copy the scripts from Svelte Template, then append `svelte-` to each script name. Next, modify the `start` script to concurrently run Svelte and Electron. 
 
 {{< file "npm" "package.json" >}}
 ```json
@@ -76,7 +76,7 @@ Copy the scripts from Svelte Template, the append `svelte-` to each script name.
 
 ### Rollup Modification
 
-Make the following changes to the rollup config file. Update the serve function to call `svelte-start` instead of `start`. 
+Make the following changes to the Rollup config file. Update the serve function to call `svelte-start` instead of `start`. 
 
 {{< file "rollup" "rollup.config.json" >}}
 ```js
@@ -94,7 +94,7 @@ function serve() {
 
 ### HTML Modification
 
-Electron resolves paths in your `index.html` relative to the `index.js` main process. Update your the html to use paths relative to the current working directory, i.e `./`. 
+Electron resolves paths in your `index.html` relative to the `index.js` main process. Update your HTML to use paths relative to the current working directory, i.e. `./`. 
 
 {{< file "html" "public/index.html" >}}
 ```html
@@ -116,14 +116,14 @@ Update the path to index.html.
 
 ## Step 3 - Enable Live Reload
 
-Enable live reloading with [electron reload](https://www.npmjs.com/package/electron-reload).
+Enable live reloading with [Electron reload](https://www.npmjs.com/package/electron-reload).
 
 {{< file "terminal" "command line" >}}
 ```text
 npm i electron-reload
 ```
 
-Add the following line in your main process. 
+Add the following line to your main process. 
 
 {{< file "js" "src/index.js" >}}
 ```javascript
