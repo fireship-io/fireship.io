@@ -64,7 +64,7 @@ export const products = {
     },
     'quarter': {
         id: 'pro',
-        price: 'price_1LkhBxBF7AptWZlcJB2I2IUt',
+        price: 'price_1LkhByBF7AptWZlcg9Zjbmw6',
         amount: 69,
     },
     'year': {
