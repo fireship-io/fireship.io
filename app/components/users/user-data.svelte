@@ -20,6 +20,9 @@
     let diff = -Math.floor((Date.now() - (date * 1000)) / 1000) / 86400;
     return fmt.format(Math.floor(diff), 'day');
   }
+
+  // Don't even try to understand this code. It's needed to make sure legacy courses are shown. 
+  $: purchasedCourses = [...Object.keys($userData?.courses || {}), ...Object.keys($userData?.products || {}).map(courseByLegacySku)].filter(Boolean) 
 </script>
 
 {#if field === 'email' }
@@ -47,13 +50,10 @@
 {/if}
 
 {#if field === 'courses'}
-    {#if $userData?.courses || $userData?.products}
+    {#if purchasedCourses?.length}
         <h3>Purchased Courses</h3>
         <ul>
-            {#each Object.keys($userData?.courses || {}) as course}
-                <li><a href={`/courses/${course}`}>{course}</a></li>
-            {/each}
-            {#each Object.keys($userData?.products || {}).map(courseByLegacySku) as course}
+            {#each purchasedCourses as course}
                 <li><a href={`/courses/${course}`}>{course}</a></li>
             {/each}
         </ul>
