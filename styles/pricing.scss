@@ -1,0 +1,11 @@
+.check-orange {
+    @apply bg-[url(/img/check-orange.svg)] bg-[length:16px] pl-6 bg-no-repeat bg-left;
+}
+
+.check-green {
+    @apply bg-[url(/img/check-green.svg)] bg-[length:16px] pl-6 bg-no-repeat bg-left;
+}
+
+.check-logo {
+    @apply bg-[url(/img/logo.svg)] bg-[length:16px] pl-6 bg-no-repeat bg-left;
+}

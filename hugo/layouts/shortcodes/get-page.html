@@ -1,8 +1,0 @@
-{{ $path := .Get 0 }}
-
-{{ with .Site.GetPage $path }}
-    <div>
-        <a href="{{ .RelPermalink }}">{{ .Title }} </a>
-    </div>
-    {{ .Content }}
-{{ end }}

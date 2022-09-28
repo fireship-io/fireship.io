@@ -1,0 +1,107 @@
+{{ define "header" }}
+{{ partial "topnav" }}
+{{ end }}
+
+{{ define "main" }}
+<main class="container">
+
+
+	<div class="flex w-full justify-between">
+
+
+		<article itemscope itemtype="http://schema.org/Article" class="w-full">
+			<meta itemprop="datePublished" content="{{ .PublishDate }}" />
+			<meta itemprop="dateModified" content="{{ .Lastmod }}" />
+			<meta itemprop="image" content="img/featured.png" />
+			<meta itemprop="publisher" content="fireship.io" />
+
+
+			<header>
+
+				<!-- Video player -->
+				{{ with .Params.youtube }}
+				<div itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
+					<iframe class="w-full aspect-video" src="https://www.youtube.com/embed/{{ . }}"
+						frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+
+					<meta itemprop="embedUrl" content="https://www.youtube.com/embed/{{ . }}" />
+					<meta itemprop="thumbnailUrl" content="{{ $.Params.featured_image }}" />
+					<meta itemprop="description" content="{{ $.Page.Params.description }}" />
+					<meta itemprop="uploadDate" content="{{ $.Page.Params.publishdate }}" />
+					<meta itemprop="publisher" content="Fireship" />
+				</div>
+				{{ end }}
+
+				{{ with .Params.vimeo }}
+					<video-player single="true"></video-player>
+				{{ end }}
+
+				<div class="bg-gray6 py-5 px-3 rounded-lg mb-4 flex justify-between mt-3">
+
+					{{ $author := .Site.GetPage (print "/contributors/"  (anchorize .Params.Author)) }}
+					{{ $authorImg := (print "/contributors/img/"  (anchorize .Params.Author) ".webp") }}
+					<a class="flex items-center no-underline" itemprop="author" name="{{ .Params.author }}" href="/contributors/{{ anchorize .Params.author }}/">
+						<img class="w-10 h-10 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar">
+						<span class="flex flex-col ml-2">
+							<span class="no-underline">By {{ title .Params.author }}</span>
+							<span class="text-xs text-gray4">Posted <time itemprop="dateModified">{{ .Lastmod.Format "Jan 2, 2006"}}</time>
+						</span>
+	
+					</a>
+
+					<!-- Tags -->
+					<span>
+						{{ range .Params.tags }}
+							<a href="/tags/{{ . }}"><span class="tag tag-{{ . }}">#{{ . }}</span></a>
+						{{ end }}
+
+						{{ with .Params.github }}
+							<a class="btn btn-transparent ml-4" href="{{ . }}">
+								Source Code
+							</a>
+						{{ end }}
+					</span>
+					
+				
+				</div>
+
+			</header>
+
+
+
+			<!-- Lesson content -->
+			<section class="prose dark:prose-invert max-w-full lesson-content" itemprop="articleBody">
+				
+
+
+				<h1 itemprop="name headline" id="{{ anchorize .Title }}" class="gradient-text">
+					{{ .Title }}
+				</h1>
+
+
+				{{ .Content }}
+
+				
+			</section>
+
+			{{ partial "comments" }}
+
+		</article>
+		<!-- TOC fixed sidebar -->
+		{{ if not .Params.disable_toc }}
+		<aside class="tableOfContents">
+			{{ .TableOfContents }}
+		</aside>
+		{{ end }}
+	</div>
+
+
+</main>
+{{ end }}
+
+
+{{ define "footer" }}
+{{ partial "footer" }}
+{{ end }}

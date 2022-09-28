@@ -1,0 +1,16 @@
+{
+    "name": "Fireship.io",
+    "short_name": "Fireship.io",
+    "description": "Awesome Content for App Developers",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#2a2e35",
+    "theme_color": "#454e56",
+    "icons": [
+      {
+        "src": "/img/favicon.png",
+        "sizes": "64x64",
+        "type": "image/png"
+    }
+  ]
+}

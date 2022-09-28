@@ -1,0 +1,25 @@
+@mixin scrollbar() {
+    /* width */
+  &::-webkit-scrollbar {
+    @apply w-1.5 h-1.5;
+  }
+  
+  /* Track */
+  &::-webkit-scrollbar-track {
+    @apply bg-gray7;
+  }
+  
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    @apply bg-gray5 rounded-sm;
+  }
+  
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray4 bg-opacity-90;
+  }
+}
+
+.scrollbar {
+  @include scrollbar;
+}

@@ -1,0 +1,21 @@
+{{ $img := .Get "img" }}
+{{ $name := .Get "name"  }}
+{{ $handle := .Get "handle" }}
+{{ $icon := .Get "icon" }}
+
+<div class="flex flex-col relative px-8 py-12 mb-8 bg-gray6 rounded-lg shadow-lg max-w-xs">
+    <div class="absolute right-6 text-gray2 w-6 h-6">
+        {{ partial (print "svg/" ($icon | default "twitter") ".svg") }}
+    </div>
+    <div class="flex mb-8">
+        <img class="w-12 h-12 mr-3 mt-0 rounded-full" src="/img/testimonial/{{ $img }}">
+        <div class="flex flex-col">
+            <div class="font-bold text-lg">{{ $name }}</div>
+            <div class="">{{ $handle }}</div>
+        </div>
+    </div>
+    <div class="font-light">
+        {{ $.Inner }}
+    </div>
+      
+</div>

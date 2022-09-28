@@ -1,0 +1,55 @@
+.tableOfContents {
+  @apply hidden md:block sticky w-96 top-8 ml-4 mb-auto px-3 pb-2 pt-0;
+
+  nav {
+    ul {
+      li {
+        ul {
+          @apply ml-1;
+
+          a {
+            @apply text-gray4 text-sm font-normal hover:text-orange-400 duration-300;
+          }
+        }
+
+        a {
+          @apply text-gray3 hover:text-gray2 duration-300;
+        }
+      }
+    }
+  }
+}
+
+.lesson-content {
+  h2 {
+    @apply text-white inline-block my-6 border-b-2 border-dashed border-gray6 ;
+  }
+  h3 {
+    @apply text-gray3 font-sans font-bold my-3;
+  }
+
+  ol,
+  ul {
+    @apply font-light text-lg;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  em,
+  strong {
+    @apply font-bold text-lg;
+  }
+
+  p a {
+    @apply text-blue-500 no-underline hover:text-orange-400 duration-200;
+  }
+
+  figure {
+    @apply bg-black bg-opacity-30;
+    figcaption {
+      @apply text-center m-0 p-2;
+    }
+  }
+}

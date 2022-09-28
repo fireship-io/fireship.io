@@ -1,0 +1,19 @@
+{{ define "header" }} 
+	{{ partial "topnav" }} 
+{{ end }} 
+
+{{ define "main"}}
+<main class="prose dark:prose-invert min-w-full text-center">
+       <h1 class="text-5xl mt-12">404 Not Found</h1>
+
+       <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
+       <p>Congrats, you just found the bongo moth!</p>
+       <img class="mx-auto" src="/img/bug.gif" alt="bongo moth">
+       <a class="btn" href="/">Go Home</a>
+</main>
+
+{{ end }}
+
+{{ define "footer" }} 
+	{{ partial "footer" }} 
+{{ end }}

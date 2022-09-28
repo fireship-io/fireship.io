@@ -1,0 +1,32 @@
+{{ define "header" }}
+  {{ partial "topnav" }}
+{{ end }}
+
+{{ define "main" }}
+
+    <main class="prose dark:prose-invert container">
+        <header>
+            <h1 class="tag tag-lg tag-{{ anchorize .Title }}">{{.Title}}</h1>
+        </header>
+
+
+        {{ if .Params.description }}
+            <div class="mb-16">
+                    {{ .Params.description }}
+                    <a href="{{ .Params.link }}" class="">{{ .Title }}</a>
+            </div>
+        {{ end }}
+        
+        <section class="grid-list">
+            {{ $taggedPages := (index .Site.Taxonomies.tags (anchorize .Title)).Pages }}
+            {{ range $taggedPages }}
+                {{ partial "card" (dict "context" .) }}
+            {{ end }}
+        </section>
+
+    </main>
+{{ end }}
+
+{{ define "footer" }}
+	{{ partial "footer" }}
+{{ end }}

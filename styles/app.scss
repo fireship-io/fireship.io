@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://use.typekit.net/rcr1opg.css');
+
+@import './button.scss';
+@import './special-effects.scss';
+@import './courses.scss';
+@import './lessons.scss';
+@import './syntax.scss';
+@import './mixins.scss';
+@import './tags.scss';
+@import './pricing.scss';
+@import './ui.scss';
+
+html {
+    display: block;
+    font-size: 13px;
+    @media (min-width:1024px) {
+        font-size: 16px;
+    }
+}
+
+body {
+	@apply dark:bg-gray7 dark:text-gray1;
+    background: linear-gradient(176deg, rgba(18,24,27,1) 50%, rgba(32,39,55,1) 100%);
+    min-height: 100vh;
+    background-attachment: fixed;
+    @include scrollbar;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-display font-normal;
+}
+
+
+svg { 
+    width: auto;
+}
+
+.container {
+    @apply max-w-screen-2xl mx-auto px-3 md:px-8;
+}
+
+.grid-list {
+    @apply grid grid-cols-1 auto-cols-max gap-6 md:grid-cols-2 md:grid-cols-4 list-none;
+}
+
+.bg-title {
+    @apply inline-block mx-auto px-3 py-2 text-gray7 shadow-xl bg-white;
+}
+
+video-player {
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    } 
+}
+

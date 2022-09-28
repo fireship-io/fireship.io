@@ -1,0 +1,72 @@
+.btn {
+    @apply bg-white text-black font-sans uppercase font-bold inline-flex cursor-pointer text-center shadow-md no-underline px-5 py-2 text-sm transition-all duration-150 my-0.5;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_4px_rgba(225,225,225,0.5)];
+    }
+}
+
+.btn-sm {
+    @apply px-3 py-1 text-xs font-sans uppercase font-bold;
+}
+.btn-lg {
+    @apply px-5 py-3 text-xl;
+}
+
+.btn-display {
+    @apply font-display font-normal;
+}
+
+.btn-transparent {
+    @apply bg-black bg-opacity-20 text-white hover:bg-opacity-40;
+}
+
+.btn-sans {
+    @apply font-sans font-bold uppercase;
+}
+
+
+.glow {
+    @apply  hover:translate-y-[-2px];
+}
+
+.btn-gray {
+    @apply bg-gray5 text-white hover:bg-gray4;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_5px_rgba(239,68,68,0.5)];
+    }
+}
+
+.btn-red {
+    @apply bg-red-500 text-white hover:bg-red-600 active:bg-red-700;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_5px_rgba(239,68,68,0.5)];
+    }
+}
+
+.btn-green {
+    @apply bg-green-500 text-white hover:bg-green-600 active:bg-green-700;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_5px_rgba(34,197,94,0.5)];
+    }
+}
+
+.btn-orange {
+    @apply bg-orange-500 text-white hover:bg-orange-600 active:bg-orange-700;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_5px_rgba(249,115,22,0.5)];
+    }
+}
+
+.btn-blue {
+    @apply bg-blue-500 text-white hover:bg-blue-600 active:bg-blue-700;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_5px_rgba(59,130,246,0.5)];
+    }
+}
+
+.btn-purple {
+    @apply bg-purple-500 text-white active:bg-purple-700;
+    &.glow {
+        @apply hover:drop-shadow-[0_0_5px_rgba(168,85,247,0.5)];
+    }
+}

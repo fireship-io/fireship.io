@@ -1,8 +1,0 @@
-<div *ngIf="auth.user as user; else login">
-  <span><slot name="profile"></slot></span>
-  <span (click)="auth.signOut()" *ngIf="showSignout"><slot name="signout"></slot></span>
-</div>
-
-<ng-template #login>
-  <span (click)="auth.googleLogin()"><slot name="signin"></slot></span>
-</ng-template>
