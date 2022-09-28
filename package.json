@@ -34,10 +34,7 @@
     "concurrently": "^7.3.0",
     "eslint": "^8.23.0",
     "firebase": "^9.9.2",
-<<<<<<< HEAD
     "firebase-tools": "^11.11.0",
-=======
->>>>>>> 385d672babe03d4581bef8202f054369dcc143d3
     "flamethrower-router": "^0.0.0-meme.12",
     "js-confetti": "^0.10.2",
     "postcss": "^8.4.16",
