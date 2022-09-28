@@ -136,7 +136,7 @@ func main() {
 The short variable declaration makes our code neater, so we'll see it again throughout this lesson.
 
 ### Types
-Go offers a rich collection of types, including numericas, booleans, strings, error, and the ability to create custom types. Strings are are a sequence of UTF-8 characters enclosed in double-quotes. Numerical types are the most versatile, with 8, 16, 32, and 64-bit variants for both signed (<code>int</code>) and unsigned (<code>uint</code>) integers.
+Go offers a rich collection of types, including numericas, booleans, strings, error, and the ability to create custom types. Strings are a sequence of UTF-8 characters enclosed in double-quotes. Numerical types are the most versatile, with 8, 16, 32, and 64-bit variants for both signed (<code>int</code>) and unsigned (<code>uint</code>) integers.
 
 A <code>byte</code> is an alias for <code>uint8</code>. A <code>rune</code> is an alias for <code>int32</code>. Floats (or floating-point numbers) are either <code>float32</code> or <code>float64</code>. Complex numbers are also supported and can be represented as  <code>complex128</code> or <code>complex64</code>.
 
