@@ -16,7 +16,7 @@ free: true
 
 ## ✨ Trick - Dig into Intellisense
 
-Right click on any symbol in the editor and select **Go to Definition** or **Peek Definition**. The type definition file is used by VS Codeto perform autocompletion.
+Right click on any symbol in the editor and select **Go to Definition** or **Peek Definition**. The type definition file is used by VS Code to perform autocompletion.
 
 
 ## ✨ Trick - Force Intellisense
