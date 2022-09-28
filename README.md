@@ -1,82 +1,55 @@
-# [Fireship.io](https://fireship.io/)
+## Fireship
 
-Content [designed](https://fireship.io/mission/) to increase developer happiness 😁 and productivity 🚀.
-
-## Project Tour
-
-The monorepo is organized into five sub-projects: 
-
-1. `hugo` - Static Site Generator. This is where the content lives.
-2. `design` - Theme & CSS
-3. `components` - Angular Elements Web Components. [Flamethrower](https://github.com/fireship-io/flamethrower) is used for fast page transitions
-4. `functions` - Firebase Cloud Functions Serverless Backend
-5. `cypress` - End-to-End & Integration Specs
-
-
+The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
 
 ## Contributing
 
-Edit and fix the site's content in `hugo/content/`. Feel free to submit PRs for small issues. For large issues or features, open an issue first. 
+All static content is managed with Hugo in the `content` dir. You can easily fix typos by modifying the markdown directly in GitHub. 
 
-### Option 1 - Simple Typo Fixes
+### How to Run it
 
-For small issues, like a typo or broken link, use Github's inline file editor or web editor (open by pressing <kbd>.</kbd> in your fork's code tab) to make the fix and submit a pull request. 
+First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater. 
 
-### Option 2 - Work on your own Fork
-
-For more complex contributions, like guest posts and new features, you should work on the project on your local system. 
-
-First, fork this repo on GitHub.
-
-```shell
-git clone <your-forked-repo>
+```
+git clone <this-repo>
 npm install
-npm run dev
-
-git checkout -b my-fix
-# fix some code...
-
-git commit -m "fix: corrected a typo"
-git push origin my-fix
+npm start
 ```
 
-Lastly, open a pull request on GitHub. Once merged, your changes will automatically be deployed to the live site via the CI/CD pipeline. 
-
-## Running the Site
+Check it on on `http://localhost:6969/`.
 
 
-First, install [Hugo](https://gohugo.io/getting-started/installing/).
+## Developing Components 
 
-```shell
-git clone <fireship-repo>
+Create a Svelte file in the `app/components` directory. It must have a custom element tag. 
 
-npm install
+```svelte
+<svelte:options tag="hi-mom" />
 
-npm run dev
+<script>
+    export let greeting: string;
+</script>
+
+<h1>Hi Mom! {greeting}</h1> 
 ```
 
-Visit `localhost:1313` and you should be live. You do not need the web components for general content development, but they can be built with:
+Export the component from `app/main.ts`:
 
-```shell
-cd components && npm install
-npm run build
+```ts
+export * from './components/hi-mom.svelte';
 ```
 
+Now use it in anywhere in your HTML or Markdown. 
 
-## Contribute a Post
-
-Read the [style guide](https://fireship.io/style-guide/) for some tips before contributing. 
-
-```shell
-cd hugo
-hugo new -k bundle lessons/angularfire-google-oauth
-hugo new snippets/my-cool-snippet.md
+```html
+<hi-mom greeting="i made a web component"></hi-mom>
 ```
 
-### Add Your Bio
+**Note:** A weird caveat with Svelte web components is that all styles must be encapsulated. You can use Tailwind, BUT only with `@apply` in the component. Global styles will not work.
 
-First time? Add your bio and social links to `content/contributors`. 
+## Commands
 
-## Web Component Development
-
-Interactive features are built with Angular Elements web components in `components/`.
+- `npm start`: Main dev server. Runs everything you need. 
+- `npm run dev`: Runs components in isolation. Serves `app/index.html` as a playground for components. 
+- `npm run hugo`: Only runs static site. 
+- `npm run build`: Build for production

@@ -1,0 +1,114 @@
+{{ define "header" }}
+	{{ partial "topnav" }}
+{{ end }}
+
+
+{{ define "main" }}
+	{{ $activeRelPermalink := .RelPermalink }}
+
+	<main
+		class="container flex flex-col-reverse md:flex-row">
+		<!-- Progress tracker -->
+		<navbar-toggle>
+			<!-- Lessons -->
+			<ul class="sticky top-0 h-screen overflow-auto scrollbar mr-4 pb-10 pr-4 min-w-[300px]" id="sidebar">
+				{{ range .Parent.Pages.ByWeight }}
+
+					<!-- Chapter -->
+					{{ if isset .Params "chapter_start" }}
+						<li class="flex py-2 mt-4 px-1 mr-5 border-b-2 border-gray6">
+							<i class="mr-2 not-italic">{{ .Params.emoji }}</i>
+							<h3 class="text-gray3">{{ .Params.chapter_start }}</h3>
+						</li>
+					{{ end}}
+
+					<!-- Lesson tile -->
+					<li>
+						<a class="text-gray4 hover:text-gray1 {{ if eq $activeRelPermalink .RelPermalink }}active-chapter{{ end }}" href="{{ .Permalink }}">
+							<div class="p-1 my-1 flex items-center">
+
+
+								<complete-icon free="{{ .Params.free }}" route="{{ .RelPermalink }}"></complete-icon>
+
+
+								<span class="mr-auto text-lg pr-2">
+									{{ .Title }}
+								</span>
+
+								{{ if eq $activeRelPermalink .RelPermalink }}
+									<div id="activeChapter" class="ml-5">🔥</div>
+								{{ else }}
+									<span class="text-xs bg-black bg-opacity-10 py-1 px-2">{{ .Params.video_length }}</span>
+								{{ end }}
+							</div>
+						</a>
+					</li>
+				{{ end }}
+			</ul>
+
+			<ul slot="collapse" class="cursor-pointer sticky top-0">
+				{{ range .Parent.Pages.ByWeight }}
+
+					<!-- Chapter -->
+					{{ if isset .Params "chapter_start" }}
+						<div class="flex py-2 mt-3">
+							<i class="not-italic p-3 bg-black bg-opacity-20 rounded-full">{{ .Params.emoji }}</i>
+						</div>
+					{{ end}}
+				{{ end }}
+			</ul>
+		</navbar-toggle>
+
+		<!-- Video player -->
+		<article class="prose dark:prose-invert pt-1 container">
+
+		{{ if or .Params.vimeo .Params.youtube }}
+				<video-player free="{{ .Params.free }}"></video-player>
+		{{ end }}
+
+		<nav class="flex items-center py-6 px-4 bg-black bg-opacity-20 shadow-lg mb-6">
+			<div class="flex flex-col items-center">
+				<autoplay-toggle></autoplay-toggle>
+			{{/* <span class="text-xs relative bottom-1.5 mr-1">autoplay</span> */}}
+				<span class="text-xs relative bottom-1">autoplay</span>
+			</div>
+
+			<div class="ml-auto">
+				{{with .NextInSection}}
+					<a class="btn btn-transparent" href="{{.RelPermalink}}">👈</a>
+				{{end}}
+
+				<a class="btn btn-transparent" href="{{.Parent.RelPermalink}}">🏠</a>
+
+				{{with .PrevInSection}}
+					<a class="btn btn-transparent" href="{{.RelPermalink}}">👉</a>
+				{{end}}
+			</div>
+
+			<div class="ml-auto w-16 px-4 text-center">
+
+					<mark-complete slot="granted" quiz="{{ .Params.quiz }}" free="{{ .Params.free }}"></mark-complete>
+			</div>
+		</nav>
+
+
+
+		<header class="border-b-2 border-dashed border-gray6 mb-6">
+			<h1>
+				{{ .Params.emoji }}
+				<span class="gradient-text inline-block mb-0">{{ .Title }}</span>
+			</h1>
+			<p class="text-sm mt-1 text-gray4">{{ .Description }}</p>
+		</header>
+
+		<section>
+			{{ .Content }}
+		</section>
+
+		<div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full"></div>
+
+		{{ partial "comments" }}
+
+		</article>
+	</main>
+{{ end }}

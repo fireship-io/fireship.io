@@ -1,0 +1,15 @@
+.box {
+    @apply bg-gray6 shadow-lg border-l-4 border-gray5 p-6 rounded-r-lg;
+}
+.box-green {
+    @apply border-green-500;
+}
+.box-red {
+    @apply border-red-500;
+}
+.box-yellow {
+    @apply border-yellow-500;
+}
+.box-blue {
+    @apply border-blue-500;
+}

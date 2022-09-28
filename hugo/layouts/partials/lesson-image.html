@@ -1,9 +1,0 @@
-
-{{ $webp :=  print .RelPermalink "/img/featured.webp" }}
-{{ $fallback := print .RelPermalink "/img/featured.jpg" | default .Site.Data.defaults.featured_img }}
-
-<a href="{{ .RelPermalink }}">
-    <img loading="lazy" src="{{ $webp }}" onerror="this.onerror=null; this.src='{{ $fallback  }}'">
-</a>
-
-

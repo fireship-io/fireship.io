@@ -1,0 +1,25 @@
+{{ $img := print .Permalink "img/featured.png" }}
+
+{{ if not (fileExists (print .RelPermalink "img/featured.png")) }}
+    {{ $img = "/img/default-cover.png" }}
+{{ end }} 
+
+{{ $description := .Description | default .Summary }}
+
+
+    <link rel="canonical" href="{{ .Permalink | absURL }}" />
+
+    <meta name="description" content="{{ $description }}">
+    <meta name="image" content="{{ $img | absURL }}">
+
+    <meta property="og:title" content="{{ .Title }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="{{ .Permalink | absURL }}" />
+    <meta property="og:image" content="{{ $img | absURL }}" />
+    <meta property="og:description" content="{{ $description }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@fireship_dev">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $img | absURL }}">

@@ -1,0 +1,145 @@
+.tag {
+    @apply inline-block mr-1 pt-1 pb-1.5 px-2 text-xs rounded-md border-none bg-black bg-opacity-30 text-gray3;
+}
+.tag-lg {
+    @apply text-3xl pt-2 pb-2.5 px-4 mr-2;
+}
+
+.tag-pro,
+.tag-green {
+    @apply bg-green-500 text-white;
+}
+
+.tag-javascript, .tag-js {
+    background: #f0db4f;
+    color: black;
+}
+
+.tag-typescript {
+    background: #2775c3;
+    color: white;
+}
+
+.tag-angular {
+    background: #dc0530;
+    color: #fff;
+}
+
+.tag-firebase {
+    background: #ffcb2b;
+    color: #12181a;
+}
+
+.tag-vue {
+    background: #41b883;
+    color: #35495e;
+}
+
+.tag-rxjs {
+    @apply bg-pink-500 text-white;
+}
+
+.tag-node {
+    background: #90c53f;
+    color: #46483d;
+}
+
+.tag-cloud-functions {
+    @apply bg-blue-500 text-white;
+}
+
+.tag-flutter {
+    background: #54c5f8;
+    color: #003b6c;
+}
+
+.tag-google-maps {
+    background: #33a668;
+    color: #f8d845;
+}
+
+.tag-android {
+    background: #a4c34a;
+    color: white;
+}
+
+.tag-stripe,
+.tag-fauna {
+    color: white;
+    background: #6675e0;
+}
+
+.tag-python {
+    color: #ffda5d;
+    background: #3879ab;
+}
+
+.tag-svelte {
+    color: #ffffff;
+    background: #ff3e00;
+}
+
+.tag-react {
+    color: #00d8ff;
+    background: #222;
+}
+
+.tag-ios {
+    color: #fff;
+    background: #000;
+}
+
+.tag-ionic {
+    background: white;
+    color: #4a8afc;
+}
+
+.tag-nest {
+    color: #E0234E;
+    background: #000;
+}
+
+.tag-graphql {
+    color: white;
+    background: #e10097;
+}
+
+.tag-electron {
+    color: #313244;
+    background: #adecf3;
+}
+
+.tag-css {
+    color: #313244;
+    background: #f954be;
+}
+
+.tag-github {
+    color: #fff;
+    background: #24292e;
+}
+
+.tag-deno {
+    color: #e1e9d5;
+    background: #222220;
+}
+
+.tag-docker {
+    color: #ffffff;
+    background: #2496ed;
+}
+
+.tag-nextjs {
+    color: #ffffff;
+    background: #000000;
+}
+
+.tag-rpi {
+    color: #000000;
+    background: #BC1142;
+}
+
+.tag-go {
+    color: #ffffff;
+    background: #00ADD8;
+}
