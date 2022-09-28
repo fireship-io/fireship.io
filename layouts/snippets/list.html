@@ -1,0 +1,39 @@
+{{ define "header" }}
+  {{ partial "topnav" }}
+{{ end }}
+{{ define "main" }}
+  <main class="prose dark:prose-invert container">
+    <header class="text-center mb-8 mt-20">
+      <h1 class="text-5xl mb-1">Snippets</h1>
+      <p class="my-0 text-gray3">small but helpful code examples</p>
+    </header>
+
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+
+    <ul>
+      {{/*  {{ $paginator := .Paginate (where .Pages "Type" "lessons") 4 }}  */}}
+
+      {{ range .Pages }}
+        <a class="no-underline" href="{{ .RelPermalink }}">
+          <li class="list-none p-4 my-3 bg-gray6 shadow-xl rounded-lg flex justify-between">
+              {{ .Title }}
+              
+              <span>
+                {{ range .Params.tags }}
+                <span class="tag tag-{{ . }}">
+                    #{{ . }}
+                </span>
+              {{ end }}
+             </span>
+          </li>  
+        </a>
+
+      {{ end }}
+    </ul>
+
+  </main>
+{{ end }}
+
+{{ define "footer" }}
+	{{ partial "footer" }}
+{{ end }}

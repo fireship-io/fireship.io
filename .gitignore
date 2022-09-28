@@ -1,60 +1,33 @@
-# dependencies
-**/node_modules
-/.well_known
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-/archive
+node_modules
+dist
+dist-ssr
+*.local
 
-# e2e
-**/e2e/*.js
-**/e2e/*.map
-
-# compiled output
-**/dist
-**/tmp
-**/out-tsc
-.firebase
-public
-
-# cloud functions
-/functions/service-account.json
-/functions/lib
-/functions/etc
-functions/.env
-/functions/.runtimeconfig.json
-/functions/firebase-debug.log
-
-# hugo
-hugo/data/components.json
-hugo/data/webpack_assets.json
-hugo/static/components
-hugo/static/design
-
-# IDEs and editors
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
-.project
-.classpath
-.c9
-.settings
-.vscode
-*.launch
-*.sublime-workspace
-
-# misc
-.env
-.sass-cache
-NOTES.md
-ROADMAP.md
-secrets.json
-connect.lock
-resources
-archive
-coverage
-typings
-libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-
-# system files
 .DS_Store
-Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.hugo_build.lock
+static/svelte/
+public
+.firebaserc
+firebase.json
+.firebase
+resources/
+data/svelte.json
+.env

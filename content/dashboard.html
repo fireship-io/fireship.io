@@ -1,0 +1,107 @@
+---
+title: Dashboard
+---
+<div class="max-w-3xl mx-auto">
+<if-user>
+    <h2 class="text-5xl text-center"><span class="text-green-500 font-display"><user-data field="xp-raw"></user-data></span>XP</h2>
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-green-600 to-green-400 rounded-full"></div>
+
+    <p class="text-xl">User ID: <span class="text-white font-bold"><user-data field="uid"></user-data></span></p>
+    <p class="text-xl">PRO Status: <span class="font-display text-white"><user-data field="status"></user-data></span></p>
+    <p class="text-xl">
+        Account Email: <span class="text-white font-bold"><user-data field="email"></user-data><change-email></change-email></span>
+    </p>
+    <p class="text-xl text-yellow-500"><user-data field="expires"></user-data></p>
+
+
+    <user-data field="courses"></user-data>
+
+    <sign-out>
+        <button class="btn">Sign Out</button>
+    </sign-out>
+
+    <if-pro>
+        <div slot="enterprise">
+            <h2 class="text-5xl text-center">Enterprise Account</h2>
+            <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
+            <p>Use the form below to assign your seats. Each account will get a welcome email and have full access after signing in. You can always revoke access later.</p>
+
+            <seat-assign></seat-assign>
+        </div>
+    </if-pro>
+    
+
+    <h2 class="text-5xl text-center">Manage account</h2>
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full"></div>
+    <!--
+    <div class="my-6">
+        <customer-portal></customer-portal>
+    </div> 
+    -->
+    <div class="my-6">
+        <user-charges></user-charges>
+    </div>
+    <div class="my-6">
+        <user-invoices></user-invoices>
+    </div>
+
+    <div class="my-6">
+        <update-address></update-address>
+    </div>
+
+    <div class="my-6">
+        <update-payment></update-payment>
+    </div>
+
+
+    <div class="my-6">
+        <manage-subscription></manage-subscription>
+    </div>
+
+
+    <h2 class="text-5xl text-center">FAQ</h2>
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full"></div>
+
+    <h3 class="font-sans font-bold">How do I get my T-shirt & Sticker?</h3>
+
+    <p>You should have received an email with a link to a Google Form after upgrading. If not, you can access with the <code>/pro</code> command in Discord</p>
+
+    <h3 class="font-sans font-bold">Can I customize my invoice or receipt details?</h3>
+
+    <p>Yes, you can modify your name and address by clicking the <strong>change address</strong> button above. Once updated, it should be reflected on all invoices and receipts.</p>
+
+    <h3 class="font-sans font-bold">How do I cancel my subscription?</h3>
+
+    <p>Click the <strong>manage subscription</strong> button above. Your pro status will remain active until the billing period ends.</p>
+
+
+    
+    <h2 class="text-5xl text-center">Get in Touch</h2>
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-orange-600 to-orange-400 rounded-full"></div>
+
+    <p>Need help with your account? Reach via your favorite channel and we'll respond in 24 hours or less.</p>
+    <ul>
+        <li>Email <strong>hello@fireship.io</strong></li>
+        <li>Chat on <a href="https://discord.gg/fireship">Discord</a></li>
+        <li>DM via Twitter <a href="https://twitter.com/fireship_dev">@fireship_dev</a></li>
+    </ul>
+
+
+    <h2 class="text-5xl text-center">Danger Zone</h2>
+    <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-red-600 to-red-400 rounded-full"></div>
+
+    <p>In accordance with GDPR, use this button to delete your account and wipe all data from our servers forever.</p>
+
+    <delete-account></delete-account>
+
+
+    <div slot="signed-out">
+        <p class="text-xl">You're signed out... This page is useless to to you.</p>
+        <modal-action name="signin" type="open">
+            <button class="btn btn-blue">Sign in Now</button>
+        </modal-action>
+    </div>
+
+
+</if-user>
+</div>

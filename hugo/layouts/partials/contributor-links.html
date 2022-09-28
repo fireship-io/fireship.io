@@ -1,8 +1,0 @@
-
-
-
-{{ range $name, $link := .Params.links }}
-    {{ if $link }}
-        <a class="btn btn-{{ $name }}" href="{{ $link }}"><i>{{ partial (print "svg/" $name ".svg" ) }}</i> {{ title $name }}</a>
-    {{ end }}
-{{ end }}

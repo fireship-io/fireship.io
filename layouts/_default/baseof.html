@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ .Page.Title }}</title>
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/svelte/{{ .Site.Data.svelte.css }}" />
+    <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}" /></script>
+
+    <!-- pwa -->
+    <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/img/favicon.png" />
+    <meta name="theme-color" content="#454e56">
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <link rel="manifest" href="/manifest.json">
+    {{ partial "meta" . }}
+    
+    <script>
+      if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+              navigator.serviceWorker.register('/sw.js');
+          });
+      }
+    </script>
+
+  </head>
+  <body>
+    <global-data 
+    permalink="{{ .Permalink }}" 
+    vimeo="{{ .Params.vimeo }}"
+    youtube="{{ .Params.youtube }}"
+    free="{{ .Params.free }}"
+    next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 
+    prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
+  </global-data>
+
+    {{ block "header" . }}
+    <!-- navbar -->
+    {{ end }}
+    {{ block "main" . }}
+      <!-- main -->
+    {{ end }}
+    {{ block "footer" . }}
+      <!-- footer -->
+    {{ end }}
+
+
+    <app-signin></app-signin>
+    <algolia-search></algolia-search>
+
+    <email-handler></email-handler>
+
+    <route-loader>
+      <div class="fixed w-full top-0 left-0 h-1 gradient-loader"></div>
+    </route-loader>
+
+    <toast-message></toast-message>
+    <scroll-up></scroll-up>
+
+    </div>
+
+  </body>
+</html>

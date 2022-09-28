@@ -1,0 +1,34 @@
+{{ define "header" }}
+  {{ partial "topnav" }}
+{{ end }}
+{{ define "main" }}
+  <main class="container prose dark:prose-invert">
+    <section class="text-center">
+      <h1 class="gradient-text">{{ .Title }}</h1>
+      {{ $authorImg := (print "/contributors/img/"  (.RelPermalink | path.Base) ".webp") }}
+      
+      <img src="{{ $authorImg }}" alt="author image" class="mx-auto rounded-full max-w-xs">
+
+    {{ range $name, $link := .Params.links }}
+      {{ if $link }}
+        <a class="btn btn-sm" href="{{ $link }}">{{ title $name }}</a>
+      {{ end }}
+    {{ end }}
+
+      {{ .Content }}
+    </section>
+    <section>
+      <h2 class="text-left">Lessons</h2>
+      <div class="grid-list">
+        {{ range first 4 (where .Site.Pages "Params.author" .Title) }}
+        {{ $img := (print .RelPermalink "img/featured.webp") }}
+          {{ partial "card" (dict "context" . "img" $img) }}
+      {{ end }}
+      </div>
+
+    </section>
+  </main>
+{{ end }}
+{{ define "footer" }}
+  {{ partial "footer" }}
+{{ end }}

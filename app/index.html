@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body class="prose dark:prose-invert">
+    <h1>Component Playground</h1>
+    <p>
+      Declare components in the <code>app/index.html</code> to preview below
+    </p>
+
+    <p>Example <code>my-counter</code> component:</p>
+    <modal-action type="open" name="search">
+      <button>Open Search</button>
+    </modal-action>
+    <modal-action type="open" name="signin">
+      <button>Open Login</button>
+    </modal-action>
+    <algolia-search></algolia-search>
+    <app-signin></app-signin>
+
+    <toast-message></toast-message>
+
+    <h2>Video</h2>
+
+    <video-player></video-player>
+    <autoplay-toggle></autoplay-toggle>
+    
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

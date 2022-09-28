@@ -1,0 +1,27 @@
+{{ define "header" }}
+  {{ partial "topnav" }}
+{{ end }}
+
+{{ define "main" }}
+    <main class="prose dark:prose-invert container">
+        <header class="text-center mb-8 mt-20">
+            <h1 class="text-5xl mb-1">Tags</h1>
+            <p class="my-0 text-gray3">find the content you're looking for</p>
+        </header>
+
+        <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+
+
+        {{ range .Pages }}
+            <span class="inline-block p-2">
+                <a href="{{.Permalink | relURL }}"><span class="tag tag-{{anchorize .Title}} tag-lg">#{{ anchorize .Title}}</span></a>
+            </span>
+
+        {{ end }}
+    </main>
+{{ end }}
+
+{{ define "footer" }}
+	{{ partial "footer" }}
+{{ end }}
+
