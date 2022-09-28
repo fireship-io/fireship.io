@@ -1,10 +1,10 @@
-## Fireship 2.0
+## Fireship
 
 The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
 
 ## Contributing
 
-All static content is managed with Hugo. You can easily fix typos by modifying the markdown directly in GitHub. 
+All static content is managed with Hugo in the `content` dir. You can easily fix typos by modifying the markdown directly in GitHub. 
 
 ### How to Run it
 
