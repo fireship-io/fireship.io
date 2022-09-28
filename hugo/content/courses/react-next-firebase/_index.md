@@ -14,14 +14,14 @@ tags:
 
 {{< vimeo 508494924 >}}
 
-**Next.js Firebase - The Full Course** takes you from zero to a production-ready hybrid-rendered webapp. Learn how build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js 
+**Next.js Firebase - The Full Course** takes you from zero to a production-ready hybrid-rendered webapp. Learn how to build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js 
 
 {{< figure src="/courses/react-next-firebase/img/testimonial.png" alt="The new fireship Nextjs Firebase is a masterpiece! Totally worth it"  >}}
 
 
 ## 🦄 What will I build?
 
-You will build a full-stack **Social Blogging Platform** inspired by sites like 🌈 [DEV.to](https://dev.to) and [Medium](https://medium.com). Authors can create content under their custom username, then publish publicly with SEO-friendly rendering, while readers can heart or like posts in realtime. Featuring...
+You will build a full-stack **Social Blogging Platform** inspired by sites like 🌈 [DEV.to](https://dev.to) and [Medium](https://medium.com). Authors can create content under their custom usernames. then publish publicly with SEO-friendly rendering, while readers can heart or like posts in realtime. Featuring...
 
 - 👨‍🎤 Custom Firebase usernames
 - 📰 Bot-friendly content (SEO)
