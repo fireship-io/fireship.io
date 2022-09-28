@@ -96,8 +96,8 @@
 
   <footer>
     <kbd on:click={selectHit}>↩</kbd> <span class="kbd-text">select</span>
-    <kbd on:click={goUp}>🠝</kbd>
-    <kbd on:click={goDown}>🠟</kbd> <span class="kbd-text">navigate</span>
+    <kbd on:click={goUp}>↑</kbd>
+    <kbd on:click={goDown}>↓</kbd> <span class="kbd-text">navigate</span>
     <kbd on:click={() => modal.set(null)}>esc</kbd>
     <span class="kbd-text">leave</span>
   </footer>
@@ -151,6 +151,6 @@
            border-orange-500 bg-opacity-50 p-1.5 hover:bg-orange-500 hover:text-white transition-all;
   }
   .kbd-text {
-    @apply mr-2;
+    @apply mr-3;
   }
 </style>
