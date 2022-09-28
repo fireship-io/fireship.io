@@ -270,7 +270,7 @@ describe('my app', () => {
 
 ### Cloud Functions Unit Tests
 
-E2E testing is not suitable for all scenarios. In some cases, you may to [unit test Cloud Functions](https://fireship.io/lessons/testing-cloud-functions-in-firebase/) individually.
+E2E testing is not suitable for all scenarios. In some cases, you may need to [unit test Cloud Functions](https://fireship.io/lessons/testing-cloud-functions-in-firebase/) individually.
 
 ### Firestore Rules Unit Tests
 
