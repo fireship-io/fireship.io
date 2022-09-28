@@ -1,6 +1,6 @@
 baseURL = 'https://fireship.io/'
 languageCode = 'en-us'
-title = 'Fireship - Learn to Code Faster'
+title = 'Fireship'
 enableRobotsTXT = true
 
 [outputs]
