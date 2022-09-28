@@ -14,7 +14,7 @@ tags:
 
 {{< vimeo 681074119 >}}
 
-**React - The Full Course** is unlike any other [React](https://reactjs.org/) course on the Internet. It provides a fast pace introduction to essential concepts, then puts them into practice by building multiple fun and challenging fullstack apps from scratch. 
+**React - The Full Course** is unlike any other [React](https://reactjs.org/) course on the Internet. It provides a fast-paced introduction to essential concepts, then puts them into practice by building multiple fun and challenging full-stack apps from scratch. 
 
 ## What will I learn?
 
@@ -40,8 +40,8 @@ You will build 5 different react apps from scratch.
 1. **Memoratic** An installable Progressive Web App (PWA) game. 
 1. **ForeverNote** Perform CRUD operations to store notes in a database with Firebase and React Router.
 1. **UnWeather** A weather app that implements SSR with Next.js and React Query. 
-1. **GeoForm** A multi-step geocoded form with animation via Framer Motion and  realtime data with Firebase.
-1. **Whack-A-Foo** A game where you click as many boxes as you can in a given time period. -->
+1. **GeoForm** A multi-step geocoded form with animation via Framer Motion and realtime data with Firebase.
+1. **Whack-A-Foo** A game where you click on as many boxes as you can in a given time period. -->
 
 
 
