@@ -17,6 +17,7 @@
     loading = true;
     const res = await callUserAPI<any>({ fn: 'getSubscriptions', payload: {} });
     subs = res?.data || [];
+    console.log(subs)
     loading = false;
   }
 
@@ -64,7 +65,13 @@
       <section>
         <h3>ID: {sub.id}</h3>
         <p>PRO Status: {sub.status}</p>
-        <p>Plan: ${sub.plan.amount / 100} per {sub.plan.interval}</p>
+        <p>
+          Plan: ${sub.plan.amount / 100} 
+          per {sub.plan.interval_count} {sub.plan.interval_count > 1 ? sub.plan.interval + 's' : sub.plan.interval}
+        </p>
+        {#if sub.discount}
+          <p>Discount: %{sub.discount.coupon.percent_off} off {sub.discount.coupon.duration}</p>
+        {/if}
 
         {#if !sub.canceled_at}
           <p>Next payment {relativeTime(sub.current_period_end)}</p>
