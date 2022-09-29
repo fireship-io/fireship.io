@@ -6,11 +6,8 @@ weight: 0
 type: courses
 tags: 
     - stripe
-    - node
     - pro
     - react
-    - cloud-functions
-    - firebase
 
 vimeo: 416381401
 author: Jeff Delaney

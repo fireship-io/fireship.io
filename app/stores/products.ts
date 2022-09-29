@@ -47,6 +47,12 @@ export const products = {
         amount: 10,
         legacy_sku: 'sku_IVIjaiCRlivYD3',
     },
+    'stripe-js': {
+        id: 'stripe-js',
+        price: 'price_1LnAhnBF7AptWZlc3VgezH7X',
+        amount: 20,
+        legacy_sku: 'sku_HG8dqucZV4x6F2',
+    },
     'lifetime': {
         id: 'lifetime',
         price: 'price_1LkhByBF7AptWZlcIUg2TjVg',

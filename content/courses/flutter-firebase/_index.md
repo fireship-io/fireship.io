@@ -17,11 +17,9 @@ stack:
     - dart
 ---
 
-<!-- {{< vimeo 645895410 >}} -->
-
 **Flutter Firebase - The Full Course** will take you from zero to a complex production-ready iOS or Android app using real-world cloud infrastructure. 
 
-{{< figure src="/img/testimonial/flutter-testimonial.png" >}}
+{{< figure src="/img/testimonial/flutter-testimonial.webp" >}}
 
 ## ⚡ What will I build?
 
