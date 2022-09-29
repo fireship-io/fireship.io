@@ -23,7 +23,6 @@ function handleSpecialKeys(e: KeyboardEvent) {
 
   if (special.includes(e.key)) {
     buffer += e.key;
-    console.log(buffer)
     if (buffer === special) {
       console.log('HI MOM!');
       modal.set('himom');
