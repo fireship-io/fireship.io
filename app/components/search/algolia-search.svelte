@@ -67,6 +67,7 @@
         class="input"
         name="search"
         type="text"
+        autofocus
         placeholder="Search"
         on:input={search}
       />
