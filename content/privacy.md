@@ -34,4 +34,4 @@ Fireship is committed to complying with the Children’s Online Privacy Protecti
 **Email Communication Opt-Out**: If you receive promotional emails from Fireship, you can unsubscribe by clicking the bottom Unsubscribe or Opt-Out link at the bottom of every email.
 
 ### Contact Us
-At Fireship, we believe our talented customer service staff will be able to resolve any issues you may have using the our services. If you would like additional information about this privacy policy, please visit our homepage at https://fireship.io or contact us at https://fireship.io/about.
+At Fireship, we believe our talented customer service staff will be able to resolve any issues you may have using the our services. If you would like additional information about this privacy policy, please visit our homepage at https://fireship.io.
