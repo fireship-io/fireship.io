@@ -14,7 +14,7 @@ If you do not consent to the collection and use of information from or about you
 Fireship is headquartered in the United States of America in the state of Nevada. By viewing any content or otherwise using the services offered by Fireship, you consent to the transfer of information to the United States of America to the extent applicable, and the collection, storage, and processing of information under Nevada, USA law.
 
 ### Information We Collect
-Information you Submit: We store information you provide on this site via forms, surveys, or any other interactive content. This information commonly includes, but is not limited to, name, mailing address, email address, and uploaded files.\
+Information you Submit: We store information you provide on this site via forms, surveys, or any other interactive content. This information commonly includes, but is not limited to, name, mailing address, email address, and uploaded files.
 
 **Log Files**: We collect information when you use services provided on our site. This information may include your IP address, device and software characteristics (such as type and operating system), page views, referral URLs, device identifiers or other unique identifiers such as advertising identifiers (e.g., "ad-ID" or "IDFA"), and carrier information. Log files are primarily used for the purpose of enhancing the user experience.
 
@@ -34,4 +34,4 @@ Fireship is committed to complying with the Children’s Online Privacy Protecti
 **Email Communication Opt-Out**: If you receive promotional emails from Fireship, you can unsubscribe by clicking the bottom Unsubscribe or Opt-Out link at the bottom of every email.
 
 ### Contact Us
-At Fireship, we believe our talented customer service staff will be able to resolve any issues you may have using the our services. If you would like additional information about this privacy policy, please visit our homepage at https://fireship.io or contact us at https://fireship.io/about.
+At Fireship, we believe our talented customer service staff will be able to resolve any issues you may have using the our services. If you would like additional information about this privacy policy, please visit our homepage at https://fireship.io.
