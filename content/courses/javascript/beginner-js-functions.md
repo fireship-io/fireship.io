@@ -98,7 +98,7 @@ makeDinner('🍜', '🥘', '🍙', '🥠', '🍑');
 
 ## Arrow Functions
 
-Arrow functions provide syntatic sugar for writing compact code, while also omitting a new `this` object, which solves common pain points when writing object-oriented code. An arrow function is unique because it: 
+Arrow functions provide syntactic sugar for writing compact code, while also omitting a new `this` object, which solves common pain points when writing object-oriented code. An arrow function is unique because it: 
 
 1. Does not have its own `this` object. 
 1. Implicit return value when brackets are omitted. i.e. `() => true` returns true. 
