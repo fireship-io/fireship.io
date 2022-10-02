@@ -17,7 +17,23 @@
         <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
 
         <ul class="grid-list justify-items-center pl-0">
-            {{ range .Pages.ByLastmod.Reverse   }}
+            {{ range where .Pages.ByLastmod.Reverse "Params.deprecated" "!=" "true"   }}
+                <li class="list-none p-0">
+                   {{ $img := (print .RelPermalink "img/featured.webp") }}
+                   {{ partial "card" (dict "context" . "img" $img) }}
+                </li>
+            {{ end }} 
+        </ul>
+
+        <header class="text-center mb-8 mt-20">
+            <h1 class="text-5xl mb-1">Past Courses</h1>
+            <p class="my-0 text-gray3">these courses might taste a little stale</p>
+        </header>
+      
+        <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+
+        <ul class="grid-list justify-items-center pl-0">
+            {{ range where .Pages "Params.deprecated" true }}
                 <li class="list-none p-0">
                    {{ $img := (print .RelPermalink "img/featured.webp") }}
                    {{ partial "card" (dict "context" . "img" $img) }}
