@@ -1,7 +1,7 @@
 ---
 lastmod: 2022-07-05T10:23:30-09:00
 title: Dart 101
-description: Master the fundamentals of Dart before jumping into a Flutter
+description: Master the fundamentals of Dart before jumping into Flutter
 weight: 0
 type: courses
 author: Jeff Delaney
