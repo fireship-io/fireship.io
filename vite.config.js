@@ -1,42 +1,41 @@
 import { defineConfig } from 'vite'
 import { svelte } from '@sveltejs/vite-plugin-svelte'
-import { readdir, rm, writeFile } from 'fs/promises';
+import { readdir, rm, writeFile } from 'fs/promises'
 
 // https://vitejs.dev/config/
-export default defineConfig({ 
+export default defineConfig({
   root: 'app',
   build: {
     outDir: '../static/svelte',
     emptyOutDir: true,
-    assetsDir: '',
+    assetsDir: ''
     // sourcemap: 'inline', // enable for debugging
   },
   server: {
-    port: 4200,
+    port: 4200
   },
   plugins: [
     svelte({
       compilerOptions: {
-        customElement: true,
-      },
-  }),
+        customElement: true
+      }
+    }),
     syncToHugo()
   ]
 })
 
-function syncToHugo() {
-
+function syncToHugo () {
   return {
     closeBundle: async () => {
-      const svelteBuild = './static/svelte';
-      const assets = await readdir(svelteBuild);
-      const js = assets.filter(name => name.match(/(index.)(?!.*?esm)(?!.*?css).*\w+/))[0];
-      const css = assets.filter(name => name.includes('.css'))[0];
+      const svelteBuild = './static/svelte'
+      const assets = await readdir(svelteBuild)
+      const js = assets.filter(name => name.match(/(index.)(?!.*?esm)(?!.*?css).*\w+/))[0]
+      const css = assets.filter(name => name.includes('.css'))[0]
       await Promise.all([
-        writeFile(`./data/svelte.json`, JSON.stringify({ js, css })),
+        writeFile('./data/svelte.json', JSON.stringify({ js, css })),
         rm('./static/svelte/index.html')
-      ]);
-      console.log(`wrote ${js} to hugo data`);
+      ])
+      console.log(`wrote ${js} to hugo data`)
     }
   }
 }
