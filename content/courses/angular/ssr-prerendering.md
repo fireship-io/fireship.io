@@ -1,6 +1,6 @@
 ---
 title: Prerendering 
-description: Prerender with Angular Universal using a vanilla JS script
+description: Pre-render with Angular Universal using a vanilla JS script
 weight: 53
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
@@ -9,7 +9,7 @@ emoji: 📂
 video_length: 4:04
 ---
 
-Create a script that can prerender specific routes using Angular Universal. 
+Create a script that can pre-render specific routes using Angular Universal. 
 
 Note, make sure you have enabled Universal with the schematic from the previous video or with `ng add @nestjs/ng-universal`. 
 
