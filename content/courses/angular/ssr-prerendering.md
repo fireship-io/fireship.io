@@ -31,7 +31,7 @@ Add the following scripts to your package.json.
 }
 ```
 
-## Prerender Script
+## Pre-render Script
 
 {{< file "js" "prerender.js" >}}
 ```js
@@ -68,7 +68,7 @@ const ROUTES = [
 ];
 
 
-// START prerender script
+// START pre-render script
 
 (async function() {
   enableProdMode();
