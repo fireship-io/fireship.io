@@ -19,8 +19,7 @@
   $: if($modal === 'search' && searchInput) {
     setTimeout(() => {
       searchInput.focus();
-      console.log('searchInput', searchInput);
-    }, 10);
+    }, 50);
   }
 
   onMount(() => {
