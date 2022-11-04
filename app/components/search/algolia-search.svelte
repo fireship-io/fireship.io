@@ -14,6 +14,15 @@
   let results: any;
   let hits = [];
   let activeHit = 0;
+  let searchInput;
+
+  $: if($modal === 'search' && searchInput) {
+    setTimeout(() => {
+      searchInput.focus();
+      console.log('searchInput', searchInput);
+    }, 10);
+  }
+
   onMount(() => {
     return () => {
       window.removeEventListener('keydown', handleSpecialKeys);
@@ -64,10 +73,10 @@
   <form>
     {#if $modal === 'search'}
       <input
+        bind:this={searchInput}
         class="input"
         name="search"
         type="text"
-        autofocus
         placeholder="Search"
         on:input={search}
       />
