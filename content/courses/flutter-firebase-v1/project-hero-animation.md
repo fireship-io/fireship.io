@@ -1,6 +1,6 @@
 ---
 title: Hero Animation
-description: Create beautiful transitions between screens the with the Hero widget
+description: Create beautiful transitions between screens with the Hero widget
 weight: 51
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
