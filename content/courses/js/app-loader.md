@@ -4,9 +4,9 @@ description: Show a loading indicator while the app is fetching data
 weight: 45
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
+vimeo: 773544065
 emoji: 🔃
-video_length: 2:05
+video_length: 1:02
 quiz: true
 ---
 

@@ -1,13 +1,14 @@
 ---
-title: JavaScript 101 
+title: JavaScript Crash Course 
 description: 101 concepts every JavaScript developer should know
-weight: 2
+weight: 3
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 359322932
+youtube: lkIFF4maKMU
 emoji: 📚
 video_length: 12:16
 quiz: true
+free: true
 ---
 
 <quiz-modal options="garbage-collected:intrepreted:statically-typed:fun" answer="compiled" prize="19">

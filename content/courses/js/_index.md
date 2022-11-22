@@ -5,7 +5,7 @@ description: Learn how to build real-world applications with JavaScript
 weight: 0
 type: courses
 author: Jeff Delaney
-vimeo: 599074745
+vimeo: 773378423
 tags: 
     - javascript
     - nodejs
@@ -26,19 +26,20 @@ This course is focusd on the basics of [JavaScript](https://git-scm.com/) - the 
 
 - 👶 The Basics of JavaScript
 - 👨‍🎤 Advanced concepts broken down in a quick no-BS format
-- 📰 Prepare for JS interviews by coding Algorithms
+- 📰 Prepare for JS interviews by coding algorithms
 - 🧪 Test Driven Development with Vitest
 - ⚔️ Debugging and Error Handling
 - 🎨 Build a text-to-image API with Node.js and OpenAI
-- 🗯️ Build a Fullstack Chat App with Pocketbase
+- 🗯️ Learn modern browser APIs like Fetch
+- 🍕 A great primer for more advanced Fireship courses
 
 
 ## 🤔 Is this Course Right for Me?
 
 <div class="box box-green">
-This course is beginner level 🟢 and will walk you through the fundamentals of JavaScript. It is fast-paced and similar to my style on YouTube, but far more in-depth and with hands's on projects and quizzes. 
+This course is beginner level 🟢 and will walk you through the fundamentals of JavaScript. It is fast-paced and similar to my style on YouTube, but far more in-depth and with hands on projects and quizzes. 
 </div>
 
 ### When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated Nov 20th, 2022</span>
+<span class="tag tag-sm tag-pro">Updated Nov 21st, 2022</span>

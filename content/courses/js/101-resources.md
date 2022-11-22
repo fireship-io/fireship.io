@@ -4,10 +4,10 @@ description: Source code and course resources
 weight: 1
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 359322932
+vimeo: 773383078
 emoji: 📜
 chapter_start: Basic Concepts 
-video_length: 1:51
+video_length: 0:46
 quiz: true
 ---
 

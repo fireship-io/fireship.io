@@ -4,9 +4,9 @@ description: How to test your API with a REST client
 weight: 43
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
+vimeo: 773606609
 emoji: 💻
-video_length: 2:05
+video_length: 1:29
 quiz: true
 ---
 

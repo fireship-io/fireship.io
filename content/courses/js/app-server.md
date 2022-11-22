@@ -4,9 +4,9 @@ description: Use Node.js, Express, and OpenAI to create a text-to-image API
 weight: 42
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
+vimeo: 773544292
 emoji: 🤖
-video_length: 2:05
+video_length: 4:36
 quiz: true
 ---
 

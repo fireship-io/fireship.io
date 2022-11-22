@@ -4,9 +4,9 @@ description: How to implement an LRU cache in JavaScript
 weight: 32
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
+vimeo: 773492873
 emoji: 🧺
-video_length: 2:05
+video_length: 4:01
 quiz: true
 ---
 

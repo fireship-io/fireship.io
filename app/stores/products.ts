@@ -5,6 +5,11 @@ export const products = {
         amount: 20,
         legacy_sku: 'sku_ItHZfVSApb3xkT',
     },
+    'js': {
+        id: 'js',
+        price: 'price_1M6lsOBF7AptWZlcVCGjrDvX',
+        amount: 20,
+    },
     'git': {
         id: 'git',
         price: 'price_1LkgzcBF7AptWZlcF5NJQgKd',

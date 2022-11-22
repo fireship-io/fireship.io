@@ -4,13 +4,13 @@ description: Handle errors gracefullly on the client and server
 weight: 46
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
-emoji: 🔃
-video_length: 2:05
+vimeo: 773543578
+emoji: 🚨
+video_length: 2:28
 quiz: true
 ---
 
-<quiz-modal options="catch():try/catch:throw:just ignore errors" answer="disabled" prize="18">
+<quiz-modal options="catch():try/catch:throw:just ignore errors" answer="try/catch" prize="18">
   <h6>What is the usual way to handle errors in an async function?</h6>
 </quiz-modal>
 

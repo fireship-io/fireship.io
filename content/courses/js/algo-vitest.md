@@ -4,10 +4,9 @@ description: How to test JavaScript code with Vitest
 weight: 32
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
+vimeo: 773493175
 emoji: 🧪
 video_length: 2:05
-quiz: false
 ---
 
 Use [Vitest](https://vitest.dev/) to create a few basic unit test for the algorithims in the previous lessons. 

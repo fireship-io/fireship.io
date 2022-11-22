@@ -1,12 +1,12 @@
 ---
-title: RESTful APIs in 100 Seconds
+title: RESTful APIs
 description: Learn the fundamentals of the HTTP request-response cycle
 weight: 41
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
-vimeo: 599073569
-emoji: 🖼
-video_length: 2:05
+vimeo: 773544123
+emoji: 💤
+video_length: 2:29
 quiz: true
 ---
 
