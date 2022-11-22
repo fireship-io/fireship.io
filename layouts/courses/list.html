@@ -82,7 +82,7 @@
                 <div class="flex flex-center justify-center">
                     {{ range $index, $element := .Params.stack }}
                     <scroll-show delay="{{ mul $index 200 }}">
-                        <div class="rounded-lg bg-black bg-opacity-30 shadow-3xl aspect-square p-6 w-36 h-36 mx-2 border-b-4 border-gray6">
+                        <div class="flex rounded-lg bg-black bg-opacity-30 shadow-3xl aspect-square p-6 w-36 h-36 mx-2 border-b-4 border-gray6">
                             <img class="m-0" src="/img/icons/{{ . }}.svg" />
                         </div>
                     </scroll-show>
