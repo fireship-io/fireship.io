@@ -1,7 +1,7 @@
 ---
 lastmod: 2022-11-11T10:23:30-09:00
 title: React Supabase Full Course
-description: Build and deploy a full-stack production ready web app with Supabase, React, adn Postgres
+description: Build and deploy a full-stack, production-ready web app with Supabase, React, and Postgres.
 weight: 0
 type: courses
 author: Zack DeRose
@@ -17,6 +17,7 @@ stack:
   - supabase
   - react
   - postgres
+  - playwright
 ---
 
 **The Supabase Course** is a intermediate-level project-based course that builds a Reddit-clone from scratch with Supabase, Postgres, and React.
