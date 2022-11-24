@@ -46,6 +46,12 @@ const config = {
 };
 ```
 
+Installing the `detect-port` package:
+
+```bash
+yarn add -D detect-port
+```
+
 e2e/utils.ts:
 
 ```ts

@@ -11,7 +11,6 @@ quiz: true
 chapter_start: Deployment
 ---
 
-
 Command to link to your production db (requires your DB password and your access token):
 
 ```bash
@@ -32,7 +31,7 @@ Command to push your local migrations to production (requires DB password):
 npx supabase db push
 ```
 
-Command to generate new migrations:
+Command to generate new migration file on your local instance:
 
 ```bash
 npx supabase migration new <migration name>

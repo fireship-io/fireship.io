@@ -12,6 +12,72 @@ quiz: true
 
 ## Login Components
 
+Updated NavBar.tsx:
+
+```tsx
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { UserContext } from "./App";
+import Login from "./Login";
+import UserMenu from "./UserMenu";
+
+export default function NavBar() {
+  const { session } = useContext(UserContext);
+  return (
+    <>
+      <nav className="nav-bar">
+        <Link className="nav-logo-link" to="/">
+          <img
+            id="logo"
+            className="nav-logo"
+            src="https://supaship.io/supaship_logo_with_text.svg"
+            alt="logo"
+          />
+        </Link>
+
+        <ul className="nav-right-list">
+          <li className="nav-message-board-list-item">
+            <Link to="/1" className="nav-message-board-link">
+              message board
+            </Link>
+          </li>
+          <li className="nav-auth-item">
+            {session?.user ? <UserMenu /> : <Login />} // see a bit further down
+            for the UserMenu.tsx file!
+          </li>
+        </ul>
+      </nav>
+    </>
+  );
+}
+```
+
+Updated MessageBoard.tsx:
+
+```tsx
+export default function MessageBoard() {
+  const userProfile = useContext(UserContext);
+  return (
+    <div className="message-board-container">
+      <Link to="/1">
+        <h2 className="message-board-header-link">Message Board</h2>
+      </Link>
+      {userProfile.session ? (
+        <></>
+      ) : (
+        <h2
+          className="message-board-login-message"
+          data-e2e="message-board-login"
+        >
+          Yo Dawg. you gotta <Login /> to join in the discussion.
+        </h2>
+      )}
+      <Outlet />
+    </div>
+  );
+}
+```
+
 Dialog.tsx:
 
 ```tsx

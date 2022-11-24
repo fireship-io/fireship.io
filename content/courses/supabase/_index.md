@@ -1,26 +1,25 @@
 ---
 lastmod: 2022-11-11T10:23:30-09:00
-title: React Supabase Course
-description: Build a production-ready web app with Supabase and React
+title: React Supabase Full Course
+description: Build and deploy a full-stack production ready web app with Supabase, React, adn Postgres
 weight: 0
 type: courses
-author: Zack De Rose
+author: Zack DeRose
 authorname: Zack DeRose
-authorbio: Senior Engineering Manager at Nrwl
+authorbio: Senior Engineering Manager at Nx && that guy from the Supaship YouTube channel
 vimeo: 773378423
-tags: 
-    - react
-    - supabase
-    - pro
+tags:
+  - react
+  - supabase
+  - pro
 
-stack: 
-    - supabase
-    - react
-    - postgres
+stack:
+  - supabase
+  - react
+  - postgres
 ---
 
-**The Supabase Course** is a intermediate-level project-based course that builds a Reddit-clone from scratch with Supabase, Postgres, and React. 
-
+**The Supabase Course** is a intermediate-level project-based course that builds a Reddit-clone from scratch with Supabase, Postgres, and React.
 
 ## 🦄 What will I learn?
 
@@ -28,8 +27,7 @@ The goal of this course is to provide you with a solid foundation for building f
 
 - 👶 The Basics of Supabase
 - Data modeling in a relational SQL database
-- Advanced Postgres Techniques like Triggers and Functions 
-
+- Advanced Postgres Techniques like Triggers and Functions
 
 ## 🤔 Is this Course Right for Me?
 
