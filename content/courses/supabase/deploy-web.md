@@ -11,3 +11,12 @@ quiz: true
 ---
 
 Netlify: https://app.netlify.com/
+
+Your public/netlify.toml file:
+
+```toml
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```

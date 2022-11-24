@@ -12,7 +12,7 @@ video_length: 2:03
 ## Essentials
 
 - Live App: https://supaship.io
-- Demo of our course's endpoint: https://supaship-course-demo.netlify.app
+- Demo of our course's endpoint (note: auth will not work): https://supaship-course-demo.netlify.app
 - Github repo: https://github.com/fireship-io/supaship.io
 - Branch showing the end state of our course: https://github.com/fireship-io/supaship.io/tree/course-end-point
 
@@ -24,6 +24,7 @@ video_length: 2:03
 - React Router Docs: https://reactrouter.com/en/main
 - Tailwind Docs: https://tailwindcss.com/
 - Vite Docs: https://vitejs.dev/guide/
+- Docker installation: https://docs.docker.com/get-docker/
 
 ## For Questions
 

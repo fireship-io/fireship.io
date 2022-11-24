@@ -15,7 +15,7 @@ free: true
 
 - Supabase Architecture: https://supabase.com/docs/architecture
 - Supabase CLI Docs: https://supabase.com/docs/reference/cli
-- Create your Prod SUpabase instance by creating an account on supabase: https://app.supabase.com
+- Create your Prod Supabase instance by creating an account on supabase: https://app.supabase.com
 
 ## Commands
 

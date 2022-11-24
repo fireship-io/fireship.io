@@ -10,6 +10,38 @@ video_length: 3:18
 quiz: true
 ---
 
+Updated `listenToUserProfileChanges()` function in use-session.ts:
+
+```ts
+sync function listenToUserProfileChanges(userId: string) {
+    const { data } = await supaClient
+      .from("user_profiles")
+      .select("*")
+      .filter("user_id", "eq", userId);
+    if (data?.[0]) {
+      setUserInfo({ ...userInfo, profile: data?.[0] });
+    } else { // this else clause is all you need to add!
+      setReturnPath();
+      navigate("/welcome");
+    }
+    return supaClient
+      .channel(`public:user_profiles`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "user_profiles",
+          filter: `user_id=eq.${userId}`,
+        },
+        (payload) => {
+          setUserInfo({ ...userInfo, profile: payload.new as UserProfile });
+        }
+      )
+      .subscribe();
+  }
+```
+
 Welcome.tsx:
 
 ```tsx
@@ -133,4 +165,44 @@ function validateUsername(username: string): string | undefined {
   }
   return undefined;
 }
+```
+
+fn to set a return path (I put this in Login.tsx, but it might go better in use-session.ts):
+
+```ts
+export const setReturnpath = () => {
+  localStorage.setItem("returnPath", window.location.pathname);
+};
+```
+
+Adding the `welcomeLoader` to our routing in the App.tsx file:
+
+```ts
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "",
+        element: <MessageBoard />,
+        children: [
+          {
+            path: ":pageNumber",
+            element: <AllPosts />,
+          },
+          {
+            path: "post/:postId",
+            element: <PostView />,
+          },
+        ],
+      },
+      {
+        path: "welcome",
+        element: <Welcome />,
+        loader: welcomeLoader, // just this line right here; be sure to export this function from Welcome.tsx!
+      },
+    ],
+  },
+]);
 ```

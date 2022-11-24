@@ -19,7 +19,7 @@ Command to install react router:
 yarn add react-router-dom
 ```
 
-Routes for our app:
+Initial routing in the `App.tsx` file:
 
 ```ts
 const router = createBrowserRouter([
@@ -49,6 +49,19 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
+function App() {
+  return <RouterProvider router={router} />;
+}
+
+export default App;
+
+function Layout() {
+  <>
+    <NavBar />
+    <Outlet />
+  </>;
+}
 ```
 
 Our starting NavBar component:
@@ -78,6 +91,21 @@ export default function NavBar() {
         </ul>
       </nav>
     </>
+  );
+}
+```
+
+Adding an outlet to the message board for nested routes:
+
+```tsx
+export default function MessageBoard() {
+  return (
+    <div className="message-board-container">
+      <Link to="/1">
+        <h2 className="message-board-header-link">Message Board</h2>
+      </Link>
+      <Outlet />
+    </div>
   );
 }
 ```
