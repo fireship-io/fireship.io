@@ -7,7 +7,6 @@ draft: false
 vimeo: 773629204
 emoji: 🌲
 video_length: 1:19
-quiz: true
 ---
 
 After this lesson, your App.tsx should look like this:

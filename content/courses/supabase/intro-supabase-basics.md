@@ -7,7 +7,6 @@ draft: false
 youtube: tUm1AlaMcMQ
 emoji: 🚀
 video_length: 27:05
-quiz: true
 free: true
 ---
 

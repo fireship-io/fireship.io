@@ -7,7 +7,6 @@ draft: false
 vimeo: 773628343
 emoji: 👮‍♂️
 video_length: 1:25
-quiz: true
 ---
 
 Supabase docs on RLS: https://supabase.com/docs/guides/auth/row-level-security

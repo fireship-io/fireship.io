@@ -8,7 +8,6 @@ vimeo: 773631649
 emoji: 🍽
 chapter_start: Local Development
 video_length: 1:16
-quiz: true
 free: true
 ---
 

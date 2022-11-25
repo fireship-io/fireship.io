@@ -7,7 +7,6 @@ draft: false
 vimeo: 773630489
 emoji: 📲
 video_length: 1:57
-quiz: true
 ---
 
 AllPosts.tsx:

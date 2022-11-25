@@ -7,7 +7,6 @@ draft: false
 vimeo: 773629294
 emoji: 🤳
 video_length: 3:07
-quiz: true
 ---
 
 ## Login Components

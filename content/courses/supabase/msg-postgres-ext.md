@@ -7,7 +7,6 @@ draft: false
 vimeo: 773629891
 emoji: 🌴
 video_length: 1:13
-quiz: true
 ---
 
 Postgres ltree documentation: https://www.postgresql.org/docs/current/ltree.html

@@ -10,6 +10,10 @@ video_length: 2:17
 quiz: true
 ---
 
+<quiz-modal options="VALIDATE:UNIQUE:CHECK:REGEX" answer="CHECK" prize="7">
+  <h6>Which Postgres constraint is used to match against a regular expression?</h6>
+</quiz-modal>
+
 ## Resources
 
 Command to create a migration file from your current local Supabase state:

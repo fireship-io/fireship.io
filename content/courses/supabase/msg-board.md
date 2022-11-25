@@ -7,7 +7,6 @@ draft: false
 vimeo: 773629709
 emoji: 💭
 video_length: 1:45
-quiz: true
 chapter_start: Message Board
 ---
 

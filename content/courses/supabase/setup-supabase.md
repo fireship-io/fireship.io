@@ -11,6 +11,10 @@ quiz: true
 free: true
 ---
 
+<quiz-modal options="Data Detail List:Data Definition Language:Definitely Danger Ligma:Domain Definition Language" answer="Data Definition Language" prize="4">
+  <h6>What does DDL stand for?</h6>
+</quiz-modal>
+
 ## Resources
 
 - Supabase Architecture: https://supabase.com/docs/architecture

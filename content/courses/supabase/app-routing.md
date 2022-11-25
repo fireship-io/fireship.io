@@ -11,6 +11,12 @@ quiz: true
 chapter_start: App Architecture
 ---
 
+<quiz-modal options="Routes:App:RouteManifest:RouteProvider" answer="RouteProvider" prize="6">
+  <h6>In React Router, all routes must be nested inside which component?</h6>
+</quiz-modal>
+
+
+
 React Router docs: https://reactrouter.com/en/main
 
 Command to install react router:

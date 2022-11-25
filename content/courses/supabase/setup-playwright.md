@@ -10,6 +10,10 @@ video_length: 2:56
 quiz: true
 ---
 
+<quiz-modal options="Runs in the browser:uses async/await:runs tests in parallel:can help reduce bugs" answer="Runs in the browser" prize="5">
+  <h6>What is the main way End-to-End testing differs from unit testing?</h6>
+</quiz-modal>
+
 Playwright docs: https://playwright.dev/docs/intro
 
 To initialize playwrigh in your repo:

@@ -7,7 +7,6 @@ draft: false
 vimeo: 773628507
 emoji: 🚔
 video_length: 1:53
-quiz: true
 ---
 
 Turning on RLS via SQL:

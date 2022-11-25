@@ -7,7 +7,6 @@ draft: false
 vimeo: 773630877
 emoji: 👍
 video_length: 1:50
-quiz: true
 ---
 
 cast-vote.ts:

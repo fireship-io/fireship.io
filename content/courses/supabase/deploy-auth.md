@@ -7,7 +7,6 @@ draft: false
 vimeo: 773631044
 emoji: 😇
 video_length: 1:23
-quiz: true
 ---
 
 - Link to Supabase auth providers: https://supabase.com/docs/guides/auth

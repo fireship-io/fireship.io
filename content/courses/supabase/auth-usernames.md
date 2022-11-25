@@ -7,7 +7,6 @@ draft: false
 vimeo: 773629493
 emoji: 📛
 video_length: 3:18
-quiz: true
 ---
 
 Updated `listenToUserProfileChanges()` function in use-session.ts:

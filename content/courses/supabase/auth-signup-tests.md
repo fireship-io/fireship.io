@@ -7,7 +7,6 @@ draft: false
 vimeo: 773628737
 emoji: 🐵
 video_length: 1:24
-quiz: true
 chapter_start: User Auth
 ---
 

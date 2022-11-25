@@ -8,7 +8,6 @@ youtube: TNhaISOUy6Q
 emoji: ⚛
 video_length: 2:30
 quiz: true
-free: true
 ---
 
 <quiz-modal options="useState:useMount:useEffect:useRef" answer="useEffect" prize="2">

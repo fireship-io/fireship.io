@@ -7,7 +7,6 @@ draft: false
 vimeo: 773628675
 emoji: 💪
 video_length: 0:44
-quiz: true
 ---
 
 Command to generate typscript types:

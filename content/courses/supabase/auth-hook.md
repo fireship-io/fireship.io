@@ -7,7 +7,6 @@ draft: false
 vimeo: 773629010
 emoji: 🎣
 video_length: 2:43
-quiz: true
 ---
 
 

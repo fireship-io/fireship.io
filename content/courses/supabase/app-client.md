@@ -7,7 +7,6 @@ draft: false
 vimeo: 773633635
 emoji: 🚆
 video_length: 1:33
-quiz: true
 ---
 
 Command to install Supabase React Auth helper:

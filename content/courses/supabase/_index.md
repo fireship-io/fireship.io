@@ -17,18 +17,31 @@ stack:
   - supabase
   - react
   - postgres
-  - playwright
 ---
 
 **The Supabase Course** is a intermediate-level project-based course that builds a Reddit-clone from scratch with Supabase, Postgres, and React.
 
 ## 🦄 What will I learn?
 
-The goal of this course is to provide you with a solid foundation for building fullstack Supabase apps on the web.
+The goal of this course is to provide you with a solid foundation for building fullstack Supabase apps on the web. Here's a quick summary of what you can expect to learn...
 
-- 👶 The Basics of Supabase
-- Data modeling in a relational SQL database
-- Advanced Postgres Techniques like Triggers and Functions
+- 👨‍🎤 Master the Basics of Supabase
+- ⚛ Build interactive UI components with React
+- 💪 Type-safe queries with TypeScript
+- 👨‍🚀 User Authentication and Row-level Security
+- 📊 Data modeling in a relational SQL database
+- 👨‍🔬 Advanced Postgres Techniques like Triggers and Functions
+- 🎭 End-to-end testing with Playwright
+- 🚀 Full-stack deployment techniques
+
+
+## 🚀 Test drive
+
+Visit the demo app and give it a test drive before you enroll. 
+
+<div>
+<a href="https://supaship.io" class="btn btn-green">Supaship Live Demo</a>
+</div>
 
 ## 🤔 Is this Course Right for Me?
 

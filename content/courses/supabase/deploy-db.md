@@ -7,7 +7,6 @@ draft: false
 vimeo: 773631044
 emoji: 🚀
 video_length: 3:01
-quiz: true
 chapter_start: Deployment
 ---
 

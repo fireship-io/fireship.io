@@ -7,7 +7,6 @@ draft: false
 vimeo: 773631487
 emoji: 🌌
 video_length: 0:46
-quiz: true
 ---
 
 Netlify: https://app.netlify.com/
