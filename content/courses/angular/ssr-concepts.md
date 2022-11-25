@@ -19,7 +19,7 @@ Determine the best rendering strategy for your use-case. You may not need SSR at
 - Renders the app on every request
 - Requires a NodeJS server 
 
-### Prerendering
+### Pre-rendering
 
 - Renders the app at build-time
 - Can be deployed to Firebase Hosting

@@ -40,7 +40,7 @@ You will build a full-stack [Kanban (看板)](https://en.wikipedia.org/wiki/Kanb
 - Data modeling and complex writes/queries with Firestore
 - Firestore security rules
 - Angular Universal with Nest.js
-- Prerendering and/or deployment to Google Cloud Run 
+- Pre-rendering and/or deployment to Google Cloud Run 
 
 ### 🤔 Is this Course Right for Me?
 
