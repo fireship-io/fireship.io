@@ -10,6 +10,11 @@ export const products = {
         price: 'price_1M6lsOBF7AptWZlcVCGjrDvX',
         amount: 20,
     },
+    'supabase': {
+        id: 'supabase',
+        price: 'price_1M7tSgBF7AptWZlcKAduj6Gr',
+        amount: 20,
+    },
     'git': {
         id: 'git',
         price: 'price_1LkgzcBF7AptWZlcF5NJQgKd',
