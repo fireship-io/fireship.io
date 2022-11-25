@@ -4,7 +4,7 @@ description: A quick introduction into the Supabase platform
 weight: 3
 lastmod: 2022-11-20T10:23:30-09:00
 draft: false
-youtube: DHjqpvDnNGE
+youtube: zBZgdTb-dns
 emoji: ⚡
 video_length: 2:30
 quiz: true
