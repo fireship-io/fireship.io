@@ -7,6 +7,7 @@ draft: false
 youtube: TNhaISOUy6Q
 emoji: ⚛
 video_length: 2:30
+free: true
 quiz: true
 ---
 
