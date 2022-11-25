@@ -1,6 +1,6 @@
 ---
 title: Cumulative Sum
-description: How to implement binary search in JavaScript
+description: Solving basic algorithms with plain JavaScript
 weight: 30
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
