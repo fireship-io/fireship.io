@@ -20,6 +20,8 @@ More about [ES Modules in TS](https://www.typescriptlang.org/docs/handbook/esm-n
 
 ## Setup
 
+### Package.json Module Type
+
 ```bash
 npm init -y
 npm install -D typescript @types/node
@@ -37,7 +39,7 @@ Update the package.json with a build script and change the type to module.
 }
 ```
 
-## TS Config
+### TS Config
 
 Create a tsconfig.json file.
 
@@ -45,7 +47,7 @@ Create a tsconfig.json file.
 touch tsconfig.json
 ```
 
-Use the `NodeNext` option to handle ES Modules. If you want a detailed explaination of why this option is needed, check out this [Stack Overflow thread](https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext). 
+Use the `NodeNext` option to handle ES Modules with interop between CommonJS modules. If you want a detailed explaination of why this option is needed, check out this [Stack Overflow thread](https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext). 
 
 {{< file "ts" "tsconfig.json" >}}
 ```json
@@ -60,8 +62,9 @@ Use the `NodeNext` option to handle ES Modules. If you want a detailed explainat
     "include": ["src/**/*"],
   }
 ```
+## Modules
 
-## Importing Modules
+### Use ES Modules
 
 An important caveat to be aware of is that the `import` statement for local files must contain an extension. 
 
@@ -73,6 +76,18 @@ export const hello = 'hi mom!';
 {{< file "ts" "src/index.ts" >}}
 ```ts
 import { hello } from './hello.js';
+```
+
+### Use CommonJS Modules
+
+{{< file "ts" "src/hello.cts" >}}
+```ts
+module.exports = 'hola mama!';
+```
+
+{{< file "ts" "src/index.ts" >}}
+```ts
+import hola from './hello.cjs';
 ```
 
 Now run the code.
