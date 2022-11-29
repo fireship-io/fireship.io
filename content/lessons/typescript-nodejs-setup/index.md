@@ -7,7 +7,7 @@ draft: false
 description: How to configure a new Node.js project with TypeScript and ES Modules
 tags: 
     - typescript
-    - nodejs
+    - node
 
 youtube: H91aqUHn8sE
 github: https://github.com/fireship-io/nodejs-typescript-starter

@@ -8,7 +8,7 @@ author: Jeff Delaney
 vimeo: 773378423
 tags: 
     - javascript
-    - nodejs
+    - node
     - pro
 
 stack: 
