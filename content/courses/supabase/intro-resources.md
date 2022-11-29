@@ -4,7 +4,7 @@ description: Resources for the course
 weight: 2
 lastmod: 2022-11-20T10:23:30-09:00
 draft: false
-vimeo: 773635421
+vimeo: 773635421 // need to update with new vimeo when uploaded
 emoji: 📜
 video_length: 2:03
 ---
@@ -25,6 +25,7 @@ video_length: 2:03
 - Tailwind Docs: https://tailwindcss.com/
 - Vite Docs: https://vitejs.dev/guide/
 - Docker installation: https://docs.docker.com/get-docker/
+- Postgres installation: https://www.postgresql.org/download/
 
 ## For Questions
 
