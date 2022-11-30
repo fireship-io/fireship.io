@@ -4,7 +4,7 @@ description: Configure Playwright for end-to-end testing
 weight: 12
 lastmod: 2022-11-20T10:23:30-09:00
 draft: false
-vimeo: 773632607
+vimeo: 773632607 // need to update with new vimeo id
 emoji: 🎭
 video_length: 2:56
 quiz: true
@@ -79,6 +79,8 @@ async function startSupabase() {
 function reseedDb() {
   execSync(
     "PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -p 64322 -f supabase/clear-db-data.sql",
+    // for Windows:
+    // "SET PGPASSWORD=postgres&&psql -U postgres -h 127.0.0.1 -p 54322 -f supabase/clear-db-data.sql"
     { stdio: "ignore" }
   );
 }
