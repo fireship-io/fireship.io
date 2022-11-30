@@ -4,7 +4,7 @@ description: Configure Playwright for end-to-end testing
 weight: 12
 lastmod: 2022-11-20T10:23:30-09:00
 draft: false
-vimeo: 773632607 // need to update with new vimeo id
+vimeo: 773632607
 emoji: 🎭
 video_length: 2:56
 quiz: true

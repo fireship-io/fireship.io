@@ -4,7 +4,7 @@ description: Resources for the course
 weight: 2
 lastmod: 2022-11-20T10:23:30-09:00
 draft: false
-vimeo: 773635421 // need to update with new vimeo when uploaded
+vimeo: 773635421
 emoji: 📜
 video_length: 2:03
 ---
