@@ -66,14 +66,14 @@
             <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar" />
             <span class="flex flex-col ml-2">
                 <span class="text-lg">Taught by 
-                    <a class="no-underline text-orange-500" href="/contributors/{{ anchorize .Params.author }}/">{{ title .Params.author }}</a>
+                    <a class="no-underline text-orange-500" href="/contributors/{{ anchorize .Params.author }}/">{{ title (.Params.authorname | default .Params.author) }}</a>
                 </span>
-                <span class="text-sm text-gray4">That guy from the Fireship YouTube channel</span>
+                <span class="text-sm text-gray4">
+                    {{ (.Params.authorbio | default "That guy from the Fireship YouTube channel") }}
+                </span>
             </span>
         </div>
 
-        {{/*  bg-[url('/img/fire.gif')]  */}}
-        {{/*  <img-reveal src="/img/himom.gif" class="mx-auto">  */}}
         <div class="mx-auto w-24 h-1 my-24 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full"></div>
 
         {{ if .Params.stack }}
@@ -82,7 +82,7 @@
                 <div class="flex flex-center justify-center">
                     {{ range $index, $element := .Params.stack }}
                     <scroll-show delay="{{ mul $index 200 }}">
-                        <div class="rounded-lg bg-black bg-opacity-30 shadow-3xl aspect-square p-6 w-36 h-36 mx-2 border-b-4 border-gray6">
+                        <div class="flex rounded-lg bg-black bg-opacity-30 shadow-3xl aspect-square p-6 w-36 h-36 mx-2 border-b-4 border-gray6">
                             <img class="m-0" src="/img/icons/{{ . }}.svg" />
                         </div>
                     </scroll-show>
