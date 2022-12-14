@@ -4,7 +4,8 @@ import { readdirSync, rmSync } from 'fs';
 import { exec } from 'child_process';
 
 // npx @squoosh/cli --webp auto ./4.jpg 
-const dir = './content/courses/react-next-firebase/img/prizes/';
+// const dir = './content/courses/supabase/img/prizes/';
+const dir = './static/img/testimonial/';
 const files = readdirSync(dir)
 files.forEach(file => {
     if (!file.includes('.webp')) {
