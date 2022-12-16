@@ -20,7 +20,7 @@ github: https://github.com/fireship-io/216-flutter-ipod
 #    rxdart: 0.20
 ---
 
-An awesome [tweet](https://t.co/zVk5YJj0rh) was making the rounds last week that recreates the [iPod Classic](https://en.wikipedia.org/wiki/IPod_Classic) UI with SwiftUI. It features a *click wheel* that scrolls through a list of items when rotated and makes a excellent Flutter UI challenge. 
+An awesome [tweet](https://t.co/zVk5YJj0rh) was making the rounds last week that recreates the [iPod Classic](https://en.wikipedia.org/wiki/IPod_Classic) UI with SwiftUI. It features a *click wheel* that scrolls through a list of items when rotated and makes for an excellent Flutter UI challenge. 
 
 <div class="flex-center"> 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Turned my iPhone into an iPod Classic with Click Wheel and Cover Flow with <a href="https://twitter.com/hashtag/SwiftUI?src=hash&amp;ref_src=twsrc%5Etfw">#SwiftUI</a> <a href="https://t.co/zVk5YJj0rh">pic.twitter.com/zVk5YJj0rh</a></p>&mdash; Elvin (@elvin_not_11) <a href="https://twitter.com/elvin_not_11/status/1199717678908366854?ref_src=twsrc%5Etfw">November 27, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
