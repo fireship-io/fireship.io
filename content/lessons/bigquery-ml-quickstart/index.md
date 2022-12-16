@@ -30,9 +30,9 @@ youtube: ajTp60neMlc
 - Stream data to business intelligence tools like Data Studio, Tableau, etc. 
 - Combine Web Analytics with iOS/Android on Firebase. 
 - Organize and connect multiple data sources. 
-- Build an horse racing machine learning model 🏇 
+- Build a horse racing machine learning model 🏇 
 
-In the following lesson, we will harness the data-crunching power of 👾 BigQueryML, along with DataStudio and DataLab, to build a predictive model from historical Horse Racing Data. Our goal is to turn this dataset into an ML model 
+In the following lesson, we will harness the data-crunching power of 👾 BigQueryML, along with DataStudio and DataLab, to build a predictive model from historical Horse Racing Data. Our goal is to turn this dataset into an ML model.
 
 
 ## Import Data into Big Query
@@ -78,7 +78,7 @@ LIMIT 1000
 ```
 
 
-If the data looks malformatted at this point, you may need to open horses.csv in a MS excel and manually convert the number columns to numbers. BigQuery will error out if mismatched datatypes are present in the data. 
+If the data looks malformatted at this point, you may need to open horses.csv in MS Excel and manually convert the number columns to numbers. BigQuery will error out if mismatched datatypes are present in the data. 
 
 
 
