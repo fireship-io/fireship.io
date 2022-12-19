@@ -46,14 +46,14 @@ From the Apple Developer Portal go to [Certificates, Identifiers & Profiles >> I
 ### Step 2 - Create and Configure a Service ID
 
 
-From *Certificates, Identifiers & Profiles >> Identifiers*, create a new **Service ID** and make sure is linked to your primary App ID. Configure it point to your Firebase hosting URL. 
+From *Certificates, Identifiers & Profiles >> Identifiers*, create a new **Service ID** and make sure it is linked to your primary App ID. Configure it to point to your Firebase hosting URL. 
 
 {{< figure src="/img/snippets/apple-signin-web-config.png" caption="Replace the project ID for your domain" >}}
 
 
 ### Step 3 - Verify Domain Ownership
 
-Go to Service ID you created in the previous step and click *configure*, then click *download*. Save the file in your web app's public hosting directory under `./well-known/`. 
+Go to the Service ID you created in the previous step and click *configure*, then click *download*. Save the file in your web app's public hosting directory under `./well-known/`. 
 
 Deploy this file to your domain so Apple can verify it. 
 
@@ -80,13 +80,13 @@ Head over the to the [Firebase Console](https://console.firebase.google.com/) an
 
 ## Frontend Code
 
-We now have all the pieces in place to implement SignIn with Apple into our web app. Because this is Firebase, it only requires a few lines of code. Assuming you have [Firebase installed](/snippets/install-angularfire/) in your project, simply make a reference the the provider and call `signInWithPopup()`.
+We now have all the pieces in place to implement SignIn with Apple into our web app. Because this is Firebase, it only requires a few lines of code. Assuming you have [Firebase installed](/snippets/install-angularfire/) in your project, simply make a reference to the provider and call `signInWithPopup()`.
 
 {{< figure src="/img/snippets/apple-signin-popup.png" caption="SignIn with Apple popup seen by the end-user" >}}
 
 ### Basic JavaScript Implementation
 
-The frontend implementation is an async function that can bound to a button click to trigger the popup modal. Make sure to follow [Apple UI guidelines](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/) when designing the button. 
+The frontend implementation is an async function that can bind to a button click to trigger the popup modal. Make sure to follow [Apple UI guidelines](https://developer.apple.com/design/human-interface-guidelines/sign-in-with-apple/overview/) when designing the button. 
 
 {{< file "js" "app.js" >}}
 ```js
