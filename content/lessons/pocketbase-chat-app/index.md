@@ -77,7 +77,7 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
 {{< file "svelte" "Login.svelte" >}}
 ```svelte
 <script lang="ts">
-  import { currentUser, pb } from './pocketbase';
+  import { currentUser, pb } from './lib/pocketbase';
 
   let username: string;
   let password: string;
@@ -143,7 +143,7 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
 ```svelte
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte';
-  import { currentUser, pb } from './pocketbase';
+  import { currentUser, pb } from './lib/pocketbase';
 
   let newMessage: string;
   let messages = [];
