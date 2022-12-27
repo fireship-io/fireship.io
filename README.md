@@ -42,7 +42,7 @@ export * from './components/hi-mom.svelte';
 Now use it in anywhere in your HTML or Markdown. 
 
 ```html
-<hi-mom greeting="i made a web component"></hi-mom>
+<hi-mom greeting="I made a web component."></hi-mom>
 ```
 
 **Note:** A weird caveat with Svelte web components is that all styles must be encapsulated. You can use Tailwind, BUT only with `@apply` in the component. Global styles will not work.
@@ -52,4 +52,4 @@ Now use it in anywhere in your HTML or Markdown.
 - `npm start`: Main dev server. Runs everything you need. 
 - `npm run dev`: Runs components in isolation. Serves `app/index.html` as a playground for components. 
 - `npm run hugo`: Only runs static site. 
-- `npm run build`: Build for production
+- `npm run build`: Build for production.
