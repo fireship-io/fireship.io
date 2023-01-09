@@ -14,6 +14,9 @@
   let results: any;
   let hits = [];
   let activeHit = 0;
+  let input: any;
+  let hasTypedOnce: boolean;
+  
   onMount(() => {
     return () => {
       window.removeEventListener('keydown', handleSpecialKeys);
@@ -46,6 +49,7 @@
     }
   }
   function handleSpecialKeys(e: KeyboardEvent) {
+    
     if (e.key === 'ArrowUp') {
       goUp();
     }
@@ -56,18 +60,27 @@
       selectHit();
     }
   }
+
+  function handleKeyDown(e: KeyboardEvent) {
+    if(!hasTypedOnce) {
+      input.focus();
+      hasTypedOnce = true;
+    }
+    handleSpecialKeys(e)
+  }
+
 </script>
 
-<svelte:window on:keydown={handleSpecialKeys} />
+<svelte:window on:keydown={handleKeyDown} />
 
 <modal-dialog name="search">
   <form>
     {#if $modal === 'search'}
       <input
+        bind:this={input}
         class="input"
         name="search"
         type="text"
-        autofocus
         placeholder="Search"
         on:input={search}
       />
