@@ -26,7 +26,7 @@ Here's how a merge conflict looks from the command line:
 
 {{< file "terminal" "command line" >}}
 ```bash
-git branch feature
+git checkout -b feature
 # make some changes
 git commit -am "awesome branch stuff"
 
