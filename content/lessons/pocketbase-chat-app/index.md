@@ -217,7 +217,7 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
 
 ### Create a Linode
 
-Head over the Linode and create a new server. Becuase they sponsored this video, you can use a [$100 credit](https://www.linode.com/fireship) to get started. 
+Head over the Linode and create a new server. Because they sponsored this video, you can use a [$100 credit](https://www.linode.com/fireship) to get started. 
 
 {{< figure src="img/linode-dashboard.png" caption="Linode dashboard" >}}
 
