@@ -8,7 +8,7 @@ All static content is managed with Hugo in the `content` dir. You can easily fix
 
 ### How to Run it
 
-First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater. 
+First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) version `0.101.0` or greater. 
 
 ```
 git clone <this-repo>
