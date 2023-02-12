@@ -24,7 +24,7 @@ github: https://github.com/AngularFirebase/108-autosave-reactive-froms-firestore
 #    rxdart: 0.20
 ---
 
-Forms are one of the most critical, yet most cumbersome aspects of app development. They require a ton of HTML markup and require complex validation rules for a good user experience. Almost all forms must be synced to a backend database, leaving us faced a state management conundrum that is not always easy to solve. In this lesson, my goal is to provide you with a reliable solution for syncing your frondend forms to any backend database. 
+Forms are one of the most critical, yet most cumbersome aspects of app development. They require a ton of HTML markup and require complex validation rules for a good user experience. Almost all forms must be synced to a backend database, leaving us faced a state management conundrum that is not always easy to solve. In this lesson, my goal is to provide you with a reliable solution for syncing your frontend forms to any backend database. 
 
 Angular's [ReactiveFormsModule](https://angular.io/guide/reactive-forms) is basically a standalone state management system, while Firebase manages its own state under the hood. We want to combine these tools into a unified system by building a reusable directive that makes working with Firestore and Reactive Forms nearly automatic. 
 
