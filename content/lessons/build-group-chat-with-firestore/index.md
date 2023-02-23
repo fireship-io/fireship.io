@@ -66,7 +66,7 @@ Another benefit of the embedded approach is that Firestore recently added an `ar
 }
 ```
 
-Notice how we only save the user's UID on the chat message. Later this lesson, I will provide a `joinUsers` method to combine the user data, like displayName and photoURL, to each message in the UI. 
+Notice how we only save the user's UID on the chat message. Later in this lesson, I will provide a `joinUsers` method to combine the user data, like displayName and photoURL, to each message in the UI. 
 
 <p class="tip">Firestore also has a *limit* of 1-write-per-second, but you can burst past it for short periods. This limit is only a concern if you have consistent high volume writes on a single doc. You can learn more in this [github issue](https://github.com/firebase/firebase-js-sdk/issues/495). 
 
@@ -168,8 +168,8 @@ export class AuthService {
 The chat service gives us a single place to retrieve and write data from Firestore. Here's a breakdown of what each method does.
 
 - *get* retrieves the chat document as an Observable. 
-- *create* writes a new chat document
-- *sendMessage* uses the Firestore `arrayUnion` method append a new chat message to document. 
+- *create* writes a new chat document.
+- *sendMessage* uses the Firestore `arrayUnion` method to append a new chat message to document. 
 
 ```typescript
 import { Injectable } from '@angular/core';

@@ -31,7 +31,7 @@ After it becomes known, you can think of it as a one-day or 20-day exploit based
 
 ## 2. Packages with Known Vulnerabilities
 
-> In 2017, the [Equifax Data Breach](https://www.cnet.com/news/equifax-ceo-data-breach-heres-what-went-wrong/) exposed more than 140MM customer records and has cost the company over $1 billion. It was caused by a known exploit over two months old that could have been prevented with a simple update to Apache Struts. 
+> In 2017, the [Equifax Data Breach](https://www.cnet.com/news/equifax-ceo-data-breach-heres-what-went-wrong/) exposed more than 140M customer records and has cost the company over $1 billion. It was caused by a known exploit over two months old that could have been prevented with a simple update to Apache Struts. 
 
 Using packages with [known vulnerabilities](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities) is the most common way hackers exploit web apps. 
 
@@ -49,10 +49,6 @@ npm audit fix
 
 > The Samy worm was an XSS attack that spread to over 1 million MySpace pages in 24 hours. If affected, it would update your profile to say *but most of all, samy is my hero*
 
-<div class="insta">
-
-</div>
-
 
 Cross Site Scripting occurs when a hacker runs malicious JavaScript on a client's browser. It can happen in a variety of ways, but is commonly the result of rendering raw HTML from the server. 
 
@@ -66,7 +62,7 @@ Cross Site Scripting occurs when a hacker runs malicious JavaScript on a client'
 
 > In 2008, Heartland Payment Systems exposed the data encoded on credit cards via a SQL injection attack. The hackers used this data to make physical counterfeit credit cards. The ringleader, Albert Gonzalez, was caught and sentenced to 20 years in prison. 
 
-[SQL injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) is similar conceptually to XSS, but instead, it runs malicious code on the database. 
+[SQL injection](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection) is conceptually similar to XSS, but instead, it runs malicious code on the database. 
 
 Notice how the code below relies on an external parameter to construct the query. If not sanitized, an attacker can submit raw SQL code and the database will execute it. 
 
