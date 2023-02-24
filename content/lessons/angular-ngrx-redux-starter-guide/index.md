@@ -75,7 +75,7 @@ cd ngrxFire
 Then install @ngrx/store via NPM.
 
 ```shell
-npm install @ngrx/core @ngrx/store  --save
+npm install @ngrx/core  --save
 ```
 
 ## The Most Simple Ngrx Example

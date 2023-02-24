@@ -167,9 +167,9 @@ In this example, we will write a function that can be reused to generate an anim
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2FE165-RouterAnimations%2F14-slide-demo.mp4?alt=media&token=522c3f3f-6a2d-4c5d-81c1-4f8f2a53a423"></video>
 
-- We set different transitions based on the *isLeft* or *isRight* data contiained in the router. 
+- We set different transitions based on the *isLeft* or *isRight* data contained in the router. 
 - *:leave* queries are marked optional because it is not present on the initial page load
-- The `group` method is used run multiple animations concurrently. 
+- The `group` method is used to run multiple animations concurrently. 
 
 ```typescript
 export const slider =
