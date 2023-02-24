@@ -26,12 +26,12 @@ Whenever I see an awesome UI element in a native app my first question is *How d
 
 {{< vimeo 328094871 >}}
 
-These animations are complex. Hypothetically, they could be created in Flutter natively with a custom painter, but that would be very challenging and painful. Thankfully, we have [Flare 2D](https://www.2dimensions.com/about-flare) a design tool that makes it easy to create complex animations with vector graphics and run them in Flutter's rendering engine at 60+ FPS. 
+These animations are complex. Hypothetically, they could be created in Flutter natively with a custom painter, but that would be very challenging and painful. Thankfully, we have [Flare 2D](https://www.dimensions.com/about-flare) a design tool that makes it easy to create complex animations with vector graphics and run them in Flutter's rendering engine at 60+ FPS. 
 
 ## Part 1: Create Animated Icons with Flare 2D
 
 
-Access the files used in this lesson on my [Flare profile](https://www.2dimensions.com/a/delaneyphx/files/recent/all) or from the project github repo. 
+Access the files used in this lesson from the project github repo. 
 
 
 First, we need to create some awesome animated graphics with Flare. Create a free account, then complete the tasks below. These tasks represent the skills you need to have in Flare to re-create Giphy's animated icons. 
@@ -67,7 +67,7 @@ We can animate almost anything on the shape. Let's get familiar with the animati
 1. Switch to animation mode. 
 1. Change the untitled animation name to *go* (this will be important when we get the Flutter code). 
 1. Create a keyframe by selecting the diamond next to the fill control. 
-1. Scrub the timeline to the end and change the fill color. A new keyfame would be added automatically. 
+1. Scrub the timeline to the end and change the fill color. A new keyframe would be added automatically. 
 1. Press play. You just created an animation. 
 
 {{< figure src="img/flare-star-animated.png" caption="Animate the fill color of the star" >}}
@@ -86,15 +86,15 @@ An easy way to bring your shapes to life is by animating size, movement, and rot
 
 ### Animate the Shape
 
-We can also animate the verticies of the star to to transform it into a completely different shape. 
+We can also animate the vertices of the star to to transform it into a completely different shape. 
 
 
 **Tasks**
 
-1. Add a keyframe to edit verticies. 
-1. Click "edit verticies", scrub to a different time,  move the verticies to automatically add a keyframe. 
+1. Add a keyframe to edit vertices. 
+1. Click "edit vertices", scrub to a different time,  move the vertices to automatically add a keyframe. 
 
-{{< figure src="img/flare-star-vert.png" caption="Use the verticies to change and animate the points of the shape" >}}
+{{< figure src="img/flare-star-vert.png" caption="Use the vertices to change and animate the points of the shape" >}}
 
 ### Animate the Stroke for a Hand-Drawn Effect
 
