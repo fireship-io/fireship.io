@@ -28,7 +28,7 @@ versions:
     "firebase": 5.7
 ---
 
-A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I genernally focus on user auth first because so many other features depend the user's auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user's profile and/or query all users.
+A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I generally focus on user auth first because so many other features depend the user's auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user's profile and/or query all users.
 
 The end result of this lesson is an Angular/Firebase app that supports the following features: 
 
@@ -61,7 +61,7 @@ Google Sign-in is the easiest method to configure in Firebase because your app c
 
 At this point, it is assumed you have an existing Angular app using the Angular router. 
 
-Let's install `firebase`  and `@angular/fire` and refer to the [official documentation](https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md) as needed. 
+Let's install `firebase` and `@angular/fire` and refer to the [official documentation](https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md) as needed. 
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -153,7 +153,7 @@ export class AuthService {
 
 ### Observe the AuthState 
 
-The most important element this feature is being able to react to changes to the user's authentiaction state. When logged-out, will have an Observable of `null`. When logged-in, we want to [switchMap](/snippets/rxjs-switchmap) to an Observable of the user's profile document in Firestore. This is equivalent *joining* custom data and we can set this up in the constructor. 
+The most important element this feature is being able to react to changes to the user's authentication state. When logged-out, will have an Observable of `null`. When logged-in, we want to [switchMap](/snippets/rxjs-switchmap) to an Observable of the user's profile document in Firestore. This is equivalent *joining* custom data and we can set this up in the constructor. 
 
 {{< figure src="img/firestore-custom-user-data.png" alt="custom user data in the Firestore database" caption="Notice how the UID on the document also matches user's assigned UID from firebase auth." >}}
 
