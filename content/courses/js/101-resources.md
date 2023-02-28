@@ -21,7 +21,7 @@ quiz: true
 
 ## Required Tools
 
-- [Node.js](https://nodejs.org/en/). I would recmmend using [nvm mac/linux](https://github.com/nvm-sh/nvm) or [nvm windows](https://github.com/coreybutler/nvm-windows) to install Node.js.
+- [Node.js](https://nodejs.org/en/). I would recommend using [nvm mac/linux](https://github.com/nvm-sh/nvm) or [nvm windows](https://github.com/coreybutler/nvm-windows) to install Node.js.
 
 ## Get Help
 
