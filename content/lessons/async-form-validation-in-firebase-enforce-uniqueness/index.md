@@ -26,7 +26,7 @@ pro: true
 
 Reactive form validation can be a complex and difficult feature to implement, especially if you need to validate fields asynchronously. Angular ships with a few built-in validators, but they can only take you so far...
 
-Today, we are building a **custom async validator** that can verify username uniqueness in Firebase Firestore. My goal is to show you async validator for your reactive forms that you can apply to virtually any backend data source.
+Today, we are building a **custom async validator** that can verify username uniqueness in Firebase Firestore. My goal is to show you async validator for your reactive forms that you can apply virtually to any backend data source.
 
 
 {{< figure src="img/custom-validator-firestore.gif" caption="Async username validation" >}}
@@ -127,7 +127,7 @@ Our Reactive form's HTML looks like this:
 
 ## Async Username Validator
 
-First, take a close look at this interface - it gives us the signature that a custom validator must follow. It's a function that takes a form control as it's argument, then returns a error object if INVALID or null if VALID. 
+First, take a close look at this interface - it gives us the signature that a custom validator must follow. It's a function that takes a form control as it's argument, then returns an error object if INVALID or null if VALID. 
 
 
 ```typescript
@@ -167,7 +167,7 @@ Inside the validation function, we first get access to the user's input with `co
 
 If firestore returns an empty array, we know the username is available. But if that array is *not* empty, the username is already taken.  
 
-By default, Firestore gives us a realtime stream of data, but what we actually want is an Obsevable that completes, which we can force with `take(1)`. To prevent inefficient queries, I also added a `debounceTime(500)` to wait 500ms after the user stops typing before making the query. 
+By default, Firestore gives us a realtime stream of data, but what we actually want is an Observable that completes, which we can force with `take(1)`. To prevent inefficient queries, I also added a `debounceTime(500)` to wait 500ms after the user stops typing before making the query. 
 
 ```typescript
   return (control: AbstractControl) => {
