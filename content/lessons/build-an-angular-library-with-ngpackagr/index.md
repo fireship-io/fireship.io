@@ -24,7 +24,7 @@ pro: true
 
 
 In this lesson, I will show you how to build an Angular Library from scratch using [NgPackagr](https://github.com/ng-packagr/ng-packagr).
-My main motivation for this article is that Google Analytics recently changed their main API to [gtag.js](https://github.com/codediodeio/angular-gtag), but solid Angular libraries were lacking, so I decided to build one from scratch. NgPackagr made the bundling process very easy. 
+My main motivation for this article is that Google Analytics recently changed their main API to [gtag.js](https://github.com/codediodeio/angular-gtag), but solid Angular libraries were lacking, so i decided to build one from scratch. NgPackagr made the bundling process very easy. 
 
 Angular packages are standardized by the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit), but generating this output manually is difficult. NgPackager will do all the stuff you don't want to deal with, like generating the bundles (FESM2015, FESM5, and UMD), creating your types, and ensuring that the end result is AOT compatible. 
 
