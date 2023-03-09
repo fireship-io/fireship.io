@@ -12,7 +12,7 @@ video_length: 2:48
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
-{{< highlight dart >}}
+```dart
 class MyApp extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
@@ -35,4 +35,4 @@ class MyApp extends StatelessWidget {
    );
  }
 }
-
+```

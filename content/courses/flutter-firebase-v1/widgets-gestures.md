@@ -12,7 +12,7 @@ video_length: 2:13
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
-{{< highlight dart >}}
+```dart
 //...
          child: GestureDetector(
            onTapDown: (details) => print(details.globalPosition.dx),
@@ -23,3 +23,4 @@ video_length: 2:13
            ),
          ),
 //...
+```

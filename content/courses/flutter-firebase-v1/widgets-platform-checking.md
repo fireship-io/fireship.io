@@ -12,7 +12,7 @@ video_length: 2:18
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
-{{< highlight dart >}}
+```dart
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'dart:io' show Platform;
@@ -33,4 +33,4 @@ class MyApp extends StatelessWidget {
    );
  }
 }
-
+```
