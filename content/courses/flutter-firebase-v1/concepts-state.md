@@ -14,7 +14,7 @@ Note: The code below is updated for *Provider* version `3.1`. The main change is
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
-{{< highlight dart >}}
+```dart
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:provider/provider.dart';
@@ -54,4 +54,4 @@ class HomeScreen extends StatelessWidget {
    );
  }
 }
-
+```
