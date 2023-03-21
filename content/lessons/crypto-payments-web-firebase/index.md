@@ -22,7 +22,7 @@ github: https://github.com/fireship-io/coinbase-cloud-functions
 #    rxdart: 0.20
 ---
 
-Accepting crypto payments, like Bitcoin and Ethereum, in your app opens the door to more customers in a very fast growing niche. [Coinbase Commerce](https://commerce.coinbase.com/?lang=en) is like the Stripe Payments API for crypto. It provides a simple API where you can create charges, invoices, etc. But unlike credit cards, which are processed by a central authority, crypto payments are distributed to a global network of miners where they are confirmed on the blockchain. The  confirmation process takes time and presents a variety of unique challenges for developers. 
+Accepting crypto payments, like Bitcoin and Ethereum, in your app opens the door to more customers in a very fast growing niche. [Coinbase Commerce](https://commerce.coinbase.com/?lang=en) is like the Stripe Payments API for crypto. It provides a simple API where you can create charges, invoices, etc. But unlike credit cards, which are processed by a central authority, crypto payments are distributed to a global network of miners where they are confirmed on the blockchain. The confirmation process takes time and presents a variety of unique challenges for developers. 
 
 The following tutorial demonstrates how to accept crypto payments with Coinbase Commerce, using Firebase Cloud Functions as your backend server. 
 
