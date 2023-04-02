@@ -21,7 +21,7 @@ github: https://github.com/fireship-io/229-multi-level-dropdown
 #    rxdart: 0.20
 ---
 
-The following tutorial demonstrates how to build animated dropdown menu with React. It is inspired by Facebook's March 2020 web [UI update](https://variety.com/2019/digital/news/facebook-app-redesign-1203201310/). 
+The following tutorial demonstrates how to build an animated dropdown menu with React. It is inspired by Facebook's March 2020 web [UI update](https://variety.com/2019/digital/news/facebook-app-redesign-1203201310/). 
 
 {{< figure src="img/facebook-ui-redesign.png" caption="Facebook's new UI in 2020" >}}
 
@@ -426,7 +426,7 @@ function DropdownMenu() {
         >
 
   )
-
+}
 ```
 
 ### CSS
