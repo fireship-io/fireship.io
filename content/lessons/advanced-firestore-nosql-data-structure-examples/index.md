@@ -63,7 +63,7 @@ februaryTweets/{userId}
 
 In many NoSQL databases, you must [shard](https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6) to scale. Sharding is just the process of breaking the database down into smaller chunks (horizontal partitioning) to increase performance.
 
-In Firestore, sharding is handled automatically. The the only [scenario](https://firebase.google.com/docs/firestore/solutions/counters) where you may need to control sharding is when you consistently have many write operations occurring at intervals of less than 1s. Imagine the compute requirements of updating the like count on a new tweet from Selena Gomez.
+In Firestore, sharding is handled automatically. The only [scenario](https://firebase.google.com/docs/firestore/solutions/counters) where you may need to control sharding is when you consistently have many write operations occurring at intervals of less than 1s. Imagine the compute requirements of updating the like count on a new tweet from Selena Gomez.
 
 ### Pipelining (Unique Firebase Feature)
 

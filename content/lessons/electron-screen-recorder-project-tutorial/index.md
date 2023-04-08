@@ -38,7 +38,7 @@ The following project tutorial demonstrates how to build a simple screen recorde
 Create a new app with [Electron Forge](https://www.electronforge.io/) - it provides a solid starting point for building and distributing the app. 
 
 {{< file "terminal" "command line" >}}
-```text
+```bash
 npx create-electron-app my-app
 
 cd my-app

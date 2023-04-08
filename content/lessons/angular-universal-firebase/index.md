@@ -131,7 +131,7 @@ export class AboutComponent implements OnInit {
 
 ### Compile the Server
 
-Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compiple the TypeScript code and run the Express server on *localhost:4000*.
+Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compile the TypeScript code and run the Express server on *localhost:4000*.
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -139,7 +139,7 @@ npm run build:ssr
 npm run serve:ssr
 ```
 
-At this point, you should see an error that looks like this because our server is thowing an error for missing `XHLHttpRequest`. See the next step to fix it.
+At this point, you should see an error that looks like this because our server is throwing an error for missing `XHLHttpRequest`. See the next step to fix it.
 
 {{< figure src="img/ssr-cannot-be-reached.png" alt="broken universal app" >}}
 

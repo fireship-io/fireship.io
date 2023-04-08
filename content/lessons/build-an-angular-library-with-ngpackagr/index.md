@@ -23,8 +23,8 @@ pro: true
 ---
 
 
-In this lesson, I will show you how to build an Angular Library from scratch using [NgPackagr](https://github.com/dherges/ng-packagr).
-My main motivation for this article is that Google Analytics recently changed their main API to [gtag.js](https://github.com/codediodeio/angular-gtag), but solid Angular libraries were lacking, so I decided to build one from scratch. NgPackagr made the bundling process very easy. 
+In this lesson, I will show you how to build an Angular Library from scratch using [NgPackagr](https://github.com/ng-packagr/ng-packagr).
+My main motivation for this article is that Google Analytics recently changed their main API to [gtag.js](https://github.com/codediodeio/angular-gtag), but solid Angular libraries were lacking, so i decided to build one from scratch. NgPackagr made the bundling process very easy. 
 
 Angular packages are standardized by the [Angular Package Format](https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/edit), but generating this output manually is difficult. NgPackager will do all the stuff you don't want to deal with, like generating the bundles (FESM2015, FESM5, and UMD), creating your types, and ensuring that the end result is AOT compatible. 
 
@@ -32,7 +32,7 @@ Angular packages are standardized by the [Angular Package Format](https://docs.g
 
 ## IMPORTANT Update for Angular v6.0
 
-Angular CLI v6.0 introduced a new command that will save much of the manual configuration required in the this lesson. 
+Angular CLI v6.0 introduced a new command that will save much of the manual configuration required in this lesson. 
 
 ```
 # Generate a library
@@ -58,7 +58,7 @@ ng new awesomePackage --routing
 cd awesomePackage
 ```
 
-Now lets create a feature module and add some resources to it.
+Now let's create a feature module and add some resources to it.
 
 ```shell
 ng g module toast
@@ -68,7 +68,7 @@ ng g component toast/toast-message --export
 ```
 
 
-I'm not going to cover how to build the actual app, but it's just simple toast notification system. It includes a service that controls he message content/visibility and component that shows the actual message to the end user. 
+I'm not going to cover how to build the actual app, but it's just simple toast notification system. It includes a service that controls the message content/visibility and component that shows the actual message to the end user. 
 
 
 ## Step 2 - Setup your Lib
@@ -143,7 +143,7 @@ NgPackagr makes a few reasonable requirements of us to perform its magic.
 
 ### Install
 
-Install [NgPackagr](https://github.com/dherges/ng-packaged).
+Install [NgPackagr](https://github.com/ng-packagr/ng-packagr).
 
 
 ```shell
@@ -166,7 +166,7 @@ In the *lib/package.json* we will define our library's [NPM details](https://doc
 
 The special section is `ngPackage`, which is used by NgPackagr to locate the public API file for your project. 
 
-<p class="tip">Your package should not have any dependentcies, only peerDependencies and devDependencies</p>
+<p class="tip">Your package should not have any dependencies, only peerDependencies and devDependencies</p>
 
 ```json
 {
@@ -268,7 +268,7 @@ On a final note, let's talk about some best practices when building angular libr
 
 ### Don't touch the DOM
 
-If your library touches he DOM directly, such as `document.getElementById('foo')`, it will break other developer's apps when they use Angular with server or web worker platforms. If you must do this, wrap your code in a try/catch block. 
+If your library touches the DOM directly, such as `document.getElementById('foo')`, it will break other developer's apps when they use Angular with server or web worker platforms. If you must do this, wrap your code in a try/catch block. 
 
 ### Strong Type
 
@@ -296,5 +296,5 @@ Duh!
 
 ### Write Unit and Integration Tests
 
-As your library grows in complexity it becomes easy to introduce bugs and regressions. Write some tests an implement use continuous integration to ensure every commit meets your spec. Tests will also make it easier for other developers to contribute to the codebase without breaking everything. 
+As your library grows in complexity it becomes easy to introduce bugs and regressions. Write some tests and implement them, Use continuous integration to ensure every commit meets your spec. Tests will also make it lot easier for other developers to contribute to the codebase without breaking everything. 
 

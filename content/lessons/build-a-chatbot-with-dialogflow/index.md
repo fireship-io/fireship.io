@@ -25,12 +25,12 @@ github: https://github.com/fireship-io/202-chatbot-dialogflow
 
 [Chatbots](https://en.wikipedia.org/wiki/Chatbot) make it possible for the average developer to deliver excellent (and affordable) customer service at scale - Building conversational experiences has never been easier thanks to the  [Dialogflow](https://dialogflow.com/) conversation platform. 
 
-Dialogflow is a free tool on Google Cloud for creating voice and text conversational interfaces. It uses Natural Language Processing [NLP](https://www.kaggle.com/romanj86/introduction-to-nlp/data) technology, allowing you to create experiences similar to Google Assistant or Amazon Alexa. In following lesson creates a chatbot from scratch in the three main steps: 
+Dialogflow is a free tool on Google Cloud for creating voice and text conversational interfaces. It uses Natural Language Processing [NLP](https://www.kaggle.com/romanj86/introduction-to-nlp/data) technology, allowing you to create experiences similar to Google Assistant or Amazon Alexa. In the following lesson we create a chatbot from scratch in three main steps: 
 
 
-1. Create a chatbot on the Dialogflow Console
-1. Connect it to Firebase Cloud Functions (NodeJS)
-1. Interact with it from frontend Angular app
+1. Create a chatbot on the Dialogflow Console.
+1. Connect it to Firebase Cloud Functions (NodeJS).
+1. Interact with it from frontend Angular app.
 
 ## Part 1: Create a Chatbot
 
@@ -38,7 +38,7 @@ Before getting started, it is recommended that you have an existing Firebase or 
 
 ### Create an Agent
 
-An agent is basically a entity that contains the knowledge and behaviors used to respond to phrases and fulfill user intentions. 
+An agent is basically an entity that contains the knowledge and behaviors used to respond to phrases and fulfill user intentions. 
 
 {{< figure src="img/agent.png" caption="Create the Dialogflow Agent " >}}
 
@@ -130,7 +130,7 @@ exports.dialogflowGateway = functions.https.onRequest((request, response) => {
 
 ### Fulfilling Intents with a Webhook
 
-The benefit of a webhook is that you can perform additional backend logic, like updating a database or reaching out to a another API, then format the response to the user dynamically. In this example, we take the *name* and *color* parameters from the user's conversation and update their account in Firestore. 
+The benefit of a webhook is that you can perform additional backend logic, like updating a database or reaching out to an another API, then format the response to the user dynamically. In this example, we take the *name* and *color* parameters from the user's conversation and update their account in Firestore. 
 
 {{< file "terminal" "command line" >}}
 ```text

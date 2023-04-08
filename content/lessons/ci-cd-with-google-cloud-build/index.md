@@ -22,7 +22,7 @@ versions:
    firebase-tools: 6.3
 ---
 
-Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunites for both large teams and independent entrepreneurs.
+Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunities for both large teams and independent entrepreneurs.
 
 In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply committing your code to Github:
 
@@ -32,15 +32,15 @@ In the following lesson, you will learn how to use [Google Cloud Build](https://
 
 ## Step 0: Prerequisites
 
-2. Install [firebase-tools](https://github.com/firebase/firebase-tools) CLI. 
-3. Install [gcloud](https://cloud.google.com/sdk/gcloud/) CLI. 
-4. Be able to create a frontend of your choice like Angular, Vue, or React. 
-5. Billing must be enabled on Google Cloud, but the service is free for 120 minutes of build time per day (that's a lot). 
+1. Install [firebase-tools](https://github.com/firebase/firebase-tools) CLI. 
+2. Install [gcloud](https://cloud.google.com/sdk/gcloud/) CLI. 
+3. Be able to create a frontend of your choice like Angular, Vue, or React. 
+4. Billing must be enabled on Google Cloud, but the service is free for 120 minutes of build time per day (that's a lot). 
 
 
 ## Step 1: Build an App
 
-You can follow along with this lesson using your existing Firebase project or by starting from scratch. The frontend code does not really matter - it just needs to be an NPM project that we can build and test. Below are some popular options to quikly create a frontend JS app from the command line. 
+You can follow along with this lesson using your existing Firebase project or by starting from scratch. The frontend code does not really matter - it just needs to be an NPM project that we can build and test. Below are some popular options to quickly create a frontend JS app from the command line. 
 
 
 {{< file "terminal" "command line" >}}

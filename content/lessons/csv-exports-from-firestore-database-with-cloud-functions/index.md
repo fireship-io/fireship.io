@@ -24,7 +24,7 @@ github: https://github.com/AngularFirebase/69-csv-export-cloud-function
 #    rxdart: 0.20
 ---
 
-A common business requirement for a professional app is to export data as comma separated values, or [CSV format](https://en.wikipedia.org/wiki/Comma-separated_values). Data formatted this way can be used by spreadsheet software like Microsoft Excel and Google Docs, but it can also be used as input to many popular machine learning libraries. It this lesson, I will show you how to export a Firestore collection in CSV format using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/) and a Storage Bucket. 
+A common business requirement for a professional app is to export data as comma separated values, or [CSV format](https://en.wikipedia.org/wiki/Comma-separated_values). Data formatted this way can be used by spreadsheet software like Microsoft Excel and Google Docs, but it can also be used as input to many popular machine learning libraries. In this lesson, I will show you how to export a Firestore collection in CSV format using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/) and a Storage Bucket. 
 
 
 ## How to Export CSV from a Firebase Cloud Function

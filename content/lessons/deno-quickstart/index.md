@@ -36,7 +36,7 @@ The runtime contains a global namespace `Deno` that provides access to all nativ
 
 ### File System
 
-## Build an REST API
+## Build a REST API
 
 Let's build a simple REST API similar to Express.js. 
 

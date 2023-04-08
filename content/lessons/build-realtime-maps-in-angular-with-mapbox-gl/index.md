@@ -24,8 +24,8 @@ youtube: Zn3Xx-TSrM8
 
 <p>In this lesson, I am going to cover the basics of building realtime map features with Angular4, Firebase, and MapBox. Here’s a highlight of what is covered in the code below. </p>
 
-- How to obtain a user’s current location
-- How to connect Firebase data with Mapbox
+- How to obtain a user’s current location.
+- How to connect Firebase data with Mapbox.
 - How to format GeoJSON data.
 - How to quickly customize map styles.
 
@@ -51,7 +51,7 @@ npm install mapbox-gl --save
 ```
 ### Add the API Token
 
-<p>Lastly, add your Mapox API token to the `environment.ts` file. </p>
+<p>Lastly, add your Mapbox API token to the `environment.ts` file. </p>
 
 ```typescript
 export const environment = {
@@ -178,13 +178,13 @@ ng g component map-box
 
 <p>Most of the action will be happening in the component. Here is a breakdown of what’s happening. </p>
 
-<p>`initalizeMap()`: Determines the user’s physical browser location if possible, then triggers the map building process.</p>
+<p><code>initalizeMap()</code>: Determines the user’s physical browser location if possible, then triggers the map building process.</p>
 
-<p>`buildMap()`: Configures a new map, registers event listeners, and configures the realtime data source. </p>
+<p><code>buildMap()</code>: Configures a new map, registers event listeners, and configures the realtime data source.</p>
 
-<p>After the map is loaded, we register a data source for the map named `firebase`. We then subscribe to the markers in the database, updating the data source each time new data is emitted. </p>
+<p>After the map is loaded, we register a data source for the map named <code>firebase</code>. We then subscribe to the markers in the database, updating the data source each time new data is emitted. </p>
 
-<p>For each data point in the geoJSON `FeatureCollection`, a layer will be added that is defined by its corresponding metadata. There are tons of options in the <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#layers">Mapbox layers API</a> to customize the style of each marker. You can interpolate data from the GeoJSON properties object with single curly braces, which is how to show the content of the `{message}`; </p>
+<p>For each data point in the geoJSON `FeatureCollection`, a layer will be added that is defined by its corresponding metadata. There are tons of options in the <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#layers">Mapbox layers API</a> to customize the style of each marker. You can interpolate data from the GeoJSON properties object with single curly braces, which is how to show the content of the <code>{message}</code>; </p>
 
 ### map-box.component.ts
 
@@ -319,7 +319,7 @@ export class MapBoxComponent implements OnInit{
 
 ### map-box.component.html
 
-<p>In the HTML, we need a div where `id='map'`, which is where the map will be rendered. We also loop over the markers giving the user to “fly” to any given location. </p>
+<p>In the HTML, we need a div where <code>id='map'</code>, which is where the map will be rendered. We also loop over the markers giving the user to “fly” to any given location. </p>
 
 ```html
 <input type="text" [(ngModel)]="message" placeholder="your message...">
@@ -334,6 +334,6 @@ export class MapBoxComponent implements OnInit{
 
 ### Obtaining Current Geolocation with Ionic
 
-<p>If you building for native mobile on Ionic, you can obtain the location data with the <a href="https://ionicframework.com/docs/native/background-geolocation/">Geolocation Service</a>. </p>
+<p>If you are building for native mobile on Ionic, you can obtain the location data with the <a href="https://ionicframework.com/docs/native/background-geolocation/">Geolocation Service</a>. </p>
 
-<p>That’s it for realtime maps in Angular4. This is just barely scratching the surface of map-driven realtime user experiences. Let me know what you think in the comments. </p>
+<p>That’s it for realtime maps in Angular4. This is just barely scratching the surface of map-driven realtime user experiences. please reach out on Slack if any queries</p>

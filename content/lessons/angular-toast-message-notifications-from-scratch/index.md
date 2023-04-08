@@ -61,7 +61,7 @@ export class Message {
 
 <p>`sendMessage` can be called anywhere in your app to update the current toast feed. </p>
 
-<p>`dismissMessage` should be trigged by the user to hide the message.</p>
+<p>`dismissMessage` should be triggered by the user to hide the message.</p>
 
 ```typescript
 @Injectable()
@@ -174,7 +174,7 @@ export class ToastMessagesComponent implements OnInit {
 
 ## Triggering New Messages from Anywhere
 
-<p>The cool thing about  realtime apps is their ability to update the messages from anywhere. Simply inject it into a component, then call `toast.sendMessage(content, style)` and you’re good to go, for example</p>
+<p>The cool thing about realtime apps is their ability to update the messages from anywhere. Simply inject it into a component, then call `toast.sendMessage(content, style)` and you’re good to go, for example</p>
 
 
 ```typescript

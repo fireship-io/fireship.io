@@ -22,4 +22,4 @@ github:
 ---
 
 
-When to become comfortable the fundamentals of Docker, you can easily deploy your server-side code to the cloud in variety of paradigms, like serverless or Kubernetes. The following lesson demonstrates the basics of Docker by containerizing a Node.js application from scratch. 
+When you become comfortable with the fundamentals of Docker, you can easily deploy your server-side code to the cloud in variety of paradigms, like serverless or Kubernetes. The following lesson demonstrates the basics of Docker by containerizing a Node.js application from scratch. 

@@ -88,7 +88,7 @@ Angular will re-run your test suite whenever a file changes so you can immediate
 
 ### What is a Test Bed?
 
-First, we need to learn about concept of a *Test Bed*. If you're unfamilar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
+First, we need to learn about concept of a *Test Bed*. If you're unfamiliar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
 
 A Test Bed creates an Angular testing module, which is just a class an NgModule class. For example, notice how you have the `declarations: [ AlertButtonComponent ]` meta data just like any NgModule. This makes it possible to test your components in isolation. 
 
@@ -173,7 +173,7 @@ Well-written tests can be read and understood by a non-programmer. Jasmine provi
 
 ### 1. Is something truthy or falsey? 
 
-Truthy means the item *will evalualte to true* on a conditional test, it does not have be a primitive *true*. 
+Truthy means the item *will evaluate to true* on a conditional test, it does not have be a primitive *true*. 
 
 `toBeTruthy()` is like saying `something == true`
 
@@ -222,7 +222,7 @@ For more complex string matching you can use regex.
 Logical tests allow you to make numeric comparisons and work just like operators they describe, i.e. `>`, `>=`, and so on. 
 
 ```typescript
-  it('should have a serverity level greater than 2', () => {
+  it('should have a severity level greater than 2', () => {
     expect(component.severity).toBeGreaterThan(2);
   });
 
@@ -242,7 +242,7 @@ The `toggleMessage` method on the component changes the value of a boolean varia
 
 ### 6. Does a DOM element get rendered correctly?
 
-The `DebugElement` makes it possible to query DOM elements in the component tempate to ensure they are rendered properly. 
+The `DebugElement` makes it possible to query DOM elements in the component template to ensure they are rendered properly. 
 
 
 ```typescript
@@ -391,7 +391,7 @@ describe('AlertButtonComponent', () => {
 ```
 ## End-to-End (e2e) Testing with Protractor
 
-Protractor documentation is limited, but it is the coolest testing tool Angular has to offer in my opinion. Unlike the isolated tests we created in the previous section, it will simulate how an end user experiences your app by running it on a web browser. You can click buttons, fill out forms, and iteract with the app in a very natural way. 
+Protractor documentation is limited, but it is the coolest testing tool Angular has to offer in my opinion. Unlike the isolated tests we created in the previous section, it will simulate how an end user experiences your app by running it on a web browser. You can click buttons, fill out forms, and interact with the app in a very natural way. 
 
 When it comes to testing the complex realtime behavior of Firebase, it is often much easier to write e2e tests, rather than try to simulate edge cases with a mock backend. If you go this route, I highly recommend setting up [separate development and production projects](https://angularfirebase.com/lessons/development-and-production-environments-for-angular-firebase-projects/) in Firebase so you don't accidentally screw-up all of your live user data. 
 

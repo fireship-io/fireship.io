@@ -24,7 +24,7 @@ versions:
 ---
 
 
-Firebase makes it easy to upload a huge payload of raw files a cloud storage bucket. The following lesson will teach you how to upload files to [Firebase Storage](https://firebase.google.com/docs/storage/) with Angular, including several advanced concepts about how to...
+Firebase makes it easy to upload a huge payload of raw files to a cloud storage bucket. The following lesson will teach you how to upload files to [Firebase Storage](https://firebase.google.com/docs/storage/) with Angular, including several advanced concepts about how to...
 
 - Handle multiple simultaneous concurrent file uploads.
 - Save the resulting download URL to Firestore.
@@ -86,7 +86,7 @@ progress::-webkit-progress-value {
 Want to skip this step? Consider using this zero-dependency [file-drop](https://github.com/GoogleChromeLabs/file-drop) web component developed by Google Chrome Labs  
 
 
-The first step is to create a directive that can receive the files from the browser. The directive customize the [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) to meet the specific needs of our feature. 
+The first step is to create a directive that can receive the files from the browser. The directive customizes the [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) to meet the specific needs of our feature. 
 
 
 {{< file "terminal" "command line" >}}

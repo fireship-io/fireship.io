@@ -33,7 +33,7 @@ In addition to this post, check out these resources:
 
 ## Rendering without Zone.JS
 
-After much experimentation, I've come to the conclusion that Zone.JS is not the the ideal way to handle change detection with Angular Elements. Automatic change detection is awesome when working in the context of an Angular app, but when you decouple your Angular components as custom elements you can run into hard-to-debug issues that only seem to happen in production. The Angular team has several open issues to address these [bugs](https://github.com/angular/angular/issues/23841), but I think moving away from zones is a smart move in general. You will need to manually tell Angular when to re-render your components (see next sections), but this actually makes your code more explicit and easier to understand. 
+After much experimentation, I've come to the conclusion that Zone.JS is not the ideal way to handle change detection with Angular Elements. Automatic change detection is awesome when working in the context of an Angular app, but when you decouple your Angular components as custom elements you can run into hard-to-debug issues that only seem to happen in production. The Angular team has several open issues to address these [bugs](https://github.com/angular/angular/issues/23841), but I think moving away from zones is a smart move in general. You will need to manually tell Angular when to re-render your components (see next sections), but this actually makes your code more explicit and easier to understand. 
 
 First, let's turn off zones globally in the *main.ts* file. 
 
@@ -91,7 +91,7 @@ One of the ways Angular Elements stands out is its ability to share data and fun
 ng g service shared
 ```
 
-To run change detection in a shared service, we reference the entire application, then call tick whenever an shared value changes. 
+To run change detection in a shared service, we reference the entire application, then call tick whenever a shared value changes. 
 
 ```typescript
 import { Injectable, ApplicationRef } from '@angular/core';
@@ -115,7 +115,7 @@ export class CoolService {
 
 One of the main criticisms of Angular Elements has been the bundle size, which is around **60Kb** for a gzipped hello world. (1) The bundle size will decrease significantly when [Ivy](https://www.telerik.com/blogs/first-look-angular-ivy) lands in the near future. (2) You're getting the full power of Angular in that bundle, and (3) it does not have a significant impact on perf when you defer the script. 
 
-When you [defer](https://www.w3schools.com/tags/att_script_defer.asp) a script tag `<script defer src="elements.js">` it tells the browser to render the HTML first, then load the script - i.e no render blocking. This is crucial for static websites the use components because your top priority is getting the main content painted. After the first meaningful paint, your web components can kick in to add interactivity. 
+When you [defer](https://www.w3schools.com/tags/att_script_defer.asp) a script tag `<script defer src="elements.js">` it tells the browser to render the HTML first, then load the script - i.e no render blocking. This is crucial for static websites that use components because your top priority is getting the main content painted. After the first meaningful paint, your web components can kick in to add interactivity. 
 
 The tests below were run with a bundle containing both Angular and Firebase at a weight of 350Kb. 
 

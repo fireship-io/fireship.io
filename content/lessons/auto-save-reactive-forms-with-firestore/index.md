@@ -70,7 +70,7 @@ The `path` attribute represents the firestore document or collection were the da
 
 There is quite a bit happening in this directive to manage the state between the reactive form and Firestore database. Let's break down some of the key points. 
 
-The [Output/EventEmitter](https://angular.io/api/core/EventEmitter) properties are used to emit events about state changes to the parent component. We need to to let the parent know when the form is modified, synced, or throws a backend error. A TypeScript setter is used to emit an event and change the internal state value at the same time. 
+The [Output/EventEmitter](https://angular.io/api/core/EventEmitter) properties are used to emit events about state changes to the parent component. We need to let the parent know when the form is modified, synced, or throws a backend error. A TypeScript setter is used to emit an event and change the internal state value at the same time. 
 
 `preloadData()` grabs the current data from the form. This is useful when your form can be edited after initial submission. 
 

@@ -32,7 +32,7 @@ Angular uses the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_A
 
 ## Initial Setup
 
-<p>Angular Animations are kept in their own module, so we need to import them into the module where they will be used.</p>
+<p>Angular Animations are kept in their own module. so we need to import them into the module where they will be used.</p>
 
 ```typescript
 
@@ -48,7 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 ## 1. Basic Animation Two-State
 
-<img src="https://angularfirebase.com/wp-content/uploads/2017/07/animate-1.gif" alt="animated pop over in Angular 4" width="600" height="338" class="content-image" />
+<img src="https://angularfirebase.com/wp-content/uploads/2017/07/animate-1.gif" alt="animated popover in Angular 4" width="600" height="338" class="content-image" />
 
 {{< figure src="img/animate-1.gif" caption="animated popover" >}}
 
@@ -110,7 +110,7 @@ export class PopOverComponent {
 }
 ```
 
-In the HTML, we can now apply this animation to a div and provide a button to toggle the state between show and hide.
+In the HTML, we can now apply this animation to a div, and provide a button to toggle the state between show and hide.
 
 ```html
 <div [@popOverState]="stateName">
@@ -124,7 +124,7 @@ In the HTML, we can now apply this animation to a div and provide a button to to
 {{< figure src="img/animate-2.gif" caption="multi state animation" >}}
 
 
-<p>Now let’s build an animation that can move between multiple states. This will translate (move), rotate (spin), and scale (enlarge) the the image around the screen. Notice how I am using the wildcard transition `* => *` to apply the same transition settings to all states.</p>
+<p>Now let’s build an animation that can move between multiple states. This will translate (move), rotate (spin), and scale (enlarge) the image around the screen. Notice how I am using the wildcard transition `* => *` to apply the same transition settings to all states.</p>
 
 <p>Note: The transitions on top will have higher priority, so always put the wildcard transitions on the bottom. </p>
 
