@@ -58,7 +58,7 @@ This course starts at the beginner level 🟢 and progresses to intermediate in 
 
 ## When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated Feb 22nd, 2022</span> <span class="tag tag-sm tag-next">React v18.0</span>
+<span class="tag tag-sm tag-pro">Updated Feb 22nd, 2023</span> <span class="tag tag-sm tag-next">React v18.0</span>
 
 ## How do I enroll?
 
@@ -66,4 +66,4 @@ While in preview, this course is only available to PRO Members.
 
 ## 🚨 Work in Progress!
 
-This course is a **Work in Progress**. It will be updated with new content weekly until it is completed in Spring 2023.
+This course is a **Work in Progress**. It will be updated with new content until it is completed in Spring 2023.
