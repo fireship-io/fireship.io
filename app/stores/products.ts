@@ -1,4 +1,9 @@
 export const products = {
+    'nextjs': {
+        id: 'react-next-firebase',
+        price: 'price_1N2jNUBF7AptWZlcaklaweXL',
+        amount: 20,
+    },
     'react-next-firebase': {
         id: 'react-next-firebase',
         price: 'price_1Lkgo6BF7AptWZlcBFVoputL',
