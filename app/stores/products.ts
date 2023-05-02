@@ -1,6 +1,6 @@
 export const products = {
     'nextjs': {
-        id: 'react-next-firebase',
+        id: 'nextjs',
         price: 'price_1N2jNUBF7AptWZlcaklaweXL',
         amount: 20,
     },
