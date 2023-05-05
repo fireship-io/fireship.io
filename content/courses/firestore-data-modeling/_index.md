@@ -16,7 +16,7 @@ stack:
     - js    
 ---
 
-The **Firestore Data Modeling Course** provides a foundation for modeling data relationships in NoSQL, while optimizing queries for performance, cost, and complexity. Determining the the optimal data model in [Cloud Firestore](https://firebase.google.com/docs/firestore/) is not an easy task because you need to anticipate your app's UI/UX requirements in advance. Failure to consider the tradeoffs between various data models could lead to poor app performance and/or unnecessary cloud computing expenses. The goal of this course is to teach you the concepts necessary to *make good decisions* related to data modeling that minimize costs and maximize read performance. 
+The **Firestore Data Modeling Course** provides a foundation for modeling data relationships in NoSQL, while optimizing queries for performance, cost, and complexity. Determining the optimal data model in [Cloud Firestore](https://firebase.google.com/docs/firestore/) is not an easy task because you need to anticipate your app's UI/UX requirements in advance. Failure to consider the tradeoffs between various data models could lead to poor app performance and/or unnecessary cloud computing expenses. The goal of this course is to teach you the concepts necessary to *make good decisions* related to data modeling that minimize costs and maximize read performance. 
 
 ## Topics Covered
 
