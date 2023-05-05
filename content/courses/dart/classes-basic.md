@@ -46,7 +46,7 @@ You can call static methods on the class itself without creating a new object.
 ```dart
 class Basic {
 
-  static globalData = 'global';
+  static String globalData = 'global';
   static helper() {
       print('helper');
   }
