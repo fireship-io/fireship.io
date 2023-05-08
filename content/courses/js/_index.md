@@ -22,7 +22,7 @@ stack:
 
 ## 🦄 What will I learn?
 
-This course is focusd on the basics of [JavaScript](https://git-scm.com/) - the world's most [commonly used](https://survey.stackoverflow.co/2022/) programming language. Here's what you'll get out of it...
+This course is focused on the basics of [JavaScript](https://git-scm.com/) - the world's most [commonly used](https://survey.stackoverflow.co/2022/) programming language. Here's what you'll get out of it...
 
 - 👶 The Basics of JavaScript
 - 👨‍🎤 Advanced concepts broken down in a quick no-BS format
