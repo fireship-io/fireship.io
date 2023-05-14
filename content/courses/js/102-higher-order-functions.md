@@ -1,6 +1,6 @@
 ---
 title: Higher Order Functions
-description: What is a higer order function or HOF?
+description: What is a higher order function or HOF?
 weight: 25
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
