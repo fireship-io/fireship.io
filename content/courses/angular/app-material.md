@@ -25,11 +25,11 @@ ng add @angular/material
 ### Step 2 - Customize your Theme Colors (Optional)
 
 - [Customize your Theme](https://material.angular.io/guide/theming)
-- Generate a [Color Pallette](http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5)
+- Generate a [Color Palette](http://mcg.mbitson.com/#!?mcgpalette0=%233f51b5)
 
 
 
-Example of a custom color pallette. 
+Example of a custom color palette. 
 
 {{< file "scss" "styles.scss" >}}
 ```scss
