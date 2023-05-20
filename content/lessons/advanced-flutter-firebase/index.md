@@ -23,7 +23,7 @@ github: https://github.com/fireship-io/185-advanced-flutter-firestore
 #    rxdart: 0.20
 ---
 
-The following article discusses patterns that I have found exceptionally useful when implementing Firebase User Authentication and Firestore in Flutter. In particular, the [Provider](https://pub.dev/packages/provider) provides an excellent solution for sharing and managing streams with minimal boilerplate. However, to take full advantage of this package you must deserialize your raw data to a Dart class. 
+The following article discusses patterns that I have found exceptionally useful when implementing Firebase User Authentication and Firestore in Flutter. In particular, the [Provider](https://pub.dev/packages/provider) provide an excellent solution for sharing and managing streams with minimal boilerplate. However, to take full advantage of this package you must deserialize your raw data to a Dart class. 
 
 
 If you are building a major project with Flutter & Firebase, consider enrolling in the [Full Flutter Firebase Course](/courses/flutter-firebase/).
@@ -67,7 +67,7 @@ Streams are a bit more complex because we need to explicitly listen to them and 
 
 A better option is to use Flutter's built in `StreamBuilder` widget, which automatically manages your stream and gives you a build context. However, it can still be a challenge to combine multiple streams and/or share their values in multiple places. 
 
-An *even better option* is the [Provider](https://pub.dev/packages/provider) package. It is mostly syntatic sugar for *InheritedWidget*, but can also manage Stream subscriptions. In the snippet below, we wrap the entire MaterialApp in with a `MultiProvider`, then listen a Firebase user's global authentication state. 
+An *even better option* is the [Provider](https://pub.dev/packages/provider) package. It is mostly syntactic sugar for *InheritedWidget*, but can also manage Stream subscriptions. In the snippet below, we wrap the entire MaterialApp in with a `MultiProvider`, then listen a Firebase user's global authentication state. 
 
 {{< file "dart" "main.dart" >}}
 ```dart
@@ -94,7 +94,7 @@ class MyApp extends StatelessWidget {
 ```
 
 
-The beauty of this approach is that `StreamProvider` will automatically listen to the subscription for us (and dispose if necessary, it is actually just a StreamBuilder under the hood), allowing us to treat the underlying data as a synchronous value available to the entire app. We can access it in a build method like so:
+The beauty of this approach is that `StreamProvider` will automatically listen to the subscriptions for us (and dispose if necessary, it is actually just a StreamBuilder under the hood), allowing us to treat the underlying data as a synchronous value available to the entire app. We can access it in a build method like so:
 
 ```dart
 // Some widget deeply nested in the widget tree...
@@ -130,7 +130,7 @@ Text(data.description)
 
 ### Data Model Class
 
-There are several JSON deserialization strategies in Flutter, but I've found hand-written classes to be the most reliable approach. Let's start by writing the classes that define the shape of our data 
+There are several JSON deserialization strategies in Flutter, but I've found handwritten classes to be the most reliable approach. Let's start by writing the classes that define the shape of our data 
 
 {{< file "dart" "main.dart" >}}
 ```dart
@@ -221,7 +221,7 @@ Now that you know how to deserialize data, the next challenge is to write an eff
 
 ### Example Database Service
 
-The service below converts a firestore document read, then maps it to a `SuperHero` and a collection query to a `List<Weapon>`, as streams. 
+The service below converts a Firestore document read, then maps it to a `SuperHero` and a collection query to a `List<Weapon>`, as streams. 
 
 {{< file "dart" "db.dart" >}}
 ```dart

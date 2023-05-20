@@ -33,7 +33,7 @@ In addition to this post, check out these resources:
 
 ## Rendering without Zone.JS
 
-After much experimentation, I've come to the conclusion that Zone.JS is not the the ideal way to handle change detection with Angular Elements. Automatic change detection is awesome when working in the context of an Angular app, but when you decouple your Angular components as custom elements you can run into hard-to-debug issues that only seem to happen in production. The Angular team has several open issues to address these [bugs](https://github.com/angular/angular/issues/23841), but I think moving away from zones is a smart move in general. You will need to manually tell Angular when to re-render your components (see next sections), but this actually makes your code more explicit and easier to understand. 
+After much experimentation, I've come to the conclusion that Zone.JS is not the ideal way to handle change detection with Angular Elements. Automatic change detection is awesome when working in the context of an Angular app, but when you decouple your Angular components as custom elements you can run into hard-to-debug issues that only seem to happen in production. The Angular team has several open issues to address these [bugs](https://github.com/angular/angular/issues/23841), But I think moving away from zones is a smart move in general. You will need to manually tell Angular when to re-render your components (see next sections), but this actually makes your code more explicit and easier to understand. 
 
 First, let's turn off zones globally in the *main.ts* file. 
 
@@ -53,7 +53,7 @@ You can also turn zones off at the component level by setting the `OnPush` strat
 
 ## Component State
 
-Now that zones are switched off, we need Angular to render the component when its internal data changes  The general idea here is not novel and is similar conceptually in React, Flutter, and Stencil - i.e one way data flow. We have a `state` object that when changed with the `setState(key, value)` method tells the component to render - simple. 
+Now that zones are switched off, we need Angular to render the component when its internal data changes  The general idea here is not novel and is similar conceptually to React, Flutter, and Stencil - i.e one way data flow. We have a `state` object that when changed with the `setState(key, value)` method tells the component to render - simple. 
 
 ```typescript
 import { Component, ChangeDetectorRef } from '@angular/core';
@@ -91,7 +91,7 @@ One of the ways Angular Elements stands out is its ability to share data and fun
 ng g service shared
 ```
 
-To run change detection in a shared service, we reference the entire application, then call tick whenever an shared value changes. 
+To run change detection in a shared service, we reference the entire application, then call tick whenever a shared value changes. 
 
 ```typescript
 import { Injectable, ApplicationRef } from '@angular/core';
@@ -113,7 +113,7 @@ export class CoolService {
 
 ## Page Load Performance
 
-One of the main criticisms of Angular Elements has been the bundle size, which is around **60Kb** for a gzipped hello world. (1) The bundle size will decrease significantly when [Ivy](https://www.telerik.com/blogs/first-look-angular-ivy) lands in the near future. (2) You're getting the full power of Angular in that bundle, and (3) it does not have a significant impact on perf when you defer the script. 
+One of the main criticisms of Angular Elements has been the bundle size, which is around **60Kb** for a gzipped hello world. (1) The bundle size will decrease significantly when [Ivy](https://www.telerik.com/blogs/first-look-angular-ivy) lands in the near future. (2) You're getting the full power of Angular in that bundle, and (3) it does not have a significant impact on performance when you defer the script. 
 
 When you [defer](https://www.w3schools.com/tags/att_script_defer.asp) a script tag `<script defer src="elements.js">` it tells the browser to render the HTML first, then load the script - i.e no render blocking. This is crucial for static websites the use components because your top priority is getting the main content painted. After the first meaningful paint, your web components can kick in to add interactivity. 
 
@@ -129,7 +129,7 @@ Notice how we're getting a page load of 600ms ⚡  - 4x faster - and a near perf
 
 ## Register Multiple Custom Elements
 
-In most projects, you will have more than one component and it is cumbersome to register them one-by-one. I prefer to create an array of arrays (or tuples if you will) with the config for each element, then register them in a loop. 
+In most projects, you will have more than one component, it is cumbersome to register them one-by-one. I prefer to create an array of arrays (or tuples if you will) with the config for each element, then register them in a loop. 
 
 ```typescript
 export class AppModule {
@@ -160,7 +160,7 @@ document.querySelector('my-element').cool();
 // undefined
 ```
 
-But it can be useful to allow non-angular code to control your elements.  Methods and properties can be exposed using the `@Input` decorator. One caveat is that in order to give your element the proper `this` context, you need make public methods a function property like so: 
+But it can be useful to allow non-angular code to control your elements.  Methods and properties can be exposed using the `@Input` decorator. One caveat is that in order to give your element the proper `this` context, you need to make public methods a function property like so: 
 
 ```typescript
   @Input()
@@ -176,7 +176,7 @@ But it can be useful to allow non-angular code to control your elements.  Method
 
 ## Exposing Public Events
 
-You might also want to listen to the the custom events emitted by your component, for example:
+You might also want to listen to the custom events emitted by your component, for example:
 
 ```js
 document.querySelector('my-element').addEventListener('my-custom-event', (e) => doSomething)
@@ -255,7 +255,7 @@ Now HTML can be included inside the component and will be rendered below the ima
 <p><slot name="caption">Default Caption</slot></p>
 ```
 
-Now the end user of the web component can just pass a span that references the slot name and it will be rendered in the matching location. 
+Now, the end user of the web component can just pass a span that references the slot name and it will be rendered in the matching location. 
 
 ```html
 <!-- Usage -->

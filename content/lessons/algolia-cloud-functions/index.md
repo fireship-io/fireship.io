@@ -111,7 +111,7 @@ exports.addToIndex = functions.firestore.document('customers/{customerId}')
 
 ### Update a Record in Algolia
 
-If the Firestore document data changes, we want these changes reflected in the index and search results. We can easily handle this task with an `onUpdate` function. 
+If the Firestore document data changes, we want these changes to be reflected in the index and search results. We can easily handle this task with an `onUpdate` function. 
 
 ```js
 exports.updateIndex = functions.firestore.document('customers/{customerId}')

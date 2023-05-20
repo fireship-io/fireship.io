@@ -63,7 +63,7 @@ februaryTweets/{userId}
 
 In many NoSQL databases, you must [shard](https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6) to scale. Sharding is just the process of breaking the database down into smaller chunks (horizontal partitioning) to increase performance.
 
-In Firestore, sharding is handled automatically. The the only [scenario](https://firebase.google.com/docs/firestore/solutions/counters) where you may need to control sharding is when you consistently have many write operations occurring at intervals of less than 1s. Imagine the compute requirements of updating the like count on a new tweet from Selena Gomez.
+In Firestore, sharding is handled automatically. The only [scenario](https://firebase.google.com/docs/firestore/solutions/counters) where you may need to control sharding is when you consistently have many write operations occurring at intervals of less than 1s. Imagine the compute requirements of updating the like count on a new tweet from Selena Gomez.
 
 ### Pipelining (Unique Firebase Feature)
 
@@ -84,9 +84,9 @@ Let's imagine you have an array of document ids. You can pipeline each request f
 
 ## Group Collection Query
 
-A group collection query occurs when you want to query a common subcollection across its parent owners. For example, you might to get blog posts for all users who wrote a post categorized as _Angular_.
+A group collection query occurs when you want to query a common subcollection across its parent owners. For example, you might want to get blog posts for all users who wrote a post categorized as _Angular_.
 
-It is not possible to make this query via the subcollection. The easy solution is to denormalize posts to a root collection, but if that's not possible here's plan B...
+It is not possible to make this query via the subcollection. The easy solution is to denormalize posts to a root collection, but if that's not possible, here's plan B...
 
 First, embed some duplicated data on the parent. When a new post is created in the subcollection, we update the `categoriesUsed` object on the parent doc where the category is the key.
 
@@ -151,7 +151,7 @@ carts/{userID}
 
 **Products (root collection):** Product data and current inventory.
 
-**Carts (root collection):** A one-to-one relationship is created by setting the `userID === cartID` for documents in either collection. When an order placed, the cart data can be cleared out because there is no need for a user to have multiple carts.
+**Carts (root collection):** A one-to-one relationship is created by setting the `userID === cartID` for documents in either collection. When an order is placed, the cart data can be cleared out because there is no need for a user to have multiple carts.
 
 **Orders (user subcollection):** When an order is created and confirmed, you can run a cloud function to decrement the product availability.
 

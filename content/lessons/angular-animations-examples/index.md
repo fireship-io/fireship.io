@@ -20,7 +20,7 @@ youtube: mVqQDEtRBwA
 # versions:
 #    rxdart: 0.20
 ---
-<p>Animation is often the X-factor that sets remarkable apps apart from average apps. In this lesson, I provide five basic animation examples based on Angular 4.3+. This article covers the animation techniques I find most useful when building Angular apps, but check out this excellent post on <a href="https://www.yearofmoo.com/2017/06/new-wave-of-animation-features.html">new Angular 4.2 animation features</a> for a more comprehensive look at the latest features.</p>
+<p>Animation is often the X-factor that sets remarkable apps apart from average apps. In this lesson, I provide five basic animation examples based on Angular Angular 4.3 and later versions. This article covers the animation techniques I find most useful when building Angular apps, but check out this excellent post about <a href="https://www.yearofmoo.com/2017/06/new-wave-of-animation-features.html">new Angular 4.2 animation features</a> for a more comprehensive look at the latest features.</p>
 
 All animations can be boiled down into two simple steps:
 
@@ -124,7 +124,7 @@ In the HTML, we can now apply this animation to a div and provide a button to to
 {{< figure src="img/animate-2.gif" caption="multi state animation" >}}
 
 
-<p>Now let’s build an animation that can move between multiple states. This will translate (move), rotate (spin), and scale (enlarge) the the image around the screen. Notice how I am using the wildcard transition `* => *` to apply the same transition settings to all states.</p>
+<p>Now let’s build an animation that can move between multiple states. This will translate (move), rotate (spin), and scale (enlarge) the image around the screen. Notice how I am using the wildcard transition `* => *` to apply the same transition settings to all states.</p>
 
 <p>Note: The transitions on top will have higher priority, so always put the wildcard transitions on the bottom. </p>
 
@@ -194,7 +194,7 @@ In the template, we can fire the event handler when the animation sends of the s
 
 {{< figure src="img/animate-5.gif" caption="animated list with query and stagger in angular" >}}
 
-<p>A common UX feature is to sequentially animate a list of items. It would be cumbersome to define a bunch of delayed animations, which is the the problem solved by `query` and `stagger`. Query allows you select HTML elements within an animation, while stagger will build the delay interval based on the size of a collection. In this example, we query all `img` tags and translate them off the page, then animate them within `stagger` to automatically create the shutter-like effect. </p>
+<p>A common UX feature is to sequentially animate a list of items. It would be cumbersome to define a bunch of delayed animations, which is the problem solved by `query` and `stagger`. Query allows you select HTML elements within an animation, while stagger will build the delay interval based on the size of a collection. In this example, we query all `img` tags and translate them off the page, then animate them within `stagger` to automatically create the shutter-like effect. </p>
 
 ```typescript
 animations: [

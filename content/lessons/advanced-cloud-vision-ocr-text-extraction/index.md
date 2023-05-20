@@ -22,14 +22,14 @@ youtube: KEDeL77_bc4
 # versions:
 #    rxdart: 0.20
 ---
-The following lesson uses the [Cloud Vision API](https://cloud.google.com/vision/) on Google Cloud to extract text from raw images. This is a highly sought-after feature in business applications that still work with non-digitized text documents. 
+The following lesson uses the [Cloud Vision API](https://cloud.google.com/vision/) on Google Cloud to extract text from raw images. This is a highly sought-after feature in business applications that still works with non-digitized text documents. 
 
 The [Cloud Vision Node.js documentation](https://cloud.google.com/nodejs/docs/reference/vision/0.14.x/v1.ImageAnnotatorClient) is a good reference to keep by your side.
 
 
 ## Getting Started
 
-You actually don't need a frontend app to experiment with this technology - just a Firebase storage bucket. I recommend creating a [dedicated bucket](https://firebase.google.com/docs/storage/web/start#use_multiple_storage_buckets) for the invocation of cloud functions.  
+You actually don't need a frontend app to experiment with this technology - just a Firebase storage bucket. I recommend creating a [dedicated bucket](https://firebase.google.com/docs/storage/web/start#use_multiple_storage_buckets) for the invocation of Cloud Functions.  
 
 If you're new to functions, you can generate your backend code with the following command: 
 
