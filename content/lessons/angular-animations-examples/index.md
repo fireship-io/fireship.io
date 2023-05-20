@@ -20,7 +20,7 @@ youtube: mVqQDEtRBwA
 # versions:
 #    rxdart: 0.20
 ---
-<p>Animation is often the X-factor that sets remarkable apps apart from average apps. In this lesson, I provide five basic animation examples based on Angular Angular 4.3 and later versions. This article covers the animation techniques I find most useful when building Angular apps, but check out this excellent post about <a href="https://www.yearofmoo.com/2017/06/new-wave-of-animation-features.html">new Angular 4.2 animation features</a> for a more comprehensive look at the latest features.</p>
+<p>Animation is often the X-factor that sets remarkable apps apart from average apps. In this lesson, I provide five basic animation examples based on Angular 4.3 and later versions. This article covers the animation techniques I find most useful when building Angular apps, but check out this excellent post about <a href="https://www.yearofmoo.com/2017/06/new-wave-of-animation-features.html">new Angular 4.2 animation features</a> for a more comprehensive look at the latest features.</p>
 
 All animations can be boiled down into two simple steps:
 
