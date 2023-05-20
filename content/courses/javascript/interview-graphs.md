@@ -102,7 +102,7 @@ bfs('PHX')
 
 ## Depth-first Search (DFS)
 
-Depth-first Search (DFS) will go as far into the graph as possible until it reaches a node without any children, at which point it backtracks and continues the process. The algorithm can be implemented with a recursive function that keeps track of previously visited nodes. If a node has not been visited, we call the function recursively. 
+Depth-first Search (DFS) will go as deep into the graph as possible until it reaches a node without any children, at which point it backtracks and continues the process. The algorithm can be implemented with a recursive function that keeps track of previously visited nodes. If a node has not been visited, we recursively call the function.
 
 {{< file "js" "graph.js" >}}
 ```javascript

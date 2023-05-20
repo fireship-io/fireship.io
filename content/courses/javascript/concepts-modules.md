@@ -14,7 +14,7 @@ A [module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
 First, a file exports (package) something useful...
 
-{{< file "js" "awesome-pacakge.js" >}}
+{{< file "js" "awesome-package.js" >}}
 ```js
 export default '🧁';
 ```
@@ -37,7 +37,7 @@ A module can specify at most 1 default export.
 export default '🧁';
 ```
 
-This allows the consumer to name the module whatever it prefers when importing. 
+This allows the consumer to name the module whatever they prefer when importing. 
 
 ```js
 // wait, that's not pizza...
@@ -55,7 +55,7 @@ export const cupcake = '🧁';
 export const pizza = '🍕';
 ```
 
-If the consumer only wants pizza, they can import it by name - this is called [treeshaking](https://webpack.js.org/guides/tree-shaking/) or dead code elimination. 
+If the consumer only wants pizza, they can import it by name - this is called [tree shaking](https://webpack.js.org/guides/tree-shaking/) or dead code elimination. 
 
 ```js
 import { pizza } from '../path/to/awesome-package'; 
@@ -73,7 +73,7 @@ console.log(awesomePizza);
 
 ### How to export a list of variables?
 
-A module may have many variables to export and this can get messy. Use an export list to make your code more succinct and organized.  
+A module may have many variables to export and this can get messy. Use an export list to make your code concise and organized.  
 
 ```js
 const cupcake = '🧁';

@@ -18,7 +18,7 @@ stack:
     - prisma
 ---
 
-**Next.js - The Full Course** provides a in-depth look into the [Next.js App Router](https://nextjs.org/blog/next-13-2) introduced in version 13.2. It puts React Server Components into practice by building a full-stack application from scratch with PostgreSQL and Prisma. 
+**Next.js - The Full Course** provides an in-depth look into the [Next.js App Router](https://nextjs.org/blog/next-13-2) introduced in version 13.2. It puts React Server Components into practice by building a full-stack application from scratch with PostgreSQL and Prisma. 
 
 ## What will I learn?
 
@@ -29,18 +29,18 @@ stack:
 - 🚅 Dynamic routing and project organization
 - 🔥 Advanced data fetching and caching
 - 👲 User authentication with Auth.js
-- 📅 Data modeling with Postgres and Primsa
+- 📅 Data modeling with Postgres and Prisma
 - 🤔 How to migrate from previous versions of Next.js
 
 ## 🦄 What will I build?
 
-You will build a simple **Social Media Platform** inspired by sites like [MySpace](https://spacehey.com/) and Facebook where users can befriend each other. The goal of this project is to introduce you to Next's rendering, data-fetching, and caching strategies. 
+You will build a simple **Social Media Platform** inspired by sites like [MySpace](https://spacehey.com/) and Facebook where users can befriend each other. The goal of this project is to introduce you to Next's rendering, data fetching, and caching strategies. 
 
 
 ## 🤔 Is this Course Right for Me?
 
 <div class="box box-blue">
-This course is intermediate level 🟦 and expects some familiarity with React.js, JavaScript, and web development. The content is fast-paced and similar to my style on YouTube, but far more in-depth and should be followed in a linear format.
+This course is intermediate level 🟦 and expects some familiarity with React.js, JavaScript, and web development. The content is fast-paced and similar to my style on YouTube, but far more in-depth and it should be followed in a linear format.
 </div>
 
 
@@ -50,6 +50,6 @@ This course is intermediate level 🟦 and expects some familiarity with React.j
 
 ## How do I enroll?
 
-The first few videos are *free*, so just give it try. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 
+The first few videos are *free*, so just give it a try. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 
 
 

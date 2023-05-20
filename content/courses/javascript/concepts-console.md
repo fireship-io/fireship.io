@@ -11,9 +11,9 @@ featured_img: courses/javascript/img/console-featured.png
 youtube: L8CDt1J3DAw
 ---
 
-At this point in your JS career, you likely know what `console.log` does - but the [Console](https://developers.google.com/web/tools/chrome-devtools/console) API can do so much more! It can be an effective debugging tool, but it can also be nightmare when abused. Let's take a look at some tricks that will keep your console output concise and beautiful. Open the console on your browser by running <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> to get started with this section. 
+At this point in your JS career, you likely know what `console.log` does - but the [Console](https://developers.google.com/web/tools/chrome-devtools/console) API can do so much more! It can be an effective debugging tool, but it can also be a nightmare when abused. Let's take a look at some tricks that will keep your console output concise and beautiful. Open the console on your browser by running <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd> to get started with this section. 
 
-First, inspect the methods on the console that go beyond `log`, by running: 
+First, inspect the methods on the console that go beyond `log`, by running the following code: 
 
 ```javascript
 console.log( console );
@@ -63,7 +63,7 @@ console.groupEnd();
 
 ### How to conditionally console log?
 
-Sometimes you want to log ONLY when a condition is falsey - this is known as an assertion. It will keep your code concise by eliminating the need for `if` statements. 
+Sometimes you want to log ONLY when a condition is falsy - this is known as an assertion. It will keep your code concise by eliminating the need for `if` statements. 
 
 ```javascript
 // verbose 💩

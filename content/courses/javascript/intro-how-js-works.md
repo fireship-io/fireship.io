@@ -9,7 +9,7 @@ free: true
 youtube: FSs_JYwnAdI
 ---
 
-JavaScript is often described as some variation of "high-level, single-threaded, garbage-collected, interpreted (or just-in-time compiled),  prototype-based, multi-paradigm, dynamic language with a non-blocking event loop". You may encounter these terms during an JS job interview, but understanding their meaning will help you better understand the behavior of your code. Let's unpack each of these key terms.
+JavaScript is often described as some variation of "high-level, single-threaded, garbage-collected, interpreted (or just-in-time compiled),  prototype-based, multi-paradigm, dynamic language with a non-blocking event loop". You may encounter these terms during a JS job interview, but understanding their meaning will help you better understand the behavior of your code. Let's unpack each of these key terms.
 
 <div class="box box-info">
 Keep in mind, you don't *need* to know these concepts to start using JavaScript productively. It may take years of development experience before they really start to sink in, so don't worry if it feels overwhelming. 

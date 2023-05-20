@@ -9,7 +9,7 @@ free: true
 chapter_start: Becoming a JS Developer
 ---
 
-In order to follow along with this course, you need to know how and where you run your JavaScript code. You have several options to run your first hello world programming:
+In order to follow along with this course, you need to know how and where to run your JavaScript code. You have several options to run your first hello world program:
 
 Open your editor and create a file named `index.js`. 
 
@@ -20,7 +20,7 @@ console.log('hello world')
 
 ## How to Run JavaScript from the Command Line
 
-Running a JS program from the command line is handled by NodeJS. Start by installing NodeJS on local machine if necessary. 
+Running a JS program from the command line is handled by NodeJS. Start by installing NodeJS on your local machine if necessary. 
 
 1. Install Node.js 
 
