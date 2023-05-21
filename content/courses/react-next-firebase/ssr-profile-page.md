@@ -118,6 +118,7 @@ Error: Invalid <Link> with <a> child. Please remove <a> or use <Link legacyBehav
 Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor
 
   For Example
+  ```javascript
  <Link href={`/${post.userID}/${post.slug}`}>
         <h2>
           ~~<a>~~
@@ -125,4 +126,5 @@ Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor
           ~~</a>~~
         </h2>
       </Link>
+  ```
 
