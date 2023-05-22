@@ -73,7 +73,7 @@ console.log(awesomePizza);
 
 ### How to export a list of variables?
 
-A module may have many variables to export and this can get messy. Use an export list to make your code concise and organized.  
+A module may have many variables to export and this can get messy. Use an export list to make your code more succinct and organized.  
 
 ```js
 const cupcake = '🧁';
