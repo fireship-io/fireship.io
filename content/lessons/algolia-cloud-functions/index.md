@@ -146,7 +146,7 @@ firebase deploy --only functions
 
 ## Optional: Seed the Database
 
-In the video you saw how I quickly seeded Firestore with dummy data, which was accomplished with [Faker](https://github.com/marak/Faker.js/) and the Firebase Admin SDK. Create a vanilla node script in the functions directory that sends writes to the database. 
+In the video you saw how I quickly seeded Firestore with dummy data, which was accomplished with Faker and the Firebase Admin SDK. Create a vanilla node script in the functions directory that sends writes to the database. 
 
 {{< file "js" "functions/seed.js" >}}
 ```js
