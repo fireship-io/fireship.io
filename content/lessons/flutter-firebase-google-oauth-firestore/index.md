@@ -91,7 +91,7 @@ Let's start by adding our Firebase dependencies to the class and fleshing out it
 The `_` prefix is used for property names to create private members in Dart. We will do this for the client libraries consumed by the class. 
 
 
-The streams provided by Firebase are [broadcast](https://www.dartlang.org/articles/libraries/broadcast-streams) to multiple subscribers (this is called as a hot Observable in Rx). In this demo, the `user` is the authentication record, while the `profile` represents custom data that will be saved about this user in Firestore. 
+The streams provided by Firebase are [broadcast](https://dart.dev/tutorials/language/streams#broadcast-streams) to multiple subscribers (this is called as a hot Observable in Rx). In this demo, the `user` is the authentication record, while the `profile` represents custom data that will be saved about this user in Firestore. 
 
 Also, the `PublishSubject loading` is just like a hot observable, except values can be pushed to it manually. We will use it to toggle the loading state in our code. 
 
