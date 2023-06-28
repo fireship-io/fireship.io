@@ -1,6 +1,6 @@
 ---
 lastmod: 2023-04-26T11:11:30-09:00
-title: Next.js - The Full Course
+title: Next.js Full Course
 description: Master the fundamentals of Next.js 13 and the App Router
 weight: 0
 type: courses
@@ -46,7 +46,7 @@ This course is intermediate level 🟦 and expects some familiarity with React.j
 
 ## When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated May 1st, 2023</span> <span class="tag tag-sm tag-next">next v13.4</span>
+<span class="tag tag-sm tag-pro">Updated June 22nd, 2023</span> <span class="tag tag-sm tag-next">next v13.4</span>
 
 ## How do I enroll?
 

@@ -1,4 +1,9 @@
 export const products = {
+    'sveltekit': {
+        id: 'sveltekit',
+        price: 'price_1NNq9RBF7AptWZlcrbO92SfW',
+        amount: 20,
+    },
     'nextjs': {
         id: 'nextjs',
         price: 'price_1N2jNUBF7AptWZlcaklaweXL',
