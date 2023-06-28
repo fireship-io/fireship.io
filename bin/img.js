@@ -4,12 +4,12 @@ import { readdirSync, rmSync } from 'fs';
 import { exec } from 'child_process';
 
 // npx @squoosh/cli --webp auto ./4.jpg 
-// const dir = './content/courses/supabase/img/prizes/';
-const dir = './static/img/testimonial/';
+const dir = './content/courses/sveltekit/img/prizes/';
+// const dir = './static/img/testimonial/';
 const files = readdirSync(dir)
 files.forEach(file => {
     if (!file.includes('.webp')) {
-        exec(`npx @squoosh/cli --webp auto ${dir}${file} -d ${dir}`, (err, stdout) => {
+        exec(`npx @squoosh/cli@latest --webp auto ${dir}${file} -d ${dir}`, (err, stdout) => {
             if (err) {
                 console.log(err);
                 return;
