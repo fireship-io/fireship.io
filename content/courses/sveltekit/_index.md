@@ -1,7 +1,7 @@
 ---
 lastmod: 2023-06-27T11:11:30-09:00
 title: SvelteKit Full Course
-description: Build a full-stack app with SvelteKit and Firebase
+description: Learn how to build awesome full-stack apps with SvelteKit
 weight: 0
 type: courses
 vimeo: 840473303
@@ -35,7 +35,7 @@ stack:
 
 ## 🦄 What will I build?
 
-You will build a simple **Social Link Sharing Platform** inspired by sites like [🌴 Linktree](https://linktr.ee/) where users can publish and edit a profile for their social media links. The goal of this project is to leverage SvelteKits's rendering and data-fetching patterns with cloud authentication and database solutions.
+You will build a **Social Link Sharing Platform** inspired by [🌴 Linktree](https://linktr.ee/) where users can publish and edit a profile for their social media links. The goal of this project is to leverage SvelteKits's rendering capabilities with a variety of user authentication and data fetching patterns. By the end of the course, you will be a certified FKIT stack expert. 
 
 ### 🚀 Try it out!
 
