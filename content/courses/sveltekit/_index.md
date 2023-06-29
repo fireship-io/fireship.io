@@ -26,7 +26,7 @@ stack:
 - 💪 Server-side rendering, SEO, data fetching, and caching
 - 🍪 Cookie-based user authentication
 - 💥 Build complex forms with SvelteKit Actions
-- 🦋 Intergrate Tailwind and DaisyUI with SvelteKit
+- 🦋 Integrate Tailwind and DaisyUI with SvelteKit
 - 🤏 Fullstack Drag-and-drop from scratch
 - 🔥 How to rapidly ship complex features with Firebase
 - 🤔 Analysis of potential design choices and their tradeoffs
