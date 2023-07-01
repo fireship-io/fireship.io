@@ -147,11 +147,10 @@ function Navbar() {
 ```jsx
 import { useEffect, useMemo, useState } from "react";
 
-import { useMemo, useState } from 'react';
 function Counter() {
   const [count, setCount] = useState(0);
 
-
+  const doubled = useMemo(() => count * 2, [count]);
 
   useEffect(() => {
     document.title = `count is ${count}`;
