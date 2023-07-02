@@ -1,59 +1,35 @@
 ---
-title: Follower System
-description: Add an endpoint to create relational data 
+title: API Mutation
+description: Add an api endpoint to handle form submission
 weight: 41
 lastmod: 2023-04-26T11:11:30-09:00
 draft: false
 vimeo: 822976744
 emoji: 🧑‍🚀
-video_length: 2:51
+video_length: 1:40
 ---
 
 {{< file "ts" "route.ts" >}}
 ```typescript
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { prisma } from '@/lib/prisma';
+import { authOptions } from "../auth/[...nextauth]/route"
 
-
-export async function POST(req: Request) {
-  const session = await getServerSession();
+export async function PUT(req: Request) {
+  const session = await getServerSession(authOptions);
   const currentUserEmail = session?.user?.email!;
-  const { targetUserId } = await req.json();
 
-  const currentUserId = await prisma.user
-    .findUnique({ where: { email: currentUserEmail } })
-    .then((user) => user?.id!);
+  const data = await req.json();
+  data.age = Number(data.age);
 
-  const record = await prisma.follows.create({
-    data: {
-      followerId: currentUserId,
-      followingId: targetUserId,
-    },
-  });
-
-  return NextResponse.json(record);
-}
-
-export async function DELETE(req: NextRequest) {
-  
-  const session = await getServerSession();
-  const currentUserEmail = session?.user?.email!;
-  const targetUserId = req.nextUrl.searchParams.get('targetUserId');
-
-  const currentUserId = await prisma.user
-    .findUnique({ where: { email: currentUserEmail } })
-    .then((user) => user?.id!);
-
-  const record = await prisma.follows.delete({
+  const user = await prisma.user.update({
     where: {
-      followerId_followingId: {
-        followerId: currentUserId,
-        followingId: targetUserId!,
-      },
+      email: currentUserEmail,
     },
+    data,
   });
 
-  return NextResponse.json(record);
+  return NextResponse.json(user);
 }
 ```
