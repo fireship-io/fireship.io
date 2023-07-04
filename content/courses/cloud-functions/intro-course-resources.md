@@ -2,7 +2,7 @@
 title: Resources
 lastmod: 2019-02-27T09:32:30-07:00
 draft: false
-description: Helpful links for the the Cloud Functions Master Course
+description: Helpful links for the Cloud Functions Master Course
 weight: 1
 emoji: 👶
 free: true
