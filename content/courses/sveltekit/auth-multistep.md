@@ -19,7 +19,7 @@ chapter_start: User Management
 
 ## Root Layout
 
-{{< file "svelte" "+page.svelte" >}}
+{{< file "svelte" "+layout.svelte" >}}
 ```svelte
 <div class="min-h-screen flex flex-col">
     <slot />
