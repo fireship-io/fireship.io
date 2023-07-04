@@ -11,3 +11,5 @@ video_length: 8:01
 chapter_start: Next.js Explained
 free: true
 ---
+
+[Project Source Code](https://github.com/fireship-io/next13-pocketbase-demo)
