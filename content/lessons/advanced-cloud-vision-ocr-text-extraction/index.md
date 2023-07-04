@@ -151,8 +151,6 @@ export const imageTagger = functions.storage
 
 Our cloud function saves the response from the function in the Firestore Database. Simply listen to the corresponding document and display its properties as needed. In this example, we unwrap the object observable and display various properties in the UI. 
 
-<img class="content-image" src="/images/cloud-vision-doc.png" alt="Sample response from cloud vision API in firestore" /> 
-
 {{< figure src="img/cloud-vision-doc.png" caption="Data returned from the Cloud Vision API" >}}
 
 ```html
