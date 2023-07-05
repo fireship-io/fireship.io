@@ -1,19 +1,17 @@
 // Top navbar gif background
 
 .logo-gif {
-    #logoBg{
+    #logoBg {
         display: none;
     }
     &:hover {
         #logo {
             display: none;
         }
-    
-        #logoBg{
+        #logoBg {
             display: block;
         }
     }
-
 }
 
 // Gradient Slide
@@ -21,35 +19,36 @@
 .gradient-text {
   @apply bg-gradient-to-t from-orange-500 to-yellow-500;
   background-clip: text;
-  color:rgba(0,0,0,0);
-  -webkit-background-clip:text;
+  color: rgba(0,0,0,0);
+  -webkit-background-clip: text;
 }
 
 .gradient-text-green {
   @apply bg-gradient-to-t from-green-700 to-green-400;
   background-clip: text;
-  color:rgba(0,0,0,0);
-  -webkit-background-clip:text;
+  color: rgba(0,0,0,0);
+  -webkit-background-clip: text;
 }
 
 .gradient-text-pink {
   @apply bg-gradient-to-r from-orange-500 to-pink-500;
   background-clip: text;
-  color:rgba(0,0,0,0);
-  -webkit-background-clip:text;
+  color: rgba(0,0,0,0);
+  -webkit-background-clip: text;
 }
 
 .gradient-slide {
-    @apply bg-gradient-to-r from-orange-500 to-pink-500;
-    background-size: 200% 200%;
-    animation: gradiant-move 2s ease-in-out infinite;
-    background-clip: text;
-    -webkit-background-clip:text;
-    transition: color .2s ease-in-out;
-  }
-  .gradient-slide:hover{
-    color:rgba(0,0,0,0);
-  }
+  @apply bg-gradient-to-r from-orange-500 to-pink-500;
+  background-size: 200% 200%;
+  animation: gradient-move 2s ease-in-out infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color .2s ease-in-out;
+}
+
+.gradient-slide: hover {
+  color: rgba(0,0,0,0);
+}
 
 
 
