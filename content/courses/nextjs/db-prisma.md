@@ -14,6 +14,9 @@ video_length: 2:09
 ```bash
 npx prisma init
 
+# pushes the state of your prisma schema file to the db (development use only), use `npx prisma migrate deploy` for production
+npx prisma db push
+
 # run after updating schema
 npx prisma migrate dev
 ```
