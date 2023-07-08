@@ -56,7 +56,7 @@ Next, head over the the [Firebase Console](https://console.firebase.google.com/)
 
 {{< file "js" "firebase.js" >}}
 ```js
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import 'firebase/auth';
 import 'firebase/firestore';
 var firebaseConfig = {
