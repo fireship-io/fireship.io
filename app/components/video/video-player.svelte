@@ -17,7 +17,7 @@
   let showAutoplayCover = false;
   let timeout: NodeJS.Timeout;
   let countdown: NodeJS.Timeout;
-  let countdownTime = 10;
+  let countdownTime = 5;
 
   let player: UniversalPlayer;
 
