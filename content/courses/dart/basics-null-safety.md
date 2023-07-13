@@ -59,8 +59,8 @@ Another possible situation is that you want to assign a *nullable value* TO a *n
 ```dart
 String? answer;
 
-String result = answer; // error;
+String result = answer; // error
 
-String result = answer! // works;
+String result = answer!; // works
 ```
 
