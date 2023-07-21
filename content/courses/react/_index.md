@@ -14,9 +14,9 @@ tags:
     - pro
 
 stack: 
-    - react
-    - js
-    - ts
+    - [react](https://fireship.io/courses/react)
+    - [js](https://fireship.io/courses/javascript)
+    - [ts](https://fireship.io/courses/typescript)
 ---
 
 **React - The Full Course** is unlike any other [React](https://reactjs.org/) course on the Internet. It provides a fast-paced introduction to essential concepts, then puts them into practice by building multiple fun and challenging full-stack apps from scratch. 
