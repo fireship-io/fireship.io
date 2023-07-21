@@ -12,9 +12,9 @@ tags:
     - pro
 
 stack: 
-    - [svelte](https://fireship.io/courses/svelte)
-    - [ts](https://fireship.io/courses/typescript)
-    - [firebase](https://fireship.io/courses/firebase)
+    - [svelte](https://svelte.dev/)
+    - [ts](https://www.typescriptlang.org/)
+    - [firebase](https://firebase.google.com/)
 ---
 
 **SvelteKit - The Full Course** is a hands-on tutorial where you will build a complete web app with [SvelteKit](https://kit.svelte.dev/) and Firebase - the so-called FKIT stack. 
