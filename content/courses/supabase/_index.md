@@ -14,9 +14,9 @@ tags:
   - pro
 
 stack:
-  - [supabase](https://fireship.io/courses/supabase)
-  - [react](https://fireship.io/courses/react)
-  - [postgres](https://fireship.io/courses/postgres)
+  - [supabase](https://supabase.io/)
+  - [react](https://reactjs.org/)
+  - [postgres](https://www.postgresql.org/)
 ---
 
 **The Supabase Course** is a project-based course that builds a Reddit-inspired web app from scratch with Supabase, PostgreSQL, and React.
