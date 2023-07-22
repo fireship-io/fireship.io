@@ -14,7 +14,7 @@ chapter_start: Ship It
 
 {{< file "terminal" "command line" >}}
 ```bash
-npm i -g firebase
+npm i -g firebase-tools
 
 firebase login
 
