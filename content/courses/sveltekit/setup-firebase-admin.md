@@ -11,7 +11,7 @@ video_length: 1:50
 
 ⚠️ Important! The Admin SDK can only be used on the server, so files named `+server.ts` or `+page.server.ts`. 
 
-1. Download service account from Firebase prohject settings
+1. Download service account from Firebase project settings
 2. Add to .gitignore to be safe
 3. Create env variable
 4. Initialize SDK 
