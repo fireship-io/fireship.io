@@ -11,4 +11,4 @@ links:
 ---
 
 
-Arjun is a full-stack developer and future blockchain billionaire based in Denver, CO
+Arjun is a full-stack developer and future blockchain billionaire based in Denver, CO.
