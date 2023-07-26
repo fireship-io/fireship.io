@@ -10,4 +10,4 @@ links:
     youtube: https://www.youtube.com/channel/UCiPCA3DyhK4r21BjxgqLe7A
 ---
 
-Radi is a student, developing futuristic projects, websites and Android apps as a hobby. He also plays with ML, IoT, Cloud services and anything else that looks like the next big thing.
+Radi is a student developing futuristic projects, websites and Android apps as a hobby. He also plays with ML, IoT, Cloud services and anything else that looks like the next big thing.
