@@ -14,7 +14,7 @@ video_length: 2:05
 {{< file "ts" "customers.ts" >}}
 ```typescript
 /**
- * Gets the exsiting Stripe customer or creates a new record
+ * Gets the existing Stripe customer or creates a new record
  */
 export async function getOrCreateCustomer(userId: string, params?: Stripe.CustomerCreateParams) {
 
