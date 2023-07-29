@@ -149,7 +149,7 @@ Checkout the full [nested form example](https://github.com/AngularFirebase/107-r
 
 {{< figure src="img/formarray-demo.gif" caption="demo of Angular FormArray" >}}
 
-Let's imagine we want our users to include multiple phone numbers on their account dynamically. Harding coding a nested object would impossible to maintain, but we can allow the user to push multiple groups to a FormArray. 
+Let's imagine we want our users to include multiple phone numbers on their account dynamically. Hard coding a nested object would be impossible to maintain, but we can allow the user to push multiple groups to a FormArray. 
 
 Rather than define the form groups one-by-one, we let the user click a button that will push a new group to the *FormArray*. Each group in this array has an index, so we can modify and delete these forms based on their index position. 
 

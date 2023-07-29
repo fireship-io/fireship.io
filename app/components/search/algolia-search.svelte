@@ -11,10 +11,12 @@
   const client = algolia(APP_ID, API_KEY);
   const index = client.initIndex('content');
 
+  let inputTag;
   let results: any;
   let hits = [];
   let activeHit = 0;
   onMount(() => {
+    inputTag.focus();
     return () => {
       window.removeEventListener('keydown', handleSpecialKeys);
     };
@@ -63,13 +65,14 @@
 <modal-dialog name="search">
   <form>
     {#if $modal === 'search'}
+      <!-- svelte-ignore a11y-autofocus -->
       <input
         class="input"
         name="search"
         type="text"
-        autofocus
         placeholder="Search"
         on:input={search}
+        bind:this={inputTag}
       />
     {/if}
   </form>

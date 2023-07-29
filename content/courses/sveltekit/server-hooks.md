@@ -34,7 +34,7 @@ export const handle = (async ({ event, resolve }) => {
 
 ## Locals Type Definitions
 
-{{< file "ts" "add.d.ts" >}}
+{{< file "ts" "app.d.ts" >}}
 ```typescript
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces

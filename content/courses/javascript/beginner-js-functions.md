@@ -33,7 +33,7 @@ A function declaration on its own does not do anything. You make use of function
 
 ## Function Declarations vs Expressions
 
-A function *declaration* is a statement that describe what your code does. Declarations are [hoisted](/courses/javascript/beginner-js-survival-guide/), which means they are loaded at the top of the scope before any other code runs. 
+A function *declaration* is a statement that describes what your code does. Declarations are [hoisted](/courses/javascript/beginner-js-survival-guide/), which means they are loaded at the top of the scope before any other code runs. 
 
 {{< file "js" "fun.js" >}}
 ```js
