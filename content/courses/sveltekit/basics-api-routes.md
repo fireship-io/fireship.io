@@ -1,6 +1,6 @@
 ---
 title: API Routes
-description: SvelteKit rendering strategies explained
+description: SvelteKit API endpoints explained
 weight: 8
 lastmod: 2023-06-26T10:23:30-09:00
 draft: false

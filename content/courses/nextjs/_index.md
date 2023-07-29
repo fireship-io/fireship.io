@@ -29,7 +29,7 @@ stack:
 - 🚅 Dynamic routing and project organization
 - 🔥 Advanced data fetching and caching
 - 👲 User authentication with Auth.js
-- 📅 Data modeling with Postgres and Primsa
+- 📅 Data modeling with Postgres and Prisma
 - 🤔 How to migrate from previous versions of Next.js
 
 ## 🦄 What will I build?
