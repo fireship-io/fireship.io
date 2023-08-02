@@ -1,5 +1,5 @@
 ---
-title: Follower System
+title: API Mutation
 description: Add an endpoint to create relational data 
 weight: 41
 lastmod: 2023-04-26T11:11:30-09:00
