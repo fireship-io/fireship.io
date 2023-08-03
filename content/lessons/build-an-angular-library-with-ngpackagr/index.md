@@ -166,7 +166,7 @@ In the *lib/package.json* we will define our library's [NPM details](https://doc
 
 The special section is `ngPackage`, which is used by NgPackagr to locate the public API file for your project. 
 
-<p class="tip">Your package should not have any dependentcies, only peerDependencies and devDependencies</p>
+<p class="tip">Your package should not have any dependencies, only peerDependencies and devDependencies</p>
 
 ```json
 {
