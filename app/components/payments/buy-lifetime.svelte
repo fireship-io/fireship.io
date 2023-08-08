@@ -71,9 +71,12 @@
 
 <style lang="scss">
   input {
-    @apply outline-none border-none text-white mx-auto bg-gray7 p-2 w-12 text-center;
-  }
+    @apply outline-none border-none text-white mx-auto bg-gray7 p-2 w-12 text-center appearance-none;
 
+    &[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
   .btn {
     @apply bg-purple-500 text-white border-none hover:bg-purple-700 outline-none font-sans uppercase 
              font-bold inline-flex cursor-pointer text-center shadow-md no-underline px-5 py-2 text-sm my-0.5;
