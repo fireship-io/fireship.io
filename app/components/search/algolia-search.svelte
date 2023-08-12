@@ -11,12 +11,15 @@
   const client = algolia(APP_ID, API_KEY);
   const index = client.initIndex('content');
 
-  let inputTag;
   let results: any;
   let hits = [];
   let activeHit = 0;
+
+  function focusInput(input) {
+    setTimeout(() => input.focus(), 50);
+  }
+
   onMount(() => {
-    inputTag?.focus();
     return () => {
       window.removeEventListener('keydown', handleSpecialKeys);
     };
@@ -72,7 +75,7 @@
         type="text"
         placeholder="Search"
         on:input={search}
-        bind:this={inputTag}
+        use:focusInput
       />
     {/if}
   </form>
