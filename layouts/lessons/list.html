@@ -11,7 +11,7 @@
 
     <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
 
-    <ul class="grid-list justify-items-center pl-0">
+    <ul class="grid-list justify-items-center pl-0 mb-16">
       {{ $paginator := .Paginate (where .Pages "Type" "lessons") 20 }}
 
       {{ range $paginator.Pages }}
