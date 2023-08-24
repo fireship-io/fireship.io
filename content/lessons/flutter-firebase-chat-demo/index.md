@@ -390,4 +390,4 @@ class _BottomChatBarState extends State<BottomChatBar> {
 }
 ```
 
-That’s it. We now how a basic chat app built with Flutter and Firebase. If you’re exploring mobile app solutions, also check out the sister tutorial React Native Firebase Chat App. 
+That’s it. We now know how to build a basic chat app with Flutter and Firebase. If you’re exploring mobile app solutions, also check out the sister tutorial React Native Firebase Chat App. 
