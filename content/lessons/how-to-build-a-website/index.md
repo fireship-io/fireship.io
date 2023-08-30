@@ -23,7 +23,7 @@ github:
 
 
 
-I built my first website in 2008 using nothing but HTML and CSS laid out in tables, without a single line of JavaScript. I developed it in Adobe Dreamweaver and it is still [exists](http://junglesupplyco.com) on GoDaddy to this day. 
+I built my first website in 2008 using nothing but HTML and CSS laid out in tables, without a single line of JavaScript. I developed it in Adobe Dreamweaver and it still [exists](http://junglesupplyco.com) on GoDaddy to this day. 
 
 https://developers.google.com/web/updates/2019/02/rendering-on-the-web
 
