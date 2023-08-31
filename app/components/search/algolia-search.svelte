@@ -16,7 +16,7 @@
   let hits = [];
   let activeHit = 0;
   onMount(() => {
-    inputTag.focus();
+    inputTag?.focus();
     return () => {
       window.removeEventListener('keydown', handleSpecialKeys);
     };
