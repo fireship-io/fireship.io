@@ -1,6 +1,8 @@
 import type VimeoPlayer from '@vimeo/player';
 // import type YouTubePlayer  from 'youtube-player';
 
+const PLAYBACK_RATE_LS_KEY = 'PLAYBACK_RATE_LS_KEY';
+
 export class UniversalPlayer {
     private vimeoPlayer: VimeoPlayer;
     private ytPlayer;
@@ -15,6 +17,12 @@ export class UniversalPlayer {
         } else {
             const VimeoPlayer = (await import('@vimeo/player')).default;
             this.vimeoPlayer = new VimeoPlayer(this.el, { id: this.video as number });
+            const initialValue = localStorage.getItem(PLAYBACK_RATE_LS_KEY) ? 
+                parseFloat(localStorage.getItem(PLAYBACK_RATE_LS_KEY)) : 1;
+            this.vimeoPlayer.setPlaybackRate(initialValue);
+            this.vimeoPlayer.on('playbackratechange', (event) => {
+                localStorage.setItem(PLAYBACK_RATE_LS_KEY, event.playbackRate.toString());
+            });
         }
     }
 
