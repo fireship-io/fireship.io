@@ -1,6 +1,6 @@
-{{ define "header" }} 
-    {{ partial "topnav" }} 
-{{ end }} 
+{{ define "header" }}
+    {{ partial "topnav" }}
+{{ end }}
 
 {{ define "main" }}
     <main class="prose dark:prose-invert container">
@@ -13,7 +13,7 @@
             <h1 class="text-5xl mb-1">Courses</h1>
             <p class="my-0 text-gray3">challenging multi-step experiences with quizzes and progress-tracking</p>
         </header>
-      
+
         <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
 
         <ul class="grid-list justify-items-center pl-0">
@@ -22,14 +22,14 @@
                    {{ $img := (print .RelPermalink "img/featured.webp") }}
                    {{ partial "card" (dict "context" . "img" $img) }}
                 </li>
-            {{ end }} 
+            {{ end }}
         </ul>
 
         <header class="text-center mb-8 mt-20">
             <h1 class="text-5xl mb-1">Past Courses</h1>
             <p class="my-0 text-gray3">these courses might taste a little stale</p>
         </header>
-      
+
         <div class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
 
         <ul class="grid-list justify-items-center pl-0">
@@ -38,7 +38,7 @@
                    {{ $img := (print .RelPermalink "img/featured.webp") }}
                    {{ partial "card" (dict "context" . "img" $img) }}
                 </li>
-            {{ end }} 
+            {{ end }}
         </ul>
 
 
@@ -57,15 +57,15 @@
                 <video-player free="true" single="true"></video-player>
             </div>
         {{ end }}
-        
 
-        
+
+
         {{ $author := .Site.GetPage (print "/contributors/"  (anchorize .Params.Author)) }}
         {{ $authorImg := (print "/contributors/img/"  (anchorize .Params.Author) ".webp") }}
         <div class="flex items-center no-underline justify-center" itemprop="author" name="{{ .Params.author }}">
             <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar" />
             <span class="flex flex-col ml-2">
-                <span class="text-lg">Taught by 
+                <span class="text-lg">Taught by
                     <a class="no-underline text-orange-500" href="/contributors/{{ anchorize .Params.author }}/">{{ title (.Params.authorname | default .Params.author) }}</a>
                 </span>
                 <span class="text-sm text-gray4">
@@ -88,7 +88,7 @@
                     </scroll-show>
                     {{ end }}
                 </div>
-    
+
 
             </div>
 
@@ -102,15 +102,6 @@
 
 
         <if-access>
-
-            {{/*  <div slot="granted" class="max-w-3xl mx-auto text-center text-green-500 text-2xl font-bold px-8 border-green-500 rounded-lg">
-                You have full access to this course!
-            </div>  */}}
-
-            <div slot="granted" class="mt-12 bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-green-500 border border-solid text-center">        
-                <p class="m-0 font-display text-green-500 no-underline text-xl">You have full access to this course 🎉</p>
-            </div>
-
             <div slot="denied" class="max-w-3xl mx-auto text-center">
                 <h2 class="text-5xl text-white pb-2 inline-block">How to Enroll</h2>
                 <div class="mx-auto w-24 h-1 mt-0 mb-24 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full"></div>
@@ -119,20 +110,15 @@
                     <buy-course></buy-course>
                     <p class="mt-0 text-sm text-gray4">Lifetime access for a blazingly low price</p>
                 </div>
-   
+
                 <h3 class="text-gray3">OR</h3>
 
-                <div class="bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-green-500 border border-solid">            
+                <div class="bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-green-500 border border-solid">
                     <p class="mb-0"><a href="/pro/" class="font-display text-green-500 no-underline text-xl">Upgrade to PRO</a></p>
                     <p class="mt-0 text-sm text-gray4">Unlock all Fireship content && bonus perks</p>
                 </div>
-  
             </div>
-
         </if-access>
-
-
-
 
         <div class="text-center">
             <h2 class="text-5xl border-gray6 pb-2 inline-block mt-24">Chapters</h2>
@@ -151,13 +137,13 @@
                             <p class="text-gray3">{{ $page.Description }}</p>
                         </li>
                     </a>
-                    {{ end }} 
+                    {{ end }}
                 </ul>
             </div>
         {{ end }}
     </main>
-{{ end }} 
+{{ end }}
 
-{{ define "footer" }} 
-    {{ partial "footer" }} 
+{{ define "footer" }}
+    {{ partial "footer" }}
 {{ end }}
