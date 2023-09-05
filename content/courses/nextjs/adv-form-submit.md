@@ -1,5 +1,5 @@
 ---
-title: Form Sumbmission
+title: Form Submission
 description: Update db records with form submissions
 weight: 40
 lastmod: 2023-04-26T11:11:30-09:00
