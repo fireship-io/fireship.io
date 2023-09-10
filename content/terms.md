@@ -22,6 +22,10 @@ Cancellations and Refunds: You can cancel your PRO Membership at any time. If yo
 
 Lapsed Payment: If payment for a subscription fails, the user account will be downgraded and granted a 7-day grace period to update the payment source. If a successful payment is not made within 7 days, the membership will be fully canceled, and renewal will be subject to current prices.
 
+### Refund Policy 
+
+We offer a 30-day money-back guarantee on all PRO Memberships. If you are not satisfied with your membership, you may request a refund within 30 days of the original purchase date by emailing hello@fireship.io
+
 ### Disclaimer
 
 The materials on the Fireship.io website are provided “as is”. Fireship.io makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Fireship.io does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet website or otherwise relating to such materials or on any sites linked to this site.
