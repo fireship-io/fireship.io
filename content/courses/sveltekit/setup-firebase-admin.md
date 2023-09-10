@@ -36,7 +36,7 @@ This setup is optional if you want to use SSR auth. Make sure this file lives in
 ```typescript
 import { getAuth } from 'firebase-admin/auth';
 import { getFirestore } from 'firebase-admin/firestore';
-import { FB_CLIENT_EMAIL, FB_PRIVATE_KEY, FB_PROJECT_ID, FB_SERVICE_ACCOUNT } from '$env/static/private'
+import { FB_CLIENT_EMAIL, FB_PRIVATE_KEY, FB_PROJECT_ID, FIREBASE_SERVICE_ACCOUNT } from '$env/static/private'
 import pkg from 'firebase-admin';
 
 try {
@@ -47,7 +47,7 @@ try {
       privateKey: FB_PRIVATE_KEY,
     }),
   });
-} catch (err) {
+} catch (err: any) {
   if (!/already exists/u.test(err.message)) {
     console.error('Firebase Admin Error: ', err.stack)
   }
