@@ -23,6 +23,6 @@ export function getCourseTier(url: string = window.location.pathname): CourseTie
     const courseId = getCourseIdFromURL(url);
     const lessonId = getChapterTitleFromURL(url);
 
-    if (freeContent[courseId].includes(lessonId)) return 'free';
-    return 'pro';
+    if (freeContent[courseId].includes(lessonId)) return COURSE_TIERS.free;
+    return COURSE_TIERS.pro;
 }
