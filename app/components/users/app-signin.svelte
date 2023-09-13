@@ -1,7 +1,5 @@
 <svelte:options tag="app-signin" />
 
-<script lang="ts">
-</script>
 
 <modal-dialog name="signin" esc="true">
   <h1>Login</h1>
