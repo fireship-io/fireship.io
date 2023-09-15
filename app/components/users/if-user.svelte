@@ -1,6 +1,6 @@
 <svelte:options tag="if-user" />
 
-<!-- Is signed in  -->
+
 
 <script lang="ts">
   import { user } from '../../stores/user';
