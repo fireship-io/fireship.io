@@ -20,7 +20,7 @@ youtube: tv-_1er1mWI
 #    rxdart: 0.20
 ---
 
-[Design patterns](https://en.wikipedia.org/wiki/Design_Patterns) is a highly influential book published in 1994 by four computer scientists called the *Gang of Four*. It was originally aimed at C++ developers, but has since become a book for anyone interested in object-oriented software design.
+[Design Patterns](https://en.wikipedia.org/wiki/Design_Patterns) is a highly influential book published in 1994 by four computer scientists called the *Gang of Four*. It was originally aimed at C++ developers, but has since become a book for anyone interested in object-oriented software design.
 
 In the following lesson, we will look at 10 different patterns from this book with simplified modern examples in TypeScript. For additional patterns and examples, check out [Refactoring Guru](https://refactoring.guru). 
 
@@ -30,7 +30,7 @@ Creational patterns are related to the creation of new objects.
 
 ### Singleton
 
-A singleton is an object that can only be instantiated once. It is useful fo implementing a global object that can be accessed from anywhere in the application.
+A singleton is an object that can only be instantiated once. It is useful for implementing a global object that can be accessed from anywhere in the application.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -60,7 +60,7 @@ const settings = Settings.getInstance();
 
 ### Prototype
 
-Prototype allows objects to be clones of other objects, rather then extended via inheritance.
+Prototype allows objects to be clones of other objects, rather than extended via inheritance.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -109,7 +109,7 @@ const btn2 = factory.createButton(os);
 ```
 ### Builder
 
-The builder pattern is a creational design pattern that lets you construct complex objects step by step. It JavaScript, we can achieve this with method chaining. 
+The builder pattern is a creational design pattern that lets you construct complex objects step by step. In JavaScript, we can achieve this with method chaining. 
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -146,7 +146,7 @@ Structural patterns are primarily used to handle relationships between objects.
 
 ### Facade
 
-A facade is a class that provides a simplified API for larger body of code. It is often to used to hide low-level details of a subsystem.
+A facade is a class that provides a simplified API for a larger body of code. It is often to used to hide low-level details of a subsystem.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -217,7 +217,7 @@ Behavioral patterns are used to identify communication between objects.
 
 ### Iterator
 
-The iterator pattern is used to traverse a collection of elements. Most programming languages provide abstrations for iteration like the `for` loop. However, you can create your own iterators in JavaScript by using the `Symbol.iterator` property. The code below creates a custom range function that can be used in a regular `for` loop. 
+The iterator pattern is used to traverse a collection of elements. Most programming languages provide abstractions for iteration like the `for` loop. However, you can create your own iterators in JavaScript by using the `Symbol.iterator` property. The code below creates a custom range function that can be used in a regular `for` loop. 
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -243,7 +243,7 @@ for (const n of range(0, 100, 5)) {
 ```
 ### Observer
 
-The observer pattern is used to notify a set of interested parties when a state change occurs. The [rxjs]() library is a popular implementation of this pattern.
+The observer pattern is used to notify a set of interested parties when a state change occurs. The [rxjs](https://rxjs.dev/guide/overview) library is a popular implementation of this pattern.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -262,7 +262,7 @@ tv1.unsubscribe();
 ```
 ### Mediator
 
-The mediator is provids a middle layer between objects that communicate with each other. This pattern implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
+The mediator pattern provides a middle layer between objects that communicate with each other. This pattern is implemented frequently in JavaScript libaries via plugin systems (like [Webpack](https://webpack.js.org)) and middleware (like [Express](https://expressjs.com/en/resources/middleware.html)).
 
 {{< file "ts" "software.ts" >}}
 ```typescript
