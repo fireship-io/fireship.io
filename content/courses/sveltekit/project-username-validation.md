@@ -55,7 +55,7 @@ video_length: 1:42
         </p>
       {/if}
   
-      {#if isAvailable}
+      {#if isValid && isAvailable}
         <button class="btn btn-success">Confirm username @{username} </button>
       {/if}
     </div>
