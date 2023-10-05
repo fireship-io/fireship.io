@@ -8,7 +8,7 @@ All static content is managed with Hugo in the `content` dir. You can easily fix
 
 ### How to Run it
 
-First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater. 
+First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater.Then, clone this repository and run the following commands: 
 
 ```
 git clone <this-repo>
@@ -21,7 +21,7 @@ Check it on on `http://localhost:6969/`.
 
 ## Developing Components 
 
-Create a Svelte file in the `app/components` directory. It must have a custom element tag. 
+Create a Svelte file in the `app/components` directory. It must have a custom element tag.For example:
 
 ```svelte
 <svelte:options tag="hi-mom" />
