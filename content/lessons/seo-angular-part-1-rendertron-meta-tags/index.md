@@ -104,7 +104,7 @@ I am also using AngularFire2 to show you that search friendly content is possibl
 
 ## What is Rendertron and Headless Chrome?
 
-I highly Recommend that you watch Sam Li's Rendertron talk at Polymer Summit 2017. 
+I highly Recommend that you watch Sam Li's Rendertron talk at Polymer Summit 2017.
 
 <div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/ydThUDlBDfc" frameborder="0" allowfullscreen></iframe></div>
 
