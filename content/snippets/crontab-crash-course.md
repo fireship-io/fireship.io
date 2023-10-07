@@ -21,7 +21,7 @@ Tip: I highly recommend checking out the [Crontab Guru](https://crontab.guru/eve
 
 ## Crontab Overview
 
-A cron schedule is defined by setting values in five slots `* * * * *`. Each slot takes can take a single number, range of numbers, or `*` wildcard. Each slot is defined as:
+A cron schedule is defined by setting values in five slots `* * * * *`. Each slot can take a single number, range of numbers, or `*` wildcard. Each slot is defined as:
 
 1. **Minute** (0-59) Minute of the hour
 2. **Hour**	(0-23) Hour of the day
@@ -30,11 +30,9 @@ A cron schedule is defined by setting values in five slots `* * * * *`. Each slo
 5. **Weekday** (0-6) Day of the week where, Sunday == 0, Monday == 1, ..., Saturday == 6. 
 6. The script to execute (not necessary for Cloud Functions)
 
-If you imagine time a 
-
 ## Example Schedules
 
-The snippets below show you to configure crontab for the most common use-cases. 
+The snippets below show you how to configure crontab for the most common use-cases. 
 
 ### Every Minute
 
@@ -86,7 +84,9 @@ We can run jobs on specific days of the week using the last slot.
 
 ### Every 5 Minutes, between 9AM and 5PM, from Monday through Friday
 
-Maybe we have a task that should only run during normal business hours. This can be accomplished using ranges that for the hour and weekday values separated by a dash. 
+Maybe we have a task that should only run during normal business hours. 
+
+This can be accomplished using ranges for the hour and weekday values that are separated by a dash. 
 
 In other words: "At every 5th minute past every hour from 9 through 17 on every day-of-week from Monday through Friday"
 
