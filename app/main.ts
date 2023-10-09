@@ -25,7 +25,7 @@ import './util/key-bindings';
 window.addEventListener('flamethrower:router:end', (e) => {
     GAPageView()
 });
-  
+
 
 // saves scroll position on navbar
 scrollSave();
@@ -39,6 +39,7 @@ export const router = flamethrower({ prefetch: 'hover', log: false });
 
 // All web components must be exported here
 export * from './components/global-data.svelte';
+export * from './components/hi-dude.svelte';
 
 // Auth
 export * from './components/users/user-data.svelte';
@@ -76,12 +77,12 @@ export * from './components/search/algolia-search.svelte';
 
 // Video
 export * from './components/video/video-player.svelte';
-export * from './components/video/autoplay-toggle.svelte'; 
+export * from './components/video/autoplay-toggle.svelte';
 
 // Payments
-export * from './components/payments/buy-course.svelte'; 
-export * from './components/payments/buy-pro.svelte'; 
-export * from './components/payments/buy-lifetime.svelte'; 
+export * from './components/payments/buy-course.svelte';
+export * from './components/payments/buy-pro.svelte';
+export * from './components/payments/buy-lifetime.svelte';
 export * from './components/payments/customer-portal.svelte';
 export * from './components/payments/user-charges.svelte';
 export * from './components/payments/price-select.svelte';
