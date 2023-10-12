@@ -18,7 +18,7 @@ stack:
     - prisma
 ---
 
-**Next.js - The Full Course** provides a in-depth look into the [Next.js App Router](https://nextjs.org/blog/next-13-2) introduced in version 13.2. It puts React Server Components into practice by building a full-stack application from scratch with PostgreSQL and Prisma. 
+**Next.js - The Full Course** provides a in-depth look into the [Next.js App Router](https://nextjs.org/docs/app) introduced in version 13.2. It puts React Server Components into practice by building a full-stack application from scratch with PostgreSQL and Prisma. 
 
 ## What will I learn?
 
