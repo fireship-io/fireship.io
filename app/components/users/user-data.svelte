@@ -29,7 +29,7 @@
     { $user?.email }
 {/if}
 {#if field === 'photoURL' }
-    <img {src} alt="avatar" referrerpolicy="no-referrer" style="max-width: 100%; border-radius: 9999px;" on:error={() => src = '/img/ui/avatar.svg'}>
+    <img src={$user?.photoURL ?? '/img/ui/avatar.svg'} alt="avatar" referrerpolicy="no-referrer" style="max-width: 100%; border-radius: 9999px;" on:error={() => src = '/img/ui/avatar.svg'}>
 {/if}
 {#if field === 'displayName' }
     { $user?.displayName }
