@@ -1,5 +1,5 @@
 ---
 title: Mapbox
-description: Mapbox is the leading real-time location platform for a new generation of location-aware businesses. Mapbox is the only platform that equips organizations with the full set of tools to power the navigation of people, packages, and vehicles everywhere.
+description: Mapbox is a mapping and location cloud platform for developers, providing SDKs and APIs for real-time location integration.
 link: https://www.mapbox.com/
 ---
