@@ -29,6 +29,13 @@ video_length: 1:50
 
 {{< file "svelte" "login/+layout.svelte" >}}
 ```svelte
+<script lang="ts">
+    ...
+    import AnimatedRoute from "$lib/components/AnimatedRoute.svelte";
+</script>
+
+...
+
 <AnimatedRoute>
   <main>
     ...
