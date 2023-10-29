@@ -12,9 +12,9 @@ tags:
     - pro
 
 stack: 
-    - svelte
-    - ts
-    - firebase
+    - [svelte](https://svelte.dev/)
+    - [ts](https://www.typescriptlang.org/)
+    - [firebase](https://firebase.google.com/)
 ---
 
 **SvelteKit - The Full Course** is a hands-on tutorial where you will build a complete web app with [SvelteKit](https://kit.svelte.dev/) and Firebase - the so-called FKIT stack. 
@@ -58,5 +58,4 @@ This course is intermediate level 🟦 and expects some familiarity with JavaScr
 
 ## How do I enroll?
 
-The first few videos are *free*, so just give it try. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 
-
+The first few videos are *free*, so just give it try. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO.
