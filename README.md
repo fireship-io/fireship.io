@@ -39,7 +39,7 @@ Export the component from `app/main.ts`:
 export * from './components/hi-mom.svelte';
 ```
 
-Now use it in anywhere in your HTML or Markdown. 
+Now use it anywhere in your HTML or Markdown. 
 
 ```html
 <hi-mom greeting="i made a web component"></hi-mom>
