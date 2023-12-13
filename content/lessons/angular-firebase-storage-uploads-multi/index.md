@@ -86,7 +86,7 @@ progress::-webkit-progress-value {
 Want to skip this step? Consider using this zero-dependency [file-drop](https://github.com/GoogleChromeLabs/file-drop) web component developed by Google Chrome Labs  
 
 
-The first step is to create a directive that can receive the files from the browser. The directive customize the [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) to meet the specific needs of our feature. 
+The first step is to create a directive that can receive the files from the browser. The directive customizes the [Drag and Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) to meet the specific needs of our feature. 
 
 
 {{< file "terminal" "command line" >}}
@@ -144,7 +144,7 @@ ng g component uploader
 
 ### Listen to File Drop
 
-The HTML we add the `dropzone` directive to a div and listen the custom events that it emits. In addition, we loop over a list of files and render `upload-task` which will be created in the next step. 
+In the HTML we add the `dropzone` directive to a div and listen to the custom events that it emits. In addition, we loop over a list of files and render `upload-task` which will be created in the next step. 
 
 {{< file "html" "uploader.component.html" >}}
 ```html
@@ -203,7 +203,7 @@ export class UploaderComponent {
 ng g component upload-task
 ```
 
-Each child component is a self contained [UploadTask](https://github.com/angular/angularfire2/blob/master/docs/storage/storage.md) that will start running as soon as the component is initialized. It will display the upload progress in realtime and save the download URL in firestore when it completes. 
+Each child component is a self-contained [UploadTask](https://github.com/angular/angularfire2/blob/master/docs/storage/storage.md) that will start running as soon as the component is initialized. It will display the upload progress in realtime and save the download URL in firestore when it completes. 
 
 
 There is no hard limit on the number of files you can send to Firebase simultaneously. The SDK will attempt to use the most efficient strategy available to transfer them to the cloud, which is mostly dependent on the user's network connection.  
@@ -241,9 +241,9 @@ The HTML provides a progress bar and several buttons that allow the user to paus
 ```
 
 
-The component is responsible for managing the state of the upload. In this demo, the upload starts transferring data when initialized with `ngOnInit`. It takes the file as an input property, then uses it's name as a reference in the storage bucket. Keep in mind, storage path names must be unique (just like any filesystem), so we also add a timestamp to the name to ensure uniqueness on each upload. 
+The component is responsible for managing the state of the upload. In this demo, the upload starts transferring data when initialized with `ngOnInit`. It takes the file as an input property and then uses its name as a reference in the storage bucket. Keep in mind, storage path names must be unique (just like any filesystem), so we also add a timestamp to the name to ensure uniqueness on each upload. 
 
-The `snapshotChanges` Observable emits data every few hundred milliseconds with information about the upload's progress. You can use it for progress indicators or alternatively use `percentageChanges` to listen the current progress ranging from 0 to 100. 
+The `snapshotChanges` Observable emits data every few hundred milliseconds with information about the upload's progress. You can use it for progress indicators or alternatively use `percentageChanges` to listen to the current progress ranging from 0 to 100. 
 
 We can detect when the upload has finished using the RxJS `finalize` operator. At this point, we can fetch the public download URL and save it to Firestore for easy access in the future. 
 
