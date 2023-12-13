@@ -1,0 +1,43 @@
+{
+    "name": "fireship-io",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            // Update VARIANT to pick hugo variant.
+            // Example variants: hugo, hugo_extended
+            // Rebuild the container if it already exists to update.
+            "VARIANT": "hugo",
+            // Update VERSION to pick a specific hugo version.
+            // Example versions: latest, 0.73.0, 0,71.1
+            // Rebuild the container if it already exists to update.
+            "VERSION": "latest",
+            // Update NODE_VERSION to pick the Node.js version: 12, 14
+            "NODE_VERSION": "20"
+        }
+    },
+    // Configure tool-specific properties.
+    "customizations": {
+        // Configure properties specific to VS Code.
+        "vscode": {
+            // Set *default* container specific settings.json values on container create.
+            "settings": {
+                "html.format.templating": true
+            },
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "tamasfe.even-better-toml",
+                "davidanson.vscode-markdownlint",
+                "svelte.svelte-vscode",
+                "github.vscode-github-actions"
+            ]
+        }
+    },
+    // Use 'forwardPorts' to make a list of ports inside the container available locally.
+    "forwardPorts": [
+        6969
+    ],
+    // Use 'postCreateCommand' to run commands after the container is created.
+    "postCreateCommand": "npm install",
+    // Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+    "remoteUser": "node"
+}
