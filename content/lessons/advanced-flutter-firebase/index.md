@@ -65,9 +65,9 @@ As an alternative, you can break your data into multiple global singletons with 
 
 Streams are a bit more complex because we need to explicitly listen to them and dispose of them when done - this can lead to a lot of boilerplate when done manually in a StatefulWidget. 
 
-A better option is to use Flutter's built in `StreamBuilder` widget, which automatically manages your stream and gives you a build context. However, it can still be a challenge to combine multiple streams and/or share their values in multiple places. 
+A better option is to use Flutter's built-in `StreamBuilder` widget, which automatically manages your stream and gives you a build context. However, it can still be a challenge to combine multiple streams and/or share their values in multiple places. 
 
-An *even better option* is the [Provider](https://pub.dev/packages/provider) package. It is mostly syntatic sugar for *InheritedWidget*, but can also manage Stream subscriptions. In the snippet below, we wrap the entire MaterialApp in with a `MultiProvider`, then listen a Firebase user's global authentication state. 
+An *even better option* is the [Provider](https://pub.dev/packages/provider) package. It is mostly syntactic sugar for *InheritedWidget*, but can also manage Stream subscriptions. In the snippet below, we wrap the entire MaterialApp in with a `MultiProvider`, then listen to a Firebase user's global authentication state. 
 
 {{< file "dart" "main.dart" >}}
 ```dart
@@ -82,11 +82,11 @@ class MyApp extends StatelessWidget {
         // Make user stream available
         StreamProvider<FirebaseUser>.value(stream: FirebaseAuth.instance.onAuthStateChanged),
 
-        // See implementation details in next sections
+        // See implementation details in the next sections
         StreamProvider<SuperHero>.value(stream: firestoreStream),
       ],
 
-      // All data will be available in this child and descendents
+      // All data will be available in this child and descendants
       child: MaterialApp(...)
     );
   }
@@ -97,7 +97,7 @@ class MyApp extends StatelessWidget {
 The beauty of this approach is that `StreamProvider` will automatically listen to the subscription for us (and dispose if necessary, it is actually just a StreamBuilder under the hood), allowing us to treat the underlying data as a synchronous value available to the entire app. We can access it in a build method like so:
 
 ```dart
-// Some widget deeply nested in the widget tree...
+// Some widgets are deeply nested in the widget tree...
 class SomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -121,7 +121,7 @@ Text(data['title']),
 Text(data['description'])
 ```
 
-But this becomes increasingly difficult as your app grows, both in terms of code-maintainability and unexpected runtime errors. In addition, it makes it difficult to use the Provider package, because it looks up the widget tree for a specific type signature. We need a way to convert a `Map` to a Class instance, allowing us to write code like: 
+But this becomes increasingly difficult as your app grows, both in terms of code maintainability and unexpected runtime errors. In addition, it makes it difficult to use the Provider package, because it looks up the widget tree for a specific type signature. We need a way to convert a `Map` to a Class instance, allowing us to write code like: 
 
 ```dart
 Text(data.title),
@@ -187,7 +187,7 @@ class SuperHero {
 
 ### From a Firestore Document
 
-It is also possible to setup your constructor specifically for a Firestore `DocumentSnapshot`. This makes your code more specialized for Firebase, but has the added benefit of giving you the document ID on collection queries. 
+It is also possible to set up your constructor specifically for a Firestore `DocumentSnapshot`. This makes your code more specialized for Firebase, but has the added benefit of giving you the document ID on collection queries. 
 
 ```dart
 class Weapon {
