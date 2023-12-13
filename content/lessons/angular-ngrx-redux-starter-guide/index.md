@@ -39,14 +39,14 @@ Here are five must-know high-level concepts about ngrx/Redux.
 2. A state object cannot be changed - it is **immutable**.
 3. When data changes, the existing state is duplicated, then a new object is created with the updates. In Angular this data is treated as an RxJS Observable, allowing us to subscribe to it from anywhere in the app.
 4. State can only be changed via an **action**, which is also an object. It includes a type (the action name) and an optional payload (the action data), for example `{ type: 'DELETE_ITEM', payload: 123 }`.
-5. When an event is emitted, for example a button click, the action is sent to a reducer function to converts the old state into the new state.
+5. When an event is emitted, for example, a button click, the action is sent to a reducer function to convert the old state into the new state.
 
 ### What are the benefits of Redux?
 
 - Global Data: The Redux pattern allows you to observe the current data state from anywhere in the app.
-- Debugging: Because you have a sequence of state changes, you debug redux apps by comparing one state to another. This gives you a time lapse breakdown of your data.
-- Isolation of Data: Data flows one-way and is completely isolated from presentation.
-- Type Safety: TypeScript and Redux go together like rainbows and unicorns. Redux gives you good incentive to take advantage strong typing, which will result in better tooling and maintainability.
+- Debugging: Because you have a sequence of state changes, you debug redux apps by comparing one state to another. This gives you a time-lapse breakdown of your data.
+- Isolation of Data: Data flows one-way and is completely isolated from the presentation.
+- Type Safety: TypeScript and Redux go together like rainbows and unicorns. Redux gives you a good incentive to take advantage of strong typing, which will result in better tooling and maintainability.
 
 ### What about the drawbacks?
 
@@ -86,7 +86,7 @@ Let's start by building the most simple ngrx pattern possible. Our app state wil
 
 ### app.module.ts
 
-When importing the `StoreModule` the object you pass to it is important. In this case we give it a key of `state` (you can call it whatever you want), which will be referenced in the component.
+When importing the `StoreModule` the object you pass to it is important. In this case, we give it a key of `state` (you can call it whatever you want), which will be referenced in the component.
 
 ```typescript
 /// ...omitted
@@ -111,11 +111,11 @@ export class AppModule { }
 
 Now let's create the reducer in a new file called `src/app/simple.reducer.ts`.
 
-<p class="success">It is conventional to give action names all caps in redux, such as `const SOME_ACTION = 'SOME_ACTION'`</p>
+<p class="success">It is conventional to give action names in all caps in redux, such as `const SOME_ACTION = 'SOME_ACTION'`</p>
 
 The reducer is just a function that runs a `switch` statement over possible actions that uses the old state to create a new state. Here we have two actions `SPANISH` and `FRENCH`. If the reducer receives one of these actions, it simply converts the state string to a new value.
 
-Side Note: I apologize for the for screwed-up syntax highlighting of the switch statement.
+Side Note: I apologize for the screwed-up syntax highlighting of the switch statement.
 
 ```typescript
 import { Action } from '@ngrx/store';
@@ -140,7 +140,7 @@ export function simpleReducer(state: string = 'Hello World', action: Action) {
 
 Now we need a way to present and change the state in the UI. Here are a few key points about this code.
 
-1. When using the ngrx `Store` class, it is necessary to give it a TypeScript interface that cooresponds the object we passed to the NgModule. In this example, our `AppState` interface handles this task with it's one `message` property.
+1. When using the ngrx `Store` class, it is necessary to give it a TypeScript interface that corresponds to the object we passed to the NgModule. In this example, our `AppState` interface handles this task with its one `message` property.
 2. A variable for `message$` is set as an Observable on the component by calling `this.store.select('message')`.
 3. We trigger state changes by sending actions to the reducer with `this.store.dispatch('ACTION')`
 
@@ -216,7 +216,7 @@ app/
 
 ### app.module.ts
 
-Update the app module with the post reducer.
+Update the app module with the post-reducer.
 
 ```typescript
 import { postReducer } from './reducers/post.reducer';
@@ -249,7 +249,7 @@ export interface Post {
 ```
 ### post.actions.ts
 
-Every action will be managed within it's own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
+Every action will be managed within its own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
 
 ```typescript
 import { Action } from '@ngrx/store';
@@ -337,7 +337,7 @@ export function postReducer(state: Post = defaultState, action: Action) {
 
 In the app component, we can update the `AppState` interface and tell the ngrx store to select the `post` property.
 
-Notice how the `dispatch` calls are now being made by instantiating action objects. In the `PostActions.EditText` we can pass data to the constructor as the payload the gets processed by the reducer function.
+Notice how the `dispatch` calls are now being made by instantiating action objects. In the `PostActions.EditText` we can pass data to the constructor as the payload gets processed by the reducer function.
 
 ```typescript
 import { Component } from '@angular/core';
@@ -436,11 +436,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 export class AppModule { }
 ```
 
-When you activate the plugin in Chrome, you get nice breakdown of state changes in browser. The plugin will tell you exactly which properties have changed after each event. This makes debugging incredibly easy when get unexpected results in your data store.
+When you activate the plugin in Chrome, you get a nice breakdown of state changes in the browser. The plugin will tell you exactly which properties have changed after each event. This makes debugging incredibly easy when get unexpected results in your data store.
 
 
 {{< figure src="img/redux-plugin-ngrx.gif" caption="The redux plugin for Chrome makes debugging NgRx a breeze" >}}
 
 ## Up next
 
-That's it for the basics of ngrx/store. In the next lesson, I will introduce the ngrx/effects library to handle realtime asynchronous Firebase data.  
+That's it for the basics of ngrx/store. In the next lesson, I will introduce the ngrx/effects library to handle real-time asynchronous Firebase data.  
