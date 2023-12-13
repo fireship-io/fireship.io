@@ -166,7 +166,7 @@ y = df['happiness']
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=23)
 ```
 
-For our simple use case we will use a [Random Forest](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) algorithm, which usually does well out of the box. 
+For our simple use case, we will use a [Random Forest](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html) algorithm, which usually does well out of the box. 
 
 ```python
 from sklearn.ensemble import RandomForestRegressor
@@ -250,9 +250,9 @@ export const predictHappiness = functions.https.onRequest(async (request, respon
 });
 ```
 
-Now you can make calls to this API to get predictions in matter of milliseconds directly from your clientside apps. 
+Now you can make calls to this API to get predictions in a matter of milliseconds directly from your clientside apps. 
 
 
 ## The End
 
-Datalab gives you an environment to analyze data and train predictive models, while ML Engine makes is much easier to maintain and release production versions to the cloud. When you combine these tools with Firebase you get a fullstack solution for building real-world AI products. 
+Datalab gives you an environment to analyze data and train predictive models, while ML Engine makes it much easier to maintain and release production versions to the cloud. When you combine these tools with Firebase you get a fullstack solution for building real-world AI products. 
