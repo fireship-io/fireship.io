@@ -72,7 +72,7 @@ export class ChildComponent {
 
 ## Child to Parent: Sharing Data via ViewChild
 
-[ViewChild](https://angular.io/api/core/ViewChild) allows a one component to be injected into another, giving the parent access to its attributes and functions. One caveat, however, is that child won't be available until after the view has been initialized. This means we need to implement the AfterViewInit lifecycle hook to receive the data from the child.  
+[ViewChild](https://angular.io/api/core/ViewChild) allows one component to be injected into another, giving the parent access to its attributes and functions. One caveat, however, is that the child won't be available until after the view has been initialized. This means we need to implement the AfterViewInit lifecycle hook to receive the data from the child.  
 
 ### parent.component.ts
 ```typescript
@@ -123,14 +123,14 @@ export class ChildComponent {
 
 ## Child to Parent: Sharing Data via Output() and EventEmitter
 
-Another way to share data is to emit data from the child, which can be listened to by the parent. This approach is ideal when you want to share data changes that occur on things like button clicks, form entires, and other user events.
+Another way to share data is to emit data from the child, which can be listened to by the parent. This approach is ideal when you want to share data changes that occur on things like button clicks, form entries, and other user events.
 
 In the parent, we create a function to receive the message and set it equal to the message variable.
 
 In the child, we declare a messageEvent variable with the Output decorator and set it equal to a new event emitter. Then we create a function named sendMessage that calls emit on this event with the message we want to send. Lastly, we create a button to trigger this function.
 
 
-The parent can now subscribe to this messageEvent that's outputted by the child component, then run the receive message function whenever this event occurs.
+The parent can now subscribe to this messageEvent that's outputted by the child component, and then run the receive message function whenever this event occurs.
 
 ### parent.component.ts
 ```typescript
@@ -191,11 +191,11 @@ You can also use a regular RxJS Subject for sharing data via the service, but he
 - It has a `getValue()` function to extract the last value as raw data.
 - It ensures that the component always receives the most recent data.
 
-In the service, we create a private BehaviorSubject that will hold the current value of the message. We define a currentMessage variable handle this data stream as an observable that will be used by the components. Lastly, we create function that calls next on the BehaviorSubject to change its value.
+In the service, we create a private BehaviorSubject that will hold the current value of the message. We define a currentMessage variable to handle this data stream as an observable that will be used by the components. Lastly, we create a function that calls next on the BehaviorSubject to change its value.
 
 The parent, child, and sibling components all receive the same treatment. We inject the DataService in the constructor, then subscribe to the currentMessage observable and set its value equal to the message variable.
 
-Now if we create a function in any one of these components that changes the value of the message. when this function is executed the new data it's automatically broadcast to all other components.
+Now if we create a function in any one of these components that changes the value of the message. when this function is executed the new data is automatically broadcast to all other components.
 
 
 ### data.service.ts
