@@ -34,15 +34,15 @@ There are several [fundamental techniques](https://highlyscalable.wordpress.com/
 
 ### Duplication
 
-Data duplication is a very common technique to eliminate the need to read multiple documents. Simple example - we might duplicate or embed a username on every tweet doc to avoid making secondary query to the user doc. Or we might duplicate _20 recent tweets_ on the user document to show on the user profile. This strategy results in **faster reads, but slower writes**. Think about it - we can read all data in a single document, but may need to update multiple documents when the embedded data changes.
+Data duplication is a very common technique to eliminate the need to read multiple documents. Simple example - we might duplicate or embed a username on every tweet doc to avoid making secondary queries to the user doc. Or we might duplicate _20 recent tweets_ on the user document to show on the user profile. This strategy results in **faster reads, but slower writes**. Think about it - we can read all data in a single document, but may need to update multiple documents when the embedded data changes.
 
 ### Aggregation
 
-Data aggregation is the process of analyzing a collection of data, then saving the results on some other document. The simplest example would be saving a _count_ of the total documents in a collection. Normally, [Firestore aggregation](https://angularfirebase.com/lessons/firestore-cloud-functions-data-aggregation/) is done server side via Cloud Functions.
+Data aggregation is the process of analyzing a collection of data, and then saving the results on some other document. The simplest example would be saving a _count_ of the total documents in a collection. Normally, [Firestore aggregation](https://angularfirebase.com/lessons/firestore-cloud-functions-data-aggregation/) is done server-side via Cloud Functions.
 
 ### Composite Keys
 
-A composite key is simply the combination of two or more unique document ids, for example `userXYZ_postABC`. This is especially useful for modeling relationships in denormalized structures because it can enforce a unique relationship between the two documents.
+A composite key is simply the combination of two or more unique document ids, for example, `userXYZ_postABC`. This is especially useful for modeling relationships in denormalized structures because it can enforce a unique relationship between the two documents.
 
 ### Bucketing
 
@@ -63,7 +63,7 @@ februaryTweets/{userId}
 
 In many NoSQL databases, you must [shard](https://medium.com/@jeeyoungk/how-sharding-works-b4dec46b3f6) to scale. Sharding is just the process of breaking the database down into smaller chunks (horizontal partitioning) to increase performance.
 
-In Firestore, sharding is handled automatically. The the only [scenario](https://firebase.google.com/docs/firestore/solutions/counters) where you may need to control sharding is when you consistently have many write operations occurring at intervals of less than 1s. Imagine the compute requirements of updating the like count on a new tweet from Selena Gomez.
+In Firestore, sharding is handled automatically. The only [scenario](https://firebase.google.com/docs/firestore/solutions/counters) where you may need to control sharding is when you consistently have many write operations occurring at intervals of less than 1s. Imagine the compute requirements of updating the like count on a new tweet from Selena Gomez.
 
 ### Pipelining (Unique Firebase Feature)
 
@@ -71,7 +71,7 @@ Another cool feature in the Firebase SDK is the ability to make read requests in
 
 <p class="tip">Pipelining isn't a data structuring technique, but it drives our decision-making process.</p>
 
-Let's imagine you have an array of document ids. You can pipeline each request from a child component by looping over the ids, then performing a document read from the child component, i.e `afs.doc('items/' + id)`. Because the requests are non-blocking, there's no major performance hit for structuring your app this way.
+Let's imagine you have an array of document ids. You can pipeline each request from a child component by looping over the ids, then performing a document read from the child component, i.e. `afs.doc('items/' + id)`. Because the requests are non-blocking, there's no major performance hit for structuring your app this way.
 
 ```html
 <parent-comp>
@@ -84,7 +84,7 @@ Let's imagine you have an array of document ids. You can pipeline each request f
 
 ## Group Collection Query
 
-A group collection query occurs when you want to query a common subcollection across its parent owners. For example, you might to get blog posts for all users who wrote a post categorized as _Angular_.
+A group collection query occurs when you want to query a common subcollection across its parent owners. For example, you might get blog posts for all users who wrote a post categorized as _Angular_.
 
 It is not possible to make this query via the subcollection. The easy solution is to denormalize posts to a root collection, but if that's not possible here's plan B...
 
@@ -151,7 +151,7 @@ carts/{userID}
 
 **Products (root collection):** Product data and current inventory.
 
-**Carts (root collection):** A one-to-one relationship is created by setting the `userID === cartID` for documents in either collection. When an order placed, the cart data can be cleared out because there is no need for a user to have multiple carts.
+**Carts (root collection):** A one-to-one relationship is created by setting the `userID === cartID` for documents in either collection. When an order is placed, the cart data can be cleared out because there is no need for a user to have multiple carts.
 
 **Orders (user subcollection):** When an order is created and confirmed, you can run a cloud function to decrement the product availability.
 
@@ -176,7 +176,7 @@ relationships/{followerID_followedID}
 
 **Users (root collection):** Basic user data with aggregated follow counts.
 
-**Relationships (root collection):** This works similar to a intermediate table in SQL, with a composite key to enforce uniqueness for each user to user relationship.
+**Relationships (root collection):** This works similarly to an intermediate table in SQL, with a composite key to enforce uniqueness for each user-to-user relationship.
 
 ### Sample Queries
 
@@ -209,7 +209,7 @@ This implementation is designed to take advantage of _pipelining_ in Firebase - 
 
 {{< figure src="img/firestore-threaded-comments.gif" caption="Threaded comments hierarchy structure in Firestore" >}}
 
-In the future, Firestore may [support a queries based on an array of doc IDs](https://stackoverflow.com/a/46850943/3808414)
+In the future, Firestore may [support queries based on an array of doc IDs](https://stackoverflow.com/a/46850943/3808414)
 
 ### Data Model
 
@@ -231,7 +231,7 @@ First start by querying the root comments with `comments.where('parent', '==', n
   </app-comment>
 ```
 
-This allows us to build a recursive component (a component that calls itself) to render out a tree. In other words, while the comment document has children, it will continue rendering new branches of the threaded comment tree. It would also be easy to lazy load each branch by adding "view replies" button before loading the children.
+This allows us to build a recursive component (a component that calls itself) to render out a tree. In other words, while the comment document has children, it will continue rendering new branches of the threaded comment tree. It would also be easy to lazy load each branch by adding a "view replies" button before loading the children.
 
 ```typescript
 @Component({
@@ -265,7 +265,7 @@ export class CommentComponent implements OnInit {
 
 ## Tags or HashTags
 
-Going back to the Twitter theme, let's now try to model hashtags in Firestore. Hashtags must be a single continuous string and should be case insensitive. This means we can use the tag itself as the document ID. For example, a hashtag of `#AngularFire` would have a doc ID of `angularfire`.
+Going back to the Twitter theme, let's now try to model hashtags in Firestore. Hashtags must be a single continuous string and should be case-insensitive. This means we can use the tag itself as the document ID. For example, a hashtag of `#AngularFire` would have a doc ID of `angularfire`.
 
 Whenever a new tweet is created, you can use a cloud function to aggregate the `postCount` property on the tag document.
 
