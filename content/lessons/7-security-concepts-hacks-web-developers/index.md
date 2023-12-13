@@ -13,7 +13,7 @@ tags:
 youtube: 4YOpILi9Oxs
 ---
 
-Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100%, secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
+Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100%, secure, and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
 
 ## 1. Zero-day Vulnerability
 
@@ -83,7 +83,7 @@ You can prevent credential leaks by NOT putting them in your source code. Instea
 
 In the event that your credentials are compromised, you can mitigate the damage by following the Principle of Least Privilege. Basically, this means **grant access only when it is absolutely required**. 
 
-A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allow you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, then selectively allow access as needed. 
+A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allows you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, and then selectively allow access as needed. 
 
 ## 7. DDoS Attacks
 
