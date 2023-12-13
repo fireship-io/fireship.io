@@ -61,7 +61,7 @@ Inspiration - Build an image-to-text tool as a PWA.
 
 Facial detection, not to be confused with facial recognition, is used to extract data from the people(faces) present in an image. 
 
-The response includes the exact position of every facial feature (eyebrows, nose, etc), which makes it especially useful for positioning an overlay image. Imagine you are an apparel company and you want users to upload an image, then try on different hats or glasses. The Vision API would allow you to position the overlay precisely without much effort. 
+The response includes the exact position of every facial feature (eyebrows, nose, etc), which makes it especially useful for positioning an overlay image. Imagine you are an apparel company and you want users to upload an image, and then try on different hats or glasses. The Vision API would allow you to position the overlay precisely without much effort. 
 
 Inspiration - Build an app that measures the overall mood of your family photos. 
 
