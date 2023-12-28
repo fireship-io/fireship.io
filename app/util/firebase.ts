@@ -9,9 +9,7 @@ const config = {
   measurementId: "G-VTJV5CVC6K"
 };
 
-import { toast } from '../stores/toast';
-import { modal } from '../stores/modal';
-import { rootURL } from '../stores/data';
+import { toast, modal, rootURL } from '../stores';
 import { initializeApp } from 'firebase/app';
 import {
   getAuth,

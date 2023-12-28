@@ -1,7 +1,7 @@
 <svelte:options tag="modal-dialog" />
 
 <script lang="ts">
-  import { modal } from '../../stores/modal';
+  import { modal } from '../../stores';
   export let name = 'default';
   export let esc = false;
 

@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import { callUserAPI } from '../../util/firebase';
-  import { currentCourse } from '../../stores/pro';
+  import { currentCourse } from '../../stores';
   let loading = false;
   let url: string;
 

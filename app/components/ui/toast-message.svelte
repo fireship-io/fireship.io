@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { toast } from '../../stores/toast';
+  import { toast } from '../../stores';
   let activate = false;
   let currentToast: any;
   let timeout: NodeJS.Timeout;
