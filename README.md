@@ -1,6 +1,6 @@
 ## Fireship
 
-The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
+The [Fireship PRO](https://fireship.io) course platform frontend is built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
 
 ## Contributing
 
