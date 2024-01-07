@@ -17,4 +17,6 @@ Create a new Next.js app that enables the app directory and uses TypeScript.
 {{< file "terminal" "command line" >}}
 ```bash
 npx create-next-app myspace
+cd myspace
+npm install --save-exact next@13.3.1
 ```
