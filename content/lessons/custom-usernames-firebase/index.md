@@ -163,7 +163,7 @@ service cloud.firestore {
       function isValidUser(userId) {
         let isOwner = request.auth.uid == userId;
       	let username = request.resource.data.username;
-        let createdValidUsername = existsAfter(/databases/$(database)/documents/usernames/$(username));
+        let createdValidUsername = getAfter(/databases/$(database)/documents/usernames/$(username)).data.uid == userId;
         
         return isOwner && createdValidUsername;
       }
