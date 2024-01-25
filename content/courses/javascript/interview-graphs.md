@@ -16,7 +16,7 @@ youtube: cWNEl4HE2OE
 
 A graph can be represented as an adjacency matrix or adjacency list. In most cases, it is more efficient to use the latter because it requires less memory and offers better time-complexity when performing search algorithms. 
 
-Imagine we have a dataset that contains airports and routes. We can represent the graph as a `Map` where each key (node) is an airport and the value (edges) is an array airports that it can connect to. 
+Imagine we have a dataset that contains airports and routes. We can represent the graph as a `Map` where each key (node) is an airport and the value (edges) is an array of airports that it can connect to. 
 
 {{< file "js" "graph.js" >}}
 ```javascript
@@ -60,7 +60,7 @@ Now that we have our graph represented in JavaScript, let's try to determine if 
 
 ## Breadth-first Search (BFS)
 
-Breadth-first Search (BFS) starts by pushing all of the direct children to a queue (first-in, first-out). It then visits each item in queue and adds the next layer of children to the back of the queue. This example uses a `Set` to keep track of nodes that have already been visited. 
+Breadth-first Search (BFS) starts by pushing all of the direct children to a queue (first-in, first-out). It then visits each item in the queue and adds the next layer of children to the back of the queue. This example uses a `Set` to keep track of nodes that have already been visited. 
 
 ```javascript
 
