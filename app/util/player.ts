@@ -10,12 +10,16 @@ export class UniversalPlayer {
     private async setupPlayer() {
         if (this.type === 'youtube') {
             const YouTubePlayer = (await import('youtube-player')).default;
+            const decoded = atob(this.video as string);
             this.ytPlayer = YouTubePlayer(this.el);
-            this.ytPlayer.cueVideoById(this.video as string);
+            this.ytPlayer.cueVideoById(decoded);
         } else {
             const VimeoPlayer = (await import('@vimeo/player')).default;
-            this.vimeoPlayer = new VimeoPlayer(this.el, { id: this.video as number });
+            const decoded = parseInt(atob(this.video as string));
+            const buildId = parseInt(document.head.dataset.build);
+            this.vimeoPlayer = new VimeoPlayer(this.el, { id: decoded - buildId });
         }
+
     }
 
     // Static constructor to await dynamic imports

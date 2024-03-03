@@ -32,8 +32,9 @@ function syncToHugo() {
       const assets = await readdir(svelteBuild);
       const js = assets.filter(name => name.match(/(index.)(?!.*?esm)(?!.*?css).*\w+/))[0];
       const css = assets.filter(name => name.includes('.css'))[0];
+      const token = Math.floor(Math.random() * 69420);
       await Promise.all([
-        writeFile(`./data/svelte.json`, JSON.stringify({ js, css })),
+        writeFile(`./data/svelte.json`, JSON.stringify({ js, css, token })),
         rm('./static/svelte/index.html')
       ]);
       console.log(`wrote ${js} to hugo data`);

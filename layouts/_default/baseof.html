@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="dark">
-  <head>
+  <head data-build="{{ .Site.Data.svelte.token }}">
     <meta charset="utf-8">
     <title>{{ .Page.Title }}</title>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
@@ -25,10 +25,13 @@
 
   </head>
   <body>
+    {{ $vimeoEncode := cond (.Params.vimeo | not | not) (add (int .Params.vimeo) .Site.Data.svelte.token | base64Encode) "" }}
+    {{ $ytEncode := .Params.youtube | base64Encode }}
+
     <global-data 
     permalink="{{ .Permalink }}" 
-    vimeo="{{ .Params.vimeo }}"
-    youtube="{{ .Params.youtube }}"
+    vimeo="{{ $vimeoEncode }}"
+    youtube="{{ $ytEncode }}"
     free="{{ .Params.free }}"
     next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 
     prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
