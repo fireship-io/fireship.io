@@ -1,7 +1,7 @@
 <svelte:options tag="if-pro" />
 
 <script lang="ts">
-  import { userData } from '../../stores/user';
+  import { userData } from '../../stores';
 </script>
 
 {#if $userData?.is_pro}

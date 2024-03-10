@@ -1,7 +1,7 @@
 <svelte:options tag="autoplay-toggle" />
 
 <script lang="ts">
-  import { autoplay } from '../../stores/autoplay';
+  import { autoplay } from '../../stores';
   function toggle(e: any) {
 	autoplay.set(e.target.checked)
   }

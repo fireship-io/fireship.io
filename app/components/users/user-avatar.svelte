@@ -1,7 +1,7 @@
 <svelte:options tag="user-avatar" />
 
 <script lang="ts">
-  import { userData, userProgress } from '../../stores/user';
+  import { userData, userProgress } from '../../stores';
 </script>
 
 <div class="wrap">

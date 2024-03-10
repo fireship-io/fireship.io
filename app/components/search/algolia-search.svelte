@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import algolia from 'algoliasearch/lite';
-  import { modal } from '../../stores/modal';
+  import { modal } from '../../stores';
   import { router } from '../../main';
   import { onMount } from 'svelte';
 
