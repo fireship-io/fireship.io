@@ -32,8 +32,7 @@ In this lesson, you will learn how to onboard new users by creating a frictionle
 
 ## Step 1 - Initial Setup
 
-This feature is brand new to the Firebase SDK at the time of this post, so make sure your SDK is up to date. 
-
+As usual make sure that your SDK is up to date to avoid unnecessary problems.
 ```shell
 npm install firebase@latest --save
 ```
@@ -64,7 +63,7 @@ const routes: Routes = [
 
 ## Step 2 - Send the Email
 
-Now we need to collect the user's email and send them a login link. After clicking the login link, they will be redirected by to the specified URL, at which point we need to sign them in. 
+Now we need to collect the user's email and send them a login link. After clicking the login link, they will be redirected to the specified URL, at which point we need to sign them in. 
 
 In this example, a single component is used to handle the entire process, but you could break this into separate parts.
 
