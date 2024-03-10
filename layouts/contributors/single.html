@@ -7,7 +7,8 @@
       <h1 class="gradient-text">{{ .Title }}</h1>
       {{ $authorImg := (print "/contributors/img/"  (.RelPermalink | path.Base) ".webp") }}
       
-      <img src="{{ $authorImg }}" alt="author image" class="mx-auto rounded-full max-w-xs">
+<!--       <img src="{{ $authorImg }}" alt="author image" class="mx-auto rounded-full max-w-xs"> -->
+      <img src="{{ $authorImg }}" alt="author image" class="mx-auto rounded-full w-[20rem] h-[20rem] object-cover">
 
     {{ range $name, $link := .Params.links }}
       {{ if $link }}
