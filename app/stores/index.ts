@@ -1,5 +1,6 @@
 export * from './autoplay'
 export * from './data'
+export * from './free-content'
 export * from './loading'
 export * from './modal'
 export * from './pro'
