@@ -16,8 +16,8 @@ export class UniversalPlayer {
         } else {
             const VimeoPlayer = (await import('@vimeo/player')).default;
             const decoded = parseInt(atob(this.video as string));
-            const buildId = parseInt(document.head.dataset.build);
-            this.vimeoPlayer = new VimeoPlayer(this.el, { id: decoded - buildId });
+            // const buildId = parseInt(document.head.dataset.build);
+            this.vimeoPlayer = new VimeoPlayer(this.el, { id: decoded });
         }
 
     }

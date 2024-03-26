@@ -25,7 +25,7 @@
 
   </head>
   <body>
-    {{ $vimeoEncode := cond (.Params.vimeo | not | not) (add (int .Params.vimeo) .Site.Data.svelte.token | base64Encode) "" }}
+    {{ $vimeoEncode := .Params.vimeo | base64Encode }}
     {{ $ytEncode := .Params.youtube | base64Encode }}
 
     <global-data 
