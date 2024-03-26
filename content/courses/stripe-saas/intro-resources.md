@@ -4,9 +4,9 @@ description: Stripe Course Resources
 weight: 2
 lastmod: 2024-03-22T10:23:30-09:00
 draft: false
-vimeo: 927619910
+vimeo: 927619950
 emoji: 💾
-video_length: 3:21
+video_length: 1:45
 ---
 
 
