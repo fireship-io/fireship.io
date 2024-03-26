@@ -1,4 +1,9 @@
 export const products = {
+    'stripe-saas': {
+        id: 'stripe-saas',
+        price: 'price_1OyecaBF7AptWZlc4nRFI3Ei',
+        amount: 20,
+    },
     'sveltekit': {
         id: 'sveltekit',
         price: 'price_1NNq9RBF7AptWZlcrbO92SfW',
