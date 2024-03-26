@@ -10,6 +10,7 @@ tags:
     - react
 
 vimeo: 416381401
+deprecated: true
 author: Jeff Delaney
 ---
 
@@ -17,7 +18,7 @@ author: Jeff Delaney
 {{< figure src="/courses/stripe-js/img/review-scssat.png" alt="I’ve just finished your Stripe course. I want to give you the following feedback" >}}
 
 <div class="box box-red">
-    This course has been deprecated. A completely new Stripe course will replace this content in the near future (Spring 2023).
+    This course has been deprecated. Enroll in the <a href="/courses/stripe-saas">Stripe for SaaS course</a> for the latest and greatest content.
 </div>
 
 The **Stripe Payments JavaScript Course** is a project-based guide to building fullstack payment solutions on the web with Node.js and React. 
