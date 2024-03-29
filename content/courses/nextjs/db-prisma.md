@@ -27,7 +27,6 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // Only needed when using a cloud provider that doesn't support the creation of new databases, like Neon. Learn more: https://pris.ly/d/migrate-shadow
 }
 
 // NextAuth Schema
@@ -79,5 +78,4 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
-
 ```

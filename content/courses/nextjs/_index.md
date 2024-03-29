@@ -1,7 +1,7 @@
 ---
-lastmod: 2023-04-26T11:11:30-09:00
+lastmod: 2024-03-27T11:11:30-09:00
 title: Next.js Full Course
-description: Master the fundamentals of Next.js 13 and the App Router
+description: Master the fundamentals of Next.js 14 and the App Router
 weight: 0
 type: courses
 vimeo: 823089634
@@ -18,7 +18,7 @@ stack:
     - prisma
 ---
 
-**Next.js - The Full Course** provides a in-depth look into the [Next.js App Router](https://nextjs.org/blog/next-13-2) introduced in version 13.2. It puts React Server Components into practice by building a full-stack application from scratch with PostgreSQL and Prisma. 
+**Next.js - The Full Course** provides a in-depth look into the [Next.js App Router](https://nextjs.org/blog/next-13-2) first introduced in version 13.2. It puts React Server Components into practice by building a full-stack application from scratch with PostgreSQL and Prisma. 
 
 ## What will I learn?
 
@@ -46,7 +46,7 @@ This course is intermediate level 🟦 and expects some familiarity with React.j
 
 ## When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated June 22nd, 2023</span> <span class="tag tag-sm tag-next">next v13.4</span>
+<span class="tag tag-sm tag-pro">Updated March 28th, 2024</span> <span class="tag tag-sm tag-next">next v14.1</span>
 
 ## How do I enroll?
 

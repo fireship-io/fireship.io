@@ -6,7 +6,7 @@ lastmod: 2024-03-22T10:23:30-09:00
 draft: false
 vimeo: 927648994
 emoji: ⏱️
-video_length: 4:53
+video_length: 5:06
 ---
 
 ### Code
@@ -91,6 +91,7 @@ export default async function DownloadButton({ image }) {
 import { NextResponse } from 'next/server';
 import { stripe } from '@/utils/stripe';
 import { supabaseAdmin } from '@/utils/supabaseServer';
+import { randomBytes } from 'crypto';
 
 export async function POST(request: Request) {
     try {
@@ -120,7 +121,6 @@ export async function POST(request: Request) {
 
         // Create a new record in the downloads table
         const { image } = await request.json();
-
         await supabaseAdmin
             .from('downloads')
             .insert({ user_id: user.id, image });
@@ -138,6 +138,9 @@ export async function POST(request: Request) {
                 quantity: 1,
                 timestamp: 'now',
                 action: "increment"
+            },
+            {
+                idempotencyKey: randomBytes(16).toString('hex')
             }
         );
 

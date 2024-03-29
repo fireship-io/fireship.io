@@ -15,8 +15,5 @@ Create a free PostgresSQL database at [Neon](https://neon.tech) or directly from
 
 {{< file "cog" ".env" >}}
 ```bash
-# Example
-# postgres://USERNAME:PASSWORD@ep-foo-bar.us-east-2.aws.neon.tech/main
 DATABASE_URL=postgres://...
-SHADOW_DATABASE_URL=postgres://...
 ```
