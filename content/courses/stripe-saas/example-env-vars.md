@@ -1,6 +1,6 @@
 ---
 title: Environment Variables 
-description: Add the Stripe SDK to Environemt Variables
+description: Add the Stripe SDK to Environment Variables
 weight: 11
 lastmod: 2024-03-22T10:23:30-09:00
 draft: false
