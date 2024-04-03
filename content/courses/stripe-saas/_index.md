@@ -1,5 +1,5 @@
 ---
-lastmod: 2024-03-24T11:11:30-09:00
+lastmod: 2024-04-01T11:11:30-09:00
 title: Stripe for SaaS
 description: Accept Payments in your Software-as-a-Service Product with Stripe
 weight: 0
@@ -47,7 +47,7 @@ This course is intermediate level 🟦 and expects some familiarity with JavaScr
 
 ## When was the course last updated?
 
-<span class="tag tag-sm tag-pro">Updated March 26th, 2024</span> <span class="tag tag-sm tag-svelte">Next.js 14</span> <span class="tag tag-sm tag-firebase">Supabase.js 2+</span>
+<span class="tag tag-sm tag-pro">Updated April 3rd, 2024</span> <span class="tag tag-sm tag-svelte">Next.js 14</span> <span class="tag tag-sm tag-firebase">Supabase.js 2+</span>
 
 ## How do I enroll?
 
