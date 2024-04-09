@@ -1,4 +1,4 @@
-## Fireship
+# Fireship
 
 The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
 
@@ -8,10 +8,75 @@ All static content is managed with Hugo in the `content` dir. You can easily fix
 
 ### How to Run it
 
-First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ver `0.101.0` or greater. 
+#### 1) Fork the repo
 
+#### 2) Clone your repo
+
+```console
+git clone https://github.com/<Username>/fireship.io
 ```
-git clone <this-repo>
+
+#### 3) Install Hugo Extended (ver `0.101.0` or greater)
+
+You can either build it from [source](https://gohugo.io/installation/windows/#build-from-source), or install it from a package manager
+
+#### **Mac**
+
+There are two sources where you can install [Hugo Extended](https://gohugo.io/getting-started/installing/), `Homebrew` and `MacPorts`
+
+#### Homebrew:
+
+```console
+brew install hugo
+```
+
+#### MacPorts
+
+```console
+sudo port install hugo
+```
+
+#### **Linux**
+
+The options on Linux to install [Hugo Extended](https://gohugo.io/getting-started/installing/) are `Snap` and `Homebrew`
+
+#### Snap
+
+```console
+sudo snap install hugo
+```
+
+#### Homebrew
+
+```console
+brew install hugo
+```
+
+#### **Windows**
+
+You can install [Hugo Extended](https://gohugo.io/getting-started/installing/) on windows from `Chocoloaty`, `Scoop`, or `Winget`
+
+#### Chocolaty
+
+```console
+choco install hugo-extended
+```
+
+#### Scoop
+
+```console
+scoop install hugo-extended
+```
+
+#### Winget
+
+```console
+winget install Hugo.Hugo.Extended
+```
+
+#### 4) Install the npm packages and run it!
+
+```console
 npm install
 npm start
 ```
