@@ -28,7 +28,7 @@ Modern applications that accept complex user inputs often provide an automatic s
 
 The following lesson builds a reactive Vue form that automatically syncs the user's input to a backend database -  [Firestore](/tags/firestore). It keeps track of the state of the form, and when modified, waits for a short debounce before writing the changes to the backend database. From a UX perspective, this feature allows a user to save their progress and access it later from any device.  Also, see the [Angular Auto-saving Forms Demo](/lessons/auto-save-reactive-forms-with-firestore/) demo. 
 
-{{< tweet 1247955207448924161 >}}
+{{< tweet user="fireship_dev" id="1247955207448924161" >}}
 
 ## Initial Setup
 
