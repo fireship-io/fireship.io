@@ -22,7 +22,7 @@ Optional chaining `?` is a relatively new operator that was introduced in ES2020
 const person = { };
 
 const dude = person.name;
-console.log(foo); // Uncaught TypeError: Cannot read property 'bar' of undefined
+console.log(foo); // Uncaught TypeError: Cannot read property 'foo' of undefined
 
-const dude = person?.name; // undefined
+dude = person?.name; // undefined
 ```
