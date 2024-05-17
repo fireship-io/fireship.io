@@ -154,7 +154,7 @@ _addMarker() {
 }
 ```
 
-Now we have a map with a little bit of interactivity. Move the camera around, then click the buttom in the bottom right and it will place an marker on the map. 
+Now we have a map with a little bit of interactivity. Move the camera around, then click the button in the bottom right and it will place an marker on the map. 
 
 {{< figure src="img/flutter-marker-googlemap.png" alt="Flutter google map with basic markers" >}}
 
