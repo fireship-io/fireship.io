@@ -222,7 +222,7 @@ For more complex string matching you can use regex.
 Logical tests allow you to make numeric comparisons and work just like operators they describe, i.e. `>`, `>=`, and so on. 
 
 ```typescript
-  it('should have a serverity level greater than 2', () => {
+  it('should have a severity level greater than 2', () => {
     expect(component.severity).toBeGreaterThan(2);
   });
 
