@@ -202,7 +202,7 @@ class FireMapState extends State<FireMap> {
 ```
 
 
-Next, add a method that writes to the database. This correct data strucutre with a geohash is created for you automatically when you pass the `point.data` with the Firestore document data. 
+Next, add a method that writes to the database. This correct data structure with a geohash is created for you automatically when you pass the `point.data` with the Firestore document data. 
 
 ```dart
 Future<DocumentReference> _addGeoPoint() async {
