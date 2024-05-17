@@ -26,7 +26,7 @@ Over the last few months, you've likely heard there term [Web3](https://youtu.be
 
 The following tutorial demonstrates the entire process of building a smart contact, then interacting with it on the web using Ethers.js and React. The app can mint non-fungible tokens (NFTs) when a user transfers Ether from a wallet like MetaMask. There are many different technologies involved, but the core idea is to access the API of a smart contract from a frontend web app.
 
-## Intitial Setup
+## Initial Setup
 
 ### Generate Art
 
