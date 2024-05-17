@@ -41,7 +41,7 @@ Decorators are very good at creating abstractions - almost too good. While it is
 
 A class decorator makes it possible to intercept the `constructor` of class. They are called when the class is declared, not when a new instance is instantiated. 
 
-Side note - one of the most powerful characteristics of a decoractor is its ability to *reflect metadata*, but the casual user will rarely need this feature. It is more suitable for use in frameworks, like the Angular Compiler for example, that need to to analyze the codebase to build the final app bundle. 
+Side note - one of the most powerful characteristics of a decorator is its ability to *reflect metadata*, but the casual user will rarely need this feature. It is more suitable for use in frameworks, like the Angular Compiler for example, that need to to analyze the codebase to build the final app bundle. 
 
 ### Example
 
@@ -111,11 +111,11 @@ function Emoji() {
 
 ## Method Decorator
 
-Method decoractors allow us override a method's function, change its control flow, and execute additional code before/after it runs. 
+Method decorators allow us override a method's function, change its control flow, and execute additional code before/after it runs. 
 
 ### Example
 
-The following decoractor will show a confirm message in the browser before executing the method. If the user clicks cancel, it will be bypassed. Notice how we have two decoractors stacked below - they will be applied from top to bottom. 
+The following decorator will show a confirm message in the browser before executing the method. If the user clicks cancel, it will be bypassed. Notice how we have two decorators stacked below - they will be applied from top to bottom. 
 
 
 {{< file "ngts" "ice-cream.component.ts" >}}
@@ -204,7 +204,7 @@ export class HookComponent {
 }
 ```
 
-And the decoractor implementation is just five lines of code. We just set an initial value, then find the corresponding
+And the decorator implementation is just five lines of code. We just set an initial value, then find the corresponding
 
 ```typescript
 function UseState(seed: any) {
