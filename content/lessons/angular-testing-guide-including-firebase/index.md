@@ -88,7 +88,7 @@ Angular will re-run your test suite whenever a file changes so you can immediate
 
 ### What is a Test Bed?
 
-First, we need to learn about concept of a *Test Bed*. If you're unfamilar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
+First, we need to learn about concept of a *Test Bed*. If you're unfamiliar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
 
 A Test Bed creates an Angular testing module, which is just a class an NgModule class. For example, notice how you have the `declarations: [ AlertButtonComponent ]` meta data just like any NgModule. This makes it possible to test your components in isolation. 
 

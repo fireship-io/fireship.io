@@ -69,7 +69,7 @@ class FroYo extends IceCream {} // error, cannot be extended
 All of the examples in this guide use *Decorator Factories*. This just means the decorator itself is wrapped in a function so we can pass custom arguments to it, i.e `@Cool('stuff')` Feel free to omit the outer function if you want to apply a decorator without arguments `@Cool` . 
 
 
-Property decorators can be extremely useful because they can listen to state changes on a class. To fully understand the next example, it helps to be familar with JavaScript [PropertyDescriptors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). 
+Property decorators can be extremely useful because they can listen to state changes on a class. To fully understand the next example, it helps to be familiar with JavaScript [PropertyDescriptors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). 
 
 ### Example
 
