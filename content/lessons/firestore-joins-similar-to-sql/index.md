@@ -124,7 +124,7 @@ export const docJoin = (
           return combineLatest(docs$);
         }),
         map(arr => {
-          // We now have all the associated douments
+          // We now have all the associated documents
           // Reduce them to a single object based on the parent's keys
           const joins = keys.reduce((acc, cur, idx) => {
             return { ...acc, [cur]: arr[idx] };
