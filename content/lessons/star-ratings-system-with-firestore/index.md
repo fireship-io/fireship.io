@@ -140,7 +140,7 @@ export class StarService {
     return starsRef.valueChanges();
   }
 
-  // Get all stars that belog to a Movie
+  // Get all stars that belong to a Movie
   getMovieStars(movieId) {
     const starsRef = this.afs.collection('stars', ref => ref.where('movieId', '==', movieId) );
     return starsRef.valueChanges();
