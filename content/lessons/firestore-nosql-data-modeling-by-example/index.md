@@ -47,7 +47,7 @@ Now let's look at the [three fundamental ways](https://firebase.google.com/docs/
 A root collection keeps all documents of a certain type at the root, providing maximum query flexibility. If you're unsure of the optimal data model, a root collection your safest bet. 
 
 
-{{< figure src="root-col-firestire-08.png" caption="Root Collection" >}}
+{{< figure src="root-col-firestore-08.png" caption="Root Collection" >}}
 
 You can model relational data with a root collection by making a reference to a sibling document. For example, every `tweet` document can be assigned a `userId` property that points to the user who posted it. 
 
