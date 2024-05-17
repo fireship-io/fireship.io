@@ -122,7 +122,7 @@ That should authenticate the user into your app and create the user in Firebase 
 
 ## 3. Cloud Firestore Database
 
-The foundation of a Firebase app is the database. You can read a document in the database by (1) making a reference to it and (2) calling `onSnaphot()`. This will not only read it, but also subscribe to realtime updates - an amazingly powerful feature if your app provides realtime feedback to users. 
+The foundation of a Firebase app is the database. You can read a document in the database by (1) making a reference to it and (2) calling `onSnapshot()`. This will not only read it, but also subscribe to realtime updates - an amazingly powerful feature if your app provides realtime feedback to users. 
 
 
 {{< figure src="img/basics-firestore.png" caption="Firestore collection of products" >}}
