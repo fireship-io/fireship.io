@@ -61,7 +61,7 @@ jobs:
 
 ### Step 4. Customize workflow trigger
 
-Currently, the workflow will be triggered on **push** into any branch. Lets change the trigger rule to only trigger the worklflow on **push** into `master` or `release/*`:
+Currently, the workflow will be triggered on **push** into any branch. Lets change the trigger rule to only trigger the workflow on **push** into `master` or `release/*`:
 
 ```typescript
 on:
