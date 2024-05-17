@@ -391,7 +391,7 @@ clicks.switchMap(click => {
 
 ## 12. TakeUntil - Get values until you're told not to
 
-As I mentioned in section 3, you need to unsubscribe for data responsibily. A clever way to handle subscriptions is with `takeUntil()`, which will complete the Observable when a second *notifier* Observable emits a value. 
+As I mentioned in section 3, you need to unsubscribe for data responsibly. A clever way to handle subscriptions is with `takeUntil()`, which will complete the Observable when a second *notifier* Observable emits a value. 
 
 
 ```js
