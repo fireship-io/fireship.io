@@ -16,7 +16,7 @@ quiz: true
 
 Playwright docs: https://playwright.dev/docs/intro
 
-To initialize playwrigh in your repo:
+To initialize playwright in your repo:
 
 ```bash
 yarn create playwright
