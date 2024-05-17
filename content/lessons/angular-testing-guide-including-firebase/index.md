@@ -242,7 +242,7 @@ The `toggleMessage` method on the component changes the value of a boolean varia
 
 ### 6. Does a DOM element get rendered correctly?
 
-The `DebugElement` makes it possible to query DOM elements in the component tempate to ensure they are rendered properly. 
+The `DebugElement` makes it possible to query DOM elements in the component template to ensure they are rendered properly. 
 
 
 ```typescript
