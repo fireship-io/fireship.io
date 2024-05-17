@@ -60,7 +60,7 @@ class DragScreenState extends State<DragScreen> {
 
 ## How to Drag Widgets
 
-### Draggble
+### Draggable
 There are three different visual states to consider when building a draggable widget. 
 
 1. *child* - This is the child that is initially present. 
