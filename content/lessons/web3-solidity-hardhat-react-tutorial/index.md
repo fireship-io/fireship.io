@@ -151,7 +151,7 @@ contract FiredGuys is ERC721, ERC721URIStorage, Ownable {
 
 Let's add an additional method to the contract that handles the minting of a new token. It is a `payable` method, which means Ether (or other tokens like MATIC) can be sent from the end-user to the contract. 
 
-The method uses `require` to validate that (1) the URI is not already taken, and (2) the minimum amount of Ether has been sent. When the user calls this method, their wallet will prompt them for permission to transfer funds and execute the transation. In return, they will be given a new token linked to the metadata URI on IPFS.
+The method uses `require` to validate that (1) the URI is not already taken, and (2) the minimum amount of Ether has been sent. When the user calls this method, their wallet will prompt them for permission to transfer funds and execute the transaction. In return, they will be given a new token linked to the metadata URI on IPFS.
 
 {{< file "solidity" "contracts/MyNFT.sol" >}}
 ```solidity
