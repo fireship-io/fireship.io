@@ -77,7 +77,7 @@ module.exports = {
 
 ### Base ERC-721 Contract
 
-Smart contracts have been standardized into a predictible API. When it comes to NFTs, the most common choice is [ERC-721]() and we can use a tool called [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) to generate the initial boilerplate code. 
+Smart contracts have been standardized into a predictable API. When it comes to NFTs, the most common choice is [ERC-721]() and we can use a tool called [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) to generate the initial boilerplate code. 
 
 {{< figure src="img/open-zeppelin-wizard.png" caption="Use the OpenZeppelin wizard to create a base contract" >}}
 
