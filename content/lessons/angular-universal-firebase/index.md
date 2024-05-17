@@ -131,7 +131,7 @@ export class AboutComponent implements OnInit {
 
 ### Compile the Server
 
-Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compiple the TypeScript code and run the Express server on *localhost:4000*.
+Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compile the TypeScript code and run the Express server on *localhost:4000*.
 
 {{< file "terminal" "command line" >}}
 ```text
