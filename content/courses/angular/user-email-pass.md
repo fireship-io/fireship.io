@@ -22,7 +22,7 @@ video_length: 11:32
 ng g component user/email-login
 ```
 
-Your user module should look similer to this:
+Your user module should look similar to this:
 
 {{< file "ngts" "user.module.ts" >}}
 ```typescript
