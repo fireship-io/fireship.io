@@ -52,11 +52,11 @@ function SubscribeToPlan(props) {
 
   // Get current subscriptions on mount
   useEffect(() => {
-    getSubscrptions();
+    getSubscriptions();
   }, [user]);
 
   // Fetch current subscriptions from the API
-  const getSubscrptions = async () => {
+  const getSubscriptions = async () => {
     if (user) {
       const subs = await fetchFromAPI('subscriptions', { method: 'GET' });
       setSubscriptions(subs);
@@ -68,7 +68,7 @@ function SubscribeToPlan(props) {
     setLoading(true);
     await fetchFromAPI('subscriptions/' + id, { method: 'PATCH' });
     alert('canceled!');
-    await getSubscrptions();
+    await getSubscriptions();
     setLoading(false);
   };
 
@@ -121,7 +121,7 @@ function SubscribeToPlan(props) {
 
       // success
       alert('You are subscribed!');
-      getSubscrptions();
+      getSubscriptions();
     }
 
     setLoading(false);
