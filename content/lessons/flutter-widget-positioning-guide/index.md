@@ -211,7 +211,7 @@ The CSS equivalent:
 
 ## Stacks vs Absolute/Fixed Positioning
 
-A Stack allows you to stack elements on top of each other, with the last element in the array taking the highest prority. You can use `Align`, `Positioned` or `Container` to position the children of a stack. 
+A Stack allows you to stack elements on top of each other, with the last element in the array taking the highest priority. You can use `Align`, `Positioned` or `Container` to position the children of a stack. 
 
 ### Align
 
