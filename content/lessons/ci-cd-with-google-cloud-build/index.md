@@ -22,7 +22,7 @@ versions:
    firebase-tools: 6.3
 ---
 
-Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunites for both large teams and independent entrepreneurs.
+Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunities for both large teams and independent entrepreneurs.
 
 In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply committing your code to GitHub:
 
