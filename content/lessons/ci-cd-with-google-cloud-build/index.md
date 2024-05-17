@@ -40,7 +40,7 @@ In the following lesson, you will learn how to use [Google Cloud Build](https://
 
 ## Step 1: Build an App
 
-You can follow along with this lesson using your existing Firebase project or by starting from scratch. The frontend code does not really matter - it just needs to be an NPM project that we can build and test. Below are some popular options to quikly create a frontend JS app from the command line. 
+You can follow along with this lesson using your existing Firebase project or by starting from scratch. The frontend code does not really matter - it just needs to be an NPM project that we can build and test. Below are some popular options to quickly create a frontend JS app from the command line. 
 
 
 {{< file "terminal" "command line" >}}
