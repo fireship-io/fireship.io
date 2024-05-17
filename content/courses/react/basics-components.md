@@ -39,7 +39,7 @@ function MyComponent(props) {
 <MyComponent name="Jeff" />
 
 
-// Or use desctruturing to pass props
+// Or use destructuring to pass props
 
 function MyComponent({ name }) {
   return <p>🔥 {name}</p>;
