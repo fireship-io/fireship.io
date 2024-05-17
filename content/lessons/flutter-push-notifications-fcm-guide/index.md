@@ -54,7 +54,7 @@ dependencies:
 
 ### Android
 
-Android does not require any specific configuration, unless you want to run code after a notification is clicked-on from the device tray (while the app was in the backgrond).
+Android does not require any specific configuration, unless you want to run code after a notification is clicked-on from the device tray (while the app was in the background).
 
 {{< file "file" "android/app/src/main/AndroidManifest.xml" >}}
 ```xml
