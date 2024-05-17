@@ -120,7 +120,7 @@ exports.secureEndpoint = functions.https.onRequest((req, res) => {
         let authToken = validateHeader(req) // current user encrypted
         
         if (!authToken) {
-            return res.status(403).send('Unuthorized! Missing auth token!')
+            return res.status(403).send('Unauthorized! Missing auth token!')
         }
             
         return decodeAuthToken(authToken)
