@@ -94,7 +94,7 @@ An attribute is a string value segments data on the Firebase console. A metric i
 
 ### Trace Login Time
 
-For example, **How long does it take the average user to get logged in?**. But we don't have to stop there - we can also add custom attributes to segmenent reports based on custom data attributes and trace specific errors that happen during the login process. 
+For example, **How long does it take the average user to get logged in?**. But we don't have to stop there - we can also add custom attributes to segment reports based on custom data attributes and trace specific errors that happen during the login process. 
 
 {{< file "ngts" "login.component.ts" >}}
 ```typescript
