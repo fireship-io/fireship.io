@@ -11,7 +11,7 @@ quiz: true
 free: true
 ---
 
-<quiz-modal options="garbage-collected:intrepreted:statically-typed:fun" answer="statically-typed" prize="19">
+<quiz-modal options="garbage-collected:interpreted:statically-typed:fun" answer="statically-typed" prize="19">
   <h6>Which term does NOT describe JavaScript?</h6>
 </quiz-modal>
 
