@@ -42,7 +42,7 @@ All of this magic is made possible via [Headless Chrome and Rendertron](https://
 
 **What are the drawbacks?** 
 
-- Requires a Rentertron instance to be deployed for production (Docker container). 
+- Requires a Rendertron instance to be deployed for production (Docker container). 
 - Performance hit on first page view (except the root URL).  
 - Potentially higher costs
 - That's all I could come up with...
