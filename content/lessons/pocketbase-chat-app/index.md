@@ -223,7 +223,7 @@ Head over the Linode and create a new server. Because they sponsored this video,
 
 ### Copy Pocketbase to Linode
 
-Copy the pocketbase executable to your server using [scp](https://www.ssh.com/ssh/scp/) or any other tool of your prefrence. 
+Copy the pocketbase executable to your server using [scp](https://www.ssh.com/ssh/scp/) or any other tool of your preference. 
 
 {{< file "terminal" "command line" >}}
 ```bash
