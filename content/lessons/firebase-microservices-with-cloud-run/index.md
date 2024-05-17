@@ -141,7 +141,7 @@ And that's basically it, you now have a server-rendered JavaScript app microserv
 
 ## Step 4: Connect it to Firebase Hosting
 
-As a final touch, let's integrate our microserice with Firebase hosting. 
+As a final touch, let's integrate our microservice with Firebase hosting. 
 
 ### Initialize Firebase Hosting
 
