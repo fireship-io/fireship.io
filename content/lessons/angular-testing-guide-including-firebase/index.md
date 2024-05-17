@@ -297,7 +297,7 @@ That's a good start, but there's a lot more to testing. To demonstrate some more
  
 ## How I Test Data Sources like AngularFire2
 
-Testing Firebase in Angular can be pretty tricky. The Firebase SDK performs a good deal of magic under the hood that is hard to reproduce as a mock backend. My typical strategy is to use simple stubs and spys that return observables for component unit tests. I also like to use protractor e2e testing as an additional sanity check that the UI works as intended. Let's start with the easiest approach - create a [stubbed](https://en.wikipedia.org/wiki/Test_stub) service. 
+Testing Firebase in Angular can be pretty tricky. The Firebase SDK performs a good deal of magic under the hood that is hard to reproduce as a mock backend. My typical strategy is to use simple stubs and spies that return observables for component unit tests. I also like to use protractor e2e testing as an additional sanity check that the UI works as intended. Let's start with the easiest approach - create a [stubbed](https://en.wikipedia.org/wiki/Test_stub) service. 
 
 
 ### Test an Async Service with a Stub
