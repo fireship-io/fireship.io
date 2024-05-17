@@ -36,7 +36,7 @@ class AuthService {
 
 ## Login Screen
 
-Create a login screen and resuable button to support multiple login methods. 
+Create a login screen and reusable button to support multiple login methods. 
 
 {{< file "flutter" "login.dart" >}}
 ```dart
