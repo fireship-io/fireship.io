@@ -173,7 +173,7 @@ Well-written tests can be read and understood by a non-programmer. Jasmine provi
 
 ### 1. Is something truthy or falsey? 
 
-Truthy means the item *will evalualte to true* on a conditional test, it does not have be a primitive *true*. 
+Truthy means the item *will evaluate to true* on a conditional test, it does not have be a primitive *true*. 
 
 `toBeTruthy()` is like saying `something == true`
 
