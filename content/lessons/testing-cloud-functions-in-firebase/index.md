@@ -46,7 +46,7 @@ touch test/offline.test.ts
 touch test/online.test.ts
 ```
 
-### Install Jest Typescript
+### Install Jest TypeScript
 
 Jest requires some setup, but by comparison to other test frameworks it is very minimal. Ideally, Jest is the only package you need to install to handle all Cloud Function testing. 
 

@@ -52,7 +52,7 @@ Make sure to declare the form in the login page for unauthenticated users.
 </div>
 ```
 
-### Step 2 - Typescript Logic
+### Step 2 - TypeScript Logic
 
 {{< file "ngts" "email-login.component.ts" >}}
 ```typescript
