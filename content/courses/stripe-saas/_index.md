@@ -35,7 +35,7 @@ stack:
 
 You will build a **Stock Photography Subscription SaaS Product** from scratch where users can sign up for a subscription to access a library of images. Every monetized action is tracked in Stripe and the user is billed based on usage at the end of the month.
 
-The full project demonstrates how to accept payments, manage recurring subscriptions, cancellations, metereing, and more. Watch the [App Tour](/courses/stripe-saas/project-tour/) video for a full breakdown of the project.
+The full project demonstrates how to accept payments, manage recurring subscriptions, cancellations, metering, and more. Watch the [App Tour](/courses/stripe-saas/project-tour/) video for a full breakdown of the project.
 
 
 ## 🤔 Is this Course Right for Me?
