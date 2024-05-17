@@ -312,7 +312,7 @@ exports.sendInvite = functions.firestore.document('invites/{phoneNumber}').onCre
   const from = 'YOUR_PLIVO_NUMBER';
   const to = doc.data().phoneNumber;
 
-  const text = 'You are one one of the cool kids now! 👋👋👋';
+  const text = 'You are one of the cool kids now! 👋👋👋';
 
   return client.messages.create(from, to, text);
 });
