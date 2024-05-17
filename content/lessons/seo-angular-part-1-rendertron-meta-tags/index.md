@@ -61,7 +61,7 @@ I am starting from a brand new Angular v5 app with the routing module. Using the
 ng new seoFriendlyApp --routing
 ```
 
-The next step is to create a few components and load them with the router. Each component will have it's own dynamically generated meta tags to be used by social media bots and search crawlers. 
+The next step is to create a few components and load them with the router. Each component will have its own dynamically generated meta tags to be used by social media bots and search crawlers. 
 
 ```shell
 ng g component home-page

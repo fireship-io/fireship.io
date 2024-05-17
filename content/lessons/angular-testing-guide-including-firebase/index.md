@@ -32,7 +32,7 @@ Testing is the [single-most effective tool](https://medium.com/javascript-scene/
 *Source: Effects of Test-Driven Development: A
 Comparative Analysis of Empirical Studies. Simo Mäkinen and Jürgen Münch. University of Helsinki.*
 
-Angular uses it's own testing utilities, combined with the popular JavaScript libraries [Jasmine](https://jasmine.github.io/2.4/introduction.html) and [Karma](https://karma-runner.github.io/1.0/index.html), to make it easy for developers to test their code.  When frontend JavaScript frameworks first hit the scene, a lack of test-ability was one of their harshest criticisms. Today, testing in Angular is as powerful as any other software development field.  
+Angular uses its own testing utilities, combined with the popular JavaScript libraries [Jasmine](https://jasmine.github.io/2.4/introduction.html) and [Karma](https://karma-runner.github.io/1.0/index.html), to make it easy for developers to test their code.  When frontend JavaScript frameworks first hit the scene, a lack of test-ability was one of their harshest criticisms. Today, testing in Angular is as powerful as any other software development field.  
 
 ## High Level Overview
 

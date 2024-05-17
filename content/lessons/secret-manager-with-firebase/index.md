@@ -45,7 +45,7 @@ This works great most of the time, but has a few drawbacks...
 - can't be shared with other services
 - can't be versioned
 
-Secret Manager solves all of these problems, BUT is also has some drawbacks of it's own: 
+Secret Manager solves all of these problems, BUT is also has some drawbacks of its own: 
 
 - more work to setup initially
 - secrets retrieved asynchronously, so my incur a performance penalty 

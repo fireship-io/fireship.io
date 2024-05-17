@@ -249,7 +249,7 @@ export interface Post {
 ```
 ### post.actions.ts
 
-Every action will be managed within it's own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
+Every action will be managed within its own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
 
 ```typescript
 import { Action } from '@ngrx/store';
