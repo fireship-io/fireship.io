@@ -18,7 +18,7 @@ The **Ionic4 Master Course** will teach you the fundamentals of full-stack cross
 
 ### 🗿 What will I build?
 
-This is a project-based course that starts from zero and works up to an **authenticated realtime todo list with push notifications**. While that may not sound super exciting, it provides an ideal foundation to showcase the UI features offered by Ionic and connent them to live cloud infrastructure. 
+This is a project-based course that starts from zero and works up to an **authenticated realtime todo list with push notifications**. While that may not sound super exciting, it provides an ideal foundation to showcase the UI features offered by Ionic and connect them to live cloud infrastructure. 
 
 
 ### 🐌 What will I Learn?
