@@ -84,7 +84,7 @@ The list below outlines the Firebase tips presented in the video.
 48. Sync browser tabs for offline persistence
 49. Use emojis in your code
 50. Wildcard string queries with `~`
-51. Create indicies by viewing the Firestore error logs
+51. Create indices by viewing the Firestore error logs
 52. Write to lists with array union & remove
 53. Query lists with array-contains
 54. Pipeline concurrent single doc read requests
