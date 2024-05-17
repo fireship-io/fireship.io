@@ -266,7 +266,7 @@ export const slackChannelJoin = functions.pubsub
 
 ### Listen to Slash Commands
 
-Events are great, but somethings you want to give users tools to manually kick off interactivity - that's where [slash commands](https://api.slack.com/interactivity/slash-commands) come in. They work very similar to events, but are triggered by the user entering `/some-command` into the workspace. 
+Events are great, but sometimes you want to give users tools to manually kick off interactivity - that's where [slash commands](https://api.slack.com/interactivity/slash-commands) come in. They work very similar to events, but are triggered by the user entering `/some-command` into the workspace. 
 
 {{< figure src="img/slack-app-slash.png" caption="Slash commands follow the same basic flow as events" >}}
 
