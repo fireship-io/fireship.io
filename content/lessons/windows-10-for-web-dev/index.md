@@ -97,7 +97,7 @@ code ~/.bashrc # vscode
 vim ~/.bashrc # vim
 ```
 
-Below you you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
+Below you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
 
 {{< file "cog" ".bashrc" >}}
 ```bash
