@@ -280,7 +280,7 @@ Similar operators: `mapTo`
 The `do` operator allows you to run code at any point in the Observable, without producing side effects on the emitted values. This is handy for debugging or for any situation where you want to run code outside of the Observable scope. 
 
 ```js
-const names = Rx.Observable.of('Simon', 'Garfunkle')
+const names = Rx.Observable.of('Simon', 'Garfunkel')
 
 names
   .do(name  => console.log('original value', name) )
@@ -289,8 +289,8 @@ names
   .subscribe()
   // Simon
   // SIMON
-  // Garfunkle
-  // GARFUNKLE
+  // Garfunkel
+  // GARFUNKEL
 ```
 
 ## 7. Filter - Use only the Good Stuff
