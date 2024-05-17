@@ -28,7 +28,7 @@ versions:
     "firebase": 5.7
 ---
 
-A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I genernally focus on user auth first because so many other features depend the user's auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user's profile and/or query all users.
+A solid user authentication system is the bedrock of most web applications. In fact, when starting a new project I generally focus on user auth first because so many other features depend the user's auth state. The following lesson will show you how to build an OAuth authentication feature using the Google sign-in method. In addition, we will save custom user data to the Firestore database, making it possible to customize a user's profile and/or query all users.
 
 The end result of this lesson is an Angular/Firebase app that supports the following features: 
 
