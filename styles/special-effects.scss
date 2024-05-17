@@ -42,7 +42,7 @@
 .gradient-slide {
     @apply bg-gradient-to-r from-orange-500 to-pink-500;
     background-size: 200% 200%;
-    animation: gradiant-move 2s ease-in-out infinite;
+    animation: gradient-move 2s ease-in-out infinite;
     background-clip: text;
     -webkit-background-clip:text;
     transition: color .2s ease-in-out;
