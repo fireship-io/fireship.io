@@ -178,7 +178,7 @@ ng g component map-box
 
 <p>Most of the action will be happening in the component. Here is a breakdown of what’s happening. </p>
 
-<p>`initalizeMap()`: Determines the user’s physical browser location if possible, then triggers the map building process.</p>
+<p>`initializeMap()`: Determines the user’s physical browser location if possible, then triggers the map building process.</p>
 
 <p>`buildMap()`: Configures a new map, registers event listeners, and configures the realtime data source. </p>
 

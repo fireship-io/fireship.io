@@ -152,7 +152,7 @@ Our first goal is to listen to events that happen in the Slack workspace. Slack 
 So then, how do we build an app that performs a long-running backend process? There are many right answers, but in Firebase, the best option is to enqueue a [PubSub Cloud Function](https://cloud.google.com/functions/docs/calling/pubsub). It allows the initial HTTP endpoint to simply hand off the message and respond quickly to Slack. 
 
 
-Import the dependencies and initlizize them with the environment credentials. 
+Import the dependencies and initialize them with the environment credentials. 
 
 {{< file "ts" "index.ts" >}}
 ```typescript
