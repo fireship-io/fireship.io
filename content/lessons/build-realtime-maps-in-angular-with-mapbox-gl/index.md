@@ -51,7 +51,7 @@ npm install mapbox-gl --save
 ```
 ### Add the API Token
 
-<p>Lastly, add your Mapox API token to the `environment.ts` file. </p>
+<p>Lastly, add your Mapbox API token to the `environment.ts` file. </p>
 
 ```typescript
 export const environment = {
