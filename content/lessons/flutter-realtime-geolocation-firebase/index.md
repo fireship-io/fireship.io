@@ -294,7 +294,7 @@ And now it's finally time to make the query to Firestore. The `_startQuery` meth
     double lng = pos.longitude;
 
 
-    // Make a referece to firestore
+    // Make a reference to firestore
     var ref = firestore.collection('locations');
     GeoFirePoint center = geo.point(latitude: lat, longitude: lng);
 
