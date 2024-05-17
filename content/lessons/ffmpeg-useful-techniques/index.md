@@ -60,7 +60,7 @@ Additional ideas for Gif optimization are discussed here by [Giphy Engineering](
 
 ### Add Subtitles to a Video 
 
-This example assumes you have an existing SRT or WebVTT file with capations and timestamps for your video. First, use FFmpeg to covert it to ASS format (Advanced SubStation Alpha). 
+This example assumes you have an existing SRT or WebVTT file with captions and timestamps for your video. First, use FFmpeg to covert it to ASS format (Advanced SubStation Alpha). 
 
 ```bash
 ffmpeg -i in.srt smart.ass
