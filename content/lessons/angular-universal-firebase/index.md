@@ -139,7 +139,7 @@ npm run build:ssr
 npm run serve:ssr
 ```
 
-At this point, you should see an error that looks like this because our server is throwing an error for missing `XHLHttpRequest`. See the next step to fix it.
+At this point, you should see an error that looks like this because our server is throwing an error for missing `XMLHttpRequest`. See the next step to fix it.
 
 {{< figure src="img/ssr-cannot-be-reached.png" alt="broken universal app" >}}
 
