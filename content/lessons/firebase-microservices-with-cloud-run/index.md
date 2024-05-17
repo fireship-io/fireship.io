@@ -54,7 +54,7 @@ The server you deploy to Cloud Run must be *stateless*, which is a requirement f
 The following steps demonstrate how to deploy a serverside-rendered SSR JavaScript app (Nuxt/Vue) with Cloud Run. 
 
 1. Install [Docker](https://docs.docker.com/v17.12/install/)
-1. Install [Google Clould SDK](https://cloud.google.com/sdk/)
+1. Install [Google Cloud SDK](https://cloud.google.com/sdk/)
 1. Have an existing Firebase/GCP Project
 
 ## Step 1: Create a Serverside App (Nuxt)
