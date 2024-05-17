@@ -47,7 +47,7 @@ Angular uses its own testing utilities, combined with the popular JavaScript lib
 The angular CLI handles virtually all of the boilerplate code required to run tests.  Let's quickly demystify all of the testing boilerplate you would find in a new Angular app. 
 
 1. `karma.conf` - Tells Karma [how to run your tests](http://karma-runner.github.io/1.0/config/configuration-file.html).
-2. `protractor.conf` - Tells proteactor how to run end-to-end tests
+2. `protractor.conf` - Tells protractor how to run end-to-end tests
 3. `e2e` - Your end-to-end tests are kept here
 4. `src/test.ts` - recursively loads all the spec and framework files for testing
 5. `**.spec.ts` - Anything you generate with the CLI includes a spec file where you define the actual tests. 
