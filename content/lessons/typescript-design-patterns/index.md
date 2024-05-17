@@ -151,7 +151,7 @@ A facade is a class that provides a simplified API for larger body of code. It i
 {{< file "ts" "software.ts" >}}
 ```typescript
 class PlumbingSystem {
-  // low level access to plubming system
+  // low level access to plumbing system
   setPressure(v: number) {}
   turnOn() {}
   turnOff() {}
