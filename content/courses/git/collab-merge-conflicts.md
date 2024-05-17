@@ -11,7 +11,7 @@ quiz: true
 ---
 
 <quiz-modal options="--quit:--oops:--fml:--abort" answer="--abort" prize="17">
-  <h5>Which flag allows you to safely quit the merge conflit process?</h5>
+  <h5>Which flag allows you to safely quit the merge conflict process?</h5>
 </quiz-modal>
 
 ## How Merge Conflicts Happen
