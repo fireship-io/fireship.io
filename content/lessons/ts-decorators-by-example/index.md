@@ -45,7 +45,7 @@ Side note - one of the most powerful characteristics of a decorator is its abili
 
 ### Example
 
-**Real World Use Case:** When a class is decorated you have to be careful with inheritence because its descendents will not inherit the decorators. Let's freeze the class to prevent inheritence completely. 
+**Real World Use Case:** When a class is decorated you have to be careful with inheritance because its descendents will not inherit the decorators. Let's freeze the class to prevent inheritance completely. 
 
 {{< file "ngts" "hook.component.ts" >}}
 ```typescript
