@@ -21,7 +21,7 @@ Bookmark these pages:
 
 ### Project
 
-The source code if the *source of truth* for this project. Updates to video content may lag behind code udpates, so always refer to the master branch on GitHub. 
+The source code if the *source of truth* for this project. Updates to video content may lag behind code updates, so always refer to the master branch on GitHub. 
 
 - [Source Code](https://github.com/codediodeio/ionic4-master-course)
 - [Live Demo](https://ionic4-fire.web.app/)
