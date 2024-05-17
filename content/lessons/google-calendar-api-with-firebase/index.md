@@ -41,7 +41,7 @@ Option A - Authenticate with *gapi*, then login to Firebase manually with the re
 
 Option B - Login with with the Firebase *GoogleAuthProvider* and add additional scopes. This will grant us permission, but we will need to manage access and refresh tokens manually.
 
-We will be using **Option A** in ths guide and it is likely the better option if making frequent requests to Google APIs. 
+We will be using **Option A** in this guide and it is likely the better option if making frequent requests to Google APIs. 
 
 ### Add the Script Google APIs Tag
 
