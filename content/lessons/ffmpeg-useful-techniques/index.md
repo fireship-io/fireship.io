@@ -80,7 +80,7 @@ FFmpeg is available in the Firebase Cloud Functions runtime. You can invoke it d
 npm install fluent-ffmpeg
 ```
 
-Once installed, you can can start using it like so:
+Once installed, you can start using it like so:
 
 ```javascript
 const ffmpeg = require('fluent-ffmpeg');
