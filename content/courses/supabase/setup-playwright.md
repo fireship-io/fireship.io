@@ -30,7 +30,7 @@ const config = {
   webServer: {
     command: "yarn dev",
     port: 1337, // should match the port you gave in our vite.config file
-    reuseExisitingServer: true,
+    reuseExistingServer: true,
   },
   fullyParallel: false,
   projects: [
