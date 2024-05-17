@@ -411,7 +411,7 @@ interval
 
 ## 13. TakeWhile - Get values while the conditions are right
 
-The `takeWhile()` operator will complete the observable when a certain condintion is is true. It's like going speed dating until you find the perfect matching partner. 
+The `takeWhile()` operator will complete the observable when a certain condition is is true. It's like going speed dating until you find the perfect matching partner. 
 
 ```js
 const names = Rx.Observable.of('Sharon', 'Sue', 'Sally', 'Steve')
