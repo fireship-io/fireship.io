@@ -294,7 +294,7 @@ function WalletBalance() {
   export default WalletBalance;
 ```
 
-### Loop through through Existing NFTs
+### Loop through Existing NFTs
 
 In the home screen, we use ethers.js to make a reference to the deployed contract. We request the total number of minted tokens, then create a loop to render a child component for each one. 
 
