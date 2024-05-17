@@ -33,7 +33,7 @@ The obvious benefit here is resource sharing across multiple domains with common
 
 {{< figure src="img/multisite-demo.gif" caption="Demo of multiple sites hosted by single Firebase Project" >}}
 
-In the following lesson, you will learn how to setup mulitsite hosting in Firebase from scratch.
+In the following lesson, you will learn how to setup multisite hosting in Firebase from scratch.
 
 <p class="tip">You must be on the **Blaze** pay-as-you-go plan to deploy multiple sites to Firebase.</p>
 
