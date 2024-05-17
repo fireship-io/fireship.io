@@ -254,7 +254,7 @@ Building a rotation-aware widget requires some calculations. Checkout the [dragg
     bool panRight = !panLeft;
     bool panDown = !panUp;
 
-    /// Absoulte change on axis
+    /// Absolute change on axis
     double yChange = d.delta.dy.abs();
     double xChange = d.delta.dx.abs();
 
