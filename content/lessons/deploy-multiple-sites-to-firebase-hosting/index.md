@@ -54,7 +54,7 @@ Essentially, we have three different apps or websites (English, French, and Span
 
 <p class="tip">Also reference the official [Firebase multisite documentation](https://firebase.google.com/docs/hosting/multisites)</p>
 
-Managing multiple sites in Firebase Hosting just requires a few simiple configuration steps. 
+Managing multiple sites in Firebase Hosting just requires a few simple configuration steps. 
 
 ### 1. Define your Hosted Sites
 
