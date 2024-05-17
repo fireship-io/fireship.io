@@ -204,7 +204,7 @@ const hoursFromNow = (n) => new Date(Date.now() + n * 1000 * 60 * 60 ).toISOStri
 
 ## Using the Service
 
-The final step is to put the the service to use in an Angular component. 
+The final step is to put the service to use in an Angular component. 
 
 ### Step One - Inject the Service
 

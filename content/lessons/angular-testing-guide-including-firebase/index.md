@@ -125,7 +125,7 @@ ng g component alert-button
 ng g service message
 ```
 
-Now let's build the component. It's nothing more than a button the user can click that will show/hide the button's alert message. I commented out the the Observable data for now, but those lines will be used when we test data that is queried from an API. 
+Now let's build the component. It's nothing more than a button the user can click that will show/hide the button's alert message. I commented out the Observable data for now, but those lines will be used when we test data that is queried from an API. 
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -448,7 +448,7 @@ export class AppPage {
 
 ### app.e2e-spec.ts
 
-You can see the Jasmine test format is almost identical to the the unit tests we wrote earlier. 
+You can see the Jasmine test format is almost identical to the unit tests we wrote earlier. 
 
 ```typescript
 import { AppPage } from './app.po';

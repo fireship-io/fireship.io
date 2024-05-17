@@ -215,7 +215,7 @@ In order to get the `profile` data from the database, we need to first retrieve 
 
 Now that our auth logic is in place, we have two options for rendering UI elements based on our Observable state - [StatefulWidget](https://docs.flutter.io/flutter/widgets/StatefulWidget-class.html) and [StreamBuilder](https://docs.flutter.io/flutter/widgets/StreamBuilder-class.html). 
 
-Let's start by building a `StatefulWidget` that listens to the the `Observable profile` and displays its data in the UI. In this example, we are listening to the stream, then using the emitted values to call `setState` on widget, thus triggering a repaint. 
+Let's start by building a `StatefulWidget` that listens to the `Observable profile` and displays its data in the UI. In this example, we are listening to the stream, then using the emitted values to call `setState` on widget, thus triggering a repaint. 
 
 
 Only use `setState` to change properties on the widget and do all the computation elsewhere. Also, your state must be initialized, which is why the subscriptions are created in the `initState` lifecycle hook. 

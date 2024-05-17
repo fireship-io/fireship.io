@@ -38,7 +38,7 @@ The list below outlines the Firebase tips presented in the video.
 9. Use App Distribution to bypass Google Play and Apple Test Flight
 10. Use NPM Scripts to build/deploy your app
 11. Use `--project` flag to avoid deploying to the wrong project
-12. Use the the cool new *web.app* domain
+12. Use the cool new *web.app* domain
 13. Add additional sites with multisite hosting
 14. Rewrite routes to Cloud Function or Cloud Run 
 15. Rewrite routes Dynamic Links

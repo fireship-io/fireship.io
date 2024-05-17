@@ -220,7 +220,7 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 
 ## Extra Credit - Scaling up
 
-<p>What happens when your app gets huge and Justin Bieber has 500 million followers? The database queries will start to drag down performance. A better way to handle the the user count is with a background task that updates the count whenever there is new activity. Firebase cloud functions allows you to run tasks wherever their is a new write operation. This would allow you to save a user count for a user in the background, then you would only need a single key-value pair to to get the follower count. </p>
+<p>What happens when your app gets huge and Justin Bieber has 500 million followers? The database queries will start to drag down performance. A better way to handle the user count is with a background task that updates the count whenever there is new activity. Firebase cloud functions allows you to run tasks wherever their is a new write operation. This would allow you to save a user count for a user in the background, then you would only need a single key-value pair to to get the follower count. </p>
 
 ```
 userId

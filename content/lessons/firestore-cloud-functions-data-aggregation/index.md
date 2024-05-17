@@ -75,7 +75,7 @@ The following lesson demonstrates how to make Firestore queries faster and more 
 
 ### index.js
 
-The cloud function will be triggered on any comment write operation - create, update, or delete.  When one occurs, a reference is made the the parent post document, then we query the entire subcollection. 
+The cloud function will be triggered on any comment write operation - create, update, or delete.  When one occurs, a reference is made the parent post document, then we query the entire subcollection. 
 
 {{< figure src="img/agg-pattern.png" caption="Aggregation pattern in NoSQL" >}}
 

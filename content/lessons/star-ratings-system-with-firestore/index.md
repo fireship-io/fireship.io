@@ -224,7 +224,7 @@ To implement the clickable star buttons, we need to style radio buttons as star 
 Rather than code 10 different inputs, I loop over 5 integers and wrap the full-star and half-star in an `ng-container` - that reduces the HTML code by ~80%. 
 
 
-Note: It's important that the the `id` on the input matches the `for` property on the label.  
+Note: It's important that the `id` on the input matches the `for` property on the label.  
 
 ```html
 <h3>Average Rating</h3>

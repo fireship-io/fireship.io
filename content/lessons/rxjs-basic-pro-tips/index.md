@@ -43,7 +43,7 @@ I like to think of RxJS terminology in a highly simplified way.
 1. Observable - An *array*  that is built over time.  
 2. Subscription - A *for loop*  that happens over time.  
 3. Emit - When an Observable spits out a value because something subscribed to it.
-4. Operator - Functions that alter the the way Observables emit values. 
+4. Operator - Functions that alter the way Observables emit values. 
 
 <img src="/images/observable-animation.gif" alt="animation of rx observable" class="content-image" />
 

@@ -216,7 +216,7 @@ firebase init functions
 
 ### Simple Firestore Function
 
-The function code below will listen to the the `products` collection in Firestore, and run this code whenever a new document is created. 
+The function code below will listen to the `products` collection in Firestore, and run this code whenever a new document is created. 
 
 - `exports.sendMessage` that's the name of our Function. 
 - `.document('products/{productId}').onCreate` runs the function when a new product doc is created.

@@ -49,7 +49,7 @@ const query = ref.orderBy(field).limit(pageSize);
 
 ### Step 2 - Move Forward
 
-The next page requires the the **last** document from current query results. Use the `startAfter` method to offset from that document. 
+The next page requires the **last** document from current query results. Use the `startAfter` method to offset from that document. 
 
 ```js
   function nextPage(last) {
@@ -63,7 +63,7 @@ The next page requires the the **last** document from current query results. Use
 ### Step 3 - Move Backward
 
 
-Going back to the previous page requires the the **first** document from current query results. Use the `endBefore` method followed by `limitToLast` to offset from that document. 
+Going back to the previous page requires the **first** document from current query results. Use the `endBefore` method followed by `limitToLast` to offset from that document. 
 
 ```js
   function prevPage(first) {
