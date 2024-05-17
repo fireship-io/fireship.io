@@ -39,7 +39,7 @@ Google APIs are RESTful and can be accessed with the [Google API Client Librarie
 
 Option A - Authenticate with *gapi*, then login to Firebase manually with the resulting ID token (JSON web token). This requires us to include an extra JS script, but it will manage access tokens automatically. 
 
-Option B - Login with with the Firebase *GoogleAuthProvider* and add additional scopes. This will grant us permission, but we will need to manage access and refresh tokens manually.
+Option B - Login with the Firebase *GoogleAuthProvider* and add additional scopes. This will grant us permission, but we will need to manage access and refresh tokens manually.
 
 We will be using **Option A** in this guide and it is likely the better option if making frequent requests to Google APIs. 
 

@@ -103,7 +103,7 @@ cd my-app
 ng serve --port 8080
 ```
 
-{{< figure src="img/firewall-rule.png" caption="After creating the rule, make sure to tag your VM with with it under its settings" >}}
+{{< figure src="img/firewall-rule.png" caption="After creating the rule, make sure to tag your VM with it under its settings" >}}
 
 
 That's it for now! You now have a basic environment for frontend development in the cloud. You can take this a step further by extracting this code into a Dockerfile for an easy containerized setup on any cloud. 

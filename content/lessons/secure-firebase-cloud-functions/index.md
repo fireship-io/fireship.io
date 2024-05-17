@@ -159,7 +159,7 @@ function decodeAuthToken(authToken) {
 
 ### Make the HTTP Call in Angular
 
-Naturally, we are going to make the HTTP call with Angular, but you could also do with with vanilla JS. 
+Naturally, we are going to make the HTTP call with Angular, but you could also do with vanilla JS. 
 
 If you send the request with `myUID`, assuming you send your current auth uid, you should get a 200 response back from the cloud function. Sending any other UID will result in a 403 unauthorized error. 
 
