@@ -126,7 +126,7 @@ class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateM
 All of the buttons in the radial menu will be stacked on top of each other, then animated around the center when the menu is opened. 
 
 - The *Tween* defines the values that will change over the course of the animation. For example, we start at a size of 150%, then scale down to 0%. 
-- The *CurvedAnimation* defines the [Bezier curve](https://www.jasondavies.com/animated-bezier/) - or timing function - of the animation over its lifecycle. Flutter has a bunch of built-in curves that that will make your animations more exciting, so experiment with these. 
+- The *CurvedAnimation* defines the [Bezier curve](https://www.jasondavies.com/animated-bezier/) - or timing function - of the animation over its lifecycle. Flutter has a bunch of built-in curves that will make your animations more exciting, so experiment with these. 
 - *Transform.scale()* wrapps the floating action buttons and will dynamically apply scale changes when the animation is running. 
 
 

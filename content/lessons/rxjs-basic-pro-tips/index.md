@@ -327,7 +327,7 @@ names
 
 ## 9. Debounce and Throttle - Handle Stream Overload
 
-Sometimes you might be dealing with a stream that that is emitting values crazy fast - such as mouse move events in the browser. You might only want to handle these events every so often. 
+Sometimes you might be dealing with a stream that is emitting values crazy fast - such as mouse move events in the browser. You might only want to handle these events every so often. 
 
 1. Throttle - Give me the first value, then wait X time. 
 2. Debounce - Wait X time, then give me the last value. 

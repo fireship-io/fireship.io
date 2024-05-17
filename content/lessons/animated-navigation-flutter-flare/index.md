@@ -248,7 +248,7 @@ class NavBarState extends State<NavBar> {
 
 In this final section, we define a method that will turn the Flare animations into tap-able buttons that change the state of the widget. This can be achieved with a `setState` call from a *GestureDetector*, as we do not want Material ink splashes in this demo. 
 
-The *FlareActor* is a widget from the flare_flutter package that that will run the specified animation when the state changes. 
+The *FlareActor* is a widget from the flare_flutter package that will run the specified animation when the state changes. 
 
 
 Remember, we defined the animation name as *go* in the Flare editor before exporting the file. By default, the animation name is *Untitled*. 
