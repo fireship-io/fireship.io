@@ -8,7 +8,7 @@ vimeo: 486584623
 emoji: 🛡️
 video_length: 4:46
 ---
-Firebase Rules for hypothertical chat application
+Firebase Rules for hypothetical chat application
 
 {{< file "firebase" "firestore.rules" >}}
 ```javascript
