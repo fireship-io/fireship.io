@@ -60,7 +60,7 @@ const settings = Settings.getInstance();
 
 ### Prototype
 
-Prototype allows objects to be clones of other objects, rather then extended via inheritance.
+Prototype allows objects to be clones of other objects, rather than extended via inheritance.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
