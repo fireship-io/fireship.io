@@ -191,7 +191,7 @@ git --version
 
 ### Cache Remote Login Credentials
 
-If you work with Github it can be useful to cache your git credentials to avoid typing your username/password on every remote push. 
+If you work with GitHub it can be useful to cache your git credentials to avoid typing your username/password on every remote push. 
 
 {{< file "terminal" "command line" >}}
 ```text

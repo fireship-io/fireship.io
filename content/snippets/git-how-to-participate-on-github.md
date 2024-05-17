@@ -1,10 +1,10 @@
 ---
-title: How to Participate on Github
+title: How to Participate on GitHub
 lastmod: 2019-01-17T05:42:54-07:00
 publishdate: 2019-01-17T05:42:54-07:00
 author: Jeff Delaney
 draft: false
-description: A step-by-step guide to submitting your first Pull Request on Github. Practical tips and advice for git version control. 
+description: A step-by-step guide to submitting your first Pull Request on GitHub. Practical tips and advice for git version control. 
 tags: 
     - git
 
@@ -24,7 +24,7 @@ github: https://github.com/codediodeio/gimmie-sticker
 
 Contributing to open-source is satisfying on many levels. Not only does it validate your skills for recruiters, but it leads to higher quality software that empowers developers to build better products. But submitting your first pull request on GitHub can be intimidating. The goal of this guide is to give you a clear set of steps for contributing any OS project (like fireship.io 🔥). 
 
-This guide assumes that you have a [Github](https://github.com/) account and [git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine. 
+This guide assumes that you have a [GitHub](https://github.com/) account and [git installed](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) on your machine. 
 
 ## Step 1: Fork
 
@@ -77,7 +77,7 @@ Let's push your branch to your fork.
 git push origin my-cool-thing
 ```
 
-When you go back to Github you should automatically see a button labeled **Create New Pull Request for my-cool-thing**. Go ahead and push that button. Add additional details as needed and it will show up in the list of PRs once submitted. 
+When you go back to GitHub you should automatically see a button labeled **Create New Pull Request for my-cool-thing**. Go ahead and push that button. Add additional details as needed and it will show up in the list of PRs once submitted. 
 
 {{< figure src="/snippets/img/git-pr.png" alt="pull requests on a github repo" >}}
 

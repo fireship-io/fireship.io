@@ -135,7 +135,7 @@ Example: firebase deploy --token "\$FIREBASE_TOKEN"
 
 Go to `Settings > Secrets`:
 
-{{< figure src="/snippets/img/firebase-token.png" alt="add firebase token to Github" >}}
+{{< figure src="/snippets/img/firebase-token.png" alt="add firebase token to GitHub" >}}
 
 ### Step 9. Final Workflow
 

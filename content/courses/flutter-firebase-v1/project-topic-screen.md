@@ -10,4 +10,4 @@ video_length: 5:25
 chapter_start: Quiz UI
 ---
 
-Reference the [Topics Screen Source on Github](https://github.com/fireship-io/flutter-firebase-quizapp-course/blob/master/lib/screens/topics.dart)
+Reference the [Topics Screen Source on GitHub](https://github.com/fireship-io/flutter-firebase-quizapp-course/blob/master/lib/screens/topics.dart)

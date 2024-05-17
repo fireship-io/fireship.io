@@ -270,4 +270,4 @@ this.points = query.pipe( toGeoJSON('point') )
 
 ## The End
 
-My goal with GeoFireX is simply to make realtime map features as easy to build as possible in PWAs. If you have ideas for the project, please let me know on Github so we can explore them together.  
+My goal with GeoFireX is simply to make realtime map features as easy to build as possible in PWAs. If you have ideas for the project, please let me know on GitHub so we can explore them together.  

@@ -13,7 +13,7 @@ video_length: 2:03
 
 - Live App: https://supaship.io
 - Demo of our course's endpoint (note: auth will not work): https://supaship-course-demo.netlify.app
-- Github repo: https://github.com/fireship-io/supaship.io
+- GitHub repo: https://github.com/fireship-io/supaship.io
 - Branch showing the end state of our course: https://github.com/fireship-io/supaship.io/tree/course-end-point
 
 ## Official Resources

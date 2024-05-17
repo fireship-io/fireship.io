@@ -59,7 +59,7 @@ The list below outlines the Firebase tips presented in the video.
 27. Angular App? Use AngularFire
 28. React App? Use ReactFire
 29. RxJS? Use RxFire
-30. Find additional projects from the FirebaseExtended Github Org. 
+30. Find additional projects from the FirebaseExtended GitHub Org. 
 31. Use Performance Monitoring
 32. Use Crashlytics
 33. Use Analytics

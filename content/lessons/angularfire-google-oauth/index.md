@@ -53,7 +53,7 @@ This post first appeared as [Episode 55 on AngularFirebase.com](https://angularf
 
 First, you will need a Firebase project with Firestore enabled in test mode. 
 
-Google Sign-in is the easiest method to configure in Firebase because your app credentials are already built into your Google Cloud. You can extend this tutorial to work with Facebook, Github, and Twitter, but will need to follow the configuration instructions for each. 
+Google Sign-in is the easiest method to configure in Firebase because your app credentials are already built into your Google Cloud. You can extend this tutorial to work with Facebook, GitHub, and Twitter, but will need to follow the configuration instructions for each. 
 
 {{< figure src="img/firebase-google-signin.png" alt="enable the google signin method via the Firebase authentication tab" >}}
 
