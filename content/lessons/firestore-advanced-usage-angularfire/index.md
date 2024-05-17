@@ -639,7 +639,7 @@ export class FirestoreService {
     );
   }
 
-  // Detetes documents as batched transaction
+  // Deletes documents as batched transaction
   private deleteBatch(path: string, batchSize: number): Observable<any> {
     const colRef = this.afs.collection(path, ref => ref.orderBy('__name__').limit(batchSize));
 
