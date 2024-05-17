@@ -106,7 +106,7 @@ The first animation will toggle the visibility of the open/close button in the m
 
 ### Define the Animation Controller
 
-The controller lives in the StatefulWidget and defines the total durtation of the animation. 
+The controller lives in the StatefulWidget and defines the total duration of the animation. 
 
 ```dart
 class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateMixin {
