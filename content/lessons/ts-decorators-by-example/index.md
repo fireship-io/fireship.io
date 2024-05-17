@@ -186,7 +186,7 @@ function Example() {
 }
 ```
 
-We can achieve a *similar* results with a property decorator that will first define the `count` on the component - this is trival because Angular performs automatic change detection. We then use the name of this property to define a setter with the name of `setCount`. Usage looks like this:
+We can achieve a *similar* results with a property decorator that will first define the `count` on the component - this is trivial because Angular performs automatic change detection. We then use the name of this property to define a setter with the name of `setCount`. Usage looks like this:
 
 {{< file "ngts" "hook.component.ts" >}}
 ```typescript
