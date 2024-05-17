@@ -93,7 +93,7 @@ await client.schema
 
 ### Store an Image
 
-Images must first be converted to base64. Once converted, store it to the cooresponding class in the schema. Weaviate will automatically use the neural network in the background to vectorize it and update the embedding. 
+Images must first be converted to base64. Once converted, store it to the corresponding class in the schema. Weaviate will automatically use the neural network in the background to vectorize it and update the embedding. 
 
 {{< file "js" "index.js" >}}
 ```javascript

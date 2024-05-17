@@ -204,7 +204,7 @@ export class HookComponent {
 }
 ```
 
-And the decoractor implementation is just five lines of code. We just set an initial value, then find the cooresponding
+And the decoractor implementation is just five lines of code. We just set an initial value, then find the corresponding
 
 ```typescript
 function UseState(seed: any) {

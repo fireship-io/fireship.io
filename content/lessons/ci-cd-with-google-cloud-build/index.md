@@ -118,7 +118,7 @@ Now we should see the image in the container registry.
 
 Create a file named `cloudbuild.yaml` in the root of the project. It will tell Cloud Build the steps required to build and test your code. 
 
-The build takes place in four steps. Notice how the `name` field points to a container with a cooresponding command, i.e *npm* or *firebase*. Keep in mind, there are many [additional options](https://cloud.google.com/cloud-build/docs/configuring-builds/create-basic-configuration) you can pass to these steps. 
+The build takes place in four steps. Notice how the `name` field points to a container with a corresponding command, i.e *npm* or *firebase*. Keep in mind, there are many [additional options](https://cloud.google.com/cloud-build/docs/configuring-builds/create-basic-configuration) you can pass to these steps. 
 
 - Install NPM dependencies
 - Run unit tests
