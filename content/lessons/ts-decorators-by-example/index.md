@@ -229,7 +229,7 @@ The [effect hook](https://reactjs.org/docs/hooks-effect.html) hook simply consol
   });
 ```
 
-This is very easy to emulate with a method decorator because we can apply the function descriptor to Angular's equivelent `ngOnInit` and `ngAfterViewChecked` lifecycle hooks. 
+This is very easy to emulate with a method decorator because we can apply the function descriptor to Angular's equivalent `ngOnInit` and `ngAfterViewChecked` lifecycle hooks. 
 
 {{< file "ngts" "hook.component.ts" >}}
 ```typescript
