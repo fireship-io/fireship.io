@@ -235,7 +235,7 @@ First, there needs to be some type of parent component that can be reacted to, w
 
 ## SCSS Styles
 
-<p>Here is the SCSS used in this lesson. It’s just a rough start, but I wanted to include include it for completeness. </p>
+<p>Here is the SCSS used in this lesson. It’s just a rough start, but I wanted to include it for completeness. </p>
 
 ```scss
 .wrapper {
