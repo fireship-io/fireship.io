@@ -27,7 +27,7 @@ versions:
 
 Nothing beats the user experience of a single page JS app on the web, but you sacrifice the ability to share metatags with social media bots and search engines on deep links. Fortunately, you can overcome this limitation with server-side rendering (SSR) via [Angular Universal](https://angular.io/guide/universal).
 
-The following lesson will show you how to setup Angular Universal with ExpressJS. In addition, you will learn how to deploy the app with (1) Node via **AppEngine** or (2) Firebase **Cloud Functions** - both of which are are on the free tier.
+The following lesson will show you how to setup Angular Universal with ExpressJS. In addition, you will learn how to deploy the app with (1) Node via **AppEngine** or (2) Firebase **Cloud Functions** - both of which are on the free tier.
 
 ## Step 0: Prerequisites
 
