@@ -103,7 +103,7 @@ export class FollowService {
 
 ## Component with Follow/Unfollow Button
 
-<p>We loop over a list list of users from the database, then the display the user UserProfileComponent. The parent component will pass the `user` and the `currentUser` to the child via the `@Input` decorator. </p>
+<p>We loop over a list of users from the database, then the display the user UserProfileComponent. The parent component will pass the `user` and the `currentUser` to the child via the `@Input` decorator. </p>
 
 ### some-parent.component.html
 
