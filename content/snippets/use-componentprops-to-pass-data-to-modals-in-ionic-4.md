@@ -44,7 +44,7 @@ export class SomeParentComponent {
 
 ### Modal Page Component
 
-The child component is the actual modal window and it will consume the data passed to it. So how to use use the data passed in from `componentProps` in the previous step? You just need to declare the property on your class and you're good to go - just make sure it uses the same prop name on both sides of the equation.  
+The child component is the actual modal window and it will consume the data passed to it. So how to use the data passed in from `componentProps` in the previous step? You just need to declare the property on your class and you're good to go - just make sure it uses the same prop name on both sides of the equation.  
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
