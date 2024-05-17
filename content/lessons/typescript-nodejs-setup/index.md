@@ -47,7 +47,7 @@ Create a tsconfig.json file.
 touch tsconfig.json
 ```
 
-Use the `NodeNext` option to handle ES Modules with interop between CommonJS modules. If you want a detailed explaination of why this option is needed, check out this [Stack Overflow thread](https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext). 
+Use the `NodeNext` option to handle ES Modules with interop between CommonJS modules. If you want a detailed explanation of why this option is needed, check out this [Stack Overflow thread](https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext). 
 
 {{< file "ts" "tsconfig.json" >}}
 ```json
