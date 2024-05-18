@@ -24,7 +24,7 @@ import {
   signOut,
 } from 'firebase/auth';
 import type { UserCredential } from 'firebase/auth';
-import { initializeAnalytics, logEvent } from 'firebase/analytics';
+import { initializeAnalytics, logEvent, setUserId } from 'firebase/analytics';
 const firebaseApp = initializeApp(config);
 export const auth = getAuth(firebaseApp);
 
@@ -34,6 +34,10 @@ export function GAPageView() {
   logEvent(anal, 'page_view', {
     page_location: window.location.href,
   });
+}
+
+export function GASetUser(uid: string | null) {
+  setUserId(anal, uid);
 }
 
 export function GAEvent(name: string, data?: any) {
@@ -95,7 +99,7 @@ export async function firebaseSignOut() {
 }
 
 async function loginHandler(promise: Promise<UserCredential>) {
-  let res: any, serverError: string;
+  let res: UserCredential, serverError: string;
   try {
     res = await promise;
     modal.set(null);
@@ -103,12 +107,19 @@ async function loginHandler(promise: Promise<UserCredential>) {
       message: 'Access granted! Logged into the mainframe!',
       type: 'success',
     });
+    GAEvent('login', {
+      method: res.providerId,
+    });
   } catch (err) {
     serverError = err.message;
     console.error(err);
     toast.set({
       message: serverError,
       type: 'error',
+    });
+    GAEvent('exception', {
+      location: 'loginHandler',
+      description:  err.message,
     });
   }
   return { res, serverError };
@@ -133,10 +144,20 @@ export async function callUserAPI<T>(data: UserAPIData): Promise<T> {
     // connectFunctionsEmulator(functions, 'localhost', 5001); // DEV only
 
     const res = await httpsCallable(functions, 'userAPI')(data);
+
+    // Capture GA event for all user initiated backend API calls
+    const { uid, ...rest } = data.payload;
+    GAEvent(data.fn, {
+      ...rest,
+    });
     return res.data as T;
   } catch (error) {
     console.log(error);
     toast.set({ message: error?.message ?? 'Unknown Error. Contact hello@fireship.io for help', type: 'error' });
+    GAEvent('exception', {
+      location: 'callUserAPI',
+      description:  error?.message,
+    });
   }
 }
 

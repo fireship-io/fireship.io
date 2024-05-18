@@ -1,5 +1,5 @@
 import { writable, derived } from 'svelte/store';
-import { auth } from '../util/firebase';
+import { GAEvent, GASetUser, auth } from '../util/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 import type { User } from 'firebase/auth';
 import { siteData } from './data';
@@ -68,6 +68,7 @@ onAuthStateChanged(auth, async (fbUser) => {
         unsubProgress = onSnapshot(progressRef, (snap) => {
 			userProgress.set(snap.data() as UserProgress);
 		});
+        GASetUser(fbUser.uid);
 	} else {
 		unsubData && unsubData();
         unsubProgress && unsubProgress();
@@ -75,6 +76,7 @@ onAuthStateChanged(auth, async (fbUser) => {
 		userData.set(null);
         userProgress.set(null);
 		seats.set(null);
+        GASetUser(null);
 	}
 });
 
