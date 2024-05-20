@@ -45,7 +45,7 @@ Angular Material is a modular project, so we need to import the modules needed f
 
 Here is a full breakdown of the configuration for this project. 
 
-Notice `entryComponents: [EditDialogComponent]` - this part is needed because the dialog is not loaded by the router, nor is it declared in the HTML. 
+Notice `entryComponents: [EditDialogComponent]` - this part is needed because the dialog is neither loaded by the router nor declared in the HTML.
 
 
 ```typescript

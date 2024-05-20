@@ -16,4 +16,4 @@ free: true
 
 ## Optional: Supabase Project
 
-The video in this section contains a simplifed project designed to showcase the various features of Supabase. You can follow along with the video, or you can skip ahead to the next section if you already feel comfortable with the platform. 
+The video in this section contains a simplified project designed to showcase the various features of Supabase. You can follow along with the video, or you can skip ahead to the next section if you already feel comfortable with the platform. 

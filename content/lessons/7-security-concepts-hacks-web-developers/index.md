@@ -73,7 +73,7 @@ Most ORMs will prevent SQL injection attacks because you do not construct the qu
 
 Many APIs and Cloud Providers provide API keys that allow you to interact with paid services. If a hacker discovers a secret API key it can be used to take destructive action on your behalf. There are a few ways credentials are leaked.
 
-1. Using API keys directly in source code, then pushing the repo to Github. 
+1. Using API keys directly in source code, then pushing the repo to GitHub. 
 1. Using API keys directly in source code, then bundling them in your production app. 
 
 You can prevent credential leaks by NOT putting them in your source code. Instead, use environment variables or a service like [Secret Manager](https://cloud.google.com/secret-manager/docs). 
@@ -87,7 +87,7 @@ A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/)
 
 ## 7. DDoS Attacks
 
-> In 2018, Github survived the largest DDoS attack in history after it was bombarded with 1.35 terabits of data per second. It only took the site down for about ten minutes thanks to a backup service, Akamai, which re-routed traffic and blocked the spoofed requests. 
+> In 2018, GitHub survived the largest DDoS attack in history after it was bombarded with 1.35 terabits of data per second. It only took the site down for about ten minutes thanks to a backup service, Akamai, which re-routed traffic and blocked the spoofed requests. 
 
 A [DDoS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack attempts to flood the service with so much traffic that it simply shuts down. The attack is typically distributed via many spoofed sources, making it impossible to just block a single IP address. 
 

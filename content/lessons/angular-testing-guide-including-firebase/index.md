@@ -32,7 +32,7 @@ Testing is the [single-most effective tool](https://medium.com/javascript-scene/
 *Source: Effects of Test-Driven Development: A
 Comparative Analysis of Empirical Studies. Simo Mäkinen and Jürgen Münch. University of Helsinki.*
 
-Angular uses it's own testing utilities, combined with the popular JavaScript libraries [Jasmine](https://jasmine.github.io/2.4/introduction.html) and [Karma](https://karma-runner.github.io/1.0/index.html), to make it easy for developers to test their code.  When frontend JavaScript frameworks first hit the scene, a lack of test-ability was one of their harshest criticisms. Today, testing in Angular is as powerful as any other software development field.  
+Angular uses its own testing utilities, combined with the popular JavaScript libraries [Jasmine](https://jasmine.github.io/2.4/introduction.html) and [Karma](https://karma-runner.github.io/1.0/index.html), to make it easy for developers to test their code.  When frontend JavaScript frameworks first hit the scene, a lack of test-ability was one of their harshest criticisms. Today, testing in Angular is as powerful as any other software development field.  
 
 ## High Level Overview
 
@@ -47,7 +47,7 @@ Angular uses it's own testing utilities, combined with the popular JavaScript li
 The angular CLI handles virtually all of the boilerplate code required to run tests.  Let's quickly demystify all of the testing boilerplate you would find in a new Angular app. 
 
 1. `karma.conf` - Tells Karma [how to run your tests](http://karma-runner.github.io/1.0/config/configuration-file.html).
-2. `protractor.conf` - Tells proteactor how to run end-to-end tests
+2. `protractor.conf` - Tells protractor how to run end-to-end tests
 3. `e2e` - Your end-to-end tests are kept here
 4. `src/test.ts` - recursively loads all the spec and framework files for testing
 5. `**.spec.ts` - Anything you generate with the CLI includes a spec file where you define the actual tests. 
@@ -88,7 +88,7 @@ Angular will re-run your test suite whenever a file changes so you can immediate
 
 ### What is a Test Bed?
 
-First, we need to learn about concept of a *Test Bed*. If you're unfamilar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
+First, we need to learn about concept of a *Test Bed*. If you're unfamiliar with [NgModules](https://angularfirebase.com/lessons/a-simple-explanation-of-ngmodule/) at this point, I recommend watching the linked video to get up to speed. 
 
 A Test Bed creates an Angular testing module, which is just a class an NgModule class. For example, notice how you have the `declarations: [ AlertButtonComponent ]` meta data just like any NgModule. This makes it possible to test your components in isolation. 
 
@@ -125,7 +125,7 @@ ng g component alert-button
 ng g service message
 ```
 
-Now let's build the component. It's nothing more than a button the user can click that will show/hide the button's alert message. I commented out the the Observable data for now, but those lines will be used when we test data that is queried from an API. 
+Now let's build the component. It's nothing more than a button the user can click that will show/hide the button's alert message. I commented out the Observable data for now, but those lines will be used when we test data that is queried from an API. 
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -173,7 +173,7 @@ Well-written tests can be read and understood by a non-programmer. Jasmine provi
 
 ### 1. Is something truthy or falsey? 
 
-Truthy means the item *will evalualte to true* on a conditional test, it does not have be a primitive *true*. 
+Truthy means the item *will evaluate to true* on a conditional test, it does not have be a primitive *true*. 
 
 `toBeTruthy()` is like saying `something == true`
 
@@ -222,7 +222,7 @@ For more complex string matching you can use regex.
 Logical tests allow you to make numeric comparisons and work just like operators they describe, i.e. `>`, `>=`, and so on. 
 
 ```typescript
-  it('should have a serverity level greater than 2', () => {
+  it('should have a severity level greater than 2', () => {
     expect(component.severity).toBeGreaterThan(2);
   });
 
@@ -242,7 +242,7 @@ The `toggleMessage` method on the component changes the value of a boolean varia
 
 ### 6. Does a DOM element get rendered correctly?
 
-The `DebugElement` makes it possible to query DOM elements in the component tempate to ensure they are rendered properly. 
+The `DebugElement` makes it possible to query DOM elements in the component template to ensure they are rendered properly. 
 
 
 ```typescript
@@ -297,7 +297,7 @@ That's a good start, but there's a lot more to testing. To demonstrate some more
  
 ## How I Test Data Sources like AngularFire2
 
-Testing Firebase in Angular can be pretty tricky. The Firebase SDK performs a good deal of magic under the hood that is hard to reproduce as a mock backend. My typical strategy is to use simple stubs and spys that return observables for component unit tests. I also like to use protractor e2e testing as an additional sanity check that the UI works as intended. Let's start with the easiest approach - create a [stubbed](https://en.wikipedia.org/wiki/Test_stub) service. 
+Testing Firebase in Angular can be pretty tricky. The Firebase SDK performs a good deal of magic under the hood that is hard to reproduce as a mock backend. My typical strategy is to use simple stubs and spies that return observables for component unit tests. I also like to use protractor e2e testing as an additional sanity check that the UI works as intended. Let's start with the easiest approach - create a [stubbed](https://en.wikipedia.org/wiki/Test_stub) service. 
 
 
 ### Test an Async Service with a Stub
@@ -391,7 +391,7 @@ describe('AlertButtonComponent', () => {
 ```
 ## End-to-End (e2e) Testing with Protractor
 
-Protractor documentation is limited, but it is the coolest testing tool Angular has to offer in my opinion. Unlike the isolated tests we created in the previous section, it will simulate how an end user experiences your app by running it on a web browser. You can click buttons, fill out forms, and iteract with the app in a very natural way. 
+Protractor documentation is limited, but it is the coolest testing tool Angular has to offer in my opinion. Unlike the isolated tests we created in the previous section, it will simulate how an end user experiences your app by running it on a web browser. You can click buttons, fill out forms, and interact with the app in a very natural way. 
 
 When it comes to testing the complex realtime behavior of Firebase, it is often much easier to write e2e tests, rather than try to simulate edge cases with a mock backend. If you go this route, I highly recommend setting up [separate development and production projects](https://angularfirebase.com/lessons/development-and-production-environments-for-angular-firebase-projects/) in Firebase so you don't accidentally screw-up all of your live user data. 
 
@@ -448,7 +448,7 @@ export class AppPage {
 
 ### app.e2e-spec.ts
 
-You can see the Jasmine test format is almost identical to the the unit tests we wrote earlier. 
+You can see the Jasmine test format is almost identical to the unit tests we wrote earlier. 
 
 ```typescript
 import { AppPage } from './app.po';

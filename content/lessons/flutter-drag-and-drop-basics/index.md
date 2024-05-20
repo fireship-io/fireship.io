@@ -60,7 +60,7 @@ class DragScreenState extends State<DragScreen> {
 
 ## How to Drag Widgets
 
-### Draggble
+### Draggable
 There are three different visual states to consider when building a draggable widget. 
 
 1. *child* - This is the child that is initially present. 
@@ -93,7 +93,7 @@ There are several functions that can be used to listen to the various drag/drop 
 - *builder* constructs the UI for the DragTarget. 
 - *onWillAccept* fires when the user starts hovering, it must return a boolean to decide whether or not the user can drop the widget here.
 - *onAccept* fires when the user drops and onWillAccept returns `true`.
-- *onLeave* fires if the user leaves without dropping or onWillAcccept returns `false`;
+- *onLeave* fires if the user leaves without dropping or onWillAccept returns `false`;
 
 
 {{< file "dart" "main.dart" >}}

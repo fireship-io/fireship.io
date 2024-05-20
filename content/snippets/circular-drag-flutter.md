@@ -74,7 +74,7 @@ The final value is `rotationalChange`. If the value is positive, the wheel is ro
     bool panRight = !panLeft;
     bool panDown = !panUp;
 
-    /// Absoulte change on axis
+    /// Absolute change on axis
     double yChange = d.delta.dy.abs();
     double xChange = d.delta.dx.abs();
 

@@ -34,7 +34,7 @@ In this lesson, you will learn...
 
 ## Initial Setup
 
-The two libraries that make this tutorial possible are HammerJS and Animate.css. Both are extremely popular on Github and widely used in progressive web apps. 
+The two libraries that make this tutorial possible are HammerJS and Animate.css. Both are extremely popular on GitHub and widely used in progressive web apps. 
 
 First, let's start with a fresh Angular 5 app and add a couple of resources to it. 
 

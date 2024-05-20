@@ -1,5 +1,5 @@
 ---
-title: Automatic Backups for Firestore via Github Actions
+title: Automatic Backups for Firestore via GitHub Actions
 lastmod: 2020-03-12T17:20:51-07:00
 publishdate: 2020-03-12T17:20:51-07:00
 author: Jeff Delaney
@@ -25,12 +25,12 @@ type: lessons
 
 As of today, Firestore does not support automatic backups, but it DOES support [exports](https://firebase.google.com/docs/firestore/manage-data/export-import) via the gcloud CLI or REST API. Although not technically a *backup* in database jargon, an automatic export is valuable to have for disaster recovery because it can be re-imported to replace lost data. 
 
-The following snippet exports all Firestore data automatically every day at midnight using a [scheduled Github Action](https://help.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events-schedule). 
+The following snippet exports all Firestore data automatically every day at midnight using a [scheduled GitHub Action](https://help.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events-schedule). 
 
 
 ## Generate a Service Key on GCP
 
-We need a service account to grant Github Actions permission to run the export command via the Google Cloud CLI. 
+We need a service account to grant GitHub Actions permission to run the export command via the Google Cloud CLI. 
 
 ### Grant Permissions to the Service Account
 
@@ -40,9 +40,9 @@ Create a service account on GCP Console with the minimum permissions needed to r
 
 {{< figure src="/snippets/img/backup-firestore-key-json.png" caption="Download service account JSON file to your local system" >}}
 
-### Save it as a Secret on Github
+### Save it as a Secret on GitHub
 
-We can share this data with Github as a secret environment variable. From your Github repo, go to settings > secrets and add a new secret.
+We can share this data with GitHub as a secret environment variable. From your GitHub repo, go to settings > secrets and add a new secret.
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -53,9 +53,9 @@ Use the command above to convert the JSON service account to a base64 string.
 
 {{< figure src="/snippets/img/backup-firestore-gh-secret.png" caption="Copy the base64 output as the value of the secret" >}}
 
-## Firestore Backup Github Action
+## Firestore Backup GitHub Action
 
-Create the Github Action to run the export job on a schedule.
+Create the GitHub Action to run the export job on a schedule.
 
 ### Workflow
 
@@ -100,4 +100,4 @@ git push origin master
 When the schedule event fires, you should see a successful export job similar to the output below. The exported data will be available in your Firebase storage bucket. 
 
 
-{{< figure src="/snippets/img/backup-firestore-success.png" caption="Example of successful Firestore export job in Github Actions" >}}
+{{< figure src="/snippets/img/backup-firestore-success.png" caption="Example of successful Firestore export job in GitHub Actions" >}}

@@ -12,6 +12,6 @@ video_length: 1:45
 
 ### Course Resources
 
-- Soure Code: [GitHub Repo](https://github.com/fireship-io/stripe-for-saas)
+- Source Code: [GitHub Repo](https://github.com/fireship-io/stripe-for-saas)
 - Stripe Docs: [API Reference](https://stripe.com/docs/api)
 - Stripe in 100 Seconds: [YouTube](https://youtu.be/7edR32QVp_A)

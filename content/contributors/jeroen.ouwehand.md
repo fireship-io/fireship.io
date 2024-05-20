@@ -7,4 +7,4 @@ links:
     medium: https://medium.com/@jeroenouw
 ---
 
-Jeroen is a full-stack developer from Rotterdam (The Netherlands) and is currently working for a bank. Sometimes writes posts on Medium or contribute on Github.
+Jeroen is a full-stack developer from Rotterdam (The Netherlands) and is currently working for a bank. Sometimes writes posts on Medium or contribute on GitHub.

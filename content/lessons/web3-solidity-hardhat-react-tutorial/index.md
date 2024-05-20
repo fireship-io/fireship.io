@@ -26,7 +26,7 @@ Over the last few months, you've likely heard there term [Web3](https://youtu.be
 
 The following tutorial demonstrates the entire process of building a smart contact, then interacting with it on the web using Ethers.js and React. The app can mint non-fungible tokens (NFTs) when a user transfers Ether from a wallet like MetaMask. There are many different technologies involved, but the core idea is to access the API of a smart contract from a frontend web app.
 
-## Intitial Setup
+## Initial Setup
 
 ### Generate Art
 
@@ -77,7 +77,7 @@ module.exports = {
 
 ### Base ERC-721 Contract
 
-Smart contracts have been standardized into a predictible API. When it comes to NFTs, the most common choice is [ERC-721]() and we can use a tool called [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) to generate the initial boilerplate code. 
+Smart contracts have been standardized into a predictable API. When it comes to NFTs, the most common choice is [ERC-721]() and we can use a tool called [OpenZeppelin](https://docs.openzeppelin.com/contracts/4.x/wizard) to generate the initial boilerplate code. 
 
 {{< figure src="img/open-zeppelin-wizard.png" caption="Use the OpenZeppelin wizard to create a base contract" >}}
 
@@ -151,7 +151,7 @@ contract FiredGuys is ERC721, ERC721URIStorage, Ownable {
 
 Let's add an additional method to the contract that handles the minting of a new token. It is a `payable` method, which means Ether (or other tokens like MATIC) can be sent from the end-user to the contract. 
 
-The method uses `require` to validate that (1) the URI is not already taken, and (2) the minimum amount of Ether has been sent. When the user calls this method, their wallet will prompt them for permission to transfer funds and execute the transation. In return, they will be given a new token linked to the metadata URI on IPFS.
+The method uses `require` to validate that (1) the URI is not already taken, and (2) the minimum amount of Ether has been sent. When the user calls this method, their wallet will prompt them for permission to transfer funds and execute the transaction. In return, they will be given a new token linked to the metadata URI on IPFS.
 
 {{< file "solidity" "contracts/MyNFT.sol" >}}
 ```solidity
@@ -294,7 +294,7 @@ function WalletBalance() {
   export default WalletBalance;
 ```
 
-### Loop through through Existing NFTs
+### Loop through Existing NFTs
 
 In the home screen, we use ethers.js to make a reference to the deployed contract. We request the total number of minted tokens, then create a loop to render a child component for each one. 
 

@@ -91,7 +91,7 @@ Add the following lines to your package.json.
 
 ### Step 5 - Export the Server
 
-Create a new file named `src/index.ts` that creates an exress app and wraps it with Nest.
+Create a new file named `src/index.ts` that creates an express app and wraps it with Nest.
 
 {{< file "nest" "src/index.ts" >}}
 ```typescript

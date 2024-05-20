@@ -78,7 +78,7 @@ LIMIT 1000
 ```
 
 
-If the data looks malformatted at this point, you may need to open horses.csv in MS Excel and manually convert the number columns to numbers. BigQuery will error out if mismatched datatypes are present in the data. 
+If the data looks malformed at this point, you may need to open horses.csv in MS Excel and manually convert the number columns to numbers. BigQuery will error out if mismatched datatypes are present in the data. 
 
 
 

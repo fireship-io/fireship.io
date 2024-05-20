@@ -339,7 +339,7 @@ const addDocWithAutoIdOption2 = async () => {
 };
 
 // Merging a document if it exists
-const mergeExisitngDoc = async () => {
+const mergeExistingDoc = async () => {
   await setDoc(
     documentRef,
     {
@@ -362,7 +362,7 @@ const collectionRef = firestore.collection("some-collection");
 const documentRef = firestore.doc("some-collection", "some-doc-name");
 
 // Update/merge a document if it exists
-const mergeExisitngDoc = async () => {
+const mergeExistingDoc = async () => {
   await documentRef
     .set(
       {
@@ -379,7 +379,7 @@ const mergeExisitngDoc = async () => {
 };
 
 // Update a document if it exists
-const updateExisitngDoc = async () => {
+const updateExistingDoc = async () => {
   await documentRef
     .update({
       contents: "some-data",
@@ -439,7 +439,7 @@ const collectionRef = collection(firestore, "some-collection");
 const documentRef = doc(firestore, "some-collection", "some-doc-name");
 
 // Update/merge a document if it exists
-const mergeExisitngDoc = async () => {
+const mergeExistingDoc = async () => {
   await setDoc(
     documentRef,
     {
@@ -456,7 +456,7 @@ const mergeExisitngDoc = async () => {
 };
 
 // Update a document if it exists
-const updateExisitngDoc = async () => {
+const updateExistingDoc = async () => {
   await updateDoc(documentRef, {
     contents: "some-data",
   })

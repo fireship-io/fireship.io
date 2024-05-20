@@ -10,5 +10,5 @@ video_length: 1:23
 ---
 
 - Link to Supabase auth providers: https://supabase.com/docs/guides/auth
-- Link to Supaship GCP OAuth walktrhough (with timestamp): https://www.youtube.com/watch?v=tUm1AlaMcMQ&t=350s
+- Link to Supaship GCP OAuth walkthrough (with timestamp): https://www.youtube.com/watch?v=tUm1AlaMcMQ&t=350s
 - Supabase Google Guide: https://supabase.com/docs/guides/auth/auth-google

@@ -140,7 +140,7 @@ export function simpleReducer(state: string = 'Hello World', action: Action) {
 
 Now we need a way to present and change the state in the UI. Here are a few key points about this code.
 
-1. When using the ngrx `Store` class, it is necessary to give it a TypeScript interface that cooresponds the object we passed to the NgModule. In this example, our `AppState` interface handles this task with it's one `message` property.
+1. When using the ngrx `Store` class, it is necessary to give it a TypeScript interface that corresponds the object we passed to the NgModule. In this example, our `AppState` interface handles this task with it's one `message` property.
 2. A variable for `message$` is set as an Observable on the component by calling `this.store.select('message')`.
 3. We trigger state changes by sending actions to the reducer with `this.store.dispatch('ACTION')`
 
@@ -249,7 +249,7 @@ export interface Post {
 ```
 ### post.actions.ts
 
-Every action will be managed within it's own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
+Every action will be managed within its own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
 
 ```typescript
 import { Action } from '@ngrx/store';

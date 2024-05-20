@@ -42,7 +42,7 @@ All of this magic is made possible via [Headless Chrome and Rendertron](https://
 
 **What are the drawbacks?** 
 
-- Requires a Rentertron instance to be deployed for production (Docker container). 
+- Requires a Rendertron instance to be deployed for production (Docker container). 
 - Performance hit on first page view (except the root URL).  
 - Potentially higher costs
 - That's all I could come up with...
@@ -61,7 +61,7 @@ I am starting from a brand new Angular v5 app with the routing module. Using the
 ng new seoFriendlyApp --routing
 ```
 
-The next step is to create a few components and load them with the router. Each component will have it's own dynamically generated meta tags to be used by social media bots and search crawlers. 
+The next step is to create a few components and load them with the router. Each component will have its own dynamically generated meta tags to be used by social media bots and search crawlers. 
 
 ```shell
 ng g component home-page

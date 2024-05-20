@@ -52,7 +52,7 @@ npm i rxfire firebase rxjs
 npm run dev
 ```
 
-Next, head over the the [Firebase Console](https://console.firebase.google.com/) and grab your web app credentials. Create a file to handle the initialization of Firebase. 
+Next, head over the [Firebase Console](https://console.firebase.google.com/) and grab your web app credentials. Create a file to handle the initialization of Firebase. 
 
 {{< file "js" "firebase.js" >}}
 ```js
@@ -118,7 +118,7 @@ Keep in mind, we will be creating the `Todos` and `Profile` components in the up
 
 ### User Profile
 
-When a user is logged-in, we can pass the props down to a child (dumb) component used for data presentation only. The `export` keyword makes it possible to pass a value from the parent the the child. 
+When a user is logged-in, we can pass the props down to a child (dumb) component used for data presentation only. The `export` keyword makes it possible to pass a value from the parent the child. 
 
 {{< file "svelte" "Profile.svelte" >}}
 ```html

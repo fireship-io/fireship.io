@@ -1,6 +1,6 @@
 ---
 title: Tasks
-description: Use tasks to automatic repeitive jobs in the terminal 
+description: Use tasks to automatic repetitive jobs in the terminal 
 weight: 31
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false

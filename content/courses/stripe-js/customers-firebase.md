@@ -18,7 +18,7 @@ Learn more about [Firestore](https://fireship.io/tags/firestore/).
 npm install firebase-admin
 ```
 
-Download your service account, then add add it's path as an environment variable. 
+Download your service account, then add its path as an environment variable. 
 
 {{< file "cog" ".env" >}}
 ```text

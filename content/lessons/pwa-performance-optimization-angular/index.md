@@ -83,7 +83,7 @@ Ok cool, so we know our bundle size is going to impact performance, but *How do 
 I created a simple break down of [lazy loaded modules](https://angularfirebase.com/lessons/how-to-lazy-load-components-in-angular-4-in-three-steps/) here, but let's revisit the process for our Hacker News PWA.   
 
 
-### 1. Create a Feature Module with it's own Routes
+### 1. Create a Feature Module with its own Routes
 
 In this case, I have a content module that will be lazy loaded. 
 

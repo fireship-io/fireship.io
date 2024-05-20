@@ -26,9 +26,9 @@ The snippet below shows you how to test asynchronous [RxJS Observables](http://r
 
 ## Testing a Single Emitted Value
 
-Let's imagine we have an Observable that should emit a string, which we can create with the [of](https://www.learnrxjs.io/operators/creation/of.html) helper. The key to making this test work is passing it the the `done` keyword, otherwise it will finish before the data is emitted. 
+Let's imagine we have an Observable that should emit a string, which we can create with the [of](https://www.learnrxjs.io/operators/creation/of.html) helper. The key to making this test work is passing it the `done` keyword, otherwise it will finish before the data is emitted. 
 
-You can then write your expectations inside of the the subscribe callback, then call `done()` when you're ready for the test to finish. 
+You can then write your expectations inside of the subscribe callback, then call `done()` when you're ready for the test to finish. 
 
 ```typescript
 import { of } from 'rxjs';

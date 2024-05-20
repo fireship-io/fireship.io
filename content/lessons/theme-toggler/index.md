@@ -27,7 +27,7 @@ Almost every good dev website these days has the ability to [switch between ligh
 
 ### Dropdown Menu
 
-The HTML markup should should have some type of clickable element. In this demo, we have a dropdown, where each link has a unique ID for light, dark, and solar. Checkout the [CSS dropdown menu](/snippets/basic-css-dropdown-menu) menu for a complete guide on building the menu from the video. Also notice how the `body` element starts with a class of light. 
+The HTML markup should have some type of clickable element. In this demo, we have a dropdown, where each link has a unique ID for light, dark, and solar. Checkout the [CSS dropdown menu](/snippets/basic-css-dropdown-menu) menu for a complete guide on building the menu from the video. Also notice how the `body` element starts with a class of light. 
 
 {{< file "html" "index.html" >}}
 ```html

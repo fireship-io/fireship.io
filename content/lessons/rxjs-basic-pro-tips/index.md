@@ -43,7 +43,7 @@ I like to think of RxJS terminology in a highly simplified way.
 1. Observable - An *array*  that is built over time.  
 2. Subscription - A *for loop*  that happens over time.  
 3. Emit - When an Observable spits out a value because something subscribed to it.
-4. Operator - Functions that alter the the way Observables emit values. 
+4. Operator - Functions that alter the way Observables emit values. 
 
 <img src="/images/observable-animation.gif" alt="animation of rx observable" class="content-image" />
 
@@ -280,7 +280,7 @@ Similar operators: `mapTo`
 The `do` operator allows you to run code at any point in the Observable, without producing side effects on the emitted values. This is handy for debugging or for any situation where you want to run code outside of the Observable scope. 
 
 ```js
-const names = Rx.Observable.of('Simon', 'Garfunkle')
+const names = Rx.Observable.of('Simon', 'Garfunkel')
 
 names
   .do(name  => console.log('original value', name) )
@@ -289,8 +289,8 @@ names
   .subscribe()
   // Simon
   // SIMON
-  // Garfunkle
-  // GARFUNKLE
+  // Garfunkel
+  // GARFUNKEL
 ```
 
 ## 7. Filter - Use only the Good Stuff
@@ -327,7 +327,7 @@ names
 
 ## 9. Debounce and Throttle - Handle Stream Overload
 
-Sometimes you might be dealing with a stream that that is emitting values crazy fast - such as mouse move events in the browser. You might only want to handle these events every so often. 
+Sometimes you might be dealing with a stream that is emitting values crazy fast - such as mouse move events in the browser. You might only want to handle these events every so often. 
 
 1. Throttle - Give me the first value, then wait X time. 
 2. Debounce - Wait X time, then give me the last value. 
@@ -391,7 +391,7 @@ clicks.switchMap(click => {
 
 ## 12. TakeUntil - Get values until you're told not to
 
-As I mentioned in section 3, you need to unsubscribe for data responsibily. A clever way to handle subscriptions is with `takeUntil()`, which will complete the Observable when a second *notifier* Observable emits a value. 
+As I mentioned in section 3, you need to unsubscribe for data responsibly. A clever way to handle subscriptions is with `takeUntil()`, which will complete the Observable when a second *notifier* Observable emits a value. 
 
 
 ```js
@@ -411,7 +411,7 @@ interval
 
 ## 13. TakeWhile - Get values while the conditions are right
 
-The `takeWhile()` operator will complete the observable when a certain condintion is is true. It's like going speed dating until you find the perfect matching partner. 
+The `takeWhile()` operator will complete the observable when a certain condition is is true. It's like going speed dating until you find the perfect matching partner. 
 
 ```js
 const names = Rx.Observable.of('Sharon', 'Sue', 'Sally', 'Steve')

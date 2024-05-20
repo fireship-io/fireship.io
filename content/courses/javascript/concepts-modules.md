@@ -14,7 +14,7 @@ A [module](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
 
 First, a file exports (package) something useful...
 
-{{< file "js" "awesome-pacakge.js" >}}
+{{< file "js" "awesome-package.js" >}}
 ```js
 export default '🧁';
 ```

@@ -272,9 +272,9 @@ const signer = createSign('rsa-sha256');
 
 signer.update(data);
 
-const siguature = signer.sign(privateKey, 'hex');
+const signature = signer.sign(privateKey, 'hex');
 
-console.log(siguature);
+console.log(signature);
 
 /// VERIFY
 
@@ -282,7 +282,7 @@ const verifier = createVerify('rsa-sha256');
 
 verifier.update(data);
 
-const isVerified = verifier.verify(publicKey, siguature, 'hex');
+const isVerified = verifier.verify(publicKey, signature, 'hex');
 
 console.log(isVerified);
 ```

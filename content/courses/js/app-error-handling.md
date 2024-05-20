@@ -1,6 +1,6 @@
 ---
 title: Error Handling
-description: Handle errors gracefullly on the client and server
+description: Handle errors gracefully on the client and server
 weight: 46
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false

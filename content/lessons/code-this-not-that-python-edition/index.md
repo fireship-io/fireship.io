@@ -105,7 +105,7 @@ Speaking of one-liners, Python provides some built-in functions that can check c
 # Checking for negative values in a list
 nums = [1, 2, 3, 4, 5, -42, 6, 7, 8]
 
-# Inefficinet way 🤔 - Using a for loop and a flag ❌
+# Inefficient way 🤔 - Using a for loop and a flag ❌
 contains_neg = False # flag
 for num in nums:
     if num < 0:
@@ -213,7 +213,7 @@ sign = "positive" if (a > 0) else "negative" # parentheses are optional
 ```python
 from sys import getsizeof 
 
-# Inefficent way 💩: Using a list ❌
+# Inefficient way 💩: Using a list ❌
 L = [n for n in range(42_000)]
 sum(L) # 881979000 bytes
 getsizeof(L) # 351064 bytes

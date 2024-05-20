@@ -22,7 +22,7 @@ video_length: 11:32
 ng g component user/email-login
 ```
 
-Your user module should look similer to this:
+Your user module should look similar to this:
 
 {{< file "ngts" "user.module.ts" >}}
 ```typescript
@@ -52,7 +52,7 @@ Make sure to declare the form in the login page for unauthenticated users.
 </div>
 ```
 
-### Step 2 - Typescript Logic
+### Step 2 - TypeScript Logic
 
 {{< file "ngts" "email-login.component.ts" >}}
 ```typescript

@@ -58,7 +58,7 @@ async function fetchFromAPI() {
 
 ## Server-side: Verify ID the Token
 
-On the server-side, find the the ID token in the request headers and decode it with the Firebase Admin SDK. The following middleware simply adds a `currentUser` property to the request. 
+On the server-side, find the ID token in the request headers and decode it with the Firebase Admin SDK. The following middleware simply adds a `currentUser` property to the request. 
 
 
 {{< file "ts" "express-app.ts" >}}

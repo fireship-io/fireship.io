@@ -243,7 +243,7 @@ class MyHomePage4 extends StatelessWidget {
 }
 ```
 
-The one issue that with this implementation is that it uses on a global variable to share the data model - this is generally frowned upon ☹️. We can easily overcome this issue with a little service locator library called [Get It](https://pub.dartlang.org/packages/get_it) that allows us to define and access a global singleton. It ensures we don't accidentily instantiate multiple state containers and provides additional benefits for integration testing within Flutter widgets. 
+The one issue that with this implementation is that it uses on a global variable to share the data model - this is generally frowned upon ☹️. We can easily overcome this issue with a little service locator library called [Get It](https://pub.dartlang.org/packages/get_it) that allows us to define and access a global singleton. It ensures we don't accidentally instantiate multiple state containers and provides additional benefits for integration testing within Flutter widgets. 
 
 We can now safely use our global singleton in any widget that requires it. 
 

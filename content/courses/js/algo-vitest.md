@@ -9,7 +9,7 @@ emoji: 🧪
 video_length: 2:05
 ---
 
-Use [Vitest](https://vitest.dev/) to create a few basic unit test for the algorithims in the previous lessons. 
+Use [Vitest](https://vitest.dev/) to create a few basic unit test for the algorithms in the previous lessons. 
 
 ```shell
 npm init -y
