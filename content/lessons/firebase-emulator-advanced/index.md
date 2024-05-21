@@ -5,7 +5,7 @@ publishdate: 2020-05-31T19:11:38-07:00
 author: Jeff Delaney
 draft: false
 description: Advanced techniques for generating mock data and testing with the Firebase emulator suite
-tags: 
+tags:
     - firebase
     - productivity
     - testing
@@ -13,8 +13,8 @@ tags:
 
 pro: true
 vimeo: 424882834
-# youtube: 
-# github: 
+# youtube:
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -52,7 +52,7 @@ How do you use emulated Cloud Functions and Firestore in a frontend app? When de
 {{< file "js" "client-side.js" >}}
 ```javascript
   firebase.initializeApp(yourFirebaseConfig);
-  
+
 
   if (location.hostname === "localhost") {
 
@@ -67,7 +67,7 @@ How do you use emulated Cloud Functions and Firestore in a frontend app? When de
 
 ### Backend Firebase Admin
 
-If using Firebase Admin with Node.js, you can set an environment variable when not in production. 
+If using Firebase Admin with Node.js, you can set an environment variable when not in production.
 
 {{< file "js" "server-side.js" >}}
 ```javascript
@@ -82,16 +82,16 @@ if (process.env.NODE_ENV !== 'production') {
 
 ### What cannot be Emulated?
 
-Auth, Storage, and FCM are not currently supported. If you need to create a large number of mock records for these services, consider creating a second "sandbox" Firebase project. 
+Auth, Storage, and FCM are not currently supported. If you need to create a large number of mock records for these services, consider creating a second "sandbox" Firebase project.
 
 
 ## Mock Data
 
-The emulator makes the Firebase Admin SDK available on the browser `window`. This means you can just call `firestore.doc(...).set(...)` from a client-side script or the browser console. 
+The emulator makes the Firebase Admin SDK available on the browser `window`. This means you can just call `firestore.doc(...).set(...)` from a client-side script or the browser console.
 
 ### Generate Fake Firestore Data Quickly
 
-We can quickly generate mock data by injecting [Faker.js](https://github.com/marak/Faker.js/) into a browser script. The script appends a button to the UI, then tells Firestore to create 100 user documents with fake data. Run it by simply pasting this code into the browser console. 
+We can quickly generate mock data by injecting [Faker.js](https://github.com/faker-js/faker) into a browser script. The script appends a button to the UI, then tells Firestore to create 100 user documents with fake data. Run it by simply pasting this code into the browser console.
 
 {{< file "js" "browser console" >}}
 ```javascript
@@ -126,14 +126,14 @@ We can quickly generate mock data by injecting [Faker.js](https://github.com/mar
 
 ### Run the Script Automatically
 
-You can run this script each time you visit the `localhost:4000/firestore/*` URL with a browser plugin called [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo). 
+You can run this script each time you visit the `localhost:4000/firestore/*` URL with a browser plugin called [TamperMonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo).
 
 {{< figure src="img/emulator-fake-data.png" caption="Use TamperMonkey to run the script automatically" >}}
 
 
 ## PubSub
 
-[Pub/Sub](https://cloud.google.com/pubsub/) is a secure way to send messages between Google Cloud services. To create messages, install the Node.js client. 
+[Pub/Sub](https://cloud.google.com/pubsub/) is a secure way to send messages between Google Cloud services. To create messages, install the Node.js client.
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -142,7 +142,7 @@ npm i @google-cloud/pubsub
 
 ### Create and Send Messages
 
-Below we have an HTTP function used to publish test messages. First, it checks if a topic exists, and if not, creates it. Next, it sends the JSON payload to its subscribers. I would recommend calling this function from an HTTP client like Postman or Insomnia (see video). 
+Below we have an HTTP function used to publish test messages. First, it checks if a topic exists, and if not, creates it. Next, it sends the JSON payload to its subscribers. I would recommend calling this function from an HTTP client like Postman or Insomnia (see video).
 
 ```javascript
 const { PubSub } = require('@google-cloud/pubsub');
@@ -155,7 +155,7 @@ exports.sendTestMessage = functions.https.onRequest(async (req, res) => {
 
 
     const [exists] = await pubsubClient.topic(topic).exists();
-    
+
     if (!exists) {
         await pubsubClient.createTopic(topic);
     }
@@ -169,7 +169,7 @@ exports.sendTestMessage = functions.https.onRequest(async (req, res) => {
 
 ### Receive Messages
 
-Handle messages to a topic with a Pub/Sub Cloud Function. 
+Handle messages to a topic with a Pub/Sub Cloud Function.
 
 ```javascript
 exports.handleMessage = functions.pubsub.topic('test').onPublish( async (message, context) => {
@@ -186,19 +186,19 @@ exports.handleMessage = functions.pubsub.topic('test').onPublish( async (message
 
 ### Run Scheduled Jobs
 
-The emulator does not currently run cron jobs for your scheduled functions. However, you can test the logic in your function by triggering the associated Pub/Sub topic, such as `firebase-schedule-YOUR_FUNCTION_NAME`. 
+The emulator does not currently run cron jobs for your scheduled functions. However, you can test the logic in your function by triggering the associated Pub/Sub topic, such as `firebase-schedule-YOUR_FUNCTION_NAME`.
 
 ```javascript
 exports.someBackgroundJob = functions.pubsub.schedule('* * * * *').onRun( ctx => { ... });
 ```
 
-For example, this function can be triggered by sending a message to `firebase-schedule-someBackgroundJob`. If you really want to test a schedule, consider creating a script with [node-cron](https://www.npmjs.com/package/node-cron). 
+For example, this function can be triggered by sending a message to `firebase-schedule-someBackgroundJob`. If you really want to test a schedule, consider creating a script with [node-cron](https://www.npmjs.com/package/node-cron).
 
 ## Testing
 
 ### End-to-End with Cypress
 
-You can easily add end-to-end (E2E) testing to any frontend project with Cypress. 
+You can easily add end-to-end (E2E) testing to any frontend project with Cypress.
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -206,7 +206,7 @@ cd frontend-app
 npm install cypress -D
 ```
 
-Create a file for your spec. 
+Create a file for your spec.
 
 {{< file "js" "cypress/integration/example-spec.js" >}}
 ```javascript
@@ -274,4 +274,4 @@ E2E testing is not suitable for all scenarios. In some cases, you may to [unit t
 
 ### Firestore Rules Unit Tests
 
-It can also be beneficial to [test Firestore security rules](https://fireship.io/lessons/testing-firestore-security-rules-with-the-emulator/). 
+It can also be beneficial to [test Firestore security rules](https://fireship.io/lessons/testing-firestore-security-rules-with-the-emulator/).
