@@ -9,4 +9,4 @@ links:
     github: https://github.com/klutchdev
 ---
 
-Kyle aka "Klutch" or "KlutchDev" is a battle-hardened fullstack JavaScript/React && Firebase developer from western Massachusetts. Klutch is currently learning Rust, TypeScript, and preparing for the OSWE exam. When not writing code he is relaxing at home with his long time sweetheart Chelsea and cats Murph/Zelda or shredding guitar.
+Kyle aka "Klutch" or "KlutchDev" is a battle-hardened Fullstack JavaScript/React && Firebase developer from Western Massachusetts. Klutch is currently learning Rust, TypeScript, and preparing for the OSWE exam. When not writing code, he is relaxing at home with his long time sweetheart Chelsea and cats Murph/Zelda or shredding guitar.

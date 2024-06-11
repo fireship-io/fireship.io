@@ -12,6 +12,6 @@ links:
   portfolio: https://deveube.com
 ---
 
-**devEUBE** = technology geek and expert problem solver. I love to learn anything new, and I am especially interested and passionate about emerging technologies in cloud computing and web development. I am driven and passionate about sharing skills and knowledge with others and helping others succeed using new and innovative technologies. 
+**devEUBE** = technology geek and expert problem solver. I love to learn anything new, and I am especially interested and passionate about emerging technologies in Cloud Computing and Web Development. I am driven and passionate about sharing skills and knowledge with others and helping others succeed using new and innovative technologies. 
 
 Passionate Hobbies: Learning New Media, Gaming and Design / Development of media and web presences.

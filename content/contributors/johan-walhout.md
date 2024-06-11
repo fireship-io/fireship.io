@@ -11,4 +11,4 @@ links:
     linkedin: https://www.linkedin.com/in/johanwalhout/
 ---
 
-Johan is a software engineer developing apps and webapplications in Angular 2+, VueJS, Nodejs and Dart/Flutter. When he is not working on new projects, he enjoy to have adventures with his wife, four boys and a dog.
+Johan is a Software Engineer developing apps and web applications in Angular 2+, VueJS, Nodejs and Dart/Flutter. When he is not working on new projects, he enjoys having adventures with his wife, four boys and a dog.
