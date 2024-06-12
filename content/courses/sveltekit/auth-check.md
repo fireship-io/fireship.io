@@ -12,7 +12,7 @@ video_length: 0:47
 
 ## AuthCheck Component
 
-{{< file "svelte" "+page.svelte" >}}
+{{< file "svelte" "lib/components/AuthCheck.svelte" >}}
 ```svelte
 <script lang="ts">
     import { user } from "$lib/firebase";
