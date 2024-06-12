@@ -14,7 +14,7 @@ quiz: true
   <h5><code>git clone</code> creates remote-tracking branches in the cloned repo?</h5>
 </quiz-modal>
 
-Clone a remote repository to your local machine and optionally change the name of the director
+Clone a remote repository to your local machine and optionally change the name of the directory.
 
 {{< file "terminal" "command line" >}}
 ```bash
