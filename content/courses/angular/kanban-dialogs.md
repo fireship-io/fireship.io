@@ -112,7 +112,7 @@ And make sure to bind the button click to the `openDialog()` handler.
 
 ### Step 3 - Task Dialog
 
-The task dialog is similar, but also supports data updates by passing data into the material dialog. 
+The task dialog is similar, but also supports data updates by passing data into the Material dialog. 
 
 {{< file "ngts" "task-dialog.component.ts" >}}
 ```typescript

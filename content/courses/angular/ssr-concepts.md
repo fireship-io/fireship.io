@@ -10,14 +10,14 @@ chapter_start: Server-side Rendering
 video_length: 2:57
 ---
 
-Determine the best rendering strategy for your use-case. You may not need SSR at all if the app does not care about search engine bots or social media link bots. 
+Determine the best rendering strategy for your use-case. You may not need SSR at all if the app does not care about Search Engine Bots or Social Media link bots. 
 
 ## Strategies
 
 ### Server-side Rendering (SSR)
 
 - Renders the app on every request
-- Requires a NodeJS server 
+- Requires a Node.JS server 
 
 ### Prerendering
 

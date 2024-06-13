@@ -9,4 +9,4 @@ links:
     linkedin: https://www.linkedin.com/in/sabari-s-7105b322a/
 ---
 
-Sabz is a self-taught developer && designer. He is interested in web, desktop development.
+Sabz is a self-taught Developer && Designer. He is interested in Web && Desktop Development.

@@ -9,7 +9,7 @@ emoji: 🔥
 video_length: 7:39
 ---
 
-Separate all database logic into a dedicated service.
+Separate all Database logic into a dedicated service.
 
 ## Database Service
 

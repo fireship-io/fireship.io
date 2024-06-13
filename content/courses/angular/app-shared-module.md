@@ -22,7 +22,7 @@ Create a shared module to avoid duplicate imports and exports of common Angular 
 ng g module shared
 ```
 
-Add it to the app module. It will be imported by all features in this app. 
+Add it to the App Module. It will be imported by all features in this App. 
 
 {{< file "ngts" "app.module.ts" >}}
 ```typescript
@@ -46,7 +46,7 @@ export class AppModule { }
 
 ### Step 2 - Consolidate Imports
 
-Avoid duplication by consolidating your imports with the the spread syntax. We will be using the common material modules throughout the course. All Material modules listed below will be used in this app. 
+Avoid duplication by consolidating your imports with the the spread syntax. We will be using the common Material modules throughout the course. All Material modules listed below will be used in this app.
 
 {{< file "ngts" "shared.module.ts" >}}
 ```typescript
