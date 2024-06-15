@@ -16,15 +16,15 @@
 
 html {
     display: block;
-    font-size: 13px;
+    font-size: 16px;
     @media (min-width:1024px) {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 
 body {
 	@apply dark:bg-gray7 dark:text-gray1;
-    background: linear-gradient(176deg, rgba(18,24,27,1) 50%, rgba(32,39,55,1) 100%);
+    background: linear-gradient(176deg, rgb(238, 234, 4) 50%, rgb(202, 189, 2) 100%);
     min-height: 100vh;
     background-attachment: fixed;
     @include scrollbar;

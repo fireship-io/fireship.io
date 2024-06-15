@@ -19,7 +19,7 @@
 // Gradient Slide
 
 .gradient-text {
-  @apply bg-gradient-to-t from-orange-500 to-yellow-500;
+  @apply bg-gradient-to-t from-orange-500 to-blue-500;
   background-clip: text;
   color:rgba(0,0,0,0);
   -webkit-background-clip:text;
@@ -39,7 +39,7 @@
   -webkit-background-clip:text;
 }
 
-.gradient-slide {
+.gradient-slide { // faster
     @apply bg-gradient-to-r from-orange-500 to-pink-500;
     background-size: 200% 200%;
     animation: gradiant-move 2s ease-in-out infinite;

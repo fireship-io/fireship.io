@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */ 
+/** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
 module.exports = {
@@ -16,6 +16,7 @@ module.exports = {
       current: 'currentColor',
       white: '#ffffff',
       black: '#000000',
+
       gray1: '#f8f8f8',
       gray2: '#dbe1e8',
       gray3: '#b2becd',
@@ -23,6 +24,8 @@ module.exports = {
       gray5: '#454e56',
       gray6: '#2a2e35',
       gray7: '#12181b',
+      yellow1: '#fce41c',
+      yellow2: '#f8ed86',
       link: '#0000ee',
       blue: colors.blue,
       green: colors.green,
