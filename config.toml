@@ -1,6 +1,6 @@
-baseURL = 'https://fireship.io/'
-languageCode = 'en-us'
-title = 'Fireship'
+baseURL = 'https://formations.eirbware.eirb.fr'
+languageCode = 'fr-fr'
+title = "Eirb'Academy"
 enableRobotsTXT = true
 
 [outputs]

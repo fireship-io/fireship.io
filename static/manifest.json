@@ -1,7 +1,7 @@
 {
-    "name": "Fireship.io",
-    "short_name": "Fireship.io",
-    "description": "Awesome Content for App Developers",
+    "name": "Eirb'Academy, by Eirbware",
+    "short_name": "Eirb'Academy",
+    "description": "E-learning platform by ENSEIRB-MATMECA's students",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#2a2e35",
