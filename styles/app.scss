@@ -24,10 +24,14 @@ html {
 
 body {
 	@apply dark:bg-gray7 dark:text-gray1;
-    background: linear-gradient(176deg, rgb(238, 234, 4) 50%, rgb(202, 189, 2) 100%);
+    background: linear-gradient(176deg, rgb(255, 228, 40) 50%, rgb(233, 215, 78) 100%);
     min-height: 100vh;
     background-attachment: fixed;
     @include scrollbar;
+}
+
+.dark body {
+    background: linear-gradient(176deg, rgb(18, 24, 27) 50%, rgb(32, 39, 55) 100%);
 }
 
 h1,

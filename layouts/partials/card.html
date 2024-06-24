@@ -14,7 +14,7 @@
         <img class="w-full m-0 mb-1 rounded-t-xl" src="{{ $img }}" alt="{{ .context.Title }}">
 
         <section class="p-5">
-                <h5>{{ .context.Title }}</h5>
+                <h5 class="text-white">{{ .context.Title }}</h5>
                 <p class="text-gray3 min-h-[100px]">{{ .context.Description }}</p>
                 {{ range .context.Params.tags }}
                     <span class="tag tag-{{ . }}">

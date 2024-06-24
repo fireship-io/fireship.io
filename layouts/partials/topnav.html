@@ -1,20 +1,15 @@
 <span class="py-100px">
-  <nav class="flex justify-between container md:p-7  bg-black rounded-md">
+  <nav class="flex justify-between container md:p-7 bg-black dark:bg-yellow-300 rounded-md">
   <a
     class="flex justify-center items-center text-center w-13  h-10 logo-gif"
     href="/"
   >
     <img id="logo" src="/img/logo.svg" alt="logo" />
     <img class="relative bottom-1 left-1" id="logoBg" src="/img/logo.svg" alt="logo" />
-  <span style = "font-size:50px">Eirbware</span>
+    <span class="text-white text-2xl">Eirb'Academy</span>
   </a>
 
   <ul class="flex justify-center items-center">
-    <if-pro>
-      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
-        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
-      </li>
-    </if-pro>
     <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
       <a href="/lessons" class="font-sans text-xl font-bold leading-none text-yellow1 hover:text-yellow2">labs</a>
     </li>
@@ -35,6 +30,7 @@
         </button>
         </modal-action>
       </li>
+    <li class="mx-2"><dark-mode-toggle></dark-mode-toggle></li>
     <li class="ml-2 mr-6 relative">
       <if-user>
         <a href="/dashboard">
