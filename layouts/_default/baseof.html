@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head data-build="{{ .Site.Data.svelte.token }}">
+    <!--
     <script>
       if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark')
@@ -8,6 +9,7 @@
         document.documentElement.classList.remove('dark')
       }
     </script>
+    -->
     <meta charset="utf-8">
     <title>{{ .Page.Title }}</title>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
@@ -45,7 +47,7 @@
   </global-data>
 
     {{ block "header" . }}
-    <!-- navbar -->
+    {{ partial "topnav" . }}
     {{ end }}
     {{ block "main" . }}
       <!-- main -->

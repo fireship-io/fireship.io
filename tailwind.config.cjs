@@ -24,6 +24,7 @@ module.exports = {
       gray5: '#454e56',
       gray6: '#2a2e35',
       gray7: '#12181b',
+      eirbyellow: "#FFE428",
       yellow1: '#fce41c',
       yellow2: '#f8ed86',
       link: '#0000ee',

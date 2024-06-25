@@ -24,7 +24,7 @@ html {
 
 body {
 	@apply dark:bg-gray7 dark:text-gray1;
-    background: linear-gradient(176deg, rgb(255, 228, 40) 50%, rgb(233, 215, 78) 100%);
+    background: linear-gradient(176deg, theme('colors.eirbyellow') 40%, rgb(250, 180, 50) 100%);
     min-height: 100vh;
     background-attachment: fixed;
     @include scrollbar;
@@ -54,6 +54,14 @@ figure img {
 
 .container {
     @apply max-w-screen-2xl mx-auto px-3 md:px-8;
+}
+
+nav {
+  background: theme('colors.black');
+}
+
+.dark nav {
+  background: theme('colors.eirbyellow');
 }
 
 .grid-list {

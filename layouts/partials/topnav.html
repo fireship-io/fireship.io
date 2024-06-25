@@ -1,12 +1,12 @@
 <span class="py-100px">
-  <nav class="flex justify-between container md:p-7 bg-black dark:bg-yellow-300 rounded-md">
+  <nav class="flex justify-between container md:p-8 rounded-md">
   <a
-    class="flex justify-center items-center text-center w-13  h-10 logo-gif"
+    class="flex text-center w-12 h-12 logo-gif"
     href="/"
   >
     <img id="logo" src="/img/logo.svg" alt="logo" />
     <img class="relative bottom-1 left-1" id="logoBg" src="/img/logo.svg" alt="logo" />
-    <span class="text-white text-2xl">Eirb'Academy</span>
+    <span class="text-white text-2xl">{{ .Site.Title }}</span>
   </a>
 
   <ul class="flex justify-center items-center">
@@ -25,8 +25,7 @@
           <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
         </button>
         <button class="flex md:hidden">
-          <span style = "bg-black">{
-            <img src = "svg/search.svg"></img></span>
+          <span class="text-gray2 w-6 mx-2">{{ partial ("svg/search.svg") }}</span>
         </button>
         </modal-action>
       </li>

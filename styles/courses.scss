@@ -27,7 +27,7 @@
         background: none;
       }
       a {
-        @apply text-gray3 no-underline bg-black bg-opacity-30;
+        @apply text-gray3 no-underline bg-black dark:bg-gray1 dark:bg-opacity-30;
         padding: 1em 2em;
       }
     }

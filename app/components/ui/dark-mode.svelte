@@ -30,9 +30,9 @@
     else htmlBase.classList.remove("dark");
   }
   let cachedMode: LightMode = mode($doesPreferDark);
-  // onMount(() => {
-  //   changeDarkClass(cachedMode);
-  // });
+  onMount(() => {
+    changeDarkClass(cachedMode);
+  });
   function toggle() {
     const nextMode = (cachedMode + 1) % 3;
     doesPreferDark.set(
