@@ -3,11 +3,13 @@
 
 	<main
 		class="container flex flex-col-reverse md:flex-row">
+    {{ $isSingleMemoPage := not (hasSuffix .RelPermalink "/memo/") }}
+    {{ if $isSingleMemoPage }}
 		<!-- Progress tracker -->
 		<navbar-toggle>
 			<!-- Lessons -->
 			<ul class="sticky top-0 h-screen overflow-auto scrollbar mr-4 pb-10 pr-4 min-w-[300px]" id="sidebar">
-				{{ range .Parent.Pages.ByWeight }}
+        {{ range (complement (slice (.Parent.GetPage "./memo")) .Parent.Pages).ByWeight }}
 
 					<!-- Chapter -->
 					{{ if isset .Params "chapter_start" }}
@@ -15,7 +17,7 @@
 							<i class="mr-2 not-italic">{{ .Params.emoji }}</i>
 							<h3 id="chapters" class="text-gray3">{{ .Params.chapter_start }}</h3>
 						</li>
-					{{ end}}
+					{{ end }}
 
 					<!-- Lesson tile -->
 					<li>
@@ -53,30 +55,39 @@
 				{{ end }}
 			</ul>
 		</navbar-toggle>
+    {{ end }}
 
 		<!-- Video player -->
 		<article class="prose dark:prose-invert pt-1 mx-auto px-3 md:px-8 min-w-0 max-w-none w-full">
 
-		{{ if or .Params.vimeo .Params.youtube }}
+    {{ $videoInCurrentPage := or .Params.vimeo .Params.youtube }}
+    {{ $videoInNextPage := false }}{{ with .PrevInSection }}{{ $videoInNextPage = or .Params.vimeo .Params.youtube }}{{end}}
+		{{ if $videoInCurrentPage }}
 				<video-player free="{{ .Params.free }}"></video-player>
 		{{ end }}
 
 		<nav class="flex items-center py-6 px-4 bg-black bg-opacity-20 shadow-lg mb-6">
+      {{ if and $videoInCurrentPage $videoInNextPage }}
 			<div class="flex flex-col items-center">
 				<autoplay-toggle></autoplay-toggle>
 			{{/* <span class="text-xs relative bottom-1.5 mr-1">autoplay</span> */}}
 				<span class="text-xs relative bottom-1">autoplay</span>
 			</div>
+      {{end}}
 
 			<div class="ml-auto">
+        {{ if $isSingleMemoPage }}
 				{{with .NextInSection}}
 					<a class="btn btn-transparent" href="{{.RelPermalink}}">👈</a>
 				{{end}}
+        {{end}}
 
 				<a class="btn btn-transparent" href="{{.Parent.RelPermalink}}">🏠</a>
 
+        {{ if $isSingleMemoPage }}
 				{{with .PrevInSection}}
 					<a class="btn btn-transparent" href="{{.RelPermalink}}">👉</a>
+				{{end}}
 				{{end}}
 			</div>
 

@@ -38,12 +38,26 @@
 
         {{ else }}
         {{/*  Layout for individual course landing page  */}}
+        {{ $cheatsheetPage := .GetPage "./memo"}}
+        {{ $isCheatsheetIndex := hasSuffix .RelPermalink "/memo/" }}
+        
         <header class="text-center my-12">
-            <h1 class="text-6xl mb-0 inline-block mx-auto">{{ .Params.title }}</h1>
-            <p class="text-gray3 my-1">{{ .Params.description }}</p>
+          <h1 class="text-6xl mb-0 inline-block mx-auto">{{ if $isCheatsheetIndex }}{{ print "Cheatsheets" }}{{ else }}{{ .Params.title }}{{ end }}</h1>
+            <p class="text-gray3 my-1">{{ if $isCheatsheetIndex }}{{ .Parent.Params.title }}{{ else }}{{ .Params.description }}{{ end }}</p>
         </header>
 
-        <div class="mx-auto w-24 h-1 my-24 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+        {{/*  Access to cheatsheet pages if they exist */}}
+        {{ with $cheatsheetPage }}
+          <div class="mx-auto w-24 h-1 mt-0 mb-24 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full"></div>
+          <div class="bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-green-500 border border-solid">
+            <p class="mb-0">
+            <a href={{ .RelPermalink }} class="font-display text-green-500 no-underline text-xl">
+              {{ if .IsPage }}{{ print "Accéder à la cheatsheet" }}{{ else }}{{ print "Accéder aux cheatsheets." }}{{ end }}
+            </a>
+            </p>
+          </div>
+          <div class="mx-auto w-24 h-1 my-24 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
+        {{ end }}
 
 
         {{ if .Params.vimeo }}
@@ -54,21 +68,23 @@
         
 
         
+        {{ if not $isCheatsheetIndex }}
         {{ $author := .Site.GetPage (print "/contributors/"  (anchorize .Params.Author)) }}
         {{ $authorImg := (print "/contributors/img/"  (anchorize .Params.Author) ".webp") }}
         <div class="flex items-center no-underline justify-center" itemprop="author" name="{{ .Params.author }}">
-            <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar" />
-            <span class="flex flex-col ml-2">
-                <span class="text-lg">Taught by 
-                    <a class="no-underline text-orange-500" href="/contributors/{{ anchorize .Params.author }}/">{{ title (.Params.authorname | default .Params.author) }}</a>
-                </span>
-                <span class="text-sm text-gray4">
-                    {{ (.Params.authorbio | default "That guy from the Fireship YouTube channel") }}
-                </span>
+          <img class="w-12 h-12 rounded-full block" src="{{ $authorImg }}" alt="{{ $author.Title }} avatar" />
+          <span class="flex flex-col ml-2">
+            <span class="text-lg">Taught by 
+              <a class="no-underline text-orange-500" href="/contributors/{{ anchorize .Params.author }}/">{{ title (.Params.authorname | default .Params.author) }}</a>
             </span>
+            <span class="text-sm text-gray4">
+              {{ (.Params.authorbio | default "That guy from the Fireship YouTube channel") }}
+            </span>
+          </span>
         </div>
 
         <div class="mx-auto w-24 h-1 my-24 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full"></div>
+        {{ end }}
 
         {{ if .Params.stack }}
             <div class="text-center mb-10">
@@ -94,58 +110,26 @@
             {{ .Content }}
         </article>
 
-
-        <if-access>
-
-            {{/*  <div slot="granted" class="max-w-3xl mx-auto text-center text-green-500 text-2xl font-bold px-8 border-green-500 rounded-lg">
-                You have full access to this course!
-            </div>  */}}
-
-            <div slot="granted" class="mt-12 bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-green-500 border border-solid text-center">        
-                <p class="m-0 font-display text-green-500 no-underline text-xl">You have full access to this course 🎉</p>
-            </div>
-
-            <div slot="denied" class="max-w-3xl mx-auto text-center">
-                <h2 class="text-5xl text-white pb-2 inline-block">How to Enroll</h2>
-                <div class="mx-auto w-24 h-1 mt-0 mb-24 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full"></div>
-
-                <div class="bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-blue-500 border border-solid">
-                    <buy-course></buy-course>
-                    <p class="mt-0 text-sm text-gray4">Lifetime access for a blazingly low price</p>
-                </div>
-   
-                <h3 class="text-gray3">OR</h3>
-
-                <div class="bg-gray7 rounded-lg shadow-3xl p-8 max-w-sm mx-auto border-green-500 border border-solid">            
-                    <p class="mb-0"><a href="/pro/" class="font-display text-green-500 no-underline text-xl">Upgrade to PRO</a></p>
-                    <p class="mt-0 text-sm text-gray4">Unlock all Fireship content && bonus perks</p>
-                </div>
-  
-            </div>
-
-        </if-access>
-
-
-
-
+        {{ if not $isCheatsheetIndex }}
         <div class="text-center">
-            <h2 class="text-5xl border-gray6 pb-2 inline-block mt-24">Chapters</h2>
+          <h2 class="text-5xl border-gray6 pb-2 inline-block mt-24">Chapters</h2>
             <div class="mx-auto w-24 h-1 mb-16 mt-0 bg-gradient-to-r from-gray5 to-gray4 rounded-full"></div>
         </div>
+        {{ end }}
             <div class="flex justify-center">
                 <ul class="grid-list pl-0">
-                    {{ range $index, $page := .Pages }}
-                    <a class="no-underline relative hover:scale-105 transition-transform" href="{{ .RelPermalink }}">
-                        <li class="max-w-sm overflow-hidden shadow-3xl bg-gray6 p-6 rounded-xl">
-                            <span class="absolute -top-2 -left-5 font-display leading-6 text-center text-3xl w-10 h-10 rounded-full p-2">
-                                {{/*  {{ printf "%02d" ( add $index 1 )}}  */}}
-                                {{ $page.Params.emoji }}
-                            </span>
-                            <h5><span class="gradient-text mb-0">{{ printf "%02d" ( add $index 1 )}}</span> {{ $page.Title }}</h5>
-                            <p class="text-gray3">{{ $page.Description }}</p>
-                        </li>
-                    </a>
-                    {{ end }} 
+                  {{ range $index, $page := complement (slice $cheatsheetPage) .Pages }}
+                  <a class="no-underline relative hover:scale-105 transition-transform" href="{{ .RelPermalink }}">
+                      <li class="max-w-sm overflow-hidden shadow-3xl bg-gray6 p-6 rounded-xl">
+                          <span class="absolute -top-2 -left-5 font-display leading-6 text-center text-3xl w-10 h-10 rounded-full p-2">
+                              {{/*  {{ printf "%02d" ( add $index 1 )}}  */}}
+                              {{ $page.Params.emoji }}
+                          </span>
+                          <h5><span class="gradient-text mb-0">{{ printf "%02d" ( add $index 1 )}}</span> {{ $page.Title }}</h5>
+                          <p class="text-gray3">{{ $page.Description }}</p>
+                      </li>
+                  </a>
+                  {{ end }}
                 </ul>
             </div>
         {{ end }}

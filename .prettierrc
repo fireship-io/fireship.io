@@ -1,10 +1,21 @@
 {
-  "plugins": ["prettier-plugin-go-template"],
+  "plugins": [
+    "prettier-plugin-go-template",
+    "prettier-plugin-svelte"
+  ],
   "overrides": [
     {
-      "files": ["layouts/*.html"],
+      "files": [
+        "layouts/*.html"
+      ],
       "options": {
         "parser": "go-template"
+      }
+    },
+    {
+      "files": "*.svelte",
+      "options": {
+        "parser": "svelte"
       }
     }
   ]

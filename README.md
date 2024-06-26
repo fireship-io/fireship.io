@@ -71,7 +71,7 @@ First, install [Hugo Extended](https://gohugo.io/getting-started/installing/) ve
 
 Then, in the cloned repository's root, run the following command:
 
-```
+```bash
 npm install
 ```
 
@@ -79,19 +79,19 @@ npm install
 
 The layout uses Svelte components defined in the `app` directory, and these components  use `.scss` sheets in the `style` directory. Then, the files in both theses folders must be built by the Vite framework with the command below
 
-```
+```bash
 npm run vbuild 
 ```
 
 Then, the markdown content can be rendered in the deployable site in the `public` directory by running this command
 
-```
+```bash
 hugo
 ```
 
 Both the commands above are bundled in the **production building command** below
 
-```
+```bash
 npm run build
 ```
 
@@ -102,18 +102,23 @@ npm run build
 First, build once the Svelte components in the `static` directory by running the
 vite building command:
 
-```
+```bash
 npm run vbuild
 ```
 
 Then the website can be rendered with watching over the content by running the
 Hugo dev server:
 
-```
+```bash
 npm run hugo
 ```
 
-Check it on on `http://localhost:6969/`.
+If you want your draft pages to be rendered, then run
+```bash
+npm run hugo-dev
+```
+
+Check it on `http://localhost:6969/`.
 
 #### Edit components and layout
 
@@ -121,8 +126,14 @@ Both the layout and the Hugo website can be concurrently built with watching
 engines for development as well over the Markdown content  as on the layout or
 the application layer. To do that
 
-```
+```bash
 npm run start
+```
+
+To do that with the draft pages rendered by Hugo, run
+
+```bash
+npm run dev
 ```
 
 Check it on on `http://localhost:6969/`.
@@ -155,4 +166,4 @@ Now use it in anywhere in your HTML or Markdown.
 
 **Note:** A weird caveat with Svelte web components is that all styles must be encapsulated. You can use Tailwind, BUT only with `@apply` in the component. Global styles will not work.
 
-- `npm run dev`: Runs components in isolation. Serves `app/index.html` as a playground for components.
+- `npm run svelte-dev`: Runs components in isolation. Serves `app/index.html` as a playground for components.
