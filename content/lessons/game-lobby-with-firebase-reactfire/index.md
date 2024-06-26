@@ -5,11 +5,11 @@ publishdate: 2020-04-14T11:50:40-07:00
 author: Jarrett Helton
 draft: false
 description: Build a game lobby with Firebase & React Concurrent Mode
-tags: 
-    - react
-    - firebase
+tags:
+  - react
+  - firebase
 
-youtube: 
+youtube:
 github: https://github.com/JayHelton/firebase-firelobby
 # disable_toc: true
 # disable_qna: true
@@ -21,9 +21,9 @@ github: https://github.com/JayHelton/firebase-firelobby
 #    rxdart: 0.20
 ---
 
-The following tutorial builds a simple game matchmaking feature from scratch, allowing users to login, join a [game lobby](https://en.wikipedia.org/wiki/Matchmaking_(video_games)), and set their status as "ready" or "not ready". Our learning goal is to get familiar with React's new [Concurrent Mode](https://reactjs.org/docs/concurrent-mode-intro.html) features and Firebase's [ReactFire](https://github.com/FirebaseExtended/reactfire) package - both of which are brand new tools in 2020.
+The following tutorial builds a simple game matchmaking feature from scratch, allowing users to login, join a [game lobby](<https://en.wikipedia.org/wiki/Matchmaking_(video_games)>), and set their status as "ready" or "not ready". Our learning goal is to get familiar with React's new [Concurrent Mode](https://reactjs.org/docs/concurrent-mode-intro.html) features and Firebase's [ReactFire](https://github.com/FirebaseExtended/reactfire) package - both of which are brand new tools in 2020.
 
-In order to follow along, developers should have some prior experience with React, Firebase, and Firestore. You must have a Firebase project with _Firestore_ and _Sign in with Google_ enabled to work with your own live data. 
+In order to follow along, developers should have some prior experience with React, Firebase, and Firestore. You must have a Firebase project with _Firestore_ and _Sign in with Google_ enabled to work with your own live data.
 
 ⚠️ **_Warning_**: At the time of creation, React Concurrent Mode is marked as experimental and is _not_ suitable for production applications.
 
@@ -51,11 +51,12 @@ npm install react@experimental react-dom@experimental
 
 ### 2. Install ReactFire
 
-Install the Firebase SDK and ReactFire, and optionally add Bulma for better UI styling. 
+Install the Firebase SDK and ReactFire, and optionally add Bulma for better UI styling.
 
 ```bash
 npm install firebase reactfire bulma
 ```
+
 ### 3. Enable React Concurrent Mode
 
 > Concurrent Mode is a set of new features that help React apps stay responsive and gracefully adjust to the user’s device capabilities and network speed.
@@ -64,15 +65,15 @@ You are free to delete everything in the `./src` directory except `index.js`.
 In order to enable concurrent mode we must modify the way the React application is initialized. Concurrent mode makes use of `createRoot` from `react-dom`.
 
 ```jsx
-import 'bulma/css/bulma.css';
+import "bulma/css/bulma.css";
 
-import React from 'react';
-import { createRoot } from 'react-dom';
+import React from "react";
+import { createRoot } from "react-dom";
 
 function App() {
   return <div>Hello World!</div>;
 }
-createRoot(document.getElementById('root')).render(<App />);
+createRoot(document.getElementById("root")).render(<App />);
 ```
 
 Using `createRoot`, React will render your Application on the element with the `root` id in `./public/index.html` which was generated with `create-react-app`.
@@ -86,10 +87,11 @@ Reactfire makes strong use of the React [Context](https://reactjs.org/docs/conte
 Create a firebase config in `index.js` and surround our application with the `FirebaseAppProvider` component
 
 {{< file "react" "index.js" >}}
+
 ```jsx
 // Omitted
 
-import { FirebaseAppProvider } from 'reactfire';
+import { FirebaseAppProvider } from "reactfire";
 
 const firebaseConfig = {
   // Retrieved from the firebase console
@@ -112,11 +114,11 @@ Now our component tree within `FirebaseAppProvider` will have access to the hook
 First, we will create an `AuthenticationButtons` component that will be responsible for enabling users to sign-in and sign-out of the application.
 
 ```jsx
-import firebase from 'firebase/app';
+import firebase from "firebase/app";
 
-import React from 'react';
-import { createRoot } from 'react-dom';
-import { AuthCheck, FirebaseAppProvider, useAuth } from 'reactfire';
+import React from "react";
+import { createRoot } from "react-dom";
+import { AuthCheck, FirebaseAppProvider, useAuth } from "reactfire";
 
 // Omitted
 
@@ -132,12 +134,12 @@ function AuthenticationButtons() {
   return (
     <AuthCheck
       fallback={
-        <button className='button is-primary' onClick={signIn}>
+        <button className="button is-primary" onClick={signIn}>
           Sign In
         </button>
       }
     >
-      <button className='button is-info' onClick={signOut}>
+      <button className="button is-info" onClick={signOut}>
         Sign Out
       </button>
     </AuthCheck>
@@ -157,13 +159,13 @@ Next, we will add our new component to a navbar and add that navbar to the main 
 
 function Navbar() {
   return (
-    <nav className='navbar'>
-      <div className='navbar-brand'>Fire Lobby 🔥</div>
-      <div className='navbar-menu'>
-        <div className='navbar-start'></div>
-        <div className='navbar-end'>
-          <div className='navbar-item'>
-            <div className='buttons'>
+    <nav className="navbar">
+      <div className="navbar-brand">Fire Lobby 🔥</div>
+      <div className="navbar-menu">
+        <div className="navbar-start"></div>
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
               <AuthenticationButtons />
             </div>
           </div>
@@ -176,7 +178,7 @@ function Navbar() {
 // Omitted
 ```
 
-Add the navbar to the App. 
+Add the navbar to the App.
 
 ```jsx
 function App() {
@@ -214,8 +216,9 @@ The error above tells us that the `AuthenticationButtons` component was suspende
 We will add `Suspense` with a fallback to our component tree.
 
 {{< file "react" "index.js" >}}
+
 ```jsx
-import React, { Suspense } from 'react';
+import React, { Suspense } from "react";
 
 // Omitted
 
@@ -247,7 +250,10 @@ ReactFire provides an abstraction of Firebase Performance with the `SuspenseWith
 function App() {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <SuspenseWithPerf fallback={<p>Loading...</p>} traceId={'loading-app-status'}>
+      <SuspenseWithPerf
+        fallback={<p>Loading...</p>}
+        traceId={"loading-app-status"}
+      >
         <Navbar />
         <div>Hello World!</div>
       </SuspenseWithPerf>
@@ -273,22 +279,22 @@ import {
   SuspenseWithPerf,
   useAuth,
   useFirestore,
-  useFirestoreCollectionData
-} from 'reactfire';
+  useFirestoreCollectionData,
+} from "reactfire";
 
 // Omitted
 
 function Lobby() {
-  const lobbyCollection = useFirestore().collection('lobby');
+  const lobbyCollection = useFirestore().collection("lobby");
   const lobby = useFirestoreCollectionData(lobbyCollection);
 
   return (
-    <div className='container is-fluid'>
-      {lobby.map(m => {
+    <div className="container is-fluid">
+      {lobby.map((m) => {
         return (
-          <article key={m.email} className='tile is-child notification'>
-            <p className='title'>
-              {m.displayName} - {m.ready ? 'Ready 🎮' : 'Not Ready ❌'}
+          <article key={m.email} className="tile is-child notification">
+            <p className="title">
+              {m.displayName} - {m.ready ? "Ready 🎮" : "Not Ready ❌"}
             </p>
           </article>
         );
@@ -300,7 +306,10 @@ function Lobby() {
 function App() {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <SuspenseWithPerf fallback={<p>Loading...</p>} traceId={'loading-app-status'}>
+      <SuspenseWithPerf
+        fallback={<p>Loading...</p>}
+        traceId={"loading-app-status"}
+      >
         <Navbar />
         <AuthCheck fallback={<p>Not Logged In...</p>}>
           <Lobby></Lobby>
@@ -333,17 +342,17 @@ import {
   useAuth,
   useFirestore,
   useFirestoreCollectionData,
-  useUser
-} from 'reactfire';
+  useUser,
+} from "reactfire";
 
 // Omitted
 
 function Lobby() {
   const { email, displayName, uid } = useUser();
-  const lobbyCollection = useFirestore().collection('lobby');
+  const lobbyCollection = useFirestore().collection("lobby");
   const lobby = useFirestoreCollectionData(lobbyCollection);
 
-  const userInLobby = lobby.find(m => m.email === email);
+  const userInLobby = lobby.find((m) => m.email === email);
 
   const joinLobby = async () => {
     await lobbyCollection.doc(uid).set({ email, displayName, ready: false });
@@ -353,36 +362,41 @@ function Lobby() {
     await lobbyCollection.doc(uid).delete();
   };
 
-  const toggleReadiness = async newReadiness => {
-    await lobbyCollection.doc(uid).set({ ready: newReadiness }, { merge: true });
+  const toggleReadiness = async (newReadiness) => {
+    await lobbyCollection
+      .doc(uid)
+      .set({ ready: newReadiness }, { merge: true });
   };
 
   return (
-    <div className='container is-fluid'>
-      {lobby.map(m => {
+    <div className="container is-fluid">
+      {lobby.map((m) => {
         return (
-          <article key={m.email} className='tile is-child notification'>
-            <p className='title'>
-              {m.displayName} - {m.ready ? 'Ready 🎮' : 'Not Ready ❌'}
+          <article key={m.email} className="tile is-child notification">
+            <p className="title">
+              {m.displayName} - {m.ready ? "Ready 🎮" : "Not Ready ❌"}
             </p>
           </article>
         );
       })}
-      <div className='columns'>
+      <div className="columns">
         {userInLobby && (
-          <div className='column is-1'>
-            <button className='button is-primary' onClick={() => toggleReadiness(!userInLobby.ready)}>
-              {userInLobby.ready ? 'Not Ready!' : 'Ready!'}
+          <div className="column is-1">
+            <button
+              className="button is-primary"
+              onClick={() => toggleReadiness(!userInLobby.ready)}
+            >
+              {userInLobby.ready ? "Not Ready!" : "Ready!"}
             </button>
           </div>
         )}
-        <div className='column is-1'>
+        <div className="column is-1">
           {userInLobby ? (
-            <button className='button is-primary' onClick={leaveLobby}>
+            <button className="button is-primary" onClick={leaveLobby}>
               Leave
             </button>
           ) : (
-            <button className='button is-primary' onClick={joinLobby}>
+            <button className="button is-primary" onClick={joinLobby}>
               Join
             </button>
           )}
@@ -399,7 +413,7 @@ function Lobby() {
 
 It is now possible for a user to join and leave the lobby, as well as mark their status as "ready" or "not ready", all while reliably handling blocking actions with non-blocking alternatives.
 
-## Extra Credit 
+## Extra Credit
 
 ### 10. Refactor using the Context API
 
@@ -412,10 +426,10 @@ const LobbyContext = React.createContext();
 
 function LobbyProvider(props) {
   const { email, displayName, uid } = useUser();
-  const lobbyCollection = useFirestore().collection('lobby');
+  const lobbyCollection = useFirestore().collection("lobby");
   const lobby = useFirestoreCollectionData(lobbyCollection);
 
-  const userInLobby = lobby.find(m => m.email === email);
+  const userInLobby = lobby.find((m) => m.email === email);
 
   const joinLobby = async () => {
     await lobbyCollection.doc(uid).set({ email, displayName, ready: false });
@@ -425,12 +439,16 @@ function LobbyProvider(props) {
     await lobbyCollection.doc(uid).delete();
   };
 
-  const toggleReadiness = async newReadiness => {
-    await lobbyCollection.doc(uid).set({ ready: newReadiness }, { merge: true });
+  const toggleReadiness = async (newReadiness) => {
+    await lobbyCollection
+      .doc(uid)
+      .set({ ready: newReadiness }, { merge: true });
   };
 
   return (
-    <LobbyContext.Provider value={{ userInLobby, lobby, joinLobby, leaveLobby, toggleReadiness }}>
+    <LobbyContext.Provider
+      value={{ userInLobby, lobby, joinLobby, leaveLobby, toggleReadiness }}
+    >
       {props.children}
     </LobbyContext.Provider>
   );
@@ -446,12 +464,12 @@ function Lobby() {
   const { lobby } = useContext(LobbyContext);
 
   return (
-    <div className='container is-fluid'>
-      {lobby.map(m => {
+    <div className="container is-fluid">
+      {lobby.map((m) => {
         return (
-          <article key={m.email} className='tile is-child notification'>
-            <p className='title'>
-              {m.displayName} - {m.ready ? 'Ready 🎮' : 'Not Ready ❌'}
+          <article key={m.email} className="tile is-child notification">
+            <p className="title">
+              {m.displayName} - {m.ready ? "Ready 🎮" : "Not Ready ❌"}
             </p>
           </article>
         );
@@ -461,37 +479,42 @@ function Lobby() {
 }
 
 function LobbyActions() {
-  const { userInLobby, joinLobby, leaveLobby, toggleReadiness } = useContext(LobbyContext);
+  const { userInLobby, joinLobby, leaveLobby, toggleReadiness } =
+    useContext(LobbyContext);
   const components = [];
 
   if (userInLobby) {
     components.push(
-      <div key='readyButton' className='column is-1'>
-        <button key='readyButton' className='button is-primary' onClick={() => toggleReadiness(!userInLobby.ready)}>
-          {userInLobby.ready ? 'Not Ready!' : 'Ready!'}
+      <div key="readyButton" className="column is-1">
+        <button
+          key="readyButton"
+          className="button is-primary"
+          onClick={() => toggleReadiness(!userInLobby.ready)}
+        >
+          {userInLobby.ready ? "Not Ready!" : "Ready!"}
         </button>
-      </div>
+      </div>,
     );
     components.push(
-      <div key='leaveButton' className='column is-1'>
-        <button className='button is-primary' onClick={leaveLobby}>
+      <div key="leaveButton" className="column is-1">
+        <button className="button is-primary" onClick={leaveLobby}>
           Leave
         </button>
-      </div>
+      </div>,
     );
   } else {
     components.push(
-      <div key='joinButton' className='column is-1'>
-        <button className='button is-primary' onClick={joinLobby}>
+      <div key="joinButton" className="column is-1">
+        <button className="button is-primary" onClick={joinLobby}>
           Join
         </button>
-      </div>
+      </div>,
     );
   }
 
   return (
-    <div className='container is-fluid'>
-      <div className='columns'>{components}</div>
+    <div className="container is-fluid">
+      <div className="columns">{components}</div>
     </div>
   );
 }
@@ -501,7 +524,10 @@ function LobbyActions() {
 function App() {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
-      <SuspenseWithPerf fallback={<p>Loading...</p>} traceId={'loading-app-status'}>
+      <SuspenseWithPerf
+        fallback={<p>Loading...</p>}
+        traceId={"loading-app-status"}
+      >
         <Navbar />
         <AuthCheck fallback={<p>Not Logged In...</p>}>
           <LobbyProvider>
@@ -517,7 +543,7 @@ function App() {
 // Omitted
 ```
 
-Previously, we used ternaries and expressions to determine what UI to render, but this refactoring creates a component array and conditionally adds JSX to the array - React's rendering can be very flexible and powerful. 
+Previously, we used ternaries and expressions to determine what UI to render, but this refactoring creates a component array and conditionally adds JSX to the array - React's rendering can be very flexible and powerful.
 
 ## The End!
 

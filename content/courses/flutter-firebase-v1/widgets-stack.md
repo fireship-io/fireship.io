@@ -12,6 +12,7 @@ video_length: 1:44
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 class MyApp extends StatelessWidget {
  @override

@@ -4,14 +4,14 @@ lastmod: 2020-05-04T14:43:11-07:00
 publishdate: 2020-05-04T14:43:11-07:00
 author: Jeff Delaney
 draft: true
-description: Get started with Deno 1.0. A new JavaScript runtime. 
-tags: 
-    - deno
-    - node.js
-    - typescript
+description: Get started with Deno 1.0. A new JavaScript runtime.
+tags:
+  - deno
+  - node.js
+  - typescript
 
-youtube: 
-github: 
+youtube:
+github:
 # disable_toc: true
 # disable_qna: true
 
@@ -26,11 +26,11 @@ github:
 
 ### Install
 
-Follow the install instructions for your system. 
+Follow the install instructions for your system.
 
 ### Deno Global
 
-The runtime contains a global namespace `Deno` that provides access to all native functionality. 
+The runtime contains a global namespace `Deno` that provides access to all native functionality.
 
 ### Packages
 
@@ -38,5 +38,4 @@ The runtime contains a global namespace `Deno` that provides access to all nativ
 
 ## Build an REST API
 
-Let's build a simple REST API similar to Express.js. 
-
+Let's build a simple REST API similar to Express.js.

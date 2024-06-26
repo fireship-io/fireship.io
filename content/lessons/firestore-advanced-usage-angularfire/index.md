@@ -5,14 +5,14 @@ publishdate: 2018-08-10T06:48:43-07:00
 author: Jeff Delaney
 draft: false
 description: A variety of tips and snippets that make AngularFire v5 and Firestore easier to use.
-tags: 
-    - pro
-    - firestore
-    - firebase
-    - angular
+tags:
+  - pro
+  - firestore
+  - firebase
+  - angular
 
 youtube: 0bCdTzWXt1s
-pro: true 
+pro: true
 # disable_toc: true
 # disable_qna: true
 
@@ -23,8 +23,7 @@ pro: true
 #    rxdart: 0.20
 ---
 
-The following lesson provides a variety of tips and snippets that make [AngularFire2](https://github.com/angular/angularfire2) and Firestore much easier to use. The goal is to provide you with a global service that can simplify your codebase and solve common challenges faced with Angular Firebase development. 
-
+The following lesson provides a variety of tips and snippets that make [AngularFire2](https://github.com/angular/angularfire2) and Firestore much easier to use. The goal is to provide you with a global service that can simplify your codebase and solve common challenges faced with Angular Firebase development.
 
 ## 0. Important Firestore Caveats
 
@@ -33,10 +32,9 @@ The following lesson provides a variety of tips and snippets that make [AngularF
 3. You cannot save nested arrays (unlike RTDB)
 4. When you delete a document, its nested collections are NOT deleted (unlike RTDB)
 
-
 ## 1. Create a Generic Service to Extend Firestore
 
-**Benefit:** Customize AngularFire to behave the way you want it. 
+**Benefit:** Customize AngularFire to behave the way you want it.
 
 You can extend `AngularFirestore` database service by wrapping it with your own Angular service. This allows you to inject your own custom firestore features into any component.
 
@@ -44,10 +42,10 @@ You can extend `AngularFirestore` database service by wrapping it with your own 
 ng g service firestore
 ```
 
-The goal of this service is to (1) increase readability, (2) reduce code, and (3) extend functionality. 
+The goal of this service is to (1) increase readability, (2) reduce code, and (3) extend functionality.
 
 ```typescript
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -56,38 +54,39 @@ import {
   Action,
   DocumentSnapshotDoesNotExist,
   DocumentSnapshotExists,
-} from 'angularfire2/firestore';
-import { Observable, from } from 'rxjs';
-import { map, tap, take, switchMap, mergeMap, expand, takeWhile } from 'rxjs/operators';
+} from "angularfire2/firestore";
+import { Observable, from } from "rxjs";
+import {
+  map,
+  tap,
+  take,
+  switchMap,
+  mergeMap,
+  expand,
+  takeWhile,
+} from "rxjs/operators";
 
-import * as firebase from 'firebase/app';
-
+import * as firebase from "firebase/app";
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: "root",
 })
 export class FirestoreService {
   constructor(private afs: AngularFirestore) {}
 
-
   // code goes here
-
 }
 ```
 
- 
 ## 2. Get Observables with a String
 
-In AngularFire v5, the reference to an object is decoupled from the Observable data. That can be useful, but also requires more code. Sometimes I just want my `Observable` data in a concise readable format. 
+In AngularFire v5, the reference to an object is decoupled from the Observable data. That can be useful, but also requires more code. Sometimes I just want my `Observable` data in a concise readable format.
 
-I created a predicate type that accepts either a `string` or an `AngularFire(Collection | Document)`. This gives you the flexibility to pass these helper methods a string or firebase reference. In other words, you don't need to explicitly define a reference every time you want an Observable.  
+I created a predicate type that accepts either a `string` or an `AngularFire(Collection | Document)`. This gives you the flexibility to pass these helper methods a string or firebase reference. In other words, you don't need to explicitly define a reference every time you want an Observable.
 
 <p class="warn">The methods in this section are reused throughout this lesson, so do not skip this part.</p>
 
-**Benefit:** Return observables with a firestore reference or just a single string, making code more concise and readable. 
-
-
-
+**Benefit:** Return observables with a firestore reference or just a single string, making code more concise and readable.
 
 ```typescript
 // *** Usage
@@ -151,11 +150,11 @@ type DocPredicate<T> = string | AngularFirestoreDocument<T>;
 
 ## 3. CRUD Operations with Server Timestamps
 
-Firestore does not automatically order data, so you need to have at least one property to order by. To address this concern, I have extended the write operators in AngularFire to automatically maintain a `createdAt` and `updatedAt` timestamp. 
+Firestore does not automatically order data, so you need to have at least one property to order by. To address this concern, I have extended the write operators in AngularFire to automatically maintain a `createdAt` and `updatedAt` timestamp.
 
-When working with a frontend JavaScript framework like Angular, the only way to keep a consistent timestamp is via a back-end server. We can use do this in Firestore with the `FieldValue.serverTimestamp()`. I recommend using a typescript getter to make this operation readable. 
+When working with a frontend JavaScript framework like Angular, the only way to keep a consistent timestamp is via a back-end server. We can use do this in Firestore with the `FieldValue.serverTimestamp()`. I recommend using a typescript getter to make this operation readable.
 
-**Benefit:** Always have something to `orderBy` with server-side consistency in your collections. 
+**Benefit:** Always have something to `orderBy` with server-side consistency in your collections.
 
 ```typescript
 // *** Usage
@@ -204,11 +203,11 @@ add<T>(ref: CollectionPredicate<T>, data): Promise<firebase.firestore.DocumentRe
 
 ## 4. Upsert (Update or Create) Method
 
-My custom `upsert()` method will first check if doc exists. If YES it will update non-destructively. If NO it will set a new document. 
+My custom `upsert()` method will first check if doc exists. If YES it will update non-destructively. If NO it will set a new document.
 
-Note: You can also use `db.set(data, { merge: true })` to achieve similar results. However, this makes it difficult to automatically manage the timestamps in the previous step. 
+Note: You can also use `db.set(data, { merge: true })` to achieve similar results. However, this makes it difficult to automatically manage the timestamps in the previous step.
 
-**Benefit:** Never worry about *document does not exist* errors. 
+**Benefit:** Never worry about _document does not exist_ errors.
 
 ```typescript
 // *** Usage
@@ -227,10 +226,9 @@ upsert<T>(ref: DocPredicate<T>, data: any): Promise<void> {
 }
 ```
 
-
 ## 5. Get Collections with Document Ids Included
 
-A common task is to query a collection, then use the ID to query a single document from that collection. Including the document ids in the array returned by AngularFire2 results in some pretty ugly code, so it's nice to have this wrapped in a simple helper method. This is essentially just `valueChanges()` + document IDs. 
+A common task is to query a collection, then use the ID to query a single document from that collection. Including the document ids in the array returned by AngularFire2 results in some pretty ugly code, so it's nice to have this wrapped in a simple helper method. This is essentially just `valueChanges()` + document IDs.
 
 **Benefit:** Return document keys with one line of code
 
@@ -256,14 +254,11 @@ colWithIds$<T>(ref: CollectionPredicate<T>, queryFn?): Observable<any[]> {
 }
 ```
 
-
-
 ## 6. Inspect Data Easily
 
-Sometimes I just want to see what I'm working with. It seems silly to re-import RxJS operators and subscribe to data every time I want to do this. I also wrapped the operation with a timer so you can check the latency for a given query. 
+Sometimes I just want to see what I'm working with. It seems silly to re-import RxJS operators and subscribe to data every time I want to do this. I also wrapped the operation with a timer so you can check the latency for a given query.
 
-**Benefit:** Single line of code to console log the snapshot and time its latency. 
-
+**Benefit:** Single line of code to console log the snapshot and time its latency.
 
 ```typescript
 // *** Usage
@@ -302,11 +297,9 @@ inspectCol(ref: CollectionPredicate<any>): void {
 }
 ```
 
-
-
 ## 7. Using The Geopoint Datatype
 
-If you're building a map-based app, you're going to want to make use of the `GeoPoint` class. It will give you consistent formatting and lat/lng validation for location data. Here's how we can make one in AngularFire. 
+If you're building a map-based app, you're going to want to make use of the `GeoPoint` class. It will give you consistent formatting and lat/lng validation for location data. Here's how we can make one in AngularFire.
 
 ```typescript
 // *** Usage
@@ -319,72 +312,63 @@ geopoint(lat: number, lng: number) {
 }
 ```
 
-
 ## 8. Handle the Document Reference type
 
-A Firestore document can embed references to other Firestore documents - an awesome little feature, but not so easy to take advantage of with AngularFire2. 
-
+A Firestore document can embed references to other Firestore documents - an awesome little feature, but not so easy to take advantage of with AngularFire2.
 
 {{< figure src="img/doc-reference-angularfire.png" caption="Reference a document from a document in Firestore" >}}
 
-Here's how you would associate an item doc with user doc in Angular. 
+Here's how you would associate an item doc with user doc in Angular.
 
 ```typescript
-const itemDoc = this.db.doc('items/xyz')
-const userDoc = this.db.doc('users/jeff')
+const itemDoc = this.db.doc("items/xyz");
+const userDoc = this.db.doc("users/jeff");
 
-this.db.update({ user: userDoc.ref })
+this.db.update({ user: userDoc.ref });
 ```
 
-I am going to leverage the helper methods from our service in this section. Refer back to section 2 to review how the `doc$` helper method works. Here's how to get the a user Observable if it is referenced on a note document. 
+I am going to leverage the helper methods from our service in this section. Refer back to section 2 to review how the `doc$` helper method works. Here's how to get the a user Observable if it is referenced on a note document.
 
 ```typescript
-this.user = this.doc$('items/xyz').switchMap(doc => {
-  return this.db.doc$(doc.friend.path)
-})
+this.user = this.doc$("items/xyz").switchMap((doc) => {
+  return this.db.doc$(doc.friend.path);
+});
 ```
 
-Alternatively, we can create a pipe for use in the HTML. The pipe takes the raw firestore document reference and converts it into an Observable. 
+Alternatively, we can create a pipe for use in the HTML. The pipe takes the raw firestore document reference and converts it into an Observable.
 
 ```shell
 ng g pipe doc
 ```
 
 ```typescript
-import { Pipe, PipeTransform } from '@angular/core';
-import { FirestoreService } from './firestore.service';
-import { Observable } from 'rxjs/Observable';
+import { Pipe, PipeTransform } from "@angular/core";
+import { FirestoreService } from "./firestore.service";
+import { Observable } from "rxjs/Observable";
 
 @Pipe({
-  name: 'doc'
+  name: "doc",
 })
 export class DocPipe implements PipeTransform {
-
   constructor(private db: FirestoreService) {}
 
   transform(value: any): Observable<any> {
-    return this.db.doc$(value.path)
+    return this.db.doc$(value.path);
   }
-
 }
 ```
 
 Here's how it looks in the HTML. (The `note` is a document that references at `user` document.)
 
-
 ```html
-<div *ngIf="noteDoc | async as note">
-  {{ (note.user | doc | async)?.name }}
-</div>
+<div *ngIf="noteDoc | async as note">{{ (note.user | doc | async)?.name }}</div>
 ```
-
 
 ## 9. Make Atomic Writes
 
-An atomic write operation occurs when all operations succeed/fail together. In a SQL database, atomic writes are baked in by default. Firestore and Document databases in general require atomic writes to be structured in a specific way. 
+An atomic write operation occurs when all operations succeed/fail together. In a SQL database, atomic writes are baked in by default. Firestore and Document databases in general require atomic writes to be structured in a specific way.
 
-In this example, we use the Firestore SDK directly to make the updates. You perform operations on the `batch` instance, then run `batch.commit()` to run everything together.  
-
+In this example, we use the Firestore SDK directly to make the updates. You perform operations on the `batch` instance, then run `batch.commit()` to run everything together.
 
 ```typescript
   atomic() {
@@ -404,19 +388,15 @@ In this example, we use the Firestore SDK directly to make the updates. You perf
   }
 ```
 
-
 ## 10. Delete Entire Collections
 
-When you delete a document in Firestore, it's nested sub-collections are NOT deleted along with it. Furthermore, AngularFire does not have a built-in method for deleting collections, so let's modify the one from the main API documentation. 
+When you delete a document in Firestore, it's nested sub-collections are NOT deleted along with it. Furthermore, AngularFire does not have a built-in method for deleting collections, so let's modify the one from the main API documentation.
 
-
-This section has been made into an entire [video lesson about deleting Firestore collections](https://angularfirebase.com/lessons/delete-firestore-collections-with-angular-and-rxjs/). 
+This section has been made into an entire [video lesson about deleting Firestore collections](https://angularfirebase.com/lessons/delete-firestore-collections-with-angular-and-rxjs/).
 
 ## Full Service Code
 
-Copy and paste the full code to start using these helper methods in your own project. 
-
-
+Copy and paste the full code to start using these helper methods in your own project.
 
 ```typescript
 import { Injectable } from '@angular/core';

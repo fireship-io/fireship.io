@@ -1,6 +1,6 @@
 ---
 title: Schematics
-description: Using Angular Material Schematics 
+description: Using Angular Material Schematics
 weight: 22
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
@@ -9,11 +9,12 @@ emoji: 🏗️
 video_length: 1:10
 ---
 
-Schematics provide sophisticated code blueprints using the Angular CLI, with many [recipes](https://material.angular.io/guide/schematics#navigation-schematic) included for Angular Material. 
+Schematics provide sophisticated code blueprints using the Angular CLI, with many [recipes](https://material.angular.io/guide/schematics#navigation-schematic) included for Angular Material.
 
-For example, you could replace the component command from the last video with: 
+For example, you could replace the component command from the last video with:
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng generate @angular/material:nav shared/shell
 ```

@@ -14,6 +14,7 @@ video_length: 2:16
 Update the `main.dart` file to wrap the `MaterialApp` with a `StreamProvider` widget. It will listen to the Firestore document and update the widget tree when the document's data changes.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 // ...
 import 'package:provider/provider.dart';

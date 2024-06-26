@@ -19,12 +19,14 @@ quiz: true
 Errors can happen on the server when the user submits bad data from the form. Let's catch the errors and send a useful message back to the client.
 
 ```js
-app.post('/dream', async (req, res) => {
+app.post("/dream", async (req, res) => {
   try {
     // main code here
   } catch (error) {
-    console.error(error)
-    res.status(500).send(error?.response.data.error.message || 'Something went wrong');
+    console.error(error);
+    res
+      .status(500)
+      .send(error?.response.data.error.message || "Something went wrong");
   }
 });
 ```

@@ -1,6 +1,6 @@
 ---
 title: Hearts, Likes, Claps
-description: Create a many-to-many relationship where users can heart many posts 
+description: Create a many-to-many relationship where users can heart many posts
 weight: 50
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
@@ -13,14 +13,15 @@ chapter_start: Hearts
 ## Heart Button
 
 {{< file "js" "components/HeartButton.js" >}}
+
 ```javascript
-import { firestore, auth, increment } from '../lib/firebase';
-import { useDocument } from 'react-firebase-hooks/firestore';
+import { firestore, auth, increment } from "../lib/firebase";
+import { useDocument } from "react-firebase-hooks/firestore";
 
 // Allows user to heart or like a post
 export default function Heart({ postRef }) {
   // Listen to heart document for currently logged in user
-  const heartRef = postRef.collection('hearts').doc(auth.currentUser.uid);
+  const heartRef = postRef.collection("hearts").doc(auth.currentUser.uid);
   const [heartDoc] = useDocument(heartRef);
 
   // Create a user-to-post relationship
@@ -55,20 +56,21 @@ export default function Heart({ postRef }) {
 ## Usage in a Component
 
 {{< file "js" "pages/username/slug.js" >}}
+
 ```javascript
-import HeartButton from '../../components/HeartButton';
-import AuthCheck from '../../components/AuthCheck';
-import Link from 'next/link';
+import HeartButton from "../../components/HeartButton";
+import AuthCheck from "../../components/AuthCheck";
+import Link from "next/link";
 
 // ...
 
-        <AuthCheck
-          fallback={
-            <Link href="/enter">
-              <button>💗 Sign Up</button>
-            </Link>
-          }
-        >
-          <HeartButton postRef={postRef} />
-        </AuthCheck>
+<AuthCheck
+  fallback={
+    <Link href="/enter">
+      <button>💗 Sign Up</button>
+    </Link>
+  }
+>
+  <HeartButton postRef={postRef} />
+</AuthCheck>;
 ```

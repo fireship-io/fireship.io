@@ -17,6 +17,7 @@ quiz: true
 Commit staged files to a repository
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git commit -m "initial commit 🚀"
 ```
@@ -24,6 +25,7 @@ git commit -m "initial commit 🚀"
 Tip: Add files and commit in a single command
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git commit -a -m "additional commit"
 

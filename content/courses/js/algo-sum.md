@@ -24,19 +24,19 @@ Create a function that takes an array of numbers and returns a number that is th
 ```js
 // Solution 1
 function cumSum(arr) {
-    return arr.reduce((acc, cur) => acc + cur, 0);
+  return arr.reduce((acc, cur) => acc + cur, 0);
 }
 
 // Solution 2
 export function cumSum(arr) {
   let total = 0;
-  
-  for(let i = 0; i < arr.length; i++) {
+
+  for (let i = 0; i < arr.length; i++) {
     total += arr[i];
-  } 
-  
+  }
+
   return total;
 }
 
-console.log('sum: ', cumSum([1,3,5,7]));
+console.log("sum: ", cumSum([1, 3, 5, 7]));
 ```

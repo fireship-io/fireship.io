@@ -4,12 +4,12 @@ lastmod: 2018-04-10T14:13:20-07:00
 publishdate: 2017-04-20T14:13:20-07:00
 author: Jeff Delaney
 draft: false
-description:  Four different methods for sharing data between Angular components.
-tags: 
-    - angular
+description: Four different methods for sharing data between Angular components.
+tags:
+  - angular
 
 youtube: I317BhehZKM
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -26,98 +26,88 @@ Data sharing is an essential concept to understand before diving into your first
 
 {{< figure src="img/parent-child-sibling-angular-components.png" caption="The Parent-Child-Sibling structure of our Angular app." >}}
 
-
 ## Parent to Child: Sharing Data via Input
 
 This is probably the most common and straightforward method of sharing data. It works by using the <a href="https://angular.io/docs/ts/latest/api/core/index/Input-interface.html">`@Input()` decorator</a> to allow data to be passed via the template.
 
 ### parent.component.ts
+
 ```typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-parent',
-  template: `
-    <app-child [childMessage]="parentMessage"></app-child>
-  `,
-  styleUrls: ['./parent.component.css']
+  selector: "app-parent",
+  template: ` <app-child [childMessage]="parentMessage"></app-child> `,
+  styleUrls: ["./parent.component.css"],
 })
-export class ParentComponent{
-  parentMessage = "message from parent"
-  constructor() { }
+export class ParentComponent {
+  parentMessage = "message from parent";
+  constructor() {}
 }
 ```
 
 ### child.component.ts
 
 ```typescript
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  template: `
-      Say {{ message }}
-  `,
-  styleUrls: ['./child.component.css']
+  selector: "app-child",
+  template: ` Say {{ message }} `,
+  styleUrls: ["./child.component.css"],
 })
 export class ChildComponent {
-
   @Input() childMessage: string;
 
-  constructor() { }
-
+  constructor() {}
 }
 ```
 
-
 ## Child to Parent: Sharing Data via ViewChild
 
-[ViewChild](https://angular.io/api/core/ViewChild) allows a one component to be injected into another, giving the parent access to its attributes and functions. One caveat, however, is that child won't be available until after the view has been initialized. This means we need to implement the AfterViewInit lifecycle hook to receive the data from the child.  
+[ViewChild](https://angular.io/api/core/ViewChild) allows a one component to be injected into another, giving the parent access to its attributes and functions. One caveat, however, is that child won't be available until after the view has been initialized. This means we need to implement the AfterViewInit lifecycle hook to receive the data from the child.
 
 ### parent.component.ts
+
 ```typescript
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from "@angular/core";
 import { ChildComponent } from "../child/child.component";
 
 @Component({
-  selector: 'app-parent',
+  selector: "app-parent",
   template: `
     Message: {{ message }}
     <app-child></app-child>
   `,
-  styleUrls: ['./parent.component.css']
+  styleUrls: ["./parent.component.css"],
 })
 export class ParentComponent implements AfterViewInit {
-
   @ViewChild(ChildComponent) child;
 
-  constructor() { }
+  constructor() {}
 
-  message:string;
+  message: string;
 
   ngAfterViewInit() {
-    this.message = this.child.message
+    this.message = this.child.message;
   }
 }
-
 ```
 
 ### child.component.ts
+
 ```typescript
-import { Component} from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  template: `
-  `,
-  styleUrls: ['./child.component.css']
+  selector: "app-child",
+  template: ``,
+  styleUrls: ["./child.component.css"],
 })
 export class ChildComponent {
+  message = "Hola Mundo!";
 
-  message = 'Hola Mundo!';
-
-  constructor() { }
-
+  constructor() {}
 }
 ```
 
@@ -129,54 +119,51 @@ In the parent, we create a function to receive the message and set it equal to t
 
 In the child, we declare a messageEvent variable with the Output decorator and set it equal to a new event emitter. Then we create a function named sendMessage that calls emit on this event with the message we want to send. Lastly, we create a button to trigger this function.
 
-
 The parent can now subscribe to this messageEvent that's outputted by the child component, then run the receive message function whenever this event occurs.
 
 ### parent.component.ts
+
 ```typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-parent',
+  selector: "app-parent",
   template: `
-    Message: {{message}}
+    Message: {{ message }}
     <app-child (messageEvent)="receiveMessage($event)"></app-child>
   `,
-  styleUrls: ['./parent.component.css']
+  styleUrls: ["./parent.component.css"],
 })
 export class ParentComponent {
+  constructor() {}
 
-  constructor() { }
-
-  message:string;
+  message: string;
 
   receiveMessage($event) {
-    this.message = $event
+    this.message = $event;
   }
 }
 ```
 
 ### child.component.ts
+
 ```typescript
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-child',
-  template: `
-      <button (click)="sendMessage()">Send Message</button>
-  `,
-  styleUrls: ['./child.component.css']
+  selector: "app-child",
+  template: ` <button (click)="sendMessage()">Send Message</button> `,
+  styleUrls: ["./child.component.css"],
 })
 export class ChildComponent {
-
-  message: string = "Hola Mundo!"
+  message: string = "Hola Mundo!";
 
   @Output() messageEvent = new EventEmitter<string>();
 
-  constructor() { }
+  constructor() {}
 
   sendMessage() {
-    this.messageEvent.emit(this.message)
+    this.messageEvent.emit(this.message);
   }
 }
 ```
@@ -197,82 +184,80 @@ The parent, child, and sibling components all receive the same treatment. We inj
 
 Now if we create a function in any one of these components that changes the value of the message. when this function is executed the new data it's automatically broadcast to all other components.
 
-
 ### data.service.ts
+
 ```typescript
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable()
 export class DataService {
-
-  private messageSource = new BehaviorSubject('default message');
+  private messageSource = new BehaviorSubject("default message");
   currentMessage = this.messageSource.asObservable();
 
-  constructor() { }
+  constructor() {}
 
   changeMessage(message: string) {
-    this.messageSource.next(message)
+    this.messageSource.next(message);
   }
-
 }
 ```
 
 ### parent.component.ts
+
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
-import { Subscription } from 'rxjs';
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-parent',
-  template: `
-    {{message}}
-  `,
-  styleUrls: ['./sibling.component.css']
+  selector: "app-parent",
+  template: ` {{ message }} `,
+  styleUrls: ["./sibling.component.css"],
 })
 export class ParentComponent implements OnInit, OnDestroy {
-
-  message:string;
+  message: string;
   subscription: Subscription;
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.subscription = this.data.currentMessage.subscribe(message => this.message = message)
+    this.subscription = this.data.currentMessage.subscribe(
+      (message) => (this.message = message),
+    );
   }
-  
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
-
 }
 ```
 
-
 ### sibling.component.ts
+
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { DataService } from "../data.service";
-import { Subscription } from 'rxjs';
+import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-sibling',
+  selector: "app-sibling",
   template: `
-    {{message}}
+    {{ message }}
     <button (click)="newMessage()">New Message</button>
   `,
-  styleUrls: ['./sibling.component.css']
+  styleUrls: ["./sibling.component.css"],
 })
 export class SiblingComponent implements OnInit, OnDestroy {
-
-  message:string;
+  message: string;
   subscription: Subscription;
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService) {}
 
   ngOnInit() {
-    this.subscription = this.data.currentMessage.subscribe(message => this.message = message)
+    this.subscription = this.data.currentMessage.subscribe(
+      (message) => (this.message = message),
+    );
   }
 
   ngOnDestroy() {
@@ -280,8 +265,7 @@ export class SiblingComponent implements OnInit, OnDestroy {
   }
 
   newMessage() {
-    this.data.changeMessage("Hello from Sibling")
+    this.data.changeMessage("Hello from Sibling");
   }
-
 }
 ```

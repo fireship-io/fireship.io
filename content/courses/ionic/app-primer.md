@@ -9,5 +9,4 @@ emoji: 📱
 chapter_start: Realtime Todo List
 ---
 
-
-Not sure how to structure your database? You may also want to check out the [Firestore Data Modeling Course](/courses/firestore-data-modeling/). 
+Not sure how to structure your database? You may also want to check out the [Firestore Data Modeling Course](/courses/firestore-data-modeling/).

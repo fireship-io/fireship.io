@@ -5,9 +5,9 @@ publishdate: 2021-09-12T15:20:52-07:00
 author: Jeff Delaney
 draft: false
 description: Build an animated modal with Framer Motion and React
-tags: 
-    - react
-    - animation
+tags:
+  - react
+  - animation
 
 youtube: SuqU904ZHA4
 github: https://github.com/fireship-io/framer-demo
@@ -21,7 +21,7 @@ github: https://github.com/fireship-io/framer-demo
 #    rxdart: 0.20
 ---
 
-[Framer Motion](https://www.framer.com/motion/) is a React library for adding declarative animations to your components. It provides a variety of components that wrap plain HTML elements to extend them with animation superpowers 🦸. In this lesson, we will build a modal with Framer Motion with a variety of different animations styles. 
+[Framer Motion](https://www.framer.com/motion/) is a React library for adding declarative animations to your components. It provides a variety of components that wrap plain HTML elements to extend them with animation superpowers 🦸. In this lesson, we will build a modal with Framer Motion with a variety of different animations styles.
 
 🚀 Try out the [live demo](https://react-framer-demo.netlify.app/)
 
@@ -32,6 +32,7 @@ github: https://github.com/fireship-io/framer-demo
 Create a new React project
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 $ npx create-react-app framer-demo
 ```
@@ -55,6 +56,7 @@ $ npm i framer-motion
 Create a button that can when clicked will open a modal. Define a stateful value `modalOpen` to keep track of the open/close state. In this example, we use the `motion.div` component also animate the button itself.
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -73,7 +75,7 @@ function App() {
         Launch modal
       </motion.button>
     </div>
-  )
+  );
 }
 ```
 
@@ -82,11 +84,11 @@ function App() {
 Create a component to serve as the backdrop for the modal. This component will be a `motion.div` component that fades in and out. It takes the `onClick` prop to close the modal when the backdrop is clicked.
 
 {{< file "react" "components/Backdrop/index.js" >}}
+
 ```jsx
 import { motion } from "framer-motion";
 
 const Backdrop = ({ children, onClick }) => {
- 
   return (
     <motion.div
       onClick={onClick}
@@ -110,53 +112,51 @@ The modal component uses the `Backdrop`, then has its own `motion.div` component
 Also notice how [stopPropagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) is called when the modal is clicked - this prevents it from closing when the modal is clicked.
 
 {{< file "react" "components/Modal/index.js" >}}
+
 ```jsx
 import { motion } from "framer-motion";
 import Backdrop from "../Backdrop";
 
 const dropIn = {
-    hidden: {
-      y: "-100vh",
-      opacity: 0,
+  hidden: {
+    y: "-100vh",
+    opacity: 0,
+  },
+  visible: {
+    y: "0",
+    opacity: 1,
+    transition: {
+      duration: 0.1,
+      type: "spring",
+      damping: 25,
+      stiffness: 500,
     },
-    visible: {
-      y: "0",
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: "spring",
-        damping: 25,
-        stiffness: 500,
-      },
-    },
-    exit: {
-      y: "100vh",
-      opacity: 0,
-    },
-  };
-  
+  },
+  exit: {
+    y: "100vh",
+    opacity: 0,
+  },
+};
 
 const Modal = ({ handleClose, text }) => {
+  return (
+    <Backdrop onClick={handleClose}>
+      <motion.div
+        onClick={(e) => e.stopPropagation()}
+        className="modal orange-gradient"
+        variants={dropIn}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+      >
+        <p>{text}</p>
+        <button onClick={handleClose}>Close</button>
+      </motion.div>
+    </Backdrop>
+  );
+};
 
-    return (
-      <Backdrop onClick={handleClose}>
-          <motion.div
-            onClick={(e) => e.stopPropagation()}  
-            className="modal orange-gradient"
-            variants={dropIn}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-          >
-            <p>{text}</p>
-            <button onClick={handleClose}>Close</button>
-          </motion.div>
-      </Backdrop>
-    );
-  };
-
-  
-  export default Modal;
+export default Modal;
 ```
 
 ### Animate Presence
@@ -164,25 +164,26 @@ const Modal = ({ handleClose, text }) => {
 Framer Motion has a built in [AnimatePresence](https://www.framer.com/docs/animate-presence/) component that can handle animations for components that get added/removed from the DOM - we need it to animate the removal of a modal component.
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 <AnimatePresence
-    // Disable any initial animations on children that
-    // are present when the component is first rendered
-    initial={false}
-    // Only render one component at a time.
-    // The exiting component will finish its exit
-    // animation before entering component is rendered
-    exitBeforeEnter={true}
-    // Fires when all exiting nodes have completed animating out
-    onExitComplete={() => null}
+  // Disable any initial animations on children that
+  // are present when the component is first rendered
+  initial={false}
+  // Only render one component at a time.
+  // The exiting component will finish its exit
+  // animation before entering component is rendered
+  exitBeforeEnter={true}
+  // Fires when all exiting nodes have completed animating out
+  onExitComplete={() => null}
 >
-    {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
+  {modalOpen && <Modal modalOpen={modalOpen} handleClose={close} />}
 </AnimatePresence>
 ```
 
 ## Extra Animations
 
-The full demo provides a variety of animations to try out. Here are some of the animations found in the full source code. 
+The full demo provides a variety of animations to try out. Here are some of the animations found in the full source code.
 
 ### Flip
 
@@ -218,7 +219,6 @@ const flip = {
 
 Extra, extra, read all about it!
 
-
 ```javascript
 const newspaper = {
   hidden: {
@@ -247,7 +247,7 @@ const newspaper = {
 
 ### Bad Suspension
 
-Make it look like something is broken, great for error messages. 
+Make it look like something is broken, great for error messages.
 
 ```javascript
 const badSuspension = {

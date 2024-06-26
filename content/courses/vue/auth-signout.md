@@ -12,24 +12,25 @@ video_length: 1:51
 ## User Profile Component
 
 {{< file "vue" "UserProfile.vue" >}}
+
 ```html
 <template>
   <div>
-    Logged in as {{ user.uid }}<br>
+    Logged in as {{ user.uid }}<br />
     <button @click="auth.signOut()" class="button">Sign Out</button>
   </div>
 </template>
 
 <script>
-import { auth } from '../firebase';
+  import { auth } from "../firebase";
 
-export default {
-  data() {
-    return { 
-          auth 
-    }
-  },
-  props: ['user']
-}
+  export default {
+    data() {
+      return {
+        auth,
+      };
+    },
+    props: ["user"],
+  };
 </script>
 ```

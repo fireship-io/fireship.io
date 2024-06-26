@@ -17,6 +17,7 @@ quiz: true
 Move into a branch
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git checkout awesome
 ```
@@ -24,6 +25,7 @@ git checkout awesome
 Create a new branch and move into it:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git checkout -b awesome
 ```

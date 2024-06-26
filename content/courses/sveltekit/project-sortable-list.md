@@ -9,63 +9,59 @@ emoji: 🤏
 video_length: 2:29
 ---
 
-
 ## Edit Page
 
 Add the sortable list to the edit page
 
 {{< file "svelte" "+page.svelte" >}}
+
 ```svelte
 <script lang="ts">
-    // ...
+  // ...
 
-    import SortableList from "$lib/components/SortableList.svelte";
+  import SortableList from "$lib/components/SortableList.svelte";
 
-    // ...
-  
-    function sortList(e: CustomEvent) {
-      const newList = e.detail;
-      const userRef = doc(db, "users", $user!.uid);
-      setDoc(userRef, { links: newList }, { merge: true });
-    }
+  // ...
 
-  
-    async function deleteLink(item: any) {
-      const userRef = doc(db, "users", $user!.uid);
-      await updateDoc(userRef, {
-        links: arrayRemove(item),
-      });
-    }
+  function sortList(e: CustomEvent) {
+    const newList = e.detail;
+    const userRef = doc(db, "users", $user!.uid);
+    setDoc(userRef, { links: newList }, { merge: true });
+  }
 
-  </script>
+  async function deleteLink(item: any) {
+    const userRef = doc(db, "users", $user!.uid);
+    await updateDoc(userRef, {
+      links: arrayRemove(item),
+    });
+  }
+</script>
 
-      <SortableList list={$userData?.links} on:sort={sortList} let:item let:index>
-        <div class="group relative">
-          <UserLink {...item} />
-          <button
-            on:click={() => deleteLink(item)}
-            class="btn btn-xs btn-error invisible group-hover:visible transition-all absolute -right-6 bottom-10"
-            >Delete</button
-          >
-        </div>
-      </SortableList>
-
+<SortableList list={$userData?.links} on:sort={sortList} let:item let:index>
+  <div class="group relative">
+    <UserLink {...item} />
+    <button
+      on:click={() => deleteLink(item)}
+      class="btn btn-xs btn-error invisible group-hover:visible transition-all absolute -right-6 bottom-10"
+      >Delete</button
+    >
+  </div>
+</SortableList>
 ```
 
 ## Sortable List
 
 {{< file "svelte" "components/SortableList.svelte" >}}
+
 ```svelte
 <script lang="ts">
   import { flip } from "svelte/animate";
   import { createEventDispatcher } from "svelte";
 
-  
   export let list: any[];
   let isOver: string | boolean = false;
 
   const dispatch = createEventDispatcher();
-
 
   function getDraggedParent(node: any) {
     if (!node.dataset.index) {

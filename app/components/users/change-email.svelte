@@ -1,13 +1,13 @@
 <svelte:options tag="change-email" />
 
 <script lang="ts">
-  import { toast } from '../../stores';
-  import { callUserAPI, firebaseSignOut } from '../../util/firebase';
+  import { toast } from "../../stores";
+  import { callUserAPI, firebaseSignOut } from "../../util/firebase";
   let loading = false;
   let show = false;
   let confirmed = false;
   let isValid = false;
-  let email = '';
+  let email = "";
   let emailEl: HTMLInputElement;
 
   function validate() {
@@ -17,15 +17,15 @@
   async function getSession() {
     loading = true;
     const changed = await callUserAPI<boolean>({
-      fn: 'changeEmail',
+      fn: "changeEmail",
       payload: { email },
     });
 
     if (changed) {
       await firebaseSignOut();
       toast.set({
-        message: 'Email updated, please sign back in',
-        type: 'success',
+        message: "Email updated, please sign back in",
+        type: "success",
       });
     }
 
@@ -43,24 +43,25 @@
     required
   />
 
-    {#if confirmed}
+  {#if confirmed}
     <button
       class="btn btn-blue"
       on:click={getSession}
       disabled={loading || !isValid || !email}
     >
       {#if loading}<loading-spinner />{/if}
-      {loading ? 'loading...' : 'confirm change'}
+      {loading ? "loading..." : "confirm change"}
     </button>
-    {:else}
+  {:else}
     <button
       class="btn btn-blue"
-      on:click={() => confirmed = true}
-      disabled={loading || !isValid || !email}>
+      on:click={() => (confirmed = true)}
+      disabled={loading || !isValid || !email}
+    >
       change
     </button>
-    {/if}
-    
+  {/if}
+
   <p class="warn">
     Be careful. If you enter the wrong email, you will not be able to access
     your account.

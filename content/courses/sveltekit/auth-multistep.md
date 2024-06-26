@@ -20,15 +20,17 @@ chapter_start: User Management
 ## Root Layout
 
 {{< file "svelte" "+layout.svelte" >}}
+
 ```svelte
 <div class="min-h-screen flex flex-col">
-    <slot />
+  <slot />
 </div>
 ```
 
 ## Login Layout
 
 {{< file "svelte" "login/+layout.svelte" >}}
+
 ```svelte
 <script lang="ts">
   import { page } from "$app/stores";
@@ -40,13 +42,15 @@ chapter_start: User Management
     <a
       href="/login/username"
       class="step"
-      class:step-primary={$page.route.id?.match(/username|photo/g)}>
+      class:step-primary={$page.route.id?.match(/username|photo/g)}
+    >
       Choose Username
     </a>
     <a
       href="/login/photo"
       class="step"
-      class:step-primary={$page.route.id?.includes("photo")}>
+      class:step-primary={$page.route.id?.includes("photo")}
+    >
       Upload Photo
     </a>
   </ul>

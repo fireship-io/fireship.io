@@ -1,6 +1,6 @@
 ---
-title: React 
-description: SignIn with Firebase, then save a credit card to the customer account. 
+title: React
+description: SignIn with Firebase, then save a credit card to the customer account.
 weight: 47
 lastmod: 2020-04-20T10:23:30-09:00
 draft: false
@@ -10,14 +10,14 @@ video_length: 3:46
 ---
 
 {{< file "react" "App.js" >}}
-```jsx
-import React, { useState, useEffect, Suspense } from 'react';
-import { fetchFromAPI } from './helpers';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useUser, AuthCheck } from 'reactfire';
-import firebase from 'firebase/app';
-import { auth, db } from './firebase';
 
+```jsx
+import React, { useState, useEffect, Suspense } from "react";
+import { fetchFromAPI } from "./helpers";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { useUser, AuthCheck } from "reactfire";
+import firebase from "firebase/app";
+import { auth, db } from "./firebase";
 
 function SaveCard(props) {
   const stripe = useStripe();
@@ -34,7 +34,7 @@ function SaveCard(props) {
 
   // Create the setup intent
   const createSetupIntent = async (event) => {
-    const si = await fetchFromAPI('wallet');
+    const si = await fetchFromAPI("wallet");
     setSetupIntent(si);
   };
 
@@ -45,12 +45,10 @@ function SaveCard(props) {
     const cardElement = elements.getElement(CardElement);
 
     // Confirm Card Setup
-    const {
-      setupIntent: updatedSetupIntent,
-      error,
-    } = await stripe.confirmCardSetup(setupIntent.client_secret, {
-      payment_method: { card: cardElement },
-    });
+    const { setupIntent: updatedSetupIntent, error } =
+      await stripe.confirmCardSetup(setupIntent.client_secret, {
+        payment_method: { card: cardElement },
+      });
 
     if (error) {
       alert(error.message);
@@ -58,13 +56,13 @@ function SaveCard(props) {
     } else {
       setSetupIntent(updatedSetupIntent);
       await getWallet();
-      alert('Success! Card added to your wallet');
+      alert("Success! Card added to your wallet");
     }
   };
 
   const getWallet = async () => {
     if (user) {
-      const paymentMethods = await fetchFromAPI('wallet', { method: 'GET' });
+      const paymentMethods = await fetchFromAPI("wallet", { method: "GET" });
       setWallet(paymentMethods);
     }
   };
@@ -73,21 +71,15 @@ function SaveCard(props) {
     <>
       <AuthCheck fallback={<SignIn />}>
         <div>
-
-          <button
-            onClick={createSetupIntent}
-            hidden={setupIntent}>
+          <button onClick={createSetupIntent} hidden={setupIntent}>
             Attach New Credit Card
           </button>
         </div>
         <hr />
 
         <form onSubmit={handleSubmit}>
-
           <CardElement />
-          <button type="submit">
-            Attach
-          </button>
+          <button type="submit">Attach</button>
         </form>
 
         <div>
@@ -114,5 +106,4 @@ function CreditCard(props) {
     </option>
   );
 }
-
 ```

@@ -17,6 +17,7 @@ quiz: true
 Combine the fetch & merge from the previous section with the pull command.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git pull
 ```

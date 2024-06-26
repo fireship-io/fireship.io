@@ -43,7 +43,7 @@ test.describe("Message Board", () => {
   test.describe("not logged in", () => {
     test("can see message board, but cannot interact", async ({ page }) => {
       const messageBoardSignIn = page.locator(
-        `[data-e2e="message-board-login"]`
+        `[data-e2e="message-board-login"]`,
       );
       const createPostForm = page.locator(`[data-e2e="create-post-form"]`);
       await expect(messageBoardSignIn).toHaveCount(1);
@@ -61,7 +61,7 @@ test.describe("Message Board", () => {
       await createComment(otherUser, "test comment");
       page.goto("http://localhost:1337");
       const messageBoardSignIn = page.locator(
-        `[data-e2e="message-board-login"]`
+        `[data-e2e="message-board-login"]`,
       );
       const createPostForm = page.locator(`[data-e2e="create-post-form"]`);
       await expect(messageBoardSignIn).toHaveCount(1);
@@ -123,7 +123,7 @@ test.describe("Message Board", () => {
         testUserEmail,
         testUserPassword,
         testUserName,
-        `[data-e2e="message-board-login"] button`
+        `[data-e2e="message-board-login"] button`,
       );
       expect(page.url()).toBe(postUrl);
       await expect(postContent).toHaveCount(1);
@@ -223,10 +223,10 @@ test.describe("Up Voting", () => {
     const upvoteCount = page.locator(`[data-e2e="upvote-count"]`);
     await expect(upvoteCount).toHaveText("1");
     const filledUpvoteButton = page.locator(
-      `[data-e2e="upvote"][data-filled="true"]`
+      `[data-e2e="upvote"][data-filled="true"]`,
     );
     const filledDownvoteButton = page.locator(
-      `[data-e2e="downvote"][data-filled="true"]`
+      `[data-e2e="downvote"][data-filled="true"]`,
     );
     await expect(filledUpvoteButton).toHaveCount(1);
     await expect(filledDownvoteButton).toHaveCount(0);
@@ -246,10 +246,10 @@ test.describe("Up Voting", () => {
     const upvoteCount = page.locator(`[data-e2e="upvote-count"]`);
     await expect(upvoteCount).toHaveText("1");
     const filledUpvoteButton = page.locator(
-      `[data-e2e="upvote"][data-filled="true"]`
+      `[data-e2e="upvote"][data-filled="true"]`,
     );
     const filledDownvoteButton = page.locator(
-      `[data-e2e="downvote"][data-filled="true"]`
+      `[data-e2e="downvote"][data-filled="true"]`,
     );
     await expect(filledUpvoteButton).toHaveCount(1);
     await expect(filledDownvoteButton).toHaveCount(0);
@@ -274,10 +274,10 @@ test.describe("Up Voting", () => {
       await upvoteButton.nth(i).click();
       await expect(upvoteCount.nth(i)).toHaveText("1");
       const filledUpvoteButton = page.locator(
-        `[data-e2e="upvote"][data-filled="true"]`
+        `[data-e2e="upvote"][data-filled="true"]`,
       );
       const filledDownvoteButton = page.locator(
-        `[data-e2e="downvote"][data-filled="true"]`
+        `[data-e2e="downvote"][data-filled="true"]`,
       );
       await expect(filledUpvoteButton).toHaveCount(1);
       await expect(filledDownvoteButton).toHaveCount(i);

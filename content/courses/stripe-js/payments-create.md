@@ -12,8 +12,9 @@ video_length: 1:39
 ## Create a Payment Intent
 
 {{< file "ts" "payments.ts" >}}
+
 ```typescript
-import { stripe } from './';
+import { stripe } from "./";
 
 /**
  * Create a Payment Intent with a specific amount
@@ -21,35 +22,31 @@ import { stripe } from './';
 export async function createPaymentIntent(amount: number) {
   const paymentIntent = await stripe.paymentIntents.create({
     amount,
-    currency: 'usd',
+    currency: "usd",
     // receipt_email: 'hello@fireship.io',
   });
 
-  paymentIntent.status
+  paymentIntent.status;
 
   return paymentIntent;
 }
-
 ```
 
 ## Payments Endpoint
 
-
 {{< file "ts" "api.ts" >}}
+
 ```typescript
-import { createPaymentIntent } from './payments';
+import { createPaymentIntent } from "./payments";
 
 /**
  * Payment Intents
  */
 
 app.post(
-  '/payments',
+  "/payments",
   runAsync(async ({ body }: Request, res: Response) => {
-    res.send(
-      await createPaymentIntent(body.amount)
-    );
-  })
+    res.send(await createPaymentIntent(body.amount));
+  }),
 );
-
 ```

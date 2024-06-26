@@ -5,9 +5,9 @@ publishdate: 2021-05-21T08:45:49-07:00
 author: Jeff Delaney
 draft: false
 description: Build an animated 3D portfolio website with Three.js
-tags: 
-    - javascript
-    - threejs
+tags:
+  - javascript
+  - threejs
 
 youtube: Q7AOvWpIVHU
 github: https://github.com/fireship-io/threejs-scroll-animation-demo

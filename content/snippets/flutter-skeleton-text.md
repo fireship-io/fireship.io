@@ -5,20 +5,21 @@ lastmod: 2019-01-02T09:35:09-07:00
 draft: false
 type: lessons
 author: Jeff Delaney
-description: Build a Skeleton Text placeholder widget in Flutter with a looping shimmer animation. 
+description: Build a Skeleton Text placeholder widget in Flutter with a looping shimmer animation.
 tags:
-    - flutter
+  - flutter
 ---
 
-Skeleton text is a strategy that improves the perceived load time of content by rendering a blank placeholder that roughly matches the size of the expected content. This method was originally made popular by Facebook, but is now used on many popular apps and websites. 
+Skeleton text is a strategy that improves the perceived load time of content by rendering a blank placeholder that roughly matches the size of the expected content. This method was originally made popular by Facebook, but is now used on many popular apps and websites.
 
 {{< figure src="/snippets/img/flutter-skeleton-text-demo.gif" caption="Use this skeleton text widget as a placeholder when loading data from an external source." >}}
 
 ## Flutter Skeleton Text Widget
 
-The *skeleton text* effect can be created in Flutter with an animated loop over a color gradient. It simply moves the starting point of the gradient from left to right.  In addition, it makes the height and width configurable to fit different content types. 
+The _skeleton text_ effect can be created in Flutter with an animated loop over a color gradient. It simply moves the starting point of the gradient from left to right. In addition, it makes the height and width configurable to fit different content types.
 
 {{< file "dart" "skeleton.dart" >}}
+
 ```dart
 class Skeleton extends StatefulWidget {
   final double height;
@@ -64,7 +65,7 @@ class SkeletonState extends State<Skeleton> with SingleTickerProviderStateMixin 
   Widget build(BuildContext context) {
     return Container(
         width:  widget.width,
-        height: widget.height, 
+        height: widget.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment(gradientPosition.value, 0),

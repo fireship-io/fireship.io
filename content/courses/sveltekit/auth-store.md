@@ -9,7 +9,6 @@ emoji: ⚡
 video_length: 2:37
 ---
 
-
 ## SvelteFire
 
 You can skip the code and just install [SvelteFire](https://github.com/codediodeio/sveltefire) to use this store.
@@ -19,6 +18,7 @@ You can skip the code and just install [SvelteFire](https://github.com/codediode
 A simple implementation for prototyping
 
 {{< file "ts" "firebase.ts" >}}
+
 ```typescript
 const currentUser = writable<User | null>(null);
 
@@ -29,9 +29,10 @@ onAuthStateChanged(auth, (user) => {
 
 ## Custom Store
 
-Full implementation with unsubscribe and SSR support. 
+Full implementation with unsubscribe and SSR support.
 
 {{< file "ts" "firebase.ts" >}}
+
 ```typescript
 /**
  * @returns a store with the current firebase user
@@ -40,11 +41,11 @@ function userStore() {
   let unsubscribe: () => void;
 
   if (!auth || !globalThis.window) {
-    console.warn('Auth is not initialized or not in browser');
+    console.warn("Auth is not initialized or not in browser");
     const { subscribe } = writable<User | null>(null);
     return {
       subscribe,
-    }
+    };
   }
 
   const { subscribe } = writable(auth?.currentUser ?? null, (set) => {
@@ -73,8 +74,12 @@ export const user = userStore();
 {#if $user}
   <h2 class="card-title">Welcome, {$user.displayName}</h2>
   <p class="text-center text-success">You are logged in</p>
-  <button class="btn btn-warning" on:click={() => signOut(auth)}>Sign out</button>
+  <button class="btn btn-warning" on:click={() => signOut(auth)}
+    >Sign out</button
+  >
 {:else}
-  <button class="btn btn-primary" on:click={signInWithGoogle}>Sign in with Google</button>
+  <button class="btn btn-primary" on:click={signInWithGoogle}
+    >Sign in with Google</button
+  >
 {/if}
 ```

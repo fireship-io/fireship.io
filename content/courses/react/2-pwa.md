@@ -12,8 +12,9 @@ video_length: 3:36
 ## App Badge Hook
 
 {{< file "react" "useAppBadge.jsx" >}}
+
 ```jsx
-import { useState } from 'react';
+import { useState } from "react";
 
 const useAppBadge = () => {
   const [counter, setCounter] = useState(1);

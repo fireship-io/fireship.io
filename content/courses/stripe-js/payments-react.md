@@ -1,5 +1,5 @@
 ---
-title: React 
+title: React
 description: React integration of Payment Intents API & Stripe Elements
 weight: 35
 lastmod: 2020-04-20T10:23:30-09:00
@@ -12,10 +12,11 @@ video_length: 4:26
 ## React Payments UI
 
 {{< file "react" "Payments.js" >}}
+
 ```jsx
-import React, { useState } from 'react';
-import { fetchFromAPI } from './helpers';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import React, { useState } from "react";
+import { fetchFromAPI } from "./helpers";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 function Payments() {
   const stripe = useStripe();
@@ -26,13 +27,14 @@ function Payments() {
 
   // Create a payment intent on the server
   const createPaymentIntent = async (event) => {
-
     // Clamp amount to Stripe min/max
     const validAmount = Math.min(Math.max(amount, 50), 9999999);
     setAmount(validAmount);
 
     // Make the API Request
-    const pi = await fetchFromAPI('payments', { body: { amount: validAmount } });
+    const pi = await fetchFromAPI("payments", {
+      body: { amount: validAmount },
+    });
     setPaymentIntent(pi);
   };
 
@@ -43,12 +45,10 @@ function Payments() {
     const cardElement = elements.getElement(CardElement);
 
     // Confirm Card Payment
-    const {
-      paymentIntent: updatedPaymentIntent,
-      error,
-    } = await stripe.confirmCardPayment(paymentIntent.client_secret, {
-      payment_method: { card: cardElement },
-    });
+    const { paymentIntent: updatedPaymentIntent, error } =
+      await stripe.confirmCardPayment(paymentIntent.client_secret, {
+        payment_method: { card: cardElement },
+      });
 
     if (error) {
       console.error(error);
@@ -60,7 +60,6 @@ function Payments() {
 
   return (
     <>
-
       <div>
         <input
           type="number"
@@ -71,19 +70,15 @@ function Payments() {
         <button
           disabled={amount <= 0}
           onClick={createPaymentIntent}
-          hidden={paymentIntent}>
-          Ready to Pay ${ (amount / 100).toFixed(2) }
+          hidden={paymentIntent}
+        >
+          Ready to Pay ${(amount / 100).toFixed(2)}
         </button>
       </div>
 
-
       <form onSubmit={handleSubmit}>
-
-
         <CardElement />
-        <button  type="submit">
-          Pay
-        </button>
+        <button type="submit">Pay</button>
       </form>
     </>
   );

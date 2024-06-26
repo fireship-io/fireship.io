@@ -12,6 +12,7 @@ video_length: 5:41
 ## Create a Next.js App
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npx create-next-app nextfire
 ```
@@ -23,4 +24,5 @@ npx create-next-app nextfire
 - `pages` main routes for site
 
 ## Global CSS
+
 https://raw.githubusercontent.com/fireship-io/next-firebase-course/main/styles/globals.css

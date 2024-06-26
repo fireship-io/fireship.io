@@ -12,6 +12,7 @@ video_length: 1:45
 ## Example of StreamBuilder
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class DemoApp extends StatelessWidget {
   const DemoApp({ Key? key }) : super(key: key);

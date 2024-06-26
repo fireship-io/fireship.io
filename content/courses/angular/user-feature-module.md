@@ -10,59 +10,59 @@ chapter_start: Users
 video_length: 3:54
 ---
 
-Create a lazy-loaded feature module to handle user sign-in and related tasks. 
+Create a lazy-loaded feature module to handle user sign-in and related tasks.
 
 ## Steps
 
 ### Step 1
 
-Generate a feature module with routing and add a component to it. 
+Generate a feature module with routing and add a component to it.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g module user --routing
 ng g component user/login-page
 ```
 
-
 ### Step 2 - Update the User Routes
 
-Add the component to the user module routes. 
+Add the component to the user module routes.
 
 {{< file "ngts" "user-routing.module.ts" >}}
+
 ```typescript
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginPageComponent } from './login-page/login-page.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { LoginPageComponent } from "./login-page/login-page.component";
 
-
-const routes: Routes = [
-  { path: '', component: LoginPageComponent }
-];
+const routes: Routes = [{ path: "", component: LoginPageComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}
 ```
 
 ### Step 3 - Update the Root Routes
 
-Use a dynamic import in the root router that references the lazy user module. 
+Use a dynamic import in the root router that references the lazy user module.
 
 {{< file "ngts" "app-routing.module.ts" >}}
+
 ```typescript
 const routes: Routes = [
-  { path: '', component: HomePageComponent },
+  { path: "", component: HomePageComponent },
   {
-    path: 'login', loadChildren: () => import('./user/user.module').then(m => m.UserModule)
-  }
+    path: "login",
+    loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
 ```

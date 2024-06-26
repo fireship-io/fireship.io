@@ -1,13 +1,13 @@
 <svelte:options tag="quiz-modal" />
 
 <script lang="ts">
-  import { getCourseIdFromURL } from '../../util/helpers';
-  import { markComplete } from '../../util/firebase';
+  import { getCourseIdFromURL } from "../../util/helpers";
+  import { markComplete } from "../../util/firebase";
 
   export let answer: string;
   export let options: string; // Format foo:bar:baz
   export let prize: number; // /img/prizes/{courseId}/{n}.png
-  const optionsList = options.split(':');
+  const optionsList = options.split(":");
   let selected: string;
   let isComplete = false;
   let tries = 1;
@@ -29,35 +29,35 @@
 
   function onWrong() {
     const arr = [
-      'lol, try Again',
+      "lol, try Again",
       "Yeah, that ain't it",
-      'Nah bro',
-      'Not even close',
-      'Nooooo!',
-      'try harder',
-      'you serious?',
+      "Nah bro",
+      "Not even close",
+      "Nooooo!",
+      "try harder",
+      "you serious?",
       "c'mon man!",
       "I'm disappointed",
-      'I blame myself',
-      'no prize for you',
+      "I blame myself",
+      "no prize for you",
     ];
     wrongMsg = randomChoice(arr);
     tries++;
   }
 
   async function onCorrect() {
-    const confetti = (await import('../../util/confetti')).default;
+    const confetti = (await import("../../util/confetti")).default;
     const arr = [
-      'well done sir',
+      "well done sir",
       "that's legit",
-      'crushed it',
-      'hella good job',
-      'bussin no cap fr',
-      'take this fancy prize',
-      'the best I can do is this meme',
-      'enjoy your winnings',
-      'hang this prize on your wall',
-      'you earned this!',
+      "crushed it",
+      "hella good job",
+      "bussin no cap fr",
+      "take this fancy prize",
+      "the best I can do is this meme",
+      "enjoy your winnings",
+      "hang this prize on your wall",
+      "you earned this!",
     ];
     correctMsg = randomChoice(arr);
     let bonus = tries <= 2 ? 50 / tries : 5;

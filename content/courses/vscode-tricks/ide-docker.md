@@ -11,4 +11,4 @@ video_length: 1:55
 
 ## ✨ Trick - Dockerized Environment
 
-Click the remote button in the bottom left corner, then select *Reopen in Container*. This will create a Dockerfile and run the container for you. It's a great way to test your code in environments that match your production server runtime. 
+Click the remote button in the bottom left corner, then select _Reopen in Container_. This will create a Dockerfile and run the container for you. It's a great way to test your code in environments that match your production server runtime.

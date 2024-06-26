@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 export const siteData = writable(null);
 
-export const rootURL = 'https://fireship.io';
+export const rootURL = "https://fireship.io";

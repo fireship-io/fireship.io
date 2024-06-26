@@ -12,6 +12,7 @@ video_length: 2:13
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 //...
          child: GestureDetector(

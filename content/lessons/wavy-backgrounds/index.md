@@ -5,9 +5,9 @@ publishdate: 2021-08-19T12:06:33-07:00
 author: Jeff Delaney
 draft: false
 description: Create wavy backgrounds with CSS and SVG to spice up the design of your homepage
-tags: 
-    - css
-    - svg
+tags:
+  - css
+  - svg
 
 youtube: lPJVi797Uy0
 github: https://github.com/fireship-io/wavy-curvey-blobby-website.git
@@ -32,26 +32,28 @@ Wavy backgrounds have been all the rage in [design](https://designshack.net/arti
 The bubble pattern creates an elliptical shape that stretches over the top of the content. It only requires CSS to create the effect.
 
 {{< file "html" "index.html" >}}
+
 ```html
-    <section class="bubble">
-      <!-- content here -->
-    </section>
+<section class="bubble">
+  <!-- content here -->
+</section>
 ```
 
 Use the pseudo-element `::after` to style an eliptical border radius to the content.
 
 {{< file "css" "style.css" >}}
+
 ```css
 .bubble::after {
-    content: '';
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
-    position: absolute;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-    background-color: #0f0f10;
-    height: 85%;
+  content: "";
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  background-color: #0f0f10;
+  height: 85%;
 }
 ```
 
@@ -62,56 +64,57 @@ Use the pseudo-element `::after` to style an eliptical border radius to the cont
 The wave pattern overlaps two epliptical pseudo-elements. It it difficult to get the positioning perfect, but it will work well enough for most cases.
 
 {{< file "html" "index.html" >}}
+
 ```html
-    <section>
-      <!-- content here -->
-      <div class="curve"></div>
-    </section>
+<section>
+  <!-- content here -->
+  <div class="curve"></div>
+</section>
 ```
 
 {{< file "css" "style.css" >}}
+
 ```css
 section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 400px;
-    padding-top: 100px;
-    background: #3c31dd;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 400px;
+  padding-top: 100px;
+  background: #3c31dd;
 }
 
 .curve {
-    position: absolute;
-    height: 250px;
-    width: 100%;
-    bottom: 0;
-    text-align: center;
+  position: absolute;
+  height: 250px;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
 }
 
 .curve::before {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 55%;
-    height: 100%;
-    transform: translate(85%, 60%);
-    background-color: hsl(216, 21%, 16%);
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  transform: translate(85%, 60%);
+  background-color: hsl(216, 21%, 16%);
 }
 
 .curve::after {
-    content: '';
-    display: block;
-    position: absolute;
-    border-radius: 100% 50%;
-    width: 55%;
-    height: 100%;
-    background-color: #3c31dd;
-    transform: translate(-4%, 40%);
-    z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 55%;
+  height: 100%;
+  background-color: #3c31dd;
+  transform: translate(-4%, 40%);
+  z-index: -1;
 }
-
 ```
 
 ## SVG Versions
@@ -127,17 +130,18 @@ One of the easiest ways to add waves to an element is the [ShapeDriver](https://
 To add more complex layered waves, you can use the [Haikei app](https://haikei.app/) to randomly generate a variety of beautiful waves, blobs, and other shapes. You can use any of these shapes as the background image of an element with CSS. Make sure the aspect ratio of the image matches the SVG exported from the app.
 
 {{< file "css" "style.css" >}}
+
 ```css
 .spacer {
-    aspect-ratio: 960/300;
-    width: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .layer1 {
-    background-image: url('./your-image.svg');
+  background-image: url("./your-image.svg");
 }
 ```
 
@@ -145,22 +149,24 @@ To add more complex layered waves, you can use the [Haikei app](https://haikei.a
 
 {{< figure src="img/svg-blob.png" caption="Animated SVG Blob" >}}
 
-[KUTE.js](http://thednp.github.io/kute.js/svgTransform.html) is a JavaScript library that makes it easy to animate SVG elements, or morph one shape into another. The code below can be applied to the paths of an inline SVG. 
+[KUTE.js](http://thednp.github.io/kute.js/svgTransform.html) is a JavaScript library that makes it easy to animate SVG elements, or morph one shape into another. The code below can be applied to the paths of an inline SVG.
 
 {{< file "html" "index.html" >}}
+
 ```html
 <svg>
-    <path id="blob1" />
-    <path id="blob2" style="visibility: hidden" />
+  <path id="blob1" />
+  <path id="blob2" style="visibility: hidden" />
 </svg>
 ```
 
 {{< file "js" "app.js" >}}
+
 ```javascript
 const tween = KUTE.fromTo(
-    '#blob1',
-    { path: '#blob1' },
-    { path: '#blob2' },
-    { repeat: 999, duration: 3000, yoyo: true }
+  "#blob1",
+  { path: "#blob1" },
+  { path: "#blob2" },
+  { repeat: 999, duration: 3000, yoyo: true },
 ).start();
 ```

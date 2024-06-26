@@ -12,6 +12,7 @@ video_length: 6:02
 ## Login Component
 
 {{< file "vue" "Login.vue" >}}
+
 ```html
 <template>
   <aside class="section">
@@ -42,48 +43,49 @@ video_length: 6:02
       class="button is-info"
       :class="{ 'is-loading': loading }"
       @click="signInOrCreateUser()"
-    >{{ newUser ? 'Sign Up' : 'Login'}}</button>
+    >
+      {{ newUser ? 'Sign Up' : 'Login'}}
+    </button>
 
     <p class="has-text-danger" v-if="errorMessage">{{ errorMessage }}</p>
   </aside>
 </template>
 
 <script>
-import { auth } from '../firebase';
+  import { auth } from "../firebase";
 
+  export default {
+    data() {
+      return {
+        auth,
+        newUser: false,
+        email: "",
+        password: "",
+        errorMessage: "",
+        loading: false,
+      };
+    },
 
-export default {
-  data() {
-    return {
-      auth,
-      newUser: false,
-      email: '',
-      password: '',
-      errorMessage: '',
-      loading: false
-    }
-  },
-
-  methods: {
+    methods: {
       async signInOrCreateUser() {
- 
         this.loading = true;
-        this.errorMessage = '';
+        this.errorMessage = "";
         try {
           if (this.newUser) {
-            await auth.createUserWithEmailAndPassword(this.email, this.password)
+            await auth.createUserWithEmailAndPassword(
+              this.email,
+              this.password,
+            );
           } else {
-            await auth.signInWithEmailAndPassword(this.email, this.password)
+            await auth.signInWithEmailAndPassword(this.email, this.password);
           }
         } catch (error) {
-            this.errorMessage = error.message;
+          this.errorMessage = error.message;
         }
 
         this.loading = false;
-      }
-
-  },
-}
-
+      },
+    },
+  };
 </script>
 ```

@@ -67,11 +67,11 @@ export async function getPostDetails({
       acc[post.id] = post;
       return acc;
     },
-    {} as Record<string, Post>
+    {} as Record<string, Post>,
   );
   const post = postMap[postId];
   const comments = (data as GetSinglePostWithCommentResponse[]).filter(
-    (x) => x.id !== postId
+    (x) => x.id !== postId,
   );
   if (!userContext.session?.user) {
     return { post, comments };
@@ -83,10 +83,13 @@ export async function getPostDetails({
   if (!votesData) {
     return;
   }
-  const votes = votesData.reduce((acc, vote) => {
-    acc[vote.post_id] = vote.vote_type as any;
-    return acc;
-  }, {} as Record<string, "up" | "down" | undefined>);
+  const votes = votesData.reduce(
+    (acc, vote) => {
+      acc[vote.post_id] = vote.vote_type as any;
+      return acc;
+    },
+    {} as Record<string, "up" | "down" | undefined>,
+  );
   return { post, comments, myVotes: votes };
 }
 
@@ -107,7 +110,7 @@ export function PostView() {
   }, [userContext, params, bumper]);
   const nestedComments = useMemo(
     () => unsortedCommentsToNested(postDetailData.comments),
-    [postDetailData]
+    [postDetailData],
   );
 
   return (
@@ -136,7 +139,7 @@ function PostPresentation({
 }) {
   const score = usePostScore(
     postDetailData.post?.id || "",
-    postDetailData.post?.score
+    postDetailData.post?.score,
   );
   return (
     <div className="post-detail-outer-container">
@@ -394,15 +397,18 @@ function CreateComment({
 }
 
 function unsortedCommentsToNested(
-  comments: GetSinglePostWithCommentResponse[]
+  comments: GetSinglePostWithCommentResponse[],
 ): Comment[] {
-  const commentMap = comments.reduce((acc, comment) => {
-    acc[comment.id] = {
-      ...comment,
-      comments: [],
-    };
-    return acc;
-  }, {} as Record<string, Comment>);
+  const commentMap = comments.reduce(
+    (acc, comment) => {
+      acc[comment.id] = {
+        ...comment,
+        comments: [],
+      };
+      return acc;
+    },
+    {} as Record<string, Comment>,
+  );
   const result: Comment[] = [];
   const sortedByDepthThenCreationTime = [...Object.values(commentMap)].sort(
     (a, b) => {
@@ -411,9 +417,9 @@ function unsortedCommentsToNested(
       return aDepth > bDepth
         ? 1
         : aDepth < bDepth
-        ? -1
-        : new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
-    }
+          ? -1
+          : new Date(a.created_at).getTime() - new Date(b.created_at).getTime();
+    },
   );
   for (const post of sortedByDepthThenCreationTime) {
     if (getDepth(post.path) === 1) {

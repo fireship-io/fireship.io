@@ -9,11 +9,12 @@ emoji: 📜
 video_length: 2:16
 ---
 
-## Rebase 
+## Rebase
 
-From a feature branch, rebase the latest changes from the master branch. 
+From a feature branch, rebase the latest changes from the master branch.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git checkout feature
 git rebase master

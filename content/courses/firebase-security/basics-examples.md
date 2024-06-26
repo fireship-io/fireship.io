@@ -10,6 +10,7 @@ video_length: 5:28
 ---
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
 match /users/{userId} {
 
@@ -22,11 +23,11 @@ match /todos/{docId} {
 
     allow read: if resource.data.status == 'published';
 
-    allow create: if request.auth.uid == request.resource.data.uid 
+    allow create: if request.auth.uid == request.resource.data.uid
                 && request.time == request.resource.data.createdAt;
-                
 
-    allow update: if request.auth.uid == resource.data.uid 
+
+    allow update: if request.auth.uid == resource.data.uid
                 && request.resource.data.keys().hasOnly(['text', 'status']);
 }
 

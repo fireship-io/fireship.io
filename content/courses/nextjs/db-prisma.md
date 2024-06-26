@@ -9,8 +9,8 @@ emoji: 💽
 video_length: 2:09
 ---
 
-
 {{< file "terminal" "command line" >}}
+
 ```bash
 npx prisma init
 
@@ -19,6 +19,7 @@ npx prisma migrate dev
 ```
 
 {{< file "cog" "schema.prisma" >}}
+
 ```bash
 generator client {
   provider = "prisma-client-js"

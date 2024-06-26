@@ -19,44 +19,47 @@ Refer to the [Stripe React Documentation](https://docs.stripe.com/stripe-js/reac
 npm i @stripe/react-stripe-js @stripe/stripe-js
 ```
 
-
 ### Code
-
 
 Create an API rotue for the checkout session.
 
 {{< file "ts" "app/api/embedded-checkout/route.ts" >}}
+
 ```typescript
-import { NextResponse } from 'next/server';
-import { stripe } from '@/utils/stripe';
+import { NextResponse } from "next/server";
+import { stripe } from "@/utils/stripe";
 
 export async function POST(request: Request) {
-    try {
-        const { priceId } = await request.json();
+  try {
+    const { priceId } = await request.json();
 
-        const session = await stripe.checkout.sessions.create({
-            ui_mode: 'embedded',
-            payment_method_types: ['card'],
-            line_items: [
-                {
-                    price: priceId,
-                },
-            ],
-            mode: 'subscription',
-            return_url: `${request.headers.get('origin')}/return?session_id={CHECKOUT_SESSION_ID}`,
-        });
+    const session = await stripe.checkout.sessions.create({
+      ui_mode: "embedded",
+      payment_method_types: ["card"],
+      line_items: [
+        {
+          price: priceId,
+        },
+      ],
+      mode: "subscription",
+      return_url: `${request.headers.get("origin")}/return?session_id={CHECKOUT_SESSION_ID}`,
+    });
 
-        return NextResponse.json({ id: session.id, client_secret: session.client_secret });
-    } catch (error: any) {
-      console.error(error);
-        return NextResponse.json({ message: error.message }, { status: 500 });
-    }
+    return NextResponse.json({
+      id: session.id,
+      client_secret: session.client_secret,
+    });
+  } catch (error: any) {
+    console.error(error);
+    return NextResponse.json({ message: error.message }, { status: 500 });
+  }
 }
 ```
 
-Create a client component to display the checkout form.  
+Create a client component to display the checkout form.
 
 {{< file "react" "app/EmbeddedCheckoutForm.tsx" >}}
+
 ```tsx
 "use client";
 import { loadStripe } from "@stripe/stripe-js";
@@ -68,7 +71,7 @@ import { useCallback, useRef, useState } from "react";
 
 export default function EmbeddedCheckoutButton() {
   const stripePromise = loadStripe(
-    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
+    process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
   );
   const [showCheckout, setShowCheckout] = useState(false);
   const modalRef = useRef<HTMLDialogElement>(null);
@@ -108,7 +111,10 @@ export default function EmbeddedCheckoutButton() {
           <h3 className="font-bold text-lg">Embedded Checkout</h3>
           <div className="py-4">
             {showCheckout && (
-              <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
+              <EmbeddedCheckoutProvider
+                stripe={stripePromise}
+                options={options}
+              >
                 <EmbeddedCheckout />
               </EmbeddedCheckoutProvider>
             )}
@@ -127,10 +133,10 @@ export default function EmbeddedCheckoutButton() {
 }
 ```
 
-
-Create a server component page to handle the return URL.  
+Create a server component page to handle the return URL.
 
 {{< file "react" "app/return/page.tsx" >}}
+
 ```tsx
 import { stripe } from "@/utils/stripe";
 
@@ -153,7 +159,7 @@ export default async function CheckoutReturn({ searchParams }) {
     return (
       <h3>
         We appreciate your business! Your Stripe customer ID is:
-        {(session.customer as string)}.
+        {session.customer as string}.
       </h3>
     );
   }

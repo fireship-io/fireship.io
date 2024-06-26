@@ -7,7 +7,7 @@ draft: false
 vimeo: 773489518
 emoji: 🍟
 video_length: 3:25
-quiz: true 
+quiz: true
 ---
 
 <quiz-modal options="for of:for in:forEach:map" answer="for in" prize="8">
@@ -17,7 +17,9 @@ quiz: true
 ## Create a Range of Numbers
 
 ```js
-const range = Array(100).fill(0).map((_, i) => i + 1);
+const range = Array(100)
+  .fill(0)
+  .map((_, i) => i + 1);
 
 // OR
 
@@ -39,8 +41,8 @@ const random = arr[Math.floor(Math.random() * arr.length)];
 ## Loop over a Key-Value Pair
 
 ```js
-for(const [i, val] of arr.entries()) {
-    console.log(i, val);
+for (const [i, val] of arr.entries()) {
+  console.log(i, val);
 }
 ```
 
@@ -48,7 +50,7 @@ for(const [i, val] of arr.entries()) {
 
 ```js
 arr.forEach();
-arr.map()
+arr.map();
 arr.filter();
 arr.find();
 arr.findIndex();

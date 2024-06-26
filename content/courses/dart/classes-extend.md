@@ -11,9 +11,10 @@ video_length: 1:51
 
 ## Superclass
 
-The superclass or parent class contains the behaviors that is shared by all subclasses. The `abstract` keyword is used to indicate that the class is not meant to be instantiated, but rather to be inherited from. 
+The superclass or parent class contains the behaviors that is shared by all subclasses. The `abstract` keyword is used to indicate that the class is not meant to be instantiated, but rather to be inherited from.
 
 {{< file "dart" "extend.dart" >}}
+
 ```dart
 abstract class Dog {
   void walk() {
@@ -27,6 +28,7 @@ abstract class Dog {
 The subclass can `@override` the behavior of the superclass.
 
 {{< file "dart" "extend.dart" >}}
+
 ```dart
 class Pug extends Dog {
   String breed = 'pug';
@@ -38,5 +40,3 @@ class Pug extends Dog {
   }
 }
 ```
-
-

@@ -17,17 +17,18 @@ video_length: 5:09
 
 ## 1. Create a Firebase Project
 
-Create a [Firebase](https://firebase.google.com/) project or use an existing one. 
+Create a [Firebase](https://firebase.google.com/) project or use an existing one.
 
 ## 2. Create a Frontend Project
 
-Create a frontend project or use an existing one. As a bare minimum requirement, simply initialize an NPM project using the command below. 
+Create a frontend project or use an existing one. As a bare minimum requirement, simply initialize an NPM project using the command below.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm init -y
 
-# OR 
+# OR
 
 npx create-react-app myapp
 ```
@@ -35,15 +36,12 @@ npx create-react-app myapp
 # 3. Connect your Local Code to Firebase
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm -g firebase-tools
 
 firebase-login
 
-firebase init 
+firebase init
 # choose firestore, functions, storage, and emulators
 ```
-
-
-
-

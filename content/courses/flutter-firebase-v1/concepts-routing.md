@@ -12,13 +12,14 @@ video_length: 3:57
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 class MyApp extends StatelessWidget {
  @override
  Widget build(BuildContext context) {
    return MaterialApp(
 
-    
+
      routes: {
        '/home': (context) => HomeScreen(),
        '/slideshow': (context) => SlideshowScreen()

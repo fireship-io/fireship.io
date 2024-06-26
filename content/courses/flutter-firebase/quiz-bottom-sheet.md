@@ -14,6 +14,7 @@ video_length: 3:12
 The QuestionPage implements a method that creates a modal bottom sheet to tell the user if their answer was correct or not.
 
 {{< file "flutter" "quiz.dart" >}}
+
 ```dart
 class QuestionPage extends StatelessWidget {
   final Question question;

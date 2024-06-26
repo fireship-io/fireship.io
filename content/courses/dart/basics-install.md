@@ -24,4 +24,3 @@ If you don't care about Flutter, checkout the [Dart SDK Install guide](https://d
 ### Option 3 - Use Dart Pad
 
 If you want to use the browser, try [DartPad](https://dartpad.dev/)
-

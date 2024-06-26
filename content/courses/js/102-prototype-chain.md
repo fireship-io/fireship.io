@@ -26,12 +26,12 @@ In the example below, we see how an dog can inherit properties from the animal o
 
 ```js
 const animal = {
-  dna: 'ATCG',
+  dna: "ATCG",
 };
 
 const dog = {
-  face: '🐺',
-}
+  face: "🐺",
+};
 
 Object.setPrototypeOf(dog, animal);
 

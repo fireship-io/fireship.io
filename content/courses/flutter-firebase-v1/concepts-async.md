@@ -12,6 +12,7 @@ video_length: 4:25
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -42,7 +43,7 @@ class HomeScreen extends StatelessWidget {
        child: StreamBuilder<DocumentSnapshot>(
          stream: db.collection('users').document('mB6sGaFBczfIW50DJyvGDcQWOvW2').snapshots(),
          builder: (context, snapshot) {
-          
+
            if (snapshot.hasData) {
 
              var data = snapshot.data.data;
@@ -62,7 +63,7 @@ class HomeScreen extends StatelessWidget {
              return Container();
            }
 
-          
+
          }
        ),
      )

@@ -10,6 +10,7 @@ video_length: 1:30
 ---
 
 {{< file "react" "[slug]/page.tsx" >}}
+
 ```tsx
 export const revalidate = 1200; // not necessary, just for ISR demonstration
 
@@ -20,8 +21,8 @@ interface Post {
 }
 
 export async function generateStaticParams() {
-  const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
-    (res) => res.json()
+  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
+    (res) => res.json(),
   );
 
   return posts.map((post) => ({
@@ -35,8 +36,8 @@ interface Props {
 
 export default async function BlogPostPage({ params }: Props) {
   // deduped
-  const posts: Post[] = await fetch('http://localhost:3000/api/content').then(
-    (res) => res.json()
+  const posts: Post[] = await fetch("http://localhost:3000/api/content").then(
+    (res) => res.json(),
   );
   const post = posts.find((post) => post.slug === params.slug)!;
 
@@ -47,5 +48,4 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   );
 }
-
 ```

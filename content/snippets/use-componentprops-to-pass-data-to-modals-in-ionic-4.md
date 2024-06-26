@@ -10,7 +10,7 @@ tags:
   - ionic
 ---
 
-The snippet below shows you how to use `componentProps` to pass data into an [Ionic 4 modal](https://beta.ionicframework.com/docs/api/modal/). This technique is useful when updating dynamic data. 
+The snippet below shows you how to use `componentProps` to pass data into an [Ionic 4 modal](https://beta.ionicframework.com/docs/api/modal/). This technique is useful when updating dynamic data.
 
 ## Pass Data into Ionic4 Modals
 
@@ -18,12 +18,12 @@ In previous versions of Ionic, the `NavParams` class was used to read the passed
 
 ### Parent Component
 
-The parent component will present the modal and pass data into it. 
+The parent component will present the modal and pass data into it.
 
 ```typescript
-import { Component } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import { ModalPage } from '../modal/modal.page';
+import { Component } from "@angular/core";
+import { ModalController } from "@ionic/angular";
+import { ModalPage } from "../modal/modal.page";
 
 @Component()
 export class SomeParentComponent {
@@ -32,10 +32,10 @@ export class SomeParentComponent {
   async presentModal() {
     const modal = await this.modalController.create({
       component: ModalPage,
-      componentProps: { 
-        foo: 'hello',
-        bar: 'world'
-      }
+      componentProps: {
+        foo: "hello",
+        bar: "world",
+      },
     });
     return await modal.present();
   }
@@ -44,10 +44,10 @@ export class SomeParentComponent {
 
 ### Modal Page Component
 
-The child component is the actual modal window and it will consume the data passed to it. So how to use use the data passed in from `componentProps` in the previous step? You just need to declare the property on your class and you're good to go - just make sure it uses the same prop name on both sides of the equation.  
+The child component is the actual modal window and it will consume the data passed to it. So how to use use the data passed in from `componentProps` in the previous step? You just need to declare the property on your class and you're good to go - just make sure it uses the same prop name on both sides of the equation.
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component()
 export class ModalPage implements OnInit {
@@ -55,10 +55,9 @@ export class ModalPage implements OnInit {
   bar;
 
   ngOnInit() {
-    console.log(`${foo} ${bar}`)
+    console.log(`${foo} ${bar}`);
   }
 }
-
 
 // hello world
 ```

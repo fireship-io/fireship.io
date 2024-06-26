@@ -6,18 +6,17 @@ weight: 0
 type: courses
 author: Jeff Delaney
 vimeo: 599074745
-tags: 
-    - git
-    - github
-    - pro
+tags:
+  - git
+  - github
+  - pro
 
-stack: 
-    - git
-    - github
+stack:
+  - git
+  - github
 ---
 
-**The Git & GitHub Full Course** teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands on approach to learn the basics of version control from the command line with around 1 hour of video content and exercises. 
-
+**The Git & GitHub Full Course** teaches you how to use Git and GitHub to manage your code like a professional software engineer. Take a hands on approach to learn the basics of version control from the command line with around 1 hour of video content and exercises.
 
 ## 🦄 What will I learn?
 
@@ -30,7 +29,6 @@ This course will teach the basics of [Git](https://git-scm.com/) and [GitHub](ht
 - 🤝 Contribute to Open-Source Projects
 - 🔥 Use VS Code like a Pro
 - 🕹️ Use Git for DevOps with GitHub Actions
-
 
 ## 🤔 Is this Course Right for Me?
 

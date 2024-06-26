@@ -10,11 +10,12 @@ free: true
 video_length: 4:01
 ---
 
-The [Angular CLI](https://angular.io/cli) provides a powerful set of tools that can bundle your app with webpack, generate boilerplate code, and configure third-party extensions. 
+The [Angular CLI](https://angular.io/cli) provides a powerful set of tools that can bundle your app with webpack, generate boilerplate code, and configure third-party extensions.
 
 ## Getting Started
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm install -g @angular/cli
 
@@ -26,4 +27,3 @@ ng generate component --help
 ng new my-app
 code my-app
 ```
-

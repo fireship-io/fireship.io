@@ -8,4 +8,4 @@ vimeo: 348519103
 emoji: 🔔
 ---
 
-You might also find the [Firebase Cloud Functions Master Course](/courses/cloud-functions/) useful for more complex serverless integrations. 
+You might also find the [Firebase Cloud Functions Master Course](/courses/cloud-functions/) useful for more complex serverless integrations.

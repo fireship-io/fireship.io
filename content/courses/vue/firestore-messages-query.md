@@ -12,6 +12,7 @@ video_length: 3:48
 ## ChatRoom Component
 
 {{< file "vue" "ChatRoom.vue" >}}
+
 ```html
 <template>
   <main class="section">
@@ -32,63 +33,59 @@ video_length: 3:48
           class="button is-success"
           type="text"
           @click="addMessage(user.uid)"
-        >Send</button>
-
+        >
+          Send
+        </button>
       </div>
 
       <Login v-else />
-
     </User>
-
   </main>
 </template>
 
 <script>
+  import User from "./User.vue";
+  import Login from "./Login.vue";
+  import { db, storage } from "../firebase";
 
-import User from './User.vue';
-import Login from './Login.vue';
-import { db, storage } from '../firebase';
-
-export default {
-  components: {
-    User,
-    Login
-  },
-  data() {
+  export default {
+    components: {
+      User,
+      Login,
+    },
+    data() {
       return {
-          newMessageText: '',
-          loading: false,
-          messages: [],
-      }
-  },
-  computed: {
-    chatId() {
-      return this.$route.params.id;
+        newMessageText: "",
+        loading: false,
+        messages: [],
+      };
     },
-    messagesCollection() {
-      return db.doc(`chats/${this.chatId}`).collection('messages');
+    computed: {
+      chatId() {
+        return this.$route.params.id;
+      },
+      messagesCollection() {
+        return db.doc(`chats/${this.chatId}`).collection("messages");
+      },
     },
-  },
-  firestore() {
-    return {
-      messages: this.messagesCollection.orderBy('createdAt').limitToLast(10)
-    };
-  },
+    firestore() {
+      return {
+        messages: this.messagesCollection.orderBy("createdAt").limitToLast(10),
+      };
+    },
     methods: {
       async addMessage(uid) {
+        this.loading = true;
 
-          this.loading = true;
+        const { id: messageId } = this.messagesCollection.doc();
 
-          const { id: messageId } = this.messagesCollection.doc();
-
-           await this.messagesCollection.doc(messageId).set({
-              text: this.newMessageText,
-              sender: uid,
-              createdAt: Date.now(),
-
-          });
-      }
+        await this.messagesCollection.doc(messageId).set({
+          text: this.newMessageText,
+          sender: uid,
+          createdAt: Date.now(),
+        });
+      },
     },
-};
+  };
 </script>
 ```

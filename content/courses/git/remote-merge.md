@@ -17,6 +17,7 @@ quiz: true
 Fetch and merge code from the remote repository.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git fetch
 git merge origin/master

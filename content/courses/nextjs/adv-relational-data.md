@@ -14,6 +14,7 @@ video_length: 2:40
 Update the schema
 
 {{< file "terminal" "schema.prisma" >}}
+
 ```prisma
 model User {
   id            String    @id @default(cuid())
@@ -39,9 +40,10 @@ model Follows {
 }
 ```
 
-Then migrate it 
+Then migrate it
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npx prisma migrate dev
 ```

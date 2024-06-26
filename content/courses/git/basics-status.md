@@ -10,9 +10,10 @@ video_length: 1:24
 quiz: true
 ---
 
-View the current status of a repository. 
+View the current status of a repository.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git commit status
 ```

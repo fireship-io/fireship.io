@@ -19,8 +19,8 @@ video_length: 1:42
 - [Flutter Docs](https://flutter.dev)
 - [FlutterFire Docs](https://firebaseopensource.com/projects/firebaseextended/flutterfire)
 
-
 ## Social
+
 - [Slack Chat](https://fireship.page.link/slack)
 - [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
 

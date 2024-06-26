@@ -11,13 +11,15 @@ video_length: 2:41
 ---
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng generate module cool
 ```
 
-Get comfortable with declarations, imports, and exports. 
+Get comfortable with declarations, imports, and exports.
 
 {{< file "ngts" "some.module.ts" >}}
+
 ```typescript
 @NgModule({
   // Components defined in this module

@@ -12,9 +12,10 @@ chapter_start: Voice Messages
 
 ## ChatRoom Component
 
-Add a voice recorder. 
+Add a voice recorder.
 
 {{< file "vue" "ChatRoom.vue" >}}
+
 ```html
 <template>
   <main class="section">

@@ -11,9 +11,10 @@ video_length: 2:03
 
 ## Firebase Analytics and Routing
 
-Add Firebase Analytics to keep track of the user's navigation between screens. 
+Add Firebase Analytics to keep track of the user's navigation between screens.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:firebase_analytics/observer.dart';

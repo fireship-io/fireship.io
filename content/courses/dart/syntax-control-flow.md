@@ -14,6 +14,7 @@ chapter_start: Syntax & Data Types
 ## Conditional Statements
 
 {{< file "dart" "control-flow.dart" >}}
+
 ```dart
   String color = 'blue';
 
@@ -32,6 +33,7 @@ chapter_start: Syntax & Data Types
 ## Loops
 
 {{< file "dart" "control-flow.dart" >}}
+
 ```dart
   for (var i = 0; i < 5; i++) {
     print(i);
@@ -55,6 +57,7 @@ chapter_start: Syntax & Data Types
 ## Assertions
 
 {{< file "dart" "control-flow.dart" >}}
+
 ```dart
   // Assert
   var txt = 'good';

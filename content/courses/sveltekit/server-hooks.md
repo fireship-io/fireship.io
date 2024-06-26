@@ -12,6 +12,7 @@ video_length: 2:01
 ## Auth Hook
 
 {{< file "ts" "hooks.server.ts" >}}
+
 ```typescript
 import { adminAuth } from "$lib/server/admin";
 import type { Handle } from "@sveltejs/kit";
@@ -35,18 +36,19 @@ export const handle = (async ({ event, resolve }) => {
 ## Locals Type Definitions
 
 {{< file "ts" "app.d.ts" >}}
+
 ```typescript
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
-	namespace App {
-		// interface Error {}
-		interface Locals {
-			userID: string | null;
-		}
-		// interface PageData {}
-		// interface Platform {}
-	}
+  namespace App {
+    // interface Error {}
+    interface Locals {
+      userID: string | null;
+    }
+    // interface PageData {}
+    // interface Platform {}
+  }
 }
 
 export {};
@@ -55,29 +57,28 @@ export {};
 ## Refactored Data Fetching
 
 {{< file "ts" "+page.server.ts" >}}
+
 ```typescript
 import type { PageServerLoad } from "./$types";
 import { adminAuth, adminDB } from "$lib/server/admin";
 import { error, redirect } from "@sveltejs/kit";
 
 export const load = (async ({ locals, params }) => {
+  const uid = locals.userID;
 
-    const uid = locals.userID;
+  if (!uid) {
+    throw redirect(301, "/login");
+  }
 
-    if (!uid) {
-      throw redirect(301, "/login");
-    }
-  
-    const userDoc = await adminDB.collection("users").doc(uid).get();
-    const { username, bio } = userDoc.data()!;
-  
-    if (params.username !== username) {
-      throw error(401, "That username does not belong to you");
-    }
-  
-  
-    return {
-      bio,
-    };
+  const userDoc = await adminDB.collection("users").doc(uid).get();
+  const { username, bio } = userDoc.data()!;
+
+  if (params.username !== username) {
+    throw error(401, "That username does not belong to you");
+  }
+
+  return {
+    bio,
+  };
 }) satisfies PageServerLoad;
 ```

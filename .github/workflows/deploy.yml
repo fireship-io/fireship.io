@@ -7,11 +7,10 @@ on:
 
 env:
   FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
-  ALGOLIA_APP_ID: 05VYZFXKNM 
+  ALGOLIA_APP_ID: 05VYZFXKNM
   ALGOLIA_ADMIN_KEY: ${{secrets.ALGOLIA_ADMIN_KEY}}
-  ALGOLIA_INDEX_NAME: content 
+  ALGOLIA_INDEX_NAME: content
   ALGOLIA_INDEX_FILE: public/algolia.json
-
 
 jobs:
   build:
@@ -23,7 +22,7 @@ jobs:
           node-version: 20
       - uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.101.0'
+          hugo-version: "0.101.0"
           extended: true
       - run: npm ci
       - run: npm run build

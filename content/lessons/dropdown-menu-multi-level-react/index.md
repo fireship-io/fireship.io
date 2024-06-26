@@ -5,9 +5,9 @@ publishdate: 2020-04-16T19:59:08-07:00
 author: Jeff Delaney
 draft: false
 description: Build an animated multi-level dropdown menu from scratch with React, inspired by Facebook's 2020 UI update
-tags: 
-    - react
-    - css
+tags:
+  - react
+  - css
 
 youtube: IF6k0uZuypA
 github: https://github.com/fireship-io/229-multi-level-dropdown
@@ -21,16 +21,16 @@ github: https://github.com/fireship-io/229-multi-level-dropdown
 #    rxdart: 0.20
 ---
 
-The following tutorial demonstrates how to build animated dropdown menu with React. It is inspired by Facebook's March 2020 web [UI update](https://variety.com/2019/digital/news/facebook-app-redesign-1203201310/). 
+The following tutorial demonstrates how to build animated dropdown menu with React. It is inspired by Facebook's March 2020 web [UI update](https://variety.com/2019/digital/news/facebook-app-redesign-1203201310/).
 
 {{< figure src="img/facebook-ui-redesign.png" caption="Facebook's new UI in 2020" >}}
 
-
 ## Initial Setup
 
-Start by creating a new app with [CRA](https://reactjs.org/docs/create-a-new-react-app.html) and install the [React Transition Group](https://reactcommunity.org/react-transition-group/) package to handle animation. 
+Start by creating a new app with [CRA](https://reactjs.org/docs/create-a-new-react-app.html) and install the [React Transition Group](https://reactcommunity.org/react-transition-group/) package to handle animation.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npx create-react-app facebook
 
@@ -46,17 +46,15 @@ Build a simple [flexbox](https://youtu.be/K74l26pE4YA) navigation bar to give th
 
 {{< figure src="img/react-navbar.png" caption="A basic flexbox navbar in React" >}}
 
-
 ### React
 
 {{< file "react" "App.js" >}}
+
 ```jsx
-import React from 'react';
+import React from "react";
 
 function App() {
-  return (
-    <Navbar></Navbar>
-  );
+  return <Navbar></Navbar>;
 }
 
 function Navbar(props) {
@@ -71,15 +69,16 @@ function Navbar(props) {
 ### CSS
 
 {{< file "css" "index.css" >}}
+
 ```css
 :root {
-  --bg:  #242526;
+  --bg: #242526;
   --bg-accent: #484a4d;
   --text-color: #dadce1;
   --nav-size: 60px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
-  --speed: 500ms; 
+  --speed: 500ms;
 }
 
 ul {
@@ -90,7 +89,7 @@ ul {
 
 a {
   color: var(--text-color);
-  text-decoration: none;;
+  text-decoration: none;
 }
 
 /* Top Navigation Bar */
@@ -112,10 +111,9 @@ a {
 }
 ```
 
-
 ## Icon Button
 
-Next, give the navbar some children in the form of Icon Buttons. You will need to add your own SVG icons to the project, or use the ones in the [source code](https://github.com/fireship-io/229-multi-level-dropdown), or just use an emoji string 🔥.  
+Next, give the navbar some children in the form of Icon Buttons. You will need to add your own SVG icons to the project, or use the ones in the [source code](https://github.com/fireship-io/229-multi-level-dropdown), or just use an emoji string 🔥.
 
 {{< figure src="img/react-icon-button-nav.png" caption="SVG Icon buttons for navigation" >}}
 
@@ -124,10 +122,11 @@ Next, give the navbar some children in the form of Icon Buttons. You will need t
 The `NavItem` has an `open` state with will show its children (the dropdown) when truthy.
 
 {{< file "react" "App.js" >}}
-```jsx
-import React, { useState } from 'react';
 
-import { ReactComponent as BoltIcon } from './icons/bolt.svg';
+```jsx
+import React, { useState } from "react";
+
+import { ReactComponent as BoltIcon } from "./icons/bolt.svg";
 
 function App() {
   return (
@@ -136,9 +135,9 @@ function App() {
       <NavItem icon="🔥" />
       <NavItem icon="🔥" />
 
-    <NavItem icon={<CaretIcon />}>
+      <NavItem icon={<CaretIcon />}>
         <DropdownMenu></DropdownMenu>
-    </NavItem>
+      </NavItem>
     </Navbar>
   );
 }
@@ -171,6 +170,7 @@ function DropdownMenu() {}
 ### CSS
 
 {{< file "css" "index.css" >}}
+
 ```css
 /* <li> */
 .nav-item {
@@ -199,7 +199,7 @@ function DropdownMenu() {}
   filter: brightness(1.2);
 }
 
-.icon-button svg { 
+.icon-button svg {
   fill: var(--text-color);
   width: 20px;
   height: 20px;
@@ -214,13 +214,12 @@ Create a basic dropdown menu to be displayed under a `NavItem`.
 
 ### React
 
-The `DropdownItem` contains slots to optionally add icons to the items. 
+The `DropdownItem` contains slots to optionally add icons to the items.
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function DropdownMenu() {
-
-
   function DropdownItem(props) {
     return (
       <a href="#" className="menu-item">
@@ -233,10 +232,10 @@ function DropdownMenu() {
 
   return (
     <div className="dropdown">
-        <DropdownItem>Foo</DropdownItem>
-        <DropdownItem leftIcon={<BoltIcon />}>Bar</DropdownItem>
+      <DropdownItem>Foo</DropdownItem>
+      <DropdownItem leftIcon={<BoltIcon />}>Bar</DropdownItem>
     </div>
-  )
+  );
 }
 ```
 
@@ -245,6 +244,7 @@ function DropdownMenu() {
 The dropdown has absolute positioning and overlaps the navbar slightly.
 
 {{< file "css" "index.css" >}}
+
 ```css
 /* Dropdown Menu */
 
@@ -278,7 +278,6 @@ The dropdown has absolute positioning and overlaps the navbar slightly.
   margin-right: 0.5rem;
 }
 
-
 .menu-item .icon-button:hover {
   filter: none;
 }
@@ -290,7 +289,6 @@ The dropdown has absolute positioning and overlaps the navbar slightly.
 .icon-right {
   margin-left: auto;
 }
-
 ```
 
 ## CSS Transition Animation
@@ -301,18 +299,23 @@ And now the fun part! Add multiple levels to the dropdown and animate the transi
 
 ### React
 
-The dropdown is given the `activeMenu` state to control the name of the current menu. The `CSSTransition` component will only show its children if the `in` prop is truthy, which takes care of the conditional logic since only one menu can be visible at a time. 
+The dropdown is given the `activeMenu` state to control the name of the current menu. The `CSSTransition` component will only show its children if the `in` prop is truthy, which takes care of the conditional logic since only one menu can be visible at a time.
 
 {{< file "react" "App.js" >}}
+
 ```jsx
-import { CSSTransition } from 'react-transition-group';
+import { CSSTransition } from "react-transition-group";
 
 function DropdownMenu() {
-  const [activeMenu, setActiveMenu] = useState('main');
+  const [activeMenu, setActiveMenu] = useState("main");
 
   function DropdownItem(props) {
     return (
-      <a href="#" className="menu-item" onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}>
+      <a
+        href="#"
+        className="menu-item"
+        onClick={() => props.goToMenu && setActiveMenu(props.goToMenu)}
+      >
         ...
       </a>
     );
@@ -320,39 +323,36 @@ function DropdownMenu() {
 
   return (
     <div className="dropdown">
-
       <CSSTransition
-        in={activeMenu === 'main'}
+        in={activeMenu === "main"}
         timeout={500}
         classNames="menu-primary"
-        unmountOnExit>
-
+        unmountOnExit
+      >
         <div className="menu">
           <DropdownItem>My Profile</DropdownItem>
           <DropdownItem
             leftIcon={<CogIcon />}
             rightIcon={<ChevronIcon />}
-            goToMenu="settings">
+            goToMenu="settings"
+          >
             Settings
           </DropdownItem>
-
         </div>
       </CSSTransition>
 
       <CSSTransition
-        in={activeMenu === 'settings'}
+        in={activeMenu === "settings"}
         timeout={500}
         classNames="menu-secondary"
-        unmountOnExit>
-
+        unmountOnExit
+      >
         <div className="menu">
           <DropdownItem goToMenu="main" leftIcon={<ArrowIcon />}>
             <h2>Go back</h2>
           </DropdownItem>
         </div>
-
       </CSSTransition>
-
     </div>
   );
 }
@@ -360,9 +360,10 @@ function DropdownMenu() {
 
 ### CSS
 
-All animation is handled by your [CSS transition](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) code. The CSS classes used here are determined by the `classNames` prop used on the `CSSTransition`. They will be automatically added/removed based on the state of the animation. Notice how we use `translateX` to slide the menus across the x-axis. 
+All animation is handled by your [CSS transition](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions) code. The CSS classes used here are determined by the `classNames` prop used on the `CSSTransition`. They will be automatically added/removed based on the state of the animation. Notice how we use `translateX` to slide the menus across the x-axis.
 
 {{< file "css" "index.css" >}}
+
 ```css
 /* CSSTransition classes  */
 .menu-primary-enter {
@@ -381,7 +382,6 @@ All animation is handled by your [CSS transition](https://developer.mozilla.org/
   transition: all var(--speed) ease;
 }
 
-
 .menu-secondary-enter {
   transform: translateX(110%);
 }
@@ -390,24 +390,23 @@ All animation is handled by your [CSS transition](https://developer.mozilla.org/
   transition: all var(--speed) ease;
 }
 .menu-secondary-exit {
-
 }
 .menu-secondary-exit-active {
   transform: translateX(110%);
   transition: all var(--speed) ease;
 }
-
 ```
 
 ## Animate Menu Height
 
-As a final touch, animate the height of the `.dropdown` container to avoid the abrupt height change between menu transitions. In order for CSS to animate the height, it must be an explicit value. 
+As a final touch, animate the height of the `.dropdown` container to avoid the abrupt height change between menu transitions. In order for CSS to animate the height, it must be an explicit value.
 
-Use the `onEnter` lifecycle hook on the `CSSTransition` to get the height of the current menu, then set it on as the value on the parent dropdown. 
+Use the `onEnter` lifecycle hook on the `CSSTransition` to get the height of the current menu, then set it on as the value on the parent dropdown.
 
 ### React
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function DropdownMenu() {
 
@@ -431,13 +430,12 @@ function DropdownMenu() {
 
 ### CSS
 
-Animate the height changes with a CSS transition. 
+Animate the height changes with a CSS transition.
 
 {{< file "css" "index.css" >}}
+
 ```css
 .dropdown {
-
   transition: height var(--speed) ease;
 }
 ```
-

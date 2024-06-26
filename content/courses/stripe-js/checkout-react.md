@@ -5,7 +5,7 @@ weight: 23
 lastmod: 2020-04-20T10:23:30-09:00
 draft: false
 vimeo: 416760968
-emoji: 
+emoji:
 icon: react
 video_length: 6:21
 ---
@@ -13,20 +13,21 @@ video_length: 6:21
 ## API Fetch Helper
 
 {{< file "js" "helpers.js" >}}
+
 ```javascript
-const API = 'http://localhost:3333';
+const API = "http://localhost:3333";
 
 /**
  * A helper function to fetch data from your API.
  */
 export async function fetchFromAPI(endpointURL, opts) {
-  const { method, body } = { method: 'POST', body: null, ...opts };
+  const { method, body } = { method: "POST", body: null, ...opts };
 
   const res = await fetch(`${API}/${endpointURL}`, {
     method,
     ...(body && { body: JSON.stringify(body) }),
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   });
 
@@ -37,22 +38,21 @@ export async function fetchFromAPI(endpointURL, opts) {
 ## Checkout Component
 
 {{< file "react" "App.js" >}}
+
 ```jsx
-import React, { useState } from 'react';
-import { fetchFromAPI } from './helpers';
-import { useStripe } from '@stripe/react-stripe-js';
+import React, { useState } from "react";
+import { fetchFromAPI } from "./helpers";
+import { useStripe } from "@stripe/react-stripe-js";
 
 export function Checkout() {
   const stripe = useStripe();
 
   const [product, setProduct] = useState({
-    name: 'Hat',
-    description: 'Pug hat. A hat your pug will love.',
-    images: [
-      'your-img',
-    ],
+    name: "Hat",
+    description: "Pug hat. A hat your pug will love.",
+    images: ["your-img"],
     amount: 799,
-    currency: 'usd',
+    currency: "usd",
     quantity: 0,
   });
 
@@ -60,9 +60,9 @@ export function Checkout() {
     setProduct({ ...product, quantity: Math.max(0, product.quantity + v) });
 
   const handleClick = async (event) => {
-    const body = { line_items: [product] }
-    const { id: sessionId } = await fetchFromAPI('checkouts', {
-      body
+    const body = { line_items: [product] };
+    const { id: sessionId } = await fetchFromAPI("checkouts", {
+      body,
     });
 
     const { error } = await stripe.redirectToCheckout({
@@ -76,35 +76,23 @@ export function Checkout() {
 
   return (
     <>
-
       <div>
         <h3>{product.name}</h3>
         <h4>Stripe Amount: {product.amount}</h4>
 
         <img src={product.images[0]} width="250px" alt="product" />
 
-        <button
-          onClick={() => changeQuantity(-1)}>
-          -
-        </button>
-        <span>
-          {product.quantity}
-        </span>
-        <button
-          onClick={() => changeQuantity(1)}>
-          +
-        </button>
+        <button onClick={() => changeQuantity(-1)}>-</button>
+        <span>{product.quantity}</span>
+        <button onClick={() => changeQuantity(1)}>+</button>
       </div>
 
       <hr />
 
-      <button
-        onClick={handleClick}
-        disabled={product.quantity < 1}>
+      <button onClick={handleClick} disabled={product.quantity < 1}>
         Start Checkout
       </button>
     </>
   );
 }
-
 ```

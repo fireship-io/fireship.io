@@ -10,13 +10,14 @@ chapter_start: Main App
 video_length: 2:50
 ---
 
-Recommended: Clone the [source code](https://github.com/codediodeio/angular-firestarter) as a reference. 
+Recommended: Clone the [source code](https://github.com/codediodeio/angular-firestarter) as a reference.
 
 ## Start a New Project
 
-Start a new project and make sure to use routing and *scss* for styles. 
+Start a new project and make sure to use routing and _scss_ for styles.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng new firestarter
 ```

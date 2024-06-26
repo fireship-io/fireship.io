@@ -11,9 +11,10 @@ video_length: 1:39
 
 ## Constructor Basics
 
-The `this` keyword is used to refer to the current instance of a class and is optional unless there is a name collision. 
+The `this` keyword is used to refer to the current instance of a class and is optional unless there is a name collision.
 
 {{< file "dart" "constructors.dart" >}}
+
 ```dart
 class Rectangle {
   final int width;
@@ -27,12 +28,12 @@ class Rectangle {
 }
 ```
 
-
 ## Named Parameters
 
-In Flutter, all widgets used named parameters. 
+In Flutter, all widgets used named parameters.
 
 {{< file "dart" "constructors.dart" >}}
+
 ```dart
 class Circle {
   const Circle({required int radius, String? name});
@@ -46,6 +47,7 @@ const cir = Circle(radius: 50, name: 'foo');
 It is also possible for a class to have multiple named constructors. This is useful when different datatypes can be used to initialize the same class.
 
 {{< file "dart" "constructors.dart" >}}
+
 ```dart
 class Point {
   double lat = 0;

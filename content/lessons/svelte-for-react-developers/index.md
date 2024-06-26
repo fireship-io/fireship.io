@@ -4,21 +4,22 @@ lastmod: 2023-06-28T09:37:39-07:00
 publishdate: 2023-06-28T09:37:39-07:00
 author: Jeff Delaney
 draft: false
-description: 10 examples of how React.js patterns look in Svelte 
-tags: 
-    - svelte
-    - react
+description: 10 examples of how React.js patterns look in Svelte
+tags:
+  - svelte
+  - react
 
 youtube: MnpuK0MK4yo
 ---
 
 ## 1. Component State
 
-In react, we have the `useState` hook, while in Svelte any value with `let` is reactive. 
+In react, we have the `useState` hook, while in Svelte any value with `let` is reactive.
 
 ### React
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 import { useState } from "react";
 
@@ -26,19 +27,17 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   return (
-    <button onClick={() => setCount(c => c + 1)}>
-        count is {count}
-    </button>
+    <button onClick={() => setCount((c) => c + 1)}>count is {count}</button>
   );
 }
 
 export default Counter;
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
   let count = 0;
@@ -57,26 +56,24 @@ Passing props looks nearly identical in both frameworks:
 
 ```jsx
 <ColorPicker color={"red"}>
-    <p>Some child elements</p>
+  <p>Some child elements</p>
 </ColorPicker>
 ```
 
-In React, props are created passed via function arguments. In Svelte, props are created with the `export` keyword. 
+In React, props are created passed via function arguments. In Svelte, props are created with the `export` keyword.
 
 {{< file "react" "App.js" >}}
-```jsx
 
+```jsx
 function ColoredBox({ color }) {
-  return (
-     <p>You picked the color: {color}</p>
-  );
+  return <p>You picked the color: {color}</p>;
 }
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
   export let color;
@@ -89,22 +86,18 @@ You picked the color: {color}
 
 ### React
 
-
 {{< file "react" "App.js" >}}
+
 ```jsx
 function Navbar(props) {
-  return (
-     <nav>
-        {props.children}
-     </nav>
-  );
+  return <nav>{props.children}</nav>;
 }
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <slot />
 ```
@@ -113,23 +106,23 @@ function Navbar(props) {
 
 ### React
 
-
 {{< file "react" "App.js" >}}
+
 ```jsx
 function Navbar() {
-    useEffect(() => {
-        const fun = async () => {
-            // handle promise
-        }
-        fun();
-    }, []);
+  useEffect(() => {
+    const fun = async () => {
+      // handle promise
+    };
+    fun();
+  }, []);
 }
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
   onMount(async () => {
@@ -142,8 +135,8 @@ function Navbar() {
 
 ### React
 
-
 {{< file "react" "App.js" >}}
+
 ```jsx
 import { useEffect, useMemo, useState } from "react";
 
@@ -155,20 +148,19 @@ function Counter() {
   useEffect(() => {
     document.title = `count is ${count}`;
   }, [count]);
-
 }
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
   let count;
 
-  $: doubled = count * 2 
-  $: document.title = `count is ${count}`
+  $: doubled = count * 2;
+  $: document.title = `count is ${count}`;
 </script>
 ```
 
@@ -177,6 +169,7 @@ function Counter() {
 ### React
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function FormComponent() {
   const [firstName, setFirstName] = useState("jeff");
@@ -200,10 +193,10 @@ function FormComponent() {
 }
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
   let firstName = "jeff";
@@ -215,29 +208,24 @@ function FormComponent() {
 <form on:submit|preventDefault={handleSubmit}>
   <input bind:value={firstName} />
 </form>
-
 ```
 
 ## 7. Conditional Logic
 
 ### React
 
-
 {{< file "react" "App.js" >}}
+
 ```jsx
-{doubled > 1000 ? (
-    <p>big</p>
-    ) : doubled > 500 ? (
-    <p>medium</p>
-    ) : (
-    <p>small</p>
-)}
+{
+  doubled > 1000 ? <p>big</p> : doubled > 500 ? <p>medium</p> : <p>small</p>;
+}
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 {#if doubled > 1000}
   <p>big</p>
@@ -251,17 +239,19 @@ function FormComponent() {
 ## 8. Keyed Loops
 
 ### React
+
 {{< file "react" "App.js" >}}
+
 ```jsx
-{items.map((item) => (
-    <div key={item.id}>{item.name}</div>
-))}
+{
+  items.map((item) => <div key={item.id}>{item.name}</div>);
+}
 ```
 
-
-### Svelte 
+### Svelte
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 {#each items as item (item.id)}
   <p>{item.name}</p>
@@ -270,39 +260,39 @@ function FormComponent() {
 
 ## 9. Shared State
 
-React does not have a built-in mechanism for shared state, but libraries like [Jotai](https://jotai.org/) provide a nice primitive. Svelte provides a built-in store API that is very similar to Observables in RxJS. 
+React does not have a built-in mechanism for shared state, but libraries like [Jotai](https://jotai.org/) provide a nice primitive. Svelte provides a built-in store API that is very similar to Observables in RxJS.
 
 ### React
 
 {{< file "js" "atom.js" >}}
-```javascript
-import { atom } from 'jotai'
 
-export const countAtom = atom(0)
+```javascript
+import { atom } from "jotai";
+
+export const countAtom = atom(0);
 ```
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 import { useAtom } from "jotai";
 import { countAtom } from "./atom";
 
 function Counter() {
-
-  const [count, setCount] = useAtom(countAtom) // useAtomValue to optimize re-renders
+  const [count, setCount] = useAtom(countAtom); // useAtomValue to optimize re-renders
 
   return (
     <>
-      <button onClick={() => setCount(c => c + 1)}>
-        count is {count}
-      </button>
+      <button onClick={() => setCount((c) => c + 1)}>count is {count}</button>
     </>
   );
 }
 ```
 
-### Svelte 
+### Svelte
 
 {{< file "js" "store.js" >}}
+
 ```javascript
 import { writable } from "svelte/store";
 
@@ -310,15 +300,17 @@ export const countStore = writable(0);
 ```
 
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
   import { countStore } from "./store";
 </script>
 
-<button on:click={() => countStore.update(c => c + 1)}>
+<button on:click={() => countStore.update((c) => c + 1)}>
   count is {$countStore}
 </button>
 ```
+
 ## 10. Unwrapping Promises
 
 In the future, React will have a `use` hook that can unwrap promises, but it's currently experimental.
@@ -326,34 +318,32 @@ In the future, React will have a `use` hook that can unwrap promises, but it's c
 ### React
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function ComponentWithAsyncData() {
+  const number = use(Promise.resolve(69));
 
-  const number = use( Promise.resolve(69) );
-
-  return (
-    <p>{number}</p>
-  );
+  return <p>{number}</p>;
 }
 
 function App() {
-    return (
-        <ErrorBoundary fallback={<ErrorPage />}>
-            <Suspense fallback={<LoadingSpinner />}>
-                <ComponentWithAsyncData />
-            </Suspense>
-        </ErrorBoundary>
-    )
+  return (
+    <ErrorBoundary fallback={<ErrorPage />}>
+      <Suspense fallback={<LoadingSpinner />}>
+        <ComponentWithAsyncData />
+      </Suspense>
+    </ErrorBoundary>
+  );
 }
 ```
 
 ### Svelte
 
-
 {{< file "svelte" "App.svelte" >}}
+
 ```svelte
 <script>
-    const promise = Promise.resolve(69);
+  const promise = Promise.resolve(69);
 </script>
 
 {#await promise}
@@ -372,20 +362,19 @@ In Next.js, SSR and data fetching can be accomplished with React Server Componen
 ### Next.js
 
 {{< file "react" "page.js" >}}
+
 ```jsx
 export default async function Users() {
-
   const item = await prisma.items.findOne();
 
-  return (
-    <p>{item.title}</p>
-  );
+  return <p>{item.title}</p>;
 }
 ```
 
-### SvelteKit 
+### SvelteKit
 
 {{< file "js" "+page.ts" >}}
+
 ```javascript
 export const load = (async () => {
 
@@ -399,10 +388,11 @@ export const load = (async () => {
 ```
 
 {{< file "svelte" "+page.svelte" >}}
+
 ```svelte
 <script lang="ts">
-    import type { PageData } from "./$types";
-    export let data: PageData;
+  import type { PageData } from "./$types";
+  export let data: PageData;
 </script>
 
 <p>{data.item.title}</p>

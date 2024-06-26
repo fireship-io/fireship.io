@@ -11,7 +11,7 @@ video_length: 1:12
 
 ## ✨ Trick - Github Command Palette
 
-Visit [Github](https://github.com) in the browser and use it's command palette by hitting `ctrl+k`. Or open VS Code from GitHub by hitting `.` from a repo. 
+Visit [Github](https://github.com) in the browser and use it's command palette by hitting `ctrl+k`. Or open VS Code from GitHub by hitting `.` from a repo.
 
 ## ✨ Trick - Remote Repos
 

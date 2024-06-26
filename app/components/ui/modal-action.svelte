@@ -1,14 +1,14 @@
 <svelte:options tag="modal-action" />
 
 <script lang="ts">
-  import { modal } from '../../stores/modal';
-  export let type: 'open' | 'close' = 'open';
-  export let name = 'default';
+  import { modal } from "../../stores/modal";
+  export let type: "open" | "close" = "open";
+  export let name = "default";
   function modalAction() {
-    if (type === 'open') {
+    if (type === "open") {
       modal.set(name);
     }
-    if (type === 'close') {
+    if (type === "close") {
       modal.set(null);
     }
   }

@@ -11,26 +11,27 @@ video_length: 2:10
 
 ### Code
 
-
 Create a React server component for the login page:
 
 {{< file "react" "app/user/page.tsx" >}}
+
 ```tsx
 import LoginForm from "./LoginForm";
 
 export default function Login() {
-    return (
-      <div>
-        <h1>Login</h1>
-        <LoginForm />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <h1>Login</h1>
+      <LoginForm />
+    </div>
+  );
+}
 ```
 
 Create a client component for the main login form:
 
 {{< file "react" "app/user/LoginForm.tsx" >}}
+
 ```tsx
 "use client";
 
@@ -61,13 +62,9 @@ export default function LoginForm() {
   };
 
   return (
-    <button
-      onClick={handleSignUp}
-      disabled={loading}
-    >
+    <button onClick={handleSignUp} disabled={loading}>
       {loading ? "Signing up..." : "Sign up with random email and password"}
     </button>
   );
 }
 ```
-

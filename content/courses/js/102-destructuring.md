@@ -1,6 +1,6 @@
 ---
 title: Destructuring
-description: Use destructuring to work with objects with ease.  
+description: Use destructuring to work with objects with ease.
 weight: 21
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
@@ -20,10 +20,10 @@ quiz: true
 ```js
 // Object destructuring
 const person = {
-  name: 'John',
+  name: "John",
   age: 32,
-  city: 'New York',
-  country: 'USA'
+  city: "New York",
+  country: "USA",
 };
 
 const { name, age } = person;
@@ -33,6 +33,6 @@ const { name, age } = person;
 const { name: firstName, age: years } = person;
 
 // Array destructuring
-const fruits = ['apple', 'banana', 'orange'];
+const fruits = ["apple", "banana", "orange"];
 const [first, second, third] = fruits;
 ```

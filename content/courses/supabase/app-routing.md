@@ -15,8 +15,6 @@ chapter_start: App Architecture
   <h6>In React Router, all routes must be nested inside which component?</h6>
 </quiz-modal>
 
-
-
 React Router docs: https://reactrouter.com/en/main
 
 Command to install react router:

@@ -4,14 +4,14 @@ lastmod: 2017-07-19T04:34:42-07:00
 publishdate: 2017-07-19T04:34:42-07:00
 author: Jeff Delaney
 draft: false
-description: Use the Firebase to implement Phone authentication on the web. 
-tags: 
-    - angular
-    - firebase
-    - auth
+description: Use the Firebase to implement Phone authentication on the web.
+tags:
+  - angular
+  - firebase
+  - auth
 
 youtube: XIq_VU1Njw0
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -28,7 +28,6 @@ youtube: XIq_VU1Njw0
 
 <p>Firebase requires users to use reCAPTCHA to prevent abusive use of the API. You can also implement an invisible reCAPTCHA, but we will be using the visible version in this example. </p>
 
-
 {{< figure src="img/phonecaptcha.gif" caption="visible recaptcha for firebase phone login angular" >}}
 
 ### Injecting the Window Object
@@ -38,17 +37,14 @@ youtube: XIq_VU1Njw0
 <p>Generate the service with `ng g service window`</p>
 
 ```typescript
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class WindowService {
-
   get windowRef() {
-    return window
+    return window;
   }
-
 }
-
 ```
 
 ## Phone Login Component
@@ -74,10 +70,9 @@ export class PhoneNumber {
 
   // format phone numbers as E.164
   get e164() {
-    const num = this.country + this.area + this.prefix + this.line
-    return `+${num}`
+    const num = this.country + this.area + this.prefix + this.line;
+    return `+${num}`;
   }
-
 }
 ```
 
@@ -88,71 +83,62 @@ export class PhoneNumber {
 - Firebase sends SMS text and returns a confirmation object.
 - User verifies SMS code and the auth state is updated.
 
-
 {{< figure src="img/phonesuccess.gif" caption="result of successful Firebase phone auth" >}}
-
 
 ### phone-login.component.ts
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import { WindowService } from '../window.service';
-import * as firebase from 'firebase';
-
+import { Component, OnInit } from "@angular/core";
+import { WindowService } from "../window.service";
+import * as firebase from "firebase";
 
 @Component({
-  selector: 'phone-login',
-  templateUrl: './phone-login.component.html',
-  styleUrls: ['./phone-login.component.scss']
+  selector: "phone-login",
+  templateUrl: "./phone-login.component.html",
+  styleUrls: ["./phone-login.component.scss"],
 })
 export class PhoneLoginComponent implements OnInit {
-
   windowRef: any;
 
-  phoneNumber = new PhoneNumber()
+  phoneNumber = new PhoneNumber();
 
   verificationCode: string;
 
   user: any;
 
-  constructor(private win: WindowService) { }
+  constructor(private win: WindowService) {}
 
   ngOnInit() {
-    this.windowRef = this.win.windowRef
-    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container')
+    this.windowRef = this.win.windowRef;
+    this.windowRef.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(
+      "recaptcha-container",
+    );
 
-    this.windowRef.recaptchaVerifier.render()
+    this.windowRef.recaptchaVerifier.render();
   }
 
-
   sendLoginCode() {
-
     const appVerifier = this.windowRef.recaptchaVerifier;
 
     const num = this.phoneNumber.e164;
 
-    firebase.auth().signInWithPhoneNumber(num, appVerifier)
-            .then(result => {
-
-                this.windowRef.confirmationResult = result;
-
-            })
-            .catch( error => console.log(error) );
-
+    firebase
+      .auth()
+      .signInWithPhoneNumber(num, appVerifier)
+      .then((result) => {
+        this.windowRef.confirmationResult = result;
+      })
+      .catch((error) => console.log(error));
   }
 
   verifyLoginCode() {
     this.windowRef.confirmationResult
-                  .confirm(this.verificationCode)
-                  .then( result => {
-
-                    this.user = result.user;
-
-    })
-    .catch( error => console.log(error, "Incorrect code entered?"));
+      .confirm(this.verificationCode)
+      .then((result) => {
+        this.user = result.user;
+      })
+      .catch((error) => console.log(error, "Incorrect code entered?"));
   }
-
-
 }
 ```
 
@@ -160,35 +146,55 @@ export class PhoneLoginComponent implements OnInit {
 
 In the HTML template, we trigger the various stages of the auth login with button clicks. The phone number object and the verification code are tracked with `ngModel`.
 
-
 ```html
 <div [hidden]="user">
   <h1>Sign In with Your Phone Number</h1>
 
-  <label for="phone">Phone Number</label><br>
-  <input type="text" [(ngModel)]="phoneNumber.country"  class="input" placeholder="1"    maxlength="2">
-  <input type="text" [(ngModel)]="phoneNumber.area"     class="input" placeholder="949"  maxlength="3">
-  <input type="text" [(ngModel)]="phoneNumber.prefix"   class="input" placeholder="555"  maxlength="3">
-  <input type="text" [(ngModel)]="phoneNumber.line"     class="input" placeholder="5555" maxlength="4">
+  <label for="phone">Phone Number</label><br />
+  <input
+    type="text"
+    [(ngModel)]="phoneNumber.country"
+    class="input"
+    placeholder="1"
+    maxlength="2"
+  />
+  <input
+    type="text"
+    [(ngModel)]="phoneNumber.area"
+    class="input"
+    placeholder="949"
+    maxlength="3"
+  />
+  <input
+    type="text"
+    [(ngModel)]="phoneNumber.prefix"
+    class="input"
+    placeholder="555"
+    maxlength="3"
+  />
+  <input
+    type="text"
+    [(ngModel)]="phoneNumber.line"
+    class="input"
+    placeholder="5555"
+    maxlength="4"
+  />
 
   <div id="recaptcha-container"></div>
 
   <button (click)="sendLoginCode()">SMS Text Login Code</button>
 
   <div *ngIf="windowRef.confirmationResult">
-    <hr>
-    <label for="code">Enter your Verification Code Here</label><br>
-    <input type="text" name="code" [(ngModel)]="verificationCode">
+    <hr />
+    <label for="code">Enter your Verification Code Here</label><br />
+    <input type="text" name="code" [(ngModel)]="verificationCode" />
 
     <button (click)="verifyLoginCode()">Verify</button>
   </div>
-
 </div>
 
 <div *ngIf="user">
-  You have successfully logged in with your phone number!
-
-  UserId: {{ user?.uid }}
-
+  You have successfully logged in with your phone number! UserId: {{ user?.uid
+  }}
 </div>
 ```

@@ -14,7 +14,7 @@ video_length: 4:30
 1. Create a Firebase Project
 1. Add an iOS app to your project
 1. Add an Android app to your project
-1. Use the keytool to generate an SHA Certificate. See my [Flutter Firebase SHA guide](https://fireship.io/snippets/install-flutterfire/#project-id-and-sha1-certificate) if you get stuck at this part. 
+1. Use the keytool to generate an SHA Certificate. See my [Flutter Firebase SHA guide](https://fireship.io/snippets/install-flutterfire/#project-id-and-sha1-certificate) if you get stuck at this part.
 
 Also reference the latest [Official FlutterFire Setup Docs](https://firebase.flutter.dev/docs/overview)
 
@@ -23,6 +23,7 @@ Also reference the latest [Official FlutterFire Setup Docs](https://firebase.flu
 Get the SHA1 certificate from the Android app.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 cd android
 ./gradlew signingReport
@@ -30,12 +31,12 @@ cd android
 
 Copy the SHA-1 value and paste it into the Firebase Android App config.
 
-
 ## Default Firebase App
 
 Paste this boilerplate into your `main.dart` file:
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 

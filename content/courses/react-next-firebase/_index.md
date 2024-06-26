@@ -6,23 +6,21 @@ weight: 0
 type: courses
 vimeo: 508494924
 author: Jeff Delaney
-tags: 
-    - react
-    - nextjs
-    - firebase
-    - pro
+tags:
+  - react
+  - nextjs
+  - firebase
+  - pro
 
-stack: 
-    - react
-    - nextjs
-    - firebase
+stack:
+  - react
+  - nextjs
+  - firebase
 ---
 
-
-**Next.js Firebase - The Full Course** takes you from zero to a production-ready hybrid-rendered webapp. Learn how to build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js 
+**Next.js Firebase - The Full Course** takes you from zero to a production-ready hybrid-rendered webapp. Learn how to build a high-performance React app that features realtime data from Firebase and multiple server-side rendering paradigms with Next.js
 
 {{< figure src="/courses/react-next-firebase/img/testimonial.png" alt="The new fireship Nextjs Firebase is a masterpiece! Totally worth it"  >}}
-
 
 ## 🦄 What will I build?
 
@@ -49,8 +47,8 @@ I finished the "Next.js Firebase Full Course" by @fireship_dev, <span class="hi"
 {{< testimonial name="John Guest" handle="@JohnGue47344579" img="john.webp" >}}
 I'm doing his Nextjs course. It's really exciting. Its <span class="hi">100x better</span> than any Udemy course.
 {{< /testimonial >}}
-</div>
 
+</div>
 
 ## 🤔 Is this Course Right for Me?
 
@@ -60,7 +58,7 @@ This course is intermediate level 🟦 and will challenge you to build an app th
 
 ## 🚀 Test drive
 
-Visit the demo app and give it a test drive before you enroll. 
+Visit the demo app and give it a test drive before you enroll.
 
 <div>
 <a href="https://next.fireship.io" class="btn btn-orange">Nextfire Live Demo</a>
@@ -69,4 +67,3 @@ Visit the demo app and give it a test drive before you enroll.
 ## When was the course last updated?
 
 <span class="tag tag-sm tag-pro">Updated July 6th, 2022</span> <span class="tag tag-sm tag-next">Next v12.0</span>
-

@@ -31,7 +31,7 @@ export async function castVote({
       user_id: userId,
       vote_type: voteType,
     },
-    { onConflict: "post_id,user_id" }
+    { onConflict: "post_id,user_id" },
   );
   onSuccess();
 }
@@ -65,9 +65,9 @@ export function usePostScore(postId: string, initialScore: number | undefined) {
             },
             (payload) => {
               setScore((payload.new as { score: number }).score as any);
-            }
+            },
           )
-          .subscribe()
+          .subscribe(),
       );
     }
     return () => {

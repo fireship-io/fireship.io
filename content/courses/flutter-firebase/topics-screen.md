@@ -17,6 +17,7 @@ First, use a FutureBuilder to load the collection query.
 Second, use a Flutter `GridView` to display the topics from Firestore in a scrollable two-column grid.
 
 {{< file "flutter" "topics.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

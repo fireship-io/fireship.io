@@ -17,6 +17,7 @@ quiz: true
 ## Build a Loading Spinner
 
 {{< file "js" "components/Loader.js" >}}
+
 ```javascript
 // Loading Spinner
 export default function Loader({ show }) {
@@ -25,10 +26,11 @@ export default function Loader({ show }) {
 ```
 
 {{< file "css" "globals.css" >}}
+
 ```css
 .loader {
-  border: 10px solid var(--color-bg); 
-  border-top: 10px solid var(--color-blue); 
+  border: 10px solid var(--color-bg);
+  border-top: 10px solid var(--color-blue);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -36,7 +38,11 @@ export default function Loader({ show }) {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 ```

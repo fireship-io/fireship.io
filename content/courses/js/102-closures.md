@@ -16,14 +16,14 @@ quiz: true
 
 ## Closures
 
-A closure is a function that has access to the parent scope, even after the parent function has closed. JS will automatically store the state of a closure in the heap memory, even after the parent function has returned. This behavior makes them useful for encapsulating private variables. 
+A closure is a function that has access to the parent scope, even after the parent function has closed. JS will automatically store the state of a closure in the heap memory, even after the parent function has returned. This behavior makes them useful for encapsulating private variables.
 
 ```js
 function encapsulatedState(x) {
   let state = 10;
-  return function() {
+  return function () {
     state += x;
     return state;
-  }
+  };
 }
 ```

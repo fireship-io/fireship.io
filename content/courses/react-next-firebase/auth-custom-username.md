@@ -1,6 +1,6 @@
 ---
 title: Custom Usernames
-description: Add custom usernames to Firebase users and asynchronously validate uniqueness 
+description: Add custom usernames to Firebase users and asynchronously validate uniqueness
 weight: 25
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
@@ -19,12 +19,13 @@ quiz: true
 The form below asynchronously validates the existance of a Firestore document. Learn more with a full breakdown of [Firebase custom usernames](/lessons/custom-usernames-firebase/)
 
 {{< file "js" "pages/enter.js" >}}
-```javascript
-import { auth, firestore, googleAuthProvider } from '../lib/firebase';
-import { UserContext } from '../lib/context';
 
-import { useEffect, useState, useCallback, useContext } from 'react';
-import debounce from 'lodash.debounce';
+```javascript
+import { auth, firestore, googleAuthProvider } from "../lib/firebase";
+import { UserContext } from "../lib/context";
+
+import { useEffect, useState, useCallback, useContext } from "react";
+import debounce from "lodash.debounce";
 
 export default function Enter(props) {
   const { user, username } = useContext(UserContext);
@@ -35,7 +36,15 @@ export default function Enter(props) {
   return (
     <main>
       <Metatags title="Enter" description="Sign up for this amazing app!" />
-      {user ? !username ? <UsernameForm /> : <SignOutButton /> : <SignInButton />}
+      {user ? (
+        !username ? (
+          <UsernameForm />
+        ) : (
+          <SignOutButton />
+        )
+      ) : (
+        <SignInButton />
+      )}
     </main>
   );
 }
@@ -47,9 +56,9 @@ function SignInButton() {
   };
 
   return (
-      <button className="btn-google" onClick={signInWithGoogle}>
-        <img src={'/google.png'} width="30px" /> Sign in with Google
-      </button>
+    <button className="btn-google" onClick={signInWithGoogle}>
+      <img src={"/google.png"} width="30px" /> Sign in with Google
+    </button>
   );
 }
 
@@ -60,7 +69,7 @@ function SignOutButton() {
 
 // Username form
 function UsernameForm() {
-  const [formValue, setFormValue] = useState('');
+  const [formValue, setFormValue] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -75,7 +84,11 @@ function UsernameForm() {
 
     // Commit both docs together as a batch write.
     const batch = firestore.batch();
-    batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName });
+    batch.set(userDoc, {
+      username: formValue,
+      photoURL: user.photoURL,
+      displayName: user.displayName,
+    });
     batch.set(usernameDoc, { uid: user.uid });
 
     await batch.commit();
@@ -113,12 +126,12 @@ function UsernameForm() {
       if (username.length >= 3) {
         const ref = firestore.doc(`usernames/${username}`);
         const { exists } = await ref.get();
-        console.log('Firestore read executed!');
+        console.log("Firestore read executed!");
         setIsValid(!exists);
         setLoading(false);
       }
     }, 500),
-    []
+    [],
   );
 
   return (
@@ -126,8 +139,17 @@ function UsernameForm() {
       <section>
         <h3>Choose Username</h3>
         <form onSubmit={onSubmit}>
-          <input name="username" placeholder="myname" value={formValue} onChange={onChange} />
-          <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
+          <input
+            name="username"
+            placeholder="myname"
+            value={formValue}
+            onChange={onChange}
+          />
+          <UsernameMessage
+            username={formValue}
+            isValid={isValid}
+            loading={loading}
+          />
           <button type="submit" className="btn-green" disabled={!isValid}>
             Choose
           </button>

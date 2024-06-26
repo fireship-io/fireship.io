@@ -14,6 +14,7 @@ video_length: 1:33
 Customize your profile screen with the total quiz score.
 
 {{< file "flutter" "profile.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -30,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
 
     if (user != null) {
      // add your UI here
-    } 
+    }
   }
 }
 

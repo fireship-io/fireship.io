@@ -11,9 +11,10 @@ video_length: 2:08
 
 ## State Management with Provider
 
-Manage the state of the quiz with the Provider `ChangeNotifier`. 
+Manage the state of the quiz with the Provider `ChangeNotifier`.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import '../services/services.dart';
 import 'package:provider/provider.dart';

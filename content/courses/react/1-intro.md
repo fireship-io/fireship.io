@@ -17,6 +17,7 @@ chapter_start: Animal Farm
 ## React Setup
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm init vite animalfarm
 cd animalfarm
@@ -27,6 +28,7 @@ npm run dev
 ## Node.js Setup
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 cd server
 npm init -y

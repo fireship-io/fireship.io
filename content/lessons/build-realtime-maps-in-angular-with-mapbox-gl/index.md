@@ -5,13 +5,13 @@ publishdate: 2017-07-28T04:59:58-07:00
 author: Jeff Delaney
 draft: false
 description: Build realtime map features with Angular, Firebase, and Mapbox
-tags: 
-    - angular
-    - mapbox
-    - firebase
+tags:
+  - angular
+  - mapbox
+  - firebase
 
 youtube: Zn3Xx-TSrM8
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -31,7 +31,6 @@ youtube: Zn3Xx-TSrM8
 
 {{< figure src="img/map2.gif" caption="realtime interaction between two maps" >}}
 
-
 ## Initial Setup
 
 <p>Start by signing up for a <a href="https://www.mapbox.com/">free Mapbox account</a>, then installing mapbox-gl in your Angular project.</p>
@@ -47,8 +46,12 @@ npm install mapbox-gl --save
 <p>Then you will need to add the Mapbox CSS library to the index.html file. </p>
 
 ```html
-<link href='https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+<link
+  href="https://api.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css"
+  rel="stylesheet"
+/>
 ```
+
 ### Add the API Token
 
 <p>Lastly, add your Mapox API token to the `environment.ts` file. </p>
@@ -58,9 +61,9 @@ export const environment = {
   production: false,
 
   mapbox: {
-    accessToken: 'YOUR_TOKEN'
-  }
-}
+    accessToken: "YOUR_TOKEN",
+  },
+};
 ```
 
 ## Build Custom Maps Quickly with Cartogram
@@ -68,7 +71,6 @@ export const environment = {
 <p>If you want to build a custom map quickly, check out <a href="mapbox.com/cartogram">Cartogram</a>. Simply upload a picture with color scheme you like and most of the customization work is done for you. Mapbox also has an easy to use console for customizing specific map elements, but I'm not going to cover that in this lesson.</p>
 
 {{< figure src="img/map1.gif" caption="use cartogram to quickly customize map styles" >}}
-
 
 ## GeoJSON TypeScript Interface
 
@@ -99,31 +101,34 @@ ng g class map
 
 ```typescript
 export interface IGeometry {
-    type: string;
-    coordinates: number[];
+  type: string;
+  coordinates: number[];
 }
 
 export interface IGeoJson {
-    type: string;
-    geometry: IGeometry;
-    properties?: any;
-    $key?: string;
+  type: string;
+  geometry: IGeometry;
+  properties?: any;
+  $key?: string;
 }
 
 export class GeoJson implements IGeoJson {
-  type = 'Feature';
+  type = "Feature";
   geometry: IGeometry;
 
-  constructor(coordinates, public properties?) {
+  constructor(
+    coordinates,
+    public properties?,
+  ) {
     this.geometry = {
-      type: 'Point',
-      coordinates: coordinates
-    }
+      type: "Point",
+      coordinates: coordinates,
+    };
   }
 }
 
 export class FeatureCollection {
-  type = 'FeatureCollection'
+  type = "FeatureCollection";
   constructor(public features: Array<GeoJson>) {}
 }
 ```
@@ -139,34 +144,33 @@ ng g service map
 ### map.service.ts
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Injectable } from "@angular/core";
+import { environment } from "../environments/environment";
+import {
+  AngularFireDatabase,
+  FirebaseListObservable,
+} from "angularfire2/database";
 
-import { GeoJson } from './map';
-import * as mapboxgl from 'mapbox-gl';
+import { GeoJson } from "./map";
+import * as mapboxgl from "mapbox-gl";
 
 @Injectable()
 export class MapService {
-
   constructor(private db: AngularFireDatabase) {
-    mapboxgl.accessToken = environment.mapbox.accessToken
+    mapboxgl.accessToken = environment.mapbox.accessToken;
   }
 
-
   getMarkers(): FirebaseListObservable<any> {
-    return this.db.list('/markers')
+    return this.db.list("/markers");
   }
 
   createMarker(data: GeoJson) {
-    return this.db.list('/markers')
-                  .push(data)
+    return this.db.list("/markers").push(data);
   }
 
   removeMarker($key: string) {
-    return this.db.object('/markers/' + $key).remove()
+    return this.db.object("/markers/" + $key).remove();
   }
-
 }
 ```
 
@@ -189,130 +193,119 @@ ng g component map-box
 ### map-box.component.ts
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import * as mapboxgl from 'mapbox-gl';
-import { MapService } from '../map.service';
-import { GeoJson, FeatureCollection } from '../map';
-
+import { Component, OnInit } from "@angular/core";
+import * as mapboxgl from "mapbox-gl";
+import { MapService } from "../map.service";
+import { GeoJson, FeatureCollection } from "../map";
 
 @Component({
-  selector: 'map-box',
-  templateUrl: './map-box.component.html',
-  styleUrls: ['./map-box.component.scss']
+  selector: "map-box",
+  templateUrl: "./map-box.component.html",
+  styleUrls: ["./map-box.component.scss"],
 })
-export class MapBoxComponent implements OnInit{
-
+export class MapBoxComponent implements OnInit {
   /// default settings
   map: mapboxgl.Map;
-  style = 'mapbox://styles/mapbox/outdoors-v9';
+  style = "mapbox://styles/mapbox/outdoors-v9";
   lat = 37.75;
   lng = -122.41;
-  message = 'Hello World!';
+  message = "Hello World!";
 
   // data
   source: any;
   markers: any;
 
-  constructor(private mapService: MapService) {
-  }
+  constructor(private mapService: MapService) {}
 
   ngOnInit() {
-    this.markers = this.mapService.getMarkers()
-    this.initializeMap()
+    this.markers = this.mapService.getMarkers();
+    this.initializeMap();
   }
 
   private initializeMap() {
     /// locate the user
     if (navigator.geolocation) {
-       navigator.geolocation.getCurrentPosition(position => {
+      navigator.geolocation.getCurrentPosition((position) => {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
         this.map.flyTo({
-          center: [this.lng, this.lat]
-        })
+          center: [this.lng, this.lat],
+        });
       });
     }
 
-    this.buildMap()
-
+    this.buildMap();
   }
 
   buildMap() {
     this.map = new mapboxgl.Map({
-      container: 'map',
+      container: "map",
       style: this.style,
       zoom: 13,
-      center: [this.lng, this.lat]
+      center: [this.lng, this.lat],
     });
-
 
     /// Add map controls
     this.map.addControl(new mapboxgl.NavigationControl());
 
-
     //// Add Marker on Click
-    this.map.on('click', (event) => {
-      const coordinates = [event.lngLat.lng, event.lngLat.lat]
-      const newMarker   = new GeoJson(coordinates, { message: this.message })
-      this.mapService.createMarker(newMarker)
-    })
-
+    this.map.on("click", (event) => {
+      const coordinates = [event.lngLat.lng, event.lngLat.lat];
+      const newMarker = new GeoJson(coordinates, { message: this.message });
+      this.mapService.createMarker(newMarker);
+    });
 
     /// Add realtime firebase data on map load
-    this.map.on('load', (event) => {
-
+    this.map.on("load", (event) => {
       /// register source
-      this.map.addSource('firebase', {
-         type: 'geojson',
-         data: {
-           type: 'FeatureCollection',
-           features: []
-         }
+      this.map.addSource("firebase", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: [],
+        },
       });
 
       /// get source
-      this.source = this.map.getSource('firebase')
+      this.source = this.map.getSource("firebase");
 
       /// subscribe to realtime database and set data source
-      this.markers.subscribe(markers => {
-          let data = new FeatureCollection(markers)
-          this.source.setData(data)
-      })
+      this.markers.subscribe((markers) => {
+        let data = new FeatureCollection(markers);
+        this.source.setData(data);
+      });
 
       /// create map layers with realtime data
       this.map.addLayer({
-        id: 'firebase',
-        source: 'firebase',
-        type: 'symbol',
+        id: "firebase",
+        source: "firebase",
+        type: "symbol",
         layout: {
-          'text-field': '{message}',
-          'text-size': 24,
-          'text-transform': 'uppercase',
-          'icon-image': 'rocket-15',
-          'text-offset': [0, 1.5]
+          "text-field": "{message}",
+          "text-size": 24,
+          "text-transform": "uppercase",
+          "icon-image": "rocket-15",
+          "text-offset": [0, 1.5],
         },
         paint: {
-          'text-color': '#f16624',
-          'text-halo-color': '#fff',
-          'text-halo-width': 2
-        }
-      })
-
-    })
-
+          "text-color": "#f16624",
+          "text-halo-color": "#fff",
+          "text-halo-width": 2,
+        },
+      });
+    });
   }
-
 
   /// Helpers
 
   removeMarker(marker) {
-    this.mapService.removeMarker(marker.$key)
+    this.mapService.removeMarker(marker.$key);
   }
 
   flyTo(data: GeoJson) {
     this.map.flyTo({
-      center: data.geometry.coordinates
-    })
+      center: data.geometry.coordinates,
+    });
   }
 }
 ```
@@ -322,7 +315,7 @@ export class MapBoxComponent implements OnInit{
 <p>In the HTML, we need a div where `id='map'`, which is where the map will be rendered. We also loop over the markers giving the user to “fly” to any given location. </p>
 
 ```html
-<input type="text" [(ngModel)]="message" placeholder="your message...">
+<input type="text" [(ngModel)]="message" placeholder="your message..." />
 <h1>Markers</h1>
 <div *ngFor="let marker of markers | async">
   <button (click)="flyTo(marker)">{{ marker.properties.message }}</button>

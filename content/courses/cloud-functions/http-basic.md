@@ -12,14 +12,15 @@ emoji: 📡
 ---
 
 {{< file "ts" "http.ts" >}}
+
 ```ts
 export const basicHTTP = functions.https.onRequest((request, response) => {
   const name = request.query.name;
 
   if (!name) {
-    response.status(400).send('ERROR you must supply a name :(');
+    response.status(400).send("ERROR you must supply a name :(");
   }
 
   response.send(`hello ${name}`);
 });
-
+```

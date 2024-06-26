@@ -1,8 +1,8 @@
 <svelte:options tag="global-data" />
 
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { siteData } from '../stores/data';
+  import { onMount } from "svelte";
+  import { siteData } from "../stores/data";
 
   export let permalink: string;
   export let next: string;

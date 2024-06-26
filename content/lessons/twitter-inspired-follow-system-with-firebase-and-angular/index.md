@@ -5,12 +5,12 @@ publishdate: 2017-06-27T15:36:01-07:00
 author: Jeff Delaney
 draft: false
 description: Create a twitter-inspired follow unfollow system with Angular and Firebase
-tags: 
-    - angular
-    - firebase
+tags:
+  - angular
+  - firebase
 
 youtube: gNT5YBjLD2Q
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,7 +21,7 @@ youtube: gNT5YBjLD2Q
 #    rxdart: 0.20
 ---
 
-⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app. 
+⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app.
 
 <p>The idea of user following and unfollowing has been around since the rise of Twitter, but add this feature into an app is not as easy as you might think. It is an inherently <a href="https://www.upwork.com/hiring/data/sql-vs-nosql-databases-whats-the-difference/">relational</a> problem, so making it work with a NoSQL database requires some tradeoffs. In this lesson, we are going to build twitter-inspired follow and unfollow feature using on Firebase and Angular 4. </p>
 
@@ -69,35 +69,32 @@ followers
 ### follow.service.ts
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "angularfire2/database";
 
 @Injectable()
 export class FollowService {
-
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) {}
 
   getFollowers(userId: string) {
     // Used to build the follower count
-    return this.db.object(`followers/${userId}`)
+    return this.db.object(`followers/${userId}`);
   }
 
-  getFollowing(followerId:string, followedId:string) {
+  getFollowing(followerId: string, followedId: string) {
     // Used to see if UserFoo if following UserBar
-    return this.db.object(`following/${followerId}/${followedId}`)
+    return this.db.object(`following/${followerId}/${followedId}`);
   }
 
   follow(followerId: string, followedId: string) {
-    this.db.object(`followers/${followedId}`).update({ [followerId]: true } )
-    this.db.object(`following/${followerId}`).update({ [followedId]: true } )
+    this.db.object(`followers/${followedId}`).update({ [followerId]: true });
+    this.db.object(`following/${followerId}`).update({ [followedId]: true });
   }
 
   unfollow(followerId: string, followedId: string) {
-    this.db.object(`followers/${followedId}/${followerId}`).remove()
-    this.db.object(`following/${followerId}/${followedId}`).remove()
+    this.db.object(`followers/${followedId}/${followerId}`).remove();
+    this.db.object(`following/${followerId}/${followedId}`).remove();
   }
-
-
 }
 ```
 
@@ -108,7 +105,8 @@ export class FollowService {
 ### some-parent.component.html
 
 ```html
-You are logged in as <strong>{{currentUser?.displayName }}</strong><hr>
+You are logged in as <strong>{{currentUser?.displayName }}</strong>
+<hr />
 <div *ngFor="let user of users | async">
   <user-profile [user]="user" [currentUser]="currentUser"></user-profile>
 </div>
@@ -125,18 +123,17 @@ You are logged in as <strong>{{currentUser?.displayName }}</strong><hr>
 ### user-profile.component.ts
 
 ```typescript
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
 import { FollowService } from "../../follow.service";
 import { size } from "lodash";
 
 @Component({
-  selector: 'user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.scss']
+  selector: "user-profile",
+  templateUrl: "./user-profile.component.html",
+  styleUrls: ["./user-profile.component.scss"],
 })
 export class UserProfileComponent implements OnInit, OnDestroy {
-
-  @Input() user;        // a user who can be followed
+  @Input() user; // a user who can be followed
   @Input() currentUser; // currently logged in user
 
   followerCount: number;
@@ -145,54 +142,44 @@ export class UserProfileComponent implements OnInit, OnDestroy {
   followers;
   following;
 
-
-
-  constructor(private followSvc: FollowService) { }
+  constructor(private followSvc: FollowService) {}
 
   ngOnInit() {
-    const userId = this.user.$key
-    const currentUserId = this.currentUser.uid
-
+    const userId = this.user.$key;
+    const currentUserId = this.currentUser.uid;
 
     // checks if the currently logged in user is following this.user
-    this.following = this.followSvc.getFollowing(currentUserId, userId)
-                                   .subscribe(following => {
-
-                                      this.isFollowing = following.$value
-
-                                    })
+    this.following = this.followSvc
+      .getFollowing(currentUserId, userId)
+      .subscribe((following) => {
+        this.isFollowing = following.$value;
+      });
 
     // retrieves the follower count for a user's profile
-    this.followers = this.followSvc.getFollowers(userId)
-                                   .subscribe(followers => {
-
-                                     this.followerCount = this.countFollowers(followers)
-
-                                    })
+    this.followers = this.followSvc
+      .getFollowers(userId)
+      .subscribe((followers) => {
+        this.followerCount = this.countFollowers(followers);
+      });
   }
-
 
   private countFollowers(followers) {
-    if (followers.$value===null) return 0
-    else return size(followers)
+    if (followers.$value === null) return 0;
+    else return size(followers);
   }
-
 
   toggleFollow() {
-    const userId = this.user.$key
-    const currentUserId = this.currentUser.uid
+    const userId = this.user.$key;
+    const currentUserId = this.currentUser.uid;
 
-    if (this.isFollowing) this.followSvc.unfollow(currentUserId, userId)
-    else this.followSvc.follow(currentUserId, userId)
+    if (this.isFollowing) this.followSvc.unfollow(currentUserId, userId);
+    else this.followSvc.follow(currentUserId, userId);
   }
-
 
   ngOnDestroy() {
-    this.followers.unsubscribe()
-    this.following.unsubscribe()
+    this.followers.unsubscribe();
+    this.following.unsubscribe();
   }
-
-
 }
 ```
 
@@ -202,10 +189,10 @@ export class UserProfileComponent implements OnInit, OnDestroy {
 
 ```html
 <div class="profile">
-  <img [src]="user.img" width="50px">
+  <img [src]="user.img" width="50px" />
   @{{user.username}} has <strong>{{followerCount}}</strong> followers
   <div *ngIf="isFollowing; then unfollowButton else followButton">
-      button renders here
+    button renders here
   </div>
 </div>
 

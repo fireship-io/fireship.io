@@ -11,5 +11,4 @@ video_length: 8:15
 free: true
 ---
 
-
-Let's wrap up the course with a fun breakdown of some advanced git techniques that will increase your producivity. 
+Let's wrap up the course with a fun breakdown of some advanced git techniques that will increase your producivity.

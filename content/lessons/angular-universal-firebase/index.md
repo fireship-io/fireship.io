@@ -6,10 +6,10 @@ author: Jeff Delaney
 draft: false
 description: A comprehensive guide to server-side rendering with Angular Universal and Firebase
 tags:
-    - angular
-    - firebase
-    - cloud-functions
-    - node
+  - angular
+  - firebase
+  - cloud-functions
+  - node
 
 youtube: VS0zsXvDJ08
 github: https://github.com/fireship-io/159-angular-universal-cloud-functions
@@ -20,9 +20,9 @@ github: https://github.com/fireship-io/159-angular-universal-cloud-functions
 # step: 0
 
 versions:
-   '@angular/core': 7.2
-   'firebase-functions': 2
-   'node': 8.14.0
+  "@angular/core": 7.2
+  "firebase-functions": 2
+  "node": 8.14.0
 ---
 
 Nothing beats the user experience of a single page JS app on the web, but you sacrifice the ability to share metatags with social media bots and search engines on deep links. Fortunately, you can overcome this limitation with server-side rendering (SSR) via [Angular Universal](https://angular.io/guide/universal).
@@ -40,16 +40,14 @@ The following lesson will show you how to setup Angular Universal with ExpressJS
 
 Angular is a client-side framework designed to run apps in the browser. Universal is a tool that can run your Angular app on the server, allowing fully rendered HTML to be served on any route. After the initial page load, Angular will take over and use the router for all other route changes. This primary use cases include search engine optimization (SEO), visibility with social linkbots, and performance optimization.
 
-
-
 I highly recommend using [NVM](/snippets/install-nodejs/) with Node `v8.14.0` in your local environment. This is the version running on AppEngine and Cloud Functions and you might get unexpected errors on other versions.
-
 
 ## Step 1: Setup Universal in Angular
 
 ### NG Add Universal
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng add @nguniversal/express-engine --clientProject myapp
 ```
@@ -70,58 +68,59 @@ Then ExpressJS is the actual server that will handle requests/responses and is d
 Our angular app needs a router-loaded component that generates its own metatags. The following example will hard code the meta tags, but you can also build them dynamically by reading data from your database.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g component about -m app
 ```
-
 
 ### Configure the Router
 
 At this point, let's build a basic component that renders dynamic meta tags based on the route ID.
 
-
 {{< file "ngts" "app-routing.module.ts" >}}
+
 ```typescript
-import { Routes, RouterModule } from '@angular/router';
-import { AboutComponent } from './about/about.component';
+import { Routes, RouterModule } from "@angular/router";
+import { AboutComponent } from "./about/about.component";
 
-const routes: Routes = [
-  { path: 'about', component: AboutComponent }
-];
+const routes: Routes = [{ path: "about", component: AboutComponent }];
 ```
-
 
 ### Create the Component
 
 Angular has built-in services to change the title and metatags in the document body.
 
 {{< file "ngts" "about.component.ts" >}}
+
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import { Title, Meta } from '@angular/platform-browser';
+import { Component, OnInit } from "@angular/core";
+import { Title, Meta } from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-about',
-  templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  selector: "app-about",
+  templateUrl: "./about.component.html",
+  styleUrls: ["./about.component.scss"],
 })
 export class AboutComponent implements OnInit {
   data = {
-    name: 'Michael Jordan',
-    bio: 'Former baseball player',
-    image: 'avatar.png'
+    name: "Michael Jordan",
+    bio: "Former baseball player",
+    image: "avatar.png",
   };
 
-  constructor(private title: Title, private meta: Meta) {}
+  constructor(
+    private title: Title,
+    private meta: Meta,
+  ) {}
 
   ngOnInit() {
     this.title.setTitle(this.data.name);
     this.meta.addTags([
-      { name: 'twitter:card', content: 'summary' },
-      { name: 'og:url', content: '/about' },
-      { name: 'og:title', content: this.data.name },
-      { name: 'og:description', content: this.data.bio },
-      { name: 'og:image', content: this.data.image }
+      { name: "twitter:card", content: "summary" },
+      { name: "og:url", content: "/about" },
+      { name: "og:title", content: this.data.name },
+      { name: "og:description", content: this.data.bio },
+      { name: "og:image", content: this.data.image },
     ]);
   }
 }
@@ -131,9 +130,10 @@ export class AboutComponent implements OnInit {
 
 ### Compile the Server
 
-Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compiple the TypeScript code and run the Express server on *localhost:4000*.
+Open the `package.json` file and you'll notice four new scripts related to SSR. Run the commands below to compiple the TypeScript code and run the Express server on _localhost:4000_.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm run build:ssr
 npm run serve:ssr
@@ -143,12 +143,12 @@ At this point, you should see an error that looks like this because our server i
 
 {{< figure src="img/ssr-cannot-be-reached.png" alt="broken universal app" >}}
 
-
 ### Add Firebase Polyfills to Express
 
 Firebase uses Websockets and XHR not included in Angular that we need to polyfill.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm install ws xhr2 bufferutil utf-8-validate  -D
 ```
@@ -156,9 +156,10 @@ npm install ws xhr2 bufferutil utf-8-validate  -D
 Then declare them on Node `global` at the top of the server file.
 
 {{< file "ts" "server.ts" >}}
+
 ```typescript
-(global as any).WebSocket = require('ws');
-(global as any).XMLHttpRequest = require('xhr2');
+(global as any).WebSocket = require("ws");
+(global as any).XMLHttpRequest = require("xhr2");
 
 // ...
 ```
@@ -173,17 +174,18 @@ Rebuild your app and restart the server. The HTML returned from Express should n
 
 Deploying to [AppEngine](https://cloud.google.com/appengine/docs/standard/nodejs/) will containerize your code allow it to scale infinitely in the cloud. It starts on a free tier and can scale up automatically based on traffic or resource demands.
 
-Crate an *app.yaml* file in the root the project. The standard environment for Node8 and Node10 is free to deploy with a small instance and can automatically scale the moon 🌙 as needed. 
+Crate an _app.yaml_ file in the root the project. The standard environment for Node8 and Node10 is free to deploy with a small instance and can automatically scale the moon 🌙 as needed.
 
 {{< file "yaml" "app.yaml" >}}
+
 ```yaml
 runtime: nodejs8
 ```
 
-
 With Google Cloud SDK installed on your system, simply run the deploy command.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 gcloud app deploy
 ```
@@ -191,6 +193,7 @@ gcloud app deploy
 Also, update the start command in the package.json to run Express server.
 
 {{< file "npm" "package.json" >}}
+
 ```json
 {
   "scripts": {
@@ -201,16 +204,14 @@ Also, update the start command in the package.json to run Express server.
 
 If all went according to plan, you should now see your app on the AppEngine dashboard.
 
-
-
 {{< figure src="img/angular-appengine.png" alt="angular universal app deployed to app engine" >}}
-
 
 ## Deploy Option B - Firebase Cloud Functions
 
 An alternative to AppEngine is to rewrite your Firebase Hosting rules to a [Firebase Cloud Function](https://firebase.google.com/docs/functions/).
 
 {{< file "terminal" "command line" >}}
+
 ```text
 firebase init
 
@@ -220,11 +221,12 @@ firebase init
 Now make your public folder `dist/browser`, but rewrite all traffic to a function.
 
 {{< file "js" "firebase.json" >}}
+
 ```json
 {
   "hosting": {
     "public": "dist/browser",
-     // ...
+    // ...
     "rewrites": [
       {
         "source": "**",
@@ -242,6 +244,7 @@ When deploying to AppEngine we need to tell the server to listen to requests. In
 Make sure to export the express app, then remove the call to listen.
 
 {{< file "ts" "server.ts" >}}
+
 ```typescript
 export const app = express();
 
@@ -260,8 +263,8 @@ export const app = express();
 
 We need to tell the Webpack to package our server code as a library that can be consumed by the Node function. Update the existing config with the following changes.
 
-
 {{< file "js" "webpack.server.config.js" >}}
+
 ```js
   output: {
     // Puts the output at the root of the dist folder
@@ -272,7 +275,6 @@ We need to tell the Webpack to package our server code as a library that can be 
   },
 ```
 
-
 Make sure to rebuild the Angular app with `npm run build:ssr`.
 
 ### Copy the Angular App to the Function Environment
@@ -280,29 +282,30 @@ Make sure to rebuild the Angular app with `npm run build:ssr`.
 The cloud function needs access to your Angular build in order to render it on the server. Let's write a simple node script that copies the most recent Angular app to the functions dir on build.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 cd functions
 npm i fs-extra
 ```
 
 {{< file "js" "functions/cp-angular.js" >}}
+
 ```js
-const fs = require('fs-extra');
+const fs = require("fs-extra");
 
-(async() => {
+(async () => {
+  const src = "../dist";
+  const copy = "./dist";
 
-    const src = '../dist';
-    const copy = './dist';
-
-    await fs.remove(copy);
-    await fs.copy(src, copy);
-
+  await fs.remove(copy);
+  await fs.copy(src, copy);
 })();
 ```
 
 Update the build script to copy over your Angular files. While here, you can also mark this function to be deployed with Node v8.
 
 {{< file "npm" "functions/package.json" >}}
+
 ```json
 {
   "name": "functions",
@@ -319,17 +322,18 @@ The function itself only needs to import the universal app into the current work
 That's why we need to copy it to the function's environment.
 
 {{< file "ts" "functions/index.ts" >}}
+
 ```typescript
-import * as functions from 'firebase-functions';
+import * as functions from "firebase-functions";
 const universal = require(`${process.cwd()}/dist/server`).app;
 
 export const ssr = functions.https.onRequest(universal);
-
 ```
 
 You can test it by serving both the hosting and function simultaneously - the moment of truth...
 
 {{< file "terminal" "command line" >}}
+
 ```text
 cd functions
 npm run build
@@ -341,10 +345,9 @@ You should now be able to visit your server rendered site on **localhost:5000**.
 If it looks good, deploy the app with a single command:
 
 {{< file "terminal" "command line" >}}
+
 ```text
 firebase deploy
 ```
 
 {{< figure src="img/angular-twitter-card.png" alt="Angular Universal cloud functions twitter card validator" >}}
-
-

@@ -5,10 +5,10 @@ publishdate: 2021-11-27T13:45:48-07:00
 author: Jeff Delaney
 draft: false
 description: Use Flutter Riverpod to manage Firebase auth state and relational realtime data in Firestore
-tags: 
-    - pro
-    - flutter
-    - firebase
+tags:
+  - pro
+  - flutter
+  - firebase
 
 github: https://github.com/fireship-io/riverpod-firebase-demo
 vimeo: 650906808
@@ -17,9 +17,9 @@ pro: true
 
 [Riverpod](https://riverpod.dev/docs/getting_started/) is a reactive state-management library for Flutter that can simplify the way global data is shared throughout your application. It is especially useful with [Firebase](https://firebase.flutter.dev/) because it allows to you easily join Streams together, like a Firestore document with a Firebase Auth user.
 
-The following tutorial demonstrates how to use Riverpod to manage Firebase Auth state and relational realtime data in Firestore. 
+The following tutorial demonstrates how to use Riverpod to manage Firebase Auth state and relational realtime data in Firestore.
 
-**Learning Objectives** 
+**Learning Objectives**
 
 - Riverpod Basics w/ Firebase
 - Listen to the current user's auth state
@@ -27,13 +27,14 @@ The following tutorial demonstrates how to use Riverpod to manage Firebase Auth 
 
 ## Setup
 
-This tutorial assumes you have already installed [Firebase](https://firebase.flutter.dev/) into your app. Install Riverpod by adding it to the `pubspec.yaml` file. 
+This tutorial assumes you have already installed [Firebase](https://firebase.flutter.dev/) into your app. Install Riverpod by adding it to the `pubspec.yaml` file.
 
 ### Starter Code
 
 The application should initialize Firebase and look something like this:
 
 {{< file "yaml" "pubspec.yaml" >}}
+
 ```yaml
 firebase_core: "^1.10.0"
 cloud_firestore: "^3.1.0"
@@ -41,9 +42,10 @@ firebase_auth: "^3.2.0"
 flutter_riverpod: ^1.0.0
 ```
 
-The main function should initialize Firebase and the root widget should be wrapped in a `ProviderScope`. 
+The main function should initialize Firebase and the root widget should be wrapped in a `ProviderScope`.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 import 'dart:async';
 import 'package:flutter/material.dart';
@@ -68,23 +70,25 @@ void main() async {
 
 ### Provider
 
-A provider is a global state container that can be used to share data between widgets. 
+A provider is a global state container that can be used to share data between widgets.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 final helloWorldProvider = Provider((_) => 'Hello world');
 ```
 
 ### ConsumerWidget
 
-Riverpod provides a base class called `ConsumerWidget` to replace the `StatefulWidget` class. It has the ability to listen to changes in the state of a provider. It provides a widget reference that contains a `watch` method to access the current provider value. 
+Riverpod provides a base class called `ConsumerWidget` to replace the `StatefulWidget` class. It has the ability to listen to changes in the state of a provider. It provides a widget reference that contains a `watch` method to access the current provider value.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    
+
     final String helloWorld = ref.watch(helloWorldProvider);
 
     return MaterialApp(
@@ -100,12 +104,11 @@ class MyApp extends ConsumerWidget {
 
 ## Firebase Auth Provider
 
-FirebaseAuth provides the current user as a `Stream`. Riverpod has a `StreamProvider` class that can wrap the Firebase auth state, allowing you to access the current user from any widget easily.  
+FirebaseAuth provides the current user as a `Stream`. Riverpod has a `StreamProvider` class that can wrap the Firebase auth state, allowing you to access the current user from any widget easily.
 
 ### Create a StreamProvider
 
-A `StreamProvider` is just a provider that returns a `Stream`. 
-
+A `StreamProvider` is just a provider that returns a `Stream`.
 
 ```dart
 final userProvider = StreamProvider<User?>(
@@ -115,9 +118,10 @@ final userProvider = StreamProvider<User?>(
 
 ### Consume a StreamProvider
 
-The provider contains a `when` method that will build a different UI depending on the `data`, `loading`, and `error` states. 
+The provider contains a `when` method that will build a different UI depending on the `data`, `loading`, and `error` states.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class MyApp extends ConsumerWidget {
   @override
@@ -143,11 +147,12 @@ In this section, we query a Firestore document with the UID and listen to change
 
 ### Query Firestore with UID
 
-This demo assumes every user has an account document in Firestore, like `accounts/{uid}`. The provider will query Firestore with the current user's UID. If the UID does not exist, just return an empty `Stream`. 
+This demo assumes every user has an account document in Firestore, like `accounts/{uid}`. The provider will query Firestore with the current user's UID. If the UID does not exist, just return an empty `Stream`.
 
 Note: This pattern is similar to the [relational switchMap](/courses/flutter-firebase/firestore-relational/) technique used in the Full Flutter Course with RxDart.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 final dataProvider = StreamProvider<Map?>(
   (ref) {
@@ -168,7 +173,7 @@ final dataProvider = StreamProvider<Map?>(
 
 ### Consume Realtime Data
 
-Now consume the provider just like the previous example. 
+Now consume the provider just like the previous example.
 
 ```dart
 class AccountDetails extends ConsumerWidget {
@@ -186,5 +191,3 @@ class AccountDetails extends ConsumerWidget {
   }
 }
 ```
-
-

@@ -12,36 +12,36 @@ video_length: 2:08
 ## Save and List Credit Cards
 
 {{< file "ts" "customers.ts" >}}
+
 ```typescript
 /**
  * Creates a SetupIntent used to save a credit card for later use
  */
 export async function createSetupIntent(userId: string) {
+  const customer = await getOrCreateCustomer(userId);
 
-    const customer = await getOrCreateCustomer(userId);
-
-    return stripe.setupIntents.create({ 
-        customer: customer.id,
-    })
+  return stripe.setupIntents.create({
+    customer: customer.id,
+  });
 }
 
 /**
  * Returns all payment sources associated to the user
  */
 export async function listPaymentMethods(userId: string) {
-    const customer = await getOrCreateCustomer(userId);
+  const customer = await getOrCreateCustomer(userId);
 
-    return stripe.paymentMethods.list({
-        customer: customer.id,
-        type: 'card',
-    });
+  return stripe.paymentMethods.list({
+    customer: customer.id,
+    type: "card",
+  });
 }
-
 ```
 
 ## API Endpoints
 
 {{< file "ts" "api.ts" >}}
+
 ```typescript
 /**
  * Customers and Setup Intents
@@ -49,22 +49,22 @@ export async function listPaymentMethods(userId: string) {
 
 // Save a card on the customer record with a SetupIntent
 app.post(
-  '/wallet',
+  "/wallet",
   runAsync(async (req: Request, res: Response) => {
     const user = validateUser(req);
     const setupIntent = await createSetupIntent(user.uid);
     res.send(setupIntent);
-  })
+  }),
 );
 
 // Retrieve all cards attached to a customer
 app.get(
-  '/wallet',
+  "/wallet",
   runAsync(async (req: Request, res: Response) => {
     const user = validateUser(req);
 
     const wallet = await listPaymentMethods(user.uid);
     res.send(wallet.data);
-  })
+  }),
 );
 ```

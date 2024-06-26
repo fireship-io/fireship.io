@@ -13,12 +13,12 @@ video_length: 5:07
 
 [React Hooks Tutorial](https://youtu.be/TNhaISOUy6Q)
 
-
 ## Complete Code
 
 {{< file "react" "App.js" >}}
+
 ```jsx
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function App() {
   const { search, animals } = useAnimalSearch();
@@ -38,7 +38,7 @@ function App() {
           <Animal key={animal.id} {...animal} />
         ))}
 
-        {animals.length === 0 && 'No animals found'}
+        {animals.length === 0 && "No animals found"}
       </ul>
     </main>
   );
@@ -58,18 +58,18 @@ function useAnimalSearch() {
   const [animals, setAnimals] = useState([]);
 
   useEffect(() => {
-    const lastQuery = localStorage.getItem('lastQuery');
+    const lastQuery = localStorage.getItem("lastQuery");
     search(lastQuery);
   }, []);
 
   const search = async (q) => {
     const response = await fetch(
-      'http://localhost:8080?' + new URLSearchParams({ q })
+      "http://localhost:8080?" + new URLSearchParams({ q }),
     );
     const data = await response.json();
     setAnimals(data);
 
-    localStorage.setItem('lastQuery', q);
+    localStorage.setItem("lastQuery", q);
   };
 
   return { search, animals };

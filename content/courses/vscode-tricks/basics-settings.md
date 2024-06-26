@@ -18,12 +18,13 @@ free: true
 
 ## ✨ Trick - Ligatures
 
-Font ligatures are special symbols that combine multiple characters into a single symbol and *arguably* make your code more readable. Enable ligatures in VS Code by adding the following changes to your settings (note: you must install Fira Code font on your machine). 
+Font ligatures are special symbols that combine multiple characters into a single symbol and _arguably_ make your code more readable. Enable ligatures in VS Code by adding the following changes to your settings (note: you must install Fira Code font on your machine).
 
 {{< file "cog" "settings.json" >}}
+
 ```json
 {
-    "editor.fontFamily": "Fira Code",
-    "editor.fontLigatures": true
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true
 }
 ```

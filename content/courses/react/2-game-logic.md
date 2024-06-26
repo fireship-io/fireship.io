@@ -12,12 +12,11 @@ video_length: 5:04
 ## Game Logic
 
 {{< file "react" "App.js" >}}
+
 ```jsx
-import { useState, useEffect } from 'react';
-import Card from './components/Card';
-import shuffle from './utilities/shuffle';
-
-
+import { useState, useEffect } from "react";
+import Card from "./components/Card";
+import shuffle from "./utilities/shuffle";
 
 function App() {
   const [cards, setCards] = useState(shuffle); // Cards array from assets
@@ -26,8 +25,8 @@ function App() {
   const [disabled, setDisabled] = useState(false); // Delay handler
   const [wins, setWins] = useState(0); // Win streak
 
-   // Handle card selection
-   const handleClick = (card) => {
+  // Handle card selection
+  const handleClick = (card) => {
     if (!disabled) {
       pickOne ? setPickTwo(card) : setPickOne(card);
     }
@@ -74,28 +73,26 @@ function App() {
     };
   }, [cards, pickOne, pickTwo]);
 
-    // If player has found all matches, handle accordingly
-    useEffect(() => {
-      // Check for any remaining card matches
-      const checkWin = cards.filter((card) => !card.matched);
-  
-      // All matches made, handle win/badge counters
-      if (cards.length && checkWin.length < 1) {
-        console.log('You win!');
-        setWins(wins + 1);
-        handleTurn();
-        setCards(shuffle);
-      }
-    }, [cards, wins]);
+  // If player has found all matches, handle accordingly
+  useEffect(() => {
+    // Check for any remaining card matches
+    const checkWin = cards.filter((card) => !card.matched);
 
+    // All matches made, handle win/badge counters
+    if (cards.length && checkWin.length < 1) {
+      console.log("You win!");
+      setWins(wins + 1);
+      handleTurn();
+      setCards(shuffle);
+    }
+  }, [cards, wins]);
 
   return (
     <>
-
       <div className="grid">
         {cards.map((card) => {
           const { image, id, matched } = card;
-          
+
           return (
             <Card
               key={id}
@@ -111,5 +108,4 @@ function App() {
 }
 
 export default App;
-
 ```

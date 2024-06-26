@@ -4,11 +4,10 @@ description: Learn the fundamentals of Dart in 100 Seconds
 weight: 10
 lastmod: 2021-10-08T11:11:30-09:00
 draft: false
-vimeo: 
+vimeo:
 youtube: NrO0CJCbYLA
 emoji: 🎯
 video_length: 1:51
 free: true
 chapter_start: Basics
 ---
-

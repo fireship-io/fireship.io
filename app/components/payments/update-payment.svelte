@@ -1,7 +1,7 @@
 <svelte:options tag="update-payment" />
 
 <script lang="ts">
-  import { callUserAPI } from '../../util/firebase';
+  import { callUserAPI } from "../../util/firebase";
   let loading = false;
   let methods;
   let url;
@@ -9,7 +9,7 @@
   async function getDefault() {
     loading = true;
     const res = await callUserAPI<any>({
-      fn: 'getPaymentMethods',
+      fn: "getPaymentMethods",
       payload: {},
     });
     methods = res?.data || [];
@@ -19,7 +19,7 @@
   async function detachMethod(pm: string) {
     loading = true;
     const res = await callUserAPI<any>({
-      fn: 'deletePaymentMethod',
+      fn: "deletePaymentMethod",
       payload: { pm },
     });
     if (res) {
@@ -30,8 +30,8 @@
 
   async function getSession() {
     loading = true;
-    url = await callUserAPI<string>({ fn: 'createSetupSession', payload: {} });
-    if (url) window.open(url, '_blank')?.focus();
+    url = await callUserAPI<string>({ fn: "createSetupSession", payload: {} });
+    if (url) window.open(url, "_blank")?.focus();
     loading = false;
   }
 </script>
@@ -39,7 +39,7 @@
 {#if !methods}
   <button on:click={getDefault}>
     {#if loading}<loading-spinner />{/if}
-    {loading ? 'loading...' : 'update payment method'}
+    {loading ? "loading..." : "update payment method"}
   </button>
 {/if}
 
@@ -67,7 +67,7 @@
 
     <button class="update" on:click={getSession}>
       {#if loading}<loading-spinner />{/if}
-      {loading ? 'loading...' : 'Add new card'}
+      {loading ? "loading..." : "Add new card"}
     </button>
 
     {#if url}

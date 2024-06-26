@@ -27,12 +27,12 @@ npm i stripe @stripe/stripe-js
 npm run dev
 ```
 
-
 ### Code
 
 Add Environment Variables to your `.env.local` file.
 
 {{< file "cog" ".env.local" >}}
+
 ```env
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_
 STRIPE_SECRET_KEY=sk_test_
@@ -42,23 +42,21 @@ STRIPE_WEBHOOK_SECRET=whsec_
 Remove the Next.js boilerplate.
 
 {{< file "react" "app/page.tsx" >}}
+
 ```tsx
 export default function Home() {
-  return (
-    <main>
-
-    </main>
-  );
+  return <main></main>;
 }
 ```
 
 Optionally, update your Tailwdind configuration to include the DaisyUI and Tailwind Typography plugins for rapid styling.
 
 {{< file "tailwind" "tailwind.config.ts" >}}
+
 ```typescript
 import type { Config } from "tailwindcss";
-import daisyui from 'daisyui';
-import tailwindTypography from '@tailwindcss/typography';
+import daisyui from "daisyui";
+import tailwindTypography from "@tailwindcss/typography";
 
 const config: Config = {
   content: [
@@ -66,13 +64,8 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {
-
-  },
-  plugins: [
-    tailwindTypography,
-    daisyui,
-  ],
+  theme: {},
+  plugins: [tailwindTypography, daisyui],
 };
 export default config;
 ```

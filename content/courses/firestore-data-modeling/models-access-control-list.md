@@ -9,9 +9,10 @@ vimeo: 331445138
 video_length: 2:26
 ---
 
-Sample Firestore security rules for an Access Control List (ACL), where the content determines which users have authorization. 
+Sample Firestore security rules for an Access Control List (ACL), where the content determines which users have authorization.
 
 {{< file "firebase" "rules.json" >}}
+
 ```js
 match /posts/{document} {
 

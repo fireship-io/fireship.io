@@ -12,21 +12,21 @@ video_length: 3:39
 ## Stripe Checkout on the Server
 
 {{< file "ts" "checkout.ts" >}}
+
 ```typescript
-import { stripe } from './';
-import Stripe from 'stripe';
+import { stripe } from "./";
+import Stripe from "stripe";
 
 /**
  * Creates a Stripe Checkout session with line items
  */
 export async function createStripeCheckoutSession(
-  line_items: Stripe.Checkout.SessionCreateParams.LineItem[]
+  line_items: Stripe.Checkout.SessionCreateParams.LineItem[],
 ) {
-
-  const url = 'http://localhost:3000'; //process.env.WEBAPP_URL;
+  const url = "http://localhost:3000"; //process.env.WEBAPP_URL;
 
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
+    payment_method_types: ["card"],
     line_items,
     success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${url}/failed`,
@@ -34,15 +34,15 @@ export async function createStripeCheckoutSession(
 
   return session;
 }
-
 ```
 
 ## API Endpoint
 
 {{< file "ts" "api.ts" >}}
+
 ```typescript
 /**
- * Catch async errors when awaiting promises 
+ * Catch async errors when awaiting promises
  */
 function runAsync(callback: Function) {
   return (req: Request, res: Response, next: NextFunction) => {
@@ -54,11 +54,9 @@ function runAsync(callback: Function) {
  * Checkouts
  */
 app.post(
-  '/checkouts/',
+  "/checkouts/",
   runAsync(async ({ body }: Request, res: Response) => {
     res.send(await createStripeCheckoutSession(body.line_items));
-  })
+  }),
 );
-
 ```
-

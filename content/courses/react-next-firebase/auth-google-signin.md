@@ -17,6 +17,7 @@ quiz: true
 ## Google Auth Provider
 
 {{< file "js" "lib/firebase.js" >}}
+
 ```javascript
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 ```
@@ -24,8 +25,9 @@ export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 ## SignIn Button
 
 {{< file "js" "pages/enter.js" >}}
+
 ```javascript
-import { auth, googleAuthProvider } from '../lib/firebase';
+import { auth, googleAuthProvider } from "../lib/firebase";
 
 export default function Enter(props) {
   const user = null;
@@ -36,11 +38,15 @@ export default function Enter(props) {
   // 3. user signed in, has username <SignOutButton />
   return (
     <main>
-      {user ? 
-        !username ? <UsernameForm /> : <SignOutButton /> 
-        : 
+      {user ? (
+        !username ? (
+          <UsernameForm />
+        ) : (
+          <SignOutButton />
+        )
+      ) : (
         <SignInButton />
-      }
+      )}
     </main>
   );
 }
@@ -53,7 +59,7 @@ function SignInButton() {
 
   return (
     <button className="btn-google" onClick={signInWithGoogle}>
-      <img src={'/google.png'} /> Sign in with Google
+      <img src={"/google.png"} /> Sign in with Google
     </button>
   );
 }
@@ -66,5 +72,4 @@ function SignOutButton() {
 function UsernameForm() {
   return null;
 }
-
 ```

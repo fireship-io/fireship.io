@@ -13,6 +13,7 @@ free: true
 Check your machine's current git version:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git config --global user.name "Jeff Delaney"
 git config --global user.email "hello@fireship.io"
@@ -21,20 +22,21 @@ git config --global user.email "hello@fireship.io"
 ## Set a Username & Email
 
 {{< file "terminal" "command line" >}}
+
 ```bash
-git config --list 
+git config --list
 ```
 
 ## Windows Installation
 
 On Windows, I recommend downloading [Git for Windows](https://gitforwindows.org/). In addition, you may want to use git-bash as your terminal (like me), but that is optional - and check out [bash in 100 seconds](https://youtu.be/I4EWvMFj37g).
 
-
 ## Mac Installation
 
 On MacOS, I recommend installing git with [Homebrew](https://brew.sh/).
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 brew install git
 ```

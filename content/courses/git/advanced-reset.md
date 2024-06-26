@@ -7,27 +7,30 @@ draft: false
 vimeo: 599244967
 emoji: 🔨
 video_length: 2:32
-chapter_start: Advanced 
-chapter_icon: 🔨 
+chapter_start: Advanced
+chapter_icon: 🔨
 ---
 
-Unstage all staged files. 
+Unstage all staged files.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git reset
 ```
 
-Rollback to a previous commit, BUT keep your changes in the working directory. 
+Rollback to a previous commit, BUT keep your changes in the working directory.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git reset <commit-ID>
 ```
 
-Rollback to a previous commit AND discard all changes. Be careful with this one. 
+Rollback to a previous commit AND discard all changes. Be careful with this one.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git reset <commit-ID> --hard
 ```

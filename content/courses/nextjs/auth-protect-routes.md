@@ -9,12 +9,11 @@ emoji: 🤠
 video_length: 1:01
 ---
 
-
 ```typescript
-  const session = await getServerSession();
+const session = await getServerSession();
 
-  if (!session) {
-    redirect('/api/auth/signin');
-    // return <p>You must be signed in...</p>
-  }
+if (!session) {
+  redirect("/api/auth/signin");
+  // return <p>You must be signed in...</p>
+}
 ```

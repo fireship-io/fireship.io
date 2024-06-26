@@ -5,14 +5,13 @@ publishdate: 2022-12-17T12:19:06-07:00
 author: Jeff Delaney
 draft: false
 description: Build a chat app with Pocketbase and Svelte
-tags: 
-    - pocketbase
-    - svelte
+tags:
+  - pocketbase
+  - svelte
 
 youtube: gUYBFDPZ5qk
 github: https://github.com/fireship-io/pocketchat-tutorial
 ---
-
 
 In the following tutorial we will build a chat app with [Pocketbase](https://pocketbase.io) and [Svelte](https://svelte.dev). Pocketbase is a backend (inspired by Firebase) structured as a single executable file. It provides a realtime DB based on SQLite and user authentication system that allows us to quickly prototype and deploy a chat app.
 
@@ -28,7 +27,7 @@ First, [download pocketbase](https://pocketbase.io/docs) then run the executable
 
 Our chat app will have two collections: `users` and `messages`.
 
-The `messages` collection will store the messages sent by users. Most importantly, it should have a relation field that points to the users collection. 
+The `messages` collection will store the messages sent by users. Most importantly, it should have a relation field that points to the users collection.
 
 {{< figure src="img/pocketbase-relation.png" caption="Message belongs to User" >}}
 
@@ -37,8 +36,9 @@ The `messages` collection will store the messages sent by users. Most importantl
 ### Create a Svelte App
 
 Create a new svelte app with Vite and select the TypeScript option. Install Pocketbase JS and serve the app.
-    
+
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm init vite pocketchat
 
@@ -54,37 +54,41 @@ npm run dev
 Put the current user from Pocketbase into a Svelte store.
 
 {{< file "ts" "lib/pocketbase.ts" >}}
-```jsx
-import PocketBase from 'pocketbase';
-import { writable } from 'svelte/store';
 
-const pb = new PocketBase('http://127.0.0.1:8090'); 
+```jsx
+import PocketBase from "pocketbase";
+import { writable } from "svelte/store";
+
+const pb = new PocketBase("http://127.0.0.1:8090");
 
 export const currentUser = writable(pb.authStore.model);
 
 pb.authStore.onChange((auth) => {
-    console.log('authStore changed', auth);
-    currentUser.set(pb.authStore.model);
+  console.log("authStore changed", auth);
+  currentUser.set(pb.authStore.model);
 });
 ```
 
 ### Sign into the App
 
-Let's use the username/password authentication strategy. 
+Let's use the username/password authentication strategy.
 
-Create a login form that uses the `authWithPassword` method. If the user doesn't exist, create a new user with the `create` method. 
+Create a login form that uses the `authWithPassword` method. If the user doesn't exist, create a new user with the `create` method.
 
 {{< file "svelte" "Login.svelte" >}}
+
 ```svelte
 <script lang="ts">
-  import { currentUser, pb } from './pocketbase';
+  import { currentUser, pb } from "./pocketbase";
 
   let username: string;
   let password: string;
 
   async function login() {
-    const user = await pb.collection('users').authWithPassword(username, password);
-    console.log(user)
+    const user = await pb
+      .collection("users")
+      .authWithPassword(username, password);
+    console.log(user);
   }
 
   async function signUp() {
@@ -93,57 +97,48 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
         username,
         password,
         passwordConfirm: password,
-        name: 'hi mom!',
+        name: "hi mom!",
       };
-      const createdUser = await pb.collection('users').create(data);
+      const createdUser = await pb.collection("users").create(data);
       await login();
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
   }
 
   function signOut() {
     pb.authStore.clear();
   }
-
 </script>
 
 {#if $currentUser}
   <p>
-    Signed in as {$currentUser.username} 
+    Signed in as {$currentUser.username}
     <button on:click={signOut}>Sign Out</button>
   </p>
 {:else}
   <form on:submit|preventDefault>
-    <input
-      placeholder="Username"
-      type="text"
-      bind:value={username}
-    />
+    <input placeholder="Username" type="text" bind:value={username} />
 
-    <input 
-      placeholder="Password" 
-      type="password" 
-      bind:value={password} 
-    />
+    <input placeholder="Password" type="password" bind:value={password} />
     <button on:click={signUp}>Sign Up</button>
     <button on:click={login}>Login</button>
   </form>
 {/if}
-
 ```
 
 ### Realtime Chat Messages
 
-1. When the component mounts, fetch the latest messages. 
+1. When the component mounts, fetch the latest messages.
 2. Setup a realtime listener for new messages and react the actions like `create` and `delete`. Make sure to unsubscribe when the component is destroyed.
 3. Create new messages by passing the current user's ID to the `user` field.
 
 {{< file "svelte" "Messages.svelte" >}}
+
 ```svelte
 <script lang="ts">
-  import { onMount, onDestroy } from 'svelte';
-  import { currentUser, pb } from './pocketbase';
+  import { onMount, onDestroy } from "svelte";
+  import { currentUser, pb } from "./pocketbase";
 
   let newMessage: string;
   let messages = [];
@@ -151,23 +146,23 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
 
   onMount(async () => {
     // Get initial messages
-    const resultList = await pb.collection('messages').getList(1, 50, {
-      sort: 'created',
-      expand: 'user',
+    const resultList = await pb.collection("messages").getList(1, 50, {
+      sort: "created",
+      expand: "user",
     });
     messages = resultList.items;
 
     // Subscribe to realtime messages
     unsubscribe = await pb
-      .collection('messages')
-      .subscribe('*', async ({ action, record }) => {
-        if (action === 'create') {
+      .collection("messages")
+      .subscribe("*", async ({ action, record }) => {
+        if (action === "create") {
           // Fetch associated user
-          const user = await pb.collection('users').getOne(record.user);
+          const user = await pb.collection("users").getOne(record.user);
           record.expand = { user };
           messages = [...messages, record];
         }
-        if (action === 'delete') {
+        if (action === "delete") {
           messages = messages.filter((m) => m.id !== record.id);
         }
       });
@@ -183,8 +178,8 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
       text: newMessage,
       user: $currentUser.id,
     };
-    const createdMessage = await pb.collection('messages').create(data);
-    newMessage = '';
+    const createdMessage = await pb.collection("messages").create(data);
+    newMessage = "";
   }
 </script>
 
@@ -217,28 +212,30 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
 
 ### Create a Linode
 
-Head over the Linode and create a new server. Because they sponsored this video, you can use a [$100 credit](https://www.linode.com/fireship) to get started. 
+Head over the Linode and create a new server. Because they sponsored this video, you can use a [$100 credit](https://www.linode.com/fireship) to get started.
 
 {{< figure src="img/linode-dashboard.png" caption="Linode dashboard" >}}
 
 ### Copy Pocketbase to Linode
 
-Copy the pocketbase executable to your server using [scp](https://www.ssh.com/ssh/scp/) or any other tool of your prefrence. 
+Copy the pocketbase executable to your server using [scp](https://www.ssh.com/ssh/scp/) or any other tool of your prefrence.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 scp pocketbase root@YOUR-IP:/root/pb
 ```
 
 ### Run Pocketbase with Systemd
 
-You could simply run the pocketbase command in a terminal, but your backend will stop running if the server ever needs to reboot. 
+You could simply run the pocketbase command in a terminal, but your backend will stop running if the server ever needs to reboot.
 
 A more reliable to run Pocketbase is with a service manager like [systemd](https://www.freedesktop.org/wiki/Software/systemd/). You can use the following service file to run Pocketbase automatically on boot
 
 Note: Replace `YOUR-DOMAIN` with your domain name or IP address. Remove the `--https` flag if you don't have a domain name.
 
 {{< file "terminal" "/lib/systemd/system/pocketbase.service" >}}
+
 ```bash
 [Unit]
 Description = pocketbase
@@ -261,6 +258,7 @@ WantedBy = multi-user.target
 Create this file on your server, then enable and start the service:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 systemctl enable pocketbase.service
 systemctl start pocketbase

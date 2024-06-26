@@ -1,8 +1,8 @@
 <svelte:options tag="price-select" />
 
 <script lang="ts">
-  import { period } from '../../stores';
-  export let show = 'amount';
+  import { period } from "../../stores";
+  export let show = "amount";
   const prices = {
     month: 29,
     quarter: 69,
@@ -10,27 +10,27 @@
   };
 </script>
 
-{#if show == 'amount'}
+{#if show == "amount"}
   {prices[$period]}<span class="period">/{$period}</span>
 {/if}
-{#if show == 'period'}
+{#if show == "period"}
   <span>{$period}</span>
 {/if}
-{#if show == 'control'}
+{#if show == "control"}
   <button
     class="btn"
-    class:active={$period == 'month'}
-    on:click={() => period.set('month')}>Month</button
+    class:active={$period == "month"}
+    on:click={() => period.set("month")}>Month</button
   >
   <button
     class="btn"
-    class:active={$period == 'quarter'}
-    on:click={() => period.set('quarter')}>Quarter</button
+    class:active={$period == "quarter"}
+    on:click={() => period.set("quarter")}>Quarter</button
   >
   <button
     class="btn"
-    class:active={$period == 'year'}
-    on:click={() => period.set('year')}>Year</button
+    class:active={$period == "year"}
+    on:click={() => period.set("year")}>Year</button
   >
 {/if}
 

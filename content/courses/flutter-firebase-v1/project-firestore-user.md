@@ -9,12 +9,12 @@ vimeo: 407365331
 video_length: 2:20
 ---
 
-
 ## User Data Service
 
-Create a generic service that can connect a user to the Firestore related to their UID. 
+Create a generic service that can connect a user to the Firestore related to their UID.
 
 {{< file "dart" "db.dart" >}}
+
 ```dart
 class UserData<T> {
   final Firestore _db = Firestore.instance;
@@ -28,7 +28,7 @@ class UserData<T> {
 
     return _auth.onAuthStateChanged.switchMap((user) {
       if (user != null) {
-          Document<T> doc = Document<T>(path: '$collection/${user.uid}'); 
+          Document<T> doc = Document<T>(path: '$collection/${user.uid}');
           return doc.streamData();
       } else {
           return Stream<T>.value(null);
@@ -40,7 +40,7 @@ class UserData<T> {
     FirebaseUser user = await _auth.currentUser();
 
     if (user != null) {
-      Document doc = Document<T>(path: '$collection/${user.uid}'); 
+      Document doc = Document<T>(path: '$collection/${user.uid}');
       return doc.getData();
     } else {
       return null;

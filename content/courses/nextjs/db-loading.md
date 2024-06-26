@@ -10,6 +10,7 @@ video_length: 1:00
 ---
 
 {{< file "react" "loading.tsx" >}}
+
 ```tsx
 export default async function LoadingUsers() {
   return <div>Loading user data...</div>;

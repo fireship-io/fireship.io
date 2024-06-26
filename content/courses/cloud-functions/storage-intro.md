@@ -9,6 +9,5 @@ vimeo: 320683478
 free: true
 weight: 18
 emoji: 📦
-chapter_start: Storage 
+chapter_start: Storage
 ---
-

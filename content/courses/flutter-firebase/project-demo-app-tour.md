@@ -10,4 +10,3 @@ vimeo: 645855070
 chapter_start: Let's Build an App
 video_length: 1:38
 ---
-

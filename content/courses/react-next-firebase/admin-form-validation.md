@@ -11,34 +11,34 @@ video_length: 2:02
 
 ## Form Validation
 
-React Hook Form makes it easy to add reactive form validation. 
+React Hook Form makes it easy to add reactive form validation.
 
 {{< file "js" "pages/admin/slug.js" >}}
+
 ```jsx
+const { register, handleSubmit, reset, watch, formState, errors } = useForm({
+  defaultValues,
+  mode: "onChange",
+});
 
-  const { 
-    register, 
-    handleSubmit, 
-    reset, 
-    watch, 
-    formState, 
-    errors 
-  } = useForm({ defaultValues, mode: 'onChange' });
-
-  const { isValid, isDirty } = formState;
+const { isValid, isDirty } = formState;
 
 // ...
 
-      <textarea name="content" ref={register({
-            maxLength: { value: 20000, message: 'content is too long' },
-            minLength: { value: 10, message: 'content is too short' },
-            required: { value: true, message: 'content is required'}
-          })}>
-      </textarea>
+<textarea
+  name="content"
+  ref={register({
+    maxLength: { value: 20000, message: "content is too long" },
+    minLength: { value: 10, message: "content is too short" },
+    required: { value: true, message: "content is required" },
+  })}
+></textarea>;
 
-        {errors.content && <p className="text-danger">{errors.content.message}</p>}
+{
+  errors.content && <p className="text-danger">{errors.content.message}</p>;
+}
 
-        <button type="submit" disabled={!isDirty || !isValid}>
-          Save Changes
-        </button>
+<button type="submit" disabled={!isDirty || !isValid}>
+  Save Changes
+</button>;
 ```

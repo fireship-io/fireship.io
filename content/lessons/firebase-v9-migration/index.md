@@ -4,16 +4,16 @@ lastmod: 2021-09-02T12:10:52-07:00
 publishdate: 2021-09-02T12:10:52-07:00
 author: Jeff Delaney
 draft: false
-description: How to migrate to the new Firebase V9 JavaScript SDK. A complete guide. 
-tags: 
-    - pro
-    - javascript
-    - firebase
+description: How to migrate to the new Firebase V9 JavaScript SDK. A complete guide.
+tags:
+  - pro
+  - javascript
+  - firebase
 
-# youtube: 
+# youtube:
 pro: true
 vimeo: 596932628
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -24,10 +24,10 @@ vimeo: 596932628
 #    rxdart: 0.20
 ---
 
-The Firebase team [recently released](https://firebase.googleblog.com/2021/08/the-new-firebase-js-sdk-now-ga.html) a new web SDK that utilizes [tree-shaking](https://webpack.js.org/guides/tree-shaking/) in order to lower 
+The Firebase team [recently released](https://firebase.googleblog.com/2021/08/the-new-firebase-js-sdk-now-ga.html) a new web SDK that utilizes [tree-shaking](https://webpack.js.org/guides/tree-shaking/) in order to lower
 JavaScript bundle sizes when used with module bundlers like Webpack and Rollup. At a high level, it works by only importing the functions/classes/code that we actually NEED, versus importing entire modules like auth, firestore, and so on. The Fireship site was able to **reduce its JavaScript bundle size by ~35%** 🤯 by upgrading to the new version.
 
-Below is a guide for migrating from Firebase version 8 or older *to version 9+*. This lesson is designed as a reference that can be used for converting an existing app in production, starting a new project from scratch, or making adjustments to your code while going through a past Fireship tutorial. 
+Below is a guide for migrating from Firebase version 8 or older _to version 9+_. This lesson is designed as a reference that can be used for converting an existing app in production, starting a new project from scratch, or making adjustments to your code while going through a past Fireship tutorial.
 
 In this article, we will do a side-by-side comparison of the old and new versions of the Firebase SDK:
 
@@ -35,13 +35,14 @@ In this article, we will do a side-by-side comparison of the old and new version
 2. [Sign-in with Google as a provider, email/password, sign out, and the auth state listener](#authentication)
 3. [Add/read/update/delete documents && collections, timestamps, querying data, and using batch operations](#firestore)
 
-Also watch the more basic [Firebase v9 overview](https://youtu.be/zd6ffqoK_EU) on YouTube. 
+Also watch the more basic [Firebase v9 overview](https://youtu.be/zd6ffqoK_EU) on YouTube.
 
 ## Setup
 
 ### Configuration
 
 {{< file "js" "firebaseConfig.js" >}}
+
 ```js
 // Your projects firebase configuration
 const firebaseConfig = {
@@ -62,6 +63,7 @@ export default firebaseConfig;
 v8 and earlier:
 
 {{< file "js" "firebaseConfig.js" >}}
+
 ```js
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
@@ -266,6 +268,7 @@ onAuthStateChanged(auth, (user) => {
 v8 and earlier:
 
 {{< file "js" "firestore.js" >}}
+
 ```js
 import { firestore } from "./firebaseInit";
 
@@ -368,7 +371,7 @@ const mergeExisitngDoc = async () => {
       {
         contents: "some-data",
       },
-      { merge: true }
+      { merge: true },
     )
     .then(() => {
       console.log("Updated/merged!");
@@ -445,7 +448,7 @@ const mergeExisitngDoc = async () => {
     {
       contents: "some-data",
     },
-    { merge: true }
+    { merge: true },
   )
     .then(() => {
       console.log("Updated/merged!");
@@ -692,7 +695,7 @@ const getCollectionDocs = async (collection) => {
   const collectionQuery = query(
     collectionRef,
     where("some-data", "==", true),
-    limit(25)
+    limit(25),
   );
   const querySnapshot = await getDocs(collectionQuery);
 

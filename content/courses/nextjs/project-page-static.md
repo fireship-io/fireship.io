@@ -10,14 +10,15 @@ video_length: 1:15
 ---
 
 {{< file "react" "page.tsx" >}}
-```tsx
-import { Metadata } from 'next';
 
-export const dynamic = 'force-static'; // no necessary, just for demonstration
+```tsx
+import { Metadata } from "next";
+
+export const dynamic = "force-static"; // no necessary, just for demonstration
 
 export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'About NextSpace',
+  title: "About Us",
+  description: "About NextSpace",
 };
 
 export default function Blog() {
@@ -28,5 +29,4 @@ export default function Blog() {
     </div>
   );
 }
-
 ```

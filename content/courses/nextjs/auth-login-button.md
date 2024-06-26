@@ -10,26 +10,27 @@ video_length: 2:10
 ---
 
 {{< file "react" "buttons.tsx" >}}
-```tsx
-'use client';
 
-import { useSession, signIn, signOut } from 'next-auth/react';
-import Image from 'next/image';
-import Link from 'next/link';
+```tsx
+"use client";
+
+import { useSession, signIn, signOut } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 
 export function SignInButton() {
   const { data: session, status } = useSession();
   console.log(session, status);
 
-  if (status === 'loading') {
+  if (status === "loading") {
     return <>...</>;
   }
 
-  if (status === 'authenticated') {
+  if (status === "authenticated") {
     return (
       <Link href={`/dashboard`}>
         <Image
-          src={session.user?.image ?? '/mememan.webp'}
+          src={session.user?.image ?? "/mememan.webp"}
           width={32}
           height={32}
           alt="Your Name"
@@ -44,5 +45,4 @@ export function SignInButton() {
 export function SignOutButton() {
   return <button onClick={() => signOut()}>Sign out</button>;
 }
-
 ```

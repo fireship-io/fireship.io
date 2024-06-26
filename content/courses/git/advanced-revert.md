@@ -12,6 +12,7 @@ video_length: 2:00
 Undo a commit with a new commit
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git revert <commit-ID> -m "reverting last commit"
 ```

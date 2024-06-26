@@ -8,9 +8,11 @@ vimeo: 486584623
 emoji: 🛡️
 video_length: 4:46
 ---
+
 Firebase Rules for hypothertical chat application
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -19,12 +21,12 @@ service cloud.firestore {
     match /{document=**} {
       allow read, write: if false;
     }
-    
+
     match /messages/{docId} {
  			allow read: if request.auth.uid != null;
       allow create: if canCreateMessage();
     }
-    
+
   	function canCreateMessage() {
       let isSignedIn = request.auth.uid != null;
       let isOwner = request.auth.uid == request.resource.data.uid;
@@ -34,10 +36,10 @@ service cloud.firestore {
       let isNotBanned = exists(
       	/databases/$(database)/documents/banned/$(request.auth.uid)
       ) == false;
-      
+
       return isSignedIn && isOwner && isNotTooLong && isNow && isNotBanned;
     }
-    
+
   }
 }
 ```

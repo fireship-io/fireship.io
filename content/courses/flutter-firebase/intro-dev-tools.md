@@ -9,4 +9,4 @@ vimeo: 645766188
 video_length: 2:14
 ---
 
-Find Flutter dev tools in the bottom left corner of VS Code OR click the link in the terminal. 
+Find Flutter dev tools in the bottom left corner of VS Code OR click the link in the terminal.

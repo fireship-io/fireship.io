@@ -15,11 +15,10 @@ video_length: 1:13
 npm i react-hot-toast
 ```
 
-
 ### Code
 
-
 {{< file "react" "app/layout.tsx" >}}
+
 ```tsx
 import type { Metadata } from "next";
 import Link from "next/link";

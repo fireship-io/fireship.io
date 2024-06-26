@@ -16,4 +16,4 @@ free: true
 
 ## ✨ Trick - Symbol Search
 
-From the command palette, type `@` to quickly navigate to symbols within a file. 
+From the command palette, type `@` to quickly navigate to symbols within a file.

@@ -18,10 +18,10 @@ quiz: true
 
 First, build out the HTML for the UI. It has a placeholder for the image and a simple form with a single textarea element.
 
-
 {{< file "html" "index.html" >}}
+
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -32,11 +32,8 @@ First, build out the HTML for the UI. It has a placeholder for the image and a s
   <body>
     <main>
       <h1>AI Photo Generator</h1>
-      
 
-      <div id="result">
-        Image will appear here
-      </div>
+      <div id="result">Image will appear here</div>
 
       <form>
         <label for="prompt">Prompt</label>
@@ -54,30 +51,31 @@ First, build out the HTML for the UI. It has a placeholder for the image and a s
 Now we listen to the form submit event and use the browser `fetch` API to send a POST request to our Node server.
 
 {{< file "js" "main.js" >}}
+
 ```js
-import './style.css';
+import "./style.css";
 
-const form = document.querySelector('form');
+const form = document.querySelector("form");
 
-form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-    const data = new FormData(form);
+  const data = new FormData(form);
 
-    const response = await fetch('http://localhost:8080/dream', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        prompt: data.get('prompt'),
-      }),
-    });
+  const response = await fetch("http://localhost:8080/dream", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      prompt: data.get("prompt"),
+    }),
+  });
 
-    const { image } = await response.json();
+  const { image } = await response.json();
 
-    const result = document.querySelector('#result');
-    result.innerHTML = `<img src="${image}" width="512" />`;
+  const result = document.querySelector("#result");
+  result.innerHTML = `<img src="${image}" width="512" />`;
 });
 ```
 

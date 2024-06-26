@@ -7,8 +7,8 @@ draft: false
 vimeo: 599117582
 emoji: ☁️
 video_length: 1:40
-chapter_start: Remote 
-chapter_icon: ☁️ 
+chapter_start: Remote
+chapter_icon: ☁️
 quiz: true
 ---
 
@@ -21,6 +21,7 @@ quiz: true
 List current remotes in the local repo:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git remote
 ```
@@ -28,6 +29,7 @@ git remote
 ## Create a new remote
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git remote add origin <url-to-your-github-repo>
 ```

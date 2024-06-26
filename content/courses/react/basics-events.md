@@ -12,21 +12,22 @@ video_length: 1:23
 ## Events in Vanilla JS
 
 {{< file "js" "app.js" >}}
-```javascript
-const button = document.querySelector('button');
 
-button.addEventListener('click', (event) => {
-    console.log(event);
-})
+```javascript
+const button = document.querySelector("button");
+
+button.addEventListener("click", (event) => {
+  console.log(event);
+});
 ```
 
 ## Events in React
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function Events() {
-
-  return <button onClick={(event => console.log(event))}>Click</button>
+  return <button onClick={(event) => console.log(event)}>Click</button>;
 }
 ```
 

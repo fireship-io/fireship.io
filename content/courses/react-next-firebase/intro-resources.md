@@ -17,7 +17,6 @@ quiz: true
   <p>Using other versions could result in broken code</p>
 </quiz-modal>
 
-
 ## Essentials
 
 - 🚀 [Live Demo](https://next.fireship.io/)
@@ -38,12 +37,13 @@ quiz: true
 
 ## Packages
 
-It is highly recommended that you follow along with the same package versions show below.  
+It is highly recommended that you follow along with the same package versions show below.
 
 {{< file "npm" "package.json" >}}
+
 ```json
 {
-    // ...
+  // ...
 
   "dependencies": {
     "firebase": "^8.2.1",

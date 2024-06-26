@@ -14,6 +14,7 @@ Add the Google Fonts package to your `pubspec.yaml` file.
 # Customize the Global Font
 
 {{< file "flutter" "theme.dart" >}}
+
 ```dart
 import 'package:google_fonts/google_fonts.dart';
 

@@ -11,4 +11,4 @@ video_length: 1:20
 
 ## ✨ Trick - Use VS Code as an HTTP Client
 
-Install the Thunder Client extension. You can now sent HTTP requests to your server or API and keep track of the history. This extension replaces tools like Postman. 
+Install the Thunder Client extension. You can now sent HTTP requests to your server or API and keep track of the history. This extension replaces tools like Postman.

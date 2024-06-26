@@ -9,21 +9,21 @@ emoji: 💽
 video_length: 0:56
 ---
 
-Refer to the [Prisma setup docs](https://authjs.dev/reference/adapter/prisma) to address any issues. 
-
+Refer to the [Prisma setup docs](https://authjs.dev/reference/adapter/prisma) to address any issues.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm install @prisma/client @next-auth/prisma-adapter
 ```
 
 {{< file "ts" "route.ts" >}}
+
 ```typescript
-import { prisma } from '@/lib/prisma';
+import { prisma } from "@/lib/prisma";
 
 export const authOptions: NextAuthOptions = {
-
   adapter: PrismaAdapter(prisma),
-    //  ...
-}
+  //  ...
+};
 ```

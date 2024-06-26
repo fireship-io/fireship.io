@@ -1,8 +1,8 @@
 <svelte:options tag="mark-complete" />
 
 <script lang="ts">
-  import { canAccess, userProgress, modal } from '../../stores';
-  import { markComplete, markIncomplete } from '../../util/firebase';
+  import { canAccess, userProgress, modal } from "../../stores";
+  import { markComplete, markIncomplete } from "../../util/firebase";
   export let route = window.location.pathname;
   export let quiz = false;
   export let free = false;
@@ -10,7 +10,7 @@
   async function mark(isComplete: boolean) {
     if (isComplete) {
       if (quiz) {
-        modal.set('quiz');
+        modal.set("quiz");
         return;
       }
       await markComplete(route);
@@ -40,7 +40,7 @@
         >
       </button>
       <span class="msg" class:pink={quiz}
-        >{quiz ? 'pop quiz' : 'incomplete'}</span
+        >{quiz ? "pop quiz" : "incomplete"}</span
       >
     {/if}
   {:else}

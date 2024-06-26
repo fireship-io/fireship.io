@@ -6,7 +6,7 @@ lastmod: 2020-11-20T10:11:30-02:00
 draft: false
 youtube: sw1Uy3zwsLs
 emoji: 🔥
-chapter_start: Intro 
+chapter_start: Intro
 video_length: 2:15
 free: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: Create a Subscription 
+title: Create a Subscription
 description: Add a customer to a paid subscription plan
 weight: 51
 lastmod: 2020-04-20T10:23:30-09:00
@@ -11,17 +11,18 @@ video_length: 3:12
 
 ## Webhooks
 
-NOTE. I also highly recommend listening to the `customer.subscription.created` to update Firestore when a new subscription is created and/or `customer.subscription.deleted` for cancellations. See the full source code for implementation examples. 
+NOTE. I also highly recommend listening to the `customer.subscription.created` to update Firestore when a new subscription is created and/or `customer.subscription.deleted` for cancellations. See the full source code for implementation examples.
 
 ## Create a Subscription for Existing Customer
 
 {{< file "ts" "billing.ts" >}}
+
 ```typescript
-import { stripe } from './';
-import { db } from './firebase';
-import Stripe from 'stripe';
-import { getOrCreateCustomer } from './customers';
-import { firestore } from 'firebase-admin';
+import { stripe } from "./";
+import { db } from "./firebase";
+import Stripe from "stripe";
+import { getOrCreateCustomer } from "./customers";
+import { firestore } from "firebase-admin";
 
 /**
  * Attaches a payment method to the Stripe customer,
@@ -30,7 +31,7 @@ import { firestore } from 'firebase-admin';
 export async function createSubscription(
   userId: string,
   plan: string,
-  payment_method: string
+  payment_method: string,
 ) {
   const customer = await getOrCreateCustomer(userId);
 
@@ -45,45 +46,46 @@ export async function createSubscription(
   const subscription = await stripe.subscriptions.create({
     customer: customer.id,
     items: [{ plan }],
-    expand: ['latest_invoice.payment_intent'],
+    expand: ["latest_invoice.payment_intent"],
   });
-
 
   const invoice = subscription.latest_invoice as Stripe.Invoice;
   const payment_intent = invoice.payment_intent as Stripe.PaymentIntent;
 
   // Update the user's status
-  if (payment_intent.status === 'succeeded') {
+  if (payment_intent.status === "succeeded") {
     await db
-      .collection('users')
+      .collection("users")
       .doc(userId)
       .set(
         {
           stripeCustomerId: customer.id,
           activePlans: firestore.FieldValue.arrayUnion(plan),
         },
-        { merge: true }
+        { merge: true },
       );
   }
 
   return subscription;
 }
-
-
 ```
 
-## API Endpoint 
+## API Endpoint
 
 {{< file "ts" "api.ts" >}}
+
 ```typescript
 app.post(
-  '/subscriptions/',
+  "/subscriptions/",
   runAsync(async (req: Request, res: Response) => {
     const user = validateUser(req);
     const { plan, payment_method } = req.body;
-    const subscription = await createSubscription(user.uid, plan, payment_method);
+    const subscription = await createSubscription(
+      user.uid,
+      plan,
+      payment_method,
+    );
     res.send(subscription);
-  })
+  }),
 );
-
 ```

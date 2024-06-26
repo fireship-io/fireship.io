@@ -4,12 +4,12 @@ lastmod: 2019-10-09T20:31:24-07:00
 publishdate: 2019-10-09T20:31:24-07:00
 author: Jeff Delaney
 draft: false
-description: A collection of tips, tricks, and common mistakes you should know about when working with Firebase. 
-tags: 
-    - firebase
+description: A collection of tips, tricks, and common mistakes you should know about when working with Firebase.
+tags:
+  - firebase
 
 youtube: iWEgpdVSZyg
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -20,27 +20,27 @@ youtube: iWEgpdVSZyg
 #    rxdart: 0.20
 ---
 
-The list below outlines the Firebase tips presented in the video. 
+The list below outlines the Firebase tips presented in the video.
 
 ## Get Started
 
 1. Create a two Firebase Projects - one for development and another for live production data
 2. Link Google Analytics
-3. Limit permissions for employees, follow the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege) 
+3. Limit permissions for employees, follow the [Principle of Least Privilege](https://en.wikipedia.org/wiki/Principle_of_least_privilege)
 4. Update contact info for GDPR
 5. Add a project and don't worry about exposing your credentials in frontend code
 6. Upgrade to Blaze, then set a budget on GCP
 7. Generate detailed reports for billing
-8. Install the Firebase Tools CLI and GCloud. You should be able to run `firebase` and `gcloud` from the command line. 
+8. Install the Firebase Tools CLI and GCloud. You should be able to run `firebase` and `gcloud` from the command line.
 
 ## Hosting and Distribution
 
 9. Use App Distribution to bypass Google Play and Apple Test Flight
 10. Use NPM Scripts to build/deploy your app
 11. Use `--project` flag to avoid deploying to the wrong project
-12. Use the the cool new *web.app* domain
+12. Use the the cool new _web.app_ domain
 13. Add additional sites with multisite hosting
-14. Rewrite routes to Cloud Function or Cloud Run 
+14. Rewrite routes to Cloud Function or Cloud Run
 15. Rewrite routes Dynamic Links
 16. Set custom CORS Headers
 17. Set custom Cache Headers
@@ -59,15 +59,14 @@ The list below outlines the Firebase tips presented in the video.
 27. Angular App? Use AngularFire
 28. React App? Use ReactFire
 29. RxJS? Use RxFire
-30. Find additional projects from the FirebaseExtended Github Org. 
+30. Find additional projects from the FirebaseExtended Github Org.
 31. Use Performance Monitoring
 32. Use Crashlytics
 33. Use Analytics
 
-
 ## Auth + Firestore Techniques
 
-34. Get the current user as a Promise OR add a realtime listener. 
+34. Get the current user as a Promise OR add a realtime listener.
 35. Learn async programming
 36. Handle auth errors
 37. Implement lazy auth by linking auth methods
@@ -78,7 +77,7 @@ The list below outlines the Firebase tips presented in the video.
 42. Query collections with a common name using `collectionGroup`
 43. Many-To-Many with a UID Map
 44. Use duplication to increase performance and reduce costs
-45. Query Map values with dot notation 
+45. Query Map values with dot notation
 46. Query data once OR with a realtime listener
 47. Listen to specific doc changes
 48. Sync browser tabs for offline persistence
@@ -88,7 +87,7 @@ The list below outlines the Firebase tips presented in the video.
 52. Write to lists with array union & remove
 53. Query lists with array-contains
 54. Pipeline concurrent single doc read requests
-55. Use `serverTimestamp` to update times 
+55. Use `serverTimestamp` to update times
 56. Use `increment` to update counters
 57. Use the Distributed Counter extension
 58. Run atomic writes with `batch`
@@ -115,12 +114,12 @@ The list below outlines the Firebase tips presented in the video.
 73. Assign metadata
 74. Use the Resizer extension
 
-##  Admin
+## Admin
 
 75. Create a Admin script for Node.js
 76. Keep your Service Account private via gitignore or an environment variable
 77. Seed the Database with Faker.js
-78. Use the REST APIs 
+78. Use the REST APIs
 79. Integrate googleapis for better REST code.
 
 ## Cloud Functions
@@ -135,7 +134,7 @@ The list below outlines the Firebase tips presented in the video.
 87. Always return a Promise
 88. Use PubSub functions for internal services
 89. Use callable functions for user auth
-90. Delete Firestore collections in batches 
+90. Delete Firestore collections in batches
 91. Write small, pure JS functions
 92. Use Third-Party APIs
 93. Deploy single functions
@@ -148,6 +147,6 @@ The list below outlines the Firebase tips presented in the video.
 97. Create audiences
 98. Customize the UX with remote config
 99. Send smart notifications
-100. Sprinkle in some Machine Learning
+100.  Sprinkle in some Machine Learning
 
 And don't forget to have fun!

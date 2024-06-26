@@ -5,12 +5,12 @@ publishdate: 2017-07-05T16:00:54-07:00
 author: Jeff Delaney
 draft: false
 description: Build a Facebook-inspired reaction component to allow users to like or react to your content.
-tags: 
-    - angular
-    - firebase
+tags:
+  - angular
+  - firebase
 
 youtube: _G5blkXLePY
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,7 +21,7 @@ youtube: _G5blkXLePY
 #    rxdart: 0.20
 ---
 
-⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices. 
+⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices.
 
 <p>In this lesson, we are going to build a Facebook-inspired reaction component. It works by mapping each reaction type to an integer then saves it with an associated userId. This is similar to the reddit voting system lesson, with some added complexity to manage the various reaction types. </p>
 
@@ -38,7 +38,7 @@ youtube: _G5blkXLePY
 <p>For the sake of simplicity, let’s map the emojis to integers. A user can only have one reaction per item. To avoid mixing up the index of each reaction emoji, we will define them in an array. </p>
 
 ```js
-emojiList = ['like', 'love', 'wow', 'haha', 'sad', 'angry']
+emojiList = ["like", "love", "wow", "haha", "sad", "angry"];
 ```
 
 <p>Now each emoji name is connected to an integer index, `like-0`, `love-1`, `wow-2`, etc. </p>
@@ -60,44 +60,48 @@ reactions
 ### reaction.service.ts
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
+import { Injectable } from "@angular/core";
+import {
+  AngularFireDatabase,
+  FirebaseObjectObservable,
+} from "angularfire2/database";
+import { AngularFireAuth } from "angularfire2/auth";
 import * as _ from "lodash";
 
 @Injectable()
 export class ReactionService {
-
   userId: string;
-  emojiList = ['like', 'love', 'wow', 'haha', 'sad', 'angry']
+  emojiList = ["like", "love", "wow", "haha", "sad", "angry"];
 
-  constructor(private db: AngularFireDatabase, private afAuth: AngularFireAuth) {
+  constructor(
+    private db: AngularFireDatabase,
+    private afAuth: AngularFireAuth,
+  ) {
     this.afAuth.authState.subscribe((auth) => {
-      if (auth) this.userId = auth.uid
+      if (auth) this.userId = auth.uid;
     });
   }
 
   getReactions(itemId): FirebaseObjectObservable<any> {
-    return this.db.object(`reactions/${itemId}`)
+    return this.db.object(`reactions/${itemId}`);
   }
 
-  updateReaction(itemId, reaction=0) {
-    const data = { [this.userId]: reaction }
-    this.db.object(`reactions/${itemId}`).update(data)
+  updateReaction(itemId, reaction = 0) {
+    const data = { [this.userId]: reaction };
+    this.db.object(`reactions/${itemId}`).update(data);
   }
 
   removeReaction(itemId) {
-    this.db.object(`reactions/${itemId}/${this.userId}`).remove()
+    this.db.object(`reactions/${itemId}/${this.userId}`).remove();
   }
 
   countReactions(reactions: Array<any>) {
-    return _.mapValues(_.groupBy(reactions), 'length')
+    return _.mapValues(_.groupBy(reactions), "length");
   }
 
   userReaction(reactions: Array<any>) {
-    return _.get(reactions, this.userId)
+    return _.get(reactions, this.userId);
   }
-
 }
 ```
 
@@ -123,17 +127,16 @@ export class ReactionService {
 ### reaction.component.ts
 
 ```typescript
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { ReactionService } from '../reaction.service';
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { ReactionService } from "../reaction.service";
 import * as _ from "lodash";
 
 @Component({
-  selector: 'reaction',
-  templateUrl: './reaction.component.html',
-  styleUrls: ['./reaction.component.scss']
+  selector: "reaction",
+  templateUrl: "./reaction.component.html",
+  styleUrls: ["./reaction.component.scss"],
 })
 export class ReactionComponent implements OnInit, OnDestroy {
-
   @Input() itemId: string;
 
   showEmojis = false;
@@ -144,44 +147,41 @@ export class ReactionComponent implements OnInit, OnDestroy {
 
   subscription: any;
 
-  constructor(private reactionSvc: ReactionService) { }
+  constructor(private reactionSvc: ReactionService) {}
 
   ngOnInit() {
-    this.emojiList = this.reactionSvc.emojiList
+    this.emojiList = this.reactionSvc.emojiList;
 
-    this.subscription = this.reactionSvc.getReactions(this.itemId)
-                         .subscribe(reactions => {
-
-                           this.reactionCount = this.reactionSvc.countReactions(reactions)
-                           this.userReaction  = this.reactionSvc.userReaction(reactions)
-
-    })
+    this.subscription = this.reactionSvc
+      .getReactions(this.itemId)
+      .subscribe((reactions) => {
+        this.reactionCount = this.reactionSvc.countReactions(reactions);
+        this.userReaction = this.reactionSvc.userReaction(reactions);
+      });
   }
-
 
   react(val) {
     if (this.userReaction === val) {
-      this.reactionSvc.removeReaction(this.itemId)
+      this.reactionSvc.removeReaction(this.itemId);
     } else {
-      this.reactionSvc.updateReaction(this.itemId, val)
+      this.reactionSvc.updateReaction(this.itemId, val);
     }
   }
 
   toggleShow() {
-    this.showEmojis = !this.showEmojis
+    this.showEmojis = !this.showEmojis;
   }
 
-
   emojiPath(emoji) {
-   return `assets/reactions/${emoji}.svg`
+    return `assets/reactions/${emoji}.svg`;
   }
 
   hasReactions(index) {
-    return _.get(this.reactionCount, index.toString())
+    return _.get(this.reactionCount, index.toString());
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
   }
 }
 ```
@@ -203,17 +203,19 @@ First, there needs to be some type of parent component that can be reacted to, w
 <p>Lastly, We loop over the emojis again, this time using the `reactionCount` to show the number reactions for each type. </p>
 
 ```html
-<div class="wrapper" (mouseenter)="toggleShow(true)" (mouseleave)="toggleShow(false)">
+<div
+  class="wrapper"
+  (mouseenter)="toggleShow(true)"
+  (mouseleave)="toggleShow(false)"
+>
   <div class="emojis" *ngIf="showEmojis">
-
     <span *ngFor="let emoji of emojiList; index as i;">
-      <img [src]="emojiPath(emoji)" width='75px' (click)="react(i)">
+      <img [src]="emojiPath(emoji)" width="75px" (click)="react(i)" />
     </span>
-
   </div>
 
   <span class="like" (click)="react(0)" [class.liked]="userReaction != null">
-      Like
+    Like
   </span>
 
   <span *ngIf="userReaction != null">
@@ -221,13 +223,10 @@ First, there needs to be some type of parent component that can be reacted to, w
   </span>
 
   <div class="reactions">
-
     <div *ngFor="let emoji of emojiList; index as i;" class="reaction-counts">
-
       <span *ngIf="hasReactions(i)">
-        <img [src]="emojiPath(emoji)"> {{ reactionCount[i] }}
+        <img [src]="emojiPath(emoji)" /> {{ reactionCount[i] }}
       </span>
-
     </div>
   </div>
 </div>
@@ -251,14 +250,13 @@ First, there needs to be some type of parent component that can be reacted to, w
       transition: transform 250ms ease;
     }
   }
-
 }
 
 .like {
   cursor: pointer;
   &.liked {
     font-weight: bold;
-    color: #3B5998;
+    color: #3b5998;
   }
 }
 
@@ -267,11 +265,10 @@ First, there needs to be some type of parent component that can be reacted to, w
   top: -80px;
   background: white;
   border: 1px lightgray solid;
-  box-shadow: 0px 0px 16px 3px rgba(0,0,0,0.45);
+  box-shadow: 0px 0px 16px 3px rgba(0, 0, 0, 0.45);
   border-radius: 80px;
   display: inline-block;
 }
-
 
 .reactions {
   height: 40px;

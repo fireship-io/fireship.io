@@ -1,6 +1,6 @@
 ---
 title: Optional Chaining
-description: Call object properties safely 
+description: Call object properties safely
 weight: 23
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
@@ -16,10 +16,10 @@ quiz: true
 
 ## Optional Chaining
 
-Optional chaining `?` is a relatively new operator that was introduced in ES2020. It allows you to call object properties safely, without throwing an error. When calling properties without this operator, you many crash your applcation with the error `Cannot read property 'foo' of undefined`. 
+Optional chaining `?` is a relatively new operator that was introduced in ES2020. It allows you to call object properties safely, without throwing an error. When calling properties without this operator, you many crash your applcation with the error `Cannot read property 'foo' of undefined`.
 
 ```js
-const person = { };
+const person = {};
 
 const dude = person.name;
 console.log(foo); // Uncaught TypeError: Cannot read property 'bar' of undefined

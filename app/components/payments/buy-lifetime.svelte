@@ -1,42 +1,42 @@
 <svelte:options tag="buy-lifetime" />
 
 <script lang="ts">
-  import { callUserAPI } from '../../util/firebase';
-  import { products, toast } from '../../stores';
+  import { callUserAPI } from "../../util/firebase";
+  import { products, toast } from "../../stores";
   let loading = false;
   export let enterprise = false;
 
-  let text = enterprise ? 'upgrade my team' : 'upgrade for life';
+  let text = enterprise ? "upgrade my team" : "upgrade for life";
   let price = enterprise ? products.enterprise.price : products.lifetime.price;
   let seats = 5;
-  let url = '';
+  let url = "";
 
   function setSeats(val: number) {
     seats = val;
     if (seats < 5) {
       seats = 5;
-      toast.set({ message: 'This plan has a 5 seat minimum', type: 'error' });
+      toast.set({ message: "This plan has a 5 seat minimum", type: "error" });
     }
     if (seats > 50) {
       seats = 50;
       toast.set({
-        message: 'Maximum 50 seats. Contact for larger plans',
-        type: 'error',
+        message: "Maximum 50 seats. Contact for larger plans",
+        type: "error",
       });
     }
   }
   async function getSession() {
     loading = true;
     url = await callUserAPI<string>({
-      fn: 'createPaymentSession',
+      fn: "createPaymentSession",
       payload: {
-        productType: enterprise ? 'enterprise' : 'lifetime',
+        productType: enterprise ? "enterprise" : "lifetime",
         price,
         seats: enterprise ? seats : 1,
       },
     });
 
-    if (url) window.open(url, '_blank')?.focus();
+    if (url) window.open(url, "_blank")?.focus();
     loading = false;
   }
 </script>
@@ -62,7 +62,7 @@
   class:btn-blue={enterprise}
 >
   {#if loading}<loading-spinner />{/if}
-  {loading ? 'loading...' : text}
+  {loading ? "loading..." : text}
 </button>
 
 {#if url}
@@ -94,6 +94,6 @@
     @apply text-center my-3;
   }
   a {
-  @apply text-blue-500 block text-center text-sm;
-}
+    @apply text-blue-500 block text-center text-sm;
+  }
 </style>

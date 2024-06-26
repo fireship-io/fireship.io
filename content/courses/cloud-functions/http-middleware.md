@@ -12,11 +12,12 @@ emoji: 📡
 ---
 
 {{< file "ts" "http.ts" >}}
+
 ```ts
 // Custom Middleware
 const auth = (request, response, next) => {
   if (!request.headers.authorization) {
-    response.status(400).send('unauthorized');
+    response.status(400).send("unauthorized");
   }
   next();
 };
@@ -25,4 +26,4 @@ const auth = (request, response, next) => {
 const app = express();
 app.use(cors({ origin: true }));
 app.use(auth);
-
+```

@@ -7,10 +7,11 @@ draft: false
 vimeo: 486584897
 emoji: 🛡️
 video_length: 4:29
-chapter_start: Advanced Concepts 
+chapter_start: Advanced Concepts
 ---
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
     match /users/{userId} {
 
@@ -24,17 +25,17 @@ chapter_start: Advanced Concepts
       allow read: if resource.data.status == 'published';
 
       allow create: if canCreateTodo();
-                    
 
-      allow update: if belongsTo() 
+
+      allow update: if belongsTo()
                     && request.resource.data.keys().hasOnly(['text', 'status']);
     }
 
-    function isLoggedIn() { 
+    function isLoggedIn() {
       return request.auth.uid != null;
     }
 
-    function belongsTo(userId) {    
+    function belongsTo(userId) {
       return request.auth.uid == userId || request.auth.uid == resource.data.uid;
     }
 
@@ -44,5 +45,5 @@ chapter_start: Advanced Concepts
 
       return belongsTo(uid) && hasValidTimestamp;
     }
-    
+
 ```

@@ -9,7 +9,6 @@ emoji: 🎣
 video_length: 2:43
 ---
 
-
 use-session.ts:
 
 ```ts
@@ -50,7 +49,7 @@ export function useSession(): SupashipUserInfo {
             channel.unsubscribe();
           }
           setChannel(newChannel);
-        }
+        },
       );
     } else if (!userInfo.session?.user) {
       channel?.unsubscribe();
@@ -78,7 +77,7 @@ export function useSession(): SupashipUserInfo {
         },
         (payload) => {
           setUserInfo({ ...userInfo, profile: payload.new as UserProfile });
-        }
+        },
       )
       .subscribe();
   }

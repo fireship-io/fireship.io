@@ -7,5 +7,3 @@ draft: false
 vimeo: 348519307
 emoji: 🎉
 ---
-
-

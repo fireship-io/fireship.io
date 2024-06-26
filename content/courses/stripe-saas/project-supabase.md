@@ -13,7 +13,7 @@ video_length: 3:27
 
 Create a free [Supabase](https://supabase.com/) project and database. Add your environment variables to the `.env.local` file.
 
-Go to `auth >> providers >> email` and enable email sign-in. Set the `confirm email` option to FALSE. 
+Go to `auth >> providers >> email` and enable email sign-in. Set the `confirm email` option to FALSE.
 
 ### Commands
 
@@ -23,12 +23,12 @@ Install the Supabase client library.
 npm i @supabase/supabase-js
 ```
 
-
 ### Code
 
 Update your `.env.local` file with the following:
 
 {{< file "cog" ".env.local" >}}
+
 ```env
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 NEXT_PUBLIC_SUPABASE_URL=https://....supabase.co
@@ -37,25 +37,26 @@ SUPABASE_SECRET_KEY=
 
 The `supabaseClient` file is used to interact with the Supabase on the frontend.
 
-
 {{< file "ts" "utils/supabaseClient.ts" >}}
+
 ```tsx
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from "@supabase/supabase-js";
 export const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!, 
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+);
 ```
 
 The `supabaseServer` file is used to create a client that connects ONLY to a secure backend. It bypasses row-level security and is used for admin tasks.
 
 {{< file "ts" "utils/supabaseServer.ts" >}}
+
 ```tsx
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from "@supabase/supabase-js";
 export const supabaseAdmin = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!, 
-    process.env.SUPABASE_SECRET_KEY!
-)
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SECRET_KEY!,
+);
 ```
 
 Create the necessary database tables by pasting this code into the Supabase SQL editor:

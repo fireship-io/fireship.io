@@ -12,5 +12,4 @@ chapter_start: Integrated Development Environment
 
 ## ✨ Trick - Organize the Terminal
 
-Open multiple terminal sessions, then right click it to customize its name, icon, and color. 
-
+Open multiple terminal sessions, then right click it to customize its name, icon, and color.

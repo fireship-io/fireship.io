@@ -12,6 +12,7 @@ video_length: 2:42
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'dart:math';
 
@@ -67,7 +68,7 @@ class _CoolBoxState extends State<CoolBox> {
            color = Color.fromRGBO(r, b, g, 1);
          });
 
-        
+
        },
      )
    );

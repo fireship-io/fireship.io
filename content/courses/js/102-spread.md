@@ -1,6 +1,6 @@
 ---
 title: Spread
-description: Use the spread syntax to combine objects  
+description: Use the spread syntax to combine objects
 weight: 22
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
@@ -27,13 +27,13 @@ const newObj = {
 
 ## Spread Syntax
 
-The spread syntax `...` is a relatively new operator that was introduced in ES2018. It provides a concise way to combine objects and arrays. 
+The spread syntax `...` is a relatively new operator that was introduced in ES2018. It provides a concise way to combine objects and arrays.
 
 ```js
-const obj = { 
-    foo: 1, 
-    bar: 2, 
-    baz: 3 
+const obj = {
+    foo: 1,
+    bar: 2,
+    baz: 3
 };
 const newObj = {
     foo: 4
@@ -42,7 +42,7 @@ const newObj = {
 console.log(newObj); // { foo: 1, bar: 2, baz: 3 }
 ```
 
-It's also useful for combining arrays. 
+It's also useful for combining arrays.
 
 ```js
 const arr1 = [1, 2, 3];

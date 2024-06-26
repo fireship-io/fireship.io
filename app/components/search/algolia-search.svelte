@@ -1,15 +1,15 @@
 <svelte:options tag="algolia-search" />
 
 <script lang="ts">
-  import algolia from 'algoliasearch/lite';
-  import { modal } from '../../stores/modal';
-  import { router } from '../../main';
-  import { onMount } from 'svelte';
+  import algolia from "algoliasearch/lite";
+  import { modal } from "../../stores/modal";
+  import { router } from "../../main";
+  import { onMount } from "svelte";
 
-  const APP_ID = '05VYZFXKNM';
-  const API_KEY = 'a0837b31f4379765240c2753fa141aa2';
+  const APP_ID = "05VYZFXKNM";
+  const API_KEY = "a0837b31f4379765240c2753fa141aa2";
   const client = algolia(APP_ID, API_KEY);
-  const index = client.initIndex('content');
+  const index = client.initIndex("content");
 
   let inputTag;
   let results: any;
@@ -18,7 +18,7 @@
   onMount(() => {
     inputTag?.focus();
     return () => {
-      window.removeEventListener('keydown', handleSpecialKeys);
+      window.removeEventListener("keydown", handleSpecialKeys);
     };
   });
 
@@ -26,9 +26,9 @@
     const q = (e.target as HTMLInputElement).value;
     results = await index.search(q, {
       hitsPerPage: 7,
-      attributesToSnippet: ['summary'],
+      attributesToSnippet: ["summary"],
       highlightPreTag: '<mark class="high">',
-      highlightPostTag: '</mark>',
+      highlightPostTag: "</mark>",
     });
     hits = results.hits;
     activeHit = 0;
@@ -48,13 +48,13 @@
     }
   }
   function handleSpecialKeys(e: KeyboardEvent) {
-    if (e.key === 'ArrowUp') {
+    if (e.key === "ArrowUp") {
       goUp();
     }
-    if (e.key === 'ArrowDown') {
+    if (e.key === "ArrowDown") {
       goDown();
     }
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       selectHit();
     }
   }
@@ -64,7 +64,7 @@
 
 <modal-dialog name="search">
   <form>
-    {#if $modal === 'search'}
+    {#if $modal === "search"}
       <!-- svelte-ignore a11y-autofocus -->
       <input
         class="input"

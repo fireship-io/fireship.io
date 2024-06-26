@@ -17,6 +17,7 @@ quiz: true
 Add an entire working directory to the staging area:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git add .
 ```
@@ -24,6 +25,7 @@ git add .
 Add a single file:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git add somefile.txt
 ```
@@ -31,6 +33,7 @@ git add somefile.txt
 Remove a file from the staging area:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git reset .
 ```

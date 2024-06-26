@@ -12,14 +12,13 @@ emoji: ☎️
 ---
 
 {{< file "js" "foo.js" >}}
+
 ```js
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
+  let app = firebase.app();
 
-    let app = firebase.app();
+  const sendText = firebase.functions().httpsCallable("sendText");
 
-
-    const sendText = firebase.functions().httpsCallable('sendText');
-
-    sendText({ message: 'Hello World!' })
+  sendText({ message: "Hello World!" });
 });
 ```

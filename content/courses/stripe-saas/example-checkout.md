@@ -16,48 +16,45 @@ video_length: 2:31
 ### Prompt Template
 
 ```text
-Create a POST endpoint in [SOME WEB FRAMEWORK] that creates a Stripe Checkout Session using the code below as a reference. 
+Create a POST endpoint in [SOME WEB FRAMEWORK] that creates a Stripe Checkout Session using the code below as a reference.
 ```
 
 ### Code
 
 {{< file "ts" "src/index.ts" >}}
+
 ```typescript
-import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
-import { HTTPException } from 'hono/http-exception';
-import Stripe from 'stripe';
-import 'dotenv/config'
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
+import { HTTPException } from "hono/http-exception";
+import Stripe from "stripe";
+import "dotenv/config";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+const app = new Hono();
 
-const app = new Hono()
+app.get("/success", (c) => {
+  return c.text("Success!");
+});
 
-app.get('/success', (c) => {
-  return c.text('Success!')
-})
+app.get("/cancel", (c) => {
+  return c.text("Hello Hono!");
+});
 
-app.get('/cancel', (c) => {
-  return c.text('Hello Hono!')
-})
-
-
-app.post('/checkout', async (c) => {
-  
-
+app.post("/checkout", async (c) => {
   try {
     const session = await stripe.checkout.sessions.create({
-      payment_method_types: ['card'],
+      payment_method_types: ["card"],
       line_items: [
         {
-          price: 'price_YOUR_PRICE_ID',
+          price: "price_YOUR_PRICE_ID",
           quantity: 1,
         },
       ],
-      mode: 'payment',
-      success_url: 'http://localhost:3000/success',
-      cancel_url: 'http://localhost:3000//cancel',
+      mode: "payment",
+      success_url: "http://localhost:3000/success",
+      cancel_url: "http://localhost:3000//cancel",
     });
 
     return c.json(session);
@@ -67,12 +64,11 @@ app.post('/checkout', async (c) => {
   }
 });
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+const port = 3000;
+console.log(`Server is running on port ${port}`);
 
 serve({
   fetch: app.fetch,
-  port
-})
+  port,
+});
 ```
-

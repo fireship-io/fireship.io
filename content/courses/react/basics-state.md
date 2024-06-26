@@ -12,9 +12,9 @@ video_length: 1:46
 ## Basic Usage
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function Stateful() {
-
   const [count, setCount] = useState(0);
   const [prevCount, setPrevCount] = useState(0);
 
@@ -38,9 +38,10 @@ function Stateful() {
 ## Updating Objects with useState
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function Stateful() {
-  const [state, setState] = useState({ count: 0, user: 'Bob' });
+  const [state, setState] = useState({ count: 0, user: "Bob" });
 
   const handleClick = () => {
     setState({

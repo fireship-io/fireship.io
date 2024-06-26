@@ -14,10 +14,11 @@ video_length: 2:22
 First, add a git repo to your project:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git init
 ```
 
 ## ✨ Trick - Revert a Commit
 
-One the most useful git techniques is to revert a commit. Use the *source control* panel in  to stage files, commit them, then revert the commit.
+One the most useful git techniques is to revert a commit. Use the _source control_ panel in to stage files, commit them, then revert the commit.

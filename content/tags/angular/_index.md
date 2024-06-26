@@ -5,5 +5,3 @@ link: https://angular.io/
 course: The Angular Firebase Project Course
 course_link: /courses/angular
 ---
-
-

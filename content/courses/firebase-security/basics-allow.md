@@ -10,6 +10,7 @@ video_length: 1:42
 ---
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
   match /users/{docId=**} {
 
@@ -21,6 +22,6 @@ video_length: 1:42
       allow create;
       allow update;
       allow delete;
-      
+
     }
 ```

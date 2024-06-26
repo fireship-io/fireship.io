@@ -10,6 +10,7 @@ video_length: 1:10
 ---
 
 {{< file "react" "error.tsx" >}}
+
 ```jsx
 'use client'; // Error components must be Client components
 

@@ -7,5 +7,5 @@ draft: false
 emoji: 🔥
 vimeo: 336361919
 video_length: 4:21
-chapter_start: Firestore 
+chapter_start: Firestore
 ---

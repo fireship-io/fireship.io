@@ -1,37 +1,37 @@
 <svelte:options tag="manage-subscription" />
 
 <script lang="ts">
-  import { callUserAPI } from '../../util/firebase';
-  import { toast } from '../../stores';
+  import { callUserAPI } from "../../util/firebase";
+  import { toast } from "../../stores";
   let loading = false;
   let subs = null;
 
   function relativeTime(date: number) {
-    if (!date) return 'never';
-    let fmt = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
+    if (!date) return "never";
+    let fmt = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
     let diff = -Math.floor((Date.now() - date * 1000) / 1000) / 86400;
-    return fmt.format(Math.floor(diff), 'day');
+    return fmt.format(Math.floor(diff), "day");
   }
 
   async function getSubscriptions() {
     loading = true;
-    const res = await callUserAPI<any>({ fn: 'getSubscriptions', payload: {} });
+    const res = await callUserAPI<any>({ fn: "getSubscriptions", payload: {} });
     subs = res?.data || [];
-    console.log(subs)
+    console.log(subs);
     loading = false;
   }
 
   async function cancel(subscription: string) {
     loading = true;
     const res = await callUserAPI<any>({
-      fn: 'cancelSubscription',
+      fn: "cancelSubscription",
       payload: { subscription },
     });
     if (res) {
       await getSubscriptions();
       toast.set({
-        message: 'Subscription canceled. It was fun while it lasted',
-        type: 'info',
+        message: "Subscription canceled. It was fun while it lasted",
+        type: "info",
       });
     }
     loading = false;
@@ -40,12 +40,12 @@
   async function uncancel(subscription: string) {
     loading = true;
     const res = await callUserAPI<any>({
-      fn: 'unCancelSubscription',
+      fn: "unCancelSubscription",
       payload: { subscription },
     });
     if (res) {
       await getSubscriptions();
-      toast.set({ message: 'Subscription reactivated!', type: 'success' });
+      toast.set({ message: "Subscription reactivated!", type: "success" });
     }
     loading = false;
   }
@@ -54,7 +54,7 @@
 {#if !subs}
   <button on:click={getSubscriptions}>
     {#if loading}<loading-spinner />{/if}
-    {loading ? 'loading...' : 'manage subscription'}
+    {loading ? "loading..." : "manage subscription"}
   </button>
 {/if}
 
@@ -66,11 +66,17 @@
         <h3>ID: {sub.id}</h3>
         <p>PRO Status: {sub.status}</p>
         <p>
-          Plan: ${sub.plan.amount / 100} 
-          per {sub.plan.interval_count} {sub.plan.interval_count > 1 ? sub.plan.interval + 's' : sub.plan.interval}
+          Plan: ${sub.plan.amount / 100}
+          per {sub.plan.interval_count}
+          {sub.plan.interval_count > 1
+            ? sub.plan.interval + "s"
+            : sub.plan.interval}
         </p>
         {#if sub.discount}
-          <p>Discount: %{sub.discount.coupon.percent_off} off {sub.discount.coupon.duration}</p>
+          <p>
+            Discount: %{sub.discount.coupon.percent_off} off {sub.discount
+              .coupon.duration}
+          </p>
         {/if}
 
         {#if !sub.canceled_at}
@@ -85,10 +91,10 @@
           </button>
         {/if}
 
-        {#if sub.canceled_at && sub.status === 'active'}
+        {#if sub.canceled_at && sub.status === "active"}
           <p class="warn">
             Your subscription is canceled. PRO access will end {relativeTime(
-              sub.cancel_at
+              sub.cancel_at,
             )}
           </p>
           <button

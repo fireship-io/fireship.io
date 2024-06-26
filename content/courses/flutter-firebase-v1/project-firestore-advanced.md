@@ -11,9 +11,10 @@ video_length: 7:01
 
 ## Data Models
 
-Model Firestore data as a Dart class. 
+Model Firestore data as a Dart class.
 
 {{< file "dart" "models.dart" >}}
+
 ```dart
 class Option {
   String value;
@@ -42,7 +43,7 @@ class Question {
 
 ///// Database Collections
 
-class Quiz { 
+class Quiz {
   String id;
   String title;
   String description;
@@ -62,7 +63,7 @@ class Quiz {
       questions: (data['questions'] as List ?? []).map((v) => Question.fromMap(v)).toList()
     );
   }
-  
+
 }
 
 
@@ -109,15 +110,16 @@ class Report {
 
 ## Global Data Mapping
 
-Map the data types to their constructors so they can be instantiated dynamically. 
+Map the data types to their constructors so they can be instantiated dynamically.
 
 {{< file "dart" "globals.dart" >}}
+
 ```dart
 import 'services.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 
 
-/// Static global state. Immutable services that do not care about build context. 
+/// Static global state. Immutable services that do not care about build context.
 class Global {
 
     // Data Models
@@ -132,9 +134,10 @@ class Global {
 
 ## Data Fetching Services
 
-Create generic services for fetching data from Firestore as a document or Collection. 
+Create generic services for fetching data from Firestore as a document or Collection.
 
 {{< file "dart" "db.dart" >}}
+
 ```dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -146,7 +149,7 @@ import './globals.dart';
 
 class Document<T> {
   final Firestore _db = Firestore.instance;
-  final String path; 
+  final String path;
   DocumentReference ref;
 
   Document({ this.path }) {
@@ -169,7 +172,7 @@ class Document<T> {
 
 class Collection<T> {
   final Firestore _db = Firestore.instance;
-  final String path; 
+  final String path;
   CollectionReference ref;
 
   Collection({ this.path }) {

@@ -9,13 +9,14 @@ emoji: 🍱
 video_length: 6:36
 ---
 
-Use the Angular [CDK Drag and Drop](https://material.angular.io/cdk/drag-drop/overview) Module to enable reordering of Kanban boards and tasks. 
+Use the Angular [CDK Drag and Drop](https://material.angular.io/cdk/drag-drop/overview) Module to enable reordering of Kanban boards and tasks.
 
 ## Steps
 
 ### Step 1 - Initial Setup
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g c kanban/board-list
 ng g c kanban/board
@@ -24,30 +25,28 @@ ng g c kanban/board
 Point the kanban router to the board list
 
 {{< file "ngts" "kanban-routing.module.ts" >}}
+
 ```typescript
-import { BoardListComponent } from './board-list/board-list.component';
+import { BoardListComponent } from "./board-list/board-list.component";
 
-
-const routes: Routes = [
-  { path: '', component: BoardListComponent }
-];
-
+const routes: Routes = [{ path: "", component: BoardListComponent }];
 ```
 
 ### Step 2 - Board List
 
 {{< file "ngts" "board-list.component.ts" >}}
+
 ```typescript
-import { Component, OnInit, OnDestroy  } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Subscription } from 'rxjs';
-import { Board } from '../board.model';
-import { BoardService } from '../board.service';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { Subscription } from "rxjs";
+import { Board } from "../board.model";
+import { BoardService } from "../board.service";
 
 @Component({
-  selector: 'app-board-list',
-  templateUrl: './board-list.component.html',
-  styleUrls: ['./board-list.component.scss']
+  selector: "app-board-list",
+  templateUrl: "./board-list.component.html",
+  styleUrls: ["./board-list.component.scss"],
 })
 export class BoardListComponent implements OnInit, OnDestroy {
   boards: Board[];
@@ -58,7 +57,7 @@ export class BoardListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.sub = this.boardService
       .getUserBoards()
-      .subscribe(boards => (this.boards = boards));
+      .subscribe((boards) => (this.boards = boards));
   }
 
   ngOnDestroy() {
@@ -69,11 +68,11 @@ export class BoardListComponent implements OnInit, OnDestroy {
     moveItemInArray(this.boards, event.previousIndex, event.currentIndex);
     this.boardService.sortBoards(this.boards);
   }
-
 }
 ```
 
 {{< file "html" "board-list.component.html" >}}
+
 ```html
 <div
   cdkDropList
@@ -86,13 +85,7 @@ export class BoardListComponent implements OnInit, OnDestroy {
   </app-board>
 
   <div class="board-button">
-    <button
-      mat-raised-button
-      color="accent"
-      cdkDragDisabled
-    >
-      New Board
-    </button>
+    <button mat-raised-button color="accent" cdkDragDisabled>New Board</button>
   </div>
 </div>
 ```
@@ -100,15 +93,16 @@ export class BoardListComponent implements OnInit, OnDestroy {
 ### Step 2 - Board
 
 {{< file "ngts" "board.component.ts" >}}
+
 ```typescript
-import { Component, Input } from '@angular/core';
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
-import { BoardService } from '../board.service';
+import { Component, Input } from "@angular/core";
+import { CdkDragDrop, moveItemInArray } from "@angular/cdk/drag-drop";
+import { BoardService } from "../board.service";
 
 @Component({
-  selector: 'app-board',
-  templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  selector: "app-board",
+  templateUrl: "./board.component.html",
+  styleUrls: ["./board.component.scss"],
 })
 export class BoardComponent {
   @Input() board;
@@ -120,21 +114,17 @@ export class BoardComponent {
     this.boardService.updateTasks(this.board.id, this.board.tasks);
   }
 }
-
 ```
 
 {{< file "html" "board.component.html" >}}
+
 ```html
 <mat-card class="outer-card">
   <mat-card-header>
     <!-- Slot for the handle -->
     <ng-content></ng-content>
-    <mat-card-title>
-      {{ board.title }}
-    </mat-card-title>
-    <mat-card-subtitle>
-      {{ board.id }}
-    </mat-card-subtitle>
+    <mat-card-title> {{ board.title }} </mat-card-title>
+    <mat-card-subtitle> {{ board.id }} </mat-card-subtitle>
   </mat-card-header>
 
   <div

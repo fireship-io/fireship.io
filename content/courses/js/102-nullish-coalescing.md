@@ -14,16 +14,18 @@ quiz: true
   <h6>Which one of these values is truthy? </h6>
 </quiz-modal>
 
-
 ## Nullish Coalescing
 
-Nullish coalescing is a relativly new operator that was introduced in ES2020. It is similar to the logical OR operator `||`, but it only returns the right-hand side if the left-hand side is `null` or `undefined`. 
+Nullish coalescing is a relativly new operator that was introduced in ES2020. It is similar to the logical OR operator `||`, but it only returns the right-hand side if the left-hand side is `null` or `undefined`.
 
 ```js
-const foo = null ?? 'bar';
+const foo = null ?? "bar";
 console.log(foo); // 'bar'
 
-const foo = 0 ?? 'bar';
+const foo = 0 ?? "bar";
 console.log(foo); // 0
 ```
+
+```
+
 ```

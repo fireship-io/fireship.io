@@ -8,5 +8,3 @@ vimeo: 348519349
 emoji: 🎉
 chapter_start: Deployment
 ---
-
-

@@ -5,4 +5,3 @@ link: https://nextjs.org/
 course: Next.js - The Full Course
 course_link: /courses/react-next-firebase
 ---
-

@@ -12,6 +12,7 @@ video_length: 1:28
 ## Basic Maps
 
 {{< file "dart" "maps.dart" >}}
+
 ```dart
   Map<String, dynamic> book = {
     'title': 'Moby Dick',
@@ -26,6 +27,7 @@ video_length: 1:28
 ## Loop over a Map
 
 {{< file "dart" "maps.dart" >}}
+
 ```dart
   book.keys;
   book.values;

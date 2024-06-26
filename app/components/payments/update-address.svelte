@@ -1,24 +1,24 @@
 <svelte:options tag="update-address" />
 
 <script lang="ts">
-  import { callUserAPI } from '../../util/firebase';
-  import { writable } from 'svelte/store';
-  import { toast } from '../../stores';
-  const name = writable('');
+  import { callUserAPI } from "../../util/firebase";
+  import { writable } from "svelte/store";
+  import { toast } from "../../stores";
+  const name = writable("");
   const address = writable({
-    line1: '',
-    line2: '',
-    city: '',
-    state: '',
-    postal_code: '',
-    country: '',
+    line1: "",
+    line2: "",
+    city: "",
+    state: "",
+    postal_code: "",
+    country: "",
   });
   let show = false;
   let loading = false;
 
   async function getCustomer() {
     loading = true;
-    const cust = await callUserAPI<any>({ fn: 'getCustomer', payload: {} });
+    const cust = await callUserAPI<any>({ fn: "getCustomer", payload: {} });
     cust?.name && name.set(cust.name);
     cust?.address && address.set(cust.address);
 
@@ -29,12 +29,12 @@
   async function changeAddress() {
     loading = true;
     const res = await callUserAPI<any>({
-      fn: 'changeAddress',
+      fn: "changeAddress",
       payload: { address: $address, name: $name },
     });
 
     if (res) {
-      toast.set({ message: 'Address updated', type: 'success' });
+      toast.set({ message: "Address updated", type: "success" });
       show = false;
     }
     loading = false;
@@ -99,7 +99,7 @@
 
   <button class="update" on:click={changeAddress}>
     {#if loading}<loading-spinner />{/if}
-    {loading ? 'updating...' : 'save address'}
+    {loading ? "updating..." : "save address"}
   </button>
 {/if}
 

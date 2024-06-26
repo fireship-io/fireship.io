@@ -16,6 +16,4 @@ quiz: true
 
 # History of JavaScript
 
-Read the full [Weird History of JavaScript](https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb) article. 
-
-
+Read the full [Weird History of JavaScript](https://dev.to/codediodeio/the-weird-history-of-javascript-2bnb) article.

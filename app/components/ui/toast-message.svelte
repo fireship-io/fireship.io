@@ -1,46 +1,49 @@
 <svelte:options tag="toast-message" />
 
 <script lang="ts">
-  import { onMount } from 'svelte';
-  import { toast } from '../../stores/toast';
+  import { onMount } from "svelte";
+  import { toast } from "../../stores/toast";
   let activate = false;
   let currentToast: any;
   let timeout: NodeJS.Timeout;
   let defaultIcons = {
-    success: '✔️',
-    error: '☠️',
-    info: '💡'
-  }
+    success: "✔️",
+    error: "☠️",
+    info: "💡",
+  };
 
   onMount(() => {
-    toast.subscribe(msg => {
+    toast.subscribe((msg) => {
       currentToast = msg;
-      clearTimeout(timeout)
+      clearTimeout(timeout);
       if (msg) {
         timeout = setTimeout(() => {
           toast.set(null);
         }, msg?.delay || 10000);
 
         // delay hack for better animations
-        activate = false
+        activate = false;
         setTimeout(() => {
           activate = true;
         }, 200);
-
       }
-    })
-  })
+    });
+  });
 
-  $: typeClass = currentToast?.type || 'info';
+  $: typeClass = currentToast?.type || "info";
 </script>
 
 {#if currentToast}
-  <div class={`toast ${typeClass}`} on:click={() => toast.set(null)} class:active={activate}>
+  <div
+    class={`toast ${typeClass}`}
+    on:click={() => toast.set(null)}
+    class:active={activate}
+  >
     <div class="message">
       {currentToast.message}
     </div>
     <div class="icon">
-      {currentToast.icon ?? defaultIcons[currentToast.type ?? 'info']}
+      {currentToast.icon ?? defaultIcons[currentToast.type ?? "info"]}
     </div>
   </div>
 {/if}

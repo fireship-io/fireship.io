@@ -13,7 +13,6 @@ video_length: 0:57
 
 Put your cursor inside some HTML, then use the command `Emmet: Balance Outward` to select the outermost tag.
 
-
 ## ✨ Trick - Wrap with Abbreviation
 
 Ever wanted to wrap a block of HTML with a new parent tag? Just select the block of HTML you want to wrap, then use the command `Emmet: Wrap with Abbreviation` to place a new tag around it.

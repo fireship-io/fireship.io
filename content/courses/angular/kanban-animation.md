@@ -11,7 +11,6 @@ video_length: 3:06
 
 Animate the the CDK Drag & Drop elements using CSS transitions.
 
-
 ## Full Styles
 
 - [board.scss](https://github.com/codediodeio/angular-firestarter/blob/master/src/app/kanban/board/board.component.scss)
@@ -22,46 +21,22 @@ Animate the the CDK Drag & Drop elements using CSS transitions.
 ### Board List
 
 {{< file "html" "board-list.component.scss" >}}
+
 ```html
-.cdk-drag-placeholder {
-  opacity: 0.2;
-  width: 350px;
-  border: 5px dashed gray;
-  margin: 0 10px;
-}
-
-
-.cdk-drag-animating {
-  transition: transform 300ms ease;
-}
-
-.cdk-drop-list-dragging .cdk-drag {
-  transition: transform 300ms ease;
-}
+.cdk-drag-placeholder { opacity: 0.2; width: 350px; border: 5px dashed gray;
+margin: 0 10px; } .cdk-drag-animating { transition: transform 300ms ease; }
+.cdk-drop-list-dragging .cdk-drag { transition: transform 300ms ease; }
 ```
 
 ### Board
 
-
 {{< file "html" "board.component.scss" >}}
+
 ```html
-.cdk-drag-placeholder {
-  opacity: 0.5;
-}
-
-.cdk-drag-animating {
-  transition: transform 300ms ease;
-}
-
-.cdk-drop-list-dragging .cdk-drag {
-  transition: transform 300ms ease;
-}
-
-.blue { background: #71deff; color: black; }
-.green { background: #36e9b6; color: black;  }
-.yellow { background: #ffcf44; color: black; }
-.purple { background: #b15cff; }
-.red { background: #e74a4a; }
-.gray { background: gray; text-decoration: line-through; }
+.cdk-drag-placeholder { opacity: 0.5; } .cdk-drag-animating { transition:
+transform 300ms ease; } .cdk-drop-list-dragging .cdk-drag { transition:
+transform 300ms ease; } .blue { background: #71deff; color: black; } .green {
+background: #36e9b6; color: black; } .yellow { background: #ffcf44; color:
+black; } .purple { background: #b15cff; } .red { background: #e74a4a; } .gray {
+background: gray; text-decoration: line-through; }
 ```
-

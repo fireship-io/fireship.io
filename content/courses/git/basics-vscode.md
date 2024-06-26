@@ -14,4 +14,4 @@ quiz: true
   <h5>Which term describes the changes between the working tree and previously comitted files?</h5>
 </quiz-modal>
 
-VS Code is a powerful tool for working with git. You can use it to run commands without the CLI, sync it up to GitHub, and to manage your git repositories. Learn more in the [official docs](https://code.visualstudio.com/docs/editor/versioncontrol). 
+VS Code is a powerful tool for working with git. You can use it to run commands without the CLI, sync it up to GitHub, and to manage your git repositories. Learn more in the [official docs](https://code.visualstudio.com/docs/editor/versioncontrol).

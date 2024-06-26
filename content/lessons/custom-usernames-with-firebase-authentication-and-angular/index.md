@@ -5,12 +5,12 @@ publishdate: 2017-06-24T15:27:32-07:00
 author: Jeff Delaney
 draft: false
 description: Give Firebase users custom usernames after and validate them asynchronously
-tags: 
-    - angular
-    - firebase
+tags:
+  - angular
+  - firebase
 
 youtube: NLWHEiH1FZY
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,7 +21,7 @@ youtube: NLWHEiH1FZY
 #    rxdart: 0.20
 ---
 
-⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app and the [custom Firebase Usernames](/lessons/custom-usernames-firebase) tutorial. 
+⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app and the [custom Firebase Usernames](/lessons/custom-usernames-firebase) tutorial.
 
 <p>Firebase authentication is super convenient, but you can’t easily assign custom usernames out of the box. In this lesson, we are going to give users custom usernames and asynchronously validate their availability during the signup process. On every keyup, the username will be checked for duplicates, so we can display a helpful message to the user.</p>
 
@@ -57,7 +57,6 @@ usernames
     CoolUserXYZ: idxyz123
 ```
 
-
 ## Auth Service that Verifies Username Availability
 
 First, let's create a `User` class to simplify the auth object. We only care about the `uid` and the `username`. As a constructor, it will take the Firebase AuthState from angularfire2.
@@ -67,52 +66,50 @@ First, let's create a `User` class to simplify the auth object. We only care abo
 ### auth.service.ts
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase } from 'angularfire2/database';
-import { AngularFireAuth } from 'angularfire2/auth';
-import * as firebase from 'firebase';
+import { Injectable } from "@angular/core";
+import { AngularFireDatabase } from "angularfire2/database";
+import { AngularFireAuth } from "angularfire2/auth";
+import * as firebase from "firebase";
 
-import 'rxjs/add/operator/switchMap';
+import "rxjs/add/operator/switchMap";
 
 export class User {
-
   uid: string;
   username: string = "";
 
   constructor(auth) {
-    this.uid = auth.uid
+    this.uid = auth.uid;
   }
-
 }
-
 
 @Injectable()
 export class AuthService {
-
   currentUser: User;
 
-  constructor(private afAuth: AngularFireAuth,
-              private db: AngularFireDatabase) {
+  constructor(
+    private afAuth: AngularFireAuth,
+    private db: AngularFireDatabase,
+  ) {
+    this.afAuth.authState
+      .switchMap((auth) => {
+        if (auth) {
+          this.currentUser = new User(auth);
+          return this.db.object(`/users/${auth.uid}`);
+        } else return [];
+      })
+      .subscribe((user) => {
+        this.currentUser["username"] = user.username;
+      });
+  }
 
-              this.afAuth.authState.switchMap(auth => {
-                  if (auth) {
-                    this.currentUser = new User(auth)
-                    return this.db.object(`/users/${auth.uid}`)
-                  } else return [];
-                })
-                .subscribe(user => {
-                    this.currentUser['username'] = user.username
-                })
-
-             }
-
-   googleLogin() {
-     const provider = new firebase.auth.GoogleAuthProvider()
-     return this.afAuth.signInWithPopup(provider)
-       .then(() =>  console.log('successful auth'))
-       .catch(error => console.log(error));
-   }
- }
+  googleLogin() {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    return this.afAuth
+      .signInWithPopup(provider)
+      .then(() => console.log("successful auth"))
+      .catch((error) => console.log(error));
+  }
+}
 ```
 
 <p>We need to make sure the username is available before it can be selected. First, the username collection is queried with the user’s text input. Querying with this method only targets a single key value pair, rather than an entire list, so it’s much faster. In fact, it’s almost instantaneous in the UI as you will see. We also use a getter to check if the current user has a username. Here's how the remainder of the service is filled out.</p>
@@ -146,37 +143,33 @@ export class AuthService {
 ### user-login.component.ts
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 import { AuthService } from "../../core/auth.service";
 
-
 @Component({
-  selector: 'user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.scss']
+  selector: "user-login",
+  templateUrl: "./user-login.component.html",
+  styleUrls: ["./user-login.component.scss"],
 })
 export class UserLoginComponent {
-
   usernameText: string;
   usernameAvailable: boolean;
 
-  constructor(public auth: AuthService) { }
-
+  constructor(public auth: AuthService) {}
 
   checkUsername() {
-    this.auth.checkUsername(this.usernameText).subscribe(username => {
-      this.usernameAvailable = !username.$value
-    })
+    this.auth.checkUsername(this.usernameText).subscribe((username) => {
+      this.usernameAvailable = !username.$value;
+    });
   }
 
   updateUsername() {
-    console.log
-    this.auth.updateUsername(this.usernameText)
+    console.log;
+    this.auth.updateUsername(this.usernameText);
   }
 
-
   signInWithGoogle() {
-    this.auth.googleLogin()
+    this.auth.googleLogin();
   }
 }
 ```
@@ -189,24 +182,33 @@ A new user will start by authenticating with Google. When that is successful, th
 
 ```html
 <h1>Login</h1>
-<button (click)="signInWithGoogle()" class="button btn-social btn-google"
-        *ngIf="!auth.currentUser">
-         <i class="fa fa-google-plus fa-lg"></i> Connect Google
+<button
+  (click)="signInWithGoogle()"
+  class="button btn-social btn-google"
+  *ngIf="!auth.currentUser"
+>
+  <i class="fa fa-google-plus fa-lg"></i> Connect Google
 </button>
 
-<button  type="button" class="button"
-         *ngIf="auth.currentUser"
-         (click)="logout()">
-          Logout
+<button
+  type="button"
+  class="button"
+  *ngIf="auth.currentUser"
+  (click)="logout()"
+>
+  Logout
 </button>
 
 <div *ngIf="auth.currentUser && !auth.hasUsername">
-
   <h3>Choose a Username</h3>
 
-  <input type="text" class="input" placeholder="choose a username"
-         [(ngModel)]="usernameText"
-         (keyup)="checkUsername()">
+  <input
+    type="text"
+    class="input"
+    placeholder="choose a username"
+    [(ngModel)]="usernameText"
+    (keyup)="checkUsername()"
+  />
 
   <p class="help is-success" *ngIf="usernameAvailable && usernameText">
     @{{usernameText}} is available
@@ -216,14 +218,13 @@ A new user will start by authenticating with Google. When that is successful, th
     @{{usernameText}} has already been taken
   </p>
 
-  <button class="button is-primary"
-          [disabled]="!usernameAvailable || !usernameText"
-          (click)="updateUsername()">
-
-          Select Username
-
+  <button
+    class="button is-primary"
+    [disabled]="!usernameAvailable || !usernameText"
+    (click)="updateUsername()"
+  >
+    Select Username
   </button>
-
 </div>
 ```
 

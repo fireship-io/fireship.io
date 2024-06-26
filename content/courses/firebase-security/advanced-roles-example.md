@@ -10,6 +10,7 @@ video_length: 5:44
 ---
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
 rules_version = '2';
 service cloud.firestore {
@@ -17,10 +18,10 @@ service cloud.firestore {
 
 
     match /users/{userId} {
-        
+
       allow read: if isSignedIn();
       allow update, delete: if hasAnyRole(['admin']);
-      
+
     }
 
     match /posts/{postId} {
@@ -56,7 +57,7 @@ service cloud.firestore {
 
       return hasRequiredFields && isValidContent;
     }
-    
+
   }
 }
 

@@ -14,13 +14,15 @@ video_length: 3:02
 Learn about the available commands and how to use them.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 dart --help
 ```
 
-Create a new project. 
+Create a new project.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 dart create -t console-simple my_app
 
@@ -32,6 +34,7 @@ dart create -t console-simple . --force
 Run the application.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 dart run
 ```
@@ -41,14 +44,16 @@ dart run
 Compile dart code to an executable.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 dart compile exe bin/dart.dart
 bin/dart.exe
 ```
 
-Compile your code to JavaScript and run it with Node.js. 
+Compile your code to JavaScript and run it with Node.js.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 dart compile js bin/dart.dart
 node out.js

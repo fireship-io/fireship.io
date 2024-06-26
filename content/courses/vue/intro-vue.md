@@ -15,13 +15,15 @@ video_length: 3:43
 [CLI Docs](https://cli.vuejs.org/)
 
 {{< file "terminal" "command line" >}}
+
 ```text
-npm install -g @vue/cli 
+npm install -g @vue/cli
 ```
 
 ## Run the Vue UI App
 
 {{< file "terminal" "command line" >}}
+
 ```text
 vue ui
 ```
@@ -29,11 +31,13 @@ vue ui
 ## Add Bulma for Better Styling
 
 {{< file "html" "public/index.html" >}}
+
 ```html
 <head>
-
-    <!-- add this line -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-
+  <!-- add this line -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+  />
 </head>
 ```

@@ -11,13 +11,14 @@ video_length: 0:00
 
 🚨 Video is a work in progress.
 
-Refer to the [Official Guide](https://firebase.flutter.dev/docs/auth/social#apple). 
+Refer to the [Official Guide](https://firebase.flutter.dev/docs/auth/social#apple).
 
-As of April 2020, all native iOS apps that offer social auth methods (Google, Facebook, etc.) MUST also include Apple Sign In as an option. See the official [guidance from Apple](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple). 
+As of April 2020, all native iOS apps that offer social auth methods (Google, Facebook, etc.) MUST also include Apple Sign In as an option. See the official [guidance from Apple](https://developer.apple.com/app-store/review/guidelines/#sign-in-with-apple).
 
 ## Sign in with Apple with Firebase
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 import 'dart:convert';
 import 'dart:math';
@@ -76,6 +77,7 @@ class AuthService {
 ## Sign in with Apple Button
 
 {{< file "flutter" "login.dart" >}}
+
 ```dart
     FutureBuilder<Object>(
         future: SignInWithApple.isAvailable(),
@@ -92,7 +94,6 @@ class AuthService {
         },
     ),
 ```
-
 
 ## Additional Resources
 

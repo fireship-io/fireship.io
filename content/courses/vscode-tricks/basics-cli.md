@@ -10,7 +10,7 @@ video_length: 1:13
 free: true
 ---
 
-When you [install VS Code](https://code.visualstudio.com/Download), it adds the `code` command to your terminal. 
+When you [install VS Code](https://code.visualstudio.com/Download), it adds the `code` command to your terminal.
 
 ⚠️ If you do not have access to the `code` command, follow the setup instructions for your machine [here](https://code.visualstudio.com/docs/setup/setup-overview).
 
@@ -19,9 +19,9 @@ When you [install VS Code](https://code.visualstudio.com/Download), it adds the 
 Use the CLI to launch a new VS Code window, or open a file in the current workspace.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 code . # current working dir
 code /path/to/dir # path
 code ~/.bash_profile # edit a root config file
 ```
-

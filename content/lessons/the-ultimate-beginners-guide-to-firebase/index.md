@@ -5,13 +5,12 @@ publishdate: 2018-02-25T16:13:49-07:00
 author: Jeff Delaney
 draft: false
 description: Go back to the basics with Firebase using JavaScript
-tags: 
-    - javascript
-    - firebase
-
+tags:
+  - javascript
+  - firebase
 
 youtube: 9kRgVxULbag
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,13 +20,14 @@ youtube: 9kRgVxULbag
 # versions:
 #    rxdart: 0.20
 ---
-Today we're going back to the basics in [Firebase](https://firebase.com) by building a basic web app from scratch. Even though this is beginner level, I think it's very useful to write code with Firebase using nothing but plain JS, especially if you're used to developing with a framework library like [AngularFire](https://github.com/angular/angularfire2), [ReactFire](https://github.com/firebase/reactfire), or [Vuefire](https://github.com/vuejs/vuefire). In addition, I want give you my *Why Firebase?* opinion and explain why it's my goto cloud provider. 
 
-## What is Firebase? 
+Today we're going back to the basics in [Firebase](https://firebase.com) by building a basic web app from scratch. Even though this is beginner level, I think it's very useful to write code with Firebase using nothing but plain JS, especially if you're used to developing with a framework library like [AngularFire](https://github.com/angular/angularfire2), [ReactFire](https://github.com/firebase/reactfire), or [Vuefire](https://github.com/vuejs/vuefire). In addition, I want give you my _Why Firebase?_ opinion and explain why it's my goto cloud provider.
+
+## What is Firebase?
 
 Firebase is a Backend-as-a-Service, which really boils down two things - (1) A container for Google Cloud Platform resources, and (2) a collection of SDKs to interact with these resources from the web, iOS, Android, Unity, and more.
 
-### Why Firebase? Why not AWS or Heroku? 
+### Why Firebase? Why not AWS or Heroku?
 
 <p class="success">Firebase does not compensate me to say nice things, I am just a happy customer :)</p>
 
@@ -37,24 +37,21 @@ In my opinion, Firebase offers the **quickest path to get your app in the hands 
 - Minimization of cloud computing costs.
 - Maximization of feature delivery per hour spent on development.
 
-
 Pricing is free for small simple projects, then scales up linearly with volume. This pricing model is much more predictable than say [Heroku](https://www.heroku.com/), where you have to pay for dedicated servers and will eventually reach a very expensive pricing tier when your app moves beyond a minimal threshold.
 
-[AWS](https://aws.amazon.com/) has an amazing selection of services and is the open cloud leader by far, but the developer experience is lacking by comparison. The UI looks like it was built with the original Twitter Bootstrap, but more importantly, the services often feel disjointed and hard to piece together. Firebase is a tightly integrated platform that follows the *quality over quantity* principle. 
-
+[AWS](https://aws.amazon.com/) has an amazing selection of services and is the open cloud leader by far, but the developer experience is lacking by comparison. The UI looks like it was built with the original Twitter Bootstrap, but more importantly, the services often feel disjointed and hard to piece together. Firebase is a tightly integrated platform that follows the _quality over quantity_ principle.
 
 ## 1. Hosting and Deployment
 
-You can use any IDE for this project, but I will be using [VSCode](https://code.visualstudio.com/). The only other requirement is that you have [NodeJS and NPM](https://nodejs.org/en/download/package-manager/) installed on your local machine. 
+You can use any IDE for this project, but I will be using [VSCode](https://code.visualstudio.com/). The only other requirement is that you have [NodeJS and NPM](https://nodejs.org/en/download/package-manager/) installed on your local machine.
 
-We will leverage the command line to easily initialize, test, and deploy our app - start by creating an empty directory and pulling up a terminal session in your editor. 
-
+We will leverage the command line to easily initialize, test, and deploy our app - start by creating an empty directory and pulling up a terminal session in your editor.
 
 {{< figure src="img/vscode-blank.png" caption="Open a blank vscode project" >}}
 
 ### Create a New Project
 
-Every Firebase project is a container of [GCP](https://cloud.google.com/) cloud infrastructure, such as your database, file storage buckets, hosting servers, etc. 
+Every Firebase project is a container of [GCP](https://cloud.google.com/) cloud infrastructure, such as your database, file storage buckets, hosting servers, etc.
 
 {{< figure src="img/basics-new-project.png" caption="Create a new project from the Firebase Console" >}}
 
@@ -66,13 +63,13 @@ Install [Firebase command line tools](https://github.com/firebase/firebase-tools
 npm install -g firebase-tools
 ```
 
-Then initialize your project. You can just stick to the default options.  
+Then initialize your project. You can just stick to the default options.
 
 ```shell
 firebase init hosting
 ```
 
-That should have generated a `public/` folder along with some config files. Serve up your app in the browser with. 
+That should have generated a `public/` folder along with some config files. Serve up your app in the browser with.
 
 ```shell
 firebase serve
@@ -80,7 +77,7 @@ firebase serve
 
 {{< figure src="img/firebase-hosting.png" caption="The default page generated by Firebase Hosting" >}}
 
-That's cool, but would you rather see your app on the real internet? Deploy it by running. 
+That's cool, but would you rather see your app on the real internet? Deploy it by running.
 
 ```shell
 firebase deploy
@@ -92,38 +89,37 @@ In the following sections, my goal is to show you how little code it takes to ac
 
 ## 2. User Auth
 
-We can login a user with Google OAuth with the magic `signInWithPopup` method. This will save a [JSON Web Token](https://jwt.io/) to the browser that identifies the user. 
+We can login a user with Google OAuth with the magic `signInWithPopup` method. This will save a [JSON Web Token](https://jwt.io/) to the browser that identifies the user.
 
 ```js
 function googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    
-    firebase.auth().signInWithPopup(provider)
-        
-            .then(result => {
-                const user = result.user;        
-            })  
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase
+    .auth()
+    .signInWithPopup(provider)
+
+    .then((result) => {
+      const user = result.user;
+    });
 }
 ```
 
-Run the function above by binding it to a button click event. 
+Run the function above by binding it to a button click event.
 
 ```html
-<button onclick="googleLogin()">
-  Login with Google
-</button>
+<button onclick="googleLogin()">Login with Google</button>
 ```
 
 That should authenticate the user into your app and create the user in Firebase as shown below:
 
-<img class="content-image" src="/images/basics-auth.png" alt="User auth in Firebase simple code snippet" /> 
+<img class="content-image" src="/images/basics-auth.png" alt="User auth in Firebase simple code snippet" />
 
 {{< figure src="img/basics-auth.png" caption="User authentication in Firebase" >}}
 
 ## 3. Cloud Firestore Database
 
-The foundation of a Firebase app is the database. You can read a document in the database by (1) making a reference to it and (2) calling `onSnaphot()`. This will not only read it, but also subscribe to realtime updates - an amazingly powerful feature if your app provides realtime feedback to users. 
-
+The foundation of a Firebase app is the database. You can read a document in the database by (1) making a reference to it and (2) calling `onSnaphot()`. This will not only read it, but also subscribe to realtime updates - an amazingly powerful feature if your app provides realtime feedback to users.
 
 {{< figure src="img/basics-firestore.png" caption="Firestore collection of products" >}}
 
@@ -133,82 +129,77 @@ Let's imagine our we have a database structure as shown above and want read this
 const db = firebase.firestore();
 
 // Reference the document
-const myPost = db.collection('products').doc('CGl2Obsqagfm1DguguLS');
+const myPost = db.collection("products").doc("CGl2Obsqagfm1DguguLS");
 
-// Listen to realtime changes 
-myPost.onSnapshot(doc => {
-
+// Listen to realtime changes
+myPost.onSnapshot((doc) => {
   const data = doc.data();
-
-})
+});
 ```
 
-Firestore also has powerful methods to retrieve and filter collections of documents. If we wanted to get all products with a price greater than $23.00, we could perform a query that looks like `where('price', '>=', 23)`. Instead of a single document, we get an array of documents that match this query. 
+Firestore also has powerful methods to retrieve and filter collections of documents. If we wanted to get all products with a price greater than $23.00, we could perform a query that looks like `where('price', '>=', 23)`. Instead of a single document, we get an array of documents that match this query.
 
 ```js
-const productsRef = db.collection('products');
+const productsRef = db.collection("products");
 
-const query  = productsRef.where('price', '>=', 23)
+const query = productsRef.where("price", ">=", 23);
 
-query.onSnapshot(products => {
-
-  products.forEach(doc => {
-      const data = doc.data();
-  })
-
+query.onSnapshot((products) => {
+  products.forEach((doc) => {
+    const data = doc.data();
+  });
 });
 ```
 
 ## 4. Storage
 
-Storage is similar in principle to the database - make a reference to file path, then read, update, or delete it. 
+Storage is similar in principle to the database - make a reference to file path, then read, update, or delete it.
 
-The snippet below will push your file from the browser to the storage bucket. 
+The snippet below will push your file from the browser to the storage bucket.
 
 ```html
-<input type="file" onchange="uploadFile(this.files)">
+<input type="file" onchange="uploadFile(this.files)" />
 ```
 
 ```js
 function uploadFile(files) {
-    const storageRef = firebase.storage().ref();
-    const imgRef = storageRef.child('horse.jpg');
+  const storageRef = firebase.storage().ref();
+  const imgRef = storageRef.child("horse.jpg");
 
-    const file = files.item(0);
+  const file = files.item(0);
 
-    const task = imgRef.put(file)
+  const task = imgRef.put(file);
 
-    // successful upload
-    task.then(snapshot => {
-        const url = snapshot.downloadURL
-    })
+  // successful upload
+  task.then((snapshot) => {
+    const url = snapshot.downloadURL;
+  });
 
-    // monitor progress
-    task.on('state_changed', snapshot => {
-        console.log(snapshot)
-
-    })
+  // monitor progress
+  task.on("state_changed", (snapshot) => {
+    console.log(snapshot);
+  });
 }
 ```
 
-Run this code and you should see your selected image in the Firebase storage bucket. 
+Run this code and you should see your selected image in the Firebase storage bucket.
 
 {{< figure src="img/basics-storage.png" caption="Firebase storage bucket" >}}
 
 ## 5. Cloud Functions
 
-Cloud functions give you an *on-demand* backend NodeJS server. Instead of deploying a server that is active 100% of the time, functions spin up a server instance only when invoked.  Why might you need that? 
+Cloud functions give you an _on-demand_ backend NodeJS server. Instead of deploying a server that is active 100% of the time, functions spin up a server instance only when invoked. Why might you need that?
 
-- Access server-side APIs (Stripe, SendGrid, Twilio). 
-- Run CPU intensive background tasks. 
+- Access server-side APIs (Stripe, SendGrid, Twilio).
+- Run CPU intensive background tasks.
 - Database aggregation
 - Custom authentication flow
 
-And much, much more. Checkout the [Cloud Functions Feed](https://angularfirebase.com/tag/functions/) for inspiration. 
+And much, much more. Checkout the [Cloud Functions Feed](https://angularfirebase.com/tag/functions/) for inspiration.
 
 ### Initializing Functions
 
-Cloud functions are an isolated NodeJS environment, so don't confuse them with your frontend code. You can initialize this environment in your project by running: 
+Cloud functions are an isolated NodeJS environment, so don't confuse them with your frontend code. You can initialize this environment in your project by running:
 
 ```shell
 firebase init functions
@@ -216,36 +207,34 @@ firebase init functions
 
 ### Simple Firestore Function
 
-The function code below will listen to the the `products` collection in Firestore, and run this code whenever a new document is created. 
+The function code below will listen to the the `products` collection in Firestore, and run this code whenever a new document is created.
 
-- `exports.sendMessage` that's the name of our Function. 
+- `exports.sendMessage` that's the name of our Function.
 - `.document('products/{productId}').onCreate` runs the function when a new product doc is created.
-- `return productRef.update` remember to return a `Promise` inside the function callback. 
+- `return productRef.update` remember to return a `Promise` inside the function callback.
 
 ```js
-const functions = require('firebase-functions');
+const functions = require("firebase-functions");
 
 const admin = require("firebase-admin");
 admin.initializeApp();
 
-
 exports.sendMessage = functions.firestore
-    .document('products/{productId}')
-    .onCreate(event => {
-
+  .document("products/{productId}")
+  .onCreate((event) => {
     const docId = event.params.productId;
 
     const name = event.after.data().name;
 
-    const productRef = admin.firestore().collection('products').doc(docId)
+    const productRef = admin.firestore().collection("products").doc(docId);
 
-    return productRef.update({ message: `Nice ${name}! - Love Cloud Functions`})
-
-});
-
+    return productRef.update({
+      message: `Nice ${name}! - Love Cloud Functions`,
+    });
+  });
 ```
 
-Now deploy your backend with the following command. 
+Now deploy your backend with the following command.
 
 ```shell
 firebase deploy --only functions
@@ -259,4 +248,4 @@ If you create a new product document in Firestore, you should see the message up
 
 Mobile developers have even more great tools at their disposal thanks to Firebase's acquisitions of [Fabric](https://techcrunch.com/2017/05/17/google-firebase-gets-fabric-integration-better-analytics-and-an-alpha-program/) and [Appurify](https://venturebeat.com/2014/06/25/google-acquires-the-team-behind-appurify-a-google-ventures-funded-app-testing-service/). These features go beyond the core resources of this lesson, but they give you even more tools to test, analyze, and monetize your project.
 
-So much has changed in Firebase during the last year and I'm excited to see what drops next in the platform. Get in touch on [Slack](https://goo.gl/6eYoxF) if you want to chat in more detail me. 
+So much has changed in Firebase during the last year and I'm excited to see what drops next in the platform. Get in touch on [Slack](https://goo.gl/6eYoxF) if you want to chat in more detail me.

@@ -13,6 +13,7 @@ video_length: 4:02
 ## Opt-in to the Composition API
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm i @vue/composition-api
 ```
@@ -20,14 +21,16 @@ npm i @vue/composition-api
 Register it as a plugin
 
 {{< file "js" "main.js" >}}
+
 ```javascript
-import VueCompositionApi from '@vue/composition-api'
-Vue.use(VueCompositionApi)
+import VueCompositionApi from "@vue/composition-api";
+Vue.use(VueCompositionApi);
 ```
 
 ## User Component
 
 {{< file "vue" "User.vue" >}}
+
 ```html
 <template>
   <div>
@@ -36,41 +39,37 @@ Vue.use(VueCompositionApi)
 </template>
 
 <script>
-import { auth } from '../firebase';
-import { ref } from '@vue/composition-api';
+  import { auth } from "../firebase";
+  import { ref } from "@vue/composition-api";
 
-export default {
-  setup() {
+  export default {
+    setup() {
+      const user = ref(null);
+      const unsubscribe = auth.onAuthStateChanged(
+        (firebaseUser) => (user.value = firebaseUser),
+      );
+      return {
+        user,
+        unsubscribe,
+      };
+    },
 
-    const user = ref(null);
-    const unsubscribe = auth.onAuthStateChanged(
-        
-                            firebaseUser =>  user.value = firebaseUser
-                        );
-    return {
-      user,
-      unsubscribe,
-    }
-  },
-
-  unmounted() {
-    this.unsubscribe()
-  }
-}
+    unmounted() {
+      this.unsubscribe();
+    },
+  };
 </script>
 ```
 
 ## Conditional Rendering for the User
 
-Pseudo-example of the `User` component. 
+Pseudo-example of the `User` component.
 
 ```html
 <User #user="{ user }">
-    
-    <UserProfile v-if="user" />
+  <UserProfile v-if="user" />
 
-    <Login v-else />
-
+  <Login v-else />
 </User>
 ```
 

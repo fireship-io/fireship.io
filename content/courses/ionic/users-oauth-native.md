@@ -8,6 +8,6 @@ vimeo: 348515581
 emoji: 👤
 ---
 
-Note: If you run into bugs at this point building your app for Android, you may need to follow the steps outlined in this video: 
+Note: If you run into bugs at this point building your app for Android, you may need to follow the steps outlined in this video:
 
 {{< vimeo 348515397 >}}

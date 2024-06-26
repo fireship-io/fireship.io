@@ -6,7 +6,7 @@ author: Jeff Delaney
 draft: false
 description: Build three different responsive CSS grid layouts from scratch
 tags:
-    - css
+  - css
 
 youtube: 705XCEruZFs
 github: https://github.com/fireship-io/224-animated-css-grid
@@ -22,44 +22,44 @@ github: https://github.com/fireship-io/224-animated-css-grid
 
 The following lesson contains three examples of CSS Grid layouts.
 
-
 ## Bootstrap-Style 12 Column Grid
 
 Grid can significantly reduce the amount of code required to build responsive row/column layouts. Unlike a flex-based grid like Bootstrap, it does not require a bunch of classes in the markup to make the children responsive.
 
-The grid below is an example of an *implicit* grid because we do not know the exact number of rows or columns in advance. Instead, we let CSS fill the available space based on the device size.
+The grid below is an example of an _implicit_ grid because we do not know the exact number of rows or columns in advance. Instead, we let CSS fill the available space based on the device size.
 
 ### HTML
 
 {{< file "html" "index.html" >}}
+
 ```html
-    <section class="basic-grid">
-        <div class="card">1</div>
-        <div class="card">2</div>
-        <div class="card">3</div>
-        <div class="card">4</div>
-        <div class="card">5</div>
-        <div class="card">6</div>
-        <div class="card">7</div>
-        <div class="card">8</div>
-        <div class="card">9</div>
-        <div class="card">10</div>
-        <div class="card">11</div>
-        <div class="card">12</div>
-    </section>
+<section class="basic-grid">
+  <div class="card">1</div>
+  <div class="card">2</div>
+  <div class="card">3</div>
+  <div class="card">4</div>
+  <div class="card">5</div>
+  <div class="card">6</div>
+  <div class="card">7</div>
+  <div class="card">8</div>
+  <div class="card">9</div>
+  <div class="card">10</div>
+  <div class="card">11</div>
+  <div class="card">12</div>
+</section>
 ```
 
 ### CSS
 
 {{< file "css" "style.css" >}}
+
 ```css
 .basic-grid {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
- }
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
 ```
-
 
 ## Responsive Photo Gallery
 
@@ -68,27 +68,25 @@ The next grid is a responsive photo gallery where photos can take up multiple ce
 ### HTML
 
 {{< file "html" "index.html" >}}
+
 ```html
 <div class="photo-grid">
-      <div class="card" style="background-image: url('some-image-URL')">
-        1
-      </div>
-      <div class="card card-tall" style="background-image: url('some-image-URL')">
-        2
-      </div>
-      <div class="card card-wide" style="background-image: url('some-image-URL')">
-        3
-      </div>
+  <div class="card" style="background-image: url('some-image-URL')">1</div>
+  <div class="card card-tall" style="background-image: url('some-image-URL')">
+    2
+  </div>
+  <div class="card card-wide" style="background-image: url('some-image-URL')">
+    3
+  </div>
 
-    <!-- Add more items here  -->
-
+  <!-- Add more items here  -->
 </div>
 ```
-
 
 ### CSS
 
 {{< file "css" "style.css" >}}
+
 ```css
 .photo-grid {
   display: grid;
@@ -121,28 +119,29 @@ The third grid example is a 4x4 explicit grid where each element is placed in sp
 ### HTML
 
 {{< file "html" "index.html" >}}
+
 ```html
 <section class="animated-grid">
-    <div class="card">a</div>
-    <div class="card">b</div>
-    <div class="card">c</div>
-    <div class="card">d</div>
-    <div class="card">e</div>
-    <div class="card">f</div>
-    <div class="card">g</div>
-    <div class="card">h</div>
-    <div class="card">i</div>
-    <div class="card">j</div>
-    <div class="card">k</div>
-    <div class="card">l</div>
-    <div class="card">main</div>
+  <div class="card">a</div>
+  <div class="card">b</div>
+  <div class="card">c</div>
+  <div class="card">d</div>
+  <div class="card">e</div>
+  <div class="card">f</div>
+  <div class="card">g</div>
+  <div class="card">h</div>
+  <div class="card">i</div>
+  <div class="card">j</div>
+  <div class="card">k</div>
+  <div class="card">l</div>
+  <div class="card">main</div>
 </section>
 ```
-
 
 ### CSS
 
 {{< file "css" "style.css" >}}
+
 ```css
 .animated-grid {
   height: 85vh;
@@ -153,10 +152,10 @@ The third grid example is a 4x4 explicit grid where each element is placed in sp
 
   /* Explicit grid */
   grid-template-areas:
-    'a  b  c  d'
-    'l  🌟 🌟 e'
-    'k  🌟 🌟 f'
-    'j  i  h  g';
+    "a  b  c  d"
+    "l  🌟 🌟 e"
+    "k  🌟 🌟 f"
+    "j  i  h  g";
 
   grid-template-rows: repeat(4, 25%);
   grid-template-columns: 240px auto auto 240px;
@@ -235,5 +234,4 @@ The third grid example is a 4x4 explicit grid where each element is placed in sp
   grid-area: 🌟;
   animation-delay: calc(13 * var(--stagger-delay));
 }
-
 ```

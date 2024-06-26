@@ -1,6 +1,6 @@
 ---
 title: Login Screen
-description: Build a login screen with Anonymous sign in. 
+description: Build a login screen with Anonymous sign in.
 weight: 31
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
@@ -11,9 +11,10 @@ video_length: 3:53
 
 # Anonymous Auth
 
-Enable anonymous auth in the Firebase console, then implemment it in the auth service. 
+Enable anonymous auth in the Firebase console, then implemment it in the auth service.
 
 {{< file "flutter" "services/auth.dart" >}}
+
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -36,9 +37,10 @@ class AuthService {
 
 ## Login Screen
 
-Create a login screen and resuable button to support multiple login methods. 
+Create a login screen and resuable button to support multiple login methods.
 
 {{< file "flutter" "login.dart" >}}
+
 ```dart
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -107,9 +109,10 @@ class LoginButton extends StatelessWidget {
 
 ## Sign Out
 
-Use the signout method in the Profile screen. 
+Use the signout method in the Profile screen.
 
 {{< file "flutter" "profile.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/auth.dart';

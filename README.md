@@ -1,8 +1,8 @@
-# 🖥️ *Eirbware*'s teaching website (prototype)
+# 🖥️ _Eirbware_'s teaching website (prototype)
 
 This website aims to host several formats of online teaching posts about computer science dev tools.
 
-This repository is here to develop a prototype website which would then be managed by the [Eirbware](https://github.com/Eirbware) engineering school club. It has been started from a fork of the open-source [*`fireshio.io`* website](https://github.com/fireship-io/fireship.io). .
+This repository is here to develop a prototype website which would then be managed by the [Eirbware](https://github.com/Eirbware) engineering school club. It has been started from a fork of the open-source [_`fireshio.io`_ website](https://github.com/fireship-io/fireship.io). .
 
 ## 📃 Easily-editable open content
 
@@ -16,18 +16,18 @@ in the purpose of showing their advantages.
 
 #### Standard Courses
 
-A *standard course* (`/courses/<a-course>/` section) is a tutorial about a topic which contains the following pages:
+A _standard course_ (`/courses/<a-course>/` section) is a tutorial about a topic which contains the following pages:
 
-- A *cover page* (`/courses/<a-course>/_index.md` file) with a short description of the considered problems and the notions
+- A _cover page_ (`/courses/<a-course>/_index.md` file) with a short description of the considered problems and the notions
   which will be discovered to solve them. The links to the related pages (see below) are indexed there.
-- The *chapter pages* are each focused on a precise subtopic to deal with it
+- The _chapter pages_ are each focused on a precise subtopic to deal with it
   with a short-but-meaningful text. The user, if he is logged in, can also mark each
   chapter as read to see its advancing bar.  
-  All the chapter pages are in their *chapter group* thanks to their [slug](https://gohugo.io/content-management/organization/#slug)'s
+   All the chapter pages are in their _chapter group_ thanks to their [slug](https://gohugo.io/content-management/organization/#slug)'s
   first keyword
-(`/courses/<a-course>/<a-chapter-group-keyword>-<a-chapter>.md`) so a table of
-content is displayed in the tutorial
-- Out of the table of content, a standard course is also attached by a *cheat-sheet page* with a straightforward access of the useful content for a user who
+  (`/courses/<a-course>/<a-chapter-group-keyword>-<a-chapter>.md`) so a table of
+  content is displayed in the tutorial
+- Out of the table of content, a standard course is also attached by a _cheat-sheet page_ with a straightforward access of the useful content for a user who
   has already understood the general topic.
 
 All the published standard courses are listed in a fancy `/courses/` page. They
@@ -38,7 +38,7 @@ are also labeled with tags to enhance their [referencing](#referencing).
 For useful tips which can be explained shortly, one-page posts
 can be written in the `/tips/` section. These posts can also be
 published in answer to an interesting anonymous question, which
-can be send from a *prompt box* on the website.
+can be send from a _prompt box_ on the website.
 
 #### Didactic challenges
 
@@ -77,10 +77,10 @@ npm install
 
 ### Build for production
 
-The layout uses Svelte components defined in the `app` directory, and these components  use `.scss` sheets in the `style` directory. Then, the files in both theses folders must be built by the Vite framework with the command below
+The layout uses Svelte components defined in the `app` directory, and these components use `.scss` sheets in the `style` directory. Then, the files in both theses folders must be built by the Vite framework with the command below
 
 ```bash
-npm run vbuild 
+npm run vbuild
 ```
 
 Then, the markdown content can be rendered in the deployable site in the `public` directory by running this command
@@ -114,6 +114,7 @@ npm run hugo
 ```
 
 If you want your draft pages to be rendered, then run
+
 ```bash
 npm run hugo-dev
 ```
@@ -123,7 +124,7 @@ Check it on `http://localhost:6969/`.
 #### Edit components and layout
 
 Both the layout and the Hugo website can be concurrently built with watching
-engines for development as well over the Markdown content  as on the layout or
+engines for development as well over the Markdown content as on the layout or
 the application layer. To do that
 
 ```bash
@@ -146,16 +147,16 @@ Create a Svelte file in the `app/components` directory. It must have a custom el
 <svelte:options tag="hi-mom" />
 
 <script>
-    export let greeting: string;
+  export let greeting: string;
 </script>
 
-<h1>Hi Mom! {greeting}</h1> 
+<h1>Hi Mom! {greeting}</h1>
 ```
 
 Export the component from `app/main.ts`:
 
 ```ts
-export * from './components/hi-mom.svelte';
+export * from "./components/hi-mom.svelte";
 ```
 
 Now use it in anywhere in your HTML or Markdown.

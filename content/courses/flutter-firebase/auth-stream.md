@@ -15,6 +15,7 @@ chapter_start: User Authentication
 Create a file named `auth.dart` in the `services` directory.
 
 {{< file "flutter" "services/auth.dart" >}}
+
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -29,6 +30,7 @@ class AuthService {
 Use the home page to render a different set of UI elements based on the user's auth state in Firebase. If the user is signed in, show the topics screen. If the user is not signed in, show the login screen.
 
 {{< file "flutter" "home.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/login/login.dart';
@@ -63,9 +65,10 @@ class HomeScreen extends StatelessWidget {
 
 ## Login Screen
 
-Update the login screen with a Scaffold. 
+Update the login screen with a Scaffold.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});

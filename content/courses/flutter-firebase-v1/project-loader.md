@@ -9,9 +9,10 @@ vimeo: 407359265
 video_length: 1:02
 ---
 
-Use the `Loader` when an individual UI element is loading, or `LoadingScreen` when an entire screen is loading. 
+Use the `Loader` when an individual UI element is loading, or `LoadingScreen` when an entire screen is loading.
 
 {{< file "dart" "loader.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 

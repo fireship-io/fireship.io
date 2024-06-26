@@ -14,6 +14,7 @@ video_length: 3:06
 Create an app with a bundle ID. Choose any bundle ID you'd like, following the reverse domain naming convention.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 flutter create --org io.fireship myapp
 ```
@@ -22,14 +23,14 @@ flutter create --org io.fireship myapp
 
 The current version of this course uses the following dependencies. For the most reliable results, you should use the same versions.
 
-Flutter & Firebase regularly update these packages and later versions may break the code in this course, so update them at your own risk. 
+Flutter & Firebase regularly update these packages and later versions may break the code in this course, so update them at your own risk.
 
 {{< file "flutter" "pubspec.yaml" >}}
+
 ```yaml
 name: REPLACE_WITH_YOUR_APP_NAME
 description: A new Flutter project.
-publish_to: 'none'
-
+publish_to: "none"
 
 version: 1.0.0+1
 

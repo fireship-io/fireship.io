@@ -6,7 +6,7 @@ lastmod: 2022-11-11T10:23:30-09:00
 draft: false
 vimeo: 773383078
 emoji: 📜
-chapter_start: Basic Concepts 
+chapter_start: Basic Concepts
 video_length: 0:46
 quiz: true
 ---

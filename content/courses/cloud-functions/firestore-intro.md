@@ -9,6 +9,5 @@ vimeo: 320683151
 free: true
 weight: 14
 emoji: 🔥
-chapter_start: Firestore 
+chapter_start: Firestore
 ---
-

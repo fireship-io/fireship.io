@@ -10,27 +10,27 @@ video_length: 2:02
 chapter_start: User Authentication
 ---
 
-
 ## Login Component
 
 {{< file "vue" "Login.vue" >}}
+
 ```html
 <template>
   <aside class="section">
     <h3>Sign in Anonymously</h3>
     <button class="button" @click="auth.signInAnonymously()">Sign In</button>
-    </aside>
+  </aside>
 </template>
 
 <script>
-import { auth } from '../firebase';
+  import { auth } from "../firebase";
 
-export default {
-  data() {
-    return {
-      auth,
-    }
-  },
-}
+  export default {
+    data() {
+      return {
+        auth,
+      };
+    },
+  };
 </script>
 ```

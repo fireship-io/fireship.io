@@ -5,9 +5,9 @@ publishdate: 2017-08-27T06:25:17-07:00
 author: Jeff Delaney
 draft: false
 description: Get started building redux apps in Angular with NgRx
-tags: 
-    - ngrx
-    - angular
+tags:
+  - ngrx
+  - angular
 
 youtube: f97ICOaekNU
 github: https://github.com/codediodeio/ngrx-fire
@@ -21,13 +21,11 @@ github: https://github.com/codediodeio/ngrx-fire
 #    rxdart: 0.20
 ---
 
-
 The <a href="https://en.wikipedia.org/wiki/Redux_(JavaScript_library)">Redux</a> JavaScript library was made famous by React and Elm, but its design patterns can also be applied in Angular. The general idea is that all application data is kept in a single JavaScript object on the client, giving you a predictable tree of state changes (we'll get into this later). In this lesson, we are going to build a simple NgRx Angular app from scratch, that will eventually become this [NgRx-Fire demo app](https://github.com/codediodeio/ngrx-fire).
 
 ## Redux Pattern Basics
 
 Before we start writing any code, let's talk about the [main design patterns of Redux](https://www.amberbit.com/blog/2016/12/6/redux-overview/) powered JavaScript apps.
-
 
 {{< figure src="img/ngrx-redux-pattern-diagram.png" caption="A diagram of how data flows in Redux with Angular NgRx" >}}
 
@@ -54,7 +52,6 @@ Here are five must-know high-level concepts about ngrx/Redux.
 - Decreased Flexibility: Integrating the Redux pattern with 3rd party packages can be difficult. You need to build your own declarative interface for application data that is altered by external libraries.
 - Potential Performance Issues: There are some cases when it is [not performant](https://github.com/reactjs/redux/blob/master/docs/faq/Performance.md) to mount a single data store on the client. Imagine a large state object that needs to be copied after an event that fires every 5ms - that's going to weigh you down at some point.
 
-
 ### What is ngrx?
 
 The [ngrx](https://github.com/ngrx/platform) library brings Redux patterns to Angular using RxJS. It is modularized into several different packages. In this lesson, we will be focused on...
@@ -62,10 +59,9 @@ The [ngrx](https://github.com/ngrx/platform) library brings Redux patterns to An
 @ngrx/store - Handles the main Redux state data store.
 @ngrx/store-devtools - Enables debugging with Chrome Redux plugin
 
-
 ## Setting up ngrx in Angular
 
-Let's start with a brand new app with the Angular CLI. I'm naming it *ngrxFire* because we will be adding realtime data via Firebase to this app in the next lesson.
+Let's start with a brand new app with the Angular CLI. I'm naming it _ngrxFire_ because we will be adding realtime data via Firebase to this app in the next lesson.
 
 ```shell
 ng new ngrxFire --routing
@@ -90,21 +86,19 @@ When importing the `StoreModule` the object you pass to it is important. In this
 
 ```typescript
 /// ...omitted
-import { StoreModule } from '@ngrx/store';
-import { simpleReducer } from './simple.reducer';
+import { StoreModule } from "@ngrx/store";
+import { simpleReducer } from "./simple.reducer";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ message: simpleReducer })
+    StoreModule.forRoot({ message: simpleReducer }),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 ### simple.reducer.ts
@@ -118,21 +112,19 @@ The reducer is just a function that runs a `switch` statement over possible acti
 Side Note: I apologize for the for screwed-up syntax highlighting of the switch statement.
 
 ```typescript
-import { Action } from '@ngrx/store';
+import { Action } from "@ngrx/store";
 
-export function simpleReducer(state: string = 'Hello World', action: Action) {
-
+export function simpleReducer(state: string = "Hello World", action: Action) {
   switch (action.type) {
+    case "SPANISH":
+      return (state = "Hola Mundo");
 
-		case 'SPANISH':
-		  return state = 'Hola Mundo'
+    case "FRENCH":
+      return (state = "Bonjour le monde");
 
-    case 'FRENCH':
-      return state = 'Bonjour le monde'
-
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 }
 ```
 
@@ -145,34 +137,33 @@ Now we need a way to present and change the state in the UI. Here are a few key 
 3. We trigger state changes by sending actions to the reducer with `this.store.dispatch('ACTION')`
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs/Observable";
 
 interface AppState {
   message: string;
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-
-  message$: Observable<string>
+  message$: Observable<string>;
 
   constructor(private store: Store<AppState>) {
-    this.message$ = this.store.select('message')
+    this.message$ = this.store.select("message");
   }
 
   spanishMessage() {
-    this.store.dispatch({type: 'SPANISH'})
+    this.store.dispatch({ type: "SPANISH" });
   }
 
   frenchMessage() {
-    this.store.dispatch({type: 'FRENCH'})
+    this.store.dispatch({ type: "FRENCH" });
   }
 }
 ```
@@ -186,7 +177,6 @@ Now we can subscribe to the Observable in the HTML and trigger changes with butt
 <button (click)="frenchMessage()">French</button>
 ```
 
-
 ## A More Advanced Example
 
 Let's build on this simple reducer with something more complex. Our goals include,
@@ -194,7 +184,6 @@ Let's build on this simple reducer with something more complex. Our goals includ
 1. Manage state as an Object with four different actions
 2. Send a data payload with actions.
 3. Organize code into a modular structure.
-
 
 {{< figure src="img/redux-ngrx-angular.gif" caption="redux state log" >}}
 
@@ -247,18 +236,18 @@ export interface Post {
   likes: number;
 }
 ```
+
 ### post.actions.ts
 
-Every action will be managed within it's own class. This makes it possible to use a  `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
+Every action will be managed within it's own class. This makes it possible to use a `constructor` to send a data payload when a new action instance is created. A key benefit of this approach is that it allows you to strong type the data that is sent with a given action's payload.
 
 ```typescript
-import { Action } from '@ngrx/store';
+import { Action } from "@ngrx/store";
 
-export const EDIT_TEXT  = '[Post] Edit';
-export const UPVOTE     = '[Post] Upvote';
-export const DOWNVOTE   = '[Post] Downvote';
-export const RESET      = '[Post] Reset';
-
+export const EDIT_TEXT = "[Post] Edit";
+export const UPVOTE = "[Post] Upvote";
+export const DOWNVOTE = "[Post] Downvote";
+export const RESET = "[Post] Reset";
 
 export class EditText implements Action {
   readonly type = EDIT_TEXT;
@@ -266,7 +255,6 @@ export class EditText implements Action {
   /// user a constructor to send a payload with the action
   constructor(public payload: string) {}
 }
-
 
 export class Upvote implements Action {
   readonly type = UPVOTE;
@@ -280,11 +268,7 @@ export class Reset implements Action {
   readonly type = RESET;
 }
 
-export type All
-  = Upvote
-  | Downvote
-  | Reset
-  | EditText;
+export type All = Upvote | Downvote | Reset | EditText;
 ```
 
 ### post.reducer.ts
@@ -292,44 +276,42 @@ export type All
 Remember, in Redux the state is immutable, so we always need to create a new object when the state changes. A reliable way of doing this is via `Object.assign({}, state, newData)`, which builds a new object from left to right. In other words, the arguments on the right will overwrite the properties existing from the arguments on the left.
 
 ```typescript
-import * as PostActions from '../actions/post.actions';
-import { Post }         from '../models/post.model'
+import * as PostActions from "../actions/post.actions";
+import { Post } from "../models/post.model";
 
 export type Action = PostActions.All;
 
 /// Default app state
 const defaultState: Post = {
-  text: 'Hello. I am the default post',
-  likes: 0
-}
+  text: "Hello. I am the default post",
+  likes: 0,
+};
 
 /// Helper function to create new state object
 const newState = (state, newData) => {
-  return Object.assign({}, state, newData)
-}
-
+  return Object.assign({}, state, newData);
+};
 
 /// Reducer function
 export function postReducer(state: Post = defaultState, action: Action) {
-  console.log(action.type, state)
+  console.log(action.type, state);
 
-	switch (action.type) {
-  		case PostActions.EDIT_TEXT:
-  			return newState(state, { text: action.payload });
+  switch (action.type) {
+    case PostActions.EDIT_TEXT:
+      return newState(state, { text: action.payload });
 
-      case PostActions.UPVOTE:
-        return newState(state, { likes: state.likes + 1 });
+    case PostActions.UPVOTE:
+      return newState(state, { likes: state.likes + 1 });
 
-  		case PostActions.DOWNVOTE:
-  			return newState(state, { likes: state.likes - 1 });
+    case PostActions.DOWNVOTE:
+      return newState(state, { likes: state.likes - 1 });
 
-  		case PostActions.RESET:
-  			return defaultState;
+    case PostActions.RESET:
+      return defaultState;
 
-  		default:
-  			return state;
-
-	}
+    default:
+      return state;
+  }
 }
 ```
 
@@ -340,48 +322,46 @@ In the app component, we can update the `AppState` interface and tell the ngrx s
 Notice how the `dispatch` calls are now being made by instantiating action objects. In the `PostActions.EditText` we can pass data to the constructor as the payload the gets processed by the reducer function.
 
 ```typescript
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
-import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs/Observable';
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs/Observable";
 
-import { Post } from './models/post.model';
-import * as PostActions from './actions/post.actions';
-
+import { Post } from "./models/post.model";
+import * as PostActions from "./actions/post.actions";
 
 interface AppState {
   post: Post;
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-
-  post: Observable<Post>
+  post: Observable<Post>;
 
   text: string; /// form input val
 
   constructor(private store: Store<AppState>) {
-    this.post = this.store.select('post')
+    this.post = this.store.select("post");
   }
 
   editText() {
-    this.store.dispatch(new PostActions.EditText(this.text) )
+    this.store.dispatch(new PostActions.EditText(this.text));
   }
 
   resetPost() {
-    this.store.dispatch(new PostActions.Reset())
+    this.store.dispatch(new PostActions.Reset());
   }
 
   upvote() {
-    this.store.dispatch(new PostActions.Upvote())
+    this.store.dispatch(new PostActions.Upvote());
   }
 
   downvote() {
-    this.store.dispatch(new PostActions.Downvote())
+    this.store.dispatch(new PostActions.Downvote());
   }
 }
 ```
@@ -392,8 +372,6 @@ In the HTML, we subscribe to the post Observable and connect our event handlers 
 
 ```html
 <div *ngIf="post | async as p">
-
-
   <h2>{{ p.text }}</h2>
   <h4>Votes: {{ p.likes }}</h4>
 
@@ -401,12 +379,10 @@ In the HTML, we subscribe to the post Observable and connect our event handlers 
   <button (click)="downvote()">Downvote</button>
   <button (click)="resetPost()">Reset</button>
 
-  <input [(ngModel)]="text">
-  <button (click)="editText()" >Change Title</button>
-
+  <input [(ngModel)]="text" />
+  <button (click)="editText()">Change Title</button>
 </div>
 ```
-
 
 ## Debugging with Redux DevTools for Chrome
 
@@ -420,27 +396,26 @@ Next, run:
 npm install @ngrx/store-devtools --save
 ```
 
-Then update your app module.  
+Then update your app module.
 
 ```typescript
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 
 @NgModule({
   imports: [
     StoreModule.forRoot({ post: postReducer }),
     StoreDevtoolsModule.instrument({
-      maxAge: 10 // number of states to retain
-    })
-  ]
+      maxAge: 10, // number of states to retain
+    }),
+  ],
 })
-export class AppModule { }
+export class AppModule {}
 ```
 
 When you activate the plugin in Chrome, you get nice breakdown of state changes in browser. The plugin will tell you exactly which properties have changed after each event. This makes debugging incredibly easy when get unexpected results in your data store.
-
 
 {{< figure src="img/redux-plugin-ngrx.gif" caption="The redux plugin for Chrome makes debugging NgRx a breeze" >}}
 
 ## Up next
 
-That's it for the basics of ngrx/store. In the next lesson, I will introduce the ngrx/effects library to handle realtime asynchronous Firebase data.  
+That's it for the basics of ngrx/store. In the next lesson, I will introduce the ngrx/effects library to handle realtime asynchronous Firebase data.

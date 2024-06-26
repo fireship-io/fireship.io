@@ -40,23 +40,20 @@ The goal of this course is to provide you with a solid foundation for building f
   This course should be <span class="hi">required viewing</span> for anyone building web apps with Supabase; it makes the flow of development to prod then continuing to ship crystal clear!
 {{< /testimonial >}}
 
-
 {{< testimonial name="Paul Copplestone" handle="@kiwicopple" img="paul-copplestone.webp" >}}
-  This course is a must for anyone building with Supabase. One of the most comprehensive (and entertaining) tutorials on the web. As a bonus, you’ll <span class="hi">learn a tonne</span> of things about Postgres and SQL that are useful beyond Supabase.
-  If you’re shipping a production-ready website or application, this course is 100% recommended
+This course is a must for anyone building with Supabase. One of the most comprehensive (and entertaining) tutorials on the web. As a bonus, you’ll <span class="hi">learn a tonne</span> of things about Postgres and SQL that are useful beyond Supabase.
+If you’re shipping a production-ready website or application, this course is 100% recommended
 {{< /testimonial >}}
-</div>
 
+</div>
 
 ## 🚀 Test drive
 
-Visit the demo app and give it a test drive before you enroll. 
+Visit the demo app and give it a test drive before you enroll.
 
 <div>
 <a href="https://supaship.io" class="btn btn-green">Supaship Live Demo</a>
 </div>
-
-
 
 ## 🤔 Is this Course Right for Me?
 

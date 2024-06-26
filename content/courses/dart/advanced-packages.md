@@ -15,6 +15,7 @@ chapter_start: Advanced Dart
 The easiest way to deal with name conflicts is to use a namespace package.
 
 {{< file "dart" "packages.dart" >}}
+
 ```dart
 import 'somewhere.dart' as External;
 ```
@@ -24,6 +25,7 @@ import 'somewhere.dart' as External;
 Exclude code from a package with the `hide` keyword.
 
 {{< file "dart" "packages.dart" >}}
+
 ```dart
 import 'somewhere.dart' hide Circle;
 ```
@@ -33,6 +35,7 @@ import 'somewhere.dart' hide Circle;
 Import individual classes from a package with the `show` keyword.
 
 {{< file "dart" "packages.dart" >}}
+
 ```dart
 import 'somewhere.dart' show Rectangle;
 ```

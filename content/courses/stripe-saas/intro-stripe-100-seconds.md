@@ -1,5 +1,5 @@
 ---
-title: Stripe in 100 Seconds 
+title: Stripe in 100 Seconds
 description: Stripe explained as quickly as possible
 weight: 1
 lastmod: 2024-03-22T10:23:30-09:00
@@ -10,7 +10,6 @@ video_length: 1:50
 free: true
 chapter_start: Basics
 ---
-
 
 ## Notes
 

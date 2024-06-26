@@ -30,6 +30,7 @@ To create your first workflow click on **Set up a workflow yourself**
 Your first GitHub action looks like this:
 
 {{< file "github" "main.yml" >}}
+
 ```typescript
 name: CI
 
@@ -123,6 +124,7 @@ Generate a token for firebase ci:
 - `firebase login:ci` returns a token to be used in a CI server
 
 {{< file "terminal" "command line" >}}
+
 ```text
 Waiting for authentication...
 
@@ -142,6 +144,7 @@ Go to `Settings > Secrets`:
 Your final workflow should look something like this in the text editor:
 
 {{< file "github" "main.yml" >}}
+
 ```typescript
 name: CI
 
@@ -170,6 +173,6 @@ jobs:
         FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
 ```
 
-Now you can commit your new workflow to your repository. This workflow is added to `.github/workflows/main.yml`. Go ahead and push a change to your Angular project and you can see the progress in the **Actions** tab and your change are deployed directly to Firebase. 
+Now you can commit your new workflow to your repository. This workflow is added to `.github/workflows/main.yml`. Go ahead and push a change to your Angular project and you can see the progress in the **Actions** tab and your change are deployed directly to Firebase.
 
 [ng-firebase-github-action](https://github.com/marcjulian/ng-firebase-github-actions) is an example Angular app w/ the `main.yml` deploying the app to Firebase hosting. The app is available on firebase [here](https://ng-firebase-github-actions.firebaseapp.com/).

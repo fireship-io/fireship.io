@@ -5,12 +5,12 @@ publishdate: 2021-07-08T23:11:49-04:00
 author: Kyle Leary
 draft: false
 description: Handle media queries in React with a useMediaQuery() hook
-tags: 
-    - react
-    - hooks
+tags:
+  - react
+  - hooks
 
-versions: 
-    "react": 16.8
+versions:
+  "react": 16.8
 
 type: lessons
 ---
@@ -19,13 +19,13 @@ type: lessons
 
 ## useMediaQuery()
 
-This simple hook makes it easy to share &&  render components, logic, styling, etc. through the use of media queries from your JSX code. 
+This simple hook makes it easy to share && render components, logic, styling, etc. through the use of media queries from your JSX code.
 
 ### Create the hook
 
 {{< file "react" "hooks/useMediaQuery.jsx" >}}
-```jsx
 
+```jsx
 import { useState, useEffect } from "react";
 
 const useMediaQuery = (query) => {
@@ -42,7 +42,7 @@ const useMediaQuery = (query) => {
   }, [matches, query]);
 
   return matches;
-}
+};
 
 export default useMediaQuery;
 ```
@@ -50,26 +50,26 @@ export default useMediaQuery;
 ### Use the hook
 
 {{< file "react" "App.js" >}}
-```jsx
 
+```jsx
 import React from "react";
 import "./index.css";
 import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
   // You can use any @media property
-  const isDesktop = useMediaQuery('(min-width: 960px)');
+  const isDesktop = useMediaQuery("(min-width: 960px)");
 
   return (
     <div className="App">
       {isDesktop ? <h1>Desktop</h1> : <h1>Mobile</h1>}
-      <Navbar isDesktop={isDesktop}/>
+      <Navbar isDesktop={isDesktop} />
     </div>
   );
 }
 
 // Navbar component
-const Navbar = ({isDesktop}) => (
+const Navbar = ({ isDesktop }) => (
   <nav className={`base ${isDesktop ? "desktop" : "mobile"}`}>
     <Icon />
     <Icon />
@@ -77,7 +77,6 @@ const Navbar = ({isDesktop}) => (
     <Icon />
   </nav>
 );
-
 
 // SVG icon component
 const Icon = () => (
@@ -99,8 +98,8 @@ export default App;
 ### Optional CSS styling
 
 {{< file "css" "index.css" >}}
-```css
 
+```css
 :root {
   --dark: #151718;
   --text: #00c3ff;

@@ -11,9 +11,10 @@ video_length: 4:11
 
 ## Login Screen
 
-Create a login screen and a reusable button for multiple auth methods. 
+Create a login screen and a reusable button for multiple auth methods.
 
 {{< file "dart" "login.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

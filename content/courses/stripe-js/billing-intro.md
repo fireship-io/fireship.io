@@ -1,5 +1,5 @@
 ---
-title: Billing 
+title: Billing
 description: Use Stripe billing to manage customers and their payment history
 weight: 50
 lastmod: 2020-04-20T10:23:30-09:00

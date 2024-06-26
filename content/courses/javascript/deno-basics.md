@@ -5,10 +5,10 @@ publishdate: 2020-05-20T04:58:32-07:00
 author: Jeff Delaney
 draft: false
 description: A new TypeScript-first JavaScript runtime
-tags: 
-    - node
-    - deno
-    - typescript
+tags:
+  - node
+  - deno
+  - typescript
 
 weight: 41
 emoji: 🦕

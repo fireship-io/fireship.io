@@ -5,12 +5,12 @@ publishdate: 2017-06-25T15:17:21-07:00
 author: Jeff Delaney
 draft: false
 description: Translate text in the cloud with Firebase Cloud Functions
-tags: 
-    - node
-    - cloud-functions
+tags:
+  - node
+  - cloud-functions
 
 youtube: zioTb3Alqz4
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,7 +21,7 @@ youtube: zioTb3Alqz4
 #    rxdart: 0.20
 ---
 
-⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app. 
+⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app.
 
 <p>In this lesson, we are going to use Firebase Cloud Functions to run code in the background when new data is created in a specific part of the database, using the <a href="https://firebase.google.com/docs/reference/functions/functions.database.RefBuilder#onWrite">onWrite</a> event handler. This will allow us to abstract CPU or memory intensive tasks outside of the frontend Angular app.</p>
 
@@ -38,7 +38,6 @@ youtube: zioTb3Alqz4
 
 <p>The NoSQL database structure looks like this. User input must be in english, and translations are correspond to their language code (i.e. fr==French, ar==Arabic)</p>
 
-
 ```
 translations
     $translationId
@@ -49,31 +48,29 @@ translations
 
 ```
 
-
 ### The Translate Service
 
 <p>Our service has one simple task - Create a new translation in the database and return it as a `FirebaseObjectObservable`.</p>
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { Injectable } from "@angular/core";
+import {
+  AngularFireDatabase,
+  FirebaseObjectObservable,
+} from "angularfire2/database";
 
 @Injectable()
 export class TranslateService {
-
-  constructor(private db: AngularFireDatabase) { }
-
+  constructor(private db: AngularFireDatabase) {}
 
   createTranslation(text: string): FirebaseObjectObservable<any> {
     // create new translation, then return it as an object observable
-    const data = { 'english': text }
+    const data = { english: text };
 
-    const key = this.db.list('/translations').push(data).key
+    const key = this.db.list("/translations").push(data).key;
 
-    return this.db.object(`translations/${key}`)
+    return this.db.object(`translations/${key}`);
   }
-
-
 }
 ```
 
@@ -82,32 +79,30 @@ export class TranslateService {
 <p>Nothing too fancy here, just a `textarea` to accept the user input, then a function that will push it to the database and observe the newly created object. </p>
 
 ```typescript
-import { Component } from '@angular/core';
-import { TranslateService } from '../translate.service';
+import { Component } from "@angular/core";
+import { TranslateService } from "../translate.service";
 
 @Component({
-  selector: 'text-translate',
-  templateUrl: './text-translate.component.html',
-  styleUrls: ['./text-translate.component.scss']
+  selector: "text-translate",
+  templateUrl: "./text-translate.component.html",
+  styleUrls: ["./text-translate.component.scss"],
 })
 export class TextTranslateComponent {
-
   userText: string;
   currentTranslation;
 
-  constructor(private translateSvc: TranslateService) { }
+  constructor(private translateSvc: TranslateService) {}
 
   handleTranslation() {
-    this.currentTranslation = this.translateSvc.createTranslation(this.userText)
+    this.currentTranslation = this.translateSvc.createTranslation(
+      this.userText,
+    );
   }
 
   defaultMessage() {
-    if (!this.currentTranslation) return "Enter text and click run translation"
-    else return "Running translation in the cloud..."
+    if (!this.currentTranslation) return "Enter text and click run translation";
+    else return "Running translation in the cloud...";
   }
-
-
-
 }
 ```
 
@@ -115,10 +110,11 @@ export class TextTranslateComponent {
 
 ```html
 <h1>Translate Your Text</h1>
-<textarea  rows="8" cols="40" class="input" [(ngModel)]="userText">
-</textarea>
+<textarea rows="8" cols="40" class="input" [(ngModel)]="userText"></textarea>
 
-<button (click)="handleTranslation()" class="button is-primary">Run Translation</button>
+<button (click)="handleTranslation()" class="button is-primary">
+  Run Translation
+</button>
 
 <h3>French</h3>
 
@@ -168,33 +164,31 @@ export class TextTranslateComponent {
 ### functions/index.js
 
 ```js
-var functions = require('firebase-functions');
-const admin = require('firebase-admin');
+var functions = require("firebase-functions");
+const admin = require("firebase-admin");
 admin.initializeApp();
 
 const firebaseConfig = JSON.parse(process.env.FIREBASE_CONFIG);
 
-const request = require('request-promise');
-const _ = require('lodash');
+const request = require("request-promise");
+const _ = require("lodash");
 
 // List of output languages.
-const LANGUAGES = ['es', 'fr', 'ar'];
+const LANGUAGES = ["es", "fr", "ar"];
 
+exports.translate = functions.database
+  .ref("/translations/{translationId}")
+  .onWrite((event) => {
+    const snapshot = event.data;
+    const promises = [];
 
-exports.translate = functions.database.ref('/translations/{translationId}').onWrite(event => {
-  const snapshot = event.data;
-  const promises = [];
-
-
-  _.each(LANGUAGES, (lang) => {
-      console.log(lang)
+    _.each(LANGUAGES, (lang) => {
+      console.log(lang);
       promises.push(createTranslationPromise(lang, snapshot));
-   })
+    });
 
-  return Promise.all(promises)
-
-});
-
+    return Promise.all(promises);
+  });
 
 // URL to the Google Translate API.
 function createTranslateUrl(lang, text) {
@@ -204,21 +198,19 @@ function createTranslateUrl(lang, text) {
 function createTranslationPromise(lang, snapshot) {
   const key = snapshot.key;
   const text = snapshot.val().english;
-  let translation = {}
+  let translation = {};
 
-  return request(createTranslateUrl(lang, text), {resolveWithFullResponse: true}).then(
-      response => {
-        if (response.statusCode === 200) {
-          const resData = JSON.parse(response.body).data;
+  return request(createTranslateUrl(lang, text), {
+    resolveWithFullResponse: true,
+  }).then((response) => {
+    if (response.statusCode === 200) {
+      const resData = JSON.parse(response.body).data;
 
+      translation[lang] = resData.translations[0].translatedText;
 
-          translation[lang] = resData.translations[0].translatedText
-
-          return admin.database().ref(`/translations/${key}`)
-              .update(translation);
-        }
-        else throw response.body;
-      });
+      return admin.database().ref(`/translations/${key}`).update(translation);
+    } else throw response.body;
+  });
 }
 ```
 

@@ -4,12 +4,12 @@ lastmod: 2019-03-20T10:18:59-07:00
 publishdate: 2019-03-20T10:18:59-07:00
 author: Jeff Delaney
 draft: false
-description: Build an animated and filterable slideshow with FlutterFire - inspired by the Reflectly app. 
-tags: 
-    - flutter
-    - firestore
-    - firebase
-    - animation
+description: Build an animated and filterable slideshow with FlutterFire - inspired by the Reflectly app.
+tags:
+  - flutter
+  - firestore
+  - firebase
+  - animation
 
 youtube: 8PfiY0U_PBI
 github: https://github.com/codediodeio/flutter-firestore-animated-slideshow
@@ -29,17 +29,18 @@ One of the best examples of a well-designed UI in Flutter is [Reflectly](https:/
 
 ## PageView Widget Intro
 
-The most import widget in this lesson is the [PageView](https://docs.flutter.io/flutter/widgets/PageView-class.html), which makes it possible to easily build sliding pages. It is a great tool when you have a linear flow of content because it provides the gesture-detection and animation behavior out of the box. 
+The most import widget in this lesson is the [PageView](https://docs.flutter.io/flutter/widgets/PageView-class.html), which makes it possible to easily build sliding pages. It is a great tool when you have a linear flow of content because it provides the gesture-detection and animation behavior out of the box.
 
-Optionally, you can control the state of the PageView slider with a `PageController` to navigate to a specific index in the children list. 
+Optionally, you can control the state of the PageView slider with a `PageController` to navigate to a specific index in the children list.
 
 {{< vimeo 325572628 >}}
 
 ### Basic Example
 
-Run the code below in your Flutter project to build a basic PageView slideshow. 
+Run the code below in your Flutter project to build a basic PageView slideshow.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 class MyApp extends StatelessWidget {
 
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
           ]
         )
 
-      ), 
+      ),
     );
   }
 }
@@ -69,13 +70,14 @@ class MyApp extends StatelessWidget {
 
 ## Firestore PageView Builder
 
-Now we're ready to take things to the next level. We will create a custom animation for the active page and use Firestore create and filter pages dynamically from the backend database. 
+Now we're ready to take things to the next level. We will create a custom animation for the active page and use Firestore create and filter pages dynamically from the backend database.
 
 ### Initial Setup
 
-Our feature will start with a *StatefulWidget*. There are two main events that should trigger a rebuild of the widgets. (1) The user swipes to a different page, and (2) the Firestore query changes. Both of these event sources will be setup during the *initState* lifecycle hook. 
+Our feature will start with a _StatefulWidget_. There are two main events that should trigger a rebuild of the widgets. (1) The user swipes to a different page, and (2) the Firestore query changes. Both of these event sources will be setup during the _initState_ lifecycle hook.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 class FirestoreSlideshow extends StatefulWidget {
   createState() => FirestoreSlideshowState();
@@ -88,7 +90,7 @@ class FirestoreSlideshowState extends State<FirestoreSlideshow> {
   final Firestore db = Firestore.instance;
   Stream slides;
 
-  
+
   String activeTag = 'favorites';
 
   // Keep track of current page to avoid unnecessary renders
@@ -98,20 +100,20 @@ class FirestoreSlideshowState extends State<FirestoreSlideshow> {
   @override
   void initState() {
     _queryDb();
-    
+
     // Set state when page changes
-    ctrl.addListener(() { 
+    ctrl.addListener(() {
       int next = ctrl.page.round();
 
-      if(currentPage != next) { 
+      if(currentPage != next) {
         setState(() {
           currentPage = next;
         });
-      } 
+      }
     });
 
     @override
-    Widget build(BuildContext context) { 
+    Widget build(BuildContext context) {
         // TODO
     }
 
@@ -136,7 +138,7 @@ class FirestoreSlideshowState extends State<FirestoreSlideshow> {
     _buildButton(tag) {
         // TODO
     }
-  
+
 }
 ```
 
@@ -148,12 +150,13 @@ class FirestoreSlideshowState extends State<FirestoreSlideshow> {
 
 ### Query the Database by Tag
 
-We can query the database for all stories that contain a specific tag using Firestore's [array contains](https://firebase.google.com/docs/firestore/query-data/queries#array_membership) query type. In addition, it is useful to map the document snapshots to their raw data payload at this point to keep the main widget build method free of business logic. Lastly, we update the *activeTag* on the widget to style the corresponding button with a different color when that filter is applied. 
+We can query the database for all stories that contain a specific tag using Firestore's [array contains](https://firebase.google.com/docs/firestore/query-data/queries#array_membership) query type. In addition, it is useful to map the document snapshots to their raw data payload at this point to keep the main widget build method free of business logic. Lastly, we update the _activeTag_ on the widget to style the corresponding button with a different color when that filter is applied.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
   Stream _queryDb({ String tag ='favorites' }) {
-    
+
     // Make a Query
     Query query = db.collection('stories').where('tags', arrayContains: tag);
 
@@ -168,30 +171,30 @@ We can query the database for all stories that contain a specific tag using Fire
   }
 ```
 
-
 ## UI Design
 
 ### PageView Builder
 
-In the widget's build method we first start by setting up a `StreamBuilder` so the widget reacts to data changes in Firestore. Next, we use the [PageView.builder](https://docs.flutter.io/flutter/widgets/PageView/PageView.builder.html) constructor, which allows us to build our UI on the fly and scale up to infinitely large collections. If the current index is zero, build the tag page, otherwise build the main story/card page. 
+In the widget's build method we first start by setting up a `StreamBuilder` so the widget reacts to data changes in Firestore. Next, we use the [PageView.builder](https://docs.flutter.io/flutter/widgets/PageView/PageView.builder.html) constructor, which allows us to build our UI on the fly and scale up to infinitely large collections. If the current index is zero, build the tag page, otherwise build the main story/card page.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 @override
-  Widget build(BuildContext context) { 
+  Widget build(BuildContext context) {
       return StreamBuilder(
           stream: slides,
           initialData: [],
-          builder: (context, AsyncSnapshot snap) { 
+          builder: (context, AsyncSnapshot snap) {
 
             List slideList = snap.data.toList();
 
             return PageView.builder(
-          
+
               controller: ctrl,
               itemCount: slideList.length + 1,
               itemBuilder: (context, int currentIdx) {
-              
+
 
               if (currentIdx == 0) {
                 return _buildTagPage();
@@ -209,9 +212,10 @@ In the widget's build method we first start by setting up a `StreamBuilder` so t
 
 ### Animating with an AnimatedContainer
 
-In this section, we use the [AnimatedContainer](https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html) Widget to give the active page more height and a stronger box shadow when it's active in the PageView. An AnimatedContainer is just like a regular Container, expect it requires a *duration* and *curve*. When its attributes change, Flutter will automatically perform a linear interpolation between the values with a transition animation. 
+In this section, we use the [AnimatedContainer](https://docs.flutter.io/flutter/widgets/AnimatedContainer-class.html) Widget to give the active page more height and a stronger box shadow when it's active in the PageView. An AnimatedContainer is just like a regular Container, expect it requires a _duration_ and _curve_. When its attributes change, Flutter will automatically perform a linear interpolation between the values with a transition animation.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
   _buildStoryPage(Map data, bool active) {
      // Animated Properties
@@ -239,19 +243,19 @@ In this section, we use the [AnimatedContainer](https://docs.flutter.io/flutter/
   }
 ```
 
-
 ### Filterable Firestore List
 
-The final step is to create a page with the tag filter buttons. This section is simply lays out a *Column* with several buttons that call `_queryDb` when pressed to refine the database query on the backend. 
+The final step is to create a page with the tag filter buttons. This section is simply lays out a _Column_ with several buttons that call `_queryDb` when pressed to refine the database query on the backend.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
   _buildTagPage() {
-    return Container(child: 
+    return Container(child:
       Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
-    
+
         children: [
           Text('Your Stories', style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),),
           Text('FILTER', style: TextStyle( color: Colors.black26 )),

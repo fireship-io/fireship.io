@@ -5,12 +5,12 @@ publishdate: 2017-06-23T15:09:54-07:00
 author: Jeff Delaney
 draft: false
 description: Create a Reddit-Style Voting System from Scratch with Angular and Firebase
-tags: 
-    - firebase
-    - angular
+tags:
+  - firebase
+  - angular
 
 youtube: mBPURBO1kD8
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,7 +21,7 @@ youtube: mBPURBO1kD8
 #    rxdart: 0.20
 ---
 
-⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app. 
+⚠️ This lesson has been archived! Check out the [Full Angular Course](/courses/angular) for the latest best practices about building a CRUD app.
 
 <p>Upvoting and downvoting is an excellent ay handle community-driven content curation. <a href="https://www.reddit.com/r/Angular2/">Reddit</a> is the most famous example of this feature, but it is common throughout the interwebs on places like StackOverflow, Kaggle, and others. In this lesson, we will use Angular 4 and Firebase to implement upvoting with ease.</p>
 
@@ -48,7 +48,6 @@ youtube: mBPURBO1kD8
       -| userId: number
 ```
 
-
 <p>To answer the first question, we can query the table with the itemId, then see if there is an existing userId key and vote value. We answer the second question by counting get the sum of the vote values. </p>
 
 ## Upvote Service
@@ -58,37 +57,36 @@ youtube: mBPURBO1kD8
 ### upvote.service.ts
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFireDatabase, FirebaseObjectObservable } from 'angularfire2/database';
+import { Injectable } from "@angular/core";
+import {
+  AngularFireDatabase,
+  FirebaseObjectObservable,
+} from "angularfire2/database";
 
 @Injectable()
 export class UpvoteService {
-
-  constructor(private db: AngularFireDatabase) { }
+  constructor(private db: AngularFireDatabase) {}
 
   getItemVotes(itemId): FirebaseObjectObservable<any> {
     // Gets total votes
-    return this.db.object(`upvotes/${itemId}`)
+    return this.db.object(`upvotes/${itemId}`);
   }
 
   updateUserVote(itemId, userId, vote): void {
     // Creates or updates user's vote
-    let data = {}
-    data[userId] = vote
-    this.db.object(`upvotes/${itemId}`).update(data)
+    let data = {};
+    data[userId] = vote;
+    this.db.object(`upvotes/${itemId}`).update(data);
   }
-
 }
 ```
 
 ## Upvote Component TypeScript
 
-
-
 <p>Most of the work will happen in the component. First, we are passing the component an itemId and userId via the `@Input()` decorator. Again, check out the prerequisites if you’re app still needs authentication. It should look like this:</p>
 
 ```html
-<upvote-button [itemId]='item?.$key' [userId]='user?.uid'></upvote-button>
+<upvote-button [itemId]="item?.$key" [userId]="user?.uid"></upvote-button>
 ```
 
 <p>Here’s how the component works step-by-step. </p>
@@ -106,17 +104,16 @@ export class UpvoteService {
 ### upvote-button.component.ts
 
 ```typescript
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { UpvoteService } from '../upvote.service';
-import { sum, values } from 'lodash';
+import { Component, OnInit, Input, OnDestroy } from "@angular/core";
+import { UpvoteService } from "../upvote.service";
+import { sum, values } from "lodash";
 
 @Component({
-  selector: 'upvote-button',
-  templateUrl: './upvote-button.component.html',
-  styleUrls: ['./upvote-button.component.scss']
+  selector: "upvote-button",
+  templateUrl: "./upvote-button.component.html",
+  styleUrls: ["./upvote-button.component.scss"],
 })
 export class UpvoteButtonComponent implements OnInit, OnDestroy {
-
   @Input() userId;
   @Input() itemId;
 
@@ -125,28 +122,29 @@ export class UpvoteButtonComponent implements OnInit, OnDestroy {
 
   subscription;
 
-  constructor(private upvoteService: UpvoteService) { }
+  constructor(private upvoteService: UpvoteService) {}
 
   ngOnInit() {
-    this.subscription = this.upvoteService.getItemVotes(this.itemId)
-                      .subscribe(upvotes => {
-                        if (this.userId) this.userVote = upvotes[this.userId]
-                        this.voteCount = sum(values(upvotes))
-                      })
+    this.subscription = this.upvoteService
+      .getItemVotes(this.itemId)
+      .subscribe((upvotes) => {
+        if (this.userId) this.userVote = upvotes[this.userId];
+        this.voteCount = sum(values(upvotes));
+      });
   }
 
   upvote() {
-    let vote = this.userVote == 1 ? 0 : 1
-    this.upvoteService.updateUserVote(this.itemId, this.userId, vote)
+    let vote = this.userVote == 1 ? 0 : 1;
+    this.upvoteService.updateUserVote(this.itemId, this.userId, vote);
   }
 
   downvote() {
-    let vote = this.userVote == -1 ? 0 : -1
-    this.upvoteService.updateUserVote(this.itemId, this.userId, vote)
+    let vote = this.userVote == -1 ? 0 : -1;
+    this.upvoteService.updateUserVote(this.itemId, this.userId, vote);
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.subscription.unsubscribe();
   }
 }
 ```
@@ -159,16 +157,19 @@ export class UpvoteButtonComponent implements OnInit, OnDestroy {
 
 ```html
 <div class="votebox">
-  <span class="fa fa-arrow-up vote up"
-        (click)="upvote()"
-        [ngClass]="{'active' : userVote > 0 }">
+  <span
+    class="fa fa-arrow-up vote up"
+    (click)="upvote()"
+    [ngClass]="{'active' : userVote > 0 }"
+  >
   </span>
   <span class="vote-count">{{voteCount}}</span>
 
-  <span class="fa fa-arrow-down vote down"
-        (click)="downvote()"
-        [ngClass]="{'active' : userVote < 0 }">
-
+  <span
+    class="fa fa-arrow-down vote down"
+    (click)="downvote()"
+    [ngClass]="{'active' : userVote < 0 }"
+  >
   </span>
 </div>
 ```
@@ -194,12 +195,11 @@ export class UpvoteButtonComponent implements OnInit, OnDestroy {
   }
 
   .active.up {
-      color: green;
-    }
+    color: green;
+  }
 
   .active.down {
-     color: red;
-   }
-
+    color: red;
+  }
 }
 ```

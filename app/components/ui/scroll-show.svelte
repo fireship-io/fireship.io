@@ -1,9 +1,9 @@
 <svelte:options tag="scroll-show" />
 
 <script lang="ts">
-  import { onMount } from 'svelte';
+  import { onMount } from "svelte";
   export let delay = 200;
-  export let start = 'right'
+  export let start = "right";
   export let repeat = true;
 
   let observer: IntersectionObserver;
@@ -29,7 +29,12 @@
   });
 </script>
 
-<div bind:this={ref} class:visible class={start} style={`transition-delay: ${delay}ms`}>
+<div
+  bind:this={ref}
+  class:visible
+  class={start}
+  style={`transition-delay: ${delay}ms`}
+>
   <slot />
 </div>
 

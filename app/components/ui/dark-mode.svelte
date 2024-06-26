@@ -44,4 +44,7 @@
 </script>
 
 <!-- TODO: internationalize that with go template in layout -->
-<button title={["Sombre", "Clair", "Sync Système"][mode($doesPreferDark)]} on:click={toggle}>{["🎑", "🌅", "💻"][mode($doesPreferDark)]}</button>
+<button
+  title={["Sombre", "Clair", "Sync Système"][mode($doesPreferDark)]}
+  on:click={toggle}>{["🎑", "🌅", "💻"][mode($doesPreferDark)]}</button
+>

@@ -6,18 +6,18 @@ weight: 0
 type: courses
 vimeo: 927652411
 author: Jeff Delaney
-tags: 
-    - stripe
-    - pro
-    - typescript
+tags:
+  - stripe
+  - pro
+  - typescript
 
-stack: 
-    - stripe
-    - nextjs
-    - supabase
+stack:
+  - stripe
+  - nextjs
+  - supabase
 ---
 
-**Stripe for SaaS Full Course** is a hands-on tutorial where you will build a monetized web app with [Stripe](https://stripe.com/), [Next.js](https://nextjs.org/) and [Supabase](https://supabase.com/). 
+**Stripe for SaaS Full Course** is a hands-on tutorial where you will build a monetized web app with [Stripe](https://stripe.com/), [Next.js](https://nextjs.org/) and [Supabase](https://supabase.com/).
 
 ## ⚡ What will I learn?
 
@@ -25,8 +25,8 @@ stack:
 - 💷 One-time payments
 - 💶 Recurring subscriptions
 - ⏱️ Metered pay-as-you-go billing
-- 🎣 Handle and test Stripe webhooks locally 
-- 🤝 Payment and billing strategies for SaaS products 
+- 🎣 Handle and test Stripe webhooks locally
+- 🤝 Payment and billing strategies for SaaS products
 - 🔥 Master key concepts quickly with fast-paced vidoes
 - ⚛️ Fullstack starter project with Next.js frontend and Supabase backend
 - 🧑‍💻 Includes all source code and project files
@@ -37,13 +37,11 @@ You will build a **Stock Photography Subscription SaaS Product** from scratch wh
 
 The full project demonstates how to accept payments, manage recurring subscriptions, cancellations, metereing, and more. Watch the [App Tour](/courses/stripe-saas/project-tour/) video for a full breakdown of the project.
 
-
 ## 🤔 Is this Course Right for Me?
 
 <div class="box box-blue">
 This course is intermediate level 🟦 and expects some familiarity with JavaScript and web development. The content is fast-paced and similar to my style on YouTube, but far more in-depth and should be followed in a linear format.
 </div>
-
 
 ## When was the course last updated?
 
@@ -51,5 +49,4 @@ This course is intermediate level 🟦 and expects some familiarity with JavaScr
 
 ## How do I enroll?
 
-The first few videos are *free*, so just give it try. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO. 
-
+The first few videos are _free_, so just give it try. When you reach a paid module, you will be asked to pay for a single course or upgrade to PRO.

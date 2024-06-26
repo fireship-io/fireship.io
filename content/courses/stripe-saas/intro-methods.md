@@ -1,5 +1,5 @@
 ---
-title: Payment Experience 
+title: Payment Experience
 description: Four ways to accept Stripe payments
 weight: 5
 lastmod: 2024-03-22T10:23:30-09:00
@@ -8,7 +8,6 @@ vimeo: 927619910
 emoji: 💳
 video_length: 3:21
 ---
-
 
 ## Payment Experience
 

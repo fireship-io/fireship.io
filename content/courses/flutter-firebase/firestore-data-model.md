@@ -10,7 +10,7 @@ chapter_start: Firestore
 video_length: 3:00
 ---
 
-In order to build an app identical to the live demo, you need to populate Firestore with data. 
+In order to build an app identical to the live demo, you need to populate Firestore with data.
 
 ## Task: Populate your Database with Quiz Data
 
@@ -18,12 +18,12 @@ I recommend cloning the [Quiz Questions Repo](https://github.com/fireship-io/fir
 
 At the very least, create the following documents from the schema images below.
 
-1. One document located at `topics/my-topic`. 
+1. One document located at `topics/my-topic`.
 1. One document located at `quizzes/my-quiz`.
 
 ## Database Model
 
-You can also create your own data from scratch. Below you will find screenshots of sample quiz data for each collection. 
+You can also create your own data from scratch. Below you will find screenshots of sample quiz data for each collection.
 
 ### Topics
 
@@ -33,8 +33,6 @@ You can also create your own data from scratch. Below you will find screenshots 
 
 {{< figure src="/courses/flutter-firebase/img/quiz-datamodel.png" caption="Quiz collection data model" >}}
 
-
 ### User Report
 
 {{< figure src="/courses/flutter-firebase/img/report-datamodel.png" caption="Report collection data model" >}}
-

@@ -9,10 +9,10 @@ emoji: 🖼️
 video_length: 3:27
 ---
 
-
 ## Image Upload Feature
 
 {{< file "svelte" "login/photo/+page.svelte" >}}
+
 ```svelte
 <script lang="ts">
   import AuthCheck from "$lib/components/AuthCheck.svelte";

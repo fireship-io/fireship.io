@@ -5,9 +5,9 @@ publishdate: 2019-11-21T12:40:31-07:00
 author: Jeff Delaney
 draft: false
 description: "Learn how to build a binary clock with Flutter for the #FlutterClock competition"
-tags: 
-    - flutter
-    - compsci
+tags:
+  - flutter
+  - compsci
 
 youtube: VkTj1U_exwA
 github: https://github.com/fireship-io/214-flutter-binary-clock
@@ -21,15 +21,13 @@ github: https://github.com/fireship-io/214-flutter-binary-clock
 #    rxdart: 0.20
 ---
 
-
-The Flutter Clock [Contest](https://flutter.dev/clock) is currently running with a submission deadline of Jan 20th, 2020. The following lesson will teach you how to build a basic clock with Flutter. 
+The Flutter Clock [Contest](https://flutter.dev/clock) is currently running with a submission deadline of Jan 20th, 2020. The following lesson will teach you how to build a basic clock with Flutter.
 
 ## Binary Clock Basics
 
-We are building the [binary clock](https://en.wikipedia.org/wiki/Binary_clock) shown in the demo video below. Notice how the clock ticks once-per-second and updates the highlighted boxes in the UI. The actual time is shown in big plain digits at the bottom, with the binary value for each number under it. 
+We are building the [binary clock](https://en.wikipedia.org/wiki/Binary_clock) shown in the demo video below. Notice how the clock ticks once-per-second and updates the highlighted boxes in the UI. The actual time is shown in big plain digits at the bottom, with the binary value for each number under it.
 
-Each **column** represents a digit of time in `hh:mm:ss` format. Each **row** represents a binary value of 1, 2, 4, or 8 (or 0 if no boxes are colored). You calculate each digit in regular time by adding all the values (or bits) in a column.  
-
+Each **column** represents a digit of time in `hh:mm:ss` format. Each **row** represents a binary value of 1, 2, 4, or 8 (or 0 if no boxes are colored). You calculate each digit in regular time by adding all the values (or bits) in a column.
 
 <div class="vid-center">
 {{< vimeo 374741877 >}}
@@ -37,12 +35,12 @@ Each **column** represents a digit of time in `hh:mm:ss` format. Each **row** re
 
 ## Initial Setup
 
-
 ### Create a Flutter App
 
-Get started by creating a new Flutter app by running `flutter create my_awesome_clock`. The initial app will import a few dependencies and wrap the `Clock` widget inside of Scaffold. 
+Get started by creating a new Flutter app by running `flutter create my_awesome_clock`. The initial app will import a few dependencies and wrap the `Clock` widget inside of Scaffold.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'dart:async';
 import 'dart:math';
@@ -68,12 +66,12 @@ class MyApp extends StatelessWidget {
 
 ```
 
-
 ### Force the App to Run in Landscape Mode
 
-The Flutter Clock contest requires the app to run in landscape mode. You can tell Flutter to whitelist specific device orientations with the SystemChrome class. In our case, we will allow `landscapeLeft` or `landscapeRight` by updating the main function. 
+The Flutter Clock contest requires the app to run in landscape mode. You can tell Flutter to whitelist specific device orientations with the SystemChrome class. In our case, we will allow `landscapeLeft` or `landscapeRight` by updating the main function.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 void main() {
   SystemChrome.setPreferredOrientations([
@@ -88,9 +86,10 @@ void main() {
 
 ### Make the Clock Tick
 
-The only state that ever changes on the clock is the time, which should update once-per-second. Simply create a [DateTime](https://api.dartlang.org/stable/2.6.1/dart-core/DateTime-class.html) property and update it every second with a periodic timer. 
+The only state that ever changes on the clock is the time, which should update once-per-second. Simply create a [DateTime](https://api.dartlang.org/stable/2.6.1/dart-core/DateTime-class.html) property and update it every second with a periodic timer.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 class Clock extends StatefulWidget {
   Clock({Key key}) : super(key: key);
@@ -111,21 +110,21 @@ class _ClockState extends State<Clock> {
         _now = DateTime.now(); // or BinaryTime see next step
       });
     });
-    
+
     super.initState();
   }
 
-  
+
 }
 
 ```
 
 ### Converting Integers to Binary Strings
 
-A clock displays time on a format that looks like `14:23:55` or `hh:mm:ss`. In order to keep business logic out of the widget, a custom class called `BinaryTime` provides the values we need for the main UI. 
-
+A clock displays time on a format that looks like `14:23:55` or `hh:mm:ss`. In order to keep business logic out of the widget, a custom class called `BinaryTime` provides the values we need for the main UI.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 /// Utility class to access values as binary integers
 class BinaryTime {
@@ -150,14 +149,14 @@ class BinaryTime {
 }
 ```
 
-
 ## Clock UI
 
 ### Columns for Each Clock Digit
 
-Each column in the binary clock represents a digit in normal base-10 time. The Clock widget implements six fixed columns for each digit. 
+Each column in the binary clock represents a digit in normal base-10 time. The Clock widget implements six fixed columns for each digit.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 
 class Clock extends StatefulWidget {
@@ -229,13 +228,12 @@ class _ClockState extends State<Clock> {
 }
 ```
 
-
-
 ### Individual Clock Column
 
 At this point, each column must be split into four cells, where a cell represents a single bit. The code below loops over the digits in a binary integer, then colors them if the cell is active (has a value of 1).
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 /// Column to represent a binary integer.
 class ClockColumn extends StatelessWidget {

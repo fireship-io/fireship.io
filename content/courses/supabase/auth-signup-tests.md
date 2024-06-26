@@ -121,7 +121,7 @@ test.describe("User auth", () => {
       });
       await expect(welcomeHeader).toHaveCount(1);
       await expect(validation).toHaveText(
-        "Username can only contain letters, numbers, and underscores"
+        "Username can only contain letters, numbers, and underscores",
       );
     });
     test("it should not allow usernames longer than 15 characters", async ({
@@ -138,7 +138,7 @@ test.describe("User auth", () => {
       });
       await expect(welcomeHeader).toHaveCount(1);
       await expect(validation).toHaveText(
-        "Username must be less than 15 characters long"
+        "Username must be less than 15 characters long",
       );
     });
 
@@ -156,7 +156,7 @@ test.describe("User auth", () => {
       });
       await expect(welcomeHeader).toHaveCount(1);
       await expect(validation).toHaveText(
-        "Username must be at least 4 characters long"
+        "Username must be at least 4 characters long",
       );
     });
   });
@@ -210,7 +210,7 @@ function reseedDb() {
     "PGPASSWORD=postgres psql -U postgres -h 127.0.0.1 -p 54322 -f supabase/clear-db-data.sql",
     // for Windows:
     // "SET PGPASSWORD=postgres&&psql -U postgres -h 127.0.0.1 -p 54322 -f supabase/clear-db-data.sql"
-    { stdio: "ignore" }
+    { stdio: "ignore" },
   );
 }
 
@@ -219,7 +219,7 @@ export async function signUp(
   email: string,
   password: string,
   userName: string,
-  skipUserName = false
+  skipUserName = false,
 ) {
   const signUpButton = page.locator("button", { hasText: "Sign Up" }).first();
   await signUpButton.click();
@@ -247,7 +247,7 @@ export async function login(
   email: string,
   password: string,
   username: string,
-  loginButtonSelector = "button"
+  loginButtonSelector = "button",
 ) {
   const signUpButton = page
     .locator(loginButtonSelector, { hasText: "Login" })

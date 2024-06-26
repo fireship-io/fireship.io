@@ -6,19 +6,18 @@ weight: 0
 type: courses
 author: Jeff Delaney
 vimeo: 773378423
-tags: 
-    - javascript
-    - node
-    - pro
+tags:
+  - javascript
+  - node
+  - pro
 
-stack: 
-    - js
-    - vite
-    - nodejs
+stack:
+  - js
+  - vite
+  - nodejs
 ---
 
-**The JavaScript Course** teaches you how to build modern applications with vanilla JavaScript - no React, no TypeScript, no Frameworks - just plain old JavaScript. 
-
+**The JavaScript Course** teaches you how to build modern applications with vanilla JavaScript - no React, no TypeScript, no Frameworks - just plain old JavaScript.
 
 ## 🦄 What will I learn?
 
@@ -32,7 +31,6 @@ This course is focused on the basics of [JavaScript](https://git-scm.com/) - the
 - 🎨 Build a text-to-image API with Node.js and OpenAI
 - 🗯️ Learn modern browser APIs like Fetch
 - 🍕 A great primer for more advanced Fireship courses
-
 
 ## 🤔 Is this Course Right for Me?
 

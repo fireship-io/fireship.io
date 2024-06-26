@@ -11,9 +11,10 @@ video_length: 3:59
 
 ## Drawer
 
-Create a new file named `drawer.dart` in the `topics` directory. It will be attached to the Scaffold on the topics screen to easily navigate to any quiz in the app. 
+Create a new file named `drawer.dart` in the `topics` directory. It will be attached to the Scaffold on the topics screen to easily navigate to any quiz in the app.
 
 {{< file "flutter" "drawer.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -108,7 +109,7 @@ class QuizList extends StatelessWidget {
 
 ## Quiz Badge
 
-The quiz badge tells the user if the quiz has been completed or not. 
+The quiz badge tells the user if the quiz has been completed or not.
 
 ```dart
 class QuizBadge extends StatelessWidget {
@@ -137,4 +138,3 @@ Apply the drawer to the Scaffold in the `topics` screen.
 ```dart
 drawer: TopicDrawer(topics: topics),
 ```
-

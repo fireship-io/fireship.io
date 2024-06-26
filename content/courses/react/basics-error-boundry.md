@@ -10,6 +10,7 @@ video_length: 1:15
 ---
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class ErrorBoundary extends React.Component {
   }
 
   componentDidCatch(error, errorInfo) {
-    console.log('something went horribly wrong', error, errorInfo);
+    console.log("something went horribly wrong", error, errorInfo);
   }
 
   render() {
@@ -49,10 +50,8 @@ function Main() {
 
 ## Challenge
 
-Create an `ErrorBoundary` class component that provides a fallback UI in the event an error occurs. 
+Create an `ErrorBoundary` class component that provides a fallback UI in the event an error occurs.
 
 <div>
 <iframe class="frame-full" src="https://stackblitz.com/edit/react-bhv9ih?embed=1&file=src/App.js"><iframe>
 </div>
-
-

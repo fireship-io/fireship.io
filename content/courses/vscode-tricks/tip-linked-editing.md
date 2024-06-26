@@ -11,4 +11,4 @@ video_length: 0:35
 
 ## ✨ Trick - Enable Linked Editing
 
-From the settings, enable the *Linked Editing* option. VS code will now automatically match any opening and closing tags for simultaneous edits.
+From the settings, enable the _Linked Editing_ option. VS code will now automatically match any opening and closing tags for simultaneous edits.

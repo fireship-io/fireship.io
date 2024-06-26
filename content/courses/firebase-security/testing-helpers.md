@@ -12,15 +12,21 @@ video_length: 4:00
 Create a file to manage setup and teardown for tests.
 
 {{< file "js" "helpers.js" >}}
+
 ```javascript
-const { loadFirestoreRules, initializeTestApp, clearFirestoreData, initializeAdminApp } = require('@firebase/rules-unit-testing');
-const { readFileSync } = require('fs');
+const {
+  loadFirestoreRules,
+  initializeTestApp,
+  clearFirestoreData,
+  initializeAdminApp,
+} = require("@firebase/rules-unit-testing");
+const { readFileSync } = require("fs");
 
 module.exports.setup = async (auth, data) => {
   const projectId = `fireship-dev-17429`;
   const app = initializeTestApp({
     projectId,
-    auth
+    auth,
   });
 
   // console.log(app.auth().currentUser)
@@ -33,7 +39,6 @@ module.exports.setup = async (auth, data) => {
       projectId,
     });
 
-
     for (const key in data) {
       const ref = admin.firestore().doc(key);
       await ref.set(data[key]);
@@ -43,38 +48,36 @@ module.exports.setup = async (auth, data) => {
   // Apply rules
   await loadFirestoreRules({
     projectId,
-    rules: readFileSync('firestore.rules', 'utf8')
+    rules: readFileSync("firestore.rules", "utf8"),
   });
 
   return db;
 };
 
 module.exports.teardown = async () => {
-  Promise.all(firebase.apps().map(app => app.delete()));
+  Promise.all(firebase.apps().map((app) => app.delete()));
   await clearFirestoreData();
 };
 ```
 
-Use Jest's hooks to call the helpers. 
+Use Jest's hooks to call the helpers.
 
 {{< file "js" "rules.test.js" >}}
+
 ```javascript
+const { assertFails, assertSucceeds } = require("@firebase/rules-unit-testing");
+const { setup, teardown } = require("./helpers");
 
-const { assertFails, assertSucceeds } = require('@firebase/rules-unit-testing');
-const { setup, teardown } = require('./helpers');
+describe("Database rules", () => {
+  let db;
 
-describe('Database rules', () => {
-    let db;
-  
-    // Applies only to tests in this describe block
-    beforeAll(async () => {
-      db = await setup(mockUser, mockData);
-    });
-  
-    afterAll(async () => {
-      await teardown();
-    });
-  
-    
+  // Applies only to tests in this describe block
+  beforeAll(async () => {
+    db = await setup(mockUser, mockData);
   });
+
+  afterAll(async () => {
+    await teardown();
+  });
+});
 ```

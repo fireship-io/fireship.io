@@ -3,12 +3,11 @@
 <!-- Is signed in  -->
 
 <script lang="ts">
-  import { user } from '../../stores/user';
+  import { user } from "../../stores/user";
 </script>
 
 {#if $user}
-    <slot></slot>
+  <slot></slot>
 {:else}
-    <slot name="signed-out"></slot>
+  <slot name="signed-out"></slot>
 {/if}
- 

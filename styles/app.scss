@@ -2,36 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://use.typekit.net/rcr1opg.css');
+@import url("https://use.typekit.net/rcr1opg.css");
 
-@import './button.scss';
-@import './special-effects.scss';
-@import './courses.scss';
-@import './lessons.scss';
-@import './syntax.scss';
-@import './mixins.scss';
-@import './tags.scss';
-@import './pricing.scss';
-@import './ui.scss';
+@import "./button.scss";
+@import "./special-effects.scss";
+@import "./courses.scss";
+@import "./lessons.scss";
+@import "./syntax.scss";
+@import "./mixins.scss";
+@import "./tags.scss";
+@import "./pricing.scss";
+@import "./ui.scss";
 
 html {
-    display: block;
-    font-size: 16px;
-    @media (min-width:1024px) {
-        font-size: 20px;
-    }
+  display: block;
+  font-size: 16px;
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
 }
 
 body {
-	@apply dark:bg-gray7 dark:text-gray1;
-    background: linear-gradient(176deg, theme('colors.eirbyellow') 40%, rgb(250, 180, 50) 100%);
-    min-height: 100vh;
-    background-attachment: fixed;
-    @include scrollbar;
+  @apply dark:bg-gray7 dark:text-gray1;
+  background: linear-gradient(
+    176deg,
+    theme("colors.eirbyellow") 40%,
+    rgb(250, 180, 50) 100%
+  );
+  min-height: 100vh;
+  background-attachment: fixed;
+  @include scrollbar;
 }
 
 .dark body {
-    background: linear-gradient(176deg, rgb(18, 24, 27) 50%, rgb(32, 39, 55) 100%);
+  background: linear-gradient(
+    176deg,
+    rgb(18, 24, 27) 50%,
+    rgb(32, 39, 55) 100%
+  );
 }
 
 h1,
@@ -40,41 +48,39 @@ h3,
 h4,
 h5,
 h6 {
-	@apply font-display font-normal;
+  @apply font-display font-normal;
 }
 
-
-svg { 
-    width: auto;
+svg {
+  width: auto;
 }
 
 figure img {
-    @apply mx-auto;
+  @apply mx-auto;
 }
 
 .container {
-    @apply max-w-screen-2xl mx-auto px-3 md:px-8;
+  @apply max-w-screen-2xl mx-auto px-3 md:px-8;
 }
 
 nav {
-  background: theme('colors.black');
+  background: theme("colors.black");
 }
 
 .dark nav {
-  background: theme('colors.eirbyellow');
+  background: theme("colors.eirbyellow");
 }
 
 .grid-list {
-    @apply grid grid-cols-1 auto-cols-max gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none;
+  @apply grid grid-cols-1 auto-cols-max gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 list-none;
 }
 
 video-player {
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    } 
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
-

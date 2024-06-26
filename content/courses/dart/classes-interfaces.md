@@ -9,9 +9,10 @@ emoji: 🧬
 video_length: 1:22
 ---
 
-An interface is a contract that a class must follow. Prefixing a method or variable with `_` makes it private, so it won't be visible when imported from a different file. 
+An interface is a contract that a class must follow. Prefixing a method or variable with `_` makes it private, so it won't be visible when imported from a different file.
 
 {{< file "dart" "interfaces.dart" >}}
+
 ```dart
 class Elephant {
   // Public interface

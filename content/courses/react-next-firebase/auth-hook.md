@@ -9,17 +9,16 @@ emoji: 🎣
 video_length: 3:57
 ---
 
-
-
 ## Custom User Data Hook
 
-Use this hook to read the current Firebase User, then use the uid to fetch the public profile document from Firestore. 
+Use this hook to read the current Firebase User, then use the uid to fetch the public profile document from Firestore.
 
 {{< file "js" "lib/hooks.js" >}}
+
 ```javascript
-import { auth, firestore } from '../lib/firebase';
-import { useEffect, useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth, firestore } from "../lib/firebase";
+import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 // Custom hook to read  auth record and user profile doc
 export function useUserData() {
@@ -31,7 +30,7 @@ export function useUserData() {
     let unsubscribe;
 
     if (user) {
-      const ref = firestore.collection('users').doc(user.uid);
+      const ref = firestore.collection("users").doc(user.uid);
       unsubscribe = ref.onSnapshot((doc) => {
         setUsername(doc.data()?.username);
       });
@@ -49,11 +48,11 @@ export function useUserData() {
 ## Usage in the App Component
 
 {{< file "js" "pages/_app.js" >}}
+
 ```javascript
-import { useUserData } from '../lib/hooks';
+import { useUserData } from "../lib/hooks";
 
 function MyApp({ Component, pageProps }) {
-  
   const userData = useUserData();
 
   return (

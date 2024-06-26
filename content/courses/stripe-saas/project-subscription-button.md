@@ -9,18 +9,17 @@ emoji: 🎞️
 video_length: 2:09
 ---
 
-
 {{< file "react" "app/CheckoutButton.tsx" >}}
+
 ```tsx
-'use client';
+"use client";
 
-import { loadStripe } from '@stripe/stripe-js';
-import { supabase } from '@/utils/supabaseClient';
-import toast from 'react-hot-toast';
-
+import { loadStripe } from "@stripe/stripe-js";
+import { supabase } from "@/utils/supabaseClient";
+import toast from "react-hot-toast";
 
 export default function CheckoutButton() {
-  const handleCheckout = async() => {
+  const handleCheckout = async () => {
     const { data } = await supabase.auth.getUser();
 
     if (!data?.user) {
@@ -28,24 +27,32 @@ export default function CheckoutButton() {
       return;
     }
 
-    const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!);
+    const stripePromise = loadStripe(
+      process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
+    );
     const stripe = await stripePromise;
-    const response = await fetch('/api/checkout', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ priceId: 'price_1OtHkdBF7AptWZlcIjbBpS8r', userId: data.user?.id, email: data.user?.email }),
-      });
+    const response = await fetch("/api/checkout", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        priceId: "price_1OtHkdBF7AptWZlcIjbBpS8r",
+        userId: data.user?.id,
+        email: data.user?.email,
+      }),
+    });
     const session = await response.json();
     await stripe?.redirectToCheckout({ sessionId: session.id });
-  }
+  };
 
   return (
     <div>
       <h1>Signup for a Plan</h1>
       <p>Clicking this button creates a new Stripe Checkout session</p>
-      <button className="btn btn-accent" onClick={handleCheckout}>Buy Now</button>
+      <button className="btn btn-accent" onClick={handleCheckout}>
+        Buy Now
+      </button>
     </div>
   );
 }

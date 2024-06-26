@@ -1,6 +1,6 @@
 ---
 title: React Setup
-description: Configure a React project for Stripe Payments 
+description: Configure a React project for Stripe Payments
 weight: 18
 lastmod: 2020-04-20T10:23:30-09:00
 draft: false
@@ -9,11 +9,10 @@ icon: react
 video_length: 2:47
 ---
 
-
 ## Create a React App
 
-
 {{< file "terminal" "command line" >}}
+
 ```text
 npx create-react-app myapp
 ```
@@ -21,48 +20,50 @@ npx create-react-app myapp
 ## Setup Stripe
 
 {{< file "js" "command line" >}}
+
 ```text
 npm install @stripe/react-stripe-js @stripe/stripe-js
 ```
 
 {{< file "react" "index.js" >}}
-```jsx
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
 
-export const stripePromise = loadStripe(
-  'pk_test_...'
-);
+```jsx
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+
+export const stripePromise = loadStripe("pk_test_...");
 
 ReactDOM.render(
   <React.StrictMode>
     <Elements stripe={stripePromise}>
-        <App />
+      <App />
     </Elements>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root"),
 );
 ```
 
 ## React Router
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm install react-router-dom
 ```
 
-Create empty files for the components referenced in the router below, like Checkout.js, Payments.js, etc. 
+Create empty files for the components referenced in the router below, like Checkout.js, Payments.js, etc.
 
 {{< file "react" "App.js" >}}
+
 ```jsx
-import React from 'react';
+import React from "react";
 
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-import { Checkout, CheckoutSuccess, CheckoutFail } from './Checkout';
-import Payments from './Payments';
-import Customers from './Customers';
-import Subscriptions from './Subscriptions';
+import { Checkout, CheckoutSuccess, CheckoutFail } from "./Checkout";
+import Payments from "./Payments";
+import Customers from "./Customers";
+import Subscriptions from "./Subscriptions";
 
 function App() {
   return (
@@ -77,7 +78,7 @@ function App() {
               <Link to="/checkout">
                 <span aria-label="emoji" role="img">
                   🛒
-                </span>{' '}
+                </span>{" "}
                 Checkout
               </Link>
             </li>
@@ -85,7 +86,7 @@ function App() {
               <Link to="/payments">
                 <span aria-label="emoji" role="img">
                   💸
-                </span>{' '}
+                </span>{" "}
                 Payments
               </Link>
             </li>
@@ -93,7 +94,7 @@ function App() {
               <Link to="/customers">
                 <span aria-label="emoji" role="img">
                   🧑🏿‍🤝‍🧑🏻
-                </span>{' '}
+                </span>{" "}
                 Customers
               </Link>
             </li>
@@ -101,7 +102,7 @@ function App() {
               <Link to="/subscriptions">
                 <span aria-label="emoji" role="img">
                   🔄
-                </span>{' '}
+                </span>{" "}
                 Subscriptions
               </Link>
             </li>

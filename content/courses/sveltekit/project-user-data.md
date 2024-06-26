@@ -9,7 +9,6 @@ emoji: 📅
 video_length: 3:34
 ---
 
-
 ## Simple Data Fetching
 
 If you don't want to write custom stores, here's a simple implementation
@@ -18,13 +17,12 @@ If you don't want to write custom stores, here's a simple implementation
 export const userData = writable<any>(null);
 
 user.subscribe((user) => {
-
   if (user) {
     const docRef = doc(db, `users/${user.uid}`);
     onSnapshot(docRef, (snapshot) => {
       userData.set(snapshot.data());
     });
-  } 
+  }
 });
 ```
 
@@ -37,9 +35,7 @@ Use this store to easily fetch data from any Firestore document on the client.
  * @param  {string} path document path or reference
  * @returns a store with realtime updates on document data
  */
-export function docStore<T>(
-  path: string,
-) {
+export function docStore<T>(path: string) {
   let unsubscribe: () => void;
 
   const docRef = doc(db, path);
@@ -62,8 +58,7 @@ export function docStore<T>(
 
 ## Derived Store
 
-Use a derived store to automatically subscribe to both the user's auth state and Firestore data at the same time. 
-
+Use a derived store to automatically subscribe to both the user's auth state and Firestore data at the same time.
 
 ```typescript
 interface UserData {
@@ -73,11 +68,14 @@ interface UserData {
   links: any[];
 }
 
-export const userData: Readable<UserData | null> = derived(user, ($user, set) => { 
-  if ($user) {
-    return docStore<UserData>(`users/${$user.uid}`).subscribe(set);
-  } else {
-    set(null); 
-  }
-});  
+export const userData: Readable<UserData | null> = derived(
+  user,
+  ($user, set) => {
+    if ($user) {
+      return docStore<UserData>(`users/${$user.uid}`).subscribe(set);
+    } else {
+      set(null);
+    }
+  },
+);
 ```

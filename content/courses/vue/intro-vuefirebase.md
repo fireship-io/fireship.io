@@ -9,10 +9,10 @@ emoji: 🔥
 video_length: 3:25
 ---
 
-
 ## Install the Vuefire & Firebase
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm i vuefire firebase
 ```
@@ -20,22 +20,24 @@ npm i vuefire firebase
 ## Install the Vuefire & Firebase
 
 {{< file "js" "main.js" >}}
+
 ```javascript
-import { firestorePlugin } from 'vuefire'
-Vue.use(firestorePlugin)
+import { firestorePlugin } from "vuefire";
+Vue.use(firestorePlugin);
 ```
 
 ## Initialize Firebase
 
 {{< file "js" "firebase.js" >}}
-```javascript
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
-import 'firebase/storage';
 
-const firebaseConfig = { 
-    // Add your config here
+```javascript
+import firebase from "firebase/app";
+import "firebase/firestore";
+import "firebase/auth";
+import "firebase/storage";
+
+const firebaseConfig = {
+  // Add your config here
 };
 
 firebase.initializeApp(firebaseConfig);

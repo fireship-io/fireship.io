@@ -21,17 +21,17 @@ free: true
 
 ##### Page
 
-- `+page.svelte` main UI for a route.  
-- `+page.ts` fetch data for a page, runs on client and server. 
-- `+page.server.ts` fetch data for a page, runs on server only. 
+- `+page.svelte` main UI for a route.
+- `+page.ts` fetch data for a page, runs on client and server.
+- `+page.server.ts` fetch data for a page, runs on server only.
 
 ##### Layout
 
-- `+layout.svelte` share UI across multiple child routes.  
-- `+layout.ts` fetch data for a layout, runs on client and server. 
-- `+layout.server.ts` fetch data for a layout, runs on server only. 
+- `+layout.svelte` share UI across multiple child routes.
+- `+layout.ts` fetch data for a layout, runs on client and server.
+- `+layout.server.ts` fetch data for a layout, runs on server only.
 
-##### Server 
+##### Server
 
 - `+server.ts` used to build API routes that handle different HTTP verbs and non-HTML response types.
 

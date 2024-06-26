@@ -9,9 +9,10 @@ emoji: 🥞
 video_length: 1:47
 ---
 
-Start an interactive rebase from a feature, then choose the squash commend to flatten your commits into a single message. 
+Start an interactive rebase from a feature, then choose the squash commend to flatten your commits into a single message.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git rebase master --interactive
 ```

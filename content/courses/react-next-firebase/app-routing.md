@@ -18,32 +18,32 @@ quiz: true
 
 Create the following routes.
 
-- `/enter` 
-- `/[username]` 
-- `/[username]/[slug]` 
+- `/enter`
+- `/[username]`
+- `/[username]/[slug]`
 - `/admin`
-- `/admin/[slug]` 
+- `/admin/[slug]`
 
 ## VS Code Component Snippet
 
 Add your own [VS Code snippets](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
 {{< file "cog" "user-snippets.json" >}}
+
 ```json
 {
-
-	"component": {
-		"scope": "javascript,typescript",
-		"prefix": "next-page",
-		"body": [
-			"export default function Page({ }) {",
-			"  return (",
-			"    <main>",
-			"    </main>",
-			"  )",  
-			"}",
-		],
-		"description": "React component"
-	}
+  "component": {
+    "scope": "javascript,typescript",
+    "prefix": "next-page",
+    "body": [
+      "export default function Page({ }) {",
+      "  return (",
+      "    <main>",
+      "    </main>",
+      "  )",
+      "}"
+    ],
+    "description": "React component"
+  }
 }
 ```

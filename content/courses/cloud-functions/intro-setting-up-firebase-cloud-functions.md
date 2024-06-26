@@ -10,24 +10,23 @@ weight: 3
 emoji: 👶
 ---
 
-Installation and setup is identical for Mac, Windows, and Linux. The only requirement is NodeJS which is likely available on your system, but if not, install NVM https://github.com/nvm-sh/nvm. 
+Installation and setup is identical for Mac, Windows, and Linux. The only requirement is NodeJS which is likely available on your system, but if not, install NVM https://github.com/nvm-sh/nvm.
 
 ## Install Node
 
 Cloud functions in either Node 6 or 8, so it is recommended that you setup your local env with. For example, with NVM
 
 {{< file "terminal" "command line" >}}
+
 ```
 nvm install 8
 nvm use 8
 ```
 
-
-
 ## Setup Cloud Functions
 
-
 {{< file "terminal" "command line" >}}
+
 ```
 npm install firebase-tools -g
 
@@ -38,7 +37,6 @@ firebase init functions
 cd functions
 ```
 
-
-
 ### Common Issue on Windows
+
 Incorrect environment path on windows https://github.com/firebase/firebase-tools/issues/610

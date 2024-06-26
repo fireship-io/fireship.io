@@ -16,11 +16,12 @@ quiz: true
 
 ## Hydrate Server Props to Realtime Data
 
-The post value will prefer the realtime value, but default to the server rendered content while it is loading. 
+The post value will prefer the realtime value, but default to the server rendered content while it is loading.
 
 {{< file "js" "pages/username/slug.js" >}}
+
 ```javascript
-import { useDocumentData } from 'react-firebase-hooks/firestore';
+import { useDocumentData } from "react-firebase-hooks/firestore";
 
 export default function Post(props) {
   const postRef = firestore.doc(props.path);
@@ -30,7 +31,6 @@ export default function Post(props) {
 
   return (
     <main className={styles.container}>
-
       <section>
         <PostContent post={post} />
       </section>
@@ -39,10 +39,8 @@ export default function Post(props) {
         <p>
           <strong>{post.heartCount || 0} 🤍</strong>
         </p>
-
       </aside>
     </main>
   );
 }
-
 ```

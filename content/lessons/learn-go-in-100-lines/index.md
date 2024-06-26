@@ -5,11 +5,10 @@ publishdate: 2021-08-28T07:27:03-07:00
 author: Alex Guja
 draft: false
 description: An introduction to Go
-tags: 
-    - go
-
+tags:
+  - go
 # youtube: f0DrPLKf6Ro
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -20,19 +19,20 @@ tags:
 #    rxdart: 0.20
 ---
 
-
 ## Introduction
 
-[Go](https://en.wikipedia.org/wiki/Go_(programming_language)) is an open-source programming language developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is often described as "C for the 21st century", however, it borrows important ideas from several other languages like ALGOL, Pascal, Modula-2, Oberon, CSP, and others. At its core, Go relies on simplicity, reliability, and efficiency to overcome the shortcomings of its ancestors. Go has garbage collection, a package system, first-class functions, lexical scope, immutable strings that rely on UTF-8, and an awesome concurrency model.
+[Go](<https://en.wikipedia.org/wiki/Go_(programming_language)>) is an open-source programming language developed at Google by Robert Griesemer, Rob Pike, and Ken Thompson. It is often described as "C for the 21st century", however, it borrows important ideas from several other languages like ALGOL, Pascal, Modula-2, Oberon, CSP, and others. At its core, Go relies on simplicity, reliability, and efficiency to overcome the shortcomings of its ancestors. Go has garbage collection, a package system, first-class functions, lexical scope, immutable strings that rely on UTF-8, and an awesome concurrency model.
 
 As a compiled language, Go is generally faster than interpreted languages and is safer from crashes thanks to its built-in type system. That being said, there is a good balance between expressiveness and safety that gives programmers the benefits of a strong type system without the burden of complex workflows.
 
 The use cases of the language vary from network servers and distributed systems to CLI’s, web and mobile development, scalable databases, and cloud-native applications.
 
 ## First Program
+
 Before we get started, check out this [guide](https://golang.org/doc/install) to download and install Go on your platform. We’ll start with the classic “hello world”. Despite being a simple example, it already illustrates many central ideas.
 
 {{< file "go" "hello_world.go" >}}
+
 ```go
 package main // Required for a standalone executable.
 
@@ -44,17 +44,18 @@ func main() {
 }
 ```
 
-The first thing to note is that every Go program is organized in a *package*. A package is just a collection of source files in the same directory that allows variables, types, and functions to be visible among other source files within the same package. For standalone files, the package is called <code>main</code>, but the name of the file is decided by the programmer.
+The first thing to note is that every Go program is organized in a _package_. A package is just a collection of source files in the same directory that allows variables, types, and functions to be visible among other source files within the same package. For standalone files, the package is called <code>main</code>, but the name of the file is decided by the programmer.
 
 Next, we import the <code>"fmt"</code> package that implements formatted I/O. We'll use the <code>fmt.Println()</code> function to write default formats to standard output and <code>fmt.Printf()</code> when we need more flexibility over the formats.
 
-Lastly, in the body of the <code>main</code> function, we make a call to <code>fmt.Println()</code>  that displays the passed argument in the output.
+Lastly, in the body of the <code>main</code> function, we make a call to <code>fmt.Println()</code> that displays the passed argument in the output.
 Note that the <code>main</code> function takes no arguments and doesn't return any values. Similar to the <code>main</code> package, the <code>main</code> function is a requirement for standalone files.
 
 To run the program, we need to compile the source code and its dependencies into an executable binary. We achieve this by opening a command line in the directory of our package and running
 the <code>go</code> command with the <code>build</code> subcommand, followed by the name of the source file.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 
 $ go build hello_world.go
@@ -62,6 +63,7 @@ $ go build hello_world.go
 
 To execute the binary, type <code>./</code> followed by the name of the binary file.
 {{< file "terminal" "command line" >}}
+
 ```text
 $ ./hello_world
 
@@ -72,6 +74,7 @@ Hello, world
 Another option is to use the <code>go</code> command with the <code>run</code> subcommand, followed by the name of the source file. This will combine the two steps outlined above and produce the same result, however, no executable will be saved in the working directory. This method is mostly used for one-off snippets and experimental code that is unlikely to be needed in the future.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 
 $ go run helloworld.go
@@ -85,9 +88,11 @@ Hello, world
 In the following 100 lines of code, we'll go through several examples illustrating Go's features. We'll cover how to declare variables, understand Go's built-in types, work with arrays and slices, cover maps, and touch on the flow of control. From there, we'll go beyond 100 lines and also look at pointers, structs, and Go's built-in support for concurrency.
 
 ### Variables
+
 When writing Go programs, variables must be declared before they can be used. The example below shows how to declare single variables or a group of variables. In the interest of space, the output is displayed as an in-line comment.
 
 {{< file "go" "variables.go" >}}
+
 ```go
 package main
 
@@ -115,11 +120,10 @@ func main() {
 
 Notice how each variable declaration is followed by the type of that variable. Before we cover types in the next section, note that we can replace the <code>var</code> keyword with <code>const</code> when we need to introduce constants in our code.
 
-
-When declaring variables, another option is to use the <code>:=</code> operator to initialize and assign to variables in one go. This is called a *short variable declaration*. Let's refactor the code above to illustrate this.
-
+When declaring variables, another option is to use the <code>:=</code> operator to initialize and assign to variables in one go. This is called a _short variable declaration_. Let's refactor the code above to illustrate this.
 
 {{< file "go" "variables_refactored.go" >}}
+
 ```go
 package main
 
@@ -133,18 +137,20 @@ func main() {
 }
 
 ```
+
 The short variable declaration makes our code neater, so we'll see it again throughout this lesson.
 
 ### Types
+
 Go offers a rich collection of types, including numerics, booleans, strings, error, and the ability to create custom types. Strings are a sequence of UTF-8 characters enclosed in double-quotes. Numerical types are the most versatile, with 8, 16, 32, and 64-bit variants for both signed (<code>int</code>) and unsigned (<code>uint</code>) integers.
 
-A <code>byte</code> is an alias for <code>uint8</code>. A <code>rune</code> is an alias for <code>int32</code>. Floats (or floating-point numbers) are either <code>float32</code> or <code>float64</code>. Complex numbers are also supported and can be represented as  <code>complex128</code> or <code>complex64</code>.
+A <code>byte</code> is an alias for <code>uint8</code>. A <code>rune</code> is an alias for <code>int32</code>. Floats (or floating-point numbers) are either <code>float32</code> or <code>float64</code>. Complex numbers are also supported and can be represented as <code>complex128</code> or <code>complex64</code>.
 
-When a variable is declared it is assigned the natural "null" value of the corresponding type. For example, in <code>var k int</code>, <code>k</code> has the value 0. 
+When a variable is declared it is assigned the natural "null" value of the corresponding type. For example, in <code>var k int</code>, <code>k</code> has the value 0.
 In <code>var s string</code>, <code>s</code> has the value <code>""</code>. The example below shows the difference between user-specified types and the default types assigned with a short variable declaration.
 
-
 {{< file "go" "types.go" >}}
+
 ```go
 package main
 
@@ -169,12 +175,13 @@ func main() {
 
 ```
 
-Notice the <code>%T</code> conversion character in the first argument of <code>fmt.Printf()</code>. In Go, this is called a *verb*, and it stands for the *type* of the passed variable. <code>\n</code> introduces a new line at the end of the output. <code>fmt.Printf()</code> has many other verbs, including <code>%d</code> for decimal integers, <code>%s</code> for strings, <code>%f</code> for floats, <code>%t</code> for booleans, and <code>%v</code> for any natural value for a type. 
+Notice the <code>%T</code> conversion character in the first argument of <code>fmt.Printf()</code>. In Go, this is called a _verb_, and it stands for the _type_ of the passed variable. <code>\n</code> introduces a new line at the end of the output. <code>fmt.Printf()</code> has many other verbs, including <code>%d</code> for decimal integers, <code>%s</code> for strings, <code>%f</code> for floats, <code>%t</code> for booleans, and <code>%v</code> for any natural value for a type.
 
 Another thing to note is that <code>int</code> is an alias for either <code>int32</code> or <code>int64</code>, depending on the underlying system.
 Let's run the code example to see the types and the formatting verbs in action.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 $ go run types.go
 
@@ -186,13 +193,12 @@ default types:
  int float64 bool bool string
 ```
 
-
-
 ### Arrays
 
 Storing a number of elements in a list can be achieved using arrays, slices, and maps (Go's version of hash-maps). We'll consider all three in the examples below. Arrays are defined by their fixed size and a common data type for all elements. Interestingly, the size of the array is part of the type, meaning arrays cannot grow or shrink, otherwise, they would have a different type. Array elements are accessed using square brackets. The example below shows how to declare an array containing strings and how to loop through its elements.
 
 {{< file "go" "arrays.go" >}}
+
 ```go
 package main
 
@@ -214,6 +220,7 @@ func main() {
 Notice the lack of parentheses around the looping condition. In this example, we traverse the array outputting the current index and the value stored at that index. Running the code produces the following output.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 $ go run arrays.go
 
@@ -228,6 +235,7 @@ Before we move on, let’s try a neater way to write the <code>for</code> loop i
 We can make use of the <code>range</code> keyword to achieve the same behavior with less code. Both versions of the code produce the same output.
 
 {{< file "go" "arrays_refactored.go" >}}
+
 ```go
 package main
 
@@ -247,9 +255,10 @@ func main() {
 
 ### Slices
 
-Slices can be thought of as *dynamic* arrays. Slices always refer to an underlying array and can grow when new elements are added. The number of elements that are visible through a slice determines its length. If a slice has an underlying array that is larger, the slice may still have the *capacity* to grow. When it comes to slices, think of the length as the *current* number of elements, and think of the capacity as the *maximum* number of elements that can be stored. Let's see an example.
+Slices can be thought of as _dynamic_ arrays. Slices always refer to an underlying array and can grow when new elements are added. The number of elements that are visible through a slice determines its length. If a slice has an underlying array that is larger, the slice may still have the _capacity_ to grow. When it comes to slices, think of the length as the _current_ number of elements, and think of the capacity as the _maximum_ number of elements that can be stored. Let's see an example.
 
 {{< file "go" "slices.go" >}}
+
 ```go
 package main
 
@@ -278,6 +287,7 @@ func main() {
 Note that when defining a slice, the last index is excluded. In other words, a slice <code>s := a[i:j]</code> will include all the elements from <code>a[i]</code> to <code>a[j - 1]</code> but not <code>a[j]</code>. In the next example, we continue exploring the behavior of slices. Let's pretend we're editing the same file and the above code is still available (instead of the <code>--snip--</code> comment).
 
 {{< file "go" "slices.go" >}}
+
 ```go
 package main
 
@@ -312,6 +322,7 @@ First, we make a copy of the <code>languages</code> array using the <code>[:]</c
 The <code>append</code> function pushes new values to the end of a slice and returns a new slice with the same type as the original. In case the capacity of a slice is insufficient to store the new element, a new slice is created that can fit all the elements. In that case, the returned slice will refer to a different underlying array. Running the above code leads to the output below.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 $ go run slices.go
 
@@ -322,9 +333,11 @@ js frameworks: [React Vue Angular Svelte]
 ```
 
 ### Maps
-Most modern programming languages have a built-in implementation of a hash-map. For example, think of Python's dictionary or JavaScript's object. Fundamentally, a map is a data structure that stores key-value pairs with a constant look-up time. The efficiency of maps comes at the expense of randomizing the order of the keys and the associated values. In other words, we make no guarantees about the order of the elements in a map. The example below showcases this behavior. 
+
+Most modern programming languages have a built-in implementation of a hash-map. For example, think of Python's dictionary or JavaScript's object. Fundamentally, a map is a data structure that stores key-value pairs with a constant look-up time. The efficiency of maps comes at the expense of randomizing the order of the keys and the associated values. In other words, we make no guarantees about the order of the elements in a map. The example below showcases this behavior.
 
 {{< file "go" "maps.go" >}}
+
 ```go
 package main
 
@@ -345,10 +358,10 @@ func main() {
 
 ```
 
-
 We define a map called <code>firstReleases</code> containing several programming languages as the keys, and their release years as the corresponding values. We also write a loop to traverse the map and output each key-value pair. If we run the code, notice the random order of the elements displayed in the output.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 $ go run maps.go
 
@@ -362,9 +375,11 @@ JavaScript was first released in 1996
 ```
 
 ### Control Flow
+
 To wrap things up, we will consider the following scenario: Let's suppose we're given a slice containing floats, and we're interested in computing their average value. We'll proceed by creating a function called <code>average</code> that takes a slice as a parameter and returns a float called <code>avg</code>. The example below shows a possible implementation.
 
 {{< file "go" "control_flow.go" >}}
+
 ```go
 
 package main
@@ -393,12 +408,12 @@ func main() {
 ```
 
 We define an input slice called <code>x</code> in the body of the <code>main</code> function and we make a call to <code>average</code>, passing in <code>x</code> as an argument. We wrap the call inside <code>fmt.Println()</code> to write the result to standard output.
-The interesting part is the implementation of the <code>average</code> function. Notice the return parameter <code>avg</code> is defined immediately at end of the function declaration. In the function body, we initialize a variable named <code>total</code> that will compute a running sum of the slice elements. From there, we check the size of the input slice. If the slice is empty, we return 0, otherwise, we loop through each element in the slice and add it to the total. Notice how we use the underscore (<code>_</code>) for the unused variable. We convert the length of the slice to a float using <code>float64(len(x))</code>. Finally, we compute the average and return the result to the caller.
+The interesting part is the implementation of the <code>average</code> function. Notice the return parameter <code>avg</code> is defined immediately at end of the function declaration. In the function body, we initialize a variable named <code>total</code> that will compute a running sum of the slice elements. From there, we check the size of the input slice. If the slice is empty, we return 0, otherwise, we loop through each element in the slice and add it to the total. Notice how we use the underscore (<code>\_</code>) for the unused variable. We convert the length of the slice to a float using <code>float64(len(x))</code>. Finally, we compute the average and return the result to the caller.
 
-
-Now that we've seen the classic <code>if-else</code> statements, let's introduce Go's <code>switch</code> statements. We'll refactor our <code>average</code> function to make use of the <code>switch</code> syntax. 
+Now that we've seen the classic <code>if-else</code> statements, let's introduce Go's <code>switch</code> statements. We'll refactor our <code>average</code> function to make use of the <code>switch</code> syntax.
 
 {{< file "go" "switch_cases.go" >}}
+
 ```go
 
 package main
@@ -426,11 +441,12 @@ func main() {
 
 ```
 
- Traditionally, the built-in switch statements in modern languages were designed to work with constants. In Go, we are allowed to use variables. We use the <code>switch</code> keyword followed by the variable of interest - in this case <code>len(x)</code>. From there, we define two cases inside curly braces, which are evaluated from top to bottom until a case succeeds. In contrast to other languages, Go runs the selected case only, thus removing the need to <code>break</code>. Another cool feature is that the variables in the switch statement are not restricted to integers.
+Traditionally, the built-in switch statements in modern languages were designed to work with constants. In Go, we are allowed to use variables. We use the <code>switch</code> keyword followed by the variable of interest - in this case <code>len(x)</code>. From there, we define two cases inside curly braces, which are evaluated from top to bottom until a case succeeds. In contrast to other languages, Go runs the selected case only, thus removing the need to <code>break</code>. Another cool feature is that the variables in the switch statement are not restricted to integers.
 
- The last thing we'll mention on this topic is Go's implementation of a <code>while</code> loop. In Go, there is no <code>while</code> keyword. Instead, we use the <code>for</code> keyword followed by a condition and a loop body. The only exception is the missing semicolon at the end of the condition. Let's see an example.
+The last thing we'll mention on this topic is Go's implementation of a <code>while</code> loop. In Go, there is no <code>while</code> keyword. Instead, we use the <code>for</code> keyword followed by a condition and a loop body. The only exception is the missing semicolon at the end of the condition. Let's see an example.
 
 {{< file "go" "while_loop.go" >}}
+
 ```go
 package main
 
@@ -445,17 +461,20 @@ func main() {
 }
 ```
 
-Congratulations for making it this far! Now it's time to have a break 
-⏱️ (or another cup of coffee 
+Congratulations for making it this far! Now it's time to have a break
+⏱️ (or another cup of coffee
 ☕) before we dive into the bonus section 🎁 .
 
 ## Beyond 100 Lines
+
 In this section, we'll go beyond the basics and explore three more examples related to pointers, structs, and concurrency.
 
 ### Structs and pointers
-Before we begin discussing structs and user-defined types, we have to cover pointers. The good news is that pointer arithmetic is not allowed in Go, which eliminates dangerous/unpredictable behavior. A *pointer* stores the memory address of a value. In Go, the type <code>*T</code> is a pointer to a <code>T</code> value. The default value for pointers is <code>nil</code>. Let's go through an example.
+
+Before we begin discussing structs and user-defined types, we have to cover pointers. The good news is that pointer arithmetic is not allowed in Go, which eliminates dangerous/unpredictable behavior. A _pointer_ stores the memory address of a value. In Go, the type <code>\*T</code> is a pointer to a <code>T</code> value. The default value for pointers is <code>nil</code>. Let's go through an example.
 
 {{< file "go" "pointers.go" >}}
+
 ```go
 package main
 
@@ -465,7 +484,7 @@ func main() {
 	var address *int  // declare an int pointer
 	number := 42      // int
 	address = &number // address stores the memory address of number
-	value := *address // dereferencing the value 
+	value := *address // dereferencing the value
 
 	fmt.Printf("address: %v\n", address) // address: 0xc0000ae008
 	fmt.Printf("value: %v\n", value)     // value: 42
@@ -474,12 +493,13 @@ func main() {
 
 ```
 
-When working with pointers there are two important symbols to be aware of. The address operator (<code>&</code>) provides the *memory address* of a value. It is used to bind a pointer to a value. The asterisk operator (<code>*</code>) prefixing a type denotes a pointer type, whereas an asterisk prefixing a variable is used to *dereference* the value the variable points to. If you're new to pointers, they may take some getting used to, however, we don't need to dive too deep at this point. Once you feel confident with the example above, you're all set for the rest of this lesson. 
+When working with pointers there are two important symbols to be aware of. The address operator (<code>&</code>) provides the _memory address_ of a value. It is used to bind a pointer to a value. The asterisk operator (<code>*</code>) prefixing a type denotes a pointer type, whereas an asterisk prefixing a variable is used to *dereference\* the value the variable points to. If you're new to pointers, they may take some getting used to, however, we don't need to dive too deep at this point. Once you feel confident with the example above, you're all set for the rest of this lesson.
 
 For the next part, we'll switch gears and cover how to use a <code>struct</code> to define a custom type.
 A <code>struct</code> is simply a collection of fields. In the next example, we'll use what we've learned about pointers, learn how to use a struct, and build a stack from scratch.
 
 {{< file "go" "structs.go" >}}
+
 ```go
 package main
 
@@ -522,12 +542,14 @@ Next we define the <code>push</code> and <code>pop</code> methods. A method is a
 In the body of our stack methods, we access the stack fields using the dot notation. In the <code>push</code> method, we write a given integer <code>k</code> to the first available index (recall the default value of a declared int is 0), and increment the index by 1. In the <code>pop</code> method we decrement the index by 1, and return the last item in the stack. In the body of the <code>main</code> function, we use <code>new()</code> to create a pointer to a newly allocated stack. We then push 2 items and write the result to standard output.
 
 ### Concurrency
-We'll wrap things up by considering one more example related to concurrency. We'll introduce *goroutines* which are Go's version of threads.
-If you're new to threads, they are nothing but a sequential control flow in a program. Things get interesting when multiple threads are run in parallel so that a program can make use of multiple CPU cores. Goroutines are initiated using the <code>go</code> keyword. In addition to goroutines, Go has built-in *channels* which are used to share data between goroutines. In general, send and receive operations across a channel block the execution until the other side is ready.
+
+We'll wrap things up by considering one more example related to concurrency. We'll introduce _goroutines_ which are Go's version of threads.
+If you're new to threads, they are nothing but a sequential control flow in a program. Things get interesting when multiple threads are run in parallel so that a program can make use of multiple CPU cores. Goroutines are initiated using the <code>go</code> keyword. In addition to goroutines, Go has built-in _channels_ which are used to share data between goroutines. In general, send and receive operations across a channel block the execution until the other side is ready.
 
 In the example below, we'll consider 5 goroutines that run in parallel. Let's suppose we organize a cooking contest between 5 gopher chefs. This is a timed contest and whoever finishes their dish first wins. Let's see how we can simulate this contest using Go's concurrency features.
 
 {{< file "go" "concurrency.go" >}}
+
 ```go
 package main
 
@@ -558,10 +580,10 @@ func cookingGopher(id int, c chan int) {
 
 First, we create a channel that will be common to all goroutines. Then we start 5 goroutines and pass the channel as an argument. Inside each goroutine, we write the gopher id to standard output as soon the gopher starts cooking the dish. We then send the gopher id from the goroutine back to the caller. From there, we're back to the body of the main function where we receive the gopher id and record their finishing time.
 
-
 Since we're dealing with concurrent code, we lose the ability to predict the order of the output, however, we can observe how the channel blocks the execution, as a goroutine has to wait until the channel is available before it can send an id. One possible output is included below. Keep in mind that we're probably using more goroutines than the number of cores on our machine, hence it's likely that a single core is time-multiplexed to simulate the concurrency.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 $ go run concurrency.go
 

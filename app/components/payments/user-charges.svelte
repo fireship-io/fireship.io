@@ -1,14 +1,14 @@
 <svelte:options tag="user-charges" />
 
 <script lang="ts">
-  import { callUserAPI } from '../../util/firebase';
+  import { callUserAPI } from "../../util/firebase";
   let loading = false;
   let charges = null;
 
   async function getCharges() {
     loading = true;
     const res =
-      (await callUserAPI<any>({ fn: 'getCharges', payload: {} })) ?? [];
+      (await callUserAPI<any>({ fn: "getCharges", payload: {} })) ?? [];
     charges = res.data || [];
     loading = false;
   }
@@ -17,7 +17,7 @@
 {#if !charges}
   <button on:click={getCharges}>
     {#if loading}<loading-spinner />{/if}
-    {loading ? 'loading...' : 'get receipts'}
+    {loading ? "loading..." : "get receipts"}
   </button>
 {/if}
 
@@ -27,7 +27,9 @@
     {#each charges as ch}
       <li>
         <a target="_blank" href={ch.receipt_url}> {ch.id}</a> for
-        <strong>${ch.amount / 100}</strong> on {new Date(ch.created * 1000).toLocaleDateString()}
+        <strong>${ch.amount / 100}</strong> on {new Date(
+          ch.created * 1000,
+        ).toLocaleDateString()}
       </li>
     {/each}
   </ul>

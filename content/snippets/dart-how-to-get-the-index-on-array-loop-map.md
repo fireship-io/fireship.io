@@ -6,19 +6,19 @@ author: Jeff Delaney
 draft: false
 description: How to access the index when using the map method on a Dart List.
 type: lessons
-tags: 
-    - flutter
-    - dart
+tags:
+  - flutter
+  - dart
 ---
 
-The following snippet demonstrates how to access the iteration index when using [List.map](https://api.dartlang.org/stable/2.6.1/dart-core/Iterable/map.html). It is a common need in Flutter when looping over or mapping a list of values to widgets. 
-
+The following snippet demonstrates how to access the iteration index when using [List.map](https://api.dartlang.org/stable/2.6.1/dart-core/Iterable/map.html). It is a common need in Flutter when looping over or mapping a list of values to widgets.
 
 ## Problem
 
-Unlike JavaScript, one cannot simply access the index of a list during a `List.map` operation in Dart. 
+Unlike JavaScript, one cannot simply access the index of a list during a `List.map` operation in Dart.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 List myList = ['a', 'b', 'c'];
 
@@ -30,13 +30,14 @@ myList.map( (val, index) {
 
 ## Solutions
 
-There are several ways to access the index when looping over a List. 
+There are several ways to access the index when looping over a List.
 
 ### Use Map Entries
 
-Convert the `List` to a `Map`, then map the [entries](https://api.dartlang.org/stable/2.0.0/dart-core/Map/entries.html) containing the key/value pairs. Each key in the map is the index of the original list. 
+Convert the `List` to a `Map`, then map the [entries](https://api.dartlang.org/stable/2.0.0/dart-core/Map/entries.html) containing the key/value pairs. Each key in the map is the index of the original list.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 myList.asMap().entries.map((entry) {
     int idx = entry.key;
@@ -45,7 +46,6 @@ myList.asMap().entries.map((entry) {
     return something;
 }
 ```
-
 
 ### Generate a Fixed Range List
 
@@ -62,10 +62,9 @@ fixedList.map((idx) {
 }
 ```
 
-
 ### Grab the Index of Unique Values
 
-You can access the index of a specific value by searching for it with [List.indexOf](https://api.dartlang.org/stable/2.6.1/dart-core/List/indexOf.html), which returns the index of the first match. This approach is most predictable when all values are unique. A [Set](https://api.dartlang.org/stable/2.6.1/dart-core/Set-class.html) can ensure uniqueness throughout the list. 
+You can access the index of a specific value by searching for it with [List.indexOf](https://api.dartlang.org/stable/2.6.1/dart-core/List/indexOf.html), which returns the index of the first match. This approach is most predictable when all values are unique. A [Set](https://api.dartlang.org/stable/2.6.1/dart-core/Set-class.html) can ensure uniqueness throughout the list.
 
 ```dart
 final List uniqueList = Set.from(myList).toList();

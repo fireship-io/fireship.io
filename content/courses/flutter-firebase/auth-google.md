@@ -13,8 +13,8 @@ video_length: 3:15
 
 Implement Google Login in the auth service.
 
-
 {{< file "flutter" "services/auth.dart" >}}
+
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -49,6 +49,7 @@ class AuthService {
 Add Google Sign In to the login screen column.
 
 {{< file "flutter" "login.dart" >}}
+
 ```dart
     LoginButton(
         text: 'Sign in with Google',

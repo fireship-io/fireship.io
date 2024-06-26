@@ -8,7 +8,7 @@ vimeo: 599245578
 emoji: 🌲
 video_length: 2:05
 chapter_start: Collaboration
-chapter_icon: 🌲 
+chapter_icon: 🌲
 quiz: true
 ---
 
@@ -19,6 +19,7 @@ quiz: true
 List out branches:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git branch
 ```
@@ -26,6 +27,7 @@ git branch
 Create a new branch:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git branch awesome
 ```
@@ -33,6 +35,7 @@ git branch awesome
 Delete a branch
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git branch -d awesome
 ```

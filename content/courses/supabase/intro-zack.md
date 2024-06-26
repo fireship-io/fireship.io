@@ -8,7 +8,7 @@ vimeo: 773633923
 emoji: 👋
 chapter_start: Prerequisites
 video_length: 1:33
-free: true 
+free: true
 ---
 
 ## More Content from Zack

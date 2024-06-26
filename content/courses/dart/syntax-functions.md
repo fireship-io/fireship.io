@@ -14,6 +14,7 @@ video_length: 3:17
 Function with positional parameters:
 
 {{< file "dart" "functions.dart" >}}
+
 ```dart
   // Basic Function
   String takeFive(int number) {
@@ -24,6 +25,7 @@ Function with positional parameters:
 Function with named parameters:
 
 {{< file "dart" "functions.dart" >}}
+
 ```dart
   // Named parameters
   namedParams({required int a, int b = 5}) {
@@ -38,6 +40,7 @@ Function with named parameters:
 Arrow functions are useful when passing functions as parameters to other functions.
 
 {{< file "dart" "functions.dart" >}}
+
 ```dart
   // Arrow Function
   String takeFive(int number) => '$number minus five equals ${number - 5}';
@@ -48,6 +51,7 @@ Arrow functions are useful when passing functions as parameters to other functio
 Many APIs in Dart use callback functions, often to handle events or gestures in Flutter.
 
 {{< file "dart" "functions.dart" >}}
+
 ```dart
   // First-class functions
   callIt(Function callback) {
@@ -56,5 +60,3 @@ Many APIs in Dart use callback functions, often to handle events or gestures in 
     return 'Result: $result';
   }
 ```
-
-

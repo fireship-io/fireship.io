@@ -12,18 +12,20 @@ free: true
 
 ## Create a Node Project
 
-Start with an empty Node project. 
+Start with an empty Node project.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm init -y
 ```
 
 ## Dependencies
 
-Add the following dependencies and scripts. 
+Add the following dependencies and scripts.
 
 {{< file "npm" "package.json" >}}
+
 ```json
 {
   "name": "stripe-server",
@@ -57,18 +59,19 @@ Add the following dependencies and scripts.
 ```
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm install
 
 npm run dev
 ```
 
-
 ## TS Config
 
-Add a `tsconfig.json` to handle TS compilation. 
+Add a `tsconfig.json` to handle TS compilation.
 
 {{< file "ts" "tsconfig.json" >}}
+
 ```json
 {
   "compilerOptions": {
@@ -85,15 +88,14 @@ Add a `tsconfig.json` to handle TS compilation.
     "esModuleInterop": true
   },
   "compileOnSave": true,
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
 ```
 
 ## Setup Environment Variables
 
 {{< file "cog" ".env" >}}
+
 ```text
 STRIPE_SECRET=sk_test_YOUR_KEY
 WEBAPP_URL="http://localhost:3000"

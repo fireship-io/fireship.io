@@ -12,9 +12,10 @@ chapter_start: Build an App
 
 [Project Source Code](https://github.com/fireship-io/nextjs-course)
 
-Create a new Next.js app that enables the app directory and uses TypeScript. 
+Create a new Next.js app that enables the app directory and uses TypeScript.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npx create-next-app myspace
 ```

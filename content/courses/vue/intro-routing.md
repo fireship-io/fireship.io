@@ -15,34 +15,35 @@ video_length: 2:13
 [Routing Docs](https://router.vuejs.org/)
 
 {{< file "terminal" "command line" >}}
+
 ```text
 npm install vue-router
 ```
 
-## Configure a Basic Route 
+## Configure a Basic Route
 
 {{< file "js" "main.js" >}}
-```javascript
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
 
-import Home from './components/Home'
+```javascript
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
+
+import Home from "./components/Home";
 
 const router = new VueRouter({
-  routes: [
-    { path: '/', component: Home },
-  ]
-})
+  routes: [{ path: "/", component: Home }],
+});
 
 new Vue({
-  router, 
-  render: h => h(App),
-}).$mount('#app')
+  router,
+  render: (h) => h(App),
+}).$mount("#app");
 ```
 
 ## Create the Home Page
 
 {{< file "vue" "App.vue" >}}
+
 ```html
 <template>
   <div class="section">

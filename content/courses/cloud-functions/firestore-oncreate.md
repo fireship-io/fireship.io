@@ -10,4 +10,3 @@ free: true
 weight: 16
 emoji: 🔥
 ---
-

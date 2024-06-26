@@ -5,7 +5,7 @@ weight: 16
 lastmod: 2020-04-20T10:23:30-09:00
 draft: false
 vimeo: 416483410
-emoji: 
+emoji:
 icon: node
 video_length: 3:46
 ---
@@ -13,6 +13,7 @@ video_length: 3:46
 ## Create an Express App
 
 {{< file "ts" "api.ts" >}}
+
 ```javascript
 import express, { Request, Response } from 'express';
 export const app = express();
@@ -34,10 +35,12 @@ app.post('/test', (req: Request, res: Response) => {
 ## Listen to Incoming Requests
 
 {{< file "ts" "index.ts" >}}
+
 ```javascript
 // Start the API with Express
-import { app } from './api';
+import { app } from "./api";
 const port = process.env.PORT || 3333;
-app.listen(port, () => console.log(`API available on http://localhost:${port}`));
-
+app.listen(port, () =>
+  console.log(`API available on http://localhost:${port}`),
+);
 ```

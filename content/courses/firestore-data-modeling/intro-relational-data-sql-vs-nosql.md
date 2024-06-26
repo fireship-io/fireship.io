@@ -9,5 +9,4 @@ vimeo: 330782755
 video_length: 2:17
 ---
 
-
-Focus on *how you will access the data from the app* for a specific view or screen, NOT the most efficient [normalized](https://en.wikipedia.org/wiki/Database_normalization) structure. Favor efficient reads over efficient writes. 
+Focus on _how you will access the data from the app_ for a specific view or screen, NOT the most efficient [normalized](https://en.wikipedia.org/wiki/Database_normalization) structure. Favor efficient reads over efficient writes.

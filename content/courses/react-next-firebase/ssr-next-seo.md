@@ -16,7 +16,6 @@ quiz: true
   <h5>You have a page that doesn't change often, but will be shared on social media. Which strategy is ideal?</h5>
 </quiz-modal>
 
-
 In this section we will look at techniques for data fetching and server-side rendering in Next.js.
 
 ## Should I fetch data on the server?

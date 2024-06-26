@@ -12,6 +12,7 @@ video_length: 1:43
 Basic way to create and apply a stash
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git stash
 git stash pop
@@ -20,6 +21,7 @@ git stash pop
 Manage your stashes more easily by giving them a name:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git stash save coolstuff
 ```
@@ -27,6 +29,7 @@ git stash save coolstuff
 List out all stashes:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git stash list
 ```
@@ -34,7 +37,7 @@ git stash list
 Apply a stash based on its index:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git stash apply 1
 ```
-

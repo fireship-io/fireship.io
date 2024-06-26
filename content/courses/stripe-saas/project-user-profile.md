@@ -14,6 +14,7 @@ video_length: 3:32
 Create a React server component for the login page:
 
 {{< file "react" "app/user/UserProfile.tsx" >}}
+
 ```tsx
 "use client";
 
@@ -28,8 +29,10 @@ export default function UserProfile() {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
       setUser(user);
 
       if (user) {
@@ -40,7 +43,7 @@ export default function UserProfile() {
           .single();
 
         if (error) {
-          console.log("No stripe customer data found",);
+          console.log("No stripe customer data found");
         } else {
           setStripeCustomer(stripeCustomerData);
         }
@@ -59,7 +62,7 @@ export default function UserProfile() {
           setUser(null);
           setStripeCustomer(null);
         }
-      }
+      },
     );
 
     return () => {
@@ -83,19 +86,23 @@ export default function UserProfile() {
             Supabase User ID: <strong>{user.id}</strong>
           </p>
           <div>
-          <button className="btn btn-secondary my-3 btn-sm" onClick={handleLogout}>
-            Logout
-          </button>
+            <button
+              className="btn btn-secondary my-3 btn-sm"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
           </div>
 
           <h2>Stripe Customer Data</h2>
-          {stripeCustomer ? (<>
-            <p>This data lives in the stripe_customers table in Supabase</p>
-            <div className="mockup-code">
-              <pre>
-                <code>{JSON.stringify(stripeCustomer, null, 2)}</code>
-              </pre>
-            </div>
+          {stripeCustomer ? (
+            <>
+              <p>This data lives in the stripe_customers table in Supabase</p>
+              <div className="mockup-code">
+                <pre>
+                  <code>{JSON.stringify(stripeCustomer, null, 2)}</code>
+                </pre>
+              </div>
             </>
           ) : (
             <div>
@@ -104,7 +111,6 @@ export default function UserProfile() {
               </p>
             </div>
           )}
-
         </>
       ) : (
         <>
@@ -112,7 +118,6 @@ export default function UserProfile() {
           <LoginForm />
         </>
       )}
-      
     </div>
   );
 }
@@ -121,6 +126,7 @@ export default function UserProfile() {
 Update the `app/user/page.tsx` file to include the new `UserProfile` component:
 
 {{< file "react" "app/user/page.tsx" >}}
+
 ```tsx
 import UserProfile from "./UserProfile";
 

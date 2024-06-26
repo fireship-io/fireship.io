@@ -5,11 +5,11 @@ publishdate: 2017-08-01T05:14:39-07:00
 author: Jeff Delaney
 draft: false
 description: Send web push notifications to multiple devices with Firebase Cloud Messaging and Firestore
-tags: 
-    - push-notifications
-    - firebase
-    - fcm
-    - pro
+tags:
+  - push-notifications
+  - firebase
+  - fcm
+  - pro
 
 pro: true
 youtube: kIpmC8yNsP0
@@ -30,12 +30,11 @@ A few months ago, I released a video covering Firebase Cloud Messaging (FCM) wit
 - Send [Firebase push messages](https://firebase.google.com/docs/cloud-messaging/) to multiple devices simultaneously.
 - Angular 5
 
-
 {{< figure src="img/fcm-demo-angular.gif" caption="firebase cloud messaging demo in angular" >}}
 
 ## Setting Up Firebase Cloud Messaging in Angular
 
-There are several steps you must take in Angular to get started with cloud messaging. 
+There are several steps you must take in Angular to get started with cloud messaging.
 
 ### User Auth
 
@@ -55,7 +54,7 @@ interface User {
 The fcmTokens will be mapped to the user document. The resulting document looks like this in plain JS. Each token represents a different device to which the user has granted messaging permission
 
 ```js
-{ 
+{
   uid: 'userXYZ',
   fcmTokens: {
     tokenA: true,
@@ -84,26 +83,24 @@ Then link it in the head of the `index.html`.
 ```html
 <head>
   <!-- omitted -->
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="/manifest.json" />
 </head>
 ```
 
-
 ### Service Worker
 
-Firebase makes the service worker code for push messaging dead simple. The worker just sits in the background and listens for messages. Make sure to use this exact name and file location: `src/firebase-messaging-sw.js`. You can retrieve the `messagingSenderId` from the Firebase admin console. 
+Firebase makes the service worker code for push messaging dead simple. The worker just sits in the background and listens for messages. Make sure to use this exact name and file location: `src/firebase-messaging-sw.js`. You can retrieve the `messagingSenderId` from the Firebase admin console.
 
 ```js
-importScripts('https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js');
-importScripts('https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js');
+importScripts("https://www.gstatic.com/firebasejs/4.6.1/firebase-app.js");
+importScripts("https://www.gstatic.com/firebasejs/4.6.1/firebase-messaging.js");
 firebase.initializeApp({
-  'messagingSenderId': 'YOUR_UNIQUE_SENDER_ID'
+  messagingSenderId: "YOUR_UNIQUE_SENDER_ID",
 });
 const messaging = firebase.messaging();
 ```
 
 ### CLI Json
-
 
 Lastly, register these files in `angular-cli.json`.
 
@@ -120,46 +117,43 @@ Lastly, register these files in `angular-cli.json`.
 
 There are several steps involved in receiving push messages.
 
-1. Get permission from the user on a given device. 
+1. Get permission from the user on a given device.
 2. Update the permission token in Firestore
 3. Listen for new messages when the app is active.
 
-All of this logic will be handled from a service: 
+All of this logic will be handled from a service:
 
 ```shell
 ng generate service messaging
 ```
 
-Here's our initial service code to which we will be writing additional methods. 
+Here's our initial service code to which we will be writing additional methods.
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { AuthService } from './auth.service';
-import * as firebase from 'firebase';
-import { Subject } from 'rxjs/Subject';
-
+import { Injectable } from "@angular/core";
+import { AngularFirestore } from "angularfire2/firestore";
+import { AuthService } from "./auth.service";
+import * as firebase from "firebase";
+import { Subject } from "rxjs/Subject";
 
 @Injectable()
 export class MessagingService {
+  private messaging = firebase.messaging();
 
-  private messaging = firebase.messaging()
-
-  private messageSource = new Subject()
-  currentMessage = this.messageSource.asObservable() // message observable to show in Angular component
+  private messageSource = new Subject();
+  currentMessage = this.messageSource.asObservable(); // message observable to show in Angular component
 
   constructor(private afs: AngularFirestore) {}
 
   //...
-
 }
 ```
 
 ### 1. Get Permission from the User
 
-Every platform that sends push messages must first gain permission from the user. We're going to be focused on the web using the JavaScript SDK, but similar principles apply to iOS and Android settings. 
+Every platform that sends push messages must first gain permission from the user. We're going to be focused on the web using the JavaScript SDK, but similar principles apply to iOS and Android settings.
 
-We are also going to monitor the token refresh. If the token changes, we will update it in Firestore to ensure the user still receives notifications. 
+We are also going to monitor the token refresh. If the token changes, we will update it in Firestore to ensure the user still receives notifications.
 
 ```typescript
   // get permission to send messages
@@ -193,12 +187,12 @@ We are also going to monitor the token refresh. If the token changes, we will up
 
 ### 2. Save the Token in Firestore
 
-Tokens are saved directly on the user document. You might also save them as a subcollection, but most users will only have 0 to 5 tokens, so the memory impact is miniscule. If the token already exists, then there is no need to run the update. 
+Tokens are saved directly on the user document. You might also save them as a subcollection, but most users will only have 0 to 5 tokens, so the memory impact is miniscule. If the token already exists, then there is no need to run the update.
 
 ```typescript
   // save the permission token in firestore
   private saveToken(user, token): void {
-    
+
       const currentTokens = user.fcmTokens || { }
 
       // If token does not exist in firestore, update db
@@ -212,7 +206,7 @@ Tokens are saved directly on the user document. You might also save them as a su
 
 ### 3. Receive Messages in Angular
 
-When the app is closed, the web worker will transmit the message via the browser. However, this is not desirable when the user is actively working in the app. What we can do instead is listen for messages, then display the notification inside the app. 
+When the app is closed, the web worker will transmit the message via the browser. However, this is not desirable when the user is actively working in the app. What we can do instead is listen for messages, then display the notification inside the app.
 
 ```typescript
   // used to show message when app is open
@@ -225,108 +219,100 @@ When the app is closed, the web worker will transmit the message via the browser
   }
 ```
 
-
-
 {{< figure src="img/fcm-demo-angular5.gif" caption="firebase cloud messaging receive inside angular component" >}}
 
 ## App Component
 
-In this example, I am going to request permission from the user via the app component. First, I subscribe to the current user's data. This only needs to be done once, so I am using `take(1)` to complete the subscription after receiving the first user document.  
-
+In this example, I am going to request permission from the user via the app component. First, I subscribe to the current user's data. This only needs to be done once, so I am using `take(1)` to complete the subscription after receiving the first user document.
 
 ```typescript
-import { Component, OnInit } from '@angular/core';
-import { MessagingService } from './core/messaging.service'
-import { AuthService } from './core/auth.service';
-import 'rxjs/add/operator/take';
-import 'rxjs/add/operator/filter';
-
+import { Component, OnInit } from "@angular/core";
+import { MessagingService } from "./core/messaging.service";
+import { AuthService } from "./core/auth.service";
+import "rxjs/add/operator/take";
+import "rxjs/add/operator/filter";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.sass"],
 })
 export class AppComponent implements OnInit {
+  constructor(
+    public msg: MessagingService,
+    public auth: AuthService,
+  ) {}
 
-  constructor(public msg: MessagingService, public auth: AuthService) { }
-
-  ngOnInit() { 
+  ngOnInit() {
     this.auth.user
-    .filter(user => !!user) // filter null
-    .take(1) // take first real user
-    .subscribe(user => {
-      if (user) {
-        this.msg.getPermission(user)
-        this.msg.monitorRefresh(user)
-        this.msg.receiveMessages()
-      }
-    })
+      .filter((user) => !!user) // filter null
+      .take(1) // take first real user
+      .subscribe((user) => {
+        if (user) {
+          this.msg.getPermission(user);
+          this.msg.monitorRefresh(user);
+          this.msg.receiveMessages();
+        }
+      });
   }
-  
 }
 ```
 
-
 ## User Specific Messaging to Multiple Devices
 
-User specific messaging is used when something important happens to a single user. For example, a user might want to know when they are mentioned in a tweet or when their order has been shipped. In this example, are going to send a notification to users when they have received a new text message from another user. 
+User specific messaging is used when something important happens to a single user. For example, a user might want to know when they are mentioned in a tweet or when their order has been shipped. In this example, are going to send a notification to users when they have received a new text message from another user.
 
 ### FCM Cloud Function
 
-Firebase Cloud Functions will serve as the backend environment for sending messages. The function will be triggered when a new message document is created in firestore. Each message has a `recipientId` and a `senderId`. The push notification will be broadcast the recipient's devices. 
+Firebase Cloud Functions will serve as the backend environment for sending messages. The function will be triggered when a new message document is created in firestore. Each message has a `recipientId` and a `senderId`. The push notification will be broadcast the recipient's devices.
 
 ```js
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
 admin.initializeApp();
 
-exports.notifyUser = functions.firestore
+exports.notifyUser = functions.firestore;
 ```
 
-
 ```javascript
-const functions = require('firebase-functions');
-const admin = require('firebase-admin');
+const functions = require("firebase-functions");
+const admin = require("firebase-admin");
 admin.initializeApp();
 
-
 exports.notifyUser = functions.firestore
-    .document('messages/{messageId}')
-    .onCreate(event => {
-        
+  .document("messages/{messageId}")
+  .onCreate((event) => {
     const message = event.after.data();
-    const userId = message.recipientId
+    const userId = message.recipientId;
 
     // Message details for end user
     const payload = {
-        notification: {
-            title: 'New message!',
-            body: `${message.senderId} sent you a new message`,
-            icon: 'https://goo.gl/Fz9nrQ'
-          }
-    }
+      notification: {
+        title: "New message!",
+        body: `${message.senderId} sent you a new message`,
+        icon: "https://goo.gl/Fz9nrQ",
+      },
+    };
 
     // ref to the parent document
-    const db = admin.firestore()
-    const userRef = db.collection('users').doc(userId)
-
+    const db = admin.firestore();
+    const userRef = db.collection("users").doc(userId);
 
     // get users tokens and send notifications
-    return userRef.get()
-        .then(snapshot => snapshot.data() )
-        .then(user => {
-            
-            const tokens = user.fcmTokens ? Object.keys(user.fcmTokens) : []
+    return userRef
+      .get()
+      .then((snapshot) => snapshot.data())
+      .then((user) => {
+        const tokens = user.fcmTokens ? Object.keys(user.fcmTokens) : [];
 
-            if (!tokens.length) {
-               throw new Error('User does not have any tokens!')
-            }
+        if (!tokens.length) {
+          throw new Error("User does not have any tokens!");
+        }
 
-            return admin.messaging().sendToDevice(tokens, payload)
-        })
-        .catch(err => console.log(err) )
-});
+        return admin.messaging().sendToDevice(tokens, payload);
+      })
+      .catch((err) => console.log(err));
+  });
 ```
 
 Deploy the function using:
@@ -335,10 +321,8 @@ Deploy the function using:
 firebase deploy --only functions
 ```
 
-Manually add a new message document to firestore with the current user's UID and you should see the notification displayed in your app. 
-
-
+Manually add a new message document to firestore with the current user's UID and you should see the notification displayed in your app.
 
 ## The End
 
-Push messaging is one of the most important features of Progressive Web Apps (PWA). Today we learned how you broadcast messages to a single user. In the next lesson, I will show you how to send messages to multiple users simultaneously based on topic. 
+Push messaging is one of the most important features of Progressive Web Apps (PWA). Today we learned how you broadcast messages to a single user. In the next lesson, I will show you how to send messages to multiple users simultaneously based on topic.

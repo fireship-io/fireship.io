@@ -9,30 +9,29 @@ emoji: 💻
 video_length: 1:33
 ---
 
-
 ### Prompt Template
 
 ```text
 Create a GET endpoint on the "/" route in [SOME WEB FRAMEWORK] that renders an HTML page.
-The webpage should contain a button that triggers a POST request to the /checkout endpoint using the browser fetch API. 
+The webpage should contain a button that triggers a POST request to the /checkout endpoint using the browser fetch API.
 ```
 
 ### Code
 
 {{< file "ts" "src/index.ts" >}}
+
 ```typescript
-import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
-import { HTTPException } from 'hono/http-exception';
-import Stripe from 'stripe';
-import 'dotenv/config'
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
+import { HTTPException } from "hono/http-exception";
+import Stripe from "stripe";
+import "dotenv/config";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+const app = new Hono();
 
-const app = new Hono()
-
-app.get('/', (c) => {
+app.get("/", (c) => {
   const html = `
   <!DOCTYPE html>
   <html>
@@ -62,14 +61,13 @@ app.get('/', (c) => {
   </html>
 `;
   return c.html(html);
-})
+});
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+const port = 3000;
+console.log(`Server is running on port ${port}`);
 
 serve({
   fetch: app.fetch,
-  port
-})
+  port,
+});
 ```
-

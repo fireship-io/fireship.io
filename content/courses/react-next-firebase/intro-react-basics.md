@@ -5,7 +5,7 @@ weight: 2
 lastmod: 2021-02-01T10:23:30-09:00
 draft: false
 free: true
-vimeo: 
+vimeo:
 emoji: ⚛️
 video_length: 13:15
 youtube: TNhaISOUy6Q
@@ -16,7 +16,6 @@ quiz: true
   <h5>Which hook will be fired when the component is first mounted or created?</h5>
 </quiz-modal>
 
-
 ## ⚠️ Optional
 
-This video was originally released on YouTube and is intended to be a primer for React. It is not required to build the main demo app in the course. 
+This video was originally released on YouTube and is intended to be a primer for React. It is not required to build the main demo app in the course.

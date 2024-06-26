@@ -11,6 +11,7 @@ video_length: 3:19
 ---
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
 match /users/jeffd23 {
     // Single document

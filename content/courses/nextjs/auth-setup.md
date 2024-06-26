@@ -14,9 +14,10 @@ chapter_start: User Authentication
 
 ## Auth.js Setup
 
-Add [Auth.js](https://authjs.dev/getting-started/oauth-tutorial) to your project. 
+Add [Auth.js](https://authjs.dev/getting-started/oauth-tutorial) to your project.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm install next-auth
 
@@ -27,13 +28,14 @@ openssl rand -base64 32
 
 ## Create a Catchall Route
 
-Create the following route file `api/auth/[...nextauth]/route.ts`. 
+Create the following route file `api/auth/[...nextauth]/route.ts`.
 
 {{< file "react" "route.tsx" >}}
+
 ```tsx
-import NextAuth from 'next-auth';
-import type { NextAuthOptions } from 'next-auth';
-import GithubProvider from 'next-auth/providers/github';
+import NextAuth from "next-auth";
+import type { NextAuthOptions } from "next-auth";
+import GithubProvider from "next-auth/providers/github";
 
 export const authOptions: NextAuthOptions = {
   providers: [
@@ -41,10 +43,9 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_ID!,
       clientSecret: process.env.GITHUB_SECRET!,
     }),
-  ]
+  ],
 };
 
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
 ```
-

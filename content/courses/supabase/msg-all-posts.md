@@ -47,10 +47,13 @@ export function AllPosts() {
               if (!votesData) {
                 return;
               }
-              const votes = votesData.reduce((acc, vote) => {
-                acc[vote.post_id] = vote.vote_type as any;
-                return acc;
-              }, {} as Record<string, "up" | "down" | undefined>);
+              const votes = votesData.reduce(
+                (acc, vote) => {
+                  acc[vote.post_id] = vote.vote_type as any;
+                  return acc;
+                },
+                {} as Record<string, "up" | "down" | undefined>,
+              );
               setMyVotes(votes);
             });
         }

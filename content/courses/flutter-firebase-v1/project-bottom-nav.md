@@ -14,6 +14,7 @@ video_length: 4:09
 Create a basic screen.
 
 {{< file "dart" "about.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -38,6 +39,7 @@ class AboutScreen extends StatelessWidget {
 You can export all your screens together using the following pattern:
 
 {{< file "dart" "screens.dart" >}}
+
 ```dart
 export 'login.dart';
 export 'topics.dart';
@@ -51,9 +53,10 @@ You can then use them in other project files like so: `import 'screens/screens.d
 
 ## Bottom Navigation
 
-Use a `BottomNavigationBar` to move between screens. 
+Use a `BottomNavigationBar` to move between screens.
 
 {{< file "dart" "bottom_nav.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -92,7 +95,7 @@ class AppBottomNav extends StatelessWidget {
 }
 ```
 
-Put it to use in a Scaffold. 
+Put it to use in a Scaffold.
 
 ```dart
 import 'package:quizapp/shared/bottom_nav.dart';

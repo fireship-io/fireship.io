@@ -12,6 +12,7 @@ video_length: 1:43
 ## User Profile Screen
 
 {{< file "dart" "profile.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';

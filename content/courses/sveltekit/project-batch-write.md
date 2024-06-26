@@ -9,40 +9,36 @@ emoji: ⚛️
 video_length: 1:08
 ---
 
-
 ## Batch Write
 
 {{< file "svelte" "login/username/+page.svelte" >}}
+
 ```svelte
 <script lang="ts">
-  
-
   // ...
 
   async function confirmUsername() {
     console.log("confirming username", username);
     const batch = writeBatch(db);
     batch.set(doc(db, "usernames", username), { uid: $user?.uid });
-    batch.set(doc(db, "users", $user!.uid), { 
-      username, 
+    batch.set(doc(db, "users", $user!.uid), {
+      username,
       photoURL: $user?.photoURL ?? null,
       published: true,
-      bio: 'I am the Walrus',
+      bio: "I am the Walrus",
       links: [
         {
-          title: 'Test Link',
-          url: 'https://kung.foo',
-          icon: 'custom'
-        }
-      ]
+          title: "Test Link",
+          url: "https://kung.foo",
+          icon: "custom",
+        },
+      ],
     });
 
     await batch.commit();
 
-    username = '';
+    username = "";
     isAvailable = false;
-
   }
-
 </script>
 ```

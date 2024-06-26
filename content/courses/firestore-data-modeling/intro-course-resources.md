@@ -6,7 +6,7 @@ description: Helpful Resources supporting the Cloud Firestore Course
 weight: 1
 emoji: 👶
 vimeo: 330782565
-chapter_start: Intro 
+chapter_start: Intro
 video_length: 1:53
 ---
 
@@ -15,8 +15,8 @@ video_length: 1:53
 - [Query Code Snippets on Github](https://gist.github.com/codediodeio/513bf77ee45be6d38d27868f5345a002)
 - [Cloud Firestore Docs](https://firebase.google.com/docs/firestore/)
 
-
 ## Social
+
 - [Slack Chat](https://goo.gl/8BKA1e)
 - [YouTube](https://www.youtube.com/channel/UCsBjURrPoezykLs9EqgamOA) & [Twitter](https://twitter.com/fireship_dev)
 

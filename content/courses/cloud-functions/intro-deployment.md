@@ -11,13 +11,13 @@ emoji: 👶
 ---
 
 {{< file "terminal" "command line" >}}
+
 ```
 firebase deploy --only functions
 ```
 
-# or 
+# or
 
 ```
 firebase deploy --only functions:your-function-name
 ```
-

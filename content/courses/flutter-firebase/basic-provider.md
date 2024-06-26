@@ -14,6 +14,7 @@ video_length: 2:17
 ## 1. Define State
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -33,6 +34,7 @@ class CounterState extends ChangeNotifier {
 ## 2. Provide State
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class CounterApp extends StatelessWidget {
   const CounterApp({ Key? key }) : super(key: key);
@@ -43,7 +45,7 @@ class CounterApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => CounterState(),
       child: const CountText(),
-      
+
     );
   }
 }
@@ -52,6 +54,7 @@ class CounterApp extends StatelessWidget {
 ## 3. Read State
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class CountText extends StatelessWidget {
   const CountText({ Key? key }) : super(key: key);

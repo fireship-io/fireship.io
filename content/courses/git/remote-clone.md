@@ -17,10 +17,11 @@ quiz: true
 Clone a remote repository to your local machine and optionally change the name of the director
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git clone <repo-url> <local-directory>
 ```
 
 ## Practice
 
-Just for fun, clone this [repo](https://github.com/fireship-io/wavy-curvey-blobby-website) and run it on your local machine. 
+Just for fun, clone this [repo](https://github.com/fireship-io/wavy-curvey-blobby-website) and run it on your local machine.

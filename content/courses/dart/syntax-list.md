@@ -12,6 +12,7 @@ video_length: 3:01
 ## Basic Lists
 
 {{< file "dart" "lists.dart" >}}
+
 ```dart
 List<int> list = [1, 2, 3, 4, 5];
 
@@ -25,6 +26,7 @@ list.first; // 1
 ## Loops
 
 {{< file "dart" "lists.dart" >}}
+
 ```dart
   for (int n in list) {
     print(n);
@@ -38,6 +40,7 @@ var doubled = list.map((n) => n * 2);
 ## Spread Syntax
 
 {{< file "dart" "lists.dart" >}}
+
 ```dart
 var combined = [...list, ...doubled];
 combined.forEach(print);
@@ -46,11 +49,12 @@ combined.forEach(print);
 ## Conditions in Lists
 
 {{< file "dart" "lists.dart" >}}
+
 ```dart
 bool depressed = false;
 var cart = [
-    'milk', 
-    'eggs', 
+    'milk',
+    'eggs',
     if (depressed) 'Vodka'
 ];
 ```

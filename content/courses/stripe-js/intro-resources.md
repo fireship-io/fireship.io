@@ -17,7 +17,6 @@ video_length: 2:23
 - [Stripe Docs](https://stripe.com/docs)
 - [Stripe API Reference](https://stripe.com/docs/api)
 
-
 ## Social
 
 - [Slack Chat](https://fireship.page.link/slack)

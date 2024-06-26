@@ -10,28 +10,28 @@ video_length: 5:58
 ---
 
 {{< file "react" "Subscriptions.js" >}}
-```jsx
-import React, { useState, useEffect, Suspense } from 'react';
-import { fetchFromAPI } from './helpers';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useUser, AuthCheck } from 'reactfire';
 
-import { db } from './firebase';
-import { SignIn, SignOut } from './Customers';
+```jsx
+import React, { useState, useEffect, Suspense } from "react";
+import { fetchFromAPI } from "./helpers";
+import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import { useUser, AuthCheck } from "reactfire";
+
+import { db } from "./firebase";
+import { SignIn, SignOut } from "./Customers";
 
 // Shows user document in Firestore
 function UserData(props) {
-
   const [data, setData] = useState({});
 
   // Subscribe to the user's data in Firestore
-  useEffect(
-    () => {
-      const unsubscribe = db.collection('users').doc(props.user.uid).onSnapshot(doc => setData(doc.data()) )
-      return () => unsubscribe()
-    },
-    [props.user]
-  )
+  useEffect(() => {
+    const unsubscribe = db
+      .collection("users")
+      .doc(props.user.uid)
+      .onSnapshot((doc) => setData(doc.data()));
+    return () => unsubscribe();
+  }, [props.user]);
 
   return (
     <pre>
@@ -58,7 +58,7 @@ function SubscribeToPlan(props) {
   // Fetch current subscriptions from the API
   const getSubscrptions = async () => {
     if (user) {
-      const subs = await fetchFromAPI('subscriptions', { method: 'GET' });
+      const subs = await fetchFromAPI("subscriptions", { method: "GET" });
       setSubscriptions(subs);
     }
   };
@@ -66,8 +66,8 @@ function SubscribeToPlan(props) {
   // Cancel a subscription
   const cancel = async (id) => {
     setLoading(true);
-    await fetchFromAPI('subscriptions/' + id, { method: 'PATCH' });
-    alert('canceled!');
+    await fetchFromAPI("subscriptions/" + id, { method: "PATCH" });
+    alert("canceled!");
     await getSubscrptions();
     setLoading(false);
   };
@@ -81,7 +81,7 @@ function SubscribeToPlan(props) {
 
     // Create Payment Method
     const { paymentMethod, error } = await stripe.createPaymentMethod({
-      type: 'card',
+      type: "card",
       card: cardElement,
     });
 
@@ -92,7 +92,7 @@ function SubscribeToPlan(props) {
     }
 
     // Create Subscription on the Server
-    const subscription = await fetchFromAPI('subscriptions', {
+    const subscription = await fetchFromAPI("subscriptions", {
       body: {
         plan,
         payment_method: paymentMethod.id,
@@ -100,7 +100,7 @@ function SubscribeToPlan(props) {
     });
 
     // The subscription contains an invoice
-    // If the invoice's payment succeeded then you're good, 
+    // If the invoice's payment succeeded then you're good,
     // otherwise, the payment intent must be confirmed
 
     const { latest_invoice } = subscription;
@@ -108,19 +108,18 @@ function SubscribeToPlan(props) {
     if (latest_invoice.payment_intent) {
       const { client_secret, status } = latest_invoice.payment_intent;
 
-      if (status === 'requires_action') {
-        const { error: confirmationError } = await stripe.confirmCardPayment(
-          client_secret
-        );
+      if (status === "requires_action") {
+        const { error: confirmationError } =
+          await stripe.confirmCardPayment(client_secret);
         if (confirmationError) {
           console.error(confirmationError);
-          alert('unable to confirm card');
+          alert("unable to confirm card");
           return;
         }
       }
 
       // success
-      alert('You are subscribed!');
+      alert("You are subscribed!");
       getSubscrptions();
     }
 
@@ -131,21 +130,16 @@ function SubscribeToPlan(props) {
   return (
     <>
       <AuthCheck fallback={<SignIn />}>
-        <div>
-          {user?.uid && <UserData user={user} />}
-        </div>
+        <div>{user?.uid && <UserData user={user} />}</div>
 
         <hr />
 
         <div>
-
-          <button
-            onClick={() => setPlan('plan_HC2o83JbeowZnP')}>
+          <button onClick={() => setPlan("plan_HC2o83JbeowZnP")}>
             Choose Monthly $25/m
           </button>
 
-          <button
-            onClick={() => setPlan('plan_HD6rlaovzAiM7B')}>
+          <button onClick={() => setPlan("plan_HD6rlaovzAiM7B")}>
             Choose Quarterly $50/q
           </button>
 
@@ -156,7 +150,6 @@ function SubscribeToPlan(props) {
         <hr />
 
         <form onSubmit={handleSubmit} hidden={!plan}>
-
           <CardElement />
           <button type="submit" disabled={loading}>
             Subscribe & Pay
@@ -168,11 +161,9 @@ function SubscribeToPlan(props) {
           <div>
             {subscriptions.map((sub) => (
               <div key={sub.id}>
-                {sub.id}. Next payment of {sub.plan.amount} due{' '}
+                {sub.id}. Next payment of {sub.plan.amount} due{" "}
                 {new Date(sub.current_period_end * 1000).toUTCString()}
-                <button
-                  onClick={() => cancel(sub.id)}
-                  disabled={loading}>
+                <button onClick={() => cancel(sub.id)} disabled={loading}>
                   Cancel
                 </button>
               </div>
@@ -190,10 +181,9 @@ function SubscribeToPlan(props) {
 
 export default function Subscriptions() {
   return (
-    <Suspense fallback={'loading user'}>
+    <Suspense fallback={"loading user"}>
       <SubscribeToPlan />
     </Suspense>
   );
 }
-
 ```

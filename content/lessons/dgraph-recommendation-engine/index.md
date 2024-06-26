@@ -5,12 +5,12 @@ publishdate: 2021-04-20T13:25:34-07:00
 author: Jeff Delaney
 draft: true
 description: Build a dating app recommendation engine with Dgraph
-tags: 
-    - dgraph
-    - react
+tags:
+  - dgraph
+  - react
 
-youtube: 
-github: 
+youtube:
+github:
 # disable_toc: true
 # disable_qna: true
 
@@ -21,18 +21,18 @@ github:
 #    rxdart: 0.20
 ---
 
-
 {{< file "terminal" "command line" >}}
+
 ```bash
 npx create-react-app myapp
-npm install urql graphql graphql.macro react-hook-form 
+npm install urql graphql graphql.macro react-hook-form
 ```
 
 # Recommendation Engine
 
 ## Collaborative Filtering Strategy
 
-## Shared Interests Strategy 
+## Shared Interests Strategy
 
 ## Database Schema
 

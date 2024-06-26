@@ -12,14 +12,15 @@ video_length: 2:08
 ## Install Firebase JS
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm i firebase
 ```
 
-
 ## Client SDK Setup
 
 {{< file "ts" "lib/firebase.ts" >}}
+
 ```typescript
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
@@ -27,7 +28,7 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    // your config
+  // your config
 };
 
 // Initialize Firebase
@@ -36,4 +37,3 @@ export const db = getFirestore();
 export const auth = getAuth();
 export const storage = getStorage();
 ```
-

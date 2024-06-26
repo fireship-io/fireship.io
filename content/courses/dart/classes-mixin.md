@@ -9,12 +9,12 @@ emoji: 🎛️
 video_length: 1:07
 ---
 
-
 ## What are mixins?
 
 A mixin is just like a class, it can have methods and properties, but it can't be instantiated.
 
 {{< file "dart" "mixins.dart" >}}
+
 ```dart
 mixin Strong {
   bool doesLift = true;
@@ -38,6 +38,7 @@ mixin Fast {
 Mixins are used to extend specific behaviors to classes with the `with` keyword. Certain Flutter libaries use mixins to extend shared behaviors to classes.
 
 {{< file "dart" "mixins.dart" >}}
+
 ```dart
 class Human {}
 

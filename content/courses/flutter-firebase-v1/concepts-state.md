@@ -9,11 +9,12 @@ vimeo: 336144998
 video_length: 3:21
 ---
 
-Note: The code below is updated for *Provider* version `3.1`. The main change is that the `stream` param has been renamed to `value`. 
+Note: The code below is updated for _Provider_ version `3.1`. The main change is that the `stream` param has been renamed to `value`.
 
 ## Example Code
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

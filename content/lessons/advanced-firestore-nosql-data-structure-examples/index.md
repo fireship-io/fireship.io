@@ -5,11 +5,10 @@ publishdate: 2018-02-05T15:31:37-07:00
 author: Jeff Delaney
 draft: false
 description: Deal with advanced data modeling scenarios in NoSQL
-tags: 
-    - pro
-    - firebase
-    - firestore
-
+tags:
+  - pro
+  - firebase
+  - firestore
 
 youtube: X8CNoSvenyY
 github: https://github.com/AngularFirebase/86-firestore-threaded-comments
@@ -22,11 +21,10 @@ github: https://github.com/AngularFirebase/86-firestore-threaded-comments
 # versions:
 #    rxdart: 0.20
 ---
+
 In the previous lesson, we learned the [fundamentals of relational data modeling with Firestore](/lessons/firestore-nosql-data-modeling-by-example/). Today I want to push further and look at several more practical examples. In addition to data modeling, we will look at techniques like duplication, aggregation, composite keys, bucketing, and more.
 
-
 <p class="tip">Keep in mind, Firestore is still in beta. Firebase engineers hinted at some really cool features on the roadmap (geo queries, query by array of ids) - I'll be sure to keep you posted :)</p>
-
 
 ## Advanced Techniques in NoSQL
 
@@ -78,7 +76,6 @@ Let's imagine you have an array of document ids. You can pipeline each request f
   <child-comp *ngFor="let id of documentIds">
     <!-- afs.doc('items/' + id) -->
   </child-comp>
-
 </parent-comp>
 ```
 
@@ -105,7 +102,7 @@ users
 This opens the door to make a query like so:
 
 ```js
-users.where('categoriesUsed.angular', '==', true);
+users.where("categoriesUsed.angular", "==", true);
 ```
 
 At this point we have all the users who posted to Angular, then we can query each user's posts subcollection individually and join the data client-side.
@@ -183,22 +180,22 @@ relationships/{followerID_followedID}
 _Does UserA follow UserB:_
 
 ```js
-db.collection('relationships').doc(`${followerId}_${followedId}`);
+db.collection("relationships").doc(`${followerId}_${followedId}`);
 ```
 
 _Get a user's 50 most recent followers:_
 
 ```js
-db.collection('relationships')
-  .where('followedId', '==', userId)
-  .orderBy('createdAt', 'desc')
+db.collection("relationships")
+  .where("followedId", "==", userId)
+  .orderBy("createdAt", "desc")
   .limit(50);
 ```
 
 _Get all users that are being followed_
 
 ```js
-db.collection('relationships').where('followerId', '==', userId);
+db.collection("relationships").where("followerId", "==", userId);
 ```
 
 ## Threaded Comments or Hierarchy Tree Structure
@@ -226,29 +223,26 @@ posts/{postId}
 First start by querying the root comments with `comments.where('parent', '==', null)`, then pass them to our comment component.
 
 ```html
-  <app-comment *ngFor="let comment of comments | async"
-                [commentId]="comment.id">
-  </app-comment>
+<app-comment *ngFor="let comment of comments | async" [commentId]="comment.id">
+</app-comment>
 ```
 
 This allows us to build a recursive component (a component that calls itself) to render out a tree. In other words, while the comment document has children, it will continue rendering new branches of the threaded comment tree. It would also be easy to lazy load each branch by adding "view replies" button before loading the children.
 
 ```typescript
 @Component({
-  selector: 'app-comment',
+  selector: "app-comment",
   template: `
     <div *ngIf="comment | async as c" class="indent">
       {{ c.text }}
 
       <div *ngIf="c.children">
-
-        <app-comment *ngFor="let kid of c.children" 
-          [commentId]="kid">
+        <app-comment *ngFor="let kid of c.children" [commentId]="kid">
         </app-comment>
       </div>
     </div>
   `,
-  styles: []
+  styles: [],
 })
 export class CommentComponent implements OnInit {
   @Input() commentId;
@@ -258,7 +252,7 @@ export class CommentComponent implements OnInit {
   constructor(private db: AngularFireStore) {}
 
   ngOnInit() {
-    this.comment = this.db.doc('comments/' + this.commentId);
+    this.comment = this.db.doc("comments/" + this.commentId);
   }
 }
 ```
@@ -289,22 +283,22 @@ tags/{content}
 _Get all tweets with a specific tag:_
 
 ```js
-db.collection('tweets').where('tags.angular', '==', true);
+db.collection("tweets").where("tags.angular", "==", true);
 // Or
-db.collection('tweets').orderBy('tags.angular');
+db.collection("tweets").orderBy("tags.angular");
 ```
 
 _Get the most popular tags:_
 
 ```js
-db.collection('tags').orderBy('tweetCount', 'desc');
+db.collection("tags").orderBy("tweetCount", "desc");
 ```
 
 _Get a specific tag:_
 
 ```js
-tagId = 'SomeCoolTag'.toLowerCase();
-db.doc('tags/' + tagId);
+tagId = "SomeCoolTag".toLowerCase();
+db.doc("tags/" + tagId);
 ```
 
 ## The End

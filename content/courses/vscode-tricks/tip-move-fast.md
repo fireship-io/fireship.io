@@ -12,7 +12,7 @@ free: true
 
 ## Task - Don't Touch the Mouse
 
-Invest some time practicing editing your code without using the mouse. This is one of the great secrets to coding faster. 
+Invest some time practicing editing your code without using the mouse. This is one of the great secrets to coding faster.
 
 ## ✨ Trick - Symbol Search
 
@@ -21,4 +21,3 @@ Open the command palette with `ctrl+p`, then type an `@` symbol to move around t
 ## ✨ Trick - Highlight Lines of Code
 
 Use the `ctrl+l` key to select lines of code quickly. For more precise selections, use `shift + ← ↑ → ↓` to highlight individual characters.
-

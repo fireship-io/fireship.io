@@ -15,7 +15,7 @@ Find the [emmet cheat sheet](https://docs.emmet.io/cheat-sheet/) here. If you're
 
 ## ✨ Trick - Emmet Snippets for HTML
 
-Open an HTML file in VS code. Try typing characters like `ul>li*3` followed by tab to create a list with 3 items. 
+Open an HTML file in VS code. Try typing characters like `ul>li*3` followed by tab to create a list with 3 items.
 
 ## Bonus Video
 

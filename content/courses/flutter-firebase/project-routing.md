@@ -14,6 +14,7 @@ video_length: 3:32
 Create a file named _routes.dart_ in the _lib_ directory of your project.
 
 {{< file "dart" "routes.dart" >}}
+
 ```dart
 import 'package:quizapp/about/about.dart';
 import 'package:quizapp/profile/profile.dart';
@@ -33,6 +34,7 @@ var appRoutes = {
 Register the `appRoutes` with the `MaterialApp` in the `main.dart` file.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:quizapp/routes.dart';
 
@@ -45,9 +47,10 @@ import 'package:quizapp/routes.dart';
 
 ## Basic Navigation between Scaffolds
 
-Push a new screen on to the stack. 
+Push a new screen on to the stack.
 
 {{< file "dart" "home.dart" >}}
+
 ```dart
 class HomeScreen extends StatelessWidget {
   const HomeScreen({ Key? key }) : super(key: key);
@@ -65,9 +68,10 @@ class HomeScreen extends StatelessWidget {
   }
 ```
 
-The `appBar` will automatically have a back button. 
+The `appBar` will automatically have a back button.
 
 {{< file "dart" "about.dart" >}}
+
 ```dart
 class AboutScreen extends StatelessWidget {
   const AboutScreen({ Key? key }) : super(key: key);
@@ -76,7 +80,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      
+
     );
   }
 }

@@ -5,12 +5,12 @@ publishdate: 2021-09-30T12:19:06-07:00
 author: Jeff Delaney
 draft: false
 description: Build a chat app with Flutter, Firebase, and Firestore
-tags: 
-    - pro
-    - flutter
-    - firebase
+tags:
+  - pro
+  - flutter
+  - firebase
 
-# youtube: 
+# youtube:
 github: https://github.com/fireship-io/firechat-flutter
 vimeo: 618415945
 pro: true
@@ -24,9 +24,9 @@ pro: true
 #    rxdart: 0.20
 ---
 
-Flutter makes it possible to build high-performance cross-platform apps with sound type safety thanks to the Dart programming language. It provides excellent [support for Firebase](https://firebase.flutter.dev/) with official plugins maintained by Google. 
+Flutter makes it possible to build high-performance cross-platform apps with sound type safety thanks to the Dart programming language. It provides excellent [support for Firebase](https://firebase.flutter.dev/) with official plugins maintained by Google.
 
-In the following lesson, we will build a basic chat app with Flutter and Firebase. It allows a user to sign in with Google and then access a group chat room. The user can read a realtime feed of recent chat messages via Firestore and post new messages into the chat. The goal is to demonstrate essential patterns when working connecting Firebase users to their data in a Flutter app. 
+In the following lesson, we will build a basic chat app with Flutter and Firebase. It allows a user to sign in with Google and then access a group chat room. The user can read a realtime feed of recent chat messages via Firestore and post new messages into the chat. The goal is to demonstrate essential patterns when working connecting Firebase users to their data in a Flutter app.
 
 ## Setup
 
@@ -36,13 +36,14 @@ Create an app with the [Flutter CLI](https://flutter.dev/docs/reference/flutter-
 
 ### Install Firebase
 
-Follow the official Firebase [setup instructions](https://firebase.flutter.dev/docs/installation/android). This tutorial targets Android as the primary platform. 
+Follow the official Firebase [setup instructions](https://firebase.flutter.dev/docs/installation/android). This tutorial targets Android as the primary platform.
 
-Make sure to enable Google Authentication on the Firebase console and follow the instructions to obtain an SHA1 key. 
+Make sure to enable Google Authentication on the Firebase console and follow the instructions to obtain an SHA1 key.
 
 Add the following packages as dependencies:
 
 {{< file "flutter" "pubspec.yaml" >}}
+
 ```yaml
 dependencies:
   flutter:
@@ -57,21 +58,22 @@ dependencies:
 
 ### Data Model
 
-Firestore consists of a single collection `chats` where each document contains the following data: 
+Firestore consists of a single collection `chats` where each document contains the following data:
 
 {{< figure src="img/data-model.png" caption="Firestore data model for chat app" >}}
 
-## User Authentication 
+## User Authentication
 
 ### Authentication Provider
 
-The auth provider is a custom class used to *sign in* and *sign out* the user. 
+The auth provider is a custom class used to _sign in_ and _sign out_ the user.
 
 ### Sign In with Google
 
-In order to sign in with Google, we must first use the "Google Sign In" to package bring up a native widget where the user can access their Google account. This will result in an *idToken* that must be passed off to Firebase to authenticate with the Firebase SDK. 
+In order to sign in with Google, we must first use the "Google Sign In" to package bring up a native widget where the user can access their Google account. This will result in an _idToken_ that must be passed off to Firebase to authenticate with the Firebase SDK.
 
 {{< file "flutter" "lib/auth_provider.dart" >}}
+
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -110,9 +112,10 @@ class AuthProvider {
 
 ### Sign Out
 
-Sign out will end the user session. 
+Sign out will end the user session.
 
 {{< file "flutter" "lib/auth_provider.dart" >}}
+
 ```dart
 class AuthProvider {
     // ...
@@ -124,11 +127,13 @@ class AuthProvider {
 
 }
 ```
+
 ### Authentication UI
 
-The authentication UI consists of a button, that when tapped, will trigger the method on the Authentication provider defined in the previous step. It is wrapped in a `StreamBuilder` to automatically rebuild the UI when the Firebase authenticate state changes. 
+The authentication UI consists of a button, that when tapped, will trigger the method on the Authentication provider defined in the previous step. It is wrapped in a `StreamBuilder` to automatically rebuild the UI when the Firebase authenticate state changes.
 
 {{< file "flutter" "lib/landing_screen.dart" >}}
+
 ```dart
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
@@ -190,9 +195,10 @@ class LandingScreen extends StatelessWidget {
 
 ### Chat Feed
 
-The chat messages are first retrieved from Firestore with a query called `_chatsStream`. We can listen to the messages and update the UI in any changes with a `StreamBuilder`. The list of messages are passed to Flutter’s `ListView` to provide a scrolling vertical collection of items. We can also compare the `owner` field on the document of the current logged in user. 
+The chat messages are first retrieved from Firestore with a query called `_chatsStream`. We can listen to the messages and update the UI in any changes with a `StreamBuilder`. The list of messages are passed to Flutter’s `ListView` to provide a scrolling vertical collection of items. We can also compare the `owner` field on the document of the current logged in user.
 
 {{< file "flutter" "home_screen.dart" >}}
+
 ```dart
 class Chats extends StatelessWidget {
   final user = FirebaseAuth.instance.currentUser;
@@ -258,9 +264,10 @@ class Chats extends StatelessWidget {
 
 ### Send a Message
 
-The final step is to provide a form input where the user can send a new message in the chat and write it to Firestore. Flutter provides a `TextEditingController` that can react to changes typed into a text field. We pass the value from the controller to Firestore a `sendMessage` method that performs a write in Firestore. 
+The final step is to provide a form input where the user can send a new message in the chat and write it to Firestore. Flutter provides a `TextEditingController` that can react to changes typed into a text field. We pass the value from the controller to Firestore a `sendMessage` method that performs a write in Firestore.
 
 {{< file "flutter" "lib/bottom_chat_bar.dart" >}}
+
 ```dart
 class BottomChatBar extends StatefulWidget {
   const BottomChatBar({super.key});
@@ -390,4 +397,4 @@ class _BottomChatBarState extends State<BottomChatBar> {
 }
 ```
 
-That’s it. We now know how to build a basic chat app with Flutter and Firebase. If you’re exploring mobile app solutions, also check out the sister tutorial React Native Firebase Chat App. 
+That’s it. We now know how to build a basic chat app with Flutter and Firebase. If you’re exploring mobile app solutions, also check out the sister tutorial React Native Firebase Chat App.

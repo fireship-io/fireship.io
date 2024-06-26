@@ -14,6 +14,7 @@ Create a file named `theme.dart` in the root of the project
 ## Example Code
 
 {{< file "flutter" "theme.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -43,6 +44,7 @@ var appTheme = ThemeData(
 Apply it to the `MaterialApp` in the `main.dart` file
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:quizapp/theme.dart';
 

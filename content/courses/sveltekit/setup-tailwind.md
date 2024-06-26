@@ -1,5 +1,5 @@
 ---
-title: Tailwind + DaisyUI 
+title: Tailwind + DaisyUI
 description: Add Tailwind and DaisyUI for styling
 weight: 23
 lastmod: 2023-06-26T10:23:30-09:00
@@ -8,8 +8,6 @@ vimeo: 840139498
 emoji: 🌻
 video_length: 2:06
 ---
-
-
 
 ## Follow Official Guides
 

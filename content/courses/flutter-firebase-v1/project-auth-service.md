@@ -10,14 +10,14 @@ video_length: 5:32
 chapter_start: User Authentication
 ---
 
-
-Note: If you experience issues with Google Auth, revisit the [Firebase Setup](/courses/flutter-firebase/intro-firebase-setup/) section to ensure the SHA fingerprint has been setup on your local machine. 
+Note: If you experience issues with Google Auth, revisit the [Firebase Setup](/courses/flutter-firebase/intro-firebase-setup/) section to ensure the SHA fingerprint has been setup on your local machine.
 
 ## Auth Service
 
-Create an auth service to isolate the business logic for Firebase authentication methods and user management. 
+Create an auth service to isolate the business logic for Firebase authentication methods and user management.
 
 {{< file "dart" "auth.dart" >}}
+
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -86,9 +86,10 @@ class AuthService {
 
 ## Current User with Provider
 
-Access the current user with Provider. 
+Access the current user with Provider.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:firebase_auth/firebase_auth.dart';
 

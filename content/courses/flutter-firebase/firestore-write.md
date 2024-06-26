@@ -12,6 +12,7 @@ video_length: 1:47
 ## Writing to Firestore
 
 {{< file "flutter" "firestore.dart" >}}
+
 ```dart
 class FirestoreService {
   /// Updates the current user's report document after completing quiz

@@ -14,9 +14,9 @@ video_length: 4:08
 Grab the image assets from the full source code and copy them into the assets folder in your project. Update the `pubspec.yaml` file to include the image assets.
 
 {{< file "flutter" "pubspec.yaml" >}}
+
 ```yaml
 flutter:
-
   uses-material-design: true
   assets:
     - assets/
@@ -26,9 +26,10 @@ flutter:
 
 ## Topic Card
 
-Create a file called `topic_item.dart` in the `topics` folder. Create a card to represent an individual topic. 
+Create a file called `topic_item.dart` in the `topics` folder. Create a card to represent an individual topic.
 
 {{< file "dart" "topics_item.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/models.dart';
@@ -91,9 +92,10 @@ class TopicItem extends StatelessWidget {
 
 ## Individual Topic Screen
 
-When tapped, the card to navigate to the topic screen and keep the image in the view thanks to the `Hero` widget. 
+When tapped, the card to navigate to the topic screen and keep the image in the view thanks to the `Hero` widget.
 
 {{< file "dart" "topics_item.dart" >}}
+
 ```dart
 class TopicScreen extends StatelessWidget {
   final Topic topic;
@@ -122,4 +124,3 @@ class TopicScreen extends StatelessWidget {
   }
 }
 ```
-

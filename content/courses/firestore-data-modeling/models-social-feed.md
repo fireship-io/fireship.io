@@ -1,17 +1,18 @@
 ---
-title: Follower Feed 
+title: Follower Feed
 lastmod: 2019-04-16T09:12:30-08:00
 draft: false
-description:  User-to-user follows and follower feeds 
+description: User-to-user follows and follower feeds
 weight: 20
 emoji: 🎁
 vimeo: 331445416
 video_length: 4:21
 ---
 
-The code below uses this data model to follow/unfollow users & query the most recent posts from users that are being followed. 
+The code below uses this data model to follow/unfollow users & query the most recent posts from users that are being followed.
 
 {{< file "js" "firestore.js" >}}
+
 ```js
 import { db } from './config';
 import firebase from 'firebase/app;
@@ -48,7 +49,7 @@ export const getFeed = async() => {
     const data = followedUsers.docs.map(doc => doc.data());
 
     const posts = data.reduce((acc, cur) => acc.concat(cur.recentPosts), []);
- 
+
 
     const sortedPosts = posts.sort((a, b) => b.published - a.published)
 
@@ -57,6 +58,5 @@ export const getFeed = async() => {
 
 }
 ```
-
 
 {{< figure src="/courses/firestore-data-modeling/img/social-feed.png" >}}

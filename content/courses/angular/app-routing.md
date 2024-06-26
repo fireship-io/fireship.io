@@ -1,6 +1,6 @@
 ---
 title: Routing
-description: Create a home page configured with the Angular Router. 
+description: Create a home page configured with the Angular Router.
 weight: 25
 lastmod: 2019-07-16T10:23:30-09:00
 draft: false
@@ -9,15 +9,16 @@ emoji: 🏠
 video_length: 2:56
 ---
 
-Learn routing basics in Angular and the usage of the `routerLink` directive in templates. 
+Learn routing basics in Angular and the usage of the `routerLink` directive in templates.
 
 ## Steps
 
 ### Step 1 - Generate a Component
 
-Generate home page component that is loaded by the router. 
+Generate home page component that is loaded by the router.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g component home-page
 ```
@@ -25,29 +26,27 @@ ng g component home-page
 ### Step 2 - Register it in the Router
 
 {{< file "ngts" "app-routing.module.ts" >}}
+
 ```typescript
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { HomePageComponent } from "./home-page/home-page.component";
 
-
-const routes: Routes = [
-  { path: '', component: HomePageComponent }
-];
+const routes: Routes = [{ path: "", component: HomePageComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
 ```
 
 ### Step 3 - Navigate with routerLink
 
-Example of a router link with a special CSS class when active. 
+Example of a router link with a special CSS class when active.
 
 {{< file "html" "some.component.html" >}}
+
 ```html
 <a routerLink="/" routerLinkActive="some-css-class">Home page</a>
 ```

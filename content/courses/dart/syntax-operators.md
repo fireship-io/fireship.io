@@ -17,6 +17,7 @@ Let's take a look at some of the more interesting operators in Dart.
 Use the assignment operator to assign a value to a variable, ONLY if it's not already assigned.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 String? name;
 name ??= 'Guest';
@@ -28,6 +29,7 @@ var z = name ?? 'Guest';
 Use a ternary to replace the if/else statement.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 String color = 'blue';
 var isThisBlue = color == 'blue' ? 'Yep, blue it is' : 'Nah, it aint blue';
@@ -38,6 +40,7 @@ var isThisBlue = color == 'blue' ? 'Yep, blue it is' : 'Nah, it aint blue';
 Use the cascade operator to call methods on an object without having to create a new line of code. It can often eliminate the need to create a temporary variable, which is especially useful in with working in Flutter's widget tree.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 // var paint = Paint();
 // paint.color = 'black';
@@ -55,6 +58,7 @@ var paint = Paint()
 In rare cases, you may need to cast a value to a different type.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 var number = 23 as String;
 number is String; // true

@@ -9,7 +9,6 @@ emoji: 🎣
 video_length: 3:14
 ---
 
-
 ### Prompt Template
 
 ```text
@@ -21,34 +20,38 @@ Use the code below as a reference:
 ### Code
 
 {{< file "ts" "src/index.ts" >}}
+
 ```typescript
-import { serve } from '@hono/node-server'
-import { Hono } from 'hono'
-import { HTTPException } from 'hono/http-exception';
-import Stripe from 'stripe';
-import 'dotenv/config'
+import { serve } from "@hono/node-server";
+import { Hono } from "hono";
+import { HTTPException } from "hono/http-exception";
+import Stripe from "stripe";
+import "dotenv/config";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+const app = new Hono();
 
-const app = new Hono()
-
-app.post('/webhook', async (c) => {
+app.post("/webhook", async (c) => {
   const rawBody = await c.req.text();
-  const signature = c.req.header('stripe-signature');
+  const signature = c.req.header("stripe-signature");
 
   let event;
   try {
-    event = stripe.webhooks.constructEvent(rawBody, signature!, process.env.STRIPE_WEBHOOK_SECRET!);
+    event = stripe.webhooks.constructEvent(
+      rawBody,
+      signature!,
+      process.env.STRIPE_WEBHOOK_SECRET!,
+    );
   } catch (error: any) {
     console.error(`Webhook signature verification failed: ${error.message}`);
-    throw new HTTPException(400)
-  } 
+    throw new HTTPException(400);
+  }
 
   // Handle the checkout.session.completed event
-  if (event.type === 'checkout.session.completed') {
+  if (event.type === "checkout.session.completed") {
     const session = event.data.object;
-    console.log(session)
+    console.log(session);
 
     // TODO Fulfill the purchase with your own business logic, for example:
     // Update Database with order details
@@ -60,15 +63,14 @@ app.post('/webhook', async (c) => {
     // Etc.
   }
 
-  return c.text('success');
-})
+  return c.text("success");
+});
 
-const port = 3000
-console.log(`Server is running on port ${port}`)
+const port = 3000;
+console.log(`Server is running on port ${port}`);
 
 serve({
   fetch: app.fetch,
-  port
-})
+  port,
+});
 ```
-

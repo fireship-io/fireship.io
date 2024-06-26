@@ -9,6 +9,5 @@ vimeo: 320683048
 free: true
 weight: 10
 emoji: 👯
-chapter_start: Auth 
+chapter_start: Auth
 ---
-

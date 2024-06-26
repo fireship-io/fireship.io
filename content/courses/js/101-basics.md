@@ -1,5 +1,5 @@
 ---
-title: JavaScript Crash Course 
+title: JavaScript Crash Course
 description: 101 concepts every JavaScript developer should know
 weight: 3
 lastmod: 2022-11-11T10:23:30-09:00
@@ -40,7 +40,7 @@ The complete list of topics covered in this video:
 1. Let
 1. CamelCase
 1. Dynamically typed
-1. Primitive. 
+1. Primitive.
 1. Undefined
 1. Null
 1. String
@@ -81,7 +81,7 @@ The complete list of topics covered in this video:
 1. Instance Method
 1. Static Method
 1. Array
-1. Set 
+1. Set
 1. Map
 1. Garbage Collection
 1. WeakMap & WeakSet

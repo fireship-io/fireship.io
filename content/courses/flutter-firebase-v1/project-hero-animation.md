@@ -12,6 +12,7 @@ video_length: 1:10
 ## Hero Animation Example
 
 {{< file "dart" "topics.dart" >}}
+
 ```dart
 class TopicScreen extends StatelessWidget {
   final Topic topic;

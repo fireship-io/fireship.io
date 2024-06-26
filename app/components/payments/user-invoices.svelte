@@ -1,14 +1,14 @@
 <svelte:options tag="user-invoices" />
 
 <script lang="ts">
-  import { callUserAPI } from '../../util/firebase';
+  import { callUserAPI } from "../../util/firebase";
   let loading = false;
   let invoices = null;
 
   async function getSession() {
     loading = true;
     const res =
-      (await callUserAPI<any>({ fn: 'getInvoices', payload: {} })) ?? [];
+      (await callUserAPI<any>({ fn: "getInvoices", payload: {} })) ?? [];
     console.log(res);
     invoices = res.data || [];
     loading = false;
@@ -18,7 +18,7 @@
 {#if !invoices}
   <button on:click={getSession}>
     {#if loading}<loading-spinner />{/if}
-    {loading ? 'loading...' : 'get invoices'}
+    {loading ? "loading..." : "get invoices"}
   </button>
 {/if}
 
@@ -28,7 +28,9 @@
     {#each invoices as inv}
       <li>
         <a target="_blank" href={inv.hosted_invoice_url}> {inv.id}</a> for
-        <strong>${inv.amount_due / 100}</strong> on {new Date(inv.created * 1000).toLocaleDateString()}
+        <strong>${inv.amount_due / 100}</strong> on {new Date(
+          inv.created * 1000,
+        ).toLocaleDateString()}
       </li>
     {/each}
   </ul>

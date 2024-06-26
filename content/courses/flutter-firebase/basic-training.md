@@ -5,7 +5,7 @@ weight: 10
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
 emoji: 🐣
-vimeo: 
+vimeo:
 free: true
 video_length: 12:05
 chapter_start: Basic Training
@@ -19,6 +19,7 @@ Before we build our first app, let's get familiar with the core UI building bloc
 Flutter will inflate the widget passed to `runApp` into the root widget of the application.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -29,9 +30,10 @@ void main() {
 
 ## Stateless Widgets
 
-[Stateless Widgets](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html) are building blocks for the UI. They do not depend on any internal state or data. They have a `build` method that returns a widget - Flutter will call this method whenever the UI needs to be rendered. 
+[Stateless Widgets](https://api.flutter.dev/flutter/widgets/StatelessWidget-class.html) are building blocks for the UI. They do not depend on any internal state or data. They have a `build` method that returns a widget - Flutter will call this method whenever the UI needs to be rendered.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 class MyApp extends StatelessWidget {
   const MyApp({ Key? key }) : super(key: key);
@@ -45,7 +47,7 @@ class MyApp extends StatelessWidget {
 
 ## Material App
 
-The `MaterialApp` is the root of your Flutter app. It is required to work with many built-in widgets. It also allows you to configure global routes and themes. 
+The `MaterialApp` is the root of your Flutter app. It is required to work with many built-in widgets. It also allows you to configure global routes and themes.
 
 ```dart
 MaterialApp(
@@ -57,7 +59,7 @@ MaterialApp(
 
 ## Container
 
-A `Container` is a is the most layout widget. It takes a single child and allows you to control alignment, padding, margin, width, height, and more. 
+A `Container` is a is the most layout widget. It takes a single child and allows you to control alignment, padding, margin, width, height, and more.
 
 Tip: Use widgets like `SizedBox` and `Padding` instead of a container to make your code more readable.
 
@@ -120,9 +122,9 @@ Stack(
 
 ## List View
 
-A `ListView` is a widget that displays a list of children in a scrollable view. You can control the scroll direction, physics, and more. 
+A `ListView` is a widget that displays a list of children in a scrollable view. You can control the scroll direction, physics, and more.
 
-Create a dynamic list of items using a `ListView.builder`, for example: 
+Create a dynamic list of items using a `ListView.builder`, for example:
 
 ```dart
 import 'dart:math';
@@ -146,7 +148,7 @@ ListView.builder(
 
 ## Stateful Widgets
 
-Stateful widgets provide widgets with state, which is just data that changes. Use the `setState()` method to update the state of a widget and it will be re-rendered with the latest data. 
+Stateful widgets provide widgets with state, which is just data that changes. Use the `setState()` method to update the state of a widget and it will be re-rendered with the latest data.
 
 ```dart
 class MyApp extends StatefulWidget {

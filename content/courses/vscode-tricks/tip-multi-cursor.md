@@ -11,4 +11,4 @@ video_length: 0:34
 
 ## ✨ Trick - Set Multiple Cursors
 
-Use `alt + click` to set multiple cursors at the same time. This can be much faster than copy/paste when the value the same in every location. 
+Use `alt + click` to set multiple cursors at the same time. This can be much faster than copy/paste when the value the same in every location.

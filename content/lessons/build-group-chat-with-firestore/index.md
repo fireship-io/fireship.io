@@ -5,9 +5,9 @@ publishdate: 2018-10-14T18:11:02-07:00
 author: Jeff Delaney
 draft: false
 description: Design a Firestore group chat feature and build it from scratch with Angular.
-tags: 
-    - angular
-    - firebase
+tags:
+  - angular
+  - firebase
 
 youtube: LKAXg2drQJQ
 github: https://github.com/AngularFirebase/144-firestore-group-chat
@@ -21,12 +21,12 @@ github: https://github.com/AngularFirebase/144-firestore-group-chat
 #    rxdart: 0.20
 ---
 
-One of the most compelling reasons to choose Firebase as your backend is to meet the demands of complex realtime features, like group chat. Managing state between multiple clients in realtime is a major undertaking, but with Firebase it becomes almost trivial. The following lesson will teach you how to build a simple group chat app with [Cloud Firestore](https://firebase.google.com/docs/firestore/). 
+One of the most compelling reasons to choose Firebase as your backend is to meet the demands of complex realtime features, like group chat. Managing state between multiple clients in realtime is a major undertaking, but with Firebase it becomes almost trivial. The following lesson will teach you how to build a simple group chat app with [Cloud Firestore](https://firebase.google.com/docs/firestore/).
 
-This lesson is accompanied by a real demo! Give [Firestore Mega Chat](https://firestore-megachat.firebaseapp.com/) a whirl. 
+This lesson is accompanied by a real demo! Give [Firestore Mega Chat](https://firestore-megachat.firebaseapp.com/) a whirl.
 
 {{< figure src="img/firestore-chat-demo.gif" caption="Firestore chat demo" >}}
- 
+
 ## Data Modeling Considerations
 
 The ideal data model for a chat application depends on several factors. Here are a few topics to think about...
@@ -40,20 +40,17 @@ The ideal data model for a chat application depends on several factors. Here are
 
 ### Messages Collection Approach
 
-The most flexible model is multiple collections (or subcollections) for chat sessions and messages. This approach allows you to query messages serverside, but requires a unique read for every message. This data model is one you should consider, but not the approach we are taking for this demo. 
-
+The most flexible model is multiple collections (or subcollections) for chat sessions and messages. This approach allows you to query messages serverside, but requires a unique read for every message. This data model is one you should consider, but not the approach we are taking for this demo.
 
 {{< figure src="img/firestore-chat-subcollection.png" caption="Subcollection approach" >}}
- 
 
 ### Embedded Document Approach
 
-Our app will model embed all messages on a single document, allowing us to grab hundreds of messages with a single read operation. This approach is fast and simple, but the drawback is that Firestore limits you 1MB per document, or conservatively, around 1K chat messages. At the end of the lesson, we'll setup a cloud function to automatically manage the document size by archiving older messages. 
-
+Our app will model embed all messages on a single document, allowing us to grab hundreds of messages with a single read operation. This approach is fast and simple, but the drawback is that Firestore limits you 1MB per document, or conservatively, around 1K chat messages. At the end of the lesson, we'll setup a cloud function to automatically manage the document size by archiving older messages.
 
 {{< figure src="img/firestore-chat-embedded.png" caption="Embedded approach" >}}
 
-Another benefit of the embedded approach is that Firestore recently added an `arrayUnion` helper that enforces uniqueness and makes adding items to the array [idempotent](https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation). 
+Another benefit of the embedded approach is that Firestore recently added an `arrayUnion` helper that enforces uniqueness and makes adding items to the array [idempotent](https://stackoverflow.com/questions/1077412/what-is-an-idempotent-operation).
 
 ```js
 {
@@ -66,14 +63,13 @@ Another benefit of the embedded approach is that Firestore recently added an `ar
 }
 ```
 
-Notice how we only save the user's UID on the chat message. Later this lesson, I will provide a `joinUsers` method to combine the user data, like displayName and photoURL, to each message in the UI. 
+Notice how we only save the user's UID on the chat message. Later this lesson, I will provide a `joinUsers` method to combine the user data, like displayName and photoURL, to each message in the UI.
 
-<p class="tip">Firestore also has a *limit* of 1-write-per-second, but you can burst past it for short periods. This limit is only a concern if you have consistent high volume writes on a single doc. You can learn more in this [github issue](https://github.com/firebase/firebase-js-sdk/issues/495). 
-
+<p class="tip">Firestore also has a *limit* of 1-write-per-second, but you can burst past it for short periods. This limit is only a concern if you have consistent high volume writes on a single doc. You can learn more in this [github issue](https://github.com/firebase/firebase-js-sdk/issues/495).
 
 ## AngularFire Chat App
 
-Now that we have a data model in place, let's build out the UI with Angular and @angular/fire. 
+Now that we have a data model in place, let's build out the UI with Angular and @angular/fire.
 
 ```
 ng new firechat --routing
@@ -83,48 +79,46 @@ ng g service chat
 ng g service auth
 ```
 
-Add a route for the chat component in `app.routing.module`: 
+Add a route for the chat component in `app.routing.module`:
 
 ```typescript
-const routes: Routes = [
-  { path: 'chats/:id', component: ChatComponent }
-];
+const routes: Routes = [{ path: "chats/:id", component: ChatComponent }];
 ```
 
 Next, follow the install instructions for [Firebase and AngularFire](https://github.com/angular/angularfire2/blob/master/docs/install-and-setup.md)
 
 ### User Authentication Service
 
-You need to have a user auth system in place that saves a user's profile data in firestore. The auth service below will do the trick and for a full explanation you can watch [Episode 55 - Google OAuth Custom Firestore Profile](https://angularfirebase.com/lessons/google-user-auth-with-firestore-custom-data/). 
+You need to have a user auth system in place that saves a user's profile data in firestore. The auth service below will do the trick and for a full explanation you can watch [Episode 55 - Google OAuth Custom Firestore Profile](https://angularfirebase.com/lessons/google-user-auth-with-firestore-custom-data/).
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
-import { auth } from 'firebase/app';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { auth } from "firebase/app";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFirestore } from "@angular/fire/firestore";
 
-import { Observable, of } from 'rxjs';
-import { switchMap, first, map } from 'rxjs/operators';
+import { Observable, of } from "rxjs";
+import { switchMap, first, map } from "rxjs/operators";
 
-@Injectable({ providedIn: 'root' })
+@Injectable({ providedIn: "root" })
 export class AuthService {
   user$: Observable<any>;
 
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
-    private router: Router
+    private router: Router,
   ) {
     this.user$ = this.afAuth.authState.pipe(
-      switchMap(user => {
+      switchMap((user) => {
         if (user) {
           return this.afs.doc<any>(`users/${user.uid}`).valueChanges();
         } else {
           return of(null);
         }
-      })
+      }),
     );
   }
 
@@ -149,7 +143,7 @@ export class AuthService {
       uid,
       email,
       displayName,
-      photoURL
+      photoURL,
     };
 
     return userRef.set(data, { merge: true });
@@ -157,48 +151,47 @@ export class AuthService {
 
   async signOut() {
     await this.afAuth.signOut();
-    return this.router.navigate(['/']);
+    return this.router.navigate(["/"]);
   }
 }
 ```
-
 
 ### Chat Service
 
 The chat service gives us a single place to retrieve and write data from Firestore. Here's a breakdown of what each method does.
 
-- *get* retrieves the chat document as an Observable. 
-- *create* writes a new chat document
-- *sendMessage* uses the Firestore `arrayUnion` method append a new chat message to document. 
+- _get_ retrieves the chat document as an Observable.
+- _create_ writes a new chat document
+- _sendMessage_ uses the Firestore `arrayUnion` method append a new chat message to document.
 
 ```typescript
-import { Injectable } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AuthService } from './auth.service';
-import { Router } from '@angular/router';
-import { firestore } from 'firebase/app';
-import { map, switchMap } from 'rxjs/operators';
-import { Observable, combineLatest, of } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { AngularFirestore } from "@angular/fire/firestore";
+import { AuthService } from "./auth.service";
+import { Router } from "@angular/router";
+import { firestore } from "firebase/app";
+import { map, switchMap } from "rxjs/operators";
+import { Observable, combineLatest, of } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ChatService {
   constructor(
     private afs: AngularFirestore,
     private auth: AuthService,
-    private router: Router
+    private router: Router,
   ) {}
 
   get(chatId) {
     return this.afs
-      .collection<any>('chats')
+      .collection<any>("chats")
       .doc(chatId)
       .snapshotChanges()
       .pipe(
-        map(doc => {
+        map((doc) => {
           return { id: doc.payload.id, ...doc.payload.data() };
-        })
+        }),
       );
   }
 
@@ -209,12 +202,12 @@ export class ChatService {
       uid,
       createdAt: Date.now(),
       count: 0,
-      messages: []
+      messages: [],
     };
 
-    const docRef = await this.afs.collection('chats').add(data);
+    const docRef = await this.afs.collection("chats").add(data);
 
-    return this.router.navigate(['chats', docRef.id]);
+    return this.router.navigate(["chats", docRef.id]);
   }
 
   async sendMessage(chatId, content) {
@@ -223,23 +216,22 @@ export class ChatService {
     const data = {
       uid,
       content,
-      createdAt: Date.now()
+      createdAt: Date.now(),
     };
 
     if (uid) {
-      const ref = this.afs.collection('chats').doc(chatId);
+      const ref = this.afs.collection("chats").doc(chatId);
       return ref.update({
-        messages: firestore.FieldValue.arrayUnion(data)
+        messages: firestore.FieldValue.arrayUnion(data),
       });
     }
   }
-
 }
 ```
 
 ### Joining User Profile Data to Chat Messages
 
-The code below is the most advanced part of this lesson. It grabs the unique IDs from the chat messages array, then joins the user profile data to each message and keeps the entire payload synced in realtime. I highly recommend also watching the [Advanced Firestore Joins lesson](/lessons/firestore-joins-similar-to-sql/) if you get lost in this section. 
+The code below is the most advanced part of this lesson. It grabs the unique IDs from the chat messages array, then joins the user profile data to each message and keeps the entire payload synced in realtime. I highly recommend also watching the [Advanced Firestore Joins lesson](/lessons/firestore-joins-similar-to-sql/) if you get lost in this section.
 
 ```typescript
   joinUsers(chat$: Observable<any>) {
@@ -271,10 +263,9 @@ The code below is the most advanced part of this lesson. It grabs the unique IDs
   }
 ```
 
-
 ### Chat Component
 
-Most of the complex data management code lives in the chat service - now we need to make use of it in a component. 
+Most of the complex data management code lives in the chat service - now we need to make use of it in a component.
 
 ```typescript
 import { Component, OnInit } from '@angular/core';
@@ -352,16 +343,15 @@ In the HTML we can unwrap the Observable with the `async` and bind its data to t
 </ng-container>
 ```
 
+## Archiving Messages
 
-## Archiving Messages 
-
-The AngularFirebase Slack Channel has generated over 150,000 messages in the last 12 months, so it's safe to assume our Firestore chat documents will need more than 1Mb of space. In addition, we should keep the main chat document relatively small to also minimize data load times. 
+The AngularFirebase Slack Channel has generated over 150,000 messages in the last 12 months, so it's safe to assume our Firestore chat documents will need more than 1Mb of space. In addition, we should keep the main chat document relatively small to also minimize data load times.
 
 1Mb is actually quite large. There are 1 million bytes in a Megabyte and let's assume a worst case of 5 bytes per character in each message. That gives us room for well over 1K messages at 100 characters each.
 
 ### Manage Document Size with a Cloud Function
 
-So here's the plan... We will trigger a Cloud Function on every document write. When a chat's messages array exceeds 100 or the JSON stringified value is greater than 10K characters, we will delete the oldest messages. This means we never fill more that 5% of the document's capacity and we should have access to the last 100 or so messages.  
+So here's the plan... We will trigger a Cloud Function on every document write. When a chat's messages array exceeds 100 or the JSON stringified value is greater than 10K characters, we will delete the oldest messages. This means we never fill more that 5% of the document's capacity and we should have access to the last 100 or so messages.
 
 ```
 firebase init functions
@@ -376,7 +366,7 @@ const db = admin.firestore();
 
 export const archiveChat = functions.firestore
   .document("chats/{chatId}")
-  .onUpdate(change => {
+  .onUpdate((change) => {
     const data = change.after.data();
 
     const maxLen = 100;
@@ -386,11 +376,10 @@ export const archiveChat = functions.firestore
     const batch = db.batch();
 
     if (charLen >= 10000 || msgLen >= maxLen) {
-
       // Always delete at least 1 message
-      const deleteCount = msgLen - maxLen <= 0 ? 1 : msgLen - maxLen
+      const deleteCount = msgLen - maxLen <= 0 ? 1 : msgLen - maxLen;
       data.messages.splice(0, deleteCount);
- 
+
       const ref = db.collection("chats").doc(change.after.id);
 
       batch.set(ref, data, { merge: true });
@@ -402,10 +391,6 @@ export const archiveChat = functions.firestore
   });
 ```
 
-
-
 ## The End
 
-A fully-featured chat app has a ton of moving parts, but Firebase takes care of the most challenging development hurdles, like state management, realtime data syncing, user auth, and scaling. The next step is to think about adding additional features, like user access control, file uploads, push notifications, and more. 
-
-
+A fully-featured chat app has a ton of moving parts, but Firebase takes care of the most challenging development hurdles, like state management, realtime data syncing, user auth, and scaling. The next step is to think about adding additional features, like user access control, file uploads, push notifications, and more.

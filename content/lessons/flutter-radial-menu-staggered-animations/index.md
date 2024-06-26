@@ -4,11 +4,11 @@ lastmod: 2019-02-24T09:14:20-07:00
 publishdate: 2019-02-24T09:14:20-07:00
 author: Jeff Delaney
 draft: false
-description: Compose staggered transform animations in Flutter by building a radial menu from scratch.  
-tags: 
-    - flutter
-    - dart
-    - animation
+description: Compose staggered transform animations in Flutter by building a radial menu from scratch.
+tags:
+  - flutter
+  - dart
+  - animation
 
 youtube: MhQI-ysRyrk
 github: https://github.com/fireship-io/170-flutter-animated-radial-menu
@@ -19,27 +19,26 @@ github: https://github.com/fireship-io/170-flutter-animated-radial-menu
 # step: 0
 
 versions:
-   flutter: 1.0
-   vector_math: ^2.0.8
+  flutter: 1.0
+  vector_math: ^2.0.8
 ---
 
-Building a flashy animated radial menu in Flutter can be done with ease thanks to the [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) widget and [staggered animations](https://flutter.dev/docs/development/ui/animations/staggered-animations). The following lesson will teach you how to compose flutter animations into a cool rotating circular widget, which can easily maintain 60FPS on modern smartphones. 
+Building a flashy animated radial menu in Flutter can be done with ease thanks to the [Transform](https://docs.flutter.io/flutter/widgets/Transform-class.html) widget and [staggered animations](https://flutter.dev/docs/development/ui/animations/staggered-animations). The following lesson will teach you how to compose flutter animations into a cool rotating circular widget, which can easily maintain 60FPS on modern smartphones.
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2F170-RadialMenu%2Fflutter-spinner-demo.mp4?alt=media&token=71b0c4d8-c286-451b-8b8a-04a539b2116d"></video>
 
-
-
 ## Step 1 - Initial Setup
 
-We will define two custom widgets for this demo. 
+We will define two custom widgets for this demo.
 
-The parent `RadialMenu` is a *StatefulWidget* responsible for defining an [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html) that sets a duration for the animation. It also has the ability to start/stop the animation. 
+The parent `RadialMenu` is a _StatefulWidget_ responsible for defining an [AnimationController](https://docs.flutter.io/flutter/animation/AnimationController-class.html) that sets a duration for the animation. It also has the ability to start/stop the animation.
 
-The child `RadialAnimation` does most of the heavy lifting by using Flutter's [AnimatedBuilder](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html) widget to define the animated UI elements and apply multiple Tween animations within a single build context. It takes the animation controller from the parent component as an input. 
+The child `RadialAnimation` does most of the heavy lifting by using Flutter's [AnimatedBuilder](https://docs.flutter.io/flutter/widgets/AnimatedBuilder-class.html) widget to define the animated UI elements and apply multiple Tween animations within a single build context. It takes the animation controller from the parent component as an input.
 
 ### App Skeleton
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -56,7 +55,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
         home: Scaffold(
-            body: SizedBox.expand(child: RadialMenu()) 
+            body: SizedBox.expand(child: RadialMenu())
         )
     );
   }
@@ -69,7 +68,7 @@ class RadialMenu extends StatefulWidget {
 }
 
 class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateMixin {
-  
+
   AnimationController controller;
 
   @override
@@ -80,7 +79,7 @@ class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateM
 }
 
 
-// The Animation 
+// The Animation
 class RadialAnimation extends StatelessWidget {
     final AnimationController controller;
     RadialAnimation({ Key key, this.controller }) : super(key: key);
@@ -94,23 +93,23 @@ class RadialAnimation extends StatelessWidget {
 
 ### Profiling Animation Performance
 
-I highly recommend running your app on a real device to make use of Flutter's [Performance Profiling](https://flutter.dev/docs/testing/ui-performance) tools. As long as you maintain 60 frames-per-second (FPS), your app should be perceived as "butter smooth" 🥞. As you can see from the profile below the animation has plenty of room to spare on a Pixel 2. Smaller blue bars means faster rendering for each frame (they will become red when perf starts to degrade). 
+I highly recommend running your app on a real device to make use of Flutter's [Performance Profiling](https://flutter.dev/docs/testing/ui-performance) tools. As long as you maintain 60 frames-per-second (FPS), your app should be perceived as "butter smooth" 🥞. As you can see from the profile below the animation has plenty of room to spare on a Pixel 2. Smaller blue bars means faster rendering for each frame (they will become red when perf starts to degrade).
 
 {{< figure src="img/flutter-perf.png" alt="flutter animation performance at 60FPS" >}}
 
 ## Step 2 - Animate the Open and Close Buttons
 
-The first animation will toggle the visibility of the open/close button in the middle of the menu. 
+The first animation will toggle the visibility of the open/close button in the middle of the menu.
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2F170-RadialMenu%2F18-openclose-demo.mp4?alt=media&token=0a0fee29-b8a3-404f-b444-e9784e313f73"></video>
 
 ### Define the Animation Controller
 
-The controller lives in the StatefulWidget and defines the total durtation of the animation. 
+The controller lives in the StatefulWidget and defines the total durtation of the animation.
 
 ```dart
 class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateMixin {
-  
+
   AnimationController controller;
 
   @override
@@ -123,19 +122,16 @@ class _RadialMenuState extends State<RadialMenu> with SingleTickerProviderStateM
 
 ### Open/Close Button Scale Animation
 
-All of the buttons in the radial menu will be stacked on top of each other, then animated around the center when the menu is opened. 
+All of the buttons in the radial menu will be stacked on top of each other, then animated around the center when the menu is opened.
 
-- The *Tween* defines the values that will change over the course of the animation. For example, we start at a size of 150%, then scale down to 0%. 
-- The *CurvedAnimation* defines the [Bezier curve](https://www.jasondavies.com/animated-bezier/) - or timing function - of the animation over its lifecycle. Flutter has a bunch of built-in curves that that will make your animations more exciting, so experiment with these. 
-- *Transform.scale()* wrapps the floating action buttons and will dynamically apply scale changes when the animation is running. 
-
-
-
+- The _Tween_ defines the values that will change over the course of the animation. For example, we start at a size of 150%, then scale down to 0%.
+- The _CurvedAnimation_ defines the [Bezier curve](https://www.jasondavies.com/animated-bezier/) - or timing function - of the animation over its lifecycle. Flutter has a bunch of built-in curves that that will make your animations more exciting, so experiment with these.
+- _Transform.scale()_ wrapps the floating action buttons and will dynamically apply scale changes when the animation is running.
 
 ```dart
 class RadialAnimation extends StatelessWidget {
-    RadialAnimation({ Key key, this.controller }) : 
-    
+    RadialAnimation({ Key key, this.controller }) :
+
       scale = Tween<double>(
         begin: 1.5,
         end: 0.0,
@@ -145,7 +141,7 @@ class RadialAnimation extends StatelessWidget {
           curve: Curves.fastOutSlowIn
         ),
       ),
-    
+
     super(key: key);
 
     final AnimationController controller;
@@ -154,7 +150,7 @@ class RadialAnimation extends StatelessWidget {
 
     build(context) {
       return AnimatedBuilder(
-        animation: controller, 
+        animation: controller,
         builder: (context, builder) {
           return Stack(
             alignment: Alignment.center,
@@ -162,8 +158,8 @@ class RadialAnimation extends StatelessWidget {
               Transform.scale(
                 scale: scale.value - 1.5, // subtract the beginning value to run the opposite animation
                 child: FloatingActionButton(
-                  child: Icon(FontAwesomeIcons.timesCircle), 
-                  onPressed: _close, 
+                  child: Icon(FontAwesomeIcons.timesCircle),
+                  onPressed: _close,
                   backgroundColor: Colors.red
                 ),
               ),
@@ -171,8 +167,8 @@ class RadialAnimation extends StatelessWidget {
               Transform.scale(
                 scale: scale.value,
                 child: FloatingActionButton(
-                  child: 
-                  Icon(FontAwesomeIcons.solidDotCircle), 
+                  child:
+                  Icon(FontAwesomeIcons.solidDotCircle),
                   onPressed: _open
                 ),
               )
@@ -193,7 +189,7 @@ class RadialAnimation extends StatelessWidget {
 
 ## Step 3 - Animate the Surrounding Buttons
 
-The next section is the most challenging because we need to determine the correct *x,y* position of each button from the center of a circle - this require some Trigonometry 📐. 
+The next section is the most challenging because we need to determine the correct _x,y_ position of each button from the center of a circle - this require some Trigonometry 📐.
 
 <video controls src="https://firebasestorage.googleapis.com/v0/b/fireship-app.appspot.com/o/assets%2F170-RadialMenu%2F18-radial-demo.mp4?alt=media&token=bab81670-0b77-4687-8c1d-2efbebd74ae4"></video>
 
@@ -201,12 +197,11 @@ The next section is the most challenging because we need to determine the correc
 
 In the code below we use some basic trig to determine the x,y position of a button based on a fixed angle (in radians) and a distance (the current value of the translation animation). Extracting this logic to a `_buildButton` helper function allows us to quickly add new buttons to the menu with their own custom colors and icons.
 
-Also, this animation is rendered with a Matrix4 [Transformation Matrix](https://en.wikipedia.org/wiki/Transformation_matrix). You can do some amazing things with 3D perspective animations by chaining together different transformations, for example `Matrix4.identity()..translate()..scale()..skew()`; 
-
+Also, this animation is rendered with a Matrix4 [Transformation Matrix](https://en.wikipedia.org/wiki/Transformation_matrix). You can do some amazing things with 3D perspective animations by chaining together different transformations, for example `Matrix4.identity()..translate()..scale()..skew()`;
 
 ```dart
 class RadialAnimation extends StatelessWidget {
-    RadialAnimation({ Key key, this.controller }) : 
+    RadialAnimation({ Key key, this.controller }) :
 
       // ...omitted
 
@@ -219,7 +214,7 @@ class RadialAnimation extends StatelessWidget {
           curve: Curves.linear
         ),
       ),
-    
+
     super(key: key);
 
     final AnimationController controller;
@@ -229,7 +224,7 @@ class RadialAnimation extends StatelessWidget {
 
     build(context) {
       return AnimatedBuilder(
-        animation: controller, 
+        animation: controller,
         builder: (context, builder) {
           return Stack(
             alignment: Alignment.center,
@@ -251,7 +246,7 @@ class RadialAnimation extends StatelessWidget {
       final double rad = radians(angle);
       return Transform(
         transform: Matrix4.identity()..translate(
-          (translation.value) * cos(rad), 
+          (translation.value) * cos(rad),
           (translation.value) * sin(rad)
         ),
 
@@ -263,13 +258,12 @@ class RadialAnimation extends StatelessWidget {
 
 ## Step 4 - Rotate the Entire Set of Buttons
 
-Lastly, let's rotate the entire stack of buttons. The main difference to note with this animation is that it uses an `Interval` to stagger the rotation with specific start/end  times relative to the total animation timeline. 
-
+Lastly, let's rotate the entire stack of buttons. The main difference to note with this animation is that it uses an `Interval` to stagger the rotation with specific start/end times relative to the total animation timeline.
 
 ```dart
 class RadialAnimation extends StatelessWidget {
-    RadialAnimation({ Key key, this.controller }) : 
-    
+    RadialAnimation({ Key key, this.controller }) :
+
     // ...
 
     rotation = Tween<double>(
@@ -284,7 +278,7 @@ class RadialAnimation extends StatelessWidget {
         ),
       ),
     ),
-    
+
     super(key: key);
 
     final AnimationController controller;
@@ -294,7 +288,7 @@ class RadialAnimation extends StatelessWidget {
 
     build(context) {
       return AnimatedBuilder(
-        animation: controller, 
+        animation: controller,
         builder: (context, builder) {
           return Transform.rotate( // Add rotation
             angle: radians(rotation.value),
@@ -312,5 +306,4 @@ class RadialAnimation extends StatelessWidget {
 
 ## The End
 
-Animations in Flutter render beautifully, but can become verbose if you're not careful. Be liberal about extracting logic into helper functions and use AnimatedBuilders to avoid excessive boilerplate. 
-
+Animations in Flutter render beautifully, but can become verbose if you're not careful. Be liberal about extracting logic into helper functions and use AnimatedBuilders to avoid excessive boilerplate.

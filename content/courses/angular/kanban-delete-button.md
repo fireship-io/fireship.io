@@ -9,29 +9,31 @@ emoji: 🗑️
 video_length: 3:10
 ---
 
-Create a delete button that confirms the operation before sending the write to the database. 
+Create a delete button that confirms the operation before sending the write to the database.
 
 ## Steps
 
 ### Step 1 - Generate the Component
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g c shared/delete-button
 ```
 
 ### Step 2 - Delete Button Component
 
-The delete button component is just UI (dumb component), meaning it only emits an event with the user's delete intention. The parent component handles the actual database write. 
+The delete button component is just UI (dumb component), meaning it only emits an event with the user's delete intention. The parent component handles the actual database write.
 
 {{< file "ngts" "delete-button.component.ts" >}}
+
 ```typescript
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from "@angular/core";
 
 @Component({
-  selector: 'app-delete-button',
-  templateUrl: './delete-button.component.html',
-  styleUrls: ['./delete-button.component.scss']
+  selector: "app-delete-button",
+  templateUrl: "./delete-button.component.html",
+  styleUrls: ["./delete-button.component.scss"],
 })
 export class DeleteButtonComponent {
   canDelete: boolean;
@@ -50,11 +52,11 @@ export class DeleteButtonComponent {
     this.delete.emit(true);
     this.canDelete = false;
   }
-
 }
 ```
 
 {{< file "html" "delete-button.component.html" >}}
+
 ```html
 <button
   mat-button
@@ -65,19 +67,15 @@ export class DeleteButtonComponent {
   <span *ngIf="canDelete">confirm</span>
 </button>
 
-<button *ngIf="canDelete" mat-button (click)="cancel()">
-  Cancel
-</button>
-
+<button *ngIf="canDelete" mat-button (click)="cancel()">Cancel</button>
 ```
-
 
 ### Step 3 - Use it in the Kanban Feature
 
 Example usage to delete a board:
 
-
 {{< file "ngts" "board.component.ts" >}}
+
 ```typescript
   handleDelete() {
     this.boardService.deleteBoard(this.board.id);
@@ -85,6 +83,7 @@ Example usage to delete a board:
 ```
 
 {{< file "html" "board.component.html" >}}
+
 ```html
 <app-delete-button (delete)="handleDelete()"></app-delete-button>
 ```

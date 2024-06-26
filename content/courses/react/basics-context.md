@@ -12,49 +12,49 @@ video_length: 1:25
 ## Example of Prop Drilling
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function PropDrilling() {
-
   const [count] = useState(0);
 
-  return <Child count={count} />
+  return <Child count={count} />;
 }
 
 function Child({ count }) {
-  return <GrandChild count={count} />
+  return <GrandChild count={count} />;
 }
 
 function GrandChild({ count }) {
-  return <div>{count}</div>
+  return <div>{count}</div>;
 }
 ```
 
 ## Sharing Data with Context
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function PropDrilling() {
-
   const [count] = useState(0);
 
   return (
     <CountContext.Provider value={count}>
       <Child />
     </CountContext.Provider>
-  )
+  );
 }
 
 function Child() {
-  return <GrandChild />
+  return <GrandChild />;
 }
 
 function GrandChild() {
-
   const count = useContext(CountContext);
 
-  return <div>{count}</div>
+  return <div>{count}</div>;
 }
 ```
+
 ## Challenge
 
 Create `CountContext` and `CountProvider` that uses `{ count, setCount }` as its values. This will allow the count and setCount function to be passed to any of its `{children}` in the tree.

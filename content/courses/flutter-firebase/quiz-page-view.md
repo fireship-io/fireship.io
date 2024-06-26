@@ -11,9 +11,10 @@ video_length: 3:47
 
 ## Page View
 
-In the quiz screen, update the Scaffold to use a PageView. 
+In the quiz screen, update the Scaffold to use a PageView.
 
 {{< file "flutter" "quiz.dart" >}}
+
 ```dart
     return Scaffold(
         appBar: AppBar(
@@ -44,9 +45,10 @@ In the quiz screen, update the Scaffold to use a PageView.
 
 ## Update Quiz State
 
-Add the page controller to the Quiz state so that it can be shared across multiple children easily. 
+Add the page controller to the Quiz state so that it can be shared across multiple children easily.
 
 {{< file "flutter" "main.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/models.dart';
@@ -74,5 +76,4 @@ The PageView will generate one of three possible pages:
 - QuestionPage
 - CongratsPage
 
-View the [full source code](https://github.com/fireship-io/flutter-firebase-quizapp-course/tree/master/lib) to review the code for these pages. 
-
+View the [full source code](https://github.com/fireship-io/flutter-firebase-quizapp-course/tree/master/lib) to review the code for these pages.

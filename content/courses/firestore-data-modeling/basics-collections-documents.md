@@ -9,8 +9,7 @@ vimeo: 330791614
 video_length: 3:44
 ---
 
-
-1. **Embed**. Model data directly on a document. 
-2. **Root collection**. Normalize data into separate collections, then reference document IDs. 
-3. **Subcollection**. Nest data in a collection under a document. 
-4. **Bucket**. Separate data into multiple documents, but embed as much as possible. 
+1. **Embed**. Model data directly on a document.
+2. **Root collection**. Normalize data into separate collections, then reference document IDs.
+3. **Subcollection**. Nest data in a collection under a document.
+4. **Bucket**. Separate data into multiple documents, but embed as much as possible.

@@ -14,6 +14,7 @@ video_length: 2:51
 Use a `BottomNavigationBar` to move between screens in the `shared` folder.
 
 {{< file "dart" "bottom_nav.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -67,7 +68,7 @@ class BottomNavBar extends StatelessWidget {
 
 ```
 
-Put it to use in a Scaffold. 
+Put it to use in a Scaffold.
 
 ```dart
 import 'package:quizapp/shared/bottom_nav.dart';

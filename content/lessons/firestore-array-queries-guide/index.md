@@ -5,13 +5,13 @@ publishdate: 2019-02-12T14:46:47-07:00
 author: Jeff Delaney
 draft: false
 description: Tips and tricks for Firestore array queries and writes
-tags: 
-    - firebase
-    - firestore
+tags:
+  - firebase
+  - firestore
 
 type: lessons
 youtube: 4t2eHrFW_0M
-# github: 
+# github:
 # disable_toc: true
 # disable_qna: true
 
@@ -22,14 +22,13 @@ youtube: 4t2eHrFW_0M
 #    rxdart: 0.20
 ---
 
-Have you ever wanted to make a query to Firestore for all documents *with an array containing a certain value*? Array queries are possible as of Firebase JS [SDK v5.3.0](https://firebase.google.com/support/release-notes/js). In addition, the SDK also added support for the atomic addition and removal of elements on an array field. 
- 
+Have you ever wanted to make a query to Firestore for all documents _with an array containing a certain value_? Array queries are possible as of Firebase JS [SDK v5.3.0](https://firebase.google.com/support/release-notes/js). In addition, the SDK also added support for the atomic addition and removal of elements on an array field.
 
-## Firestore Arrays 
+## Firestore Arrays
 
 ### Queries
 
-Firebase introduced an `array-contains` operator that can be used with `where` to query array fields. It will return all documents that contain a the provided value in the array. Currently, this is only supported with one value, so don't try chaining more than one of these in a single query. 
+Firebase introduced an `array-contains` operator that can be used with `where` to query array fields. It will return all documents that contain a the provided value in the array. Currently, this is only supported with one value, so don't try chaining more than one of these in a single query.
 
 ```js
 const col = firestore.collection('carts');
@@ -39,10 +38,14 @@ const query = col.where('items', 'array-contains', 'fruit loops')
 query.get(...)
 ```
 
-Use `array-contains-any` to query a list of many possible matches. 
+Use `array-contains-any` to query a list of many possible matches.
 
 ```js
-const query = col.where('items', 'array-contains-any', ['fruit loops', 'corn-pops', 'wheaties'])
+const query = col.where("items", "array-contains-any", [
+  "fruit loops",
+  "corn-pops",
+  "wheaties",
+]);
 ```
 
 ### Writes
@@ -61,8 +64,7 @@ doc.update({
 });
 ```
 
-How to add new items to an array? 
-
+How to add new items to an array?
 
 ```js
 const const arrayUnion = firebase.firestore.FieldValue.arrayUnion;

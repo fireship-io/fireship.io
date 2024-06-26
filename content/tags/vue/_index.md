@@ -1,6 +1,6 @@
 ---
 title: Vue
-description: Vue is a progressive JavaScript framework for building UIs, renowned for its simplicity and rich ecosystem. 
+description: Vue is a progressive JavaScript framework for building UIs, renowned for its simplicity and rich ecosystem.
 link: https://vuejs.org
 course: The Vue Firebase Project Course
 course_link: /courses/vue

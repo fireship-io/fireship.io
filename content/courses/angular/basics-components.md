@@ -13,8 +13,7 @@ video_length: 13:51
 
 ## Components, Directive, and Pipes
 
-This video below originally appeared at [Angular Components - Ten Basic Concepts](https://angularfirebase.com/lessons/angular-components-basics-top-ten/). It was originally produced for Angular v6, but the core concepts are identical. 
-
+This video below originally appeared at [Angular Components - Ten Basic Concepts](https://angularfirebase.com/lessons/angular-components-basics-top-ten/). It was originally produced for Angular v6, but the core concepts are identical.
 
 ## Component Composition
 
@@ -25,5 +24,3 @@ Cross-component communication is one of the most useful concepts to master when 
 <div class="vid-center">
 {{< youtube I317BhehZKM >}}
 </div>
-
-

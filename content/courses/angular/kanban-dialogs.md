@@ -9,13 +9,14 @@ emoji: 🍱
 video_length: 8:03
 ---
 
-Use Material dialogs to create and update the data associated with boards and tasks. 
+Use Material dialogs to create and update the data associated with boards and tasks.
 
-## Steps 
+## Steps
 
 ### Generate the Dialogs
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g c kanban/dialogs/board-dialog --flat --entry-component -s -t
 ng g c kanban/dialogs/task-dialog --flat --entry-component -s -t
@@ -26,16 +27,17 @@ ng g c kanban/dialogs/task-dialog --flat --entry-component -s -t
 Create the board dialog component.
 
 {{< file "ngts" "board-dialog.component.ts" >}}
+
 ```typescript
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject } from "@angular/core";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
-  selector: 'app-board-dialog',
+  selector: "app-board-dialog",
   template: `
     <h1 mat-dialog-title>Board</h1>
     <div mat-dialog-content>
-    <p>What shall we call this board?</p>
+      <p>What shall we call this board?</p>
       <mat-form-field>
         <input placeholder="title" matInput [(ngModel)]="data.title" />
       </mat-form-field>
@@ -47,24 +49,24 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
       </button>
     </div>
   `,
-  styles: []
+  styles: [],
 })
 export class BoardDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<BoardDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
   ) {}
 
   onNoClick(): void {
     this.dialogRef.close();
   }
 }
-
 ```
 
-Then trigger it from the board-list component and handle the data accordingly. Below are the relevant changes to the existing code:  
+Then trigger it from the board-list component and handle the data accordingly. Below are the relevant changes to the existing code:
 
 {{< file "ngts" "board-list.component.ts" >}}
+
 ```typescript
 // ... omitted
 import { MatDialog } from '@angular/material/dialog';
@@ -97,70 +99,66 @@ export class BoardListComponent implements OnInit, OnDestroy {
 }
 ```
 
-And make sure to bind the button click to the `openDialog()` handler. 
+And make sure to bind the button click to the `openDialog()` handler.
 
 {{< file "html" "board-list.component.html" >}}
+
 ```html
-<button
-    mat-raised-button
-    cdkDragDisabled
-    (click)="openBoardDialog()"
->
-    New Board
+<button mat-raised-button cdkDragDisabled (click)="openBoardDialog()">
+  New Board
 </button>
 ```
 
 ### Step 3 - Task Dialog
 
-The task dialog is similar, but also supports data updates by passing data into the material dialog. 
+The task dialog is similar, but also supports data updates by passing data into the material dialog.
 
 {{< file "ngts" "task-dialog.component.ts" >}}
+
 ```typescript
-import { Component, Inject } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { BoardService } from '../board.service';
+import { Component, Inject } from "@angular/core";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
+import { BoardService } from "../board.service";
 
 @Component({
-  selector: 'app-task-dialog',
+  selector: "app-task-dialog",
   template: `
-  <h1 mat-dialog-title>Task</h1>
-  <div mat-dialog-content class="content">
-    <mat-form-field>
-      <textarea
-        placeholder="Task description"
-        matInput
-        [(ngModel)]="data.task.description"
-      ></textarea>
-    </mat-form-field>
-    <br />
-    <mat-button-toggle-group
-      #group="matButtonToggleGroup"
-      [(ngModel)]="data.task.label"
-    >
-      <mat-button-toggle *ngFor="let opt of labelOptions" [value]="opt">
-        <mat-icon [ngClass]="opt">{{
-          opt === 'gray' ? 'check_circle' : 'lens'
-        }}</mat-icon>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-  </div>
-  <div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
-      {{ data.isNew ? 'Add Task' : 'Update Task' }}
-    </button>
-
-  </div>
+    <h1 mat-dialog-title>Task</h1>
+    <div mat-dialog-content class="content">
+      <mat-form-field>
+        <textarea
+          placeholder="Task description"
+          matInput
+          [(ngModel)]="data.task.description"
+        ></textarea>
+      </mat-form-field>
+      <br />
+      <mat-button-toggle-group
+        #group="matButtonToggleGroup"
+        [(ngModel)]="data.task.label"
+      >
+        <mat-button-toggle *ngFor="let opt of labelOptions" [value]="opt">
+          <mat-icon [ngClass]="opt">{{
+            opt === "gray" ? "check_circle" : "lens"
+          }}</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial>
+        {{ data.isNew ? "Add Task" : "Update Task" }}
+      </button>
+    </div>
   `,
-  styleUrls: ['./task-dialog.component.scss']
+  styleUrls: ["./task-dialog.component.scss"],
 })
 export class TaskDialogComponent {
-
-  labelOptions = ['purple', 'blue', 'green', 'yellow', 'red', 'gray'];
+  labelOptions = ["purple", "blue", "green", "yellow", "red", "gray"];
 
   constructor(
     public dialogRef: MatDialogRef<TaskDialogComponent>,
     private ps: BoardService,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
   ) {}
 
   onNoClick(): void {
@@ -174,47 +172,49 @@ export class TaskDialogComponent {
 }
 ```
 
-
-Update the board component to pass task data to the dialog, then handle the changes the user enters into the form input. 
+Update the board component to pass task data to the dialog, then handle the changes the user enters into the form input.
 
 {{< file "ngts" "board.component.ts" >}}
+
 ```typescript
 // ...omitted
-import { Task } from '../board.model';
-import { MatDialog } from '@angular/material/dialog';
-import { TaskDialogComponent } from '../dialogs/task-dialog.component';
+import { Task } from "../board.model";
+import { MatDialog } from "@angular/material/dialog";
+import { TaskDialogComponent } from "../dialogs/task-dialog.component";
 
 @Component({
-  selector: 'app-board',
-  templateUrl: './board.component.html',
-  styleUrls: ['./board.component.scss']
+  selector: "app-board",
+  templateUrl: "./board.component.html",
+  styleUrls: ["./board.component.scss"],
 })
 export class BoardComponent {
   @Input() board;
 
-  constructor(private boardService: BoardService, private dialog: MatDialog) {}
+  constructor(
+    private boardService: BoardService,
+    private dialog: MatDialog,
+  ) {}
 
   taskDrop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.board.tasks, event.previousIndex, event.currentIndex);
     this.boardService.updateTasks(this.board.id, this.board.tasks);
   }
 
-
   openDialog(task?: Task, idx?: number): void {
-    const newTask = { label: 'purple' };
+    const newTask = { label: "purple" };
     const dialogRef = this.dialog.open(TaskDialogComponent, {
-      width: '500px',
+      width: "500px",
       data: task
         ? { task: { ...task }, isNew: false, boardId: this.board.id, idx }
-        : { task: newTask, isNew: true }
+        : { task: newTask, isNew: true },
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         if (result.isNew) {
           this.boardService.updateTasks(this.board.id, [
             ...this.board.tasks,
-            result.task
+            result.task,
           ]);
         } else {
           const update = this.board.tasks;
@@ -227,21 +227,21 @@ export class BoardComponent {
 }
 ```
 
-Update the board component template to open the dialog. 
+Update the board component template to open the dialog.
 
 {{< file "html" "board.component.html" >}}
-```html
 
-<div 
-    class="inner-card"
-    cdkDrag
-    *ngFor="let task of board.tasks; let i = index"
-    (click)="openDialog(task, i)"
+```html
+<div
+  class="inner-card"
+  cdkDrag
+  *ngFor="let task of board.tasks; let i = index"
+  (click)="openDialog(task, i)"
 >
-    <!-- omitted -->
+  <!-- omitted -->
 </div>
 
 <button mat-stroked-button (click)="openDialog()">
-    <mat-icon>add</mat-icon>
+  <mat-icon>add</mat-icon>
 </button>
 ```

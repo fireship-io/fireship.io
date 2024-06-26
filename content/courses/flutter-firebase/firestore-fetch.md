@@ -14,6 +14,7 @@ video_length: 2:55
 Create a file named `firestore.dart` in the `services` directory of your project.
 
 {{< file "flutter" "firestore.dart" >}}
+
 ```dart
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';

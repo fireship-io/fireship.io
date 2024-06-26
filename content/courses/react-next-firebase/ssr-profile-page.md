@@ -19,14 +19,15 @@ quiz: true
 The following helpers will be reused on in other components to simplify the code.
 
 {{< file "js" "lib/firebase.js" >}}
+
 ```javascript
 /**`
  * Gets a users/{uid} document with username
  * @param  {string} username
  */
 export async function getUserWithUsername(username) {
-  const usersRef = firestore.collection('users');
-  const query = usersRef.where('username', '==', username).limit(1);
+  const usersRef = firestore.collection("users");
+  const query = usersRef.where("username", "==", username).limit(1);
   const userDoc = (await query.get()).docs[0];
   return userDoc;
 }
@@ -48,13 +49,14 @@ export function postToJSON(doc) {
 
 ## User Profile Page
 
-Render the Firebase user profile on the server. 
+Render the Firebase user profile on the server.
 
 {{< file "js" "pages/username/index.js" >}}
+
 ```javascript
-import { getUserWithUsername, postToJSON } from '../../lib/firebase';
-import UserProfile from '../../components/UserProfile';
-import PostFeed from '../../components/PostFeed';
+import { getUserWithUsername, postToJSON } from "../../lib/firebase";
+import UserProfile from "../../components/UserProfile";
+import PostFeed from "../../components/PostFeed";
 
 export async function getServerSideProps({ query }) {
   const { username } = query;
@@ -68,9 +70,9 @@ export async function getServerSideProps({ query }) {
   if (userDoc) {
     user = userDoc.data();
     const postsQuery = userDoc.ref
-      .collection('posts')
-      .where('published', '==', true)
-      .orderBy('createdAt', 'desc')
+      .collection("posts")
+      .where("published", "==", true)
+      .orderBy("createdAt", "desc")
       .limit(5);
     posts = (await postsQuery.get()).docs.map(postToJSON);
   }
@@ -88,25 +90,24 @@ export default function UserProfilePage({ user, posts }) {
     </main>
   );
 }
-
 ```
-
 
 ## User Profile
 
 [UserProfile Code](https://github.com/fireship-io/next-firebase-course/tree/main/components/UserProfile.js)
 
 {{< file "js" "components/UserProfile.js" >}}
+
 ```javascript
- // see full source code
+// see full source code
 ```
 
 ## Post Feed
 
 [PostFeed Code](https://github.com/fireship-io/next-firebase-course/blob/main/components/PostFeed.js)
 
-
 {{< file "js" "components/PostFeed.js" >}}
+
 ```javascript
- // see full source code
+// see full source code
 ```

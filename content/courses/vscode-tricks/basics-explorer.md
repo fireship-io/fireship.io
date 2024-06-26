@@ -18,8 +18,8 @@ free: true
 
 ## ✨ Trick - Collapse Folders
 
-In the file explorer, find the icon to *collapse all folders* and click it. This will save you the tedious task of closing them one-by-one.
+In the file explorer, find the icon to _collapse all folders_ and click it. This will save you the tedious task of closing them one-by-one.
 
 ## ✨ Trick - Show hidden files
 
-VS code excludes certain hidden files from the file explorer by default, like `.git`. To show hidden files, go to settings and type **exclude** to adjust the patterns shown in the explorer. 
+VS code excludes certain hidden files from the file explorer by default, like `.git`. To show hidden files, go to settings and type **exclude** to adjust the patterns shown in the explorer.

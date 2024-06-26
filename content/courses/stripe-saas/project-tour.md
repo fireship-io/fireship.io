@@ -11,6 +11,6 @@ free: true
 chapter_start: Full Project
 ---
 
-## Resources 
+## Resources
 
 Clone the full project source code on GitHub: [Stripe-for-SaaS](https://github.com/fireship-io/stripe-for-saas)

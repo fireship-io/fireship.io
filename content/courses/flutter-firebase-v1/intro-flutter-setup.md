@@ -20,9 +20,10 @@ video_length: 5:37
 
 The current version of this course uses the following dependencies. For the most reliable results, you should use the same versions.
 
-Flutter & Firebase regularly update these packages and later versions may break the code in this course, so update them at your own risk. 
+Flutter & Firebase regularly update these packages and later versions may break the code in this course, so update them at your own risk.
 
 {{< file "dart" "pubspec.yaml" >}}
+
 ```yaml
 dependencies:
   flutter:
@@ -43,4 +44,3 @@ dependencies:
   provider: 4.0.5
   font_awesome_flutter: 8.8.1
 ```
-

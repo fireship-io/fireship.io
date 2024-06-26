@@ -14,6 +14,7 @@ video_length: 4:00
 Use a `Stack` to create a custom animated progress bar.
 
 {{< file "flutter" "shared/progress_bar.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/models.dart';
@@ -76,7 +77,7 @@ class AnimatedProgressbar extends StatelessWidget {
 
 ## Topics Progress Bar
 
-Combine the progress bar with Firestore data to display the user's progress on each topic. 
+Combine the progress bar with Firestore data to display the user's progress on each topic.
 
 ```dart
 class TopicProgress extends StatelessWidget {
@@ -125,6 +126,7 @@ class TopicProgress extends StatelessWidget {
 Add the progress bar to the `Column` in the `TopicItem` widget.
 
 {{< file "flutter" "topics/topic_item.dart" >}}
+
 ```dart
 TopicProgress(topic: topic)
 ```

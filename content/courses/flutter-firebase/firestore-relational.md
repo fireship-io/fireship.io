@@ -11,9 +11,10 @@ video_length: 1:41
 
 ## Relational Data Fetching
 
-The pattern below is useful for listening to a realtime stream that depends on the current user's UID. The `switchmap` extension method from RxDart is an essential tool for combining two streams. 
+The pattern below is useful for listening to a realtime stream that depends on the current user's UID. The `switchmap` extension method from RxDart is an essential tool for combining two streams.
 
 {{< file "flutter" "firestore.dart" >}}
+
 ```dart
 class FirestoreService {
   /// Listens to current user's report document in Firestore

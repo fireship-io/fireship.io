@@ -10,10 +10,11 @@ video_length: 1:20
 ---
 
 {{< file "react" "users/page.tsx" >}}
+
 ```tsx
-import UserCard from '@/components/UserCard/UserCard';
-import styles from './page.module.css';
-import { prisma } from '@/lib/prisma';
+import UserCard from "@/components/UserCard/UserCard";
+import styles from "./page.module.css";
+import { prisma } from "@/lib/prisma";
 
 export default async function Users() {
   const users = await prisma.user.findMany();
@@ -29,9 +30,10 @@ export default async function Users() {
 ```
 
 {{< file "react" "UserCard.tsx" >}}
+
 ```tsx
-import Link from 'next/link';
-import styles from './UserCard.module.css';
+import Link from "next/link";
+import styles from "./UserCard.module.css";
 
 interface Props {
   id: string;
@@ -44,7 +46,7 @@ export default function UserCard({ id, name, age, image }: Props) {
   return (
     <div className={styles.card}>
       <img
-        src={image ?? '/mememan.webp'}
+        src={image ?? "/mememan.webp"}
         alt={`${name}'s profile`}
         className={styles.cardImage}
       />

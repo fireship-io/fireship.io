@@ -1,8 +1,8 @@
 <svelte:options tag="modal-dialog" />
 
 <script lang="ts">
-  import { modal } from '../../stores/modal';
-  export let name = 'default';
+  import { modal } from "../../stores/modal";
+  export let name = "default";
   export let esc = false;
 
   function closeModal() {

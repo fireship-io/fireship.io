@@ -7,20 +7,17 @@ description: Getting started with Fireship PRO
 
 # Learning Paths
 
-This is how you do it. 
+This is how you do it.
 
 - webdev
 - react
 - firebase
-- flutter 
-
+- flutter
 
 ## Get in Touch
 
-This is how you do it. 
-
+This is how you do it.
 
 ## Experience Points
 
-
-This is how you do it. 
+This is how you do it.

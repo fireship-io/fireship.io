@@ -12,16 +12,18 @@ emoji: 📡
 ---
 
 {{< file "ts" "http.ts" >}}
+
 ```ts
 // Multi Route ExpressJS HTTP Function
 const app = express();
 
-app.get('/cat', (request, response) => {
-  response.send('CAT');
+app.get("/cat", (request, response) => {
+  response.send("CAT");
 });
 
-app.get('/dog', (request, response) => {
-  response.send('DOG');
+app.get("/dog", (request, response) => {
+  response.send("DOG");
 });
 
 export const api = functions.https.onRequest(app);
+```

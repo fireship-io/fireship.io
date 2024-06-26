@@ -12,10 +12,11 @@ video_length: 2:04
 ## Add the Session Provider
 
 {{< file "react" "AuthProvider.tsx" >}}
-```tsx
-'use client';
 
-import { SessionProvider } from 'next-auth/react';
+```tsx
+"use client";
+
+import { SessionProvider } from "next-auth/react";
 
 type Props = {
   children: React.ReactNode;
@@ -29,6 +30,7 @@ export default function AuthProvider({ children }: Props) {
 Use it in the root layout
 
 {{< file "react" "App.tsx" >}}
+
 ```tsx
 export default function RootLayout({ children }: Props) {
   return (
@@ -40,37 +42,32 @@ export default function RootLayout({ children }: Props) {
 
 ## Serverside
 
-
 ```typescript
-import { getServerSession } from 'next-auth';
+import { getServerSession } from "next-auth";
 
+const session = await getServerSession();
 
-  const session = await getServerSession();
-
-  if (!session) {
-    // redirect or render something else
-  }
+if (!session) {
+  // redirect or render something else
+}
 ```
 
-
 ## Clientside
-
 
 ```tsx
 "use client";
 
-import { useSession } from "next-auth/react"
+import { useSession } from "next-auth/react";
 
 export default function AuthCheck({ children }: { children: React.ReactNode }) {
-    const { data: session, status } = useSession();
+  const { data: session, status } = useSession();
 
-    console.log(session, status)
+  console.log(session, status);
 
-    if (status === 'authenticated') {
-        return <>{children}</>
-    } else {
-        return <>Not logged in to see this</>
-    }
+  if (status === "authenticated") {
+    return <>{children}</>;
+  } else {
+    return <>Not logged in to see this</>;
+  }
 }
 ```
-

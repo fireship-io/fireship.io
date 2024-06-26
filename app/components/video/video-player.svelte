@@ -1,13 +1,19 @@
 <svelte:options tag="video-player" />
 
 <script lang="ts">
-  import { onMount, tick } from 'svelte';
-  import { router } from '../../main';
-  import { UniversalPlayer } from '../../util/player';
-  import  { autoplay, siteData, canAccess, currentCourse, toast } from '../../stores'
+  import { onMount, tick } from "svelte";
+  import { router } from "../../main";
+  import { UniversalPlayer } from "../../util/player";
+  import {
+    autoplay,
+    siteData,
+    canAccess,
+    currentCourse,
+    toast,
+  } from "../../stores";
 
   export let video: number | string;
-  export let type: 'vimeo' | 'youtube';
+  export let type: "vimeo" | "youtube";
   export let free = false;
   export let single = false; // prevent autoplay on signle video pages
 
@@ -23,7 +29,7 @@
 
   onMount(() => {
     video ||= $siteData?.vimeo || $siteData?.youtube;
-    type = $siteData?.vimeo ? 'vimeo' : 'youtube';
+    type = $siteData?.vimeo ? "vimeo" : "youtube";
 
     // Reload video player if user buys course
     const accessUnsub = canAccess.subscribe(async (can) => {
@@ -44,11 +50,10 @@
   });
 
   async function initPlayer() {
-
     player = await UniversalPlayer.create(video, ref, type);
 
     // Autoplay
-    const autoplayReferral = window.location.search.includes('autoplay');
+    const autoplayReferral = window.location.search.includes("autoplay");
     autoplayUnsub = autoplay.subscribe((v) => {
       if (v && autoplayReferral) {
         player.play();
@@ -61,15 +66,15 @@
         showAutoplayCover = true;
         startCountdown();
         timeout = setTimeout(() => {
-          router.go($siteData.next + '?autoplay=true');
+          router.go($siteData.next + "?autoplay=true");
         }, 10000);
       }
 
       if (!single && !$siteData?.next) {
         toast.set({
-          message: 'Well done! You reached the end of this course.',
-          type: 'success',
-          icon: '🍰'
+          message: "Well done! You reached the end of this course.",
+          type: "success",
+          icon: "🍰",
         });
       }
     });
@@ -94,10 +99,16 @@
   <div class="wrapper">
     <div class="vid" bind:this={ref} />
     <div class="autoplay-cover" class:active={showAutoplayCover}>
-      <p>Autoplaying next video in <span class="big-text">{countdownTime}</span> seconds...</p>
+      <p>
+        Autoplaying next video in <span class="big-text">{countdownTime}</span> seconds...
+      </p>
       <div>
         <button class="btn" on:click={cancelAutoplay}>Cancel</button>
-        <button class="btn btn-blue" on:click={() => router.go($siteData.next + '?autoplay=true')}>Go</button>
+        <button
+          class="btn btn-blue"
+          on:click={() => router.go($siteData.next + "?autoplay=true")}
+          >Go</button
+        >
       </div>
     </div>
     <!-- total hack to prevent svelte from purging unused styles -->
@@ -115,7 +126,7 @@
         <h3>OR</h3>
       {/if}
 
-      <div class="buy-box green">              
+      <div class="buy-box green">
         <p><a href="/pro/" class="text-pro">Upgrade to PRO</a></p>
         <p class="text-light">Unlock all Fireship content && bonus perks</p>
       </div>

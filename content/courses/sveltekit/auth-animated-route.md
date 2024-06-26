@@ -12,15 +12,16 @@ video_length: 1:50
 ## Animated Route Component
 
 {{< file "svelte" "lib/components/AnimatedRoute.svelte" >}}
+
 ```svelte
 <script>
-    import { fly} from "svelte/transition";
-    import { page } from "$app/stores";
+  import { fly } from "svelte/transition";
+  import { page } from "$app/stores";
 </script>
 
 {#key $page.url}
-  <div in:fly={{  x:'-100%', duration: 500 }}>
-    <slot  />
+  <div in:fly={{ x: "-100%", duration: 500 }}>
+    <slot />
   </div>
 {/key}
 ```
@@ -28,10 +29,9 @@ video_length: 1:50
 ## Login Layout
 
 {{< file "svelte" "login/+layout.svelte" >}}
+
 ```svelte
 <AnimatedRoute>
-  <main>
-    ...
-  </main>
+  <main>...</main>
 </AnimatedRoute>
 ```

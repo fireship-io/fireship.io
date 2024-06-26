@@ -11,4 +11,4 @@ video_length: 0:52
 
 ## ✨ Trick - Fold All
 
-Use the command palette for find the `Fold All` command. It will fold all the code in the document, then you can use `ctrl+shift+]` to unfold the parts you're working on. 
+Use the command palette for find the `Fold All` command. It will fold all the code in the document, then you can use `ctrl+shift+]` to unfold the parts you're working on.

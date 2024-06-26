@@ -1,7 +1,7 @@
 <svelte:options tag="email-signin" />
 
 <script lang="ts">
-  import { sendPasswordlessEmail } from '../../util/firebase';
+  import { sendPasswordlessEmail } from "../../util/firebase";
   let emailEl: HTMLInputElement;
   let isValid = false;
   let isTouched = false;
@@ -48,7 +48,12 @@
     <p class="success">{confirmation}</p>
   {/if}
 
-  <input class="btn" type="submit" value={loading ? 'sending...' : 'send'} class:disabled={!isValid || loading} />
+  <input
+    class="btn"
+    type="submit"
+    value={loading ? "sending..." : "send"}
+    class:disabled={!isValid || loading}
+  />
 </form>
 
 <style>
@@ -58,7 +63,7 @@
   label {
     @apply text-gray3 font-bold;
   }
-  input[type='email']:valid {
+  input[type="email"]:valid {
     @apply border-b-green-500;
   }
   .btn {

@@ -18,9 +18,5 @@ Install the Stripe CLI by following the [Stripe CLI Install Docs](https://stripe
 ```bash
 stripe login
 
-stripe listen -e checkout.session.completed --forward-to http://localhost:3000/webhook 
+stripe listen -e checkout.session.completed --forward-to http://localhost:3000/webhook
 ```
-
-
-
-

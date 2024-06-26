@@ -13,43 +13,42 @@ chapter_start: Firestore Chat
 ## Chat List Component
 
 {{< file "vue" "ChatList.vue" >}}
+
 ```html
 <template>
   <div>
-    <button @click="createChatRoom()" class="button">Create New Chat Room</button>
+    <button @click="createChatRoom()" class="button">
+      Create New Chat Room
+    </button>
   </div>
 </template>
 
 <script>
-import { db } from '../firebase';
+  import { db } from "../firebase";
 
-export default {
-  data() {
-    return { 
-        chats: [] 
-    }
-  },
-  firestore() {
-    return { 
-        chats: db.collection('chats').where('owner', '==', this.uid) 
-    }
-  },
-  methods: {
+  export default {
+    data() {
+      return {
+        chats: [],
+      };
+    },
+    firestore() {
+      return {
+        chats: db.collection("chats").where("owner", "==", this.uid),
+      };
+    },
+    methods: {
       async createChatRoom() {
-          const newChat = await db.collection('chats').add({
-              createdAt: Date.now(),
-              owner: this.uid,
-              members: [this.uid]
-          })
+        const newChat = await db.collection("chats").add({
+          createdAt: Date.now(),
+          owner: this.uid,
+          members: [this.uid],
+        });
 
-            console.log(newChat)
-      }
-
-
-      
-  },
-  props: ['uid']
-
-};
+        console.log(newChat);
+      },
+    },
+    props: ["uid"],
+  };
 </script>
 ```

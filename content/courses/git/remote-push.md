@@ -17,6 +17,7 @@ quiz: true
 Use git push to upload your local code to GitHub.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git push origin master
 ```

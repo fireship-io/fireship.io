@@ -10,7 +10,6 @@ video_length: 2:43
 chapter_start: Memento
 ---
 
-
 ## Links
 
 - [Source Code](https://github.com/fireship-io/react-course/tree/main/memento)
@@ -21,6 +20,7 @@ chapter_start: Memento
 Use the CRA [PWA template](https://create-react-app.dev/docs/making-a-progressive-web-app/) to create a new React app.
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npx create-react-app my-app --template cra-template-pwa
 ```
@@ -29,8 +29,8 @@ npx create-react-app my-app --template cra-template-pwa
 
 Create a Firebase project and deploy the app to the cloud.
 
-
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm install -g firebase-tools
 firebase init --hosting

@@ -13,6 +13,7 @@ chapter_start: Ship It
 ## Firebase Deploy Commands
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm i -g firebase-tools
 

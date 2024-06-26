@@ -15,6 +15,7 @@ video_length: 4:49
 Declare a variable by putting the data type in front of the variable name.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 int num1 = 2;
 double num2 = 3.0;
@@ -26,8 +27,8 @@ String str = 'Hello';
 
 You can check the runtime type of a variable using the `is` keyword, or via its `runtimeType` property.
 
-
 {{< file "dart" "main.dart" >}}
+
 ```dart
 (num1 + num2) is int
 (num1 + num2).runtimeType
@@ -38,6 +39,7 @@ You can check the runtime type of a variable using the `is` keyword, or via its 
 The `var` keyword is like saying I don't care to annotate the variable with a type. If you don't specify a value, it will be automatically inferred as `dynamic` (try to avoid this).
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 var username; // dynamic
 var username = 'fireship'; // String
@@ -48,6 +50,7 @@ var username = 'fireship'; // String
 The `final` keyword is used to declare a variable that cannot be reassigned. It's a good practice to use final whenever possible.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 final String fullname = 'Jeffrey';
 fullname = 'Jefferson' // error;
@@ -56,6 +59,7 @@ fullname = 'Jefferson' // error;
 The `const` keys is almost identical to `final`, but it creates an immutable compile-time constant. It may improve app performance, but can only be used for values known at compile time.
 
 {{< file "dart" "main.dart" >}}
+
 ```dart
 const int age = 75;
 const int favNumber = num1 + 5; // error

@@ -1,5 +1,5 @@
 ---
-title: Read Other Documents 
+title: Read Other Documents
 description: Read documents with get() and exists()
 weight: 31
 lastmod: 2020-11-20T10:11:30-02:00
@@ -10,6 +10,7 @@ video_length: 4:01
 ---
 
 {{< file "firebase" "firestore.rules" >}}
+
 ```javascript
 get(/databases/$(database)/documents/users/$(request.auth.uid))
 

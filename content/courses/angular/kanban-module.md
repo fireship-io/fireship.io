@@ -10,28 +10,29 @@ chapter_start: Kanban
 video_length: 2:10
 ---
 
-Setup another lazy-loaded feature module for the development of Kanban boards. 
+Setup another lazy-loaded feature module for the development of Kanban boards.
 
 {{< file "terminal" "command line" >}}
+
 ```text
 ng g module kanban --routing
 ng g component kanban/board-list
 ```
 
-Add the necessary imports to the kanban module. 
+Add the necessary imports to the kanban module.
 
 {{< file "ngts" "kanban.module.ts" >}}
+
 ```typescript
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { KanbanRoutingModule } from './kanban-routing.module';
-import { SharedModule } from '../shared/shared.module';
-import { FormsModule } from '@angular/forms';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatDialogModule } from '@angular/material/dialog';
-
+import { KanbanRoutingModule } from "./kanban-routing.module";
+import { SharedModule } from "../shared/shared.module";
+import { FormsModule } from "@angular/forms";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { MatDialogModule } from "@angular/material/dialog";
 
 @NgModule({
   declarations: [],
@@ -43,23 +44,23 @@ import { MatDialogModule } from '@angular/material/dialog';
     DragDropModule,
     MatDialogModule,
     MatButtonToggleModule,
-  ]
+  ],
 })
-export class KanbanModule { }
+export class KanbanModule {}
 ```
 
-
-Lazy-load the kanban module. 
+Lazy-load the kanban module.
 
 {{< file "ngts" "app-routing.module.ts" >}}
+
 ```typescript
 const routes: Routes = [
   // ...
   {
-    path: 'kanban',
+    path: "kanban",
     loadChildren: () =>
-      import('./kanban/kanban.module').then(m => m.KanbanModule),
-    canActivate: [AuthGuard]
+      import("./kanban/kanban.module").then((m) => m.KanbanModule),
+    canActivate: [AuthGuard],
   },
 ];
 ```

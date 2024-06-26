@@ -18,6 +18,7 @@ Create a file named `models.dart` in the `services` folder. Each document or obj
 I would recommend using null-safety for every property, then setting a default value if the property is in fact null in Firestore.
 
 {{< file "flutter" "services/models.dart" >}}
+
 ```dart
 import 'package:json_annotation/json_annotation.dart';
 part 'models.g.dart';
@@ -96,6 +97,7 @@ class Report {
 ## Generating the Models Code
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 flutter pub run build_runner build
 ```

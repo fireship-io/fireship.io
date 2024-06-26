@@ -1,9 +1,8 @@
 <svelte:options tag="route-loader" />
 
 <script lang="ts">
-  import { routeLoading } from '../../stores/loading';
+  import { routeLoading } from "../../stores/loading";
 </script>
-
 
 <div class="gradient-loader" class:show={$routeLoading}></div>
 
@@ -19,9 +18,15 @@
     background-size: 200% 200%;
     animation: gradiant-move 1s infinite;
   }
-  @keyframes gradiant-move { 
-    0%{background-position:left}
-    50%{background-position:right}
-    100%{background-position:left}
+  @keyframes gradiant-move {
+    0% {
+      background-position: left;
+    }
+    50% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
   }
 </style>

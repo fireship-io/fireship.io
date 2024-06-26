@@ -11,18 +11,20 @@ video_length: 2:35
 
 ## Create a Future
 
-Many APIs in Dart/Flutter return Futures. To simulate an async event, we can create a future that will resolve after a 5 second delay. 
+Many APIs in Dart/Flutter return Futures. To simulate an async event, we can create a future that will resolve after a 5 second delay.
 
 {{< file "dart" "futures.dart" >}}
+
 ```dart
 var delay = Future.delayed(Duration(seconds: 5));
 ```
 
 ## Handle a Future
 
-A future can either be a *success* or a *error*. Use then `then` to handle a successful resolution and `catchError` to handle an error.
+A future can either be a _success_ or a _error_. Use then `then` to handle a successful resolution and `catchError` to handle an error.
 
 {{< file "dart" "futures.dart" >}}
+
 ```dart
   delay
       .then((value) => print('I have been waiting'))
@@ -34,6 +36,7 @@ A future can either be a *success* or a *error*. Use then `then` to handle a suc
 Async-await provides a cleaner (arguably) syntax for writing asynchronous code. The `async` keyword tells Dart to return a Future, while `await` pauses the execution of the function until the Future resolves.
 
 {{< file "dart" "futures.dart" >}}
+
 ```dart
 Future<String> runInTheFuture() async {
   var data = await Future.value('world');

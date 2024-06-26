@@ -15,6 +15,7 @@ chapter_start: Quiz UI
 Define a class that contains the data required by the UI. Add getters and setters for the data, making sure to call `notifyListeners()` when the data changes.
 
 {{< file "flutter" "quiz/quiz_state.dart" >}}
+
 ```dart
 import 'package:flutter/material.dart';
 import 'package:quizapp/services/models.dart';
@@ -42,12 +43,13 @@ class QuizState with ChangeNotifier {
 
 Now that we have our state, we need to make it available to widgets that depend on it. At this point, we also use a `FutureBuilder` to fetch the quiz data from Firestore.
 
-{{< file "flutter" "quiz/quiz_provider.dart" >}} 
+{{< file "flutter" "quiz/quiz_provider.dart" >}}
 
 {{< file "flutter" "quiz.dart" >}}
+
 ```dart
 class QuizScreen extends StatelessWidget {
-  const QuizScreen({super.key, required this.quizId});  
+  const QuizScreen({super.key, required this.quizId});
   final String quizId;
 
   @override

@@ -14,6 +14,7 @@ quiz: true
 Crate a new git repository:
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 git init
 ```

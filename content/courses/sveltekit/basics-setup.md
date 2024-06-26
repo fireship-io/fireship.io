@@ -19,6 +19,7 @@ free: true
 ## Create a SvelteKit Project
 
 {{< file "terminal" "command line" >}}
+
 ```bash
 npm create svelte@latest my-app
 cd my-app

@@ -11,7 +11,7 @@ video_length: 1:38
 
 ## ✨ Trick - Breakpoints & Logpoints
 
-Run your code with the debugger. Between the line numbers, click the red circles to create breakpoints to pause execution OR use *logpoints* to replace your typical console logs. 
+Run your code with the debugger. Between the line numbers, click the red circles to create breakpoints to pause execution OR use _logpoints_ to replace your typical console logs.
 
 ## Bonus Video
 

@@ -12,9 +12,9 @@ video_length: 1:35
 ## Lifecycle with Class Components
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 class Lifecycle extends React.Component {
-  
   componentDidMount() {
     // Initialize
   }
@@ -27,25 +27,21 @@ class Lifecycle extends React.Component {
     // Removed
   }
 }
-
 ```
 
 ## Lifecycle with useEffect
 
 {{< file "react" "App.js" >}}
+
 ```jsx
 function Lifecycle() {
-
   const [count] = useState(0);
 
   useEffect(() => {
-    
-    console.log('count updated!')
+    console.log("count updated!");
 
-    return () => console.log('destroyed!')
-
+    return () => console.log("destroyed!");
   }, [count]);
-
 }
 ```
 
