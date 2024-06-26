@@ -1,4 +1,4 @@
-<svelte:options tag="email-signin" />
+<svelte:options customElement="email-signin" />
 
 <script lang="ts">
   import { sendPasswordlessEmail } from "../../util/firebase";

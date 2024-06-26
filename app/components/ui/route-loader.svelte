@@ -1,4 +1,4 @@
-<svelte:options tag="route-loader" />
+<svelte:options customElement="route-loader" />
 
 <script lang="ts">
   import { routeLoading } from "../../stores/loading";

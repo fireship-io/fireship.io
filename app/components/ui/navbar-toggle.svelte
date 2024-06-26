@@ -1,4 +1,4 @@
-<svelte:options tag="navbar-toggle" />
+<svelte:options customElement="navbar-toggle" />
 
 <script lang="ts">
   import { showNavbar } from "../../stores/settings";

@@ -1,4 +1,4 @@
-<svelte:options tag="if-user" />
+<svelte:options customElement="if-user" />
 
 <!-- Is signed in  -->
 

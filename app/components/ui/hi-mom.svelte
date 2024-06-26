@@ -1,4 +1,4 @@
-<svelte:options tag="hi-mom" />
+<svelte:options customElement="hi-mom" />
 
 <script lang="ts">
 </script>

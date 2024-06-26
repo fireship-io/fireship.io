@@ -1,4 +1,4 @@
-<svelte:options tag="user-avatar" />
+<svelte:options customElement="user-avatar" />
 
 <script lang="ts">
   import { userData, userProgress } from "../../stores/user";

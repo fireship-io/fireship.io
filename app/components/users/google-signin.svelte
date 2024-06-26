@@ -1,4 +1,4 @@
-<svelte:options tag="google-signin" />
+<svelte:options customElement="google-signin" />
 
 <script>
   import { signInWithGoogle } from "../../util/firebase";

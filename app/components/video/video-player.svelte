@@ -1,4 +1,4 @@
-<svelte:options tag="video-player" />
+<svelte:options customElement="video-player" />
 
 <script lang="ts">
   import { onMount, tick } from "svelte";

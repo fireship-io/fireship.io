@@ -1,4 +1,4 @@
-<svelte:options tag="img-reveal" />
+<svelte:options customElement="img-reveal" />
 
 <script lang="ts">
   export let src: string;

@@ -1,4 +1,4 @@
-<svelte:options tag="delete-account" />
+<svelte:options customElement="delete-account" />
 
 <script lang="ts">
   import { toast } from "../../stores";

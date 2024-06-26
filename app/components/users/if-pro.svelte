@@ -1,4 +1,4 @@
-<svelte:options tag="if-pro" />
+<svelte:options customElement="if-pro" />
 
 <script lang="ts">
   import { userData } from "../../stores/user";

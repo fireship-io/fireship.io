@@ -1,4 +1,4 @@
-<svelte:options tag="price-select" />
+<svelte:options customElement="price-select" />
 
 <script lang="ts">
   import { period } from "../../stores";

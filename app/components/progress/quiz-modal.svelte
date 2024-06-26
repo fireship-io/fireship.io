@@ -1,4 +1,4 @@
-<svelte:options tag="quiz-modal" />
+<svelte:options customElement="quiz-modal" />
 
 <script lang="ts">
   import { getCourseIdFromURL } from "../../util/helpers";

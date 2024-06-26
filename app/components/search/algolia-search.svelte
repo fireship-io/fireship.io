@@ -1,4 +1,4 @@
-<svelte:options tag="algolia-search" />
+<svelte:options customElement="algolia-search" />
 
 <script lang="ts">
   import algolia from "algoliasearch/lite";

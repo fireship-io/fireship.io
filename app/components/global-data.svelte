@@ -1,4 +1,4 @@
-<svelte:options tag="global-data" />
+<svelte:options customElement="global-data" />
 
 <script lang="ts">
   import { onMount } from "svelte";

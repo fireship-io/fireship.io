@@ -1,4 +1,4 @@
-<svelte:options tag="mark-complete" />
+<svelte:options customElement="mark-complete" />
 
 <script lang="ts">
   import { canAccess, userProgress, modal } from "../../stores";

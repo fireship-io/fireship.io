@@ -1,4 +1,4 @@
-<svelte:options tag="app-signin" />
+<svelte:options customElement="app-signin" />
 
 <script lang="ts">
 </script>

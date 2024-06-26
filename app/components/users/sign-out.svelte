@@ -1,4 +1,4 @@
-<svelte:options tag="sign-out" />
+<svelte:options customElement="sign-out" />
 
 <script>
   import { firebaseSignOut } from "../../util/firebase";

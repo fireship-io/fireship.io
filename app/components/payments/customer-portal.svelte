@@ -1,4 +1,4 @@
-<svelte:options tag="customer-portal" />
+<svelte:options customElement="customer-portal" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

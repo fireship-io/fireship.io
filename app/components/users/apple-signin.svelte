@@ -1,4 +1,4 @@
-<svelte:options tag="apple-signin" />
+<svelte:options customElement="apple-signin" />
 
 <script>
   import { signInWithApple } from "../../util/firebase";

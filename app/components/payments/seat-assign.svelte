@@ -1,4 +1,4 @@
-<svelte:options tag="seat-assign" />
+<svelte:options customElement="seat-assign" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

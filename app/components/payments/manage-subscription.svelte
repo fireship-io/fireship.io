@@ -1,4 +1,4 @@
-<svelte:options tag="manage-subscription" />
+<svelte:options customElement="manage-subscription" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

@@ -1,4 +1,4 @@
-<svelte:options tag="update-payment" />
+<svelte:options customElement="update-payment" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

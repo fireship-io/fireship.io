@@ -1,4 +1,4 @@
-<svelte:options tag="buy-lifetime" />
+<svelte:options customElement="buy-lifetime" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

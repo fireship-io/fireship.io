@@ -1,4 +1,4 @@
-<svelte:options tag="dark-mode-toggle" />
+<svelte:options customElement="dark-mode-toggle" />
 
 <script lang="ts">
   import {

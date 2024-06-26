@@ -1,4 +1,4 @@
-<svelte:options tag="buy-pro" />
+<svelte:options customElement="buy-pro" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

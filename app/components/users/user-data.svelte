@@ -1,4 +1,4 @@
-<svelte:options tag="user-data" />
+<svelte:options customElement="user-data" />
 
 <script lang="ts">
   import { courseByLegacySku } from "../../stores/products";

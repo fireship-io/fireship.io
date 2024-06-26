@@ -1,4 +1,4 @@
-<svelte:options tag="change-email" />
+<svelte:options customElement="change-email" />
 
 <script lang="ts">
   import { toast } from "../../stores";

@@ -1,4 +1,4 @@
-<svelte:options tag="user-charges" />
+<svelte:options customElement="user-charges" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

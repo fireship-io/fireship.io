@@ -1,4 +1,4 @@
-<svelte:options tag="complete-icon" />
+<svelte:options customElement="complete-icon" />
 
 <script lang="ts">
   import { canAccess, userProgress } from "../../stores";

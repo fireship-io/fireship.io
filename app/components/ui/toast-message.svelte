@@ -1,4 +1,4 @@
-<svelte:options tag="toast-message" />
+<svelte:options customElement="toast-message" />
 
 <script lang="ts">
   import { onMount } from "svelte";

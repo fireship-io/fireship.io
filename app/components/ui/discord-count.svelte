@@ -1,4 +1,4 @@
-<svelte:options tag="discord-count" />
+<svelte:options customElement="discord-count" />
 
 <script lang="ts">
   import { onMount } from "svelte";

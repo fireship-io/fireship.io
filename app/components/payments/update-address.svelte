@@ -1,4 +1,4 @@
-<svelte:options tag="update-address" />
+<svelte:options customElement="update-address" />
 
 <script lang="ts">
   import { callUserAPI } from "../../util/firebase";

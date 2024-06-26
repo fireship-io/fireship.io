@@ -1,4 +1,4 @@
-<svelte:options tag="if-access" />
+<svelte:options customElement="if-access" />
 
 <script lang="ts">
   import { canAccess } from "../../stores/user";

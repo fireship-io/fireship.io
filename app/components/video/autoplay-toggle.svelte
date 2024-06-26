@@ -1,4 +1,4 @@
-<svelte:options tag="autoplay-toggle" />
+<svelte:options customElement="autoplay-toggle" />
 
 <script lang="ts">
   import { autoplay } from "../../stores/autoplay";

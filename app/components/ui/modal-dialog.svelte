@@ -1,4 +1,4 @@
-<svelte:options tag="modal-dialog" />
+<svelte:options customElement="modal-dialog" />
 
 <script lang="ts">
   import { modal } from "../../stores/modal";

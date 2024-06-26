@@ -1,4 +1,4 @@
-<svelte:options tag="scroll-show" />
+<svelte:options customElement="scroll-show" />
 
 <script lang="ts">
   import { onMount } from "svelte";
