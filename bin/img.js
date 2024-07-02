@@ -4,7 +4,7 @@ import { readdirSync, rmSync } from 'fs';
 import { exec } from 'child_process';
 
 // npx @squoosh/cli --webp auto ./4.jpg 
-const dir = './content/courses/sveltekit/img/prizes/';
+const dir = './content/courses/linux/img/prizes/';
 // const dir = './static/img/testimonial/';
 const files = readdirSync(dir)
 files.forEach(file => {

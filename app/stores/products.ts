@@ -1,4 +1,9 @@
 export const products = {
+    'linux': {
+        id: 'linux',
+        price: 'price_1PY9DmBF7AptWZlcpkAbgZlP',
+        amount: 20,
+    },
     'stripe-saas': {
         id: 'stripe-saas',
         price: 'price_1OyecaBF7AptWZlc4nRFI3Ei',
