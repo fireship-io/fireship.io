@@ -142,7 +142,6 @@ export async function callUserAPI<T>(data: UserAPIData): Promise<T> {
     const { getFunctions, httpsCallable } = await import('firebase/functions');
     const functions = getFunctions();
     // connectFunctionsEmulator(functions, 'localhost', 5001); // DEV only
-
     const res = await httpsCallable(functions, 'userAPI')(data);
 
     // Capture GA event for all user initiated backend API calls
@@ -155,7 +154,6 @@ export async function callUserAPI<T>(data: UserAPIData): Promise<T> {
     console.log(error);
     toast.set({ message: error?.message ?? 'Unknown Error. Contact hello@fireship.io for help', type: 'error' });
     GAEvent('exception', {
-      location: 'callUserAPI',
       description:  error?.message,
     });
   }
