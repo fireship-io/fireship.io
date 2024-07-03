@@ -3,12 +3,19 @@ import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { readdir, rm, writeFile } from 'fs/promises';
 
 // https://vitejs.dev/config/
-export default defineConfig({ 
+export default defineConfig({
   root: 'app',
   build: {
     outDir: '../static/svelte',
     emptyOutDir: true,
     assetsDir: '',
+    watch: {
+      include: [
+        "./app/**",
+        "./styles/**",
+        "./layouts/**"
+      ]
+    }
     // sourcemap: 'inline', // enable for debugging
   },
   server: {
@@ -19,7 +26,7 @@ export default defineConfig({
       compilerOptions: {
         customElement: true,
       },
-  }),
+    }),
     syncToHugo()
   ]
 })
@@ -35,7 +42,13 @@ function syncToHugo() {
       const token = Math.floor(Math.random() * 69420);
       await Promise.all([
         writeFile(`./data/svelte.json`, JSON.stringify({ js, css, token })),
-        rm('./static/svelte/index.html')
+        async () => {
+          try {
+            rm('./static/svelte/index.html');
+          } catch {
+            console.log("osef le fichier n'existe pas");
+          }
+        }
       ]);
       console.log(`wrote ${js} to hugo data`);
     }
