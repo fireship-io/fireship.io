@@ -5,9 +5,12 @@
   import { modal } from '../../stores/modal';
   import { router } from '../../main';
   import { onMount } from 'svelte';
+  import { dotenv } from 'dotenv';
+
+  dotenv.config();
 
   const APP_ID = '05VYZFXKNM';
-  const API_KEY = 'a0837b31f4379765240c2753fa141aa2';
+  const API_KEY = process.env.ALGOLIA_API_KEY;
   const client = algolia(APP_ID, API_KEY);
   const index = client.initIndex('content');
 
