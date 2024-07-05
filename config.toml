@@ -13,7 +13,15 @@ mediaType = "application/json"
 notAlternative = true
 
 [params]
-mainSections = ["lessons", "snippets"]
+  [[params.mainSections]]
+    name = "courses"
+    url = "/courses/"
+  [[params.mainSections]]
+    name = "tips"
+    url = "/tips/"
+  [[params.mainSections]]
+    name = "challenges"
+    url = "/challenges/"
 
 [params.algolia]
 vars = ["title", "description", "summary", "date", "publishdate", "lastmod", "permalink"]

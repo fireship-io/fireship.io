@@ -1,8 +1,7 @@
-{{ define "main" }}
 <main class="prose dark:prose-invert container">
   <header class="text-center mb-8 mt-20 inset-0">
-    <h1 class="text-5xl mb-1">Labs</h1>
-    <p class="my-0 dark:text-gray3">single dose video lessons and tutorials</p>
+    <h1 class="text-5xl mb-1">{{ .Title }}</h1>
+    <p class="my-0 dark:text-gray3">{{ .Description }}</p>
   </header>
 
   <div
@@ -10,7 +9,7 @@
   ></div>
 
   <ul class="grid-list justify-items-center pl-0">
-    {{ $paginator := .Paginate (where .Pages "Type" "lessons") 20 }} {{ range
+    {{ $paginator := .Paginate .Pages.ByLastmod.Reverse 20 }} {{ range
     $paginator.Pages }}
 
     <li class="list-none p-0">{{ partial "card" (dict "context" .) }}</li>
@@ -19,4 +18,3 @@
 
   {{ template "_internal/pagination.html" . }}
 </main>
-{{ end }}

@@ -1,5 +1,5 @@
 <span class="py-100px">
-  <nav class="flex justify-between container md:p-8 rounded-md">
+  <nav id="topnav" class="flex justify-between container mb-4 md:p-8 rounded-md">
     <a class="flex text-center w-12 h-12 logo-gif" href="/">
       <img id="logo" src="/img/logo.svg" alt="logo" />
       <img
@@ -12,20 +12,15 @@
     </a>
 
     <ul class="flex justify-center items-center">
+      {{ range (.Site.Param "mainSections") }}
       <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
         <a
-          href="/lessons"
-          class="font-sans text-xl font-bold leading-none text-yellow1 hover:text-yellow2"
-          >labs</a
+          href="{{ .url | absURL }}"
+          class="font-sans text-xl font-bold leading-none text-yellow1 dark:text-white hover:text-yellow2 dark:hover:text-black"
+          >{{ .name }}</a
         >
       </li>
-      <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
-        <a
-          href="/courses"
-          class="font-sans text-xl font-bold leading-none text-yellow1 hover:text-yellow2"
-          >courses</a
-        >
-      </li>
+      {{ end }}
       <li class="ml-2">
         <modal-action type="open" name="search">
           <button

@@ -62,11 +62,11 @@ figure img {
   @apply max-w-screen-2xl mx-auto px-3 md:px-8;
 }
 
-nav {
+#topnav {
   background: theme("colors.black");
 }
 
-.dark nav {
+.dark #topnav {
   background: theme("colors.eirbyellow");
 }
 
