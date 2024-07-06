@@ -3,8 +3,8 @@
 <script lang="ts">
   import {
     doesPreferDark,
-    SettableBoolean,
   } from "../../stores/preferred-theme";
+  import type { SettableBoolean } from "../../stores/preferred-theme";
   import { onMount } from "svelte";
 
   enum LightMode {

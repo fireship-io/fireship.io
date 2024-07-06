@@ -99,10 +99,14 @@
   </div>
 
   <footer>
-    <kbd on:click={selectHit}>↩</kbd> <span class="kbd-text">select</span>
-    <kbd on:click={goUp}>↑</kbd>
-    <kbd on:click={goDown}>↓</kbd> <span class="kbd-text">navigate</span>
-    <kbd on:click={() => modal.set(null)}>esc</kbd>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <kbd role="button" tabindex="-1" on:click={selectHit}>↩</kbd> <span class="kbd-text">select</span>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <kbd role="button" tabindex="-1" on:click={goUp}>↑</kbd>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <kbd role="button" tabindex="-1" on:click={goDown}>↓</kbd> <span class="kbd-text">navigate</span>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <kbd role="button" tabindex="-1" on:click={() => modal.set(null)}>esc</kbd>
     <span class="kbd-text">leave</span>
   </footer>
 </modal-dialog>

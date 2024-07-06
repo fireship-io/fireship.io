@@ -6,7 +6,8 @@
 
 {#if $showNavbar}
   <div class="wrap">
-    <span on:click={() => showNavbar.set(false)} class="btn">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <span role="button" tabindex="0" on:click={() => showNavbar.set(false)} class="btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
         ><path
           fill="currentColor"
@@ -19,7 +20,8 @@
   <slot></slot>
 {:else}
   <div class="wrap">
-    <span on:click={() => showNavbar.set(true)} class="btn">
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <span role="button" tabindex="0" on:click={() => showNavbar.set(true)} class="btn">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
         ><path
           fill="currentColor"
@@ -28,7 +30,8 @@
       >
     </span>
   </div>
-  <span on:click={() => showNavbar.set(true)}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <span role="button" tabindex="0" on:click={() => showNavbar.set(true)}>
     <slot name="collapse"></slot>
   </span>
 {/if}

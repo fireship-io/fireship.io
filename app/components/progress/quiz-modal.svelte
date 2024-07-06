@@ -90,7 +90,9 @@
 
       <div>
         {#each optionsList as opt, i}
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
+            role="button" tabindex="0"
             class="option"
             class:correct={opt === selected && selected === answer}
             class:incorrect={opt === selected && selected !== answer}
@@ -112,7 +114,8 @@
 
     {#if isComplete}
       <footer>
-        <span class="reset" on:click={reset}>reset quiz</span>
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
+        <span role = "button" tabindex="0" class="reset" on:click={reset}>reset quiz</span>
       </footer>
     {/if}
   </div>

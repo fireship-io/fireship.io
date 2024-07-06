@@ -34,7 +34,9 @@
 </script>
 
 {#if currentToast}
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
   <div
+    role="button" tabindex="0"
     class={`toast ${typeClass}`}
     on:click={() => toast.set(null)}
     class:active={activate}

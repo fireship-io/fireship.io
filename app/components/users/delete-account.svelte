@@ -46,11 +46,13 @@
     <p class="warn">
       Final warning! Once you click this button there's no going back. All
       account data is lost forever.
-      <span on:click={reset} class="info">nevermind</span>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <span role="button" tabindex="-1" on:click={reset} class="info">nevermind</span>
     </p>
   {/if}
 {:else}
-  <span class="info" on:click={() => (show = true)}>Delete this Account</span>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <span role="button" tabindex="0" class="info" on:click={() => (show = true)}>Delete this Account</span>
 {/if}
 
 <style lang="scss">

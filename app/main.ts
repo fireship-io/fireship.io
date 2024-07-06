@@ -14,7 +14,7 @@ import { GAPageView, passwordlessSignin } from "./util/firebase";
 import { scrollSave } from "./util/scroll";
 import "./util/key-bindings";
 
-window.addEventListener("flamethrower:router:end", (e) => {
+window.addEventListener("flamethrower:router:end", () => {
   GAPageView();
 });
 
@@ -68,19 +68,6 @@ export * from "./components/search/algolia-search.svelte";
 // Video
 export * from "./components/video/video-player.svelte";
 export * from "./components/video/autoplay-toggle.svelte";
-
-// Payments
-export * from "./components/payments/buy-course.svelte";
-export * from "./components/payments/buy-pro.svelte";
-export * from "./components/payments/buy-lifetime.svelte";
-export * from "./components/payments/customer-portal.svelte";
-export * from "./components/payments/user-charges.svelte";
-export * from "./components/payments/price-select.svelte";
-export * from "./components/payments/seat-assign.svelte";
-export * from "./components/payments/user-invoices.svelte";
-export * from "./components/payments/manage-subscription.svelte";
-export * from "./components/payments/update-payment.svelte";
-export * from "./components/payments/update-address.svelte";
 
 // Shared
 export * from "./components/ui/loading-spinner.svelte";

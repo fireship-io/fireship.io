@@ -65,10 +65,13 @@
   <p class="warn">
     Be careful. If you enter the wrong email, you will not be able to access
     your account.
-    <span on:click={() => (show = false)} class="info">nevermind</span>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <span role="button" tabindex="-1" on:click={() => (show = false)} class="info">nevermind</span>
   </p>
 {:else}
-  <span class="info" on:click={() => (show = true)}>change email</span>
+
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <span role="button" tabindex="-1" class="info" on:click={() => (show = true)}>change email</span>
 {/if}
 
 <style lang="scss">

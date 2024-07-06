@@ -18,11 +18,7 @@ export default defineConfig({
     port: 4200,
   },
   plugins: [
-    svelte({
-      compilerOptions: {
-        customElement: true,
-      },
-    }),
+    svelte(),
     syncToHugo(),
   ],
 });

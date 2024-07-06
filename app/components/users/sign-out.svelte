@@ -4,6 +4,7 @@
   import { firebaseSignOut } from "../../util/firebase";
 </script>
 
-<span on:click={firebaseSignOut}>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<span role="button" tabindex="0" on:click={firebaseSignOut}>
   <slot></slot>
 </span>

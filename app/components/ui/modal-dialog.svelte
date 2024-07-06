@@ -10,14 +10,17 @@
   }
 </script>
 
-<div class="backdrop" class:show={$modal === name} on:click={closeModal}>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div role="button" tabindex="-1" class="backdrop" class:show={$modal === name} on:click={closeModal}>
   <div
+    role = "button" tabindex="-1"
     on:click|stopPropagation
     class="inner"
     class:inner-show={$modal === name}
   >
     {#if esc}
-      <kbd class="esc" on:click={closeModal}>esc</kbd>
+      <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <kbd role="button" tabindex="-1" class="esc" on:click={closeModal}>esc</kbd>
     {/if}
     <slot />
   </div>
