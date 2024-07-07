@@ -30,7 +30,7 @@ github:
 
 Much like Gif vs Jif, the proper pronunciation of RegEx is passionately debated among developers. Based on my limited twitter poll, in looks like most prefer the hard G over the soft J. 
 
-{{< tweet 1262408319282458625 >}}
+{{< tweet user="fireship_dev" id="1262408319282458625" >}}
 
 ## Regex Reference
 
