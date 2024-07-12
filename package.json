@@ -33,6 +33,7 @@
   "devDependencies": {
     "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@supabase/supabase-js": "^2.44.2",
     "@tailwindcss/typography": "^0.5.4",
     "@tsconfig/svelte": "^5.0.4",
     "@types/vimeo__player": "^2.16.3",

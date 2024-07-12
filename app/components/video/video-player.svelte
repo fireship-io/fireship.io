@@ -8,7 +8,6 @@
     autoplay,
     siteData,
     canAccess,
-    currentCourse,
     toast,
   } from "../../stores";
 

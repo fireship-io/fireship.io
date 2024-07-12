@@ -1,10 +1,8 @@
 import { writable, derived } from "svelte/store";
-import { GAEvent, GASetUser, auth } from "../util/firebase";
-import { onAuthStateChanged } from "firebase/auth";
-import type { User } from "firebase/auth";
+import { GASetUser } from "../util/firebase";
 import { siteData } from "./data";
-import { getCourseIdFromURL } from "../util/helpers";
-import { products } from "./products";
+import type { RealtimeChannel } from "@supabase/supabase-js";
+import { supabaseClient } from "../util/supabase";
 
 export interface UserData {
   email?: string;
@@ -12,31 +10,7 @@ export interface UserData {
   displayName?: string;
   photoURL?: string;
   joined?: number;
-  stripeCustomerId?: string;
   discordId?: string;
-  is_pro?: boolean;
-  expires?: number;
-  enterprise?: boolean;
-  enterpriseOwner?: string;
-  pro_status?:
-    | "lifetime"
-    | "active"
-    | "past_due"
-    | "expiring"
-    | "canceled"
-    | "enterprise";
-  products?: {
-    [key: string]: boolean; // legacy course tracking
-  };
-  subscriptions?: {
-    [key: string]: string;
-  };
-  courses?: {
-    [key: string]: boolean;
-  };
-  sentMail?: {
-    [key: string]: boolean;
-  };
 }
 
 interface UserProgress {
@@ -44,45 +18,33 @@ interface UserProgress {
   [key: string]: number;
 }
 
-export const user = writable<User>(null);
 export const userData = writable<UserData>(null);
 export const userProgress = writable<UserProgress>(null);
-export const seats = writable<any>(null);
 
-let unsubData;
-let unsubProgress;
-let unsubSeats;
+let unsubData: RealtimeChannel;
+let unsubProgress: RealtimeChannel;
 
-onAuthStateChanged(auth, async (fbUser) => {
-  user.set(fbUser);
-  if (fbUser) {
-    const { doc, onSnapshot, getFirestore } = await import(
-      "firebase/firestore"
-    );
-    const firestore = getFirestore();
-    const userRef = doc(firestore, `users/${fbUser.uid}`);
-    const progressRef = doc(firestore, `progress/${fbUser.uid}`);
-    const seatsRef = doc(firestore, `seats/${fbUser.uid}`);
+supabaseClient.auth.onAuthStateChange((e, s) => {
+  const sbUser = s?.user ?? null;
+  if (sbUser) {
 
-    unsubData = onSnapshot(userRef, (snap) => {
-      userData.set(snap.data() as UserData);
-      if (snap.data()?.enterprise) {
-        unsubSeats = onSnapshot(seatsRef, (snap) => {
-          seats.set(snap.data());
-        });
-      }
-    });
-    unsubProgress = onSnapshot(progressRef, (snap) => {
-      userProgress.set(snap.data() as UserProgress);
-    });
-    GASetUser(fbUser.uid);
+    unsubData = supabaseClient.channel("users").on<UserData>("postgres_changes", {
+      event: '*',
+      schema: 'public',
+      filter: `uid=${sbUser.id}`
+    }, (payload) => { userData.set(payload.new as UserData); }).subscribe();
+
+    unsubProgress = supabaseClient.channel("progress").on<UserProgress>("postgres_changes", {
+      event: '*',
+      schema: 'public',
+      filter: `uid=${sbUser.id}`
+    }, (payload) => { userProgress.set(payload.new as UserProgress); }).subscribe();
+    GASetUser(sbUser.id);
   } else {
-    unsubData && unsubData();
-    unsubProgress && unsubProgress();
-    unsubSeats && unsubSeats();
+    unsubData && unsubData.unsubscribe();
+    unsubProgress && unsubProgress.unsubscribe();
     userData.set(null);
     userProgress.set(null);
-    seats.set(null);
     GASetUser(null);
   }
 });
@@ -90,11 +52,6 @@ onAuthStateChanged(auth, async (fbUser) => {
 export const canAccess = derived(
   [userData, siteData],
   ([$userData, $siteData]) => {
-    const id = getCourseIdFromURL($siteData?.permalink);
-    return !!(
-      $userData?.is_pro ||
-      $userData?.courses?.[id] ||
-      $userData?.products?.[products[id]?.legacy_sku]
-    );
+    return true;
   },
 );
