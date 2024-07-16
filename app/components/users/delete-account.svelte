@@ -2,20 +2,18 @@
 
 <script lang="ts">
   import { toast } from "../../stores";
-  import { callUserAPI, firebaseSignOut } from "../../util/firebase";
+  import { deleteUserData, supabaseSignOut } from "../../util/supabase";
   let loading = false;
   let show = false;
   let firstClick = false;
 
   async function handleDelete() {
     loading = true;
-    const deleted = await callUserAPI<boolean>({
-      fn: "deleteAccount",
-      payload: {},
-    });
+    const res = await deleteUserData();
+    const deleted = !(!res || res.error);
 
     if (deleted) {
-      await firebaseSignOut();
+      await supabaseSignOut();
       toast.set({
         message: "Account terminated, good luck in your future endeavors",
         type: "success",

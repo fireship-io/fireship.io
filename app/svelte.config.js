@@ -1,4 +1,6 @@
 import sveltePreprocess from "svelte-preprocess";
+import tailwindcss from "tailwindcss";
+import autoprefixer from "autoprefixer";
 
 /** @type {import('@sveltejs/kit').Config} */
 export default {
@@ -6,7 +8,9 @@ export default {
   // for more information about preprocessors
   preprocess: [
     sveltePreprocess({
-      postcss: true,
+      postcss: {
+        plugins: [tailwindcss, autoprefixer]
+      },
     }),
   ],
   compilerOptions: {

@@ -30,7 +30,7 @@ export default () => {
     "💵",
     "💸",
   ];
-  const rand = (arr) => arr[Math.floor(Math.random() * arr.length)];
+  const rand = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
   return jsConfetti.addConfetti({
     emojis: [rand(emojis), rand(emojis)],
   });

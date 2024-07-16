@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import { canAccess, userProgress, modal } from "../../stores";
-  import { markComplete, markIncomplete } from "../../util/firebase";
+  import { markComplete, markIncomplete } from "../../util/supabase";
   export let route = window.location.pathname;
   export let quiz = false;
   export let free = false;

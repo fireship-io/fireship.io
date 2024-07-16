@@ -10,7 +10,7 @@
     offset = 0;
   }
 
-  function moveImg(e) {
+  function moveImg(e: MouseEvent) {
     offset += e.movementX;
   }
 </script>

@@ -26,7 +26,7 @@
   let player: UniversalPlayer;
 
   onMount(() => {
-    video ||= $siteData?.vimeo || $siteData?.youtube;
+    video ||= $siteData?.vimeo || $siteData.youtube;
     type = $siteData?.vimeo ? "vimeo" : "youtube";
 
     // Reload video player if user buys course

@@ -2,13 +2,13 @@
 
 <script lang="ts">
   import { getCourseIdFromURL } from "../../util/helpers";
-  import { markComplete } from "../../util/firebase";
+  import { markComplete } from "../../util/supabase";
 
   export let answer: string;
   export let options: string; // Format foo:bar:baz
   export let prize: number; // /img/prizes/{courseId}/{n}.png
   const optionsList = options.split(":");
-  let selected: string;
+  let selected: string | null;
   let isComplete = false;
   let tries = 1;
   let xpGained: number;
@@ -17,11 +17,11 @@
   let wrongMsg: string;
   let correctMsg: string;
 
-  function randomChoice(arr) {
+  function randomChoice<T>(arr: T[]) {
     return arr[Math.floor(Math.random() * arr.length)];
   }
 
-  function select(opt) {
+  function select(opt: string) {
     if (isComplete) return;
     selected = opt;
     opt === answer ? onCorrect() : onWrong();
@@ -89,7 +89,7 @@
       </div>
 
       <div>
-        {#each optionsList as opt, i}
+        {#each optionsList as opt}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
             role="button" tabindex="0"

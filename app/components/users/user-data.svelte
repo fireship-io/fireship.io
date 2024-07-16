@@ -1,7 +1,7 @@
 <svelte:options customElement="user-data" />
 
 <script lang="ts">
-  import { user, userData, userProgress } from "../../stores/user";
+  import { userData, userProgress } from "../../stores/user";
   export let field:
     | "email"
     | "photoURL"
@@ -15,7 +15,7 @@
     return formatter.format(num);
   }
 
-  let src = $user?.photoURL ?? "/img/ui/avatar.svg";
+  let src = $userData?.photoURL ?? "/img/ui/avatar.svg";
 
   function relativeTime(date: number) {
     if (!date) return "never";
@@ -28,7 +28,7 @@
 </script>
 
 {#if field === "email"}
-  {$user?.email}
+  {$userData?.email}
 {/if}
 {#if field === "photoURL"}
   <img
@@ -40,10 +40,10 @@
   />
 {/if}
 {#if field === "displayName"}
-  {$user?.displayName}
+  {$userData?.displayName}
 {/if}
 {#if field === "uid"}
-  {$user?.uid}
+  {$userData?.uid}
 {/if}
 {#if field === "xp"}
   {formatXp($userProgress?.xp ?? 0)}

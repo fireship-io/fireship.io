@@ -1,14 +1,14 @@
 <svelte:options customElement="google-signin" />
 
 <script>
-  import { signInWithGoogle } from "../../util/firebase";
+  import { signInWithGithub } from "../../util/supabase";
 </script>
 
 <!-- <span on:click={signInWithGoogle}>
     <slot></slot>
 </span> -->
 
-<button on:click={signInWithGoogle}>
+<button on:click={signInWithGithub}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

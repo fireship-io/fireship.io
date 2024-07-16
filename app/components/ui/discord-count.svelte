@@ -3,7 +3,8 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  let data;
+  type DiscordData = { presence_count: number } | undefined;
+  let data: DiscordData;
 
   onMount(async () => {
     let res = await fetch(

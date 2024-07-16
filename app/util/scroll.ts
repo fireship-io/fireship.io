@@ -1,5 +1,5 @@
 export function scrollSave() {
-  let top: number;
+  let top: number | undefined;
   window.addEventListener("flamethrower:router:fetch", () => {
     top = document.getElementById("sidebar")?.scrollTop;
   });

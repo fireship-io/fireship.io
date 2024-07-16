@@ -1,27 +1,34 @@
 import type VimeoPlayer from "@vimeo/player";
-// import type YouTubePlayer  from 'youtube-player';
+import type { YouTubePlayer as _YouTubePlayer } from "youtube-player/dist/types";
+
+// The `off` function is missing from the types declaration while existing
+type Listener = void;
+interface YouTubePlayer extends _YouTubePlayer { off: (listener: Listener) => void };
 
 export class UniversalPlayer {
-  private vimeoPlayer: VimeoPlayer;
-  private ytPlayer;
-  private listener;
+  private player!: VimeoPlayer | YouTubePlayer;
+  private listener!: Listener;
   constructor(
     public video: string | number,
     public el: HTMLElement,
     public type: "youtube" | "vimeo",
   ) {}
 
+  private isVimeoPlayer(_player: VimeoPlayer | unknown): _player is VimeoPlayer {
+    return this.type === "vimeo";
+  } 
+
   private async setupPlayer() {
-    if (this.type === "youtube") {
-      const YouTubePlayer = (await import("youtube-player")).default;
+    if (!this.isVimeoPlayer(this.player)) {
+      const YouTubePlayerFactory = (await import("youtube-player")).default;
       const decoded = atob(this.video as string);
-      this.ytPlayer = YouTubePlayer(this.el);
-      this.ytPlayer.cueVideoById(decoded);
+      this.player = YouTubePlayerFactory(this.el) as YouTubePlayer; // force the `off` handling
+      this.player.cueVideoById(decoded);
     } else {
       const VimeoPlayer = (await import("@vimeo/player")).default;
       const decoded = parseInt(atob(this.video as string));
       // const buildId = parseInt(document.head.dataset.build);
-      this.vimeoPlayer = new VimeoPlayer(this.el, { id: decoded });
+      this.player = new VimeoPlayer(this.el, { id: decoded });
     }
   }
 
@@ -37,32 +44,32 @@ export class UniversalPlayer {
   }
 
   play() {
-    if (this.type === "youtube") {
-      this.ytPlayer.playVideo();
+    if (!this.isVimeoPlayer(this.player)) {
+      this.player.playVideo();
     } else {
-      this.vimeoPlayer.play();
+      this.player.play();
     }
   }
 
   destroy() {
-    if (this.type === "youtube") {
-      this.ytPlayer.off(this.listener);
-      this.ytPlayer.destroy();
+    if (!this.isVimeoPlayer(this.player)) {
+      this.player.off(this.listener);
+      this.player.destroy();
     } else {
-      this.vimeoPlayer.off("ended");
-      this.vimeoPlayer.destroy();
+      this.player.off("ended");
+      this.player.destroy();
     }
   }
 
   onEnded(cb: () => void) {
-    if (this.type === "youtube") {
-      this.listener = this.ytPlayer.on("stateChange", (event) => {
+    if (!this.isVimeoPlayer(this.player)) {
+      this.listener = this.player.on("stateChange", (event) => {
         if (event.data === 0) {
           cb();
         }
       });
     } else {
-      this.listener = this.vimeoPlayer.on("ended", cb);
+      this.listener = this.player.on("ended", cb);
     }
   }
 }

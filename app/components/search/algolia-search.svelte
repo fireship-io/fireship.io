@@ -2,6 +2,7 @@
 
 <script lang="ts">
   import algolia from "algoliasearch/lite";
+  import type { SearchResponse, Hit } from "@algolia/client-search";
   import { modal } from "../../stores/modal";
   import { router } from "../../main";
   import { onMount } from "svelte";
@@ -11,9 +12,11 @@
   const client = algolia(APP_ID, API_KEY);
   const index = client.initIndex("content");
 
-  let inputTag;
-  let results: any;
-  let hits = [];
+  let inputTag: HTMLInputElement;
+  type FoundPageData = { title: string, type: string, relpermalink: string,
+    summary: string};
+  let results: SearchResponse<FoundPageData>;
+  let hits: Hit<FoundPageData>[] = [];
   let activeHit = 0;
   onMount(() => {
     inputTag?.focus();
@@ -92,7 +95,7 @@
         <span class="hit-title">{hit.title}</span>
         <span class="hit-type"> in {hit.type}</span>
         <span class="hit-description"
-          >{@html hit._snippetResult.summary.value}</span
+          >{@html hit._snippetResult?.summary.value}</span
         >
       </a>
     {/each}

@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import { toast } from "../../stores";
-  import { callUserAPI, firebaseSignOut } from "../../util/firebase";
+  import { changerUserEmail, supabaseSignOut } from "../../util/supabase";
   let loading = false;
   let show = false;
   let confirmed = false;
@@ -16,13 +16,10 @@
 
   async function getSession() {
     loading = true;
-    const changed = await callUserAPI<boolean>({
-      fn: "changeEmail",
-      payload: { email },
-    });
-
+    const res = await changerUserEmail(email);
+    const changed = !(!res || res.error);
     if (changed) {
-      await firebaseSignOut();
+      await supabaseSignOut();
       toast.set({
         message: "Email updated, please sign back in",
         type: "success",

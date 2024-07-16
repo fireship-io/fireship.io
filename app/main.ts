@@ -10,19 +10,11 @@ console.log(
 // Global code
 import "../styles/app.scss";
 import flamethrower from "flamethrower-router";
-import { GAPageView, passwordlessSignin } from "./util/firebase";
 import { scrollSave } from "./util/scroll";
 import "./util/key-bindings";
 
-window.addEventListener("flamethrower:router:end", () => {
-  GAPageView();
-});
-
 // saves scroll position on navbar
 scrollSave();
-
-// handles passwordless signin
-passwordlessSignin();
 
 // Router
 export const router = flamethrower({ prefetch: "hover", log: false });
@@ -32,9 +24,8 @@ export * from "./components/global-data.svelte";
 
 // Auth
 export * from "./components/users/user-data.svelte";
-export * from "./components/users/google-signin.svelte";
-export * from "./components/users/apple-signin.svelte";
-export * from "./components/users/email-signin.svelte";
+export * from "./components/users/github-signin.svelte";
+export * from "./components/users/roulade-signin.svelte";
 export * from "./components/users/sign-out.svelte";
 export * from "./components/users/app-signin.svelte";
 export * from "./components/users/if-pro.svelte";
