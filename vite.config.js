@@ -8,7 +8,7 @@ export default defineConfig({
   build: {
     outDir: "../static/svelte",
     emptyOutDir: true,
-    assetsDir: "",
+    assetsDir: ".",
     watch: {
       include: ["./app/**", "./styles/**", "./layouts/**", "./content/**.html"],
     },

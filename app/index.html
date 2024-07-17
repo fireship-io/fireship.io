@@ -17,9 +17,12 @@
     <modal-action type="open" name="search">
       <button>Open Search</button>
     </modal-action>
-    <modal-action type="open" name="signin">
-      <button>Open Login</button>
-    </modal-action>
+    <if-user>
+      <user-avatar></user-avatar>
+      <modal-action slot="signed-out" type="open" name="signin">
+        <button>Open Login</button>
+      </modal-action>
+    </if-user>
     <algolia-search></algolia-search>
     <app-signin></app-signin>
 

@@ -12,7 +12,7 @@ const COURSE_ROUTE_KEY__PROGRESS: ProgressTableKey = 'course_route';
 
 const supabaseClient = createClient<SupabaseTypes.Database>(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY);
 
-async function getUser() {
+export async function getUser() {
   return (await supabaseClient.auth.getUser()).data.user;
 }
 
@@ -62,9 +62,55 @@ async function loginHandler(promise: Promise<OAuthResponse>) {
   return { res: data, serverError };
 }
 
+// Select user data
+
+export async function fetchUserData(userUid: string) {
+  const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
+  // TODO: review the error handling
+  if (error && !data) {
+    console.error("ça n'a pas marché:", error.message)
+    return null;
+  } ;
+  return data[0];
+}
+
+export async function fetchUserProgressData(userUid: string) {
+  const { data, error } = await supabaseClient.from('progress').select().eq("user_id", userUid);
+  // TODO: review the error handling
+  if (error && !data) {
+    console.error("ça n'a pas marché:", error.message)
+    return null;
+  } ;
+  return data;
+}
+
 // Realtime Watchers
 
-export const onAuthStateChange = (callback: Parameters<typeof supabaseClient.auth.onAuthStateChange>[0]) => supabaseClient.auth.onAuthStateChange(callback);
+type AuthCallback = Parameters<typeof supabaseClient.auth.onAuthStateChange>[0];
+
+// Create a user row if it signin for the first time.
+
+const createUserIfDoesNotExist: AuthCallback = async (_, session) => {
+  async function userExist(userUid: string): Promise<boolean> {
+    const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
+    // TODO: review the error handling
+    if (error) console.error("ça n'a pas marché:", error.message);
+    return data !== null && data.length > 0;
+  }
+  const userUid = session?.user.id;
+  if (!userUid || await userExist(userUid)) return;
+  const githubMetadata = session.user.user_metadata;
+  const { error } = await supabaseClient.from('users').insert({
+    uid: userUid, email: session.user.email!, joined: 0, photoURL: githubMetadata["avatar_url"], displayName: githubMetadata["full_name"]
+  });
+    // TODO: review the error handling
+  if (error) console.error("L'authentification n'a pas marché:", error.message);
+};
+
+export const onAuthStateChange = (callback: AuthCallback) =>
+supabaseClient.auth.onAuthStateChange(async (event, session) => { await createUserIfDoesNotExist(event, session); await callback(event, session);})
+;
+
 
 type OnType<T extends { [key: string]: any }> = (
   type: `${REALTIME_LISTEN_TYPES.POSTGRES_CHANGES}`,
@@ -81,8 +127,8 @@ function createChannelForAllPostgresChanges<T extends { [key: string]: any }>(ch
 }
 
 type Callback<T extends { [key: string]: any }> = (payload: RealtimePostgresChangesPayload<T>) => void;
-type UserDataType = SupabaseTypes.Database["public"]["Tables"]["users"]["Row"];
-type ProgressDataType = SupabaseTypes.Database["public"]["Tables"]["progress"]["Row"];
+export type UserDataType = SupabaseTypes.Database["public"]["Tables"]["users"]["Row"];
+export type ProgressDataType = SupabaseTypes.Database["public"]["Tables"]["progress"]["Row"];
 
 export const onProgressChange = (sbUser: User, callback: Callback<ProgressDataType>) =>
   createChannelForAllPostgresChanges<ProgressDataType>("progress_change")(
@@ -104,6 +150,8 @@ export const onUserChange = (sbUser: User, callback: Callback<UserDataType>) =>
 
 // Callable Functions
 
+/** This function runs whatevej postgres request only for an authenticated user
+  */
 function callIfAuthenticated<
   Params extends any[],
   Err extends { message: string },
