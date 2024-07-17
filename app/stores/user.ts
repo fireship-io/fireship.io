@@ -21,7 +21,6 @@ const userData = writable<UserData | null>(null);
 const userProgress = writable<UserProgress | null>(null);
 
 function setUserData(data: SupabaseModule.UserDataType) {
-  console.log(JSON.stringify(nullablePropertiesToOptional(data)));
   userData.set(nullablePropertiesToOptional(data));
 }
 function setProgressData(
@@ -79,29 +78,27 @@ function stopChannels() {
 
 /** Initially set writables if the user is already authenticated;
  *
- * Call this function when initializing the application.
+ * Call this function when mounting one single component in the static page,
+ * e.g. the global-data component.
  *
  */
-async function loadBackendData() {
-  // TODO: the promise below does not run on page refresh
+async function fetchAndWatchUserRemoteData() {
   const authenticatedUser: SupabaseUser | null = await SupabaseModule.getUser();
   if (authenticatedUser) {
     await fetchAndSetWritables(authenticatedUser);
     startChannels(authenticatedUser);
   }
+  SupabaseModule.onAuthStateChange(async (_event, session) => {
+    const authenticatedUser = session?.user;
+    if (authenticatedUser) {
+      await fetchAndSetWritables(authenticatedUser);
+      startChannels(authenticatedUser);
+    } else {
+      emptyWritables();
+      stopChannels();
+    }
+  });
 };
-loadBackendData();
-
-SupabaseModule.onAuthStateChange(async (_event, session) => {
-  const authenticatedUser = session?.user;
-  if (authenticatedUser) {
-    await fetchAndSetWritables(authenticatedUser);
-    startChannels(authenticatedUser);
-  } else {
-    emptyWritables();
-    stopChannels();
-  }
-});
 
 const canAccess = derived(
   [userData, siteData],
@@ -110,4 +107,4 @@ const canAccess = derived(
   },
 );
 
-export { userData, userProgress, loadBackendData, canAccess };
+export { userData, userProgress, fetchAndWatchUserRemoteData, canAccess };

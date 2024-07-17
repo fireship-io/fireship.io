@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="/main.ts"></script>
     <title>Document</title>
   </head>
 
   <body class="prose dark:prose-invert">
+    <!-- Initialise all Supabase watchers with this component in the body -->
+    <global-data></global-data>
+
     <h1>Component Playground</h1>
     <p>
       Declare components in the <code>app/index.html</code> to preview below
@@ -19,6 +23,7 @@
     </modal-action>
     <if-user>
       <user-avatar></user-avatar>
+      <sign-out><button class="btn">Log out</button></sign-out>
       <modal-action slot="signed-out" type="open" name="signin">
         <button>Open Login</button>
       </modal-action>
@@ -32,8 +37,6 @@
 
     <video-player video="dQw4w9WgXcQ" type="youtube" single="true"></video-player>
     <autoplay-toggle></autoplay-toggle>
-
-    <script type="module" src="/main.ts"></script>
     <sign-out></sign-out>
   </body>
 </html>

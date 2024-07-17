@@ -3,6 +3,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { siteData } from "../stores/data";
+  import { fetchAndWatchUserRemoteData } from "../stores/user";
 
   export let permalink: string;
   export let next: string;
@@ -11,7 +12,8 @@
   export let youtube: string;
   export let free: string;
 
-  onMount(() => {
+  onMount(async () => {
     siteData.set({ permalink, next, prev, vimeo, free, youtube });
+    await fetchAndWatchUserRemoteData();
   });
 </script>

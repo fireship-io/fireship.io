@@ -13,8 +13,10 @@
     <meta charset="utf-8"/>
     <title>{{ .Page.Title }}</title>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon"/>
+    <!-- SVELTE COMPONENTS AND APPLICATION LAYER -->
     <link rel="stylesheet" href="/svelte/{{ .Site.Data.svelte.css }}" />
-    <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}" />
+    <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}"></script>
+    <!-- SVELTE COMPONENTS AND APPLICATION LAYER -->
 
     <!-- pwa -->
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon"/>
@@ -37,6 +39,7 @@
     {{ $vimeoEncode := .Params.vimeo | base64Encode }}
     {{ $ytEncode := .Params.youtube | base64Encode }}
 
+    <!-- COMPONENT FOR SUPABASE AND STREAMING SERVICE -->
     <global-data 
     permalink="{{ .Permalink }}" 
     vimeo="{{ $vimeoEncode }}"
@@ -45,6 +48,7 @@
     next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 
     prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
   </global-data>
+    <!-- COMPONENT FOR SUPABASE AND STREAMING SERVICE -->
 
     {{ block "header" . }}
     {{ partial "topnav" . }}
