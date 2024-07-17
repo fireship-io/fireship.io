@@ -2,7 +2,7 @@
 
 This website aims to host several formats of online teaching posts about computer science dev tools.
 
-This repository is here to develop a prototype website which would then be managed by the [Eirbware](https://github.com/Eirbware) engineering school club. It has been started from a fork of the open-source [_`fireshio.io`_ website](https://github.com/fireship-io/fireship.io). .
+This repository is here to develop a prototype website which would then be managed by the [Eirbware](https://github.com/Eirbware) engineering school club. It has been started from a fork of the open-source [_`fireship.io`_ website](https://github.com/fireship-io/fireship.io). .
 
 ## 📃 Easily-editable open content
 
@@ -18,17 +18,24 @@ in the purpose of showing their advantages.
 
 A _standard course_ (`/courses/<a-course>/` section) is a tutorial about a topic which contains the following pages:
 
-- A _cover page_ (`/courses/<a-course>/_index.md` file) with a short description of the considered problems and the notions
-  which will be discovered to solve them. The links to the related pages (see below) are indexed there.
+- A _cover page_ (`/courses/<a-course>/_index.md` file) with a short
+description of the considered problems and the notions which will be discovered
+to solve them. The links to the related pages (see below) are indexed there.
 - The _chapter pages_ are each focused on a precise subtopic to deal with it
-  with a short-but-meaningful text. The user, if he is logged in, can also mark each
-  chapter as read to see its advancing bar.  
-   All the chapter pages are in their _chapter group_ thanks to their [slug](https://gohugo.io/content-management/organization/#slug)'s
-  first keyword
-  (`/courses/<a-course>/<a-chapter-group-keyword>-<a-chapter>.md`) so a table of
-  content is displayed in the tutorial
-- Out of the table of content, a standard course is also attached by a _cheat-sheet page_ with a straightforward access of the useful content for a user who
-  has already understood the general topic.
+with a short-but-meaningful text. The user, if he is logged in, can also mark
+each chapter as read to see its progress.  
+   All the chapter pages are in their _chapter group_ by being ordered
+according to their [weight front-matter
+parameter](https://gohugo.io/content-management/front-matter/#weight). The
+_chapter group_ is then defined in a front-matter parameter in the markdown
+file of its first page. Then, a table of content is displayed in the tutorial
+pages.  
+For naming the chapters' permalinks, the following naming convention is
+proposed for the markdown file names: `/courses/<a-course>/<a-chapter-group-keyword>-<a-chapter>.md`.
+- Out of the table of content, in the `/memo/` subsection, a standard course is
+also attached by one or several _cheat-sheet page(s)_ with a straightforward
+access of the useful content for a user who has already understood the general
+topic.
 
 All the published standard courses are listed in a fancy `/courses/` page. They
 are also labeled with tags to enhance their [referencing](#referencing).
@@ -49,19 +56,29 @@ with an application layer that can be developed with svelte components in the `a
 ### Contribute
 
 To edit or add new content, all that users have to do is writing in Markdown files
-in the `/content` folder. For each kind of page (see [the previous section](#content-overview)), a template page with many useful placeholders can be generated thanks to the handy Hugo command below:
+in the `/content` folder. For each kind of content (see [the previous section](#content-overview)), an archetype folder with many useful placeholders in its markdown files can be generated thanks to the handy Hugo command below:
 
 ```sh
-hugo new content /<the-section-you-want>/**<your-page>.md
+hugo new content /<the-section-you-want>/<title-of-the-content>
 ```
 
-According to the path of your new page, the good page kind is inferred and then
-everyone can start one page of a given kind from a same content structure.
+For instance, an entire file tree in a new directory in the `/content` one can
+be created with the command below:
+```sh
+hugo new content /courses/<title-of-the-tutorial>
+```
+
+According to the path of each markdown page, the good layout is inferred and
+then everyone can make content of a given kind from a same structure.
 
 To get all the layout features that the Markdown syntax can enable,
 writers might also want to check theses doc pages :
 [Built-in front-matter fields](https://gohugo.io/content-management/front-matter/#fields),
 [Built-in shortcodes](https://gohugo.io/content-management/shortcodes/#embedded-shortcodes)
+
+They might also need to read [this
+page](https://gohugo.io/content-management/organization/) to know more about
+how to correctly organize markdown files in the `/content` directory.
 
 ## Render the website
 
@@ -73,6 +90,16 @@ Then, in the cloned repository's root, run the following command:
 
 ```bash
 npm install
+```
+
+#### Connect with a playground backend
+
+By writing the following credentials in the `app/.env.local` file, the application
+features will be functional :
+
+```.env
+VITE_SUPABASE_URL=https://ewgpcyjmrccjopdjtqed.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV3Z3BjeWptcmNjam9wZGp0cWVkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjAyNjk1NzIsImV4cCI6MjAzNTg0NTU3Mn0._KFUPaMoOUwv-NYtPer1_lmLm_RCKrDdk-csP60hu0U
 ```
 
 ### Build for production
