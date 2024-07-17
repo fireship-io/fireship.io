@@ -17,8 +17,8 @@ interface UserProgress {
   [key: string]: number;
 }
 
-export const userData = writable<UserData | null>(null);
-export const userProgress = writable<UserProgress | null>(null);
+const userData = writable<UserData | null>(null);
+const userProgress = writable<UserProgress | null>(null);
 
 function setUserData(data: SupabaseModule.UserDataType) {
   console.log(JSON.stringify(nullablePropertiesToOptional(data)));
@@ -26,7 +26,7 @@ function setUserData(data: SupabaseModule.UserDataType) {
 }
 function setProgressData(
   data: SupabaseModule.ProgressDataType | SupabaseModule.ProgressDataType[]
-) { 
+) {
   const arrayData = Array.isArray(data) ? data : [data];
   userProgress.update((userProgressOldVal) => arrayData.reduce(
     (oldProgressState, data) => {
@@ -77,20 +77,26 @@ function stopChannels() {
   unsubProgress && unsubProgress.unsubscribe();
 }
 
-// initially set writables if the user is already authenticated;
-(async () => {
+/** Initially set writables if the user is already authenticated;
+ *
+ * Call this function when initializing the application.
+ *
+ */
+async function loadBackendData() {
   const authenticatedUser: SupabaseUser | null = await SupabaseModule.getUser();
+  console.log("got user:", JSON.stringify(authenticatedUser));
   if (authenticatedUser) {
-    fetchAndSetWritables(authenticatedUser);
+    await fetchAndSetWritables(authenticatedUser);
     startChannels(authenticatedUser);
   }
-})();
+};
 
+loadBackendData();
 
-SupabaseModule.onAuthStateChange((_event, session) => {
+SupabaseModule.onAuthStateChange(async (_event, session) => {
   const authenticatedUser = session?.user;
   if (authenticatedUser) {
-    fetchAndSetWritables(authenticatedUser);
+    await fetchAndSetWritables(authenticatedUser);
     startChannels(authenticatedUser);
   } else {
     emptyWritables();
@@ -98,9 +104,11 @@ SupabaseModule.onAuthStateChange((_event, session) => {
   }
 });
 
-export const canAccess = derived(
+const canAccess = derived(
   [userData, siteData],
   ([$userData, $siteData]) => {
     return true;
   },
 );
+
+export { userData, userProgress, loadBackendData, canAccess };
