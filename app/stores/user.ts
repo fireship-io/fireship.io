@@ -83,14 +83,13 @@ function stopChannels() {
  *
  */
 async function loadBackendData() {
+  // TODO: the promise below does not run on page refresh
   const authenticatedUser: SupabaseUser | null = await SupabaseModule.getUser();
-  console.log("got user:", JSON.stringify(authenticatedUser));
   if (authenticatedUser) {
     await fetchAndSetWritables(authenticatedUser);
     startChannels(authenticatedUser);
   }
 };
-
 loadBackendData();
 
 SupabaseModule.onAuthStateChange(async (_event, session) => {
