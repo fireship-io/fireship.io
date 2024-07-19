@@ -3,12 +3,18 @@ lastmod = {{ .Date }}
 title = "Titre du cours"
 description = "Ceci est une courte description du cours."
 type = "courses"
-tags = ["git", "linux"]
+tags = ["git", "github", "linux"]
 
-author = "Michel Rocard"
-vimeo = 359329279
-stack = ["angular", "firebase", "ts"]
+author = "Eirbware"
+stack = ["git", "linux", "svelte", "hugo"]
+draft = true
 +++
+
+Bravo à vous pour avoir généré cet archétype de tutoriel. Dedans vous trouverez
+la plupart des informations nécessaires pour rédiger du contenu sur ce site.
+
+N'hésitez pas à utiliser la structure de cet archétype pour écrire votre propre
+tutoriel, c'est fait pour.
 
 ## 🤔 Qu'est-ce que je vais apprendre dans ce cours ?
 
@@ -16,9 +22,7 @@ Ce **cours sur je ne sais pas quoi** va vous enseigner quelque chose.
 
 ## 🚨 Pourquoi je perdrai mon temps sur ce cours ?
 
-Ici seront énumérées les raisons justifiant que ce cours peut aider à devenir
-un meilleur programmeur à l'ENSEIRB et que le lecteur ne perdra sans doute pas
-son temps dessus.
+Voilà quelques raisons:
 
 - Diam suscipit euismod, auctor aenean condimentum, aliquet est praesent nulla.
 - Suscipit pulvinar semper, lectus massa ac, congue ut fusce fringilla.

@@ -1,8 +1,8 @@
 {{ define "main" }} {{ $activeRelPermalink := .RelPermalink }}
 
 <main class="container flex flex-col-reverse md:flex-row">
-  {{ $isSingleMemoPage := not (hasSuffix .RelPermalink "/memo/") }} {{ if
-  $isSingleMemoPage }}
+  {{ $isNotSingleMemoPage := not (hasSuffix .RelPermalink "/memo/") }}
+  {{ if $isNotSingleMemoPage }}
   <!-- Progress tracker -->
   <navbar-toggle>
     <!-- Lessons -->
@@ -85,13 +85,13 @@
       {{end}}
 
       <div class="ml-auto">
-        {{ if $isSingleMemoPage }} {{with .NextInSection}}
+        {{ if $isNotSingleMemoPage }} {{with .NextInSection}}
         <a class="btn btn-transparent" href="{{.RelPermalink}}">👈</a>
         {{end}} {{end}}
 
         <a class="btn btn-transparent" href="{{.Parent.RelPermalink}}">🏠</a>
 
-        {{ if $isSingleMemoPage }} {{with .PrevInSection}}
+        {{ if $isNotSingleMemoPage }} {{with .PrevInSection}}
         <a class="btn btn-transparent" href="{{.RelPermalink}}">👉</a>
         {{end}} {{end}}
       </div>

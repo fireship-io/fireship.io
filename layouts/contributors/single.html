@@ -1,8 +1,8 @@
 {{ define "main" }}
 <main class="container prose dark:prose-invert">
   <section class="text-center">
-    <h1 class="gradient-text">{{ .Title }}</h1>
-    {{ $authorImg := (print "/contributors/img/" (.RelPermalink | path.Base)
+    <h1 class="gradient-text">{{ .Params.authorname | default .Title }}</h1>
+    {{ $authorImg := .Params.featured_img | default (print "/contributors/img/" (.RelPermalink | path.Base)
     ".webp") }}
 
     <img

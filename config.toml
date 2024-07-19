@@ -28,7 +28,7 @@ vars = ["title", "description", "summary", "date", "publishdate", "lastmod", "pe
 params = ["tags"]
 
 [markup.goldmark.renderer]
-unsafe= true
+unsafe = true
 
 [markup]
   [markup.highlight]

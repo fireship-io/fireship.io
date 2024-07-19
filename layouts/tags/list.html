@@ -9,11 +9,11 @@
     class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"
   ></div>
 
-  {{ range .Pages }}
+  {{ range .Data.Terms }}
   <span class="inline-block p-2">
-    <a href="{{.Permalink | relURL }}"
-      ><span class="tag tag-{{anchorize .Title}} tag-lg"
-        >#{{ anchorize .Title}}</span
+    <a href="{{ .Page.Permalink | relURL }}"
+      ><span class="tag tag-{{anchorize .Page.LinkTitle}} tag-lg"
+        >#{{ anchorize .Page.LinkTitle}}</span
       ></a
     >
   </span>

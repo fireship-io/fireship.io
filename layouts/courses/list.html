@@ -1,12 +1,12 @@
 {{ define "main" }}
 <main class="prose dark:prose-invert container">
-  {{ if eq .CurrentSection.RelPermalink "/courses/" }} {{/* Layout for ALL
-  courses */}}
+  {{ if eq .CurrentSection.RelPermalink "/courses/" }}
+  {{/* Layout for ALL courses */}}
   {{ partial "section_index" . }}
 
-  {{ else }} {{/* Layout for individual course landing page */}} {{
-  $cheatsheetPage := .GetPage "./memo"}} {{ $isCheatsheetIndex := hasSuffix
-  .RelPermalink "/memo/" }}
+  {{ else }} {{/* Layout for individual course landing page */}}
+  {{ $cheatsheetPage := .GetPage "./memo" }}
+  {{ $isCheatsheetIndex := hasSuffix .RelPermalink "/memo/" }}
 
   <header class="text-center my-12">
     <h1 class="text-6xl mb-0 inline-block mx-auto">
@@ -45,9 +45,11 @@
   <div class="max-w-3xl mx-auto">
     <video-player free="true" single="true"></video-player>
   </div>
-  {{ end }} {{ if not $isCheatsheetIndex }} {{ $author := .Site.GetPage (print
-  "/contributors/" (anchorize .Params.Author)) }} {{ $authorImg := (print
-  "/contributors/img/" (anchorize .Params.Author) ".webp") }}
+  {{ end }} {{ if not $isCheatsheetIndex }}
+  {{ $author := .Site.GetPage (print "/contributors/" (anchorize .Params.Author)) }}
+  {{ $authorImg := $author.Params.featured_img | default (
+      print "/contributors/img/" (anchorize .Params.Author) ".webp"
+      ) }}
   <div
     class="flex items-center no-underline justify-center"
     itemprop="author"
@@ -60,15 +62,15 @@
     />
     <span class="flex flex-col ml-2">
       <span class="text-lg"
-        >Taught by
+        >Publié par
         <a
           class="no-underline text-orange-500"
           href="/contributors/{{ anchorize .Params.author }}/"
-          >{{ title (.Params.authorname | default .Params.author) }}</a
+          >{{ title ($author.Params.authorname | default .Params.author) }}</a
         >
       </span>
       <span class="text-sm text-gray4">
-        {{ (.Params.authorbio | default "That guy from the Fireship YouTube channel") }}
+        {{ ($author.Params.authorbio | default "Contributeur libre") }}
       </span>
     </span>
   </div>
