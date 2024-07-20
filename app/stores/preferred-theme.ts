@@ -1,11 +1,7 @@
-import { writable } from "svelte/store";
+import { createCachedWritable } from "../util/helpers";
 
 export type SettableBoolean = boolean | null;
 
-export const doesPreferDark = writable<SettableBoolean>(
-  JSON.parse(localStorage?.theme ?? null),
-);
-doesPreferDark.subscribe((v) => {
-  if (v === null) localStorage.removeItem("theme");
-  else localStorage.theme = v;
-});
+const { cachedWritable: doesPreferDark } = createCachedWritable<boolean>("doesPreferDark");
+
+export { doesPreferDark };

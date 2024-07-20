@@ -1,8 +1,8 @@
-import { writable, derived } from "svelte/store";
+import { get, derived } from "svelte/store";
 import { siteData } from "./data";
 import * as SupabaseModule from "../util/supabase";
 import type { RealtimeChannel, User as SupabaseUser } from "@supabase/supabase-js";
-import { isNotEmpty, nullablePropertiesToOptional } from "../util/helpers";
+import { createCachedWritable, isNotEmpty, nullablePropertiesToOptional } from "../util/helpers";
 
 export interface UserData {
   email?: string;
@@ -17,8 +17,9 @@ interface UserProgress {
   [key: string]: number;
 }
 
-const userData = writable<UserData | null>(null);
-const userProgress = writable<UserProgress | null>(null);
+const { cachedWritable: userData } = createCachedWritable<UserData>('userData');
+const { cachedWritable: userProgress } = createCachedWritable<UserProgress>('userProgress');
+
 
 function setUserData(data: SupabaseModule.UserDataType) {
   userData.set(nullablePropertiesToOptional(data));
@@ -83,10 +84,12 @@ function stopChannels() {
  *
  */
 async function fetchAndWatchUserRemoteData() {
-  const authenticatedUser: SupabaseUser | null = await SupabaseModule.getUser();
-  if (authenticatedUser) {
-    await fetchAndSetWritables(authenticatedUser);
-    startChannels(authenticatedUser);
+  if (!get(userData) || !get(userProgress)) {
+    const authenticatedUser: SupabaseUser | null = await SupabaseModule.getUser();
+    if (authenticatedUser) {
+      await fetchAndSetWritables(authenticatedUser);
+      startChannels(authenticatedUser);
+    }
   }
   SupabaseModule.onAuthStateChange(async (_event, session) => {
     const authenticatedUser = session?.user;
