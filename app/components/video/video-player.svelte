@@ -94,7 +94,7 @@
 </script>
 
 <div class="wrapper">
-  <div class="vid" bind:this={ref} />
+  <div class="vid" bind:this={ref}></div>
   <div class="autoplay-cover" class:active={showAutoplayCover}>
     <p>
       Autoplaying next video in <span class="big-text">{countdownTime}</span> seconds...
@@ -113,6 +113,9 @@
 <style lang="scss">
   .wrapper {
     @apply aspect-video w-full relative bg-black bg-opacity-50;
+  }
+  .vid {
+    @apply w-full h-full
   }
   .autoplay-cover {
     @apply absolute inset-0 text-lg bg-black bg-opacity-95 hidden justify-center items-center flex-col;
