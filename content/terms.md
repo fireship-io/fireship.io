@@ -1,8 +1,10 @@
----
-title: Terms
-lastmod: 2022-09-11T08:36:36-07:00
-draft: false
----
++++
+title = "Conditions"
+lastmod = 2024-07-20
+[menus.footer]
+  weight = 70
+draft = true
++++
 
 ## Termes et conditions
 
@@ -11,7 +13,6 @@ TODO
 ### Content Copyright Policy
 
 TODO
-
 
 ### Disclaimer
 

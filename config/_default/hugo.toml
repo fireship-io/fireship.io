@@ -12,17 +12,6 @@ isPlainText = true
 mediaType = "application/json"
 notAlternative = true
 
-[params]
-  [[params.mainSections]]
-    name = "courses"
-    url = "/courses/"
-  [[params.mainSections]]
-    name = "tips"
-    url = "/tips/"
-  [[params.mainSections]]
-    name = "challenges"
-    url = "/challenges/"
-
 [params.algolia]
 vars = ["title", "description", "summary", "date", "publishdate", "lastmod", "permalink"]
 params = ["tags"]

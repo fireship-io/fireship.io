@@ -20,7 +20,7 @@ tutoriel, c'est fait pour.
 
 Ce **cours sur je ne sais pas quoi** va vous enseigner quelque chose.
 
-## 🚨 Pourquoi je perdrai mon temps sur ce cours ?
+## 🚨 Pourquoi je perdrais mon temps sur ce cours ?
 
 Voilà quelques raisons:
 

@@ -1,47 +1,48 @@
 <footer class="container text-center my-6 p-8 dark:text-gray3">
+  {{ $footer_params := (site.Params.footer) }}
   <div
     class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-gray5 to-gray4 rounded-full"
   ></div>
+  {{ if .File }}
   <div class="pt-10">
-    Find an issue with this page?
+    {{ $footer_params.issue }}
     <a
       class="text-blue-500"
-      href="{{ site.Data.links.github_content }}/{{ .File.Path }}"
-      >Fix it on GitHub</a
+      href="{{ urls.JoinPath site.Data.links.github_content .File.Path }}"
+      >{{ $footer_params.issue_url_content }}</a
     >
   </div>
+  {{ end }}
 
   <div class="py-3">
-    Need help? Email
-    <a href="mailto:hello@fireship.io"
-      ><strong class="text-white font-bold">hello@fireship.io</strong></a
-    >
+  {{ $footer_params.contact }}
+    <strong class="text-white font-bold">
+      {{ $footer_params.contact_email }}
+    </strong>
   </div>
   <div class="flex justify-center items-center my-2">
-    <a href="{{ site.Data.links.youtube }}"
-      ><i class="w-6 inline-block mx-2">{{ partial "svg/youtube.svg"}}</i></a
+    {{ range $k, $v := site.Data.links.helpful }}
+    <a href="{{ $v }}"
+      ><i class="w-6 inline-block mx-2">
+        {{ partial (print "svg/" $k ".svg") }}
+    </i></a
     >
-    <a href="{{ site.Data.links.twitter }}"
-      ><i class="w-6 inline-block mx-2">{{ partial "svg/twitter.svg"}}</i></a
-    >
-    <a href="{{ site.Data.links.github }}"
-      ><i class="w-6 inline-block mx-2">{{ partial "svg/github.svg"}}</i></a
-    >
-    <a href="{{ site.Data.links.discord }}"
-      ><i class="w-6 inline-block mx-2">{{ partial "svg/discord.svg"}}</i></a
-    >
+    {{ end }}
   </div>
 
-  <h6>Helpful Links</h6>
+  <h6>{{ $footer_params.links_title }}</h6>
 
+  {{ with site.Menus.footer.ByWeight }}
   <div class="py-3">
-    <a href="/courses">Courses</a> | <a href="/lessons">Labs</a> |
-    <a href="/snippets">Snippets</a> | <a href="/tags">Tags</a> |
-    <a href="/contributors">Contrib</a> | <a href="/privacy">Privacy</a> |
-    <a href="/terms">Terms</a>
+    {{ $last_elt := index (last 1 .) 0 }}
+    {{ range collections.Reverse (after 1 (collections.Reverse .)) }}
+    <a href="{{ .URL }}">{{ .Name }}</a> |
+    {{ end }}
+    <a href="{{ $last_elt.URL }}">{{ $last_elt.Name }}</a>
   </div>
+  {{ end }}
 
   <div class="text-xs">
-    Copyright © {{ now.Format "2006"}} Fireship LLC <br />
+    Copyright © {{ now.Format "2006"}} {{ $footer_params.copyright }} <br />
   </div>
 </footer>

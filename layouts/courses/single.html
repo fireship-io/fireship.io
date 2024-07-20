@@ -29,7 +29,7 @@
         >
           <div class="p-1 my-1 flex items-center">
             <complete-icon
-              free="{{ .Params.free }}"
+              free="{{ .Params.free | default "true" }}"
               route="{{ .RelPermalink }}"
             ></complete-icon>
 
@@ -70,7 +70,7 @@
     {{ $videoInCurrentPage := or .Params.vimeo .Params.youtube }} {{
     $videoInNextPage := false }}{{ with .PrevInSection }}{{ $videoInNextPage =
     or .Params.vimeo .Params.youtube }}{{end}} {{ if $videoInCurrentPage }}
-    <video-player free="{{ .Params.free }}"></video-player>
+    <video-player free="{{ .Params.free | default "true" }}"></video-player>
     {{ end }}
 
     <nav
@@ -99,8 +99,8 @@
       <div class="ml-auto w-16 px-4 text-center">
         <mark-complete
           slot="granted"
-          quiz="{{ .Params.quiz }}"
-          free="{{ .Params.free }}"
+          quiz="{{ .Params.quiz | default "false" }}"
+          free="{{ .Params.free | default "true" }}"
         ></mark-complete>
       </div>
     </nav>
@@ -118,8 +118,6 @@
     <div
       class="mx-auto w-24 h-1 my-12 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full"
     ></div>
-
-    {{ partial "comments" }}
   </article>
 </main>
 {{ end }}

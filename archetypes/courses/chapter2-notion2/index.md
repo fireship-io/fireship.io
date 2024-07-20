@@ -18,6 +18,7 @@ Pour définir un contributeur, il faut créer une page dans le dossier
 +++
 title = "Contributor Name"
 authorbio = "Small description"
+authorname = "Nom de contributeur qui sera affiché, s'il doit être différent du titre"
 date = 2024-07-18 10:22:57
 
 [link]

@@ -1,4 +1,8 @@
----
-title: Courses
-description: challenging multi-step experiences with quizzes and progress-tracking
----
++++
+title = "Tutoriels"
+description = "Nos formations progressives les plus détaillées sont ici."
+[menus.main]
+  weight = 10
+[menus.footer]
+  weight = 10
++++

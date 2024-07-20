@@ -1,8 +1,10 @@
----
-title: Privacy Policy
-lastmod: 2022-09-11T08:36:36-07:00
-draft: false
----
++++
+title = "Données personnelles"
+lastmod = 2024-07-20
+[menus.footer]
+  weight = 60
+draft = true
++++
 
 ## Politique de Confidentialité
 
@@ -23,7 +25,6 @@ TODO
 ### Services third-party
 
 TODO
-
 
 ### Vos choix
 

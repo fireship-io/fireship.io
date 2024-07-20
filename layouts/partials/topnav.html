@@ -12,12 +12,12 @@
     </a>
 
     <ul class="flex justify-center items-center">
-      {{ range (.Site.Param "mainSections") }}
+      {{ range .Site.Menus.main.ByWeight  }}
       <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
         <a
-          href="{{ .url | absURL }}"
+          href="{{ .URL }}"
           class="font-sans text-xl font-bold leading-none text-yellow1 dark:text-white hover:text-yellow2 dark:hover:text-black"
-          >{{ .name }}</a
+          >{{ .Name }}</a
         >
       </li>
       {{ end }}
