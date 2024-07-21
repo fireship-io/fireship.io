@@ -11,9 +11,11 @@ const USER_ID_KEY__PROGRESS: ProgressTableKey = 'user_id';
 const COURSE_ROUTE_KEY__PROGRESS: ProgressTableKey = 'course_route';
 
 const supabaseClient = createClient<SupabaseTypes.Database>(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY);
+let currentUser: User | null = null;
 
 export async function getUser() {
-  return (await supabaseClient.auth.getUser()).data.user;
+  currentUser = (await supabaseClient.auth.getUser()).data.user;
+  return currentUser;
 }
 
 // Login
@@ -108,8 +110,11 @@ const createUserIfDoesNotExist: AuthCallback = async (_, session) => {
 };
 
 export const onAuthStateChange = (callback: AuthCallback) =>
-supabaseClient.auth.onAuthStateChange(async (event, session) => { await createUserIfDoesNotExist(event, session); await callback(event, session);})
-;
+supabaseClient.auth.onAuthStateChange(async (event, session) => { 
+    currentUser = session?.user ?? null;
+    await createUserIfDoesNotExist(event, session);
+    await callback(event, session);
+});
 
 
 type OnType<T extends { [key: string]: any }> = (
@@ -159,7 +164,7 @@ function callIfAuthenticated<
 >(fn: (user: User, ...params: Params) => Promise<PostgresResult>):
   (...params: Params) => Promise<PostgresResult | null> {
   return async (...params: Params) => {
-    const user = await getUser();
+    const user = currentUser;
     if (!user) {
       modal.set("signin");
       toast.set({ message: "You must be signed in first", type: "info" });
@@ -172,7 +177,7 @@ function callIfAuthenticated<
       return res;
     }
     catch (error: any) {
-      console.log(error);
+      console.error(error);
       toast.set({
         message:
           error?.message ?? "Unknown Error. Contact eirbware@enseirb-matmeca.fr for help",
@@ -200,8 +205,9 @@ export async function changerUserEmail(newEmail: string) {
 // Progress Tracking
 
 export async function markComplete(route: string, bonus = 0) {
-  await callIfAuthenticated(async (user) =>
-    await supabaseClient
+  await (callIfAuthenticated(async (user) =>
+    // TODO: this promise never finishes; fix that
+    supabaseClient
       .from("progress")
       .upsert({
         user_id: user.id,
@@ -210,11 +216,12 @@ export async function markComplete(route: string, bonus = 0) {
       }, {
         onConflict: `${USER_ID_KEY__PROGRESS},${COURSE_ROUTE_KEY__PROGRESS}`
       })
-  )();
+  ))();
 }
 
 export async function markIncomplete(route: string) {
   await callIfAuthenticated(async (user) =>
+    // TODO: this promise never finishes; fix that
     await supabaseClient.from("progress")
       .delete()
       .eq("user_id", user.id)

@@ -99,8 +99,12 @@
       <div class="ml-auto w-16 px-4 text-center">
         <mark-complete
           slot="granted"
-          quiz="{{ .Params.quiz | default "false" }}"
-          free="{{ .Params.free | default "true" }}"
+          {{ if .Params.quiz }}
+          quiz="true"
+          {{ end }}
+          {{ if (.Params.free | default true) }}
+          free="true"
+          {{ end }}
         ></mark-complete>
       </div>
     </nav>
