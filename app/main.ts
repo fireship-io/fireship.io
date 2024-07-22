@@ -21,6 +21,7 @@ export const router = flamethrower({ prefetch: "hover", log: false });
 
 // All web components must be exported here
 export * from "./components/global-data.svelte";
+export * from './components/supabase-app';
 
 // Auth
 export * from "./components/users/user-data.svelte";

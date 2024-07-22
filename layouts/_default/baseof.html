@@ -39,7 +39,10 @@
     {{ $vimeoEncode := .Params.vimeo | base64Encode }}
     {{ $ytEncode := .Params.youtube | base64Encode }}
 
-    <!-- COMPONENT FOR SUPABASE AND STREAMING SERVICE -->
+    <!-- COMPONENT FOR SUPABASE SERVICE -->
+    <supabase-app></supabase-app>
+    <!-- COMPONENT FOR SUPABASE SERVICE -->
+    <!-- COMPONENT FOR STREAMING SERVICE -->
     <global-data 
     permalink="{{ .Permalink }}" 
     vimeo="{{ $vimeoEncode }}"
@@ -48,7 +51,7 @@
     next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 
     prev="{{with .NextInSection}}{{.Permalink}}{{end}}">
   </global-data>
-    <!-- COMPONENT FOR SUPABASE AND STREAMING SERVICE -->
+    <!-- COMPONENT FOR STREAMING SERVICE -->
 
     {{ block "header" . }}
     {{ partial "topnav" . }}
