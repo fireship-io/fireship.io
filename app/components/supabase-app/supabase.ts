@@ -13,8 +13,12 @@ const COURSE_ROUTE_KEY__PROGRESS: ProgressTableKey = 'course_route';
 const supabaseClient = createClient<SupabaseTypes.Database>(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_ANON_KEY);
 let currentUser: User | null = null;
 
-export async function getUser() {
-  currentUser = (await supabaseClient.auth.getUser()).data.user;
+/** @return The loaded user from the session
+ * Call this promise at the refreshing of each static page so the
+ * supabaseClient can next correctly perform its requests.
+ */
+export async function refreshUserSession() {
+  currentUser = (await supabaseClient.auth.getSession())?.data.session?.user ?? null;
   return currentUser;
 }
 
@@ -172,7 +176,6 @@ function callIfAuthenticated<
       return null;
     }
     try {
-      // TODO: make this promise run everytime
       console.log("starting supabase request...");
       const res = await fn(user, ...params);
       const error = res.error;
@@ -209,7 +212,6 @@ export async function changerUserEmail(newEmail: string) {
 
 export async function markComplete(route: string, bonus = 0) {
   await (callIfAuthenticated(async (user) =>
-    // TODO: this promise never finishes; fix that
     supabaseClient
       .from("progress")
       .upsert({
@@ -224,7 +226,6 @@ export async function markComplete(route: string, bonus = 0) {
 
 export async function markIncomplete(route: string) {
   await callIfAuthenticated(async (user) =>
-    // TODO: this promise never finishes; fix that
     await supabaseClient.from("progress")
       .delete()
       .eq("user_id", user.id)

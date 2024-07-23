@@ -34,7 +34,7 @@ async function fetchAndSetWritables(authenticatedUser: SupabaseUser) {
   const userProfileData = await SupabaseModule.fetchUserData(userUid);
   if (!userProfileData) throw new Error("The user must have a profile data");
   setUserData(userProfileData);
-  const userProgressData = await SupabaseModule.fetchUserProgressData(userUid)
+  const userProgressData = await SupabaseModule.fetchUserProgressData(userUid);
   if (!userProgressData) {
     console.error("Unable to fetch user's progress data");
     return;
@@ -62,13 +62,17 @@ function stopChannels() {
 
 /** Initially set writables if the user is already authenticated;
  *
+ * Returns a function to unsubscribe every watcher (database + auth).
+ *
  * Call this function when mounting one single component in the static page,
  * e.g. the global-data component.
  *
  */
 async function fetchAndWatchUserRemoteData() {
+  console.log("Init user data and auth watchers")
+  // Perform a session refreshing, if needed.
+  const authenticatedUser: SupabaseUser | null = await SupabaseModule.refreshUserSession();
   if (!get(userData) || !get(userProgress)) {
-    const authenticatedUser: SupabaseUser | null = await SupabaseModule.getUser();
     if (authenticatedUser) {
       await fetchAndSetWritables(authenticatedUser);
       startChannels(authenticatedUser);
@@ -85,7 +89,7 @@ async function fetchAndWatchUserRemoteData() {
       stopChannels();
     }
   });
-  return subscription;
+  return () => { subscription.unsubscribe(); stopChannels(); };
 };
 
 export { fetchAndWatchUserRemoteData };
