@@ -2,7 +2,8 @@
 
 <script lang="ts">
   import { canAccess, userProgress, modal } from "../../stores";
-  import { markComplete, markIncomplete } from "../../util/supabase";
+  import { componentsSide } from "../../stores/supabase-vars";
+
   export let route = window.location.pathname;
   export let quiz = false;
   export let free = false;
@@ -13,9 +14,9 @@
         modal.set("quiz");
         return;
       }
-      await markComplete(route);
+      componentsSide.markCourse({ route })
     } else {
-      await markIncomplete(route);
+      componentsSide.unMarkCourse(route);
     }
   }
 

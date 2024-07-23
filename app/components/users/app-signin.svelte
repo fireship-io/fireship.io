@@ -6,10 +6,8 @@
 <modal-dialog name="signin" esc="true">
   <h1>Login</h1>
   <p>With magic email link:</p>
-  <email-signin />
   <p>Or with account:</p>
-  <google-signin />
-  <apple-signin />
+  <github-signin />
   <p class="footer">
     By signing up, you agree to Fireship's Terms of Service & Privacy Policy.
   </p>

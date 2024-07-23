@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import { getCourseIdFromURL } from "../../util/helpers";
-  import { markComplete } from "../../util/supabase";
+  import { componentsSide } from '../../stores/supabase-vars';
 
   export let answer: string;
   export let options: string; // Format foo:bar:baz
@@ -62,7 +62,7 @@
     correctMsg = randomChoice(arr);
     let bonus = tries <= 2 ? 50 / tries : 5;
     xpGained = 100 + bonus;
-    markComplete(window.location.pathname, bonus);
+    componentsSide.markCourse({ route: window.location.pathname, bonus });
     confetti();
     isComplete = true;
   }

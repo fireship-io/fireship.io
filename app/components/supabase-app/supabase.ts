@@ -1,8 +1,8 @@
 import { createClient, REALTIME_LISTEN_TYPES, REALTIME_POSTGRES_CHANGES_LISTEN_EVENT, RealtimeChannel, type OAuthResponse, type RealtimePostgresChangesFilter, type RealtimePostgresChangesPayload, type User } from "@supabase/supabase-js";
 import * as SupabaseTypes from "./supabase.types";
 
-import { toast } from "../stores/toast";
-import { modal } from "../stores/modal";
+import { toast } from "../../stores/toast";
+import { modal } from "../../stores/modal";
 
 type UsersTableKey = keyof SupabaseTypes.Database["public"]["Tables"]["users"]["Row"];
 type ProgressTableKey = keyof SupabaseTypes.Database["public"]["Tables"]["progress"]["Row"];

@@ -1,8 +1,8 @@
 <svelte:options customElement="change-email" />
 
 <script lang="ts">
-  import { toast } from "../../stores";
-  import { changerUserEmail, supabaseSignOut } from "../../util/supabase";
+  import { componentsSide } from "../../stores/supabase-vars";
+
   let loading = false;
   let show = false;
   let confirmed = false;
@@ -14,19 +14,9 @@
     isValid = emailEl.validity.valid;
   }
 
-  async function getSession() {
+  function getSession() {
     loading = true;
-    const res = await changerUserEmail(email);
-    const changed = !(!res || res.error);
-    if (changed) {
-      await supabaseSignOut();
-      toast.set({
-        message: "Email updated, please sign back in",
-        type: "success",
-      });
-    }
-
-    loading = false;
+    componentsSide.changeMail(email, () => { loading = false; });
   }
 </script>
 

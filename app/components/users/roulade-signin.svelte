@@ -1,10 +1,10 @@
 <svelte:options customElement="roulade-signin" />
 
 <script>
-  import { signInWithEirbConnect } from "../../util/supabase";
+  import { componentsSide } from "../../stores/supabase-vars";
 </script>
 
-<button on:click={signInWithEirbConnect}>
+<button on:click={() => componentsSide.signInWith("eirbconnect")}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

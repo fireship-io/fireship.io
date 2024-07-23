@@ -1,26 +1,14 @@
 <svelte:options customElement="delete-account" />
 
 <script lang="ts">
-  import { toast } from "../../stores";
-  import { deleteUserData, supabaseSignOut } from "../../util/supabase";
+  import { componentsSide } from "../../stores/supabase-vars";
   let loading = false;
   let show = false;
   let firstClick = false;
 
   async function handleDelete() {
     loading = true;
-    const res = await deleteUserData();
-    const deleted = !(!res || res.error);
-
-    if (deleted) {
-      await supabaseSignOut();
-      toast.set({
-        message: "Account terminated, good luck in your future endeavors",
-        type: "success",
-      });
-    }
-
-    loading = false;
+    componentsSide.deleteUserData(() => { loading = false; });
   }
 
   function reset() {
