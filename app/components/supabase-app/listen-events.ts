@@ -4,14 +4,16 @@ import {
   signInWithEirbConnect, signInWithGithub, supabaseSignOut
 } from "./supabase";
 import { toast } from "../../stores/";
+import type { Unsubscriber } from "svelte/store";
 
-export function listenAllSupabaseEvents() {
+export function listenAllSupabaseEvents(): Unsubscriber[] { 
+  return [
   supabaseSide.onSignIn(async (provider) => {
     if (provider === 'github') await signInWithGithub();
     else await signInWithEirbConnect();
-  });
+  }),
 
-  supabaseSide.onSignOut(async () => { await supabaseSignOut(); });
+  supabaseSide.onSignOut(async () => { await supabaseSignOut(); }),
 
   supabaseSide.onMailChange(async (newMail) => {
     const res = await changerUserEmail(newMail);
@@ -34,7 +36,7 @@ export function listenAllSupabaseEvents() {
         type: "error"
       });
     }
-  });
+  }),
 
   supabaseSide.onUserDataDelete(async () => {
     const res = await deleteUserData();
@@ -53,12 +55,18 @@ export function listenAllSupabaseEvents() {
         type: "error"
       });
     }
-  });
+  }),
 
   supabaseSide.onCourseMarked(async (markData) => {
     await markComplete(markData.route, markData.bonus);
-  });
+  }),
   supabaseSide.onCourseUnmarked(async (markData) => {
     await markIncomplete(markData.route);
-  });
+  })
+
+  ];
+}
+
+export function unsubcribeAll(unsubscribers: Unsubscriber[]) {
+  unsubscribers.forEach((u) => u());
 }

@@ -23,6 +23,7 @@ export async function getUser() {
 export async function signInWithGithub() {
   const credential = supabaseClient.auth.signInWithOAuth({
     provider: 'github',
+    options: { redirectTo: window.location.href }
   });
   return loginHandler(credential);
 
@@ -31,7 +32,7 @@ export async function signInWithGithub() {
 export async function signInWithEirbConnect() {
   const credential = supabaseClient.auth.signInWithOAuth({
     provider: 'keycloak',
-    options: { scopes: 'openid' }
+    options: { scopes: 'openid', redirectTo: window.location.href }
   });
   return loginHandler(credential);
 }
@@ -55,7 +56,7 @@ async function loginHandler(promise: Promise<OAuthResponse>) {
       type: "error",
     });
   } else {
-    modal.set(null as unknown as string);
+    modal.set(null);
     toast.set({
       message: "Access granted! Logged into the mainframe!",
       type: "success",
@@ -70,7 +71,7 @@ export async function fetchUserData(userUid: string) {
   const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
   // TODO: review the error handling
   if (error && !data) {
-    console.error("ça n'a pas marché:", error.message)
+    console.error("unable to correctly fetch user data:", error.message)
     return null;
   } ;
   return data[0];
@@ -80,7 +81,7 @@ export async function fetchUserProgressData(userUid: string) {
   const { data, error } = await supabaseClient.from('progress').select().eq("user_id", userUid);
   // TODO: review the error handling
   if (error && !data) {
-    console.error("ça n'a pas marché:", error.message)
+    console.error("unable to correctly fetch user progress data:", error.message)
     return null;
   } ;
   return data;
@@ -171,6 +172,8 @@ function callIfAuthenticated<
       return null;
     }
     try {
+      // TODO: make this promise run everytime
+      console.log("starting supabase request...");
       const res = await fn(user, ...params);
       const error = res.error;
       if (error) throw error;

@@ -35,7 +35,7 @@ function signInWith(provider: Provider, whenDone?: AfterEventCallback) {
 }
 function signOut(whenDone?: AfterEventCallback) {
   if (whenDone) whenProcessOver(_signIn, whenDone);
-  _signIn.set(null)
+  _signIn.set(false);
 };
 
 function changeMail(newMail: string, whenDone?: AfterEventCallback) {
@@ -72,7 +72,7 @@ function fireCallback<TrueSet, FalseSet>(
   return w.subscribe(async (val) => {
     if (val === null) return;
     const correctValue = indicatorFunction(val); 
-    if (!correctValue) return;
+    if (correctValue === null) return;
     await callback(correctValue);
     w.set(null);
   });

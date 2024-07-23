@@ -74,7 +74,8 @@ async function fetchAndWatchUserRemoteData() {
       startChannels(authenticatedUser);
     }
   }
-  SupabaseModule.onAuthStateChange(async (_event, session) => {
+  const { data: { subscription: subscription } } = SupabaseModule.
+  onAuthStateChange(async (_event, session) => {
     const authenticatedUser = session?.user;
     if (authenticatedUser) {
       await fetchAndSetWritables(authenticatedUser);
@@ -84,6 +85,7 @@ async function fetchAndWatchUserRemoteData() {
       stopChannels();
     }
   });
+  return subscription;
 };
 
 export { fetchAndWatchUserRemoteData };
