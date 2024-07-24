@@ -26,7 +26,7 @@
 
 <span class="wrap">
   {#if free || $canAccess}
-    {#if $userProgress?.[route]}
+    {#if $userProgress?.xpPerRoute[route]}
       <button on:click="{markFalse}" class="complete">
         <svg viewBox="0 0 512 512"
           ><path

@@ -122,17 +122,23 @@ supabaseClient.auth.onAuthStateChange(async (event, session) => {
 });
 
 
+// Encapsulate the Supabase RealtimeChannel into a function just to leave
+// the channel.
+export type CustomUnsubscriber = () => ReturnType<RealtimeChannel["unsubscribe"]>;
+
 type OnType<T extends { [key: string]: any }> = (
   type: `${REALTIME_LISTEN_TYPES.POSTGRES_CHANGES}`,
   filter: RealtimePostgresChangesFilter<`${REALTIME_POSTGRES_CHANGES_LISTEN_EVENT.ALL}`>,
   callback: (payload: RealtimePostgresChangesPayload<T>) => void
-) => RealtimeChannel
-  ;
+) => CustomUnsubscriber;
 
 function createChannelForAllPostgresChanges<T extends { [key: string]: any }>(channelKey: string): (
   filter: Parameters<OnType<T>>[1], callback: Parameters<OnType<T>>[2]
-) => RealtimeChannel {
-  const onFunction: OnType<T> = (type, filter, callback) => supabaseClient.channel(channelKey).on<T>(type, filter, callback);
+) => CustomUnsubscriber {
+  const onFunction: OnType<T> = (type, filter, callback) => {
+    const realtimeChannel = supabaseClient.channel(channelKey).on<T>(type, filter, callback).subscribe();
+    return () => realtimeChannel.unsubscribe();
+  }
   return (filter, callback) => onFunction("postgres_changes", filter, callback);
 }
 
@@ -140,7 +146,7 @@ type Callback<T extends { [key: string]: any }> = (payload: RealtimePostgresChan
 export type UserDataType = SupabaseTypes.Database["public"]["Tables"]["users"]["Row"];
 export type ProgressDataType = SupabaseTypes.Database["public"]["Tables"]["progress"]["Row"];
 
-export const onProgressChange = (sbUser: User, callback: Callback<ProgressDataType>) =>
+export const onUserProgressDataChange = (sbUser: User, callback: Callback<ProgressDataType>) =>
   createChannelForAllPostgresChanges<ProgressDataType>("progress_change")(
     {
       event: '*',
@@ -149,8 +155,8 @@ export const onProgressChange = (sbUser: User, callback: Callback<ProgressDataTy
       filter: `${USER_ID_KEY__PROGRESS}=eq.${sbUser.id}`
     }, callback);
 
-export const onUserChange = (sbUser: User, callback: Callback<UserDataType>) =>
-  createChannelForAllPostgresChanges<UserDataType>("user_changes")(
+export const onUserProfileDataChange = (sbUser: User, callback: Callback<UserDataType>) =>
+  createChannelForAllPostgresChanges<UserDataType>("user_change")(
     {
       event: '*',
       schema: 'public',
@@ -180,6 +186,7 @@ function callIfAuthenticated<
       const res = await fn(user, ...params);
       const error = res.error;
       if (error) throw error;
+      console.log("request done!");
       return res;
     }
     catch (error: any) {
@@ -213,22 +220,24 @@ export async function changerUserEmail(newEmail: string) {
 export async function markComplete(route: string, bonus = 0) {
   await (callIfAuthenticated(async (user) =>
     supabaseClient
-      .from("progress")
-      .upsert({
-        user_id: user.id,
-        course_route: route,
-        xp: 100 + bonus,
-      }, {
+    .from("progress")
+    .upsert({
+      user_id: user.id,
+      course_route: route,
+      xp: 100 + bonus,
+    }
+      , {
         onConflict: `${USER_ID_KEY__PROGRESS},${COURSE_ROUTE_KEY__PROGRESS}`
       })
+    .select()
   ))();
 }
 
 export async function markIncomplete(route: string) {
   await callIfAuthenticated(async (user) =>
     await supabaseClient.from("progress")
-      .delete()
-      .eq("user_id", user.id)
-      .eq("course_route", route)
+    .delete()
+    .eq("user_id", user.id)
+    .eq("course_route", route)
   )();
 }

@@ -10,10 +10,15 @@ export interface UserData {
   discordId?: string;
 }
 
+interface D {
+  [key: string]: string;
+};
+
 export interface UserProgress {
   xp: number;
-  [key: string]: number;
-}
+  markIdToRoute: Record<string, keyof UserProgress["xpPerRoute"]>;
+  xpPerRoute: Record<string, number>;
+};
 
 const { cachedWritable: userData } = createCachedWritable<UserData>('userData');
 const { cachedWritable: userProgress } = createCachedWritable<UserProgress>('userProgress');

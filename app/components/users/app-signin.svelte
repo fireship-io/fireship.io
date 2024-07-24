@@ -4,12 +4,11 @@
 </script>
 
 <modal-dialog name="signin" esc="true">
-  <h1>Login</h1>
-  <p>With magic email link:</p>
-  <p>Or with account:</p>
+  <h1>Connexion</h1>
+  <p>Avec votre compte:</p>
   <github-signin />
   <p class="footer">
-    By signing up, you agree to Fireship's Terms of Service & Privacy Policy.
+    En vous connectant, vous consentez aux termes et service du site.
   </p>
 </modal-dialog>
 

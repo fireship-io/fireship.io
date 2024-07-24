@@ -24,7 +24,7 @@
 {/if}
 
 {#if free || $canAccess}
-  {#if $userProgress?.[route]}
+  {#if $userProgress?.xpPerRoute[route]}
     <span class="wrap">
       <svg
         xmlns="http://www.w3.org/2000/svg"

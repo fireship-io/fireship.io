@@ -3,26 +3,47 @@ import type { User as SupabaseUser, RealtimeChannel } from '@supabase/supabase-j
 import { userData, userProgress } from '../../stores/user'
 import * as SupabaseModule from './supabase';
 import { nullablePropertiesToOptional, isNotEmpty } from '../../util/helpers';
+import { cloneDeep } from 'lodash';
 
 function setUserData(data: SupabaseModule.UserDataType) {
   userData.set(nullablePropertiesToOptional(data));
 }
 function setProgressData(
-  data: SupabaseModule.ProgressDataType | SupabaseModule.ProgressDataType[]
+  data: SupabaseModule.ProgressDataType | SupabaseModule.ProgressDataType[],
+  mustDelete = false
 ) {
   const arrayData = Array.isArray(data) ? data : [data];
-  userProgress.update((userProgressOldVal) => arrayData.reduce(
-    (oldProgressState, data) => {
-      const oldXpForPointedRoute = oldProgressState[data.course_route];
-      const newXpForPointedRoute = (data.xp ?? 0);
-      if (oldXpForPointedRoute) {
-        oldProgressState.xp += newXpForPointedRoute - oldXpForPointedRoute;
-      }
-      oldProgressState[data.course_route] = newXpForPointedRoute;
-      return oldProgressState;
-    },
-    userProgressOldVal ?? { xp: 0 })
-  );
+  if (!mustDelete)
+    userProgress.update((userProgressOldVal) => arrayData.reduce(
+      (oldProgressState, data) => {
+        const oldXpForPointedRoute = oldProgressState.xpPerRoute[data.course_route];
+        const newXpForPointedRoute = (data.xp ?? 0);
+        oldProgressState.xp += newXpForPointedRoute - (oldXpForPointedRoute ?? 0);
+        oldProgressState.xpPerRoute[data.course_route] = newXpForPointedRoute;
+        oldProgressState.markIdToRoute[data.mark_id] = data.course_route;
+        return oldProgressState;
+      },
+      userProgressOldVal ?? { xp: 0, markIdToRoute: {}, xpPerRoute: {} })
+    );
+  else
+    userProgress.update((userProgressOldVal) => {
+    if (userProgressOldVal === null) {
+      console.error("A mark has been deleted while the user was not supposed to own any");
+      return userProgressOldVal;
+    }
+    return arrayData.reduce(
+      (oldProgressState, { mark_id: markIdToDelete }) => {
+        const routeToDelete = oldProgressState.markIdToRoute[markIdToDelete];
+        const xpToRemove = oldProgressState.xpPerRoute[routeToDelete];
+        const newProgressState = cloneDeep(oldProgressState);
+        newProgressState.xp -= xpToRemove;
+        delete newProgressState.xpPerRoute[routeToDelete];
+        delete newProgressState.markIdToRoute[markIdToDelete];
+        return newProgressState;
+      },
+      userProgressOldVal
+    )
+  });
 }
 
 function emptyWritables() {
@@ -42,22 +63,26 @@ async function fetchAndSetWritables(authenticatedUser: SupabaseUser) {
   setProgressData(userProgressData);
 }
 
-let unsubData: RealtimeChannel;
-let unsubProgress: RealtimeChannel;
+let unsubData: SupabaseModule.CustomUnsubscriber | null = null;
+let unsubProgress: SupabaseModule.CustomUnsubscriber | null = null;
 
 function startChannels(authenticatedUser: SupabaseUser) {
-  unsubData = SupabaseModule.onUserChange(authenticatedUser, (payload) => {
+  unsubData = SupabaseModule.onUserProfileDataChange(authenticatedUser, (payload) => {
     const data = payload.new;
     if (isNotEmpty(data)) setUserData(data);
   });
-  unsubProgress = SupabaseModule.onProgressChange(authenticatedUser, (payload) => {
-    const data = payload.new;
-    if (isNotEmpty(data)) setProgressData(data);
+  unsubProgress = SupabaseModule.onUserProgressDataChange(authenticatedUser, (payload) => {
+    if (payload.eventType == "DELETE")
+      setProgressData(payload.old as SupabaseModule.ProgressDataType, true);
+    else
+      setProgressData(payload.new);
   });
 }
 function stopChannels() {
-  unsubData && unsubData.unsubscribe();
-  unsubProgress && unsubProgress.unsubscribe();
+  unsubData && unsubData();
+  unsubProgress && unsubProgress();
+  unsubData = null;
+  unsubProgress = null;
 }
 
 /** Initially set writables if the user is already authenticated;
@@ -69,15 +94,14 @@ function stopChannels() {
  *
  */
 async function fetchAndWatchUserRemoteData() {
-  console.log("Init user data and auth watchers")
   // Perform a session refreshing, if needed.
   const authenticatedUser: SupabaseUser | null = await SupabaseModule.refreshUserSession();
-  if (!get(userData) || !get(userProgress)) {
-    if (authenticatedUser) {
+  if (authenticatedUser) {
+    startChannels(authenticatedUser);
+    if (!get(userData) || !get(userProgress))
       await fetchAndSetWritables(authenticatedUser);
-      startChannels(authenticatedUser);
-    }
   }
+  
   const { data: { subscription: subscription } } = SupabaseModule.
   onAuthStateChange(async (_event, session) => {
     const authenticatedUser = session?.user;
