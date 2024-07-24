@@ -1,4 +1,4 @@
-import { createClient, REALTIME_LISTEN_TYPES, REALTIME_POSTGRES_CHANGES_LISTEN_EVENT, RealtimeChannel, type OAuthResponse, type RealtimePostgresChangesFilter, type RealtimePostgresChangesPayload, type User } from "@supabase/supabase-js";
+import { createClient, REALTIME_LISTEN_TYPES, REALTIME_POSTGRES_CHANGES_LISTEN_EVENT, RealtimeChannel, type OAuthResponse, type RealtimePostgresChangesFilter, type RealtimePostgresChangesPayload, type Session, type User } from "@supabase/supabase-js";
 import * as SupabaseTypes from "./supabase.types";
 
 import { toast } from "../../stores/toast";
@@ -71,23 +71,33 @@ async function loginHandler(promise: Promise<OAuthResponse>) {
 
 // Select user data
 
-export async function fetchUserData(userUid: string) {
-  const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
-  // TODO: review the error handling
-  if (error && !data) {
-    console.error("unable to correctly fetch user data:", error.message)
-    return null;
-  } ;
+async function createUserProfile(user: User) {
+  const { error, data } = await supabaseClient.from("users").insert([createProfileFromGithubMetadata(user)]).select();
+  if (error) {
+    toast.set({
+      message: "Error on user profile creation.",
+      type: "error"
+    });
+    throw new Error(error.message);
+  }
+  if (!data || !data.length) throw new Error("The new profile row has not be returned.");
+  return data[0];
+}
+
+export async function fetchUserProfileData(user: User) {
+  const { data, error } = await supabaseClient.from('users').select().eq("uid", user.id);
+  if (error) {
+    throw new Error("unable to correctly fetch user data: " + error.message)
+  };
+  if (!data || !data.length)
+    return await createUserProfile(user);
   return data[0];
 }
 
 export async function fetchUserProgressData(userUid: string) {
   const { data, error } = await supabaseClient.from('progress').select().eq("user_id", userUid);
-  // TODO: review the error handling
-  if (error && !data) {
-    console.error("unable to correctly fetch user progress data:", error.message)
-    return null;
-  } ;
+  if (error && !data)
+    throw new Error("unable to correctly fetch user progress data: " + error.message);
   return data;
 }
 
@@ -97,27 +107,34 @@ type AuthCallback = Parameters<typeof supabaseClient.auth.onAuthStateChange>[0];
 
 // Create a user row if it signin for the first time.
 
-const createUserIfDoesNotExist: AuthCallback = async (_, session) => {
-  async function userExist(userUid: string): Promise<boolean> {
-    const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
-    // TODO: review the error handling
-    if (error) console.error("ça n'a pas marché:", error.message);
-    return data !== null && data.length > 0;
+function createProfileFromGithubMetadata(user: User) {
+  const githubMetadata = user.user_metadata;
+  return {
+    uid: user.id, email: user.email!, joined: 0, 
+    photoURL: githubMetadata["avatar_url"], 
+    displayName: githubMetadata["full_name"]
   }
-  const userUid = session?.user.id;
-  if (!userUid || await userExist(userUid)) return;
-  const githubMetadata = session.user.user_metadata;
-  const { error } = await supabaseClient.from('users').insert({
-    uid: userUid, email: session.user.email!, joined: 0, photoURL: githubMetadata["avatar_url"], displayName: githubMetadata["full_name"]
-  });
-    // TODO: review the error handling
-  if (error) console.error("L'authentification n'a pas marché:", error.message);
-};
+}
+
+// const createUserIfDoesNotExist: AuthCallback = async (_, session) => {
+//   async function userExist(userUid: string): Promise<boolean> {
+//     const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
+//     // TODO: review the error handling
+//     if (error) console.error("ça n'a pas marché:", error.message);
+//     return data !== null && data.length > 0;
+//   }
+//   const userUid = session?.user.id;
+//   if (!userUid || await userExist(userUid)) return;
+//   const { error } = await supabaseClient.from('users').insert(
+//     createProfileFromGithubMetadata(session)
+//   );
+//     // TODO: review the error handling
+//   if (error) console.error("L'authentification n'a pas marché:", error.message);
+// };
 
 export const onAuthStateChange = (callback: AuthCallback) =>
 supabaseClient.auth.onAuthStateChange(async (event, session) => { 
     currentUser = session?.user ?? null;
-    await createUserIfDoesNotExist(event, session);
     await callback(event, session);
 });
 
@@ -203,16 +220,8 @@ function callIfAuthenticated<
 
 // RGPD
 
-export function deleteUserData() {
-  return callIfAuthenticated(async (user: User) => await supabaseClient.from("users").delete().eq("uid", user.id))();
-}
-
-
-export async function changerUserEmail(newEmail: string) {
-  return await callIfAuthenticated(async (user: User) => await supabaseClient.from("users").update({
-    email: newEmail
-  }).eq('uid', user.id)
-  )();
+export async function deleteUserData() {
+  return await (callIfAuthenticated(async (user: User) => await supabaseClient.from("users").delete().eq("uid", user.id)))();
 }
 
 // Progress Tracking

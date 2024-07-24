@@ -33,7 +33,6 @@ export * from "./components/users/if-pro.svelte";
 export * from "./components/users/if-user.svelte";
 export * from "./components/users/if-access.svelte";
 export * from "./components/users/user-avatar.svelte";
-export * from "./components/users/change-email.svelte";
 export * from "./components/users/delete-account.svelte";
 
 // Progress Tracking

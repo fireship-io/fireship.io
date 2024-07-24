@@ -1,7 +1,9 @@
 <svelte:options customElement="user-data" />
 
 <script lang="ts">
+    import { onMount } from "svelte";
   import { userData, userProgress } from "../../stores/user";
+    import { derived } from "svelte/store";
   export let field:
     | "email"
     | "photoURL"
@@ -15,7 +17,12 @@
     return formatter.format(num);
   }
 
-  let src = $userData?.photoURL ?? "/img/ui/avatar.svg";
+  const DEFAULT_SRC = "/img/ui/avatar.svg";
+  let force_default: boolean = false
+  let src = derived(userData, (d) => {
+    if (force_default) return DEFAULT_SRC;
+    return d?.photoURL ?? DEFAULT_SRC
+  });
 
   function relativeTime(date: number) {
     if (!date) return "never";
@@ -32,11 +39,11 @@
 {/if}
 {#if field === "photoURL"}
   <img
-    {src}
+    src={$src}
     alt="avatar"
     referrerpolicy="no-referrer"
     style="max-width: 100%; border-radius: 9999px;"
-    on:error={() => (src = "/img/ui/avatar.svg")}
+    on:error={() => { force_default = true; }}
   />
 {/if}
 {#if field === "displayName"}

@@ -13,7 +13,6 @@ export interface MarkData {
 };
 
 const _signIn = writable<Provider | false | null>(null);
-const _mailToBeChanged = writable<string | null>(null);
 const _deleteUserData = writable<boolean | null>(null);
 const _markCourse = writable<MarkData | null>(null);
 
@@ -25,8 +24,8 @@ type AfterEventCallback = (() => Promise<void>) | (() => void);
  * the processOver flag, i.e. it has finished to process the current event.
  */
 const whenProcessOver = <T>(w: Writable<T|null>, callback: AfterEventCallback) => {
-  let sb: Unsubscriber;
-  sb = w.subscribe((val) => { if (val === null) { sb(); callback(); } });
+  let sb: Unsubscriber | null = null;
+  sb = w.subscribe((val) => { if (val === null) { if (sb) sb(); callback(); } });
 }
 
 function signInWith(provider: Provider, whenDone?: AfterEventCallback) {
@@ -37,11 +36,6 @@ function signOut(whenDone?: AfterEventCallback) {
   if (whenDone) whenProcessOver(_signIn, whenDone);
   _signIn.set(false);
 };
-
-function changeMail(newMail: string, whenDone?: AfterEventCallback) {
-  if (whenDone) whenProcessOver(_mailToBeChanged, whenDone);
-  _mailToBeChanged.set(newMail);
-}
 
 function deleteUserData(whenDone?: AfterEventCallback) {
   if (whenDone) whenProcessOver(_deleteUserData, whenDone);
@@ -82,8 +76,6 @@ const onSignIn = (callback: (provider: Provider) => Promise<void>) =>
   fireCallback(_signIn, callback, v => v ? v : null);
 const onSignOut = (callback: () => Promise<void>) => fireCallback(_signIn, callback, (v) => v ? null: v);
 
-const onMailChange = (callback: (newMail: string) => Promise<void>) => fireCallback(_mailToBeChanged, callback, v => v);
-
 const onUserDataDelete = (callback: () => Promise<void>) => fireCallback(_deleteUserData, callback, v => v);
 
 const onCourseMarked = (callback: (val: MarkData) => Promise<void>) => fireCallback(_markCourse, callback, v => v.isComplete ? v : null);
@@ -91,8 +83,8 @@ const onCourseMarked = (callback: (val: MarkData) => Promise<void>) => fireCallb
 const onCourseUnmarked = (callback: (val: MarkData) => Promise<void>) => fireCallback(_markCourse, callback, v => v.isComplete ? null : v);
 
 export const supabaseSide = { 
-  onSignIn, onSignOut, onMailChange, onUserDataDelete, onCourseMarked, onCourseUnmarked
+  onSignIn, onSignOut, onUserDataDelete, onCourseMarked, onCourseUnmarked
 }
 export const componentsSide = {
-  signInWith, signOut, changeMail, deleteUserData, markCourse, unMarkCourse
+  signInWith, signOut, deleteUserData, markCourse, unMarkCourse
 }

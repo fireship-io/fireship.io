@@ -50,17 +50,18 @@ function emptyWritables() {
   userData.set(null);
   userProgress.set(null);
 }
-async function fetchAndSetWritables(authenticatedUser: SupabaseUser) {
-  const userUid = authenticatedUser.id
-  const userProfileData = await SupabaseModule.fetchUserData(userUid);
-  if (!userProfileData) throw new Error("The user must have a profile data");
-  setUserData(userProfileData);
-  const userProgressData = await SupabaseModule.fetchUserProgressData(userUid);
-  if (!userProgressData) {
-    console.error("Unable to fetch user's progress data");
-    return;
-  };
-  setProgressData(userProgressData);
+async function fetchUserDataAndSetWritables(authenticatedUser: SupabaseUser) {
+  try {
+    const userUid = authenticatedUser.id;
+    const userProfileData = await SupabaseModule.
+      fetchUserProfileData(authenticatedUser);
+    setUserData(userProfileData);
+    const userProgressData = await SupabaseModule.
+      fetchUserProgressData(userUid);
+    setProgressData(userProgressData);
+  } catch(err) {
+    console.error("Error in initial data fetching:\n\t" + err);
+  }
 }
 
 let unsubData: SupabaseModule.CustomUnsubscriber | null = null;
@@ -95,18 +96,20 @@ function stopChannels() {
  */
 async function fetchAndWatchUserRemoteData() {
   // Perform a session refreshing, if needed.
-  const authenticatedUser: SupabaseUser | null = await SupabaseModule.refreshUserSession();
+  const authenticatedUser: SupabaseUser | null = await SupabaseModule.
+    refreshUserSession();
   if (authenticatedUser) {
     startChannels(authenticatedUser);
-    if (!get(userData) || !get(userProgress))
-      await fetchAndSetWritables(authenticatedUser);
+    // if (!get(userData) || !get(userProgress))
+    //   await fetchAndSetWritables(authenticatedUser);
   }
   
   const { data: { subscription: subscription } } = SupabaseModule.
   onAuthStateChange(async (_event, session) => {
     const authenticatedUser = session?.user;
     if (authenticatedUser) {
-      await fetchAndSetWritables(authenticatedUser);
+      if (_event === "INITIAL_SESSION")
+        await fetchUserDataAndSetWritables(authenticatedUser);
       startChannels(authenticatedUser);
     } else {
       emptyWritables();

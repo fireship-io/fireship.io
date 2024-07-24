@@ -1,6 +1,6 @@
 import { supabaseSide } from "../../stores/supabase-vars";
 import {
-  changerUserEmail, deleteUserData, markComplete, markIncomplete,
+  deleteUserData, markComplete, markIncomplete,
   signInWithEirbConnect, signInWithGithub, supabaseSignOut
 } from "./supabase";
 import { toast } from "../../stores/";
@@ -14,29 +14,6 @@ export function listenAllSupabaseEvents(): Unsubscriber[] {
   }),
 
   supabaseSide.onSignOut(async () => { await supabaseSignOut(); }),
-
-  supabaseSide.onMailChange(async (newMail) => {
-    const res = await changerUserEmail(newMail);
-    const changed = !(!res || res.error);
-    if (changed) {
-      await supabaseSignOut();
-      toast.set({
-        message: "Email updated, please sign back in",
-        type: "success",
-      });
-    } else if (!res) {
-      toast.set({
-        message: "The mail has not be updated",
-        type: "info"
-      });
-    } else {
-      console.error(res.error);
-      toast.set({
-        message: "An error has occured with the request.",
-        type: "error"
-      });
-    }
-  }),
 
   supabaseSide.onUserDataDelete(async () => {
     const res = await deleteUserData();
