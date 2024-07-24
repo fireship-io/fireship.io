@@ -72,24 +72,24 @@ async function loginHandler(promise: Promise<OAuthResponse>) {
 // Select user data
 
 async function createUserProfile(user: User) {
-  const { error, data } = await supabaseClient.from("users").insert([createProfileFromGithubMetadata(user)]).select();
+  const { error, data } = await supabaseClient.from("users").insert(
+    [createProfileFromGithubMetadata(user)]).select();
   if (error) {
-    toast.set({
-      message: "Error on user profile creation.",
-      type: "error"
-    });
-    throw new Error(error.message);
+    throw new Error("Error on user profile creation: " + error.message);
   }
-  if (!data || !data.length) throw new Error("The new profile row has not be returned.");
+  if (data === null || data.length === 0)
+    throw new Error("The new profile row has not be returned.");
   return data[0];
 }
 
 export async function fetchUserProfileData(user: User) {
-  const { data, error } = await supabaseClient.from('users').select().eq("uid", user.id);
+  const { data, error } = await supabaseClient.from('users').select().
+    eq("uid", user.id);
   if (error) {
     throw new Error("unable to correctly fetch user data: " + error.message)
   };
-  if (!data || !data.length)
+  if (data === null || data.length === 0)
+    // TODO: make this request run once, not twice, as observed
     return await createUserProfile(user);
   return data[0];
 }
@@ -115,22 +115,6 @@ function createProfileFromGithubMetadata(user: User) {
     displayName: githubMetadata["full_name"]
   }
 }
-
-// const createUserIfDoesNotExist: AuthCallback = async (_, session) => {
-//   async function userExist(userUid: string): Promise<boolean> {
-//     const { data, error } = await supabaseClient.from('users').select().eq("uid", userUid);
-//     // TODO: review the error handling
-//     if (error) console.error("ça n'a pas marché:", error.message);
-//     return data !== null && data.length > 0;
-//   }
-//   const userUid = session?.user.id;
-//   if (!userUid || await userExist(userUid)) return;
-//   const { error } = await supabaseClient.from('users').insert(
-//     createProfileFromGithubMetadata(session)
-//   );
-//     // TODO: review the error handling
-//   if (error) console.error("L'authentification n'a pas marché:", error.message);
-// };
 
 export const onAuthStateChange = (callback: AuthCallback) =>
 supabaseClient.auth.onAuthStateChange(async (event, session) => { 

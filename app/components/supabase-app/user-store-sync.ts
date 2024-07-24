@@ -68,10 +68,12 @@ let unsubData: SupabaseModule.CustomUnsubscriber | null = null;
 let unsubProgress: SupabaseModule.CustomUnsubscriber | null = null;
 
 function startChannels(authenticatedUser: SupabaseUser) {
+  if (unsubData === null)
   unsubData = SupabaseModule.onUserProfileDataChange(authenticatedUser, (payload) => {
     const data = payload.new;
     if (isNotEmpty(data)) setUserData(data);
   });
+  if (unsubProgress === null)
   unsubProgress = SupabaseModule.onUserProgressDataChange(authenticatedUser, (payload) => {
     if (payload.eventType == "DELETE")
       setProgressData(payload.old as SupabaseModule.ProgressDataType, true);
@@ -100,17 +102,17 @@ async function fetchAndWatchUserRemoteData() {
     refreshUserSession();
   if (authenticatedUser) {
     startChannels(authenticatedUser);
-    // if (!get(userData) || !get(userProgress))
-    //   await fetchAndSetWritables(authenticatedUser);
   }
   
   const { data: { subscription: subscription } } = SupabaseModule.
   onAuthStateChange(async (_event, session) => {
     const authenticatedUser = session?.user;
     if (authenticatedUser) {
-      if (_event === "INITIAL_SESSION")
-        await fetchUserDataAndSetWritables(authenticatedUser);
       startChannels(authenticatedUser);
+      if (_event === "INITIAL_SESSION" && (
+        get(userData) === null ||  get(userProgress) === null
+      ))
+        await fetchUserDataAndSetWritables(authenticatedUser);
     } else {
       emptyWritables();
       stopChannels();
