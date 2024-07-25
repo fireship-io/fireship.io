@@ -4,7 +4,7 @@ description = "Comment définir l'auteur d'un cours"
 weight = 6
 lastmod = {{ .Date }}
 emoji = "🌟"
-video_length = "40s"
+video_length = "1m15"
 draft = true
 +++
 

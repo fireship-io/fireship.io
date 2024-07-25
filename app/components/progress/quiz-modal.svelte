@@ -6,7 +6,7 @@
 
   export let answer: string;
   export let options: string; // Format foo:bar:baz
-  export let prize: number; // /img/prizes/{courseId}/{n}.png
+  export let prize: number; // /courses/{courseId}/img/prizes/{n}.webp
   const optionsList = options.split(":");
   let selected: string | null;
   let isComplete = false;
@@ -28,6 +28,7 @@
   }
 
   function onWrong() {
+    // TODO: make this definable outside the component (e.g. in the ./data folder)
     const arr = [
       "lol, try Again",
       "Yeah, that ain't it",
@@ -47,6 +48,7 @@
 
   async function onCorrect() {
     const confetti = (await import("../../util/confetti")).default;
+    // TODO: same thing here
     const arr = [
       "well done sir",
       "that's legit",
