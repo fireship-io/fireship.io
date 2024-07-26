@@ -1,6 +1,6 @@
 ---
 title: Git
-description: Git is a distributed version control system for managing changes between files
+description: Git est un système de contrôle de version pour gérer les changements entre des fichiers.
 link: https://git-scm.com/
 course: Git & GitHub Full Course
 course_link: /courses/git
