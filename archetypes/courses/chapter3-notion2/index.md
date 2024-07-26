@@ -102,7 +102,7 @@ Le bloc de code ci-dessous à insérer dans le markdown produit le rendu après.
 
 {{< highlight markdown >}}
 {{%/* tabs/main */%}}
-  {{%/* tabs/item open="true" title="Item1" */%}}
+  {{%/* tabs/item title="Item1" */%}}
 
 ## Voilà mon item
 Cette section va être mise en forme comme il faut.
@@ -120,7 +120,7 @@ avec l'autre bloc.
 
 
 {{% tabs/main %}}
-  {{% tabs/item open="true" title="Item1" %}}
+  {{% tabs/item title="Item1" %}}
 
 ## Voilà mon item
 Cette section va être mise en forme comme il faut.

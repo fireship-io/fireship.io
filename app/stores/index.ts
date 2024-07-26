@@ -6,3 +6,4 @@ export * from "./settings";
 export * from "./toast";
 export * from "./user";
 export * from "./preferred-theme";
+export * from "./tabs";
