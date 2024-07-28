@@ -1,6 +1,6 @@
 {
   "name": "opeirb-classroom",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Demo website for free e-learning in dev school.",
   "main": "app/main.ts",
   "type": "module",
