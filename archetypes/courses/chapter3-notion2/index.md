@@ -139,3 +139,35 @@ Voici un bloc parlant de programmer en C sur VSCode.
 
   {{%/ tabs/item %}}
 {{%/ tabs/main %}}
+
+## Définissez plus loin d'autres onglets switchables
+
+Les choses sont bien faites : ça se synchronise. Notez que si vous n'avez pas
+défini de contenu pour chaque option, un bloc vide va simplement être affiché.
+
+
+{{% tabs/main keys="editor:language" %}}
+  {{% tabs/item title="VSCode:Python" %}}
+
+## Codez en Python avec VSCode
+
+Voici un bloc parlant de programmer en C sur VSCode.
+
+  {{%/ tabs/item %}}
+  {{% tabs/item title="Neovim:C" %}}
+
+## Codez en `C` avec Neovim
+
+Notez qu'on utilise des `%` et non des `<>` afin que tous le Markdown
+entre les balises du shortcode `tabs/item` soient d'abord
+transformé en HTML.
+
+  {{%/ tabs/item %}}
+  {{% tabs/item title="Neovim:Python" %}}
+
+## Codez en Python avec Neovim
+
+Voici un bloc parlant de programmer en C sur Neovim.
+
+  {{%/ tabs/item %}}
+{{%/ tabs/main %}}

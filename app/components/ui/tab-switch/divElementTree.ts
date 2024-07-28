@@ -39,7 +39,7 @@ export function titleCommasToTitleSets(titleCommas: string[]): [
       throw new Error("Invalid tab key list");
     return tabKeys.map((k, tabSetIdx) => {
       const tabIndex = titleMaps.get(tabSetIdx)!.get(k);
-      if (tabIndex === undefined) throw new Error("Invalid given tab string key: " + k);
+      if (tabIndex === undefined) return titleMaps.size; // One key does not exist in the tab switch, then return an invalid index
       return tabIndex;
     });
   }
@@ -106,16 +106,19 @@ export function setTab(tabIndices: List<number>, tabValue: HTMLDivElement, tabs:
   return toBeReturned;
 }
 
+/** Return null if a tab index is invalid (can happens if another tab switch
+ * with more items exists)
+ */
 export function getTab(tabIndices: List<number>, tabTree: TabHTMLElementTree): HTMLDivElement | null {
   if (tabIndices.isEmpty()) throw new Error("Not enough long tab key list");
   const tabIndex = tabIndices.first()!;
   if (isLastList(tabTree)) {
     const element = tabTree.get(tabIndex);
-    if (element === undefined) throw new Error("Invalid tab index");
+    if (element === undefined) return null;
     return element;
   }
   const nextTabTree = tabTree.get(tabIndex);
-  if (nextTabTree === undefined) throw new Error("Invalid tab index");
+  if (nextTabTree === undefined) return null;
   const nextTabIndices = tabIndices.shift();
   return getTab(nextTabIndices, nextTabTree);
 }

@@ -11,7 +11,6 @@ import * as ElementTreeModule from "./divElementTree";
 
 export let tabSetKey: string;
 
-// TODO: check if this is not an empty list;
 const tabSetKeys = List(tabSetKey.split(":"));
 if (tabSetKeys.isEmpty())
   throw new Error("tabSetKeys is not correctly initialised");
@@ -49,10 +48,10 @@ const processSlotContent: Action<HTMLDivElement> = (node) => {
   onMount(() => { node.remove() });
 }
 
-function setChosenTabIndex(tabSetKey: string, chosenIndex: number) {
+function setChosenTabIndex(tabSetKey: string, tabTitle: string) {
   chosenTabs.update(v => {
     if (!v) throw new Error("The variable cannot be empty");
-    v[tabSetKey] = chosenIndex;
+    v[tabSetKey] = tabTitle;
     return v;
   })
 }
@@ -62,9 +61,9 @@ onMount(() => {
   const initialChosenTabs = get(chosenTabs);
   const toStoreValues = tabSetKeys.reduce((acc, tabSetKey) => {
     if (!initialChosenTabs || initialChosenTabs[tabSetKey] === undefined)
-      return acc.set(tabSetKey, 0);
+      return acc.set(tabSetKey, "");
     return acc
-  }, Map<string, number>());
+  }, Map<string, string>());
   if (!toStoreValues.isEmpty()) chosenTabs.update((v) => ({
     ...v, ...toStoreValues.toObject()
   }));
@@ -72,8 +71,8 @@ onMount(() => {
 
 const defaultEmptyDiv = document.createElement("div");
 
-const tabIndices = derived(chosenTabs, (ct) => tabSetKeys.map(k =>
-  ct ? (ct[k]??0): 0
+const selectedTabTitles = derived(chosenTabs, (ct) => tabSetKeys.map(k =>
+  ct ? (ct[k]??""): ""
 ));
 
 </script>
@@ -87,14 +86,14 @@ const tabIndices = derived(chosenTabs, (ct) => tabSetKeys.map(k =>
   {#if tabTree}
   {#each buttonTitles as buttonTitleSet, tabSetIdx}
   <ul class="choices">
-      {#each buttonTitleSet as buttonTitle, idx}
+      {#each buttonTitleSet as buttonTitle}
         <button 
-            class={($tabIndices.get(tabSetIdx)===idx)?
+            class={($selectedTabTitles.get(tabSetIdx)===buttonTitle)?
               "inactive-button":"active-button"}
-            disabled={($tabIndices.get(tabSetIdx)===idx)}
+            disabled={($selectedTabTitles.get(tabSetIdx)===buttonTitle)}
             on:click={() => setChosenTabIndex(
               tabSetKeys.get(tabSetIdx)??"never",
-              idx
+              buttonTitle
             )}
           >{buttonTitle}</button>
       {/each}
@@ -102,7 +101,9 @@ const tabIndices = derived(chosenTabs, (ct) => tabSetKeys.map(k =>
   {/each}
   <div class="content-class">
       {@html (
-        ElementTreeModule.getTab($tabIndices, tabTree)??defaultEmptyDiv
+        ElementTreeModule.getTab(
+          tabTitlesToTabIndices($selectedTabTitles), tabTree
+        )??defaultEmptyDiv
       ).outerHTML}
   </div>
   {/if}
