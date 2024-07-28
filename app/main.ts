@@ -52,8 +52,7 @@ export * from "./components/ui/discord-count.svelte";
 export * from "./components/ui/scroll-up.svelte";
 export * from "./components/ui/hi-mom.svelte";
 export * from "./components/ui/dark-mode.svelte";
-export * from "./components/ui/tab-switch.svelte"
-export * from "./components/ui/tab-item.svelte";
+export * from "./components/ui/tab-switch";
 
 // Search
 export * from "./components/search/algolia-search.svelte";

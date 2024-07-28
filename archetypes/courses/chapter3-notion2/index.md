@@ -101,36 +101,41 @@ Neovim).
 Le bloc de code ci-dessous à insérer dans le markdown produit le rendu après.
 
 {{< highlight markdown >}}
-{{%/* tabs/main */%}}
-  {{%/* tabs/item title="Item1" */%}}
+{{%/* tabs/main keys="editor:language"*/%}}
+  {{%/* tabs/item title="Neovim:C" */%}}
 
-## Voilà mon item
-Cette section va être mise en forme comme il faut.
+## Codez en `C` avec Neovim
+
+Notez qu'on utilise des `%` et non des `<>` afin que tout le Markdown
+entre les balises du shortcode `tabs/item` soit d'abord
+transformé en HTML.
 
   {{%/*/ tabs/item */%}}
-  {{%/* tabs/item title="Item2" */%}}
+  {{%/* tabs/item title="VSCode:C" */%}}
 
-## Voilà mon second item
-Ce bloc de contenu aussi, mais il ne pourra pas être affiché simulatanément
-avec l'autre bloc.
+## Codez en C avec VSCode
+
+Voici un bloc parlant de programmer en C sur VSCode.
 
   {{%/*/ tabs/item */%}}
 {{%/*/ tabs/main */%}}
 {{</ highlight >}}
 
+{{% tabs/main keys="editor:language" %}}
+  {{% tabs/item title="Neovim:C" %}}
 
-{{% tabs/main %}}
-  {{% tabs/item title="Item1" %}}
+## Codez en `C` avec Neovim
 
-## Voilà mon item
-Cette section va être mise en forme comme il faut.
+Notez qu'on utilise des `%` et non des `<>` afin que tout le Markdown
+entre les balises du shortcode `tabs/item` soit d'abord
+transformé en HTML.
 
   {{%/ tabs/item %}}
-  {{% tabs/item title="Item2" %}}
+  {{% tabs/item title="VSCode:C" %}}
 
-## Voilà mon second item
-Ce bloc de contenu aussi, mais il ne pourra pas être affiché simulatanément
-avec l'autre bloc.
+## Codez en C avec VSCode
+
+Voici un bloc parlant de programmer en C sur VSCode.
 
   {{%/ tabs/item %}}
 {{%/ tabs/main %}}

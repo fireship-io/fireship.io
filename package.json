@@ -15,7 +15,8 @@
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json --diagnostic-sources \"js,svelte\"",
     "algolia": "atomic-algolia",
-    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
+    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting",
+    "test": "vitest"
   },
   "keywords": [
     "static",
@@ -51,8 +52,6 @@
     "firebase": "^10.12.0",
     "firebase-tools": "^13.9.0",
     "flamethrower-router": "^0.0.0-meme.12",
-    "flowbite": "^2.4.1",
-    "flowbite-svelte": "^0.46.15",
     "js-confetti": "^0.10.2",
     "lodash": "^4.17.21",
     "postcss": "^8.4.38",
@@ -68,6 +67,7 @@
     "type-fest": "^4.21.0",
     "typescript": "^5.0.0",
     "vite": "^5.3.3",
+    "vitest": "^2.0.4",
     "youtube-player": "^5.5.2"
   }
 }

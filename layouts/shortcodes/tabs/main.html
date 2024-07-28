@@ -1,5 +1,5 @@
 {{ if strings.ContainsNonSpace .Inner }}
-<tab-switch>
+<tab-switch tabSetKey={{.Get "keys"}}>
   {{ .Inner }}
 </tab-switch>
 {{ end }}
