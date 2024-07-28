@@ -4,7 +4,7 @@ description = """Comment le système de progression marche."""
 weight = 9
 lastmod = {{ .Date }}
 emoji = "✏️"
-video_length = "40s"
+reading_length = "40s"
 quiz = true
 draft = true
 +++

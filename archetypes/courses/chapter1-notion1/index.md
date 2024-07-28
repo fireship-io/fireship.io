@@ -5,7 +5,7 @@ weight = 2
 lastmod = {{ .Date }}
 emoji = "🔥"
 chapter_start = "Chapitre 1"
-video_length = "15s"
+reading_length = "15s"
 draft = true
 +++
 

@@ -4,7 +4,7 @@ description = "Comment gérer les tags pour le référencement."
 weight = 4
 lastmod = {{ .Date }}
 emoji = "🏷️"
-video_length = "40s"
+reading_length = "40s"
 draft = true
 +++
 Dans le fichier `_index.md` il est conseillé de préciser les paramètres `tags`

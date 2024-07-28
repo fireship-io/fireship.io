@@ -5,7 +5,7 @@ weight = 11
 chapter_start = "Sources"
 lastmod = 2024-07-18T11:21:40+02:00
 emoji = "📕"
-video_length = "40s"
+reading_length = "40s"
 draft = true
 +++
 

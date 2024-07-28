@@ -5,7 +5,7 @@ weight = 10
 chapter_start = "Conclusion"
 lastmod = {{ .Date }}
 emoji = "📡"
-video_length = "40s"
+reading_length = "40s"
 draft = true
 +++
 

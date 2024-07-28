@@ -4,7 +4,7 @@ description = """Ajoutez une ou plusieurs cheatsheet(s) à votre tuto."""
 weight = 7
 lastmod = {{ .Date }}
 emoji = "🧠"
-video_length = "15s"
+reading_length = "15s"
 chapter_start = "Chapitre 3"
 draft = true
 +++

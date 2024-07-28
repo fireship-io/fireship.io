@@ -38,9 +38,10 @@
             {{ if eq $activeRelPermalink .RelPermalink }}
             <div id="activeChapter" class="ml-5">🔥</div>
             {{ else }}
-            <span class="text-xs bg-black bg-opacity-10 py-1 px-2"
-              >{{ .Params.video_length }}</span
-            >
+              {{ if .Params.reading_length }}
+              <span class="text-xs bg-black bg-opacity-10 py-1 px-2"
+                >{{ .Params.reading_length }}</span>
+              {{ end }}
             {{ end }}
           </div>
         </a>

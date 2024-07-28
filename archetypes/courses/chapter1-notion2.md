@@ -4,7 +4,7 @@ description = "Où définit-on les informations du tuto rendues dans les pages d
 weight = 3
 lastmod = {{ .Date }}
 emoji = "🌟"
-video_length = "40s"
+reading_length = "40s"
 draft = true
 +++
 

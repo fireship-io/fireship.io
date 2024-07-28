@@ -5,7 +5,7 @@ peuvent être affichés."""
 weight = 5
 lastmod = {{ .Date }}
 emoji = "⚙️"
-video_length = "15s"
+reading_length = "15s"
 chapter_start = "Chapitre 2"
 draft = true
 +++

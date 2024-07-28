@@ -5,7 +5,7 @@ weight = 1
 lastmod = {{ .Date }}
 youtube = "dQw4w9WgXcQ"
 emoji = "👶"
-video_length = "30s"
+reading_length = "30s"
 draft = true
 +++
 
