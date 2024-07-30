@@ -31,13 +31,11 @@ node server.js
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-import { Configuration, OpenAIApi } from 'openai';
+// Current OpenAI API release will look for API key in your .env file.
+// make sure the KEY variable is named OPENAI_API_KEY="your-key-here"
+import OpenAI from 'openai';
 
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI,
-});
-
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI();
 
 import express from 'express';
 import cors from 'cors';
@@ -49,14 +47,14 @@ app.use(express.json());
 app.post('/dream', async (req, res) => {
     const prompt = req.body.prompt;
 
-    const aiResponse = await openai.createImage({
-      prompt,
-      n: 1,
-      size: '1024x1024',
+    const aiResponse = await openai.images.generate({
+        prompt,
+        n: 1,
+        size: '1024x1024',
     });
 
-    const image = aiResponse.data.data[0].url;
-    res.send({ image });
+    const image = aiResponse.data[0].url;
+    res.send({ image});
 });
 
 app.listen(8080, () => console.log('make art on http://localhost:8080/dream'));
