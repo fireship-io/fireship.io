@@ -34,6 +34,7 @@ Handle form submissions and automatically re-render the UI without a full page l
 ```tsx
 import kv from "@vercel/kv";
 import { revalidatePath } from "next/cache";
+import styles from "./page.module.scss";
 
 interface Dog {
   name: string;
