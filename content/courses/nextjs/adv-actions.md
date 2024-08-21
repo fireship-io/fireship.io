@@ -70,7 +70,7 @@ export default async function DogEditPage({
       <div className={styles.cardBody}>
         <h2>Edit {dog?.name}</h2>
 
-        <form action={myAction}>
+        <form action={upDog}>
           <label>Name</label>
           <input name="title" type="text" defaultValue={dog?.name} />
           <label>Image</label>
@@ -89,7 +89,7 @@ export default async function DogEditPage({
 
 Create a skeleton UI in the `loading.tsx` file. 
 
-{{< file "react" "loading.tsx" >}}
+{{< file "react" "dogs/[id]/edit/loading.tsx" >}}
 ```tsx
 import styles from "./page.module.scss";
 
