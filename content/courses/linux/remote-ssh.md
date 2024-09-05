@@ -9,7 +9,7 @@ emoji: 🗝️
 video_length: 2:35
 ---
 
-## Connect your your VPS
+## Connect to your VPS
 
 ```bash
 ssh root@your.ip.address
