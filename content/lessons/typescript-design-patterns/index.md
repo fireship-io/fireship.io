@@ -104,8 +104,8 @@ class ButtonFactory {
 
 // With Factory
 const factory = new ButtonFactory();
-const btn1 = factory.createButton(os);
-const btn2 = factory.createButton(os);
+const btn1 = factory.createButton('ios');
+const btn2 = factory.createButton('android');
 ```
 ### Builder
 
