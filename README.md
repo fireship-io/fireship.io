@@ -53,3 +53,6 @@ Now use it in anywhere in your HTML or Markdown.
 - `npm run dev`: Runs components in isolation. Serves `app/index.html` as a playground for components. 
 - `npm run hugo`: Only runs static site. 
 - `npm run build`: Build for production
+ 
+
+ A lot of new improvements needed , for sure
