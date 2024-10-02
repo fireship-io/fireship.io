@@ -48,7 +48,7 @@ My primary goal is to get you up and running with TensorFlow.js on the web. If y
 
 First, we need an app to serve on the web. Naturally, I will be using the [Angular CLI](https://cli.angular.io/) to generate an app, but you can use the TensorFlow code in this lesson with any JavaScript web app. 
 
-<p class="info">I am intentionally leaving out the code for the chart and drawable canvas directive that you see in the video, but you can find it in the [source code](https://github.com/AngularFirebase/97-tensorflowjs-quick-start/blob/master/src/app/drawable.directive.ts). </p> 
+<p class="info">I am intentionally leaving out the code for the chart and drawable canvas directive that you see in the video, but you can find it in the <a href="https://github.com/AngularFirebase/97-tensorflowjs-quick-start/blob/master/src/app/drawable.directive.ts">source code</a>.</p> 
 
 
 ### Step 1 - Generate an Angular App
