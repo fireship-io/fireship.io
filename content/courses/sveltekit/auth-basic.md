@@ -32,3 +32,9 @@ video_length: 2:00
 
 <button class="btn btn-primary" on:click={signInWithGoogle}>Sign in with Google</button>
 ```
+
+## Svelte 5 Version
+
+```svelte
+<button class="btn btn-primary" onclick={signInWithGoogle}>Sign in with Google</button>
+```

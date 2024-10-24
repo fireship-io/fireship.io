@@ -176,3 +176,14 @@ video_length: 2:29
   </main>
   
 ```
+
+
+## Svelte 5 Version
+
+```ts
+let showForm = $state(false);
+
+let urlIsValid = $derived($formData.url.match(/^(ftp|http|https):\/\/[^ "]+$/));
+let titleIsValid = $derived($formData.title.length < 20 && $formData.title.length > 0);
+let formIsValid = $derived(urlIsValid && titleIsValid);
+```

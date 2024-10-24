@@ -82,3 +82,20 @@ export const actions = {
   </form>
 </main>
 ```
+
+## Svelte 5 Changes
+
+```svelte
+<script lang="ts">
+    import type { PageData } from "./$types";
+    import { page } from '$app/stores';
+    import { enhance } from "$app/forms";
+
+  
+  interface Props {
+    data: PageData;
+  }
+
+  let { data }: Props = $props();
+</script>
+```

@@ -78,3 +78,16 @@ export const user = userStore();
   <button class="btn btn-primary" on:click={signInWithGoogle}>Sign in with Google</button>
 {/if}
 ```
+
+
+## Svelte 5 Version
+
+```svelte
+{#if $user}
+  <h2 class="card-title">Welcome, {$user.displayName}</h2>
+  <p class="text-center text-success">You are logged in</p>
+  <button class="btn btn-warning" onclick={() => signOut(auth)}>Sign out</button>
+{:else}
+  <button class="btn btn-primary" onclick={signInWithGoogle}>Sign in with Google</button>
+{/if}
+```

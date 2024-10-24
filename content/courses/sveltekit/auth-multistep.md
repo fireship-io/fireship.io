@@ -58,3 +58,19 @@ chapter_start: User Management
   </div>
 </main>
 ```
+
+## Svelte 5 Version
+
+```svelte
+<script lang="ts">
+   interface Props {
+      children?: import('svelte').Snippet;
+   }
+
+   let { children }: Props = $props();
+</script>
+
+<div class="min-h-screen flex flex-col">
+    {@render children?.()}
+</div>
+```

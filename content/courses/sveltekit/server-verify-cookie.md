@@ -33,7 +33,7 @@ export const load = (async ({ cookies }) => {
   } catch (e) {
       console.log(e)
       // redirect(301, '/login');
-      throw error(401, 'Unauthorized request!')
+      error(401, 'Unauthorized request!')
   }
 }) satisfies PageServerLoad;
 ```
