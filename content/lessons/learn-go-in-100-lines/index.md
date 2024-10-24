@@ -74,7 +74,7 @@ Another option is to use the <code>go</code> command with the <code>run</code> s
 {{< file "terminal" "command line" >}}
 ```text
 
-$ go run helloworld.go
+$ go run hello_world.go
 
 # output
 Hello, world
