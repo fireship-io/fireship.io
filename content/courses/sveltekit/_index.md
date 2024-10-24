@@ -1,5 +1,5 @@
 ---
-lastmod: 2023-06-27T11:11:30-09:00
+lastmod: 2024-10-23T11:11:30-09:00
 title: SvelteKit Full Course
 description: Learn how to build awesome full-stack apps with SvelteKit
 weight: 0
