@@ -26,4 +26,3 @@ console.log(foo); // 'bar'
 const foo = 0 ?? 'bar';
 console.log(foo); // 0
 ```
-```
