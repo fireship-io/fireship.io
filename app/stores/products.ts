@@ -1,4 +1,9 @@
 export const products = {
+    'deno': {
+        id: 'deno',
+        price: 'price_1QIkM0BF7AptWZlctgYjiOTL',
+        amount: 20,
+    },
     'linux': {
         id: 'linux',
         price: 'price_1PY9DmBF7AptWZlcpkAbgZlP',
