@@ -4,7 +4,7 @@ title: Deno Full Course
 description: Master TypeScript and Backend WebDev with Deno
 weight: 0
 type: courses
-vimeo: 840473303
+vimeo: 1027549123
 author: Jeff Delaney
 tags: 
     - typescript
