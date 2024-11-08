@@ -4,9 +4,9 @@ description: How to deploy a Deno app
 weight: 52
 lastmod: 2024-11-05T11:11:30-09:00
 draft: false
-vimeo: 
+vimeo: 1027787685
 emoji: 🚀
-video_length: 3:38
+video_length: 4:36
 ---
 
 
