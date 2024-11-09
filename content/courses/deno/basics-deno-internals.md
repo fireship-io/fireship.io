@@ -8,8 +8,13 @@ vimeo: 1027305709
 emoji: 🦕
 video_length: 3:25
 chapter_start: Welcome to Deno
-free: true
+quiz: true
 ---
+
+<quiz-modal options="crankshaft:combustion chamber:flywheel:just-in-time compiler" answer="just-in-time compiler" prize="0">
+  <h5>Which is a feature of Google's V8 engine that make JavaScript fast?</h5>
+</quiz-modal>
+
 
 ## How Deno Works
 

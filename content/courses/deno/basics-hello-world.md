@@ -8,7 +8,13 @@ vimeo: 1027305898
 emoji: 🦖
 video_length: 3:47
 free: true
+quiz: true
 ---
+
+<quiz-modal options="deno upgrade:deno up:nvm:deno version manager" answer="deno upgrade" prize="1">
+  <h5>How do you update your machine with the lastest version of Deno?</h5>
+</quiz-modal>
+
 
 ## Course Resources
 

@@ -8,8 +8,12 @@ vimeo: 1027462404
 emoji: 💎
 video_length: 9:04
 free: true
+quiz: true
 ---
 
+<quiz-modal options="--ts:--force:--check:--tsc" answer="--check" prize="2">
+  <h5>Which flag is used to force type checking in Deno?</h5>
+</quiz-modal>
 
 
 ## Basic Type Checking

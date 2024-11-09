@@ -8,7 +8,13 @@ vimeo: 1027305878
 emoji: 🚛
 video_length: 2:04
 free: true
+quiz: true
 ---
+
+<quiz-modal options="import.meta.url:import.meta.main:import.meta.dirname:import.meta.resolve" answer="import.meta.dirname" prize="4">
+  <h5>How would access absolute path of the directory containing the current module?</h5>
+</quiz-modal>
+
 
 ## Meta Main Example
 

@@ -7,7 +7,13 @@ draft: false
 vimeo: 1027462507
 emoji: 🤐
 video_length: 2:29
+quiz: true
 ---
+
+<quiz-modal options="--exclude=./secrets:--deny-read=./secrets:--deny-write=./secrets:./secrets=false" answer="--deny-write=./secrets" prize="7">
+  <h5>How would you exclude the "/secrets" directory from being written to on your server?</h5>
+</quiz-modal>
+
 
 
 ## Basic Security

@@ -7,7 +7,13 @@ draft: false
 vimeo: 1027462516
 emoji: 🔬
 video_length: 5:18
+quiz: true
 ---
+
+<quiz-modal options="true:false" answer="false" prize="3">
+  <h5>In Deno, you can only write tests in a dedicated file like, main_test.ts</h5>
+</quiz-modal>
+
 
 ## Deno Testing Examples
 

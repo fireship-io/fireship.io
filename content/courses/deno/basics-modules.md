@@ -7,7 +7,12 @@ draft: false
 vimeo: 1027462441
 emoji: 📦
 video_length: 4:58
+quiz: true
 ---
+
+<quiz-modal options="NPM:node_modules:JSR:silk road" answer="JSR" prize="5">
+  <h5>What is the preferred package registry for Deno projects?</h5>
+</quiz-modal>
 
 
 ## Create your Own ES Modules

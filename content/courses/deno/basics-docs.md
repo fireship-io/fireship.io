@@ -7,8 +7,12 @@ draft: false
 vimeo: 1027305856
 emoji: 📑
 video_length: 1:26
+quiz: true
 ---
 
+<quiz-modal options="--html:--xml:--json" answer="--xml" prize="6">
+  <h5>Which format is NOT supported by Deno doc? </h5>
+</quiz-modal>
 
 
 ## Generate Documentation for TS Code
