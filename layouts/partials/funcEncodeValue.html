@@ -1,0 +1,14 @@
+
+{{/* Initialize variables */}}
+
+{{ $salt1 := .path | base64Encode }}
+
+{{ $value := .value }}
+{{ $salt2 := partial "funcGetSalt" . }}
+
+{{/* First base64 encode */}}
+{{ $encoded := $value | base64Encode }}
+
+{{/* Add different salts at start and end */}}
+{{ $withSalt := printf "%s%s%s" $salt1 $encoded $salt2 }}
+{{ return ($withSalt | base64Encode) }}
