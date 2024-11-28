@@ -45,7 +45,7 @@ emojiList = ['like', 'love', 'wow', 'haha', 'sad', 'angry']
 
 ## Data Modeling
 
-<p>In the database, the the `userId` will be the key and the index integer will be the value for keeping track of reactions, with each key-value pair nested under the corresponding `itemId`. </p>
+<p>In the database, the `userId` will be the key and the index integer will be the value for keeping track of reactions, with each key-value pair nested under the corresponding `itemId`. </p>
 
 ```
 reactions
@@ -196,7 +196,7 @@ First, there needs to be some type of parent component that can be reacted to, w
 
 <p>The component HTML will display the reaction options in a tooltip, just like Facebook. A `showEmojis` boolean variable is toggled with the `mouseenter` and `mouseleave` events. </p>
 
-<p>From there, we loop over the the emojis, using `*ngFor` to extract both the value and the index of the array. Each emoji will trigger the `react(i)` function with its index number on click. </p>
+<p>From there, we loop over the emojis, using `*ngFor` to extract both the value and the index of the array. Each emoji will trigger the `react(i)` function with its index number on click. </p>
 
 <p>Next, we replicate the like text button and notice `userReaction != null`. This statement is used because 0 will evaluate to false, which corresponds to the like action. </p>
 
@@ -235,7 +235,7 @@ First, there needs to be some type of parent component that can be reacted to, w
 
 ## SCSS Styles
 
-<p>Here is the SCSS used in this lesson. It’s just a rough start, but I wanted to include include it for completeness. </p>
+<p>Here is the SCSS used in this lesson. It’s just a rough start, but I wanted to include it for completeness. </p>
 
 ```scss
 .wrapper {

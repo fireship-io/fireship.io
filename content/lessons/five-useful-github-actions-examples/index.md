@@ -1,10 +1,10 @@
 ---
-title: Five Useful Github Actions Examples
+title: Five Useful GitHub Actions Examples
 lastmod: 2020-03-13T09:26:48-07:00
 publishdate: 2020-03-13T09:26:48-07:00
 author: Jeff Delaney
 draft: false
-description: Five ways to automate your development process with Github Actions
+description: Five ways to automate your development process with GitHub Actions
 tags: 
     - github
 
@@ -20,7 +20,7 @@ github: https://github.com/fireship-io/225-github-actions-demo
 #    rxdart: 0.20
 ---
 
-Github Actions make it easy to roll out a [wide variety](https://github.com/sdras/awesome-actions) of DevOps automation tasks. The following lesson provides five examples of CI/CD and automation using [Github Actions](https://github.com/features/actions). 
+GitHub Actions make it easy to roll out a [wide variety](https://github.com/sdras/awesome-actions) of DevOps automation tasks. The following lesson provides five examples of CI/CD and automation using [GitHub Actions](https://github.com/features/actions). 
 
 ## Example 1: Continuous Integration
 
@@ -55,12 +55,12 @@ jobs:
 
 Continuous *Deployment* (CD) automatically releases new production code to users. It is the step that happens after new code has been integrated. 
 
-See the full [Firebase Deployment with Github Actions Guide](/snippets/github-actions-deploy-angular-to-firebase-hosting/) .
+See the full [Firebase Deployment with GitHub Actions Guide](/snippets/github-actions-deploy-angular-to-firebase-hosting/) .
 
 
 ## Example 3: Publish Package to NPM on Release
 
-Do you maintain an open source package? It can be tedious to re-publish your package after creating a new release. Use the next workflow to automatically publish a package to NPM or Github Package Registry. 
+Do you maintain an open source package? It can be tedious to re-publish your package after creating a new release. Use the next workflow to automatically publish a package to NPM or GitHub Package Registry. 
 
 ### Workflow
 
@@ -119,7 +119,7 @@ jobs:
 
 ## Example 4: Send Email or Chat Messages
 
-Yet another powerful use-case is to post data from Github to your favorite chat or email service, like Slack, Discord, or Twilio SendGrid. 
+Yet another powerful use-case is to post data from GitHub to your favorite chat or email service, like Slack, Discord, or Twilio SendGrid. 
 
 Also see the lessons about [Building a Slack Bot](https://fireship.io/lessons/how-to-build-a-slack-bot/) and [SendGrid Transactional Email](https://fireship.io/lessons/sendgrid-transactional-email-guide/) with Firebase.
 

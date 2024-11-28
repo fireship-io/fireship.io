@@ -54,7 +54,7 @@ authState(auth).subscribe(user => console.log(`hello ${user.displayName}`))
 
 **Query a collection from Firestore and get an array of data & IDs**
 
-The `collectionData` function takes a query, then returns the snapshot mapped to a plain object. You can also get the documument IDs by simply passing a string as the second arg. 
+The `collectionData` function takes a query, then returns the snapshot mapped to a plain object. You can also get the document IDs by simply passing a string as the second arg. 
 
 ```js
 import { collectionData } from 'rxfire/firestore';

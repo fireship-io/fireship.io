@@ -11,7 +11,7 @@ video_length: 3:53
 
 # Anonymous Auth
 
-Enable anonymous auth in the Firebase console, then implemment it in the auth service. 
+Enable anonymous auth in the Firebase console, then implement it in the auth service. 
 
 {{< file "flutter" "services/auth.dart" >}}
 ```dart
@@ -36,7 +36,7 @@ class AuthService {
 
 ## Login Screen
 
-Create a login screen and resuable button to support multiple login methods. 
+Create a login screen and reusable button to support multiple login methods. 
 
 {{< file "flutter" "login.dart" >}}
 ```dart

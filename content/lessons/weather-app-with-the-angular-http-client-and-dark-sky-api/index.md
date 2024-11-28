@@ -200,7 +200,7 @@ The app needs to show users a seven day weather forecast for their given locatio
 
 ### Obtaining Weather Icons
 
-There are several icon fonts designed specifically for weather apps, but I'm going with the open source [WeatherIcons](https://erikflowers.github.io/weather-icons/) library, which behaves just like FontAwesome. The only problem is that that icon classes don't match the icons in DarkSky, so we have to map them manually. 
+There are several icon fonts designed specifically for weather apps, but I'm going with the open source [WeatherIcons](https://erikflowers.github.io/weather-icons/) library, which behaves just like FontAwesome. The only problem is that icon classes don't match the icons in DarkSky, so we have to map them manually. 
 
 {{< figure src="img/weather-icons.png" caption="" >}}
 

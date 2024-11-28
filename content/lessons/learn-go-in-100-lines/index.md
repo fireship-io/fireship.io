@@ -268,7 +268,7 @@ func main() {
 	modern = languages[3:7]     // include 3 exclude 7
 	new := languages[7:9]       // alternatively languages[7:]
 
-	fmt.Printf("classic languagues: %v\n", classics) // classic languagues: [C Lisp C++]
+	fmt.Printf("classic languages: %v\n", classics) // classic languages: [C Lisp C++]
 	fmt.Printf("modern languages: %v\n", modern)     // modern languages: [Java Python JavaScript Ruby]
 	fmt.Printf("new languages: %v\n", new)           // new languages: [Go Rust]
 }

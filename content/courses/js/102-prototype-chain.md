@@ -18,7 +18,7 @@ chapter_start: Advanced Concepts
 
 ## Prototype Chain
 
-The [prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) is a mechanism that allows objects to inherit properties and methods from other objects. Every object can have exactly one prototype object. That prototype object can also have a prototype object, and so on, creating a chain of inheritied properties and methods. The end of this chain is called the `null` prototype.
+The [prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain) is a mechanism that allows objects to inherit properties and methods from other objects. Every object can have exactly one prototype object. That prototype object can also have a prototype object, and so on, creating a chain of inherited properties and methods. The end of this chain is called the `null` prototype.
 
 In general, you don't need to think about the prototype chain when doing everyday JavaScript development. However, it is important to understand how it works because it's the basis for the `class` keyword and essential knowledge as you dive deeper into the language.
 

@@ -13,7 +13,7 @@ youtube: H91aqUHn8sE
 github: https://github.com/fireship-io/nodejs-typescript-starter
 ---
 
-The following lesson demonstrates how to setup a Node.js (v18)project with [TypeScript](https://www.typescriptlang.org) when using ES Modules. TS version 4.7 introduced a new `NodeNext` compliler option that can translate ES Modules to CommonJS modules. It simplifies the setup process for Node.js projects, but there are important caveats to be aware of.
+The following lesson demonstrates how to setup a Node.js (v18)project with [TypeScript](https://www.typescriptlang.org) when using ES Modules. TS version 4.7 introduced a new `NodeNext` compiler option that can translate ES Modules to CommonJS modules. It simplifies the setup process for Node.js projects, but there are important caveats to be aware of.
 
 
 More about [ES Modules in TS](https://www.typescriptlang.org/docs/handbook/esm-node.html) from the TypeScript docs.
@@ -47,7 +47,7 @@ Create a tsconfig.json file.
 touch tsconfig.json
 ```
 
-Use the `NodeNext` option to handle ES Modules with interop between CommonJS modules. If you want a detailed explaination of why this option is needed, check out this [Stack Overflow thread](https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext). 
+Use the `NodeNext` option to handle ES Modules with interop between CommonJS modules. If you want a detailed explanation of why this option is needed, check out this [Stack Overflow thread](https://stackoverflow.com/questions/71463698/why-we-need-nodenext-typescript-compiler-option-when-we-have-esnext). 
 
 {{< file "ts" "tsconfig.json" >}}
 ```json

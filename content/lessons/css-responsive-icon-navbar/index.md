@@ -171,7 +171,7 @@ main {
 
 ## Step 4 - Animate the Navbar Links
 
-Each `nav-link` is also a flex container, but flows horizontally as a row. The background and icon colors are animated using using a [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) to make them go from gray to their natural pink. 
+Each `nav-link` is also a flex container, but flows horizontally as a row. The background and icon colors are animated using a [filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter) to make them go from gray to their natural pink. 
 
 
 {{< file "css" "style.css" >}}

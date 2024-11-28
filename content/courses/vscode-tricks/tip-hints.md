@@ -13,4 +13,4 @@ free: true
 
 ## ✨ Trick - Parameter Hints
 
-When inside a method paranthesis, press `ctrl+shift+space` to trigger parameter hints. 
+When inside a method parentheses, press `ctrl+shift+space` to trigger parameter hints. 

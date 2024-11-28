@@ -32,7 +32,7 @@ On Windows, I recommend downloading [Git for Windows](https://gitforwindows.org/
 
 ## Mac Installation
 
-On MacOS, I recommend installing git with [Homebrew](https://brew.sh/).
+On macOS, I recommend installing git with [Homebrew](https://brew.sh/).
 
 {{< file "terminal" "command line" >}}
 ```bash

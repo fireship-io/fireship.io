@@ -16,7 +16,7 @@ quiz: true
 
 ## Custom Username Form
 
-The form below asynchronously validates the existance of a Firestore document. Learn more with a full breakdown of [Firebase custom usernames](/lessons/custom-usernames-firebase/)
+The form below asynchronously validates the existence of a Firestore document. Learn more with a full breakdown of [Firebase custom usernames](/lessons/custom-usernames-firebase/)
 
 {{< file "js" "pages/enter.js" >}}
 ```javascript

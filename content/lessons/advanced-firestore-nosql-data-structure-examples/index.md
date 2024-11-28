@@ -265,7 +265,7 @@ export class CommentComponent implements OnInit {
 
 ## Tags or HashTags
 
-Going back to the Twitter theme, let's now try to model hashtags in Firestore. Hashtags must be a single continuous string and should be case insensitive. This means we can use the tag itself as the document ID. For example, a hashtag of `#AngularFire` would have a doc ID of `angularfire`.
+Going back to the Twitter theme, let's now try to model hashtags in Firestore. Hashtags must be a single continuous string and should be case-insensitive. This means we can use the tag itself as the document ID. For example, a hashtag of `#AngularFire` would have a doc ID of `angularfire`.
 
 Whenever a new tweet is created, you can use a cloud function to aggregate the `postCount` property on the tag document.
 

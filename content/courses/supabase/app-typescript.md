@@ -9,7 +9,7 @@ emoji: 💪
 video_length: 0:44
 ---
 
-Command to generate typscript types:
+Command to generate typescript types:
 
 ```bash
 npx supabase gen types typescript --local > ./src/database.types.ts

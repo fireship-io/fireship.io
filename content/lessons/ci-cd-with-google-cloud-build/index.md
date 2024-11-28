@@ -22,9 +22,9 @@ versions:
    firebase-tools: 6.3
 ---
 
-Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunites for both large teams and independent entrepreneurs.
+Continuous Integration and Delivery, aka CI/CD, aka [DevOps](https://www.atlassian.com/devops) is the process of automating build, test, and deploy tasks between code changes to your software. The practice can yield a wide range of benefits, but most importantly it keeps your development code looking nearly identical to your production code. The adoption of devops has been a macrotrend in tech for the last few years and presents opportunities for both large teams and independent entrepreneurs.
 
-In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply committing your code to Github:
+In the following lesson, you will learn how to use [Google Cloud Build](https://cloud.google.com/cloud-build) to automate the following tasks by simply committing your code to GitHub:
 
 - Run unit tests
 - Build the production code
@@ -40,7 +40,7 @@ In the following lesson, you will learn how to use [Google Cloud Build](https://
 
 ## Step 1: Build an App
 
-You can follow along with this lesson using your existing Firebase project or by starting from scratch. The frontend code does not really matter - it just needs to be an NPM project that we can build and test. Below are some popular options to quikly create a frontend JS app from the command line. 
+You can follow along with this lesson using your existing Firebase project or by starting from scratch. The frontend code does not really matter - it just needs to be an NPM project that we can build and test. Below are some popular options to quickly create a frontend JS app from the command line. 
 
 
 {{< file "terminal" "command line" >}}
@@ -68,9 +68,9 @@ firebase deploy
 
 ## Step 2: Create a Remote Git Repo
 
-At this point, we need to connect your code to a remote git repo. This lesson will be using Github, but Cloud Build also integrates with GCP Source Repositories and BitBucket. 
+At this point, we need to connect your code to a remote git repo. This lesson will be using GitHub, but Cloud Build also integrates with GCP Source Repositories and BitBucket. 
 
-Create a [Github repo](https://help.github.com/articles/create-a-repo/) (can be public or private), then commit your initial code to it.
+Create a [GitHub repo](https://help.github.com/articles/create-a-repo/) (can be public or private), then commit your initial code to it.
 
 ```text
 git add .
@@ -118,7 +118,7 @@ Now we should see the image in the container registry.
 
 Create a file named `cloudbuild.yaml` in the root of the project. It will tell Cloud Build the steps required to build and test your code. 
 
-The build takes place in four steps. Notice how the `name` field points to a container with a cooresponding command, i.e *npm* or *firebase*. Keep in mind, there are many [additional options](https://cloud.google.com/cloud-build/docs/configuring-builds/create-basic-configuration) you can pass to these steps. 
+The build takes place in four steps. Notice how the `name` field points to a container with a corresponding command, i.e *npm* or *firebase*. Keep in mind, there are many [additional options](https://cloud.google.com/cloud-build/docs/configuring-builds/create-basic-configuration) you can pass to these steps. 
 
 - Install NPM dependencies
 - Run unit tests
@@ -144,7 +144,7 @@ steps:
 
 ### Add the Build Trigger
 
-Almost done! We just need to connect our Github repo to Cloud Build by registering the build trigger. Make sure to point the trigger the cloudbuild.yaml. 
+Almost done! We just need to connect our GitHub repo to Cloud Build by registering the build trigger. Make sure to point the trigger the cloudbuild.yaml. 
 
 {{< figure src="img/cloudbuild-trigger.png" alt="github cloud build trigger" >}}
 

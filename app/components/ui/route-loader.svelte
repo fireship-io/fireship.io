@@ -17,9 +17,9 @@
   .gradient-loader {
     @apply bg-gradient-to-r from-orange-500 via-purple-500 to-pink-500;
     background-size: 200% 200%;
-    animation: gradiant-move 1s infinite;
+    animation: gradient-move 1s infinite;
   }
-  @keyframes gradiant-move { 
+  @keyframes gradient-move { 
     0%{background-position:left}
     50%{background-position:right}
     100%{background-position:left}

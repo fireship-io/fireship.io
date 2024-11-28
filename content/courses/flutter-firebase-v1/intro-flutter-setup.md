@@ -14,7 +14,7 @@ video_length: 5:37
 1. Install Flutter and run `flutter doctor`.
 1. Add Flutter to your Path
 1. Download Android Studio and configure an Emulator.
-1. Download XCode (MacOS)
+1. Download XCode (macOS)
 
 ## Dependencies
 

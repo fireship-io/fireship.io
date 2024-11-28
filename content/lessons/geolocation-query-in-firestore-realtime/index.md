@@ -24,7 +24,7 @@ github: https://github.com/codediodeio/geofirex
 
 The ability to query by geographic coordinates in Firestore is a highly requested feature because many successful apps - like Uber, Pokemon Go, Instagram, etc - use realtime maps as part of the core user experience. Today you will learn how to build a realtime Google map using Firestore as the data source. 
 
-<p class="tip">Fingers-crossed: It's possible that Firestore will have native support for Geolcation queries in the future, but there is no public timeline for this feature that I'm aware of</p>
+<p class="tip">Fingers-crossed: It's possible that Firestore will have native support for Geolocation queries in the future, but there is no public timeline for this feature that I'm aware of</p>
 
 ## How Geohashing Works
 
@@ -270,4 +270,4 @@ this.points = query.pipe( toGeoJSON('point') )
 
 ## The End
 
-My goal with GeoFireX is simply to make realtime map features as easy to build as possible in PWAs. If you have ideas for the project, please let me know on Github so we can explore them together.  
+My goal with GeoFireX is simply to make realtime map features as easy to build as possible in PWAs. If you have ideas for the project, please let me know on GitHub so we can explore them together.  

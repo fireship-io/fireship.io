@@ -98,7 +98,7 @@ This tutorial is just for fun, but if you're considering this approach in produc
 
 1. Don't use No-IP, They are annoying. I recommend getting a cheap domain, add it to cloudflare and using cloudflare-ddns.
 2. Use nginx-proxy-manager, Its way easier to work with when handling lots of projects + It will handle Lets encrypt SSL for you. (Easy cheap HTTPS), get a SSL wildcard for your domain and easily test stuff on subdomains.
-3.Use docker + portainer to host your production builds, Only keep port 80 exposed (and forwarded) to web, keep the rest inside docker virtual network.
+3. Use docker + portainer to host your production builds, Only keep port 80 exposed (and forwarded) to web, keep the rest inside docker virtual network.
 4. Setup wireguard VPN on your RPI for remote working. Do not expose port 22 to internet, (you can if you used key based auth, but this is better and gives you access to internal ports easier)
 5. Take regular RPI backups (trust me, those SD card can give up on you very easily).
 And also before that make sure your ISP isn't behind a CGNAT or blocks incoming traffic on certain ports (port 80,443,25 are commonly blocked)

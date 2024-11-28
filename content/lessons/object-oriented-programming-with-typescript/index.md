@@ -1,5 +1,5 @@
 ---
-title: Object Oriented Programming with Typescript
+title: Object Oriented Programming with TypeScript
 lastmod: 2018-12-10T15:34:28-07:00
 publishdate: 2018-12-10T15:34:28-07:00
 author: Patrick Mullot
@@ -30,7 +30,7 @@ Like all apps, our example web app needs, at some point, to persist some data to
 
 ## Interface Inheritance
 
-When dealing with representation of database rows/records in Typescript, it’s highly recommendable to define a model of your data. This way, you make sure that what’s on the database will match what’s you’re expecting in your code. This is done through interfaces.
+When dealing with representation of database rows/records in TypeScript, it’s highly recommendable to define a model of your data. This way, you make sure that what’s on the database will match what’s you’re expecting in your code. This is done through interfaces.
 
 Let’s imagine we have two kinds of models: Humans and Transformers.
 Both models are defined as follow:
@@ -172,4 +172,4 @@ export class HumansComponent extends Persister {
 }
 ```
 
-<p class="tip">Note the `super( dbService )` line in the constructor. As this class is a descendant, it needs to instantiate its parent. `super( dbService )` tells Typescript to do that and at the same time, pass it the dbService, as required by the parent constructor.</p>
+<p class="tip">Note the `super( dbService )` line in the constructor. As this class is a descendant, it needs to instantiate its parent. `super( dbService )` tells TypeScript to do that and at the same time, pass it the dbService, as required by the parent constructor.</p>

@@ -23,7 +23,7 @@ npm i @stripe/react-stripe-js @stripe/stripe-js
 ### Code
 
 
-Create an API rotue for the checkout session.
+Create an API route for the checkout session.
 
 {{< file "ts" "app/api/embedded-checkout/route.ts" >}}
 ```typescript

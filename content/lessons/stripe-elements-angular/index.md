@@ -39,7 +39,7 @@ This lesson only covers the frontend code. Building a custom pament solution als
 
 ### User Authentication
 
-It's possible to accept payments without user authentication in place, but most payment systems are coupled to the app's user record. Below is a simplified authentiaction service, but make sure to watch the [Firebase OAuth](/lessons/angularfire-google-oauth/) with Angular lesson for in-depth coverage of this topic. Basically, we just sign-in with Google and provide a helper method to return the current user as a promise. 
+It's possible to accept payments without user authentication in place, but most payment systems are coupled to the app's user record. Below is a simplified authentication service, but make sure to watch the [Firebase OAuth](/lessons/angularfire-google-oauth/) with Angular lesson for in-depth coverage of this topic. Basically, we just sign-in with Google and provide a helper method to return the current user as a promise. 
 
 {{< file "ngts" "auth.service.ts" >}}
 ```typescript

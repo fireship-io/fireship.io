@@ -67,7 +67,7 @@ Streams are a bit more complex because we need to explicitly listen to them and 
 
 A better option is to use Flutter's built in `StreamBuilder` widget, which automatically manages your stream and gives you a build context. However, it can still be a challenge to combine multiple streams and/or share their values in multiple places. 
 
-An *even better option* is the [Provider](https://pub.dev/packages/provider) package. It is mostly syntatic sugar for *InheritedWidget*, but can also manage Stream subscriptions. In the snippet below, we wrap the entire MaterialApp in with a `MultiProvider`, then listen a Firebase user's global authentication state. 
+An *even better option* is the [Provider](https://pub.dev/packages/provider) package. It is mostly syntactic sugar for *InheritedWidget*, but can also manage Stream subscriptions. In the snippet below, we wrap the entire MaterialApp in with a `MultiProvider`, then listen a Firebase user's global authentication state. 
 
 {{< file "dart" "main.dart" >}}
 ```dart

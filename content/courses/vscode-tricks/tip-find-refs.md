@@ -1,6 +1,6 @@
 ---
 title: Find References
-description: Find references & implmentations of of a symbol 
+description: Find references & implementations of of a symbol 
 weight: 24
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false

@@ -182,7 +182,7 @@ Now that we have our response data from the API in an Observable, we can display
 
 {{< figure src="img/http-get-angular.gif" caption="Example of get request using Angular HTTP Client" >}}
 
-## How to Make a GET Request with a Typescript Interface
+## How to Make a GET Request with a TypeScript Interface
 
 Angular allows us to strong type HTTP requests based on an interface. I have updated the GET request from the previous example to use our own custom `Post` interface. 
 

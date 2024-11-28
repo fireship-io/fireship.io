@@ -33,7 +33,7 @@ In addition to this post, check out these resources:
 
 ## Rendering without Zone.JS
 
-After much experimentation, I've come to the conclusion that Zone.JS is not the the ideal way to handle change detection with Angular Elements. Automatic change detection is awesome when working in the context of an Angular app, but when you decouple your Angular components as custom elements you can run into hard-to-debug issues that only seem to happen in production. The Angular team has several open issues to address these [bugs](https://github.com/angular/angular/issues/23841), but I think moving away from zones is a smart move in general. You will need to manually tell Angular when to re-render your components (see next sections), but this actually makes your code more explicit and easier to understand. 
+After much experimentation, I've come to the conclusion that Zone.JS is not the ideal way to handle change detection with Angular Elements. Automatic change detection is awesome when working in the context of an Angular app, but when you decouple your Angular components as custom elements you can run into hard-to-debug issues that only seem to happen in production. The Angular team has several open issues to address these [bugs](https://github.com/angular/angular/issues/23841), but I think moving away from zones is a smart move in general. You will need to manually tell Angular when to re-render your components (see next sections), but this actually makes your code more explicit and easier to understand. 
 
 First, let's turn off zones globally in the *main.ts* file. 
 
@@ -176,7 +176,7 @@ But it can be useful to allow non-angular code to control your elements.  Method
 
 ## Exposing Public Events
 
-You might also want to listen to the the custom events emitted by your component, for example:
+You might also want to listen to the custom events emitted by your component, for example:
 
 ```js
 document.querySelector('my-element').addEventListener('my-custom-event', (e) => doSomething)

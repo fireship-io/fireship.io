@@ -72,7 +72,7 @@ class LoginScreenState extends State<LoginScreen> {
   }
 }
 
-/// A resuable login button for multiple auth methods
+/// A reusable login button for multiple auth methods
 class LoginButton extends StatelessWidget {
   final Color color;
   final IconData icon;

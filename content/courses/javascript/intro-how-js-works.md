@@ -41,7 +41,7 @@ Keep in mind, you don't *need* to know these concepts to start using JavaScript 
 
 So this begs the question... How does JavaScript handle jobs at the same time (i.e. concurrently)? 
 
-**Event Loop** refers to a feature implemented by engines like V8 that allow JS to offload tasks to separate threads.  Browser and Node APIs execute long-running tasks separately from the the main JS thread, then enqueue a `callback` function (which you define) to run on the main thread when the task is complete. This is why JS is called *non-blocking* because it should only ever wait for synchronous code from your JS functions. Think of the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) as message queue between the single JS thread and the OS. 
+**Event Loop** refers to a feature implemented by engines like V8 that allow JS to offload tasks to separate threads.  Browser and Node APIs execute long-running tasks separately from the main JS thread, then enqueue a `callback` function (which you define) to run on the main thread when the task is complete. This is why JS is called *non-blocking* because it should only ever wait for synchronous code from your JS functions. Think of the [Event Loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop) as message queue between the single JS thread and the OS. 
 
 {{< file "js" "event-loop.js" >}}
 ```js

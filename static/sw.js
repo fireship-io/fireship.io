@@ -17,7 +17,7 @@ if (workbox) {
             purgeOnQuotaError: true, // Opt-in to automatic cleanup
         }),
         new workbox.cacheableResponse.Plugin({
-            statuses: [0, 200] // for opague requests
+            statuses: [0, 200] // for opaque requests
         }),
     ],
 });

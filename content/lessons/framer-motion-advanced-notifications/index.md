@@ -115,7 +115,7 @@ A dedicated file is created for managing the addition/removal of notifications. 
 
 {{< file "js" "arr-utils.js" >}}
 ```javascript
-// MacGuyver'd utility to generate && remove notifications
+// MacGyver'd utility to generate && remove notifications
 export const remove = (arr, item) => {
   const newArr = [...arr];
   newArr.splice(

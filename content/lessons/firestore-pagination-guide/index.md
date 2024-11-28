@@ -49,7 +49,7 @@ const query = ref.orderBy(field).limit(pageSize);
 
 ### Step 2 - Move Forward
 
-The next page requires the the **last** document from current query results. Use the `startAfter` method to offset from that document. 
+The next page requires the **last** document from current query results. Use the `startAfter` method to offset from that document. 
 
 ```js
   function nextPage(last) {
@@ -63,7 +63,7 @@ The next page requires the the **last** document from current query results. Use
 ### Step 3 - Move Backward
 
 
-Going back to the previous page requires the the **first** document from current query results. Use the `endBefore` method followed by `limitToLast` to offset from that document. 
+Going back to the previous page requires the **first** document from current query results. Use the `endBefore` method followed by `limitToLast` to offset from that document. 
 
 ```js
   function prevPage(first) {
@@ -82,7 +82,7 @@ Showing a list of pages requires us to know the total number of documents in the
 
 ## Serverside Pagination
 
-### Option 1 - Offest Query Operator
+### Option 1 - Offset Query Operator
 
 The Firebase Admin SDK contains a special operator [offset](https://cloud.google.com/nodejs/docs/reference/firestore/0.11.x/Query#offset). A potential solution is to route all paginated requests through Cloud Function with a parameter for the offset. 
 
@@ -114,7 +114,7 @@ exports.keepCount = functions.firestore
 
     return db.runTransaction(async transaction => {
 
-        // Get the metadata and incement the count. 
+        // Get the metadata and increment the count. 
         const metaRef = db.doc('metadata/customers');
         const metaData = ( await transaction.get( metaRef ) ).data();
 

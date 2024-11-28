@@ -122,7 +122,7 @@ That should authenticate the user into your app and create the user in Firebase 
 
 ## 3. Cloud Firestore Database
 
-The foundation of a Firebase app is the database. You can read a document in the database by (1) making a reference to it and (2) calling `onSnaphot()`. This will not only read it, but also subscribe to realtime updates - an amazingly powerful feature if your app provides realtime feedback to users. 
+The foundation of a Firebase app is the database. You can read a document in the database by (1) making a reference to it and (2) calling `onSnapshot()`. This will not only read it, but also subscribe to realtime updates - an amazingly powerful feature if your app provides realtime feedback to users. 
 
 
 {{< figure src="img/basics-firestore.png" caption="Firestore collection of products" >}}
@@ -216,7 +216,7 @@ firebase init functions
 
 ### Simple Firestore Function
 
-The function code below will listen to the the `products` collection in Firestore, and run this code whenever a new document is created. 
+The function code below will listen to the `products` collection in Firestore, and run this code whenever a new document is created. 
 
 - `exports.sendMessage` that's the name of our Function. 
 - `.document('products/{productId}').onCreate` runs the function when a new product doc is created.

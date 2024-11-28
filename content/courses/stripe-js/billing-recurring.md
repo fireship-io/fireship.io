@@ -1,6 +1,6 @@
 ---
 title: Recurring Payments
-description: Webhooks to handle recurring subscription payments and cancelations
+description: Webhooks to handle recurring subscription payments and cancellations
 weight: 53
 lastmod: 2020-04-28T10:23:30-09:00
 draft: false

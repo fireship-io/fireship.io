@@ -23,7 +23,7 @@ There are many ways to build a react app. The most common options include:
 Get familiar with the files in your React project.
 
 - `package.json` - The main file that defines the dependencies and other settings for your project.
-- `node_modules` - Source code for depencies. Do not touch.
+- `node_modules` - Source code for dependencies. Do not touch.
 - `public` - The directory where your static files are stored.
 - `src/index.js` - Main entrypoint to bootstrap the app. 
 - `src/App.js` - The root component of the app.

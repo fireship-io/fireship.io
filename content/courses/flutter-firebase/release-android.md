@@ -10,4 +10,4 @@ chapter_start: Release
 video_length: 4:23
 ---
 
-[Official Android Flutter Relese Guide](https://flutter.dev/docs/deployment/android)
+[Official Android Flutter Release Guide](https://flutter.dev/docs/deployment/android)

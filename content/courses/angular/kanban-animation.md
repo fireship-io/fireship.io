@@ -9,7 +9,7 @@ emoji: 🍱
 video_length: 3:06
 ---
 
-Animate the the CDK Drag & Drop elements using CSS transitions.
+Animate the CDK Drag & Drop elements using CSS transitions.
 
 
 ## Full Styles

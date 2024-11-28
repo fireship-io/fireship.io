@@ -46,7 +46,7 @@ export class AppModule { }
 
 ### Step 2 - Consolidate Imports
 
-Avoid duplication by consolidating your imports with the the spread syntax. We will be using the common material modules throughout the course. All Material modules listed below will be used in this app. 
+Avoid duplication by consolidating your imports with the spread syntax. We will be using the common material modules throughout the course. All Material modules listed below will be used in this app. 
 
 {{< file "ngts" "shared.module.ts" >}}
 ```typescript

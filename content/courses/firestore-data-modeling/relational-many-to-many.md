@@ -23,7 +23,7 @@ const specificReview = db.collection('reviews').doc(`${bookId}_${authorId}`);
 
 
 // 8. Map
-// Reviews embadded on books
+// Reviews embedded on books
 const bookWithReviews = db.collection('books').doc(bookId);
 const userReviews = db.collection('books').orderBy('reviews.jeff-delaney');
 

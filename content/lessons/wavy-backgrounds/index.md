@@ -38,7 +38,7 @@ The bubble pattern creates an elliptical shape that stretches over the top of th
     </section>
 ```
 
-Use the pseudo-element `::after` to style an eliptical border radius to the content.
+Use the pseudo-element `::after` to style an elliptical border radius to the content.
 
 {{< file "css" "style.css" >}}
 ```css
@@ -59,7 +59,7 @@ Use the pseudo-element `::after` to style an eliptical border radius to the cont
 
 {{< figure src="img/css-wave.png" caption="CSS Wave" >}}
 
-The wave pattern overlaps two epliptical pseudo-elements. It it difficult to get the positioning perfect, but it will work well enough for most cases.
+The wave pattern overlaps two elliptical pseudo-elements. It it difficult to get the positioning perfect, but it will work well enough for most cases.
 
 {{< file "html" "index.html" >}}
 ```html

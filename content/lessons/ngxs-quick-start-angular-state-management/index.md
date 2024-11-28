@@ -105,7 +105,7 @@ NGXS addresses some of the major [concerns](https://ngxs.gitbook.io/ngxs/introdu
 
 ## Actions
 
-Actions in NGXS are very similar to NgRx, but use use a static property for the type.
+Actions in NGXS are very similar to NgRx, but use a static property for the type.
 
 ```typescript
 export class SetUsername {

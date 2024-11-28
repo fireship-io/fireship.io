@@ -106,7 +106,7 @@ function validateUser(req: Request) {
   const user = req['currentUser'];
   if (!user) {
     throw new Error(
-      'You must be logged in to make this request. i.e Authroization: Bearer <token>'
+      'You must be logged in to make this request. i.e Authorization: Bearer <token>'
     );
   }
 

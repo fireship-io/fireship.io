@@ -152,7 +152,7 @@ Our first goal is to listen to events that happen in the Slack workspace. Slack 
 So then, how do we build an app that performs a long-running backend process? There are many right answers, but in Firebase, the best option is to enqueue a [PubSub Cloud Function](https://cloud.google.com/functions/docs/calling/pubsub). It allows the initial HTTP endpoint to simply hand off the message and respond quickly to Slack. 
 
 
-Import the dependencies and initlizize them with the environment credentials. 
+Import the dependencies and initialize them with the environment credentials. 
 
 {{< file "ts" "index.ts" >}}
 ```typescript
@@ -266,7 +266,7 @@ export const slackChannelJoin = functions.pubsub
 
 ### Listen to Slash Commands
 
-Events are great, but somethings you want to give users tools to manually kick off interactivity - that's where [slash commands](https://api.slack.com/interactivity/slash-commands) come in. They work very similar to events, but are are triggered by the user entering `/some-command` into the workspace. 
+Events are great, but sometimes you want to give users tools to manually kick off interactivity - that's where [slash commands](https://api.slack.com/interactivity/slash-commands) come in. They work very similar to events, but are triggered by the user entering `/some-command` into the workspace. 
 
 {{< figure src="img/slack-app-slash.png" caption="Slash commands follow the same basic flow as events" >}}
 
