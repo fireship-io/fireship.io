@@ -3,7 +3,7 @@ title: Get Started
 description: Getting started with Fireship PRO
 ---
 
-# Getting Starting
+# Getting Started
 
 # Learning Paths
 
