@@ -9,4 +9,4 @@ links:
     github: https://github.com/WLun001
 ---
 
-Wei Lun is a bachelor's degree student in Software Engineering based in Malaysia. He actively learning trendy technologies, mainly in web, mobile, cloud technologies and solution architect.
+Wei Lun is a bachelor's degree student in Software Engineering based in Malaysia. He's actively learning trendy technologies, mainly in web, mobile, and the cloud as well as being a solutions architect.
