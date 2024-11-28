@@ -5,6 +5,10 @@
   import { router } from '../../main';
   import { UniversalPlayer } from '../../util/player';
   import  { autoplay, siteData, canAccess, currentCourse, toast } from '../../stores'
+  import { COURSE_TIERS, getCourseTier } from '../../util/helpers';
+
+  let courseTier = getCourseTier();
+  let isFree = courseTier === COURSE_TIERS.free;
 
   export let video: number | string;
   export let type: 'vimeo' | 'youtube';
@@ -90,7 +94,7 @@
   }
 </script>
 
-{#if free || $canAccess}
+{#if isFree || $canAccess}
   <div class="wrapper">
     <div class="vid" bind:this={ref} />
     <div class="autoplay-cover" class:active={showAutoplayCover}>
@@ -115,7 +119,7 @@
         <h3>OR</h3>
       {/if}
 
-      <div class="buy-box green">              
+      <div class="buy-box green">
         <p><a href="/pro/" class="text-pro">Upgrade to PRO</a></p>
         <p class="text-light">Unlock all Fireship content && bonus perks</p>
       </div>

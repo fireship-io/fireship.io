@@ -3,6 +3,12 @@
 <script lang="ts">
   import { canAccess, userProgress, modal } from '../../stores';
   import { markComplete, markIncomplete } from '../../util/firebase';
+
+  import { getCourseTier, COURSE_TIERS } from '../../util/helpers.ts';
+
+  let courseTier = getCourseTier();
+  let isFree = courseTier === COURSE_TIERS.free;
+
   export let route = window.location.pathname;
   export let quiz = false;
   export let free = false;
@@ -21,7 +27,7 @@
 </script>
 
 <span class="wrap">
-  {#if free || $canAccess}
+  {#if isFree || $canAccess}
     {#if $userProgress?.[route]}
       <button on:click={() => mark(false)} class="complete">
         <svg viewBox="0 0 512 512"
