@@ -1,7 +1,7 @@
 <svelte:options tag="navbar-toggle" />
 
 <script lang="ts">
-    import { showNavbar } from "../../stores/settings";
+    import { showNavbar } from "../../stores";
 </script>
 
 {#if $showNavbar}

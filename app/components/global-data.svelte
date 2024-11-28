@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { siteData } from '../stores/data';
+  import { siteData } from '../stores';
 
   export let permalink: string;
   export let next: string;

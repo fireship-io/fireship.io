@@ -1,5 +1,4 @@
-import { showNavbar } from '../stores/settings';
-import { modal } from '../stores/modal';
+import { showNavbar, modal } from '../stores';
 
 const special = 'himom';
 let buffer = '';
