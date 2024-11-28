@@ -9,4 +9,4 @@ links:
     twitter: https://twitter.com/lenmedicward
 ---
 
-Lenny is a self taught hobbiest for WebApp Development. Owns  <a href="http://acadianaapps.com">Acadiana Apps</a>. A small company specializing in custom web app development, and Google Apps Script integrations.
+Lenny is a self taught hobbiest for Web App Development. Owns  <a href="http://acadianaapps.com">Acadiana Apps</a>. A small company specializing in custom web app development, and Google Apps Script integrations.

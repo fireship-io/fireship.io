@@ -8,4 +8,4 @@ links:
   github: https://github.com/FinnKrestel
 ---
 
-Finn Krestel is a Java, JavaScript, CSS and HTML developer. He mainly uses React or Preact for interactive web applications. Next.js is his favorite SSR framework.
+Finn Krestel is a Java, JavaScript, CSS and HTML developer. He mainly uses React or Preact for interactive Web Applications. Next.js is his favorite SSR framework.
