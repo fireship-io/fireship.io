@@ -16,7 +16,7 @@ npm install
 npm start
 ```
 
-Check it on on `http://localhost:6969/`.
+Check it out on `http://localhost:6969/`.
 
 
 ## Developing Components 
