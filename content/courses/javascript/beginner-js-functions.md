@@ -195,6 +195,6 @@ Find yourself writing repetitive code? Try abstracting it into a custom function
 
 > WET Write Everything Twice, but not Thrice
 
-In this world, we only break down code into custom functions when it is duplicated more than twice. The rational is that it provides more confidence that this extra layer of absctraction is actually required. As programmers, we often try to optimize too early because we're terrified of duplication. 
+In this world, we only break down code into custom functions when it is duplicated more than twice. The rational is that it provides more confidence that this extra layer of abstraction is actually required. As programmers, we often try to optimize too early because we're terrified of duplication. 
 
 In brief, both DRY and WET are useful principles, but neither are perfect - it just takes practice. 
