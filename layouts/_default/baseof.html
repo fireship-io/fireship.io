@@ -25,12 +25,17 @@
 
   </head>
   <body>
-    {{ $vimeoEncode := .Params.vimeo | base64Encode }}
+
+
+    {{ $saltVimeo := "" }}
+    {{ if .Params.vimeo }}
+      {{ $saltVimeo = partial "funcEncodeValue" (dict "value" .Params.vimeo "path" .RelPermalink) }}
+    {{ end }}
     {{ $ytEncode := .Params.youtube | base64Encode }}
 
     <global-data 
     permalink="{{ .Permalink }}" 
-    vimeo="{{ $vimeoEncode }}"
+    vimeo="{{ $saltVimeo }}"
     youtube="{{ $ytEncode }}"
     free="{{ .Params.free }}"
     next="{{with .PrevInSection}}{{.Permalink}}{{end}}" 

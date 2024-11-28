@@ -11,6 +11,7 @@ env:
   ALGOLIA_ADMIN_KEY: ${{secrets.ALGOLIA_ADMIN_KEY}}
   ALGOLIA_INDEX_NAME: content 
   ALGOLIA_INDEX_FILE: public/algolia.json
+  HUGO_SALT: ${{secrets.HUGO_SALT}}
 
 
 jobs:
