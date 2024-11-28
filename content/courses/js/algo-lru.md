@@ -14,14 +14,14 @@ quiz: true
   <h6>Which feature makes a JS Map suitable for an LRU cache?</h6>
 </quiz-modal>
 
-The [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU) cache is one of the most commoly asked algorithm questions on interviews. 
+The [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU) cache is one of the most commonly asked algorithm questions on interviews. 
 
 ## LRU Interview Question
 
 Create a data structure that implements the requirements of a Least Recently Used (LRU) cache with O(1) average time complexity.
 
 
-- Initialize an object with a maxium capacity of elements.
+- Initialize an object with a maximum capacity of elements.
 - `getItem` Return the value of the key. Update cache with the most recently used key. 
 - `putItem` Create or update a key value pair in the cache. Evict the least recently used key if the size of keys exceeds the max capacity.
 
