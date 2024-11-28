@@ -61,7 +61,7 @@ In Chrome, you can open the [developer console](https://developers.google.com/we
 
 ## Run JavaScript with a Framework
 
-It is worth mentioning that frameworks like React, Angular, Svelte, etc will take care of the building & running of your app automatically and provide framework-specific tooling and steps for running code. In the real world, you are more likely to use the tooling provided by the framework to run your code, as opposed to the basic methods shown in this couse. 
+It is worth mentioning that frameworks like React, Angular, Svelte, etc will take care of the building & running of your app automatically and provide framework-specific tooling and steps for running code. In the real world, you are more likely to use the tooling provided by the framework to run your code, as opposed to the basic methods shown in this course. 
 
 ## Run JavaScript in a Sandbox
 
