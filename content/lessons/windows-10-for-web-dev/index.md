@@ -22,7 +22,7 @@ youtube: -atblwgc63E
 #    rxdart: 0.20
 ---
 
-Historically, Windows has not been been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps. 
+Historically, Windows has not been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps. 
 
 Unlike a dual boot system, where two operating systems are installed on the same hard drive, WSL runs Linux in a compatibility layer that can run unmodified ELF64 binaries. The following lesson will teach you how to enable WSL and setup other important tools for web development, like Node.js, git, Docker, browsers, and more. 
 
@@ -51,7 +51,7 @@ Open the Microsoft store and search for *Linux*. Choose your preferred distro - 
 
 ### Install Windows Terminal
 
-Windows has a [new terminal app](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701) that makes it easier to work with the command line. Install it to quickly between Linux and PowerShell sessions. 
+Windows has a [new terminal app](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701) that makes it easier to work with the command line. Install it to quickly switch between Linux and PowerShell sessions. 
 
 {{< figure src="img/win-terminal-app.png" caption="Install windows terminal and start a Linux session" >}}
 
@@ -97,7 +97,7 @@ code ~/.bashrc # vscode
 vim ~/.bashrc # vim
 ```
 
-Below you you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
+Below you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
 
 {{< file "cog" ".bashrc" >}}
 ```bash
