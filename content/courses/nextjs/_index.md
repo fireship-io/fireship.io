@@ -1,7 +1,7 @@
 ---
 lastmod: 2024-11-20T11:11:30-09:00
 title: Next.js Full Course
-description: Master the fundamentals of Next.js 14 and the App Router
+description: Master the fundamentals of Next.js 15 and the App Router
 weight: 0
 type: courses
 vimeo: 823089634
