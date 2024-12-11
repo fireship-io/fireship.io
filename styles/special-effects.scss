@@ -1,42 +1,39 @@
 // Top navbar gif background
 
 .logo-gif {
-    #logoBg{
+    #logoBg {
         display: none;
     }
+
     &:hover {
         #logo {
             display: none;
         }
-    
-        #logoBg{
+        #logoBg {
             display: block;
         }
     }
-
 }
 
 // Gradient Slide
 
 .gradient-text {
-  @apply bg-gradient-to-t from-orange-500 to-yellow-500;
-  background-clip: text;
-  color:rgba(0,0,0,0);
-  -webkit-background-clip:text;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+}
+
+/* Color Variations */
+.gradient-text-orange {
+    @apply bg-gradient-to-t from-orange-500 to-yellow-500;
 }
 
 .gradient-text-green {
-  @apply bg-gradient-to-t from-green-700 to-green-400;
-  background-clip: text;
-  color:rgba(0,0,0,0);
-  -webkit-background-clip:text;
+    @apply bg-gradient-to-t from-green-700 to-green-400;
 }
 
 .gradient-text-pink {
-  @apply bg-gradient-to-r from-orange-500 to-pink-500;
-  background-clip: text;
-  color:rgba(0,0,0,0);
-  -webkit-background-clip:text;
+    @apply bg-gradient-to-r from-orange-500 to-pink-500;
 }
 
 .gradient-slide {
