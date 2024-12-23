@@ -28,7 +28,7 @@ vimeo: 424882834
 The [Firebase emulator suite](https://firebase.google.com/docs/emulator-suite) allows developers to run a mock Firebase environment locally. Last week, Firebase released a new feature called the [Emulator UI](https://firebase.googleblog.com/2020/05/local-firebase-emulator-ui.html) to visualize and manage Firestore (and Realtime DB) from the browser. The following lesson contains a variety of advanced techniques for setting up a Firebase development environment.
 
 <div class="flex-center">
-    {{< tweet 1267220417896255488 >}}
+    {{< tweet user="fireship_dev" id="1267220417896255488" >}}
 </div>
 
 
