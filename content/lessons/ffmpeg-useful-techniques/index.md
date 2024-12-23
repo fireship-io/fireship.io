@@ -11,7 +11,7 @@ tags:
 youtube: 26Mayv5JPz0
 ---
 
-As a YouTuber, one of my biggest time sucks is video editing, so I recently wrote several video editing scripts with [FFmpeg](https://ffmpeg.org/) to increse my productivity. It is a popular command line tool that can convert, transform,  and filter nearly any multimedia format (over 100+ codecs supported). 
+As a YouTuber, one of my biggest time sucks is video editing, so I recently wrote several video editing scripts with [FFmpeg](https://ffmpeg.org/) to increase my productivity. It is a popular command line tool that can convert, transform,  and filter nearly any multimedia format (over 100+ codecs supported). 
 
 In the following lesson, we'll look at a collection of useful techniques for working with FFmpeg that you can use to build your own video editing utilities or apps. 
 
