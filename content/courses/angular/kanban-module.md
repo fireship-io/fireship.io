@@ -10,7 +10,7 @@ chapter_start: Kanban
 video_length: 2:10
 ---
 
-Setup another lazy-loaded feature module for the development of Kanban boards. 
+Setup another Lazy-loaded feature module for the development of Kanban boards. 
 
 {{< file "terminal" "command line" >}}
 ```text

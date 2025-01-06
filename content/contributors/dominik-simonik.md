@@ -10,4 +10,4 @@ links:
     linkedin: https://www.linkedin.com/in/dominik-%C5%A1imon%C3%ADk-11a14014b/
 ---
 
-Dominik Šimoník is software engineer developing apps in Angular, Java, Dart, Nodejs and Ruby. He is GDG Organizer and lector for women at community Czechitas in the Czech republic. When he is not at the computer he does some sort of geek things like drone races etc.
+Dominik Šimoník is Software Engineer developing apps in Angular, Java, Dart, Node.js and Ruby. He is GDG Organizer and lector for women at community Czechitas in the Czech Republic. When he is not at the computer, he engages in various geeky activities like drone racing, etc.

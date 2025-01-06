@@ -9,7 +9,7 @@ emoji: 🗑️
 video_length: 3:10
 ---
 
-Create a delete button that confirms the operation before sending the write to the database. 
+Create a Delete button that confirms the operation before sending the write to the Database. 
 
 ## Steps
 
@@ -22,7 +22,7 @@ ng g c shared/delete-button
 
 ### Step 2 - Delete Button Component
 
-The delete button component is just UI (dumb component), meaning it only emits an event with the user's delete intention. The parent component handles the actual database write. 
+The delete button component is just UI (dumb component), meaning it only emits an event with the user's delete intention. The parent component handles the actual Database write. 
 
 {{< file "ngts" "delete-button.component.ts" >}}
 ```typescript

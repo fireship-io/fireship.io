@@ -31,7 +31,7 @@ A future can either be a *success* or a *error*. Use then `then` to handle a suc
 
 ## Async Await Syntax
 
-Async-await provides a cleaner (arguably) syntax for writing asynchronous code. The `async` keyword tells Dart to return a Future, while `await` pauses the execution of the function until the Future resolves.
+Async-await provides an (arguably) cleaner syntax for writing asynchronous code. The `async` keyword tells Dart to return a Future, while `await` pauses the execution of the function until the Future resolves.
 
 {{< file "dart" "futures.dart" >}}
 ```dart

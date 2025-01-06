@@ -10,4 +10,4 @@ links:
     github: https://github.com/overlineink
 ---
 
-Jorge Dacosta is Co-Founder of [Splash Ink](https://splashink.gq/) (🇦🇴 🇿🇦), Graphic Designer and Open Source (OSS) enthusiast who loves share his knowledge.
+Jorge Dacosta is Co-Founder of [Splash Ink](https://splashink.gq/) (🇦🇴 🇿🇦), Graphic Designer and Open Source (OSS) enthusiast who loves to share his knowledge.

@@ -10,4 +10,4 @@ links:
     portfolio: https://alexguja.com
 ---
 
-Alex is a full-stack developer based in Europe. He is interested in web development, mobile apps, data engineering, and cloud technologies. In his free time, he enjoys reading, writes music, and likes to meet new people.
+Alex is a full-stack developer based in Europe. He is interested in Web Development, Mobile Apps, Data Engineering, and Cloud Technologies. In his free time, he enjoys reading, writes music, and likes to meet new people.
