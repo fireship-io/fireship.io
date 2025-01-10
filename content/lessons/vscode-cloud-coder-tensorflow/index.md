@@ -21,7 +21,7 @@ youtube: N5WojMutddQ
 #    rxdart: 0.20
 ---
 
-Turning [VS Code](https://code.visualstudio.com/) into a full IDE requires you to carefully blend your favorite extensions and packages for the type of development work you perform. It can take hours or even days to get your development environment fine-tuned for optimal productivity. But what happens upgrade to a new computer? Or need to share your IDE with somebody on the other side of the world? Or maybe you just need more compute resources... 
+Turning [VS Code](https://code.visualstudio.com/) into a full IDE requires you to carefully blend your favorite extensions and packages for the type of development work you perform. It can take hours or even days to get your development environment fine-tuned for optimal productivity. But what happens when you upgrade to a new computer? Or need to share your IDE with somebody on the other side of the world? Or maybe you just need more compute resources... 
 
 The following lesson will teach you how to use [Coder](https://coder.com/) - a tool that allows you to run VS Code on any cloud and access it from the browser. We will take their open source project [code-server](https://github.com/codercom/code-server) and use it to run VS Code on Google Cloud Platform. 
 
