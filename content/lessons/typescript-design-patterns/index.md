@@ -262,7 +262,7 @@ tv1.unsubscribe();
 ```
 ### Mediator
 
-The mediator is provids a middle layer between objects that communicate with each other. This pattern implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
+The mediator provides a middle layer between objects that communicate with each other. This pattern is implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
 
 {{< file "ts" "software.ts" >}}
 ```typescript
