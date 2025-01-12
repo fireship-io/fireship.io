@@ -28,7 +28,7 @@ This guide assumes that you have a [Github](https://github.com/) account and [gi
 
 ## Step 1: Fork
 
-After you find a repo that looks cool, the first step is to fork it. A fork will create a copy of the repo under your account that you can modify, while maintaining a link to original (that's called the upstream repo). 
+After you find a repo that looks cool, the first step is to fork it. A fork will create a copy of the repo under your account that you can modify, while maintaining a link to the original repo (that's called the upstream repo). 
 
 {{< figure src="/snippets/img/git-fork.png" alt="clicking the git fork button on github" >}}
 
