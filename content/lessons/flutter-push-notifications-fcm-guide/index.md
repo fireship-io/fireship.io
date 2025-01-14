@@ -54,7 +54,7 @@ dependencies:
 
 ### Android
 
-Android does not require any specific configuration, unless you want to run code after a notification is clicked-on from the device tray (while the app was in the backgrond).
+Android does not require any specific configuration, unless you want to run code after a notification is clicked-on from the device tray (while the app was in the background).
 
 {{< file "file" "android/app/src/main/AndroidManifest.xml" >}}
 ```xml
@@ -76,7 +76,7 @@ iOS apps are required to generate a certificate for the Apple Push Notification 
 3. Save it to a database (for single device notifications).
 4. Handle incoming messages both in the foreground & background.
 
-All logic can be handled within a StatefulWidget. This allows you to resuse the FCM logic across multiple screens if necessary. 
+All logic can be handled within a StatefulWidget. This allows you to reuse the FCM logic across multiple screens if necessary. 
 
 {{< file "dart" "main.dart" >}}
 ```dart

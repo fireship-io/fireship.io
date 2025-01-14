@@ -72,7 +72,7 @@ import 'firebase/compat/storage';
 
 Check out the [Firebase Version 9 Migration guide](/lessons/firebase-v9-migration/) for additional details on the new Firebase SDKs.
 
-To see the fully updated v9 source code, check out the [v9 branch](https://github.com/fireship-io/next-firebase-course/tree/firebase-v9) on Github
+To see the fully updated v9 source code, check out the [v9 branch](https://github.com/fireship-io/next-firebase-course/tree/firebase-v9) on GitHub
 
 
 ## Optional

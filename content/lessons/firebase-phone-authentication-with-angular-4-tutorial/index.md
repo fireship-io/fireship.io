@@ -81,7 +81,7 @@ export class PhoneNumber {
 }
 ```
 
-<p>After the the confirmation text is sent, we display another form field for the user to enter the confirmation. Here’s a breakdown of the process step-by-step</p>
+<p>After the confirmation text is sent, we display another form field for the user to enter the confirmation. Here’s a breakdown of the process step-by-step</p>
 
 - User verifies reCAPTCHA
 - User submits their phone number.

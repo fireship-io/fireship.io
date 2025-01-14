@@ -62,7 +62,7 @@ Firestore gives us access to several special variables that can be used to compo
 - `request` contains incoming data (including auth and time)
 - `resource` existing data that is being requested
 
-This part is confusing because a *resource* also exists on the *request* to represent the incoming data on write operations. I like to use use helper functions to make this code a bit more readable. 
+This part is confusing because a *resource* also exists on the *request* to represent the incoming data on write operations. I like to use helper functions to make this code a bit more readable. 
 
 ## User-Based Rules
 

@@ -22,7 +22,7 @@ github: https://github.com/fireship-io/196-sendgrid-email-cloud-functions
 #    rxdart: 0.20
 ---
 
-[Transactional email](https://postmarkapp.com/blog/what-is-transactional-email-and-how-is-it-used) is the art of communicating with users in response to events or conditions, and is an important consideration for the overall user experience (UX) of an app. One of the most popular email APIs is [SendGrid](https://sendgrid.com/) (recetly acquired by Twilio). It is flexible, provides a NodeJS SDK, and starts with free tier for small projects. The following lesson will teach you how to send email from your app based on user-driven events with [Firebase Cloud Functions](https://firebase.google.com/docs/functions). 
+[Transactional email](https://postmarkapp.com/blog/what-is-transactional-email-and-how-is-it-used) is the art of communicating with users in response to events or conditions, and is an important consideration for the overall user experience (UX) of an app. One of the most popular email APIs is [SendGrid](https://sendgrid.com/) (recently acquired by Twilio). It is flexible, provides a NodeJS SDK, and starts with free tier for small projects. The following lesson will teach you how to send email from your app based on user-driven events with [Firebase Cloud Functions](https://firebase.google.com/docs/functions). 
 
 Common use-cases for transactional email include:
 

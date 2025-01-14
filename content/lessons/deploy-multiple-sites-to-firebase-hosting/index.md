@@ -33,7 +33,7 @@ The obvious benefit here is resource sharing across multiple domains with common
 
 {{< figure src="img/multisite-demo.gif" caption="Demo of multiple sites hosted by single Firebase Project" >}}
 
-In the following lesson, you will learn how to setup mulitsite hosting in Firebase from scratch.
+In the following lesson, you will learn how to setup multisite hosting in Firebase from scratch.
 
 <p class="tip">You must be on the **Blaze** pay-as-you-go plan to deploy multiple sites to Firebase.</p>
 
@@ -54,7 +54,7 @@ Essentially, we have three different apps or websites (English, French, and Span
 
 <p class="tip">Also reference the official [Firebase multisite documentation](https://firebase.google.com/docs/hosting/multisites)</p>
 
-Managing multiple sites in Firebase Hosting just requires a few simiple configuration steps. 
+Managing multiple sites in Firebase Hosting just requires a few simple configuration steps. 
 
 ### 1. Define your Hosted Sites
 

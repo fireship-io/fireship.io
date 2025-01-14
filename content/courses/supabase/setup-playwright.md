@@ -16,7 +16,7 @@ quiz: true
 
 Playwright docs: https://playwright.dev/docs/intro
 
-To initialize playwrigh in your repo:
+To initialize playwright in your repo:
 
 ```bash
 yarn create playwright
@@ -30,7 +30,7 @@ const config = {
   webServer: {
     command: "yarn dev",
     port: 1337, // should match the port you gave in our vite.config file
-    reuseExisitingServer: true,
+    reuseExistingServer: true,
   },
   fullyParallel: false,
   projects: [

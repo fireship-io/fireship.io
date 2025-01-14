@@ -39,7 +39,7 @@ function MyComponent(props) {
 <MyComponent name="Jeff" />
 
 
-// Or use desctruturing to pass props
+// Or use destructuring to pass props
 
 function MyComponent({ name }) {
   return <p>🔥 {name}</p>;
@@ -52,7 +52,7 @@ function MyComponent({ name }) {
 
 ## Virtual DOM and React Fiber
 
-What makes React so powerful, is that when this data changes the library knows how to efficiently rerend any each component using an internal mechanism called the [Virtual DOM](https://reactjs.org/docs/faq-internals.html) and more recently React Fiber. You don’t need to know much about VDOM or Fiber to use React, but it is important to be aware that it’s the magic that reconciles your react code with the real DOM in the browser at runtime. It you want to go further down this rabbit hole, check out the official documentation.
+What makes React so powerful, is that when this data changes the library knows how to efficiently render any each component using an internal mechanism called the [Virtual DOM](https://reactjs.org/docs/faq-internals.html) and more recently React Fiber. You don’t need to know much about VDOM or Fiber to use React, but it is important to be aware that it’s the magic that reconciles your react code with the real DOM in the browser at runtime. It you want to go further down this rabbit hole, check out the official documentation.
 
 ## Challenge
 

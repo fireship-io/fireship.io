@@ -61,7 +61,7 @@ export class BoardService {
   }
 
   /**
-   * Remove a specifc task from the board
+   * Remove a specific task from the board
    */
   removeTask(boardId: string, task: Task) {
     return this.db

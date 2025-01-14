@@ -52,7 +52,7 @@ export default function Home() {
 }
 ```
 
-Optionally, update your Tailwdind configuration to include the DaisyUI and Tailwind Typography plugins for rapid styling.
+Optionally, update your Tailwind configuration to include the DaisyUI and Tailwind Typography plugins for rapid styling.
 
 {{< file "tailwind" "tailwind.config.ts" >}}
 ```typescript

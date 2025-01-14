@@ -26,7 +26,7 @@ Firebase [announced Performance Monitoring](https://firebase.googleblog.com/2019
 
 ## Initial Setup
 
-The following demo uses Angular, but the principles apply to any frontend JavaScript web app - checkout the [official guide](https://firebase.google.com/docs/perf-mon/get-started-web) for setup instructions in non-Angular projects. By simplying including the performance package in your app you will receive metrics related to page load and HTTP performance. 
+The following demo uses Angular, but the principles apply to any frontend JavaScript web app - checkout the [official guide](https://firebase.google.com/docs/perf-mon/get-started-web) for setup instructions in non-Angular projects. By simply including the performance package in your app you will receive metrics related to page load and HTTP performance. 
 
 
 Keep in mind, you can use Firebase Performance as a standalone service without any other Firebase dependencies. In this case, you would want to load the lightweight script via the CDN as described in docs.  
@@ -94,7 +94,7 @@ An attribute is a string value segments data on the Firebase console. A metric i
 
 ### Trace Login Time
 
-For example, **How long does it take the average user to get logged in?**. But we don't have to stop there - we can also add custom attributes to segmenent reports based on custom data attributes and trace specific errors that happen during the login process. 
+For example, **How long does it take the average user to get logged in?**. But we don't have to stop there - we can also add custom attributes to segment reports based on custom data attributes and trace specific errors that happen during the login process. 
 
 {{< file "ngts" "login.component.ts" >}}
 ```typescript

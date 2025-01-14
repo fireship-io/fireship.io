@@ -31,7 +31,7 @@ github: https://github.com/AngularFirebase/68-multistep-firebase-signup
 
 ## What are we Building? 
 
-<p class="tip">This lesson is based off of the [Firstarter PWA starter app](https://firestarter-96e46.firebaseapp.com/), which is organized into NgModules. It is not needed to follow this lesson, but it does have a notification service for showing errors to the end user.</p>
+<p class="tip">This lesson is based off of the [Firestarter PWA starter app](https://firestarter-96e46.firebaseapp.com/), which is organized into NgModules. It is not needed to follow this lesson, but it does have a notification service for showing errors to the end user.</p>
 
 We are going to build a custom user authentication flow backed by Firebase email-password auth. When users first sign-up, they must fill out a custom form with a *catchphrase* before they are fully authorized to use the app. The catchphrase can be anything, for example "I love Angular!" - it's just a placeholder for any type of custom data you can imagine.
 

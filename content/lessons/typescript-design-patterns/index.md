@@ -60,7 +60,7 @@ const settings = Settings.getInstance();
 
 ### Prototype
 
-Prototype allows objects to be clones of other objects, rather then extended via inheritance.
+Prototype allows objects to be clones of other objects, rather than extended via inheritance.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -151,14 +151,14 @@ A facade is a class that provides a simplified API for larger body of code. It i
 {{< file "ts" "software.ts" >}}
 ```typescript
 class PlumbingSystem {
-  // low evel access to plubming system
+  // low level access to plumbing system
   setPressure(v: number) {}
   turnOn() {}
   turnOff() {}
 }
 
 class ElectricalSystem {
-  // low evel access to electrical system
+  // low level access to electrical system
   setVoltage(v: number) {}
   turnOn() {}
   turnOff() {}
@@ -217,7 +217,7 @@ Behavioral patterns are used to identify communication between objects.
 
 ### Iterator
 
-The iterator pattern is used to traverse a collection of elements. Most programming languages provide abstrations for iteration like the `for` loop. However, you can create your own iterators in JavaScript by using the `Symbol.iterator` property. The code below creates a custom range function that can be used in a regular `for` loop. 
+The iterator pattern is used to traverse a collection of elements. Most programming languages provide abstractions for iteration like the `for` loop. However, you can create your own iterators in JavaScript by using the `Symbol.iterator` property. The code below creates a custom range function that can be used in a regular `for` loop. 
 
 {{< file "ts" "software.ts" >}}
 ```typescript
@@ -262,7 +262,7 @@ tv1.unsubscribe();
 ```
 ### Mediator
 
-The mediator is provids a middle layer between objects that communicate with each other. This pattern implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
+The mediator provides a middle layer between objects that communicate with each other. This pattern implemented frequently in JavaScript libaries via plugin systems (like Webpack) and middleware (like Express).
 
 {{< file "ts" "software.ts" >}}
 ```typescript

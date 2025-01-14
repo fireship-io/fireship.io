@@ -167,7 +167,7 @@ Inside the validation function, we first get access to the user's input with `co
 
 If firestore returns an empty array, we know the username is available. But if that array is *not* empty, the username is already taken.  
 
-By default, Firestore gives us a realtime stream of data, but what we actually want is an Obsevable that completes, which we can force with `take(1)`. To prevent inefficient queries, I also added a `debounceTime(500)` to wait 500ms after the user stops typing before making the query. 
+By default, Firestore gives us a realtime stream of data, but what we actually want is an Observable that completes, which we can force with `take(1)`. To prevent inefficient queries, I also added a `debounceTime(500)` to wait 500ms after the user stops typing before making the query. 
 
 ```typescript
   return (control: AbstractControl) => {

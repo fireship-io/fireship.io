@@ -1,6 +1,6 @@
 ---
 title: Nullish Coalescing
-description: How nullish coalescing is realted to truthy and falsy values
+description: How nullish coalescing is related to truthy and falsy values
 weight: 24
 lastmod: 2022-11-11T10:23:30-09:00
 draft: false
@@ -17,7 +17,7 @@ quiz: true
 
 ## Nullish Coalescing
 
-Nullish coalescing is a relativly new operator that was introduced in ES2020. It is similar to the logical OR operator `||`, but it only returns the right-hand side if the left-hand side is `null` or `undefined`. 
+Nullish coalescing is a relatively new operator that was introduced in ES2020. It is similar to the logical OR operator `||`, but it only returns the right-hand side if the left-hand side is `null` or `undefined`. 
 
 ```js
 const foo = null ?? 'bar';

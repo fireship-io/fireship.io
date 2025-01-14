@@ -311,14 +311,14 @@ In the HTML, we can declare the progress component and display the user interfac
 
 ## Packaging for Desktop Operating Systems
 
-Now that we have a decent app ready for desktops, we need to package and distribute it. The [electron packager](https://github.com/electron-userland/electron-packager) tool will allow to package our code into an executable for desktop platforms - including Windows (win32), MacOS (darwin), and Linux. Keep in mind, there are several other [electron packaging tools](https://electron.atom.io/docs/tutorial/application-distribution/#packaging-tools) that might better fit your needs. 
+Now that we have a decent app ready for desktops, we need to package and distribute it. The [electron packager](https://github.com/electron-userland/electron-packager) tool will allow to package our code into an executable for desktop platforms - including Windows (win32), macOS (darwin), and Linux. Keep in mind, there are several other [electron packaging tools](https://electron.atom.io/docs/tutorial/application-distribution/#packaging-tools) that might better fit your needs. 
 
 ```shell
 npm install electron-packager -g
 npm install electron-packager --save-dev
 ```
 
-<p class="tip">Linux and MacOS developers will need to install [WineHQ](https://www.winehq.org/) if they plan on building desktop apps for Windows.</p>
+<p class="tip">Linux and macOS developers will need to install [WineHQ](https://www.winehq.org/) if they plan on building desktop apps for Windows.</p>
 
 In this example, I am going to build an executable for Windows. 
 
@@ -328,7 +328,7 @@ electron-packager . --platform=win32
 
 This will generate a directory `/angular-electron-win32-x64/` that contains the executable file. 
 
-And why not build one for MacOS while we're at it. 
+And why not build one for macOS while we're at it. 
 
 ```shell
 electron-packager . --platform=darwin

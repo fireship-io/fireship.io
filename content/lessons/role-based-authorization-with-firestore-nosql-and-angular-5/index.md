@@ -194,7 +194,7 @@ Also see the [Firestore Security Rules Cookbook](/snippets/firestore-rules-recip
 
 Now let's jump back to the `auth.service.ts` file and write some authorization rules. In my opinion, it is best to write *activity-based* rules, then assign roles to them. For example, we have three rules below `canRead`, `canEdit`, and `canDelete` - pretty self-explanatory. 
 
-Each method has a static array of authorized roles, then the `checkAuthorization` helper will see if any of those roles exist on the user document. You might consider extracting this logic to it's own class if the complexity becomes hard to maintain. 
+Each method has a static array of authorized roles, then the `checkAuthorization` helper will see if any of those roles exist on the user document. You might consider extracting this logic to its own class if the complexity becomes hard to maintain. 
 
 ```typescript
   ///// Role-based Authorization //////

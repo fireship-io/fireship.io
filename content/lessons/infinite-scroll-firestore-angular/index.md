@@ -31,7 +31,7 @@ As an added bonus, the feature will be able to scroll *upwards*, which is useful
 
 ## How it Works
 
-In Firstore, you need to make a [brand new query with a document cursor](https://firebase.google.com/docs/firestore/query-data/query-cursors) each time you want more data. AngularFire2 provides this data in the `snapshotChanges()` method, making it possible to map custom objects that have the raw snapshot we need as a cursor. 
+In Firestore, you need to make a [brand new query with a document cursor](https://firebase.google.com/docs/firestore/query-data/query-cursors) each time you want more data. AngularFire2 provides this data in the `snapshotChanges()` method, making it possible to map custom objects that have the raw snapshot we need as a cursor. 
 
 I experimented with a few different patterns and found my favorite approach was to use a service to keep track of a query configuration. This allows you to repeat a consistent query, while updating the cursor after each new batch. It keeps track of all source data on the service, which may or may not be desirable for your use case. The end result is an API that looks like this: 
 

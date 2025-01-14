@@ -49,9 +49,9 @@ firebase init
 
 ## Cloud Function Middleware
 
-The Cloud Function is where most of the Angular SEO magic happens. I works by handling incoming requests to your app and will (1) serve up the the Angular app like when dealing with a human being or (2) render the content through Rendertron when dealing with a bot. 
+The Cloud Function is where most of the Angular SEO magic happens. I works by handling incoming requests to your app and will (1) serve up the Angular app like when dealing with a human being or (2) render the content through Rendertron when dealing with a bot. 
 
-There's an existing Rentertron [cloud function designed for Polymer](https://github.com/justinribeiro/pwa-firebase-functions-botrender) web components, but it is not compatible with Angular 5 out of the box. I used this function as a starting point and modified it play well with Angular. 
+There's an existing Rendertron [cloud function designed for Polymer](https://github.com/justinribeiro/pwa-firebase-functions-botrender) web components, but it is not compatible with Angular 5 out of the box. I used this function as a starting point and modified it play well with Angular. 
 
 
 ### index.js

@@ -11,7 +11,7 @@ tags:
 youtube: 26Mayv5JPz0
 ---
 
-As a YouTuber, one of my biggest time sucks is video editing, so I recently wrote several video editing scripts with [FFmpeg](https://ffmpeg.org/) to increse my productivity. It is a popular command line tool that can convert, transform,  and filter nearly any multimedia format (over 100+ codecs supported). 
+As a YouTuber, one of my biggest time sucks is video editing, so I recently wrote several video editing scripts with [FFmpeg](https://ffmpeg.org/) to increase my productivity. It is a popular command line tool that can convert, transform,  and filter nearly any multimedia format (over 100+ codecs supported). 
 
 In the following lesson, we'll look at a collection of useful techniques for working with FFmpeg that you can use to build your own video editing utilities or apps. 
 
@@ -54,13 +54,13 @@ The `scale` filter resizes the video to a width of 320 pixels, while maintaining
 
 The `split` filter splits the video stream into two branches, one to generate the palette and the other to apply it.
 
-The [palettegen](https://ffmpeg.org/ffmpeg-filters.html#palettegen-1) filter creates a color palette based on the input video and and outputs the palette as a video stream, which is passed to the paletteuse filter along with the original video stream.  
+The [palettegen](https://ffmpeg.org/ffmpeg-filters.html#palettegen-1) filter creates a color palette based on the input video and outputs the palette as a video stream, which is passed to the paletteuse filter along with the original video stream.  
 
 Additional ideas for Gif optimization are discussed here by [Giphy Engineering](https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/). 
 
 ### Add Subtitles to a Video 
 
-This example assumes you have an existing SRT or WebVTT file with capations and timestamps for your video. First, use FFmpeg to covert it to ASS format (Advanced SubStation Alpha). 
+This example assumes you have an existing SRT or WebVTT file with captions and timestamps for your video. First, use FFmpeg to covert it to ASS format (Advanced SubStation Alpha). 
 
 ```bash
 ffmpeg -i in.srt smart.ass
@@ -80,7 +80,7 @@ FFmpeg is available in the Firebase Cloud Functions runtime. You can invoke it d
 npm install fluent-ffmpeg
 ```
 
-Once installed, you can can start using it like so:
+Once installed, you can start using it like so:
 
 ```javascript
 const ffmpeg = require('fluent-ffmpeg');

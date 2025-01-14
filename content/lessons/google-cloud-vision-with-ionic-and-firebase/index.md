@@ -53,7 +53,7 @@ This goes without saying, but you need a Firebase project. Every Firebase projec
 npm install firebase-tools -g
 ```
 
-The Cloud Vision API is not enabled by default. From the GCP console, navigate the the *enable APIs* and [enable the vision API](https://console.cloud.google.com/apis/library/vision.googleapis.com/). 
+The Cloud Vision API is not enabled by default. From the GCP console, navigate the *enable APIs* and [enable the vision API](https://console.cloud.google.com/apis/library/vision.googleapis.com/). 
 
 
 {{< figure src="img/vision-enable.png" caption="Enable cloud vision from the GCP console" >}}

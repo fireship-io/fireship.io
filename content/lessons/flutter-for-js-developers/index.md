@@ -55,7 +55,7 @@ Throughout this lesson, you will see the 👉 emoji. Dart will always be on the 
 
 ## Dart vs JS - Syntax
 
-Dart is a strongly-typed compiled language, while JS is a weakly-typed scripting language. Despite being polar opposites in these ways, they share many of the same convetions, so most JS devs will be productive on day one. 
+Dart is a strongly-typed compiled language, while JS is a weakly-typed scripting language. Despite being polar opposites in these ways, they share many of the same conventions, so most JS devs will be productive on day one. 
 
 
 Want to write some Dart code right now? Head over to the [DartPad](https://dartpad.dartlang.org/) playground.
@@ -235,7 +235,7 @@ callme((v) => print(v));
 
 ### Classes
 
-You will be using [Classes](https://www.dartlang.org/guides/language/language-tour#classes) frequently in Dart and they are very powerful. The language supports **mixin-based inheritance**, which provides excellent code reuse with [composition](https://en.wikipedia.org/wiki/Composition_over_inheritance). In JS, classes are just syntatic sugar for functions and prototypal inheritance.
+You will be using [Classes](https://www.dartlang.org/guides/language/language-tour#classes) frequently in Dart and they are very powerful. The language supports **mixin-based inheritance**, which provides excellent code reuse with [composition](https://en.wikipedia.org/wiki/Composition_over_inheritance). In JS, classes are just syntactic sugar for functions and prototypal inheritance.
 
 
 {{< file "ts" "index.ts" >}} ```typescript

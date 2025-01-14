@@ -38,7 +38,7 @@ The list below outlines the Firebase tips presented in the video.
 9. Use App Distribution to bypass Google Play and Apple Test Flight
 10. Use NPM Scripts to build/deploy your app
 11. Use `--project` flag to avoid deploying to the wrong project
-12. Use the the cool new *web.app* domain
+12. Use the cool new *web.app* domain
 13. Add additional sites with multisite hosting
 14. Rewrite routes to Cloud Function or Cloud Run 
 15. Rewrite routes Dynamic Links
@@ -59,7 +59,7 @@ The list below outlines the Firebase tips presented in the video.
 27. Angular App? Use AngularFire
 28. React App? Use ReactFire
 29. RxJS? Use RxFire
-30. Find additional projects from the FirebaseExtended Github Org. 
+30. Find additional projects from the FirebaseExtended GitHub Org. 
 31. Use Performance Monitoring
 32. Use Crashlytics
 33. Use Analytics
@@ -84,7 +84,7 @@ The list below outlines the Firebase tips presented in the video.
 48. Sync browser tabs for offline persistence
 49. Use emojis in your code
 50. Wildcard string queries with `~`
-51. Create indicies by viewing the Firestore error logs
+51. Create indices by viewing the Firestore error logs
 52. Write to lists with array union & remove
 53. Query lists with array-contains
 54. Pipeline concurrent single doc read requests

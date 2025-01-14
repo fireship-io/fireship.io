@@ -86,15 +86,15 @@ An easy way to bring your shapes to life is by animating size, movement, and rot
 
 ### Animate the Shape
 
-We can also animate the verticies of the star to to transform it into a completely different shape. 
+We can also animate the vertices of the star to to transform it into a completely different shape. 
 
 
 **Tasks**
 
-1. Add a keyframe to edit verticies. 
-1. Click "edit verticies", scrub to a different time,  move the verticies to automatically add a keyframe. 
+1. Add a keyframe to edit vertices. 
+1. Click "edit vertices", scrub to a different time,  move the vertices to automatically add a keyframe. 
 
-{{< figure src="img/flare-star-vert.png" caption="Use the verticies to change and animate the points of the shape" >}}
+{{< figure src="img/flare-star-vert.png" caption="Use the vertices to change and animate the points of the shape" >}}
 
 ### Animate the Stroke for a Hand-Drawn Effect
 
@@ -248,7 +248,7 @@ class NavBarState extends State<NavBar> {
 
 In this final section, we define a method that will turn the Flare animations into tap-able buttons that change the state of the widget. This can be achieved with a `setState` call from a *GestureDetector*, as we do not want Material ink splashes in this demo. 
 
-The *FlareActor* is a widget from the flare_flutter package that that will run the specified animation when the state changes. 
+The *FlareActor* is a widget from the flare_flutter package that will run the specified animation when the state changes. 
 
 
 Remember, we defined the animation name as *go* in the Flare editor before exporting the file. By default, the animation name is *Untitled*. 

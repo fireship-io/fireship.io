@@ -125,7 +125,7 @@ export class ReversePipe implements PipeTransform {
 <toast-messages></toast-messages>
 ```
 
-<p>The component’s template will loop over the observable -- notice how we are chaining together the the pipes `async | reverse`. Then use `ngClass` to match the message style to Bulma’s notification CSS styles. Lastly, the dismiss function is added on the button click. </p>
+<p>The component’s template will loop over the observable -- notice how we are chaining together the pipes `async | reverse`. Then use `ngClass` to match the message style to Bulma’s notification CSS styles. Lastly, the dismiss function is added on the button click. </p>
 
 ```html
 <div class="wrapper">

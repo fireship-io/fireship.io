@@ -34,7 +34,7 @@ typeof function() {} // function (which inherits from object)
 
 ## Truthy vs Falsy
 
-When a value is encounted in a *Boolean* context - such as an `if` statement - it will be coerced into a boolean. If the result is `true` then the value is *truthy* and vice versa. If you're unsure about a value, you can convert it using the logical `!` NOT operator twice, or a double-bang as I like to call it `!!`. 
+When a value is encountered in a *Boolean* context - such as an `if` statement - it will be coerced into a boolean. If the result is `true` then the value is *truthy* and vice versa. If you're unsure about a value, you can convert it using the logical `!` NOT operator twice, or a double-bang as I like to call it `!!`. 
 
 
 {{< file "js" "index.js" >}}

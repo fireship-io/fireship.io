@@ -41,11 +41,11 @@ Decorators are very good at creating abstractions - almost too good. While it is
 
 A class decorator makes it possible to intercept the `constructor` of class. They are called when the class is declared, not when a new instance is instantiated. 
 
-Side note - one of the most powerful characteristics of a decoractor is its ability to *reflect metadata*, but the casual user will rarely need this feature. It is more suitable for use in frameworks, like the Angular Compiler for example, that need to to analyze the codebase to build the final app bundle. 
+Side note - one of the most powerful characteristics of a decorator is its ability to *reflect metadata*, but the casual user will rarely need this feature. It is more suitable for use in frameworks, like the Angular Compiler for example, that need to to analyze the codebase to build the final app bundle. 
 
 ### Example
 
-**Real World Use Case:** When a class is decorated you have to be careful with inheritence because its decendents will not inherit the decorators. Let's freeze the class to prevent inheritence completely. 
+**Real World Use Case:** When a class is decorated you have to be careful with inheritance because its descendents will not inherit the decorators. Let's freeze the class to prevent inheritance completely. 
 
 {{< file "ngts" "hook.component.ts" >}}
 ```typescript
@@ -69,7 +69,7 @@ class FroYo extends IceCream {} // error, cannot be extended
 All of the examples in this guide use *Decorator Factories*. This just means the decorator itself is wrapped in a function so we can pass custom arguments to it, i.e `@Cool('stuff')` Feel free to omit the outer function if you want to apply a decorator without arguments `@Cool` . 
 
 
-Property decorators can be extremly useful because they can listen to state changes on a class. To fully understand the next example, it helps to be familar with JavaScript [PropertyDescriptors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). 
+Property decorators can be extremely useful because they can listen to state changes on a class. To fully understand the next example, it helps to be familiar with JavaScript [PropertyDescriptors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty). 
 
 ### Example
 
@@ -111,11 +111,11 @@ function Emoji() {
 
 ## Method Decorator
 
-Method decoractors allow us override a method's function, change its control flow, and execute additional code before/after it runs. 
+Method decorators allow us override a method's function, change its control flow, and execute additional code before/after it runs. 
 
 ### Example
 
-The following decoractor will show a confirm message in the browser before executing the method. If the user clicks cancel, it will be bypassed. Notice how we have two decoractors stacked below - they will be applied from top to bottom. 
+The following decorator will show a confirm message in the browser before executing the method. If the user clicks cancel, it will be bypassed. Notice how we have two decorators stacked below - they will be applied from top to bottom. 
 
 
 {{< file "ngts" "ice-cream.component.ts" >}}
@@ -186,7 +186,7 @@ function Example() {
 }
 ```
 
-We can achieve a *similar* results with a property decorator that will first define the `count` on the component - this is trival because Angular performs automatic change detection. We then use the name of this property to define a setter with the name of `setCount`. Usage looks like this:
+We can achieve a *similar* results with a property decorator that will first define the `count` on the component - this is trivial because Angular performs automatic change detection. We then use the name of this property to define a setter with the name of `setCount`. Usage looks like this:
 
 {{< file "ngts" "hook.component.ts" >}}
 ```typescript
@@ -204,7 +204,7 @@ export class HookComponent {
 }
 ```
 
-And the decoractor implementation is just five lines of code. We just set an initial value, then find the cooresponding
+And the decorator implementation is just five lines of code. We just set an initial value, then find the corresponding
 
 ```typescript
 function UseState(seed: any) {
@@ -229,7 +229,7 @@ The [effect hook](https://reactjs.org/docs/hooks-effect.html) hook simply consol
   });
 ```
 
-This is very easy to emulate with a method decorator because we can apply the function descriptor to Angular's equivelent `ngOnInit` and `ngAfterViewChecked` lifecycle hooks. 
+This is very easy to emulate with a method decorator because we can apply the function descriptor to Angular's equivalent `ngOnInit` and `ngAfterViewChecked` lifecycle hooks. 
 
 {{< file "ngts" "hook.component.ts" >}}
 ```typescript

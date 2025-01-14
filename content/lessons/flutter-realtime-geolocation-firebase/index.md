@@ -154,7 +154,7 @@ _addMarker() {
 }
 ```
 
-Now we have a map with a little bit of interactivity. Move the camera around, then click the buttom in the bottom right and it will place an marker on the map. 
+Now we have a map with a little bit of interactivity. Move the camera around, then click the button in the bottom right and it will place an marker on the map. 
 
 {{< figure src="img/flutter-marker-googlemap.png" alt="Flutter google map with basic markers" >}}
 
@@ -202,7 +202,7 @@ class FireMapState extends State<FireMap> {
 ```
 
 
-Next, add a method that writes to the database. This correct data strucutre with a geohash is created for you automatically when you pass the `point.data` with the Firestore document data. 
+Next, add a method that writes to the database. This correct data structure with a geohash is created for you automatically when you pass the `point.data` with the Firestore document data. 
 
 ```dart
 Future<DocumentReference> _addGeoPoint() async {
@@ -294,7 +294,7 @@ And now it's finally time to make the query to Firestore. The `_startQuery` meth
     double lng = pos.longitude;
 
 
-    // Make a referece to firestore
+    // Make a reference to firestore
     var ref = firestore.collection('locations');
     GeoFirePoint center = geo.point(latitude: lat, longitude: lng);
 

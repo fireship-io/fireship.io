@@ -21,7 +21,7 @@ npm i dotenv stripe
 ### Prompt Template
 
 ```text
-Configure Stripe environemt variables in [SOME WEB FRAMEWORK] using the code below as a reference. 
+Configure Stripe environment variables in [SOME WEB FRAMEWORK] using the code below as a reference. 
 Use the environment variables to initialize the Stripe SDK.
 ```
 

@@ -12,7 +12,7 @@ video_length: 1:53
 
 ## Course Resources
 
-- [Query Code Snippets on Github](https://gist.github.com/codediodeio/513bf77ee45be6d38d27868f5345a002)
+- [Query Code Snippets on GitHub](https://gist.github.com/codediodeio/513bf77ee45be6d38d27868f5345a002)
 - [Cloud Firestore Docs](https://firebase.google.com/docs/firestore/)
 
 

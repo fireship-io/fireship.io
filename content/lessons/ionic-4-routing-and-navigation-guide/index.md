@@ -20,7 +20,7 @@ youtube: XZHG1e_prmQ
 # versions:
 #    rxdart: 0.20
 ---
-The single most important change from Ionic v3 to v4 is how [routing and navigation](https://beta.ionicframework.com/docs/building/migration#navigation) is handled. In the past, Ionic used its own push-pop *NavController*, but has since decieded to use the [Angular Router](https://angularfirebase.com/lessons/basics-angular-router/) directly. This is a very smart move in my opinion because Angular's router is just so powerful - but it does have a bit of a learning curve. In the following lesson, you will learn the fundamental concepts required to be successful with routing and navigation in Ionic 4. 
+The single most important change from Ionic v3 to v4 is how [routing and navigation](https://beta.ionicframework.com/docs/building/migration#navigation) is handled. In the past, Ionic used its own push-pop *NavController*, but has since decided to use the [Angular Router](https://angularfirebase.com/lessons/basics-angular-router/) directly. This is a very smart move in my opinion because Angular's router is just so powerful - but it does have a bit of a learning curve. In the following lesson, you will learn the fundamental concepts required to be successful with routing and navigation in Ionic 4. 
 
 ## Ionic v4 Routing Basics with Angular 
 

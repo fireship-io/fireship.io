@@ -22,7 +22,7 @@ youtube: -atblwgc63E
 #    rxdart: 0.20
 ---
 
-Historically, Windows has not been been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps. 
+Historically, Windows has not been the preferred OS for most web developers, but things have changed over the past couple years. Microsoft recently launched [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/about) or WSL (WSL2), allowing us to install REAL linux distros (like Ubuntu) on Windows 10. This means you can use Linux toolchains (bash, zsh, tmux) and apps to manage the file system and run windows apps. 
 
 Unlike a dual boot system, where two operating systems are installed on the same hard drive, WSL runs Linux in a compatibility layer that can run unmodified ELF64 binaries. The following lesson will teach you how to enable WSL and setup other important tools for web development, like Node.js, git, Docker, browsers, and more. 
 
@@ -97,7 +97,7 @@ code ~/.bashrc # vscode
 vim ~/.bashrc # vim
 ```
 
-Below you you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
+Below you will find a few bash prompt examples. Add ONE of the lines to end of the file for your preferred prompt format. 
 
 {{< file "cog" ".bashrc" >}}
 ```bash
@@ -191,7 +191,7 @@ git --version
 
 ### Cache Remote Login Credentials
 
-If you work with Github it can be useful to cache your git credentials to avoid typing your username/password on every remote push. 
+If you work with GitHub it can be useful to cache your git credentials to avoid typing your username/password on every remote push. 
 
 {{< file "terminal" "command line" >}}
 ```text
