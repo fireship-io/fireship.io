@@ -1,6 +1,6 @@
 ## Fireship
 
-The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
+The [Fireship PRO](https://fireship.io) course platform frontend built with **Svelte, Tailwind, Hugo, Firebase, & Flamethrower.** 
 
 ## Contributing
 
@@ -21,7 +21,7 @@ Check it on on `http://localhost:6969/`.
 
 ## Developing Components 
 
-Create a Svelte file in the `app/components` directory. It must have a custom element tag. 
+Create a **Svelte** file in the `app/components` directory. It must have a custom element tag. 
 
 ```svelte
 <svelte:options tag="hi-mom" />
