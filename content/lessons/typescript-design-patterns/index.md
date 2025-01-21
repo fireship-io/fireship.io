@@ -243,7 +243,7 @@ for (const n of range(0, 100, 5)) {
 ```
 ### Observer
 
-The observer pattern is used to notify a set of interested parties when a state change occurs. The [rxjs]() library is a popular implementation of this pattern.
+The observer pattern is used to notify a set of interested parties when a state change occurs. The [rxjs](https://rxjs.dev/) library is a popular implementation of this pattern.
 
 {{< file "ts" "software.ts" >}}
 ```typescript
