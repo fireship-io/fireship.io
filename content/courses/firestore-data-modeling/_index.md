@@ -1,5 +1,5 @@
 ---
-lastmod: 2021-8-26T10:23:30-09:00
+lastmod: 2021-08-26T10:23:30-09:00
 title: Firestore Data Modeling
 description: Learn how to query and model data in Firestore by example.
 weight: 0
