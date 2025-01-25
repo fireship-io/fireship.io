@@ -2,7 +2,7 @@
 <html class="dark">
   <head data-build="{{ .Site.Data.svelte.token }}">
     <meta charset="utf-8">
-    <title>{{ .Page.Title }}</title>
+    <title>{{ .Params.seo_title | default .Title }}</title>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="/svelte/{{ .Site.Data.svelte.css }}" />
     <script type="module" defer src="/svelte/{{ .Site.Data.svelte.js }}" /></script>
