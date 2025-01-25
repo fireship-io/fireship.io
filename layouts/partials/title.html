@@ -1,0 +1,24 @@
+{{- $path := .RelPermalink -}}
+{{- $pageTitle := .Title -}}
+{{- range $dir, $format := .Site.Params.seoTitles -}}
+  {{- if in $path (printf "/%s/" $dir) -}}
+    {{- $prefix := $format.prefix | default "" -}}
+    {{- $suffix := $format.suffix | default "" -}}
+    {{- if eq $dir "courses" -}}
+      {{- $pathParts := split (trim $path "/") "/" -}}
+      {{- if gt (len $pathParts) 2 -}}
+        {{- $courseName := index $pathParts 1 -}}
+        {{- $courseName := title (replace $courseName "-" " ") -}}
+        {{- $pageTitle = printf "%s%s - %s%s" $prefix $courseName $.Title $suffix -}}
+        {{- if gt (len $pageTitle) 60 -}}
+          {{- $pageTitle = replace $pageTitle "Online Course " "" -}}
+        {{- end -}}
+      {{- else -}}
+        {{- $pageTitle = printf "%s%s%s" $prefix $.Title $suffix -}}
+      {{- end -}}
+    {{- else -}}
+      {{- $pageTitle = printf "%s%s%s" $prefix $.Title $suffix -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $pageTitle -}}

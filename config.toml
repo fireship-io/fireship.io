@@ -19,6 +19,18 @@ mainSections = ["lessons", "snippets"]
 vars = ["title", "description", "summary", "date", "publishdate", "lastmod", "permalink"]
 params = ["tags"]
 
+[params.seoTitles]
+  [params.seoTitles.contributors]
+    suffix = " - Contributors | Fireship.io"
+  [params.seoTitles.courses]
+    prefix = "Learn "
+    suffix = " Online Course | Fireship.io"
+  [params.seoTitles.lessons]
+    prefix = "Tutorial: "
+    suffix = " | Fireship.io"
+  [params.seoTitles.tags]
+    suffix = " Tags | Fireship.io"
+
 [markup.goldmark.renderer]
 unsafe= true
 
