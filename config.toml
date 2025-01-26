@@ -29,7 +29,7 @@ params = ["tags"]
     prefix = "Tutorial: "
     suffix = " | Fireship.io"
   [params.seoTitles.tags]
-    suffix = " Tags | Fireship.io"
+    suffix = " - Tags | Fireship.io"
 
 [markup.goldmark.renderer]
 unsafe= true
