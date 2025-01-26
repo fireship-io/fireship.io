@@ -40,15 +40,15 @@ Follow the steps outlined below to implement [Sign In with Apple](https://develo
 
 From the Apple Developer Portal go to [Certificates, Identifiers & Profiles >> Identifiers](https://help.apple.com/developer-account/#/devcdfbb56a3). Create a new **App ID** or update an existing app and give it the  **Sign In with Apple** capability. 
 
-{{< figure src="/img/snippets/apple-signin-app1.png" alt="Apple Developer Portal App IDs" >}}
-{{< figure src="/img/snippets/apple-signin-app2.png" caption="Make sure Sign In with Apple is Enabled" >}}
+<!-- {{< figure src="/img/snippets/apple-signin-app1.png" alt="Apple Developer Portal App IDs" >}}
+{{< figure src="/img/snippets/apple-signin-app2.png" caption="Make sure Sign In with Apple is Enabled" >}} -->
 
 ### Step 2 - Create and Configure a Service ID
 
 
 From *Certificates, Identifiers & Profiles >> Identifiers*, create a new **Service ID** and make sure it is linked to your primary App ID. Configure it to point to your Firebase hosting URL. 
 
-{{< figure src="/img/snippets/apple-signin-web-config.png" caption="Replace the project ID for your domain" >}}
+<!-- {{< figure src="/img/snippets/apple-signin-web-config.png" caption="Replace the project ID for your domain" >}} -->
 
 
 ### Step 3 - Verify Domain Ownership
@@ -62,27 +62,27 @@ Deploy this file to your domain so Apple can verify it.
 firebase deploy --only hosting
 ```
 
-{{< figure src="/img/snippets/apple-signin-verify.png" caption="You should see a green checkmark next to the domain" >}}
+<!-- {{< figure src="/img/snippets/apple-signin-verify.png" caption="You should see a green checkmark next to the domain" >}} -->
 
 ### Step 4 - Register a Private Key
 
 From *Certificates, Identifiers & Profiles >> Identifiers*, create and download a new private key - keep it private. It is used to validate requests from Apple with your Firebase project. 
 
-{{< figure src="/img/snippets/apple-signin-private-key.png" caption="Download the private key. Do not expose it publicly." >}}
+<!-- {{< figure src="/img/snippets/apple-signin-private-key.png" caption="Download the private key. Do not expose it publicly." >}} -->
 
 
 ### Step 5 - Enable SignIn Method on Firebase
 
 Head over the to the [Firebase Console](https://console.firebase.google.com/) and go to the *Authentication >> Sign-in Method* tab. Enable Apple and enter the required details.  
 
-{{< figure src="/img/snippets/apple-signin-firebase-console.png" caption="Copy the contents of the private key in the console" >}}
+<!-- {{< figure src="/img/snippets/apple-signin-firebase-console.png" caption="Copy the contents of the private key in the console" >}} -->
 
 
 ## Frontend Code
 
 We now have all the pieces in place to implement SignIn with Apple into our web app. Because this is Firebase, it only requires a few lines of code. Assuming you have [Firebase installed](/snippets/install-angularfire/) in your project, simply make a reference to the provider and call `signInWithPopup()`.
 
-{{< figure src="/img/snippets/apple-signin-popup.png" caption="SignIn with Apple popup seen by the end-user" >}}
+<!-- {{< figure src="/img/snippets/apple-signin-popup.png" caption="SignIn with Apple popup seen by the end-user" >}} -->
 
 ### Basic JavaScript Implementation
 

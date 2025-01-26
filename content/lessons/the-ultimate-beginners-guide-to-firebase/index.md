@@ -116,8 +116,6 @@ Run the function above by binding it to a button click event.
 
 That should authenticate the user into your app and create the user in Firebase as shown below:
 
-<img class="content-image" src="/images/basics-auth.png" alt="User auth in Firebase simple code snippet" /> 
-
 {{< figure src="img/basics-auth.png" caption="User authentication in Firebase" >}}
 
 ## 3. Cloud Firestore Database

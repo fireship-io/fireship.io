@@ -1,6 +1,6 @@
 ---
 title: Jeroen Ouwehand
-featured_img: /img/contributors/jeroen-ouwehand.jpeg
+featured_img: /img/contributors/jeroen-ouwehand.webp
 
 links:
     github: https://github.com/jeroenouw

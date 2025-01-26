@@ -86,7 +86,7 @@ Now if you try to update data on this node without being logged in with a matchi
 
 It is not always feasible to use database triggers, so how do we secure an HTTP Firebase Cloud Function? The answer is to [decode an authentication token header](https://firebase.google.com/docs/auth/admin/verify-id-tokens) in the cloud function environment. 
 
-<img src="/images/secure-https-cloud-function.gif" alt="A secure endpoint on Firebase cloud functions" class="content-image" />
+<!-- <img src="/images/secure-https-cloud-function.gif" alt="A secure endpoint on Firebase cloud functions" class="content-image" /> -->
 
 Google has put together an [example](https://github.com/firebase/functions-samples/tree/master/authorized-https-endpoint) of an authorized endpoint in the cloud functions samples repo. I have modified the function to my own preferences and added a way to trigger it with the Angular HTTP module. 
 
