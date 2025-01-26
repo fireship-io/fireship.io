@@ -9,7 +9,7 @@ vimeo: 645764917
 video_length: 3:53
 ---
 
-# Anonymous Auth
+## Anonymous Auth
 
 Enable anonymous auth in the Firebase console, then implemment it in the auth service. 
 

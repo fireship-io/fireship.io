@@ -15,6 +15,6 @@ quiz: true
   <h6>Which Hook is used to run code when a component is first mounted to the DOM?</h6>
 </quiz-modal>
 
-# Optional
+## Optional
 
 This video was originally released on YouTube and is intended to be a primer for React. It is not required to build the main demo app in the course.

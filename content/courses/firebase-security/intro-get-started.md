@@ -32,7 +32,7 @@ npm init -y
 npx create-react-app myapp
 ```
 
-# 3. Connect your Local Code to Firebase
+## 3. Connect your Local Code to Firebase
 
 {{< file "terminal" "command line" >}}
 ```bash
