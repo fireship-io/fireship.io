@@ -14,9 +14,9 @@ tags:
   - pro
 
 stack:
-  - supabase
-  - react
-  - postgres
+  - [supabase](https://supabase.io/)
+  - [react](https://reactjs.org/)
+  - [postgres](https://www.postgresql.org/)
 ---
 
 **The Supabase Course** is a project-based course that builds a Reddit-inspired web app from scratch with Supabase, PostgreSQL, and React.
