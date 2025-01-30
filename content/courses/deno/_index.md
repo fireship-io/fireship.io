@@ -17,7 +17,7 @@ stack:
     - js
 ---
 
-**Deno - The Full Course** is a hands-on tutorial where you will build a complete web app with [Deno](https://kit.svelte.dev/), using zero 3rd-party denpendices to master TypeScript and Web Platform APIs. 
+**Deno - The Full Course** is a hands-on tutorial where you will build a complete web app with [Deno](https://deno.com/), using zero 3rd-party denpendices to master TypeScript and Web Platform APIs. 
 
 ## What will I learn?
 
