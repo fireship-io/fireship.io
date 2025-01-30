@@ -27,7 +27,7 @@ tags:
 
 As a compiled language, Go is generally faster than interpreted languages and is safer from crashes thanks to its built-in type system. That being said, there is a good balance between expressiveness and safety that gives programmers the benefits of a strong type system without the burden of complex workflows.
 
-The use cases of the language vary from network servers and distributed systems to CLI’s, web and mobile development, scalable databases, and cloud-native applications.
+The use cases of the language vary from network servers and distributed systems to CLIs, web and mobile development, scalable databases, and cloud-native applications.
 
 ## First Program
 Before we get started, check out this [guide](https://golang.org/doc/install) to download and install Go on your platform. We’ll start with the classic “hello world”. Despite being a simple example, it already illustrates many central ideas.
