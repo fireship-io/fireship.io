@@ -1,7 +1,7 @@
 <svelte:options tag="route-loader" />
 
 <script lang="ts">
-  import { routeLoading } from '../../stores/loading';
+  import { routeLoading } from '../../stores';
 </script>
 
 

@@ -64,7 +64,7 @@
   <p class="warn">
     Be careful. If you enter the wrong email, you will not be able to access
     your account.
-    <span on:click={() => (show = false)} class="info">nevermind</span>
+    <span on:click={() => (show = false)} class="info">never mind</span>
   </p>
 {:else}
   <span class="info" on:click={() => (show = true)}>change email</span>

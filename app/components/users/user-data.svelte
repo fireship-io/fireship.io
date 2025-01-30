@@ -3,8 +3,7 @@
 <svelte:options tag="user-data" />
 
 <script lang="ts">
-  import { courseByLegacySku } from '../../stores/products';
-  import { user, userData, userProgress } from '../../stores/user';
+  import { courseByLegacySku, user, userData, userProgress } from '../../stores';
   export let field: | 'email' | 'photoURL' | 'displayName' | 'uid' | 'xp' | 'xp-raw' | 'status' | 'expires' | 'courses';
 
   function formatXp(num: number) {

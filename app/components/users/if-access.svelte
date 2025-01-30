@@ -1,7 +1,7 @@
 <svelte:options tag="if-access" />
 
 <script lang="ts">
-  import { canAccess } from '../../stores/user';
+  import { canAccess } from '../../stores';
   export let free = false;
 </script>
 
