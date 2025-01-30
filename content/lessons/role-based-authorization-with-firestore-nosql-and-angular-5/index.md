@@ -273,7 +273,7 @@ An easier approach is to block unauthorized users at the router level. In this c
 1. Activate routes only for users with the  `admin` role. 
 2. Activate routes only for users roles assigned to the `canRead` ability.
 
-<img src="/images/role-route-guard.gif" alt="firestore role based auth router guard demo" class="content-image" /> 
+{{< figure src="img/role-route-guard.gif" caption="Role-based auth demo" >}}
 
 ### Admin Guard
 

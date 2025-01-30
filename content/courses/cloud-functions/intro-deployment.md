@@ -15,7 +15,7 @@ emoji: 👶
 firebase deploy --only functions
 ```
 
-# or 
+## or 
 
 ```
 firebase deploy --only functions:your-function-name

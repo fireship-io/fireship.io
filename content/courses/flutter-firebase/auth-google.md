@@ -9,7 +9,7 @@ vimeo: 645764833
 video_length: 3:15
 ---
 
-# Auth Service
+## Auth Service
 
 Implement Google Login in the auth service.
 

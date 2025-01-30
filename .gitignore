@@ -31,3 +31,4 @@ firebase.json
 resources/
 data/svelte.json
 .env
+/.unlighthouse

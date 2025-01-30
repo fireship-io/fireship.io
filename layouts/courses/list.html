@@ -26,7 +26,7 @@
         </ul>
 
         <header class="text-center mb-8 mt-20">
-            <h1 class="text-5xl mb-1">Past Courses</h1>
+            <h2 class="text-5xl mb-1">Past Courses</h2>
             <p class="my-0 text-gray3">these courses might taste a little stale</p>
         </header>
       
@@ -74,6 +74,12 @@
             </span>
         </div>
 
+        <div class="w-full flex justify-center mt-8">
+            <a href="#enroll" class="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full text-3xl no-underline">
+                <h2 class="m-0">Enroll Now</h2>
+            </a>
+        </div>
+
         <div class="mx-auto w-24 h-1 my-24 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full"></div>
 
         {{ if .Params.stack }}
@@ -111,7 +117,7 @@
                 <p class="m-0 font-display text-green-500 no-underline text-xl">You have full access to this course 🎉</p>
             </div>
 
-            <div slot="denied" class="max-w-3xl mx-auto text-center">
+            <div slot="denied" id="enroll" class="max-w-3xl mx-auto text-center">
                 <h2 class="text-5xl text-white pb-2 inline-block">How to Enroll</h2>
                 <div class="mx-auto w-24 h-1 mt-0 mb-24 bg-gradient-to-r from-purple-600 to-purple-400 rounded-full"></div>
 

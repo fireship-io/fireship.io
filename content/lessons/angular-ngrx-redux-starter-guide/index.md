@@ -82,7 +82,7 @@ npm install @ngrx/core @ngrx/store  --save
 
 Let's start by building the most simple ngrx pattern possible. Our app state will consist of one single variable - a hello world message in English. Then we will create two actions that will translate this message into French or Spanish.
 
-<img src="/images/ngrx-redux-angular-simple-example.gif" alt="A simple example of ngrx redux in Angular4" class="content-image" />
+{{< figure src="img/ngrx-redux-angular-simple-example.gif" caption="A simple example of ngrx redux in Angular4" >}}
 
 ### app.module.ts
 
@@ -439,7 +439,7 @@ export class AppModule { }
 When you activate the plugin in Chrome, you get nice breakdown of state changes in browser. The plugin will tell you exactly which properties have changed after each event. This makes debugging incredibly easy when get unexpected results in your data store.
 
 
-{{< figure src="img/redux-plugin-ngrx.gif" caption="The redux plugin for Chrome makes debugging NgRx a breeze" >}}
+<!-- {{< figure src="img/redux-plugin-ngrx.gif" caption="The redux plugin for Chrome makes debugging NgRx a breeze" >}} -->
 
 ## Up next
 

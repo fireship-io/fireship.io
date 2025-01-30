@@ -10,7 +10,7 @@ video_length: 3:18
 chapter_start: User Authentication
 ---
 
-# Auth Service
+## Auth Service
 
 Create a file named `auth.dart` in the `services` directory.
 

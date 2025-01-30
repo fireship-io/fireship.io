@@ -39,7 +39,7 @@ You can use Deck.gl with any framework, but this demo uses vanilla JavaScript wi
 
 First, create a Google Cloud (or Firebase) project and obtain a browser API key for [Google Maps JS](https://developers.google.com/maps/documentation/javascript/get-api-key). 
 
-{{< figure src="/img/snippets/google-maps-enable.png" caption="Enable the Google Maps JavaScript API from a GCP project. Copy the browser API key from the credentials page." >}}
+<!-- {{< figure src="/img/snippets/google-maps-enable.png" caption="Enable the Google Maps JavaScript API from a GCP project. Copy the browser API key from the credentials page." >}} -->
 
 ### Create a Webpack project
 

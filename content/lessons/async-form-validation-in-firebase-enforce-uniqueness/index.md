@@ -40,7 +40,7 @@ This tutorial assumes you have...
 - You have a collection of users with usernames (so we have something to validate uniqueness against)
 
 
-<img src="/images/firebase-username-data.png" alt="username data as it appears in Firestore" class="content-image" />  
+<!-- <img src="/images/firebase-username-data.png" alt="username data as it appears in Firestore" class="content-image" />   -->
 
 Your `app.module.ts` should have the following imports: 
 

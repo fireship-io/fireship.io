@@ -20,6 +20,7 @@ tags:
 # versions: 
 #     - "rxjs": 6.3
 ---
+# How To Delete a Firestore Collection
 
 Deleting an entire collection from Firestore should be handled on a backend server. Collections can grow infinitely large, so deleting a millions of documents can be an excessively large workload to put on a clientside web or mobile app. 
 

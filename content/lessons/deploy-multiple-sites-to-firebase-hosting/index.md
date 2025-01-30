@@ -60,7 +60,7 @@ Managing multiple sites in Firebase Hosting just requires a few simiple configur
 
 Go to the hosting tab on the Firebase console and add your sites. Each site can have its own custom domain and deployment history. 
 
-<img class="content-image" src="/images/multisite-hosting.png" alt="Add multiple sites from firebase console" /> 
+<!-- <img class="content-image" src="/images/multisite-hosting.png" alt="Add multiple sites from firebase console" />  -->
 
 {{< figure src="img/multisite-hosting.png" caption="Add multiple sites from the Firebase Console" >}}
 

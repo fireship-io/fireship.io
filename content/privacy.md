@@ -4,7 +4,7 @@ lastmod: 2022-09-11T08:36:36-07:00
 draft: false
 ---
 
-## Privacy Policy
+# Privacy Policy
 
 Fireship.io ("Fireship" "we" or "us") is committed to protecting your privacy. This Privacy Policy explains the methods and reasons we collect, use, disclose, transfer, and store your information. If you have any questions about the contents of this policy, don’t hesitate to contact us.
 
