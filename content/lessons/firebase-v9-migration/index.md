@@ -61,7 +61,7 @@ export default firebaseConfig;
 
 v8 and earlier:
 
-{{< file "js" "firebaseConfig.js" >}}
+{{< file "js" "firebaseInit.js" >}}
 ```js
 import firebaseConfig from "./firebaseConfig";
 import firebase from "firebase/app";
