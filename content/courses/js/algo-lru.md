@@ -14,7 +14,7 @@ quiz: true
   <h6>Which feature makes a JS Map suitable for an LRU cache?</h6>
 </quiz-modal>
 
-The [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU) cache is one of the most commoly asked algorithm questions on interviews. 
+The [LRU](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU) cache is one of the most commonly asked algorithm questions on interviews. 
 
 ## LRU Interview Question
 
