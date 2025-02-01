@@ -13,5 +13,5 @@ free: true
 
 ## Other Resources
 
-- [Official Svelte Tutorial](https://svelte.dev/tutorial/basics)
+- [Official Svelte Tutorial](https://svelte.dev/tutorial/svelte/welcome-to-svelte)
 - [SvelteKit First Look](https://youtu.be/uEJ-Rnm2yOE)
