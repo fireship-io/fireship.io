@@ -39,7 +39,7 @@ $ npx create-react-app framer-demo
 Open your new React app
 
 ```sh
-$ cd react-framer-demo
+$ cd framer-demo
 ```
 
 Install the Framer Motion package
