@@ -45,7 +45,8 @@
   <div class="controls">
     <button class="btn-o" on:click={() => setSeats(seats - 1)}>-</button>
     <input
-      type="number"
+      type="text"
+      inputmode="numeric"
       bind:value={seats}
       on:change={(e) => setSeats(e.target.value)}
       min="5"
