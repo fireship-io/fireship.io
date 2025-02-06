@@ -15,6 +15,14 @@
   let results: any;
   let hits = [];
   let activeHit = 0;
+  let searchInput;
+
+  $: if($modal === 'search' && searchInput) {
+    setTimeout(() => {
+      searchInput.focus();
+    }, 50);
+  }
+
   onMount(() => {
     inputTag?.focus();
     return () => {
@@ -67,6 +75,7 @@
     {#if $modal === 'search'}
       <!-- svelte-ignore a11y-autofocus -->
       <input
+        bind:this={searchInput}
         class="input"
         name="search"
         type="text"
