@@ -13,7 +13,7 @@ tags:
 youtube: 4YOpILi9Oxs
 ---
 
-Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100%, secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
+Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100% secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
 
 ## 1. Zero-day Vulnerability
 
