@@ -24,3 +24,11 @@ npx create-next-app nextfire
 
 ## Global CSS
 https://raw.githubusercontent.com/fireship-io/next-firebase-course/main/styles/globals.css
+
+
+## Update May 2023
+Note - this guide was written for the Page Router
+The current version of Next [13 / May 2023] recommends and selects using the App Router by default in new projects
+To follow along with this course make sure you choose not to use the 'App' router and use the Page Router instead
+
+If you don't choose the Page Router you will may errors during build time about conflicts between similarly named files in /app/ and /pages/ and some files like globals.css may not be where you expect them [now in app/globals.css NOT /styles/globals.css ]. 
