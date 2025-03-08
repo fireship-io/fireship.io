@@ -110,3 +110,21 @@ export default function UserProfilePage({ user, posts }) {
 ```javascript
  // see full source code
 ```
+
+## Update May 2023
+As of May 2023, running this code produces an error because Next.JS has become stricter about Links
+
+Error: Invalid <Link> with <a> child. Please remove <a> or use <Link legacyBehavior>.
+Learn more: https://nextjs.org/docs/messages/invalid-new-link-with-extra-anchor
+
+  For Example
+  ```javascript
+ <Link href={`/${post.userID}/${post.slug}`}>
+        <h2>
+          ~~<a>~~
+          {post.title}
+          ~~</a>~~
+        </h2>
+      </Link>
+  ```
+
