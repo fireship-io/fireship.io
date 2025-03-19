@@ -17,7 +17,7 @@ author: Jeff Delaney
 
 The **Vue Firebase Project Course** will teach you the basics of full-stack web development by building a chat prototype from scratch.
 
-You will build a realtime 💬 **walkie-talkie style chat app** with the ability to record and upload audio from the device - inspired by the popular [Voxer](https://www.voxer.com/) mobile app. 
+You will build a realtime 💬 **walkie-talkie style chat app** with the ability to record and upload audio from the device ― inspired by the popular [Voxer](https://www.voxer.com/) mobile app. 
 
 ## 💡 What will I Learn?
 
