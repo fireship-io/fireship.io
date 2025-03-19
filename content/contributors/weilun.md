@@ -4,7 +4,7 @@ draft: false
 featured_img: /img/contributors/weilun.jpg
 
 links: 
-    linkedin: www.linkedin.com/in/yong-wei-lun-b84a58168
+    linkedin: https://linkedin.com/in/yong-wei-lun-b84a58168
     medium: https://medium.com/@weilun_6735
     github: https://github.com/WLun001
 ---
