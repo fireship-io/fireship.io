@@ -9,8 +9,33 @@
   async function getSession() {
     loading = true;
     const price = products[$period].price;
+
+    const productName = `Pro Subscription - ${$period}`;
+    const amount = products[$period].amount;
+
     url = await callUserAPI<string>({ fn: 'createSubscriptionSession', payload: { price } });
-    if (url) window.open(url, '_blank')?.focus();
+    if (url) {
+      window.dataLayer.push({
+        'event': 'begin_checkout',
+        'ecommerce': {
+          'items': [{
+            'item_id': price,
+            'item_name': productName,
+            'item_category': 'subscription',
+            'price': amount,
+            'quantity': 1
+          }]
+        }
+      });
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('GTM ecommerce event tracked:', {
+          event: 'begin_checkout',
+          product: productName,
+          price: amount
+        });
+      }
+      window.open(url, '_blank')?.focus();
+    }
     loading = false;
   }
   
