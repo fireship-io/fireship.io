@@ -73,12 +73,13 @@
                 </span>
             </span>
         </div>
-
-        <div class="w-full flex justify-center mt-8">
-            <a href="#enroll" class="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full text-3xl no-underline">
-                <h2 class="m-0">Enroll Now</h2>
-            </a>
-        </div>
+        <if-access>
+            <div slot="denied" class="w-full flex justify-center mt-8">
+                <a href="#enroll" class="bg-gradient-to-r from-orange-500 to-pink-500 text-white font-bold py-4 px-8 rounded-full text-3xl no-underline">
+                    <h2 class="m-0">Enroll Now</h2>
+                </a>
+            </div>
+        </if-access>
 
         <div class="mx-auto w-24 h-1 my-24 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full"></div>
 

@@ -36,7 +36,30 @@
       },
     });
 
-    if (url) window.open(url, '_blank')?.focus();
+    if (url) {
+      window.dataLayer.push({
+        event: 'begin_checkout',
+        ecommerce: {
+          items: [
+            {
+              item_id: price,
+              item_name: enterprise ? 'Enterprise Plan' : 'Lifetime Plan',
+              item_category: 'subscription',
+              price: enterprise ? products.enterprise.amount * seats : products.lifetime.amount,
+              quantity: enterprise ? seats : 1,
+            },
+          ],
+        },
+      });
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('GTM ecommerce event tracked:', {
+          event: 'begin_checkout',
+          product: enterprise ? 'Enterprise Plan' : 'Lifetime Plan',
+          price: enterprise ? products.enterprise.amount * seats : products.lifetime.amount,
+        });
+      }
+      window.open(url, '_blank')?.focus();
+    }
     loading = false;
   }
 </script>

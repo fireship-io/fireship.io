@@ -1,11 +1,34 @@
 ---
-title: Success!
-type: blank
+title: Payment Success
+description: Thank you for your purchase
 ---
 
-<div class="text-center prose dark:prose-invert p-8 mx-auto mt-28">
-    <h1 class="text-green-500 text-center">Purchase Confirmed!</h1>
-    <p>Thank you for your order! You should now have access to your content. If you run into any issues email <strong>hello@fireship.io</strong></p>
-    <h4>You may now close this tab</h4>
-    <img src="/img/success.gif" alt="success" class="mx-auto" />
+<div class="success-container">
+  <div class="success">
+    <div class="icon">✅</div>
+    <h1>Payment Successful!</h1>
+    <p class="message">Thank you for your purchase! Your access has been activated.</p>
+    
+    <div class="actions">
+      <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+    </div>
+  </div>
 </div>
+
+<script>
+  // Just track the purchase with session_id
+  const urlParams = new URLSearchParams(window.location.search);
+  const sessionId = urlParams.get('session_id');
+  
+  if (sessionId) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'purchase',
+      'ecommerce': {
+        'transaction_id': sessionId
+      }
+    });
+    
+    console.log('Purchase event tracked with session_id:', sessionId);
+  }
+</script>
