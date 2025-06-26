@@ -16,19 +16,43 @@ description: Thank you for your purchase
 </div>
 
 <script>
-  // Just track the purchase with session_id
   const urlParams = new URLSearchParams(window.location.search);
   const sessionId = urlParams.get('session_id');
   
   if (sessionId) {
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      'event': 'purchase',
-      'ecommerce': {
-        'transaction_id': sessionId
-      }
-    });
     
-    console.log('Purchase event tracked with session_id:', sessionId);
+    try {
+      const pendingPurchase = localStorage.getItem('pending_purchase');
+      
+      if (pendingPurchase) {
+        const purchaseData = JSON.parse(pendingPurchase);
+        
+        window.dataLayer.push({
+          'event': 'purchase',
+          'ecommerce': {
+            'transaction_id': sessionId,
+            ...purchaseData
+          }
+        });
+        
+        console.log('Purchase completed:', purchaseData);
+        localStorage.removeItem('pending_purchase');
+      } else {
+        // Fallback tracking
+        window.dataLayer.push({
+          'event': 'purchase_success',
+          'transaction_id': sessionId,
+          'purchase_method': 'stripe'
+        });
+      }
+    } catch (error) {
+      console.error('Error processing purchase data:', error);
+      window.dataLayer.push({
+        'event': 'purchase_success',
+        'transaction_id': sessionId,
+        'error': 'data_parsing_failed'
+      });
+    }
   }
 </script>

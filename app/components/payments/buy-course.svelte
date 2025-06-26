@@ -2,56 +2,40 @@
 
 <script lang="ts">
   import { callUserAPI } from '../../util/firebase';
+  import { trackCheckoutStart } from '../../util/analytics';
   import { currentCourse } from '../../stores/pro';
   let loading = false;
   let url: string;
 
-  async function getSession() {
-    loading = true;
+async function getSession() {
+  loading = true;
 
-    const productId = $currentCourse.id;
-    const productName = $currentCourse?.title || productId;
-    const price = $currentCourse?.amount || 0;
-    url = await callUserAPI<string>({ 
-      fn: 'createPaymentSession', 
-      payload: { 
-        productId: productId, 
-        price: $currentCourse.price, 
-        productType: 'course' 
-      } 
-    });
-    if (url) {
-      window.dataLayer.push({
-        'event': 'begin_checkout',
-        'ecommerce': {
-          'items': [{
-            'item_id': productId,
-            'item_name': productName,
-            'item_category': 'course',
-            'price': price,
-            'quantity': 1
-          }],
-          'value': price,
-          'currency': 'USD'
-        }
-      });
-        console.log('GTM ecommerce event tracked:', {
-          event: 'begin_checkout',
-          product: productId,
-          price: price
-        });
-      if (process.env.NODE_ENV !== 'production') {
-        console.log('GTM ecommerce event tracked:', {
-          event: 'begin_checkout',
-          product: productId,
-          price: price
-        });
-      }
-      window.open(url, '_blank')?.focus();
-    }
-    loading = false;
-  }
+  const purchaseData = {
+    currency: 'USD',
+    value: $currentCourse.amount,
+    items: [{
+      item_id: $currentCourse.id,
+      item_name: $currentCourse.title || $currentCourse.id,
+      price: $currentCourse.amount,
+      quantity: 1,
+      item_category: 'course'
+    }]
+  };
   
+  trackCheckoutStart(purchaseData);
+  
+  url = await callUserAPI<string>({ 
+    fn: 'createPaymentSession', 
+    payload: { 
+      productId: $currentCourse.id, 
+      price: $currentCourse.price, 
+      productType: 'course' 
+    } 
+  });
+  
+  if (url) window.open(url, '_blank')?.focus();
+  loading = false;
+}
 </script>
 
   {#if $currentCourse?.price}
