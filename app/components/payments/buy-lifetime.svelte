@@ -2,6 +2,7 @@
 
 <script lang="ts">
   import { callUserAPI } from '../../util/firebase';
+  import { trackCheckoutStart } from '../../util/analytics';
   import { products, toast } from '../../stores';
   let loading = false;
   export let enterprise = false;
@@ -11,57 +12,62 @@
   let seats = 5;
   let url = '';
 
-  function setSeats(val: number) {
-    seats = val;
-    if (seats < 5) {
-      seats = 5;
-      toast.set({ message: 'This plan has a 5 seat minimum', type: 'error' });
-    }
-    if (seats > 50) {
-      seats = 50;
-      toast.set({
-        message: 'Maximum 50 seats. Contact for larger plans',
-        type: 'error',
-      });
-    }
-  }
-  async function getSession() {
-    loading = true;
-    url = await callUserAPI<string>({
-      fn: 'createPaymentSession',
-      payload: {
-        productType: enterprise ? 'enterprise' : 'lifetime',
-        price,
-        seats: enterprise ? seats : 1,
-      },
-    });
+async function getSession() {
+  loading = true;
+  
+  const productId = enterprise ? 'enterprise' : 'lifetime';
+  const productName = enterprise ? `Enterprise Plan (${seats} seats)` : 'Lifetime Access';
+  const totalAmount = enterprise ? products.enterprise.amount * seats : products.lifetime.amount;
+  
+  const purchaseData = {
+    currency: 'USD',
+    value: totalAmount,
+    items: [{
+      item_id: productId,
+      item_name: productName,
+      price: enterprise ? products.enterprise.amount : products.lifetime.amount,
+      quantity: enterprise ? seats : 1,
+      item_category: enterprise ? 'enterprise' : 'lifetime',
+      item_variant: enterprise ? `${seats} seats` : 'single'
+    }]
+  };
+  
+  trackCheckoutStart(purchaseData);
+  
+  url = await callUserAPI<string>({
+    fn: 'createPaymentSession',
+    payload: {
+      productType: enterprise ? 'enterprise' : 'lifetime',
+      price,
+      seats: enterprise ? seats : 1,
+    },
+  });
 
-    if (url) {
-      window.dataLayer.push({
-        event: 'begin_checkout',
-        ecommerce: {
-          items: [
-            {
-              item_id: price,
-              item_name: enterprise ? 'Enterprise Plan' : 'Lifetime Plan',
-              item_category: 'subscription',
-              price: enterprise ? products.enterprise.amount * seats : products.lifetime.amount,
-              quantity: enterprise ? seats : 1,
-            },
-          ],
-        },
-      });
-      if (process.env.NODE_ENV !== 'production') {
-        console.log('GTM ecommerce event tracked:', {
-          event: 'begin_checkout',
-          product: enterprise ? 'Enterprise Plan' : 'Lifetime Plan',
-          price: enterprise ? products.enterprise.amount * seats : products.lifetime.amount,
-        });
-      }
-      window.open(url, '_blank')?.focus();
-    }
-    loading = false;
+  if (url) window.open(url, '_blank')?.focus();
+  loading = false;
+}
+
+function setSeats(val: number) {
+  const previousSeats = seats;
+  seats = Math.max(5, Math.min(50, val));
+  
+  if (seats !== val) {
+    toast.set({ 
+      message: seats === 5 ? 'This plan has a 5 seat minimum' : 'Maximum 50 seats. Contact for larger plans',
+      type: 'error'
+    });
   }
+  
+  if (enterprise && previousSeats !== seats) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'adjust_seat_count',
+      'seat_count': seats,
+      'previous_count': previousSeats,
+      'total_value': products.enterprise.amount * seats
+    });
+  }
+}
 </script>
 
 {#if enterprise}
