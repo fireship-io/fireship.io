@@ -6,8 +6,8 @@
   import { router } from '../../main';
   import { onMount } from 'svelte';
 
-  const APP_ID = '05VYZFXKNM';
-  const API_KEY = 'a0837b31f4379765240c2753fa141aa2';
+  const APP_ID = process.env.ALGOLIA_APP_ID;
+  const API_KEY = process.env.API_KEY;
   const client = algolia(APP_ID, API_KEY);
   const index = client.initIndex('content');
 
