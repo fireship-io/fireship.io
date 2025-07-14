@@ -109,7 +109,7 @@ const btn2 = factory.createButton(os);
 ```
 ### Builder
 
-The builder pattern is a creational design pattern that lets you construct complex objects step by step. It JavaScript, we can achieve this with method chaining. 
+The builder pattern is a creational design pattern that lets you construct complex objects step by step. In JavaScript, we can achieve this with method chaining. 
 
 {{< file "ts" "software.ts" >}}
 ```typescript
