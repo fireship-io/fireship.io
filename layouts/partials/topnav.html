@@ -1,4 +1,5 @@
-<nav class="flex justify-between container p-6 md:p-8">
+<nav class="flex justify-between container p-6 md:p-8 items-center">
+  <!-- Logo Section -->
   <a
     class="flex justify-center items-center text-center w-12 h-12 logo-gif"
     href="/"
@@ -7,22 +8,47 @@
     <img class="relative bottom-1 left-1" id="logoBg" src="/img/fire.gif" alt="fire background" />
   </a>
 
-  <ul class="flex justify-center items-center">
+  <!-- Navigation Links -->
+  <ul class="flex justify-center items-center gap-4">
+    <!-- PRO Button (Conditional Rendering for Pro Users) -->
     <if-pro>
-      <li slot="basic" class="mx-2 md:mx-4  hover:scale-105 transition-transform">
-        <a href="/pro" class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]">PRO</a>
+      <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+        <a
+          href="/pro"
+          class="font-display text-base font-normal text-green-500 border-green-400 border rounded-md px-2 py-1 hover:drop-shadow-[0_0_9px_rgba(34,197,94,0.9)]"
+        >
+          PRO
+        </a>
       </li>
     </if-pro>
+
+    <!-- Labs Link -->
     <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
-      <a href="/lessons" class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white">labs</a>
+      <a
+        href="/lessons"
+        class="font-sans text-xl font-bold leading-none text-gray2 hover:text-white"
+      >
+        labs
+      </a>
     </li>
-    <li class="mx-2 md:mx-4  hover:scale-105 transition-transform">
-      <a href="/courses" class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide">courses</a>
+
+    <!-- Courses Link -->
+    <li class="mx-2 md:mx-4 hover:scale-105 transition-transform">
+      <a
+        href="/courses"
+        class="font-sans text-xl font-bold leading-none text-gray2 gradient-slide"
+      >
+        courses
+      </a>
     </li>
+
+    <!-- Search Modal -->
     <li class="ml-2">
       <modal-action type="open" name="search">
-        <button class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
-                 shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all">
+        <button
+          class="p-2 mr-2 hidden md:flex justify-between items-center bg-white bg-opacity-10 hover:bg-opacity-20 border border-gray4 hover:border-purple-500 
+          shadow-xl hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all"
+        >
           <span class="text-gray2 w-4 mx-2">{{ partial ("svg/search.svg") }}</span>
           <span class="mr-12">Search</span>
           <span class="mx-2 text-xs border border-gray4 rounded-md p-1 px-2">/</span>
@@ -30,16 +56,20 @@
         <button class="flex md:hidden">
           <span class="text-gray2 w-6 mx-2">{{ partial ("svg/search.svg") }}</span>
         </button>
-        </modal-action>
-      </li>
+      </modal-action>
+    </li>
+
+    <!-- User Dashboard or Login Button -->
     <li class="ml-2 mr-6 relative">
       <if-user>
         <a href="/dashboard">
           <user-avatar></user-avatar>
         </a>
         <modal-action slot="signed-out" name="signin" type="open">
-          <button class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
-                hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300">
+          <button
+            class="relative hidden md:inline-block px-4 py-2 text-xl font-display text-black hover:text-white bg-white 
+            hover:bg-purple-600 drop-shadow-[6px_6px_0_black] hover:drop-shadow-[0_0_7px_rgba(168,85,247,0.5)] transition-all duration-300"
+          >
             login
           </button>
           <button class="flex md:hidden">
@@ -48,7 +78,5 @@
         </modal-action>
       </if-user>
     </li>
-
-
   </ul>
 </nav>
