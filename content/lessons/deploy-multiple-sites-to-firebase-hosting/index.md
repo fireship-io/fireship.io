@@ -123,7 +123,7 @@ firebase deploy --only hosting
 Or deploy a single site based on the target name:  
 
 ```shell
-firebase serve --only hosting:french
+firebase deploy --only hosting:french
 ```
 
 
