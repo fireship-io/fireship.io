@@ -20,7 +20,7 @@ github: https://github.com/fireship-io/225-github-actions-demo
 #    rxdart: 0.20
 ---
 
-Github Actions make it easy to roll out a [wide variety](https://github.com/sdras/awesome-actions) of DevOps automation tasks. The following lesson provides five examples of CI/CD and automation using [Github Actions](https://github.com/features/actions). 
+Github Actions make it easy to roll out a [wide variety](https://github.com/sdras/awesome-actions) of DevOps automation tasks. The following Lesson provides five examples of CI/CD and automation using [Github Actions](https://github.com/features/actions). 
 
 ## Example 1: Continuous Integration
 

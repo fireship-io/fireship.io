@@ -31,7 +31,7 @@ These animations are complex. Hypothetically, they could be created in Flutter n
 ## Part 1: Create Animated Icons with Flare 2D
 
 
-Access the files used in this lesson on my [Flare profile](https://www.2dimensions.com/a/delaneyphx/files/recent/all) or from the project github repo. 
+Access the files used in this lesson on my [Flare profile](https://www.2dimensions.com/a/delaneyphx/files/recent/all) or from the project github repository. 
 
 
 First, we need to create some awesome animated graphics with Flare. Create a free account, then complete the tasks below. These tasks represent the skills you need to have in Flare to re-create Giphy's animated icons. 
@@ -103,7 +103,7 @@ Stroke animations make it easy to look like you are drawing a shape by hand.
 **Tasks**
 
 1. Give the shape a stroke.
-1. Set the end of  the stroke to 0% until it is invisible. 
+1. Set the end of the stroke to 0% until it is invisible. 
 1. Animate the end value to give it a drawing effect. 
 
 {{< figure src="img/flare-animated-stroke.png" caption="Animate the stroke end from 0% to 100%" >}}
@@ -158,7 +158,7 @@ Export the animations to a folder named `assets` in the root of your project.
 
 ### Define a Class for the Menu Item
 
-There are many different ways to build a menu in flutter, but we're going to build our navigation menu from scratch. The data for each menu item can be abstracted into a class. 
+There are many different ways to build a menu in flutter, but we're going to build our navigation menu from scratch. The Data for each menu item can be abstracted into a class. 
 
 - `name` is the filename of the *.flr* asset
 - `color` controls the line above the icon
