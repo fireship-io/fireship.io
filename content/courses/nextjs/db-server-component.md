@@ -11,7 +11,7 @@ video_length: 1:20
 
 {{< file "react" "users/page.tsx" >}}
 ```tsx
-import UserCard from '@/components/UserCard/UserCard';
+import UserCard from '@/components/UserCard';
 import styles from './page.module.css';
 import { prisma } from '@/lib/prisma';
 
