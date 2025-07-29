@@ -13,7 +13,7 @@ tags:
 youtube: 4YOpILi9Oxs
 ---
 
-Cloud providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100%, secure and clever new exploits will be discovered. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
+Cloud service providers and web application frameworks go to great lengths to protect you from writing insecure code. The Cloud provides secure defaults and monitoring for your infrastructure, while Angular and React automatically sanitize HTML to prevent the injection of malicious JavaScript. Despite these safeguards, no application is 100% secure and clever, new exploits will be discovered in time. The following lesson explains some of the most common hacking techniques and how to secure your app against them. 
 
 ## 1. Zero-day Vulnerability
 
@@ -27,7 +27,7 @@ After it becomes known, you can think of it as a one-day or 20-day exploit based
 
 Using packages with [known vulnerabilities](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A9-Using_Components_with_Known_Vulnerabilities) is the most common way hackers exploit web apps. 
 
-Audit your current NPM project using the [audit](https://docs.npmjs.com/cli/audit) command. Then update your dependencies as needed.  
+Audit your NPM project using the [audit](https://docs.npmjs.com/cli/audit) command. Then update your dependencies as needed.  
 
 {{< file "terminal" "command line" >}}
 ```text
@@ -71,19 +71,19 @@ Most ORMs will prevent SQL injection attacks because you do not construct the qu
 
 ## 5. Credential Leaks
 
-Many APIs and Cloud Providers provide API keys that allow you to interact with paid services. If a hacker discovers a secret API key it can be used to take destructive action on your behalf. There are a few ways credentials are leaked.
+Many APIs and Cloud service providers provide API keys that allow you to interact with paid services. If a hacker discovers a secret API key, it can be used to take destructive action on your behalf. A few ways in which credentials get leaked are:
 
 1. Using API keys directly in source code, then pushing the repo to Github. 
-1. Using API keys directly in source code, then bundling them in your production app. 
+2. Using API keys directly in source code, then bundling them in your production app. 
 
 You can prevent credential leaks by NOT putting them in your source code. Instead, use environment variables or a service like [Secret Manager](https://cloud.google.com/secret-manager/docs). 
 
 
 ## 6. Principle of Least Privilege
 
-In the event that your credentials are compromised, you can mitigate the damage by following the Principle of Least Privilege. Basically, this means **grant access only when it is absolutely required**. 
+If your credentials get compromised, you can mitigate the damage by following the Principle of Least Privilege. Meaning **grant access only when it is absolutely required**. 
 
-A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allow you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, then selectively allow access as needed. 
+A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/), which allows you to customize the permissions of an API key. When defining rules, you should always start by locking down everything, then selectively allowing access as needed. 
 
 ## 7. DDoS Attacks
 
@@ -91,4 +91,4 @@ A good example is [Firestore Database Rules](/snippets/firestore-rules-recipes/)
 
 A [DDoS](https://en.wikipedia.org/wiki/Denial-of-service_attack) attack attempts to flood the service with so much traffic that it simply shuts down. The attack is typically distributed via many spoofed sources, making it impossible to just block a single IP address. 
 
-For most developers, the best mitigation strategy is to use a large Cloud provider that has the bandwidth and monitoring capabilities to deal with such attacks. 
+For most developers, the best mitigation strategy is to use a large Cloud service provider with the bandwidth and monitoring capabilities to deal with such attacks. 
