@@ -193,7 +193,7 @@ Create a login form that uses the `authWithPassword` method. If the user doesn't
     <div class="msg">
       <img
         class="avatar"
-        src={`https://avatars.dicebear.com/api/identicon/${message.expand?.user?.username}.svg`}
+        src={`https://api.dicebear.com/7.x/identicon/svg?seed=${message.expand?.user?.username}`}
         alt="avatar"
         width="40px"
       />
