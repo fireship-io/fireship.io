@@ -1,0 +1,230 @@
+say this
+https://www.bing.com/ck/a?!&&p=7ce88390bea1fc75JmltdHM9MTcyNjA5OTIwMCZpZ3VpZD0xYzNjZmQxNS03NjVjLTYyYjctMzcxNS1lOWI3NzdlODYzYTImaW5zaWQ9NTI1NQ&ptn=3&ver=2&hsh=3&fclid=1c3cfd15-765c-62b7-3715-e9b777e863a2&psq=free+fireship+pro&u=a1aHR0cHM6Ly9naXRodWIuY29tL2ZpcmVzaGlwLWlvL2ZpcmVzaGlwLmlvL2lzc3Vlcy8xNDk1&ntb=1
+
+class{
+video-player - wrapper - vid html element
+
+}
+
+
+the fun is
+
+setInterval(() => {
+    document.querySelectorAll("[free=\"\"]").forEach(el => el.setAttribute("free", true)) // set all elements with the attribute free set to "" to true
+ 
+    if (document.querySelector("if-access [slot=\"granted\"]")) { // replace HOW TO ENROLL to YOU HAVE ACCESS
+        document.querySelector("if-access [slot=\"denied\"]").remove()
+        document.querySelector("if-access [slot=\"granted\"]").setAttribute("slot", "denied")
+    }
+ 
+    if (document.querySelector("video-player")?.shadowRoot?.querySelector(".vid")?.innerHTML) return; // return if no video player
+    const vimeoId = document.querySelector("global-data").vimeo; // get id for vimeo video
+    const youtubeId = document.querySelector("global-data").youtube; // get id for vimeo video
+ 
+    if (vimeoId) { // if there is an id,
+        document.querySelector("video-player").setAttribute("free", true) // set free to true
+        document.querySelector("video-player").shadowRoot.querySelector(".vid").innerHTML = `<iframe src="https://player.vimeo.com/video/${vimeoId}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="${location.pathname.split("/")[3]}" width="426" height="240" frameborder="0"></iframe>` // set video
+    }
+    if (youtubeId) { // if there is an id,
+        document.querySelector("video-player").setAttribute("free", true) // set free to true
+        document.querySelector("video-player").shadowRoot.querySelector(".vid").innerHTML = `<iframe src="https://youtube.com/embed/${youtubeId}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen="" title="${location.pathname.split("/")[3]}" width="426" height="240" frameborder="0"></iframe>` // set video
+    }
+}, 100)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.d888 d8b                           888      d8b          
+d88P"  Y8P                          888      Y8P          
+888                                 888                   
+888888 888 888d888 .d88b.  .d8888b  88888b.  888 88888b.  
+888    888 888P"  d8P  Y8b 88K      888 "88b 888 888 "88b 
+888    888 888    88888888 "Y8888b. 888  888 888 888  888 
+888    888 888    Y8b.          X88 888  888 888 888 d88P 
+888    888 888     "Y8888   88888P' 888  888 888 88888P"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
