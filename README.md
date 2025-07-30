@@ -1,6 +1,6 @@
 ## Fireship
 
-The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
+The [Fireship PRO](https://fireship.io) course platform frontend is built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
 
 ## Contributing
 
@@ -51,5 +51,5 @@ Now use it in anywhere in your HTML or Markdown.
 
 - `npm start`: Main dev server. Runs everything you need. 
 - `npm run dev`: Runs components in isolation. Serves `app/index.html` as a playground for components. 
-- `npm run hugo`: Only runs static site. 
-- `npm run build`: Build for production
+- `npm run hugo`: Only runs static sites. 
+- `npm run build`: Build for production.
