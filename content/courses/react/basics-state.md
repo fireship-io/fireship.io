@@ -21,8 +21,8 @@ function Stateful() {
   const handleClick = () => {
     setCount((prev) => {
       setPrevCount(prev);
-      setCount(count + 1);
     });
+    setCount(count + 1);
   };
 
   return (
