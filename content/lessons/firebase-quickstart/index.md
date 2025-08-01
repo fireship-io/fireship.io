@@ -342,7 +342,7 @@ service cloud.firestore {
     // Lock down the database
     match /{document=**} {
       allow read, write: if false; 
-    
+    }
     // Allow authorized requests to the things collection
     match /things/{docId} {
       allow write: if request.auth.uid == request.resource.data.uid;
