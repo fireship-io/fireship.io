@@ -37,7 +37,7 @@ The following tutorial demonstrates how to build a simple group chat app with Re
 
 ### Firebase Project
 
-Create a free [Firebase](https://firebase.google.com/) project. Make sure to enable Google SignIn and and activate Cloud Firestore. 
+Create a free [Firebase](https://firebase.google.com/) project. Make sure to enable Google SignIn and activate Cloud Firestore. 
 
 ### Create a React App
 

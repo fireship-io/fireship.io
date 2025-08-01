@@ -54,7 +54,7 @@ The `scale` filter resizes the video to a width of 320 pixels, while maintaining
 
 The `split` filter splits the video stream into two branches, one to generate the palette and the other to apply it.
 
-The [palettegen](https://ffmpeg.org/ffmpeg-filters.html#palettegen-1) filter creates a color palette based on the input video and and outputs the palette as a video stream, which is passed to the paletteuse filter along with the original video stream.  
+The [palettegen](https://ffmpeg.org/ffmpeg-filters.html#palettegen-1) filter creates a color palette based on the input video and outputs the palette as a video stream, which is passed to the paletteuse filter along with the original video stream.  
 
 Additional ideas for Gif optimization are discussed here by [Giphy Engineering](https://engineering.giphy.com/how-to-make-gifs-with-ffmpeg/). 
 
