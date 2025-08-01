@@ -30,7 +30,7 @@
 }
 
 .btn-gray {
-    @apply bg-gray5 text-white hover:bg-gray4;
+    @apply bg-gray5 text-white hover:bg-gray-4;
     &.glow {
         @apply hover:drop-shadow-[0_0_5px_rgba(239,68,68,0.5)];
     }
