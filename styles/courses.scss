@@ -29,6 +29,8 @@
       a {
         @apply text-gray3 no-underline bg-black bg-opacity-30;
         padding: 1em 2em;
+        display: block;
+        margin-bottom: 0;
       }
     }
   }
