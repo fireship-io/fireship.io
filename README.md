@@ -1,6 +1,6 @@
 ## Fireship
 
-The [Fireship PRO](https://fireship.io) course platform frontend built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
+The [Fireship PRO](https://fireship.io) course platform frontend is built with Svelte, Tailwind, Hugo, Firebase, & Flamethrower. 
 
 ## Contributing
 
@@ -16,12 +16,12 @@ npm install
 npm start
 ```
 
-Check it on on `http://localhost:6969/`.
+Check it on `http://localhost:6969/`.
 
 
 ## Developing Components 
 
-Create a Svelte file in the `app/components` directory. It must have a custom element tag. 
+Create a Svelte file in the `app/components directory. It must have a custom element tag. 
 
 ```svelte
 <svelte:options tag="hi-mom" />
@@ -39,9 +39,9 @@ Export the component from `app/main.ts`:
 export * from './components/hi-mom.svelte';
 ```
 
-Now use it in anywhere in your HTML or Markdown. 
+Now use it anywhere in your HTML or Markdown. 
 
-```html
+```HTML
 <hi-mom greeting="i made a web component"></hi-mom>
 ```
 
@@ -51,5 +51,5 @@ Now use it in anywhere in your HTML or Markdown.
 
 - `npm start`: Main dev server. Runs everything you need. 
 - `npm run dev`: Runs components in isolation. Serves `app/index.html` as a playground for components. 
-- `npm run hugo`: Only runs static site. 
+- `npm run hugo: Only runs the static site. 
 - `npm run build`: Build for production
