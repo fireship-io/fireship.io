@@ -1,5 +1,5 @@
 ---
-title: Error Boundries
+title: Error Boundaries
 description: How do Error Boundaries work in React?
 weight: 11
 lastmod: 2022-02-22T11:11:30-09:00
