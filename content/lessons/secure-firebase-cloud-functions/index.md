@@ -116,11 +116,11 @@ exports.secureEndpoint = functions.https.onRequest((req, res) => {
     cors( req, res, () => { 
 
 
-        let requestedUid = req.body.uid     // resource the user is requsting to modify
+        let requestedUid = req.body.uid     // resource the user is requesting to modify
         let authToken = validateHeader(req) // current user encrypted
         
         if (!authToken) {
-            return res.status(403).send('Unuthorized! Missing auth token!')
+            return res.status(403).send('Unauthorized! Missing auth token!')
         }
             
         return decodeAuthToken(authToken)

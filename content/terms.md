@@ -10,7 +10,7 @@ By accessing this website, you are agreeing to be bound by these website Terms a
 
 ### Content Copyright Policy
 
-The site design, logo and video content subject to copyright © 2019-present | Fireship LLC
+The site design, logo and video content are subject to copyright © 2019-present | Fireship LLC
 
 User contributions licensed under CC by-SA 3.0 with attribution required.
 
