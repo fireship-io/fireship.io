@@ -32,7 +32,7 @@ The materials on the Fireship.io website are provided “as is”. Fireship.io m
 
 ### Limitations
 
-In no event shall fireship.io be liable for any damages (including, without limitation, damages for loss of data or profit or due to business interruption) arising out of the use or inability to use the materials on the Fireship.io Internet site, even if Fireship.io or a Fireship.io authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
+In no event shall Fireship.io be liable for any damages (including, without limitation, damages for loss of data or profit or due to business interruption) arising out of the use or inability to use the materials on the Fireship.io Internet site, even if Fireship.io or a Fireship.io authorized representative has been notified orally or in writing of the possibility of such damage. Because some jurisdictions do not allow limitations on implied warranties, or limitations of liability for consequential or incidental damages, these limitations may not apply to you.
 
 ### Intellectual Property Rights
 
