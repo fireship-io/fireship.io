@@ -51,7 +51,7 @@ Open the Microsoft store and search for *Linux*. Choose your preferred distro - 
 
 ### Install Windows Terminal
 
-Windows has a [new terminal app](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701) that makes it easier to work with the command line. Install it to quickly between Linux and PowerShell sessions. 
+Windows has a [new terminal app](https://www.microsoft.com/en-us/p/windows-terminal-preview/9n0dx20hk701) that makes it easier to work with the command line. Install it to quickly switch between Linux and PowerShell sessions. 
 
 {{< figure src="img/win-terminal-app.png" caption="Install windows terminal and start a Linux session" >}}
 
