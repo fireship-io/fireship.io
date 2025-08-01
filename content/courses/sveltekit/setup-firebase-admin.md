@@ -22,7 +22,7 @@ Use an env variable because the location of the service account will change in p
 
 {{< file "cog" ".env" >}}
 ```bash
-FIREBASE_SERVICE_ACCOUNT="service-account.json"
+FB_SERVICE_ACCOUNT="service-account.json"
 FB_PROJECT_ID="..."
 FB_CLIENT_EMAIL="....gserviceaccount.com"
 FB_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\ ... \n-----END PRIVATE KEY-----\n"
