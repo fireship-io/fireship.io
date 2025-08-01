@@ -44,6 +44,7 @@ Initialize the client and fetch the schema just to make sure the database is up 
 
 {{< file "js" "app.js" >}}
 ```javascript
+import { readFileSync, writeFileSync } from 'fs';
 import weaviate from 'weaviate-ts-client';
 
 const client = weaviate.client({
