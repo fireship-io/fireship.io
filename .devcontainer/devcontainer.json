@@ -1,0 +1,14 @@
+{
+	"name": "Node.js",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+	"features": {
+		"ghcr.io/devcontainers/features/hugo:1": {
+			"extended": true,
+			"version": "latest"
+		}
+	},
+	"forwardPorts": [
+		6969
+	],
+	"postCreateCommand": "npm install"
+}
