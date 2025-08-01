@@ -64,4 +64,13 @@ function MyApp({ Component, pageProps }) {
     </UserContext.Provider>
   );
 }
+
+## Note
+Current version of React-Firebase-Hooks expects Firebase SDK v9
+This code in tutorial is for SDK v8
+
+If you encounter errors try a downgrade to v3
+npm install --save react-firebase-hooks@3.0.4
+
+
 ```
