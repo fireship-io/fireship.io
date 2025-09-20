@@ -27,7 +27,7 @@ stack:
 - ⏱️ Metered pay-as-you-go billing
 - 🎣 Handle and test Stripe webhooks locally 
 - 🤝 Payment and billing strategies for SaaS products 
-- 🔥 Master key concepts quickly with fast-paced vidoes
+- 🔥 Master key concepts quickly with fast-paced videos
 - ⚛️ Fullstack starter project with Next.js frontend and Supabase backend
 - 🧑‍💻 Includes all source code and project files
 
