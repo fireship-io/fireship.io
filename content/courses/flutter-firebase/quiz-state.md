@@ -1,6 +1,6 @@
 ---
 title: State Management with Provider
-description: Use Provider to separte state from the parent widget
+description: Use Provider to separate state from the parent widget
 weight: 60
 lastmod: 2021-11-11T10:23:30-09:00
 draft: false
